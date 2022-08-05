@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url(../../fonts/Inter-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url(../../fonts/Inter-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url(../../fonts/Inter-SemiBold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url(../../fonts/Inter-Bold.woff) format('woff');
+}
+
+body {
+  margin: auto;
+}
+
+.allProfile{
+    display: flex;
+    margin-top: 12%;
+}
+
+.containerProfile{
+    margin-top: 6%;
+    width: 50%;
+    margin: auto;
+}
+
+.part1Profile{
+    background-color: #A58AD2;
+    text-align: center;
+    border-radius: 32px 32px 0 0;
+    padding: 10px;
+}
+
+.part2Profile{
+    border-color: #A58AD2;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0 0 32px 32px;
+    padding: 40px;
+    display: flex;
+}
+
+#iconProfile{
+    width: 12%;
+    height: 12%;
+    margin-top: 2%;
+}
+
+#nameProfile{
+    font-size: 24px;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.8em;
+    font-family: Inter-Medium;
+    color: #fff;
+}
+
+.info1Profile{
+    width: 70%;
+    margin: 1%;
+}
+
+.info2Profile{
+    width: 30%;
+}
+
+#iconsProfile{
+    width: 3%;
+}
+
+#titleProfile{
+    margin-block-start: 0em;
+    margin-block-end: 0.2em;
+    font-size: 16px;
+    font-family: Inter-SemiBold;
+}
+
+#textProfile{
+    margin-block-start: 0em;
+    margin-block-end: 2em;
+    font-size: 16px;
+    font-family: Inter-Regular;
+}
+
+#serviceTitleProfile{
+    margin-block-start: 0em;
+    margin-block-end: 0.2em;
+    font-size: 16px;
+    font-family: Inter-SemiBold;
+}
+
+#serviceTextProfile{
+    margin-block-start: 0em;
+    margin-block-end: 2em;
+    font-size: 16px;
+    font-family: Inter-Regular;
+}
+
+.containerConfig{
+    border-color: #A58AD2;
+    border-width: 2px;
+    border-style: solid;
+    width: 15%;
+    border-radius: 32px;
+    padding: 30px;
+    margin-right: 10%;
+}
+
+#optionsTitle{
+    margin-block-start: 2em;
+    margin-block-end: 0.8em;
+    font-size: 18px;
+    font-family: Inter-Bold;
+}
+
+#optionsText{
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+    font-size: 17px;
+    font-family: Inter-Regular;
+}
+
+#optionsLogout{
+    margin-block-start: 5em;
+    margin-block-end: 0em;
+    font-size: 17px;
+    font-family: Inter-Regular;
+}
