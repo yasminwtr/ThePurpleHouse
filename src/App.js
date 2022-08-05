@@ -1,9 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home'
+import Categories from './components/Categories'
+import Login from './components/Login'
+import Profile from './components/Profile'
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="Home">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
