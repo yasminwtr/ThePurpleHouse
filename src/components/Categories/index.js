@@ -1,68 +1,98 @@
 import "./styles.css"
-// import electrician from "../assets/electrician.png"
-// import gardening from "../assets/gardening.png"
-// import babysitter from "../assets/babysitter.png"
 
+import electrician from "../assets/electrician.png"
+import user from "../assets/user.png"
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
-import { Icon, Input } from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css'
+import { RiMapPin2Line } from 'react-icons/ri';
+import { RiMapPin2Fill } from 'react-icons/ri';
 
+import Box from '@mui/material/Box';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
-<body>
+import PlaceIcon from '@mui/icons-material/Place';
 
-
-  <link
-    async
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-react/dist/umd/semantic-ui-react.min.js"></script>
-  <script src="like_button.js"></script>
-
-</body>
 function Categories() {
   return (
-    <div className="containerCategories">
-      {/* <header className="headerCategories">
-        HEADER
-      </header> */}
-      <Container className="categories">
-        <h1 className="TextContainerCategories">
-          Selecione a categoria do serviço que está procurando
-        </h1>
-        <Row>
-          <Col className="boxCategories">Categoria 1</Col>
-          <Col className="boxCategories">Categoria 2</Col>
-          <Col className="boxCategories">Categoria 1</Col>
-          <Col className="boxCategories">Categoria 2</Col>
-        </Row>
-        <Row>
-          <Col className="boxCategories">Categoria 3</Col>
-          <Col className="boxCategories">Categoria 4</Col>
-          <Col className="boxCategories">Categoria 3</Col>
-          <Col className="boxCategories">Categoria 4</Col>
-        </Row>
-      </Container>
+    <div>
+      <Navbar className="headerCategories">
+        <Container fluid>
+          <Navbar.Brand href="#">S|R</Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Offcanvas
+            placement="end"
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title >
+                Offcanvas
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav.Link href="#action1"><img width={40} src={user} /></Nav.Link>
+                <Nav.Link className="buttonMessages" href="#action2">Mensagens</Nav.Link>
+              </Nav>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+        </Container>
+      </Navbar>
 
-      <div className="resultCategories">
-        <h1>Jardineiro</h1>
-        <input className="inputSearch" type={'text'} placeholder='Onde?' />
-         <button className="buttonSearch">Buscar</button>
+      <div className="containerCategories">
+        <Container className="categories">
+          <h1 className="TextContainerCategories">
+            Selecione a categoria do serviço que está procurando
+          </h1>
+          <Row>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+          </Row>
+          <Row>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+          </Row>
+        </Container>
+
+        <div className="resultCategories">
+          <h1>Jardineiro</h1>
+
+          <div className="containerSearch">
+            <Box className="inputSearch" sx={{ '& > :not(style)': { m: 0.1 } }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                <PlaceIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                <TextField id="input-with-sx" label="Onde?" variant="standard" />
+              </Box>
+            </Box>
+            <button className="buttonSearch">Buscar</button>
+          </div>
+        </div>
+
+      </div>
+      <div className="footerCategories">
+        <div>
+          <a>Ícone</a>
+          <a>Home</a>
+          <a>Serviços</a>
+          <a>Quem somos</a>
+        </div>
       </div>
 
-      {/* <div className="footerCategories">
-        <a>Ícone</a>
-        <a>Home</a>
-        <a>Serviços</a>
-        <a>Quem somos</a>
-      </div> */}
-
-    </div>
+    </div >
   );
 }
 
