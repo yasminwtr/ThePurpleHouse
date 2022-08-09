@@ -25,9 +25,8 @@ const Header = ()=>{
                 </div>
                 <div className="nav">
                     <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() =>setSidebar(false)}>
-                        <li><Link to='/'>Home</Link> </li>
-                        <li><Link to='/servicos'>Serviços</Link> </li>
-                        <li><Link to='/quemsomos'>Quem Somos</Link> </li>
+                        <li><Link to='/'>Inicial</Link> </li>
+                        <li><Link to='/quemsomos'>Quem somos</Link> </li>
                         <li className="icon">
                              {/* <SearchIcon className="HeaderIcon"/>
                              <KeyboardArrowRightIcon className="HeaderIcon"/> */}

@@ -24,7 +24,7 @@ body {
 
 .allProfile{
     display: flex;
-    margin-top: 12%;
+    margin-top: 4%;
 }
 
 .containerProfile{
@@ -46,12 +46,13 @@ body {
     border-style: solid;
     border-radius: 0 0 32px 32px;
     padding: 40px;
+    padding-bottom: 15px;
     display: flex;
 }
 
 #iconProfile{
-    width: 12%;
-    height: 12%;
+    width: 14%;
+    height: 14%;
     margin-top: 2%;
 }
 
@@ -108,7 +109,7 @@ body {
     border-color: #A58AD2;
     border-width: 2px;
     border-style: solid;
-    width: 15%;
+    width: 17%;
     border-radius: 32px;
     padding: 30px;
     margin-right: 10%;
@@ -117,14 +118,14 @@ body {
 #optionsTitle{
     margin-block-start: 2em;
     margin-block-end: 0.8em;
-    font-size: 18px;
+    font-size: 16.5px;
     font-family: Inter-Bold;
 }
 
 #optionsText{
     margin-block-start: 0em;
     margin-block-end: 0.5em;
-    font-size: 17px;
+    font-size: 16px;
     font-family: Inter-Regular;
 }
 
