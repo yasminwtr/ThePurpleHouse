@@ -17,7 +17,6 @@ const Home =() =>{
                         {/* <div className="scoialIcons"></div> */}
                         <p>Você pode solicitar serviços e efetua <br/> agendamentos diretamente com os <br/>profissionais. <br/> <br/>Crie sua conta, utilize nossas <br/>ferramentas e divulgue seu negócio!</p>
                         <button className="primarybtn">Começar</button>
-
                     </div>
             </div>
 
