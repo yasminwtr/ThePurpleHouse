@@ -133,7 +133,7 @@ header.active{
 /*--------------header----------------*/
 
 /*--------------home----------------*/
-.left,.right{
+/* .left,.right{
   width: 50%;
   position: relative;
 }
@@ -191,13 +191,13 @@ button{
   color: #fff;
 }
 .primarybtn:hover{
-  /* background-color: #D1BAF9;
+  background-color: #D1BAF9;
   color: #8058C4;
-  font-size: 16px; */
+  font-size: 16px;
   background: #8058C4;
   border: 3px solid #8058C4;
   box-shadow: 0 13px 27px 0  rgba(102, 23, 117, 0.712);
-}
+} */
 
 /*--------------home----------------*/
 

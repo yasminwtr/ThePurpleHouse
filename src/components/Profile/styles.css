@@ -24,7 +24,7 @@ body {
 
 .allProfile{
     display: flex;
-    margin-top: 4%;
+    margin: 4% 0 5% 0;
 }
 
 .containerProfile{
@@ -113,6 +113,7 @@ body {
     border-radius: 32px;
     padding: 30px;
     margin-right: 10%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 #optionsTitle{
@@ -127,6 +128,7 @@ body {
     margin-block-end: 0.5em;
     font-size: 16px;
     font-family: Inter-Regular;
+    cursor: pointer;
 }
 
 #optionsLogout{
@@ -135,3 +137,90 @@ body {
     font-size: 17px;
     font-family: Inter-Regular;
 }
+
+/* modals */
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+.modal-dialog{
+    font-family: Inter-Regular !important;
+}
+
+/* my avaliations modal */
+.feedAvaliationsModal{
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.feedAvaliationsModal::-webkit-scrollbar {
+    width: 1vw;
+}
+
+.feedAvaliationsModal::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+.feedAvaliationsModal::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
+    border: 0.34vw solid #ffffff;
+    border-radius: 5vw;
+}
+
+.individualAvaliationModal{
+    width: 96%;
+}
+
+.blockAvaliationModal{
+    display: flex;
+}
+
+.part1AvaliationModal{
+    width: 10%;
+    margin: 0 2% 2% 0;
+}
+
+#iconAvaliationModal{
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+}
+
+#nameAvaliationModal{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    font-size: 16px;
+    font-family: Inter-Medium;
+}
+
+#textAvaliationModal{
+    text-align: justify;
+    font-size: 16px;
+    font-family: Inter-Regular;
+    margin-block-end: 1.8em;  
+}
+
+/* cancel service */
+
+.categoryButton{
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    color: #000;
+    padding: 14px 10px 14px 10px;
+    width: 100%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    border: 1px solid #e0dde6;
+}
+
+.categoryButton:hover{
+    background-color: #e9e9e9;
+    color: #000;
+} 

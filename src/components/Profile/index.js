@@ -1,6 +1,11 @@
 import React from 'react';
 import './styles.css'
-import email from './email.png'
+// import email from './email.png'
+
+import EditAccount from './Modal/EditAccount'
+import DeleteAccount from './Modal/DeleteAccount'
+import Avaliations from './Modal/Avaliations'
+import CancelService from './Modal/CancelService'
 
 const Profile = () => {
     return(
@@ -13,7 +18,8 @@ const Profile = () => {
 
                 <div className='part2Profile'>
                     <div className='info1Profile'>
-                        <img src={email} alt="emailIcon" id='iconsProfile'/><p id='titleProfile'>E-mail</p>
+                        {/* <img src={email} alt="emailIcon" id='iconsProfile'/> */}
+                        <p id='titleProfile'>E-mail</p>
                         <p id='textProfile'>mariosilva@gmail.com</p>
 
                         <p id='titleProfile'>Telefone</p>
@@ -33,15 +39,15 @@ const Profile = () => {
             <div className='containerConfig'>
                 <div className='optionsConfig'>
                     <p id='optionsTitle'>Configurações</p>
-                    <p id='optionsText'>Editar conta</p>
-                    <p id='optionsText'>Excluir conta</p>
+                    <EditAccount/>
+                    <DeleteAccount/>
                 </div>
 
                 <div className='optionsConfig'>
                     <p id='optionsTitle'>Serviços</p>
-                    <p id='optionsText'>Serviços avaliados</p>
+                    <Avaliations/>
                     <p id='optionsText'>Anunciar um serviço</p>
-                    <p id='optionsText'>Cancelar serviço</p>
+                    <CancelService/>
                 </div>
 
                 <p id='optionsLogout'>Sair</p>
