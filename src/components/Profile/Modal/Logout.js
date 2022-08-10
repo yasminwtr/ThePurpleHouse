@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-const CancelService = (props) => {
+const Logout = (props) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -14,7 +14,7 @@ const CancelService = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}>Cancelar serviço</p>
+          <p id='optionsLogout' onClick={handleShow}>Sair</p>
 
           <Modal
           show={show}
@@ -25,23 +25,16 @@ const CancelService = (props) => {
           >
 
             <Modal.Header closeButton>
-              <Modal.Title>Cancelar serviço</Modal.Title>
+              <Modal.Title>Sair da conta</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Ao cancelar um serviço o seu perfil na categoria específica vai ser excluído.</p>
-
-                <Form.Select autoFocus>
-                  <option>Selecione um serviço</option>
-                  <option value="1">Eletricista</option>
-                  <option value="2">Jardineiro</option>
-                  <option value="3">Babá</option>
-                </Form.Select>          
+                <p>Você tem certeza de que gostaria de sair da conta?</p>      
             </Modal.Body>
 
             <Modal.Footer>
               <Button variant="danger" onClick={handleClose}>
-                Cancelar serviço
+                Sair
               </Button>
             </Modal.Footer>
           </Modal> 
@@ -49,4 +42,4 @@ const CancelService = (props) => {
     )
 }
 
-export default CancelService; 
+export default Logout; 

@@ -37,6 +37,7 @@ const EditAccount = (props) => {
                             type="email"
                             placeholder="nome@exemplo.com"
                             autoFocus
+                            maxLength={45}
                         />
                     </Form.Group>
 
@@ -46,7 +47,7 @@ const EditAccount = (props) => {
                         <Form.Control
                             type="number"
                             placeholder="48991400821"
-                            autoFocus
+                            maxLength={11}
                         />
                     </Form.Group>
 
@@ -56,7 +57,7 @@ const EditAccount = (props) => {
                         <Form.Control
                             type="password"
                             placeholder="******"
-                            autoFocus
+                            maxLength={25}
                         />
                     </Form.Group>
 
@@ -66,7 +67,7 @@ const EditAccount = (props) => {
                         <Form.Control
                             type="password"
                             placeholder="******"
-                            autoFocus
+                            maxLength={25}
                         />
                     </Form.Group>
                 </Form>

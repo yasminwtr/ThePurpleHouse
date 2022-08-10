@@ -22,6 +22,24 @@ body {
   margin: auto;
 }
 
+/* scrollbar body */
+
+body::-webkit-scrollbar {
+    width: 1vw;
+}
+  
+body::-webkit-scrollbar-track {
+    background-color: #F5F0FE;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #A58AD2;
+    border: 0.3vw solid #F5F0FE;
+    border-radius: 5vw;
+}
+
+/* profile */
+
 .allProfile{
     display: flex;
     margin: 4% 0 5% 0;
@@ -131,11 +149,16 @@ body {
     cursor: pointer;
 }
 
+#optionsText:hover, #optionsLogout:hover{
+    color: #675880;
+}
+
 #optionsLogout{
     margin-block-start: 5em;
     margin-block-end: 0em;
     font-size: 17px;
     font-family: Inter-Regular;
+    cursor: pointer;
 }
 
 /* modals */
@@ -153,7 +176,16 @@ input[type=number] {
     font-family: Inter-Regular !important;
 }
 
-/* my avaliations modal */
+textarea{
+    resize: none !important;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0 !important;
+    border-color: #6c757d !important;
+} 
+
+/* my avaliations */
 .feedAvaliationsModal{
     min-height: 300px;
     max-height: 300px;
@@ -224,3 +256,23 @@ input[type=number] {
     background-color: #e9e9e9;
     color: #000;
 } 
+
+/* announce service */
+
+#localizationLabel{
+    margin: .5rem 0 .02rem 0 !important;
+}
+
+.modal::-webkit-scrollbar {
+    width: 1vw;
+}
+  
+.modal::-webkit-scrollbar-track {
+    background-color: #F5F0FE;
+}
+  
+.modal::-webkit-scrollbar-thumb {
+    background-color: #A58AD2;
+    border: 0.3vw solid #F5F0FE;
+    border-radius: 5vw;
+}

@@ -38,6 +38,7 @@ const DeleteAccount = (props) => {
                             type="password"
                             placeholder="******"
                             autoFocus
+                            maxLength={25}
                         />
                     </Form.Group>
                 </Form></Modal.Body>
