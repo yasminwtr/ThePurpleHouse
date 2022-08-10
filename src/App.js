@@ -2,7 +2,7 @@
 // import './App.css';
 import '../src/components/Home/styles.css'
 
-import Home from './components/Home/homes/Home'
+// import Home from './components/Home/homes/Home'
 
 // import Categories from './components/Categories'
 
@@ -15,7 +15,7 @@ import Home from './components/Home/homes/Home'
 import Header from './components/Home/header/Header'
 import Footer from './components/Home/footer/Footer'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-// import HomePage from './components/PageConent/HomePages';
+import HomePage from './components/PageConent/HomePages';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     <Router>
       <Header/>
       <Switch>
-        <Route path="/" exact  component={Home}/>
+        <Route path="/" exact  component={HomePage}/>
       </Switch>
       <Footer/>
     </Router>

@@ -14,10 +14,10 @@ import logo from '../../assets/logo.png'
 // import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 import person from '../../assets/person.png'
-import star from '../../assets/star.png'
-import exit from '../../assets/exit.png'
 
 
 const Header = () => {
@@ -28,6 +28,12 @@ const Header = () => {
     header.classList.toggle("active", this.window.screenY > 200)
   })
 
+
+
+  const items = ["banana", "apple", "orange", "pear", "grape", "berry"];
+  const [showDropdown, setShowDropdown] = useState(false);
+
+
   return (
     <>
       <header className="header">
@@ -37,25 +43,17 @@ const Header = () => {
           </div>
           <div className="nav">
             <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
-              <li>
-                <div>
-                  {[DropdownButton].map((DropdownType, idx) => (
-                    <DropdownType className='dropdownType'
-                      as={ButtonGroup}
-                      key={idx}
-                      id={`dropdown-button-drop-${idx}`}
-                      size="md"
-                      title="Meu perfil"
-                    >
-                      <Dropdown.ItemText className='img-Dropdown' eventKey="1"><img width={100} src={person} /></Dropdown.ItemText>
-                      <Dropdown.ItemText className='dropdown-ItemText'>Mario Silvo</Dropdown.ItemText>
-                      <Dropdown.Divider />
-                      <Dropdown.Item className='dropdown-ItemText' eventKey="2"><img width={20} src={star} />Ver perfil</Dropdown.Item>
-                      <Dropdown.Item className='dropdown-ItemText' eventKey="4"><img width={20} src={exit} />Sair</Dropdown.Item>
-                    </DropdownType>
-                  ))}
-                </div>
-              </li>
+              <div className="dropdown-wrapper">
+                <button onClick={setShowDropdown} className="trigger-button">
+                  Meu perfil
+                </button>
+                <ul id='showDropdown' className={showDropdown ? "active" : ""}>
+                  <Dropdown.ItemText className='img-dropdown' eventKey="1"><img width={100} src={person} /></Dropdown.ItemText>
+                  <Dropdown.ItemText className='dropdown-Item1'>Mario Silvo</Dropdown.ItemText>
+                  <Dropdown.Item className='dropdown-Item2' eventKey="2"><img width={20}/><StarRoundedIcon/>Ver Perfil</Dropdown.Item>
+                  <Dropdown.Item className='dropdown-Item2' eventKey="4"><img width={20}/><LogoutRoundedIcon/>Sair</Dropdown.Item>
+                </ul>
+              </div>
 
               <li><Link to=''>Inicial</Link> </li>
               <li><Link to='/quemsomos'>Quem somos</Link> </li>
@@ -71,6 +69,11 @@ const Header = () => {
           </button>
         </div>
       </header>
+
+
+
+
+
     </>
   )
 }
