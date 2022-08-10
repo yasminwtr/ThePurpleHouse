@@ -228,3 +228,43 @@ text-decoration:none;
 footer ul li a:hover{
 color: #655A78;
 }
+
+.openProfile {
+border: none;
+}
+
+.btn-primary {
+background-color: transparent !important;
+border-color: transparent !important;
+}
+
+.dropdown-ItemText {
+text-align: center;
+color: #fff !important;
+}
+
+.dropdown-menu.show {
+background-color: #A58AD2 !important ;
+border: none;
+width: 300px !important;
+box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+border-radius: 0px 0px 20px 20px;
+}
+
+
+
+/* .dropdownType.show:hover{
+  transition-timing-function: ease-out;
+transition: 1.0s;  
+}
+.dropdownType.show:checked{
+transform: scaleY(1.1);
+  transition-timing-function: ease-out;
+
+} */
+
+.img-Dropdown{
+margin-left: 85px; 
+/* ñ consegui sem margin :( */
+}
+
