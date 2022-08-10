@@ -10,6 +10,9 @@ import escolha from '../../assets/selecao.png'
 import negocie from '../../assets/chat.png'
 import avaliacao from '../../assets/avaliacao.png'
 
+import { Link } from "react-router-dom";
+
+
 import './styles.css'
 const Home =() =>{
     return (
@@ -24,7 +27,7 @@ const Home =() =>{
           <p className="pHome">
           Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!
           </p>
-          <a href="#" className="buttonHome">COMEÇAR</a>
+          <a href="#" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a>
         </div>
 
       </div>

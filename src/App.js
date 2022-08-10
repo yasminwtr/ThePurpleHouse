@@ -17,20 +17,12 @@ import Footer from './components/Home/footer/Footer'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import HomePage from './components/PageConent/HomePages';
 
+import Routes from './components/routes';
+
 
 function App() {
   return (
-    <Router>
-      <Header/>
-      <Switch>
-<<<<<<< HEAD
-        <Route path="/" exact  component={HomePage}/>
-=======
-        <Route path="/" exact  component={Profile}/>
->>>>>>> 650b88325e14dfb716fae1a6cbf86587492deb6a
-      </Switch>
-      <Footer/>
-    </Router>
+    <Routes/>
   );
 }
 

@@ -50,17 +50,17 @@ const Header = () => {
                 <ul id='showDropdown' className={showDropdown ? "active" : ""}>
                   <Dropdown.ItemText className='img-dropdown' eventKey="1"><img width={100} src={person} /></Dropdown.ItemText>
                   <Dropdown.ItemText className='dropdown-Item1'>Mario Silvo</Dropdown.ItemText>
-                  <Dropdown.Item className='dropdown-Item2' eventKey="2"><img width={20}/><StarRoundedIcon/>Ver Perfil</Dropdown.Item>
-                  <Dropdown.Item className='dropdown-Item2' eventKey="4"><img width={20}/><LogoutRoundedIcon/>Sair</Dropdown.Item>
+                  <Dropdown.Item className='dropdown-Item2' eventKey="2"><img width={20} /><StarRoundedIcon /><Link to='/Profile'>Ver Perfil</Link></Dropdown.Item>
+                  <Dropdown.Item className='dropdown-Item2' eventKey="4"><img width={20} /><LogoutRoundedIcon />Sair</Dropdown.Item>
                 </ul>
               </div>
 
-              <li><Link to=''>Inicial</Link> </li>
-              <li><Link to='/quemsomos'>Quem somos</Link> </li>
+              <li><Link to='/'>Inicial</Link> </li>
+              <li><Link to='/QuemSomos'>Quem somos</Link> </li>
               <li className="icon">
                 {/* <SearchIcon className="HeaderIcon"/>
                              <KeyboardArrowRightIcon className="HeaderIcon"/> */}
-                <button className="button">Entrar</button>
+                <button className="button"><Link to='/Cadastro'>Entrar</Link></button>
               </li>
             </ul>
           </div>
