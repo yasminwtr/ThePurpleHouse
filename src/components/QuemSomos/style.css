@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.QuemS{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+}
+.Quem-text{
+  max-width: 37rem;
+}
+.Quem-text .text-h1{
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 4rem;
+  font-family: sans-serif;
+
+}
+.Quem-text p{
+  color: #000;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    line-height: 1.5rem;
+    margin: 10px 0px 0px;
+}
+
+.imgQuemS {
+  width: 550px;
+  margin-left: 36px;
+
+}
+/* -----------Oq Queremos--------------- */
+.ContainerText{
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 0.4% ;
+}
+.texts-quemSomos{
+  padding: 20px;
+  background-color: #DBDBDB;
+  color: #000;;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 4% ;
+  box-shadow: 0 7px 7px 0  #B3B3B3;
+  }
+
+  .ContainerText button{
+    padding: 10PX 35PX;
+    border: none ;
+    background-color: #A16FF7;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* border-color:#695cdd ;
+    border-width: 2px;
+    border-style: solid; */
+    transition: all 0.5s;
+
+  }
+  .ContainerText button:hover{
+   background-color: #8058C4;
+   border: none;
+   /* border-color:#77A3D4 ;
+   border-width: 2px;
+   border-style: solid; */
+   color: #fff;
+   font-size: 1.2rem;
+   font-weight: 500;
+   box-shadow: 0 10px 17px 0 #7E57C2;
+
+
+  }
+  .ContainerText p{
+    color: #000;
+      font-size: 1.1rem;
+      font-family: sans-serif;
+      line-height: 1.5rem;
+      margin: 10px 0px 0px;
+  }
+  .texts-quemSomos .text-h1-quem{
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    font-family: sans-serif;
+  }
+
+/* ------------Oq Queremos-------------- */
+/* --------------responsividade---------------- */
+
+@media (max-width:965px){
+  .QuemS{
+    padding: 100px 2%;
+    height: 70%;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    gap: 5rem;
+  }
+  .Quem-text .text-h1{
+    font-size: 3rem;
+  }
+  .imgQuemS {
+    width: 70%;
+  
+  }
+  .Quem-text{
+    padding:10px 7% ;
+  }
+  .Quem-text p{
+    color: #000;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    line-height: 2rem;
+    margin: 10px 0px 0px;
+  }
+}
+
+/* ---------------------------- */
+@media (max-width:785px){
+  .ContainerText{
+    padding: 20px 2%;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    gap: 5rem;
+  }
+  .texts-quemSomos .text-h1-quem{
+    font-size: 1.5rem;
+  }
+  
+}
+/* --------------responsividade---------------- */
