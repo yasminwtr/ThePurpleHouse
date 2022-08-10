@@ -9,6 +9,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 
+import AnnounceIcon from '@mui/icons-material/CampaignRounded'
+
 const AnnounceService = (props) => {
     const [show, setShow] = useState(false);
 
@@ -17,7 +19,7 @@ const AnnounceService = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}>Anunciar um serviço</p>
+          <p id='optionsText' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22 }}/> Anunciar serviço</p>
 
           <Modal
           show={show}
@@ -28,7 +30,7 @@ const AnnounceService = (props) => {
           >
 
             <Modal.Header closeButton>
-              <Modal.Title>Anunciar um serviço</Modal.Title>
+              <Modal.Title>Anunciar serviço</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
@@ -46,16 +48,17 @@ const AnnounceService = (props) => {
 
                     <Form.Group className="mb-3">
                         <Form.Label>Descreva mais sobre os serviços que você faz!</Form.Label>
+
                         <Form.Control
                         as="textarea"
                         rows={6}
                         maxLength={300}/>
                     </Form.Group>
 
-                    <Row className="g-2 mb-3">
+                    <Row className="g-2 mb-3 rowLocalization">
                         <Form.Label id='localizationLabel'>Selecione a localização em que você atua</Form.Label>
 
-                        <Col md>
+                        <Col md={3}>
                             <Form.Select>
                                 <option>Estado</option>
                                 <option value="1">SC</option>

@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
+import DeleteAccountIcon from '@mui/icons-material/DeleteForeverRounded'
+
 const DeleteAccount = (props) => {
     const [show, setShow] = useState(false);
 
@@ -14,7 +16,7 @@ const DeleteAccount = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}>Excluir conta</p>
+          <p id='optionsText' onClick={handleShow}><DeleteAccountIcon sx={{ fontSize: 22 }}/> Excluir conta</p>
 
           <Modal
           show={show}

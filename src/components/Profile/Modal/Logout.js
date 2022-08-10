@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
+import LogoutIcon from '@mui/icons-material/ExitToAppRounded'
+
 const Logout = (props) => {
     const [show, setShow] = useState(false);
 
@@ -14,7 +16,7 @@ const Logout = (props) => {
 
     return(
         <div>
-          <p id='optionsLogout' onClick={handleShow}>Sair</p>
+          <p id='optionsLogout' onClick={handleShow}><LogoutIcon sx={{ fontSize: 22 }}/> Sair</p>
 
           <Modal
           show={show}

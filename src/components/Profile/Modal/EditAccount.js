@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
+import EditIcon from '@mui/icons-material/EditRounded'
+
 const EditAccount = (props) => {
     const [show, setShow] = useState(false);
 
@@ -14,7 +16,7 @@ const EditAccount = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}>Editar conta</p>
+          <p id='optionsText' onClick={handleShow}><EditIcon sx={{ fontSize: 20 }}/> Editar conta</p>
 
           <Modal
           show={show}

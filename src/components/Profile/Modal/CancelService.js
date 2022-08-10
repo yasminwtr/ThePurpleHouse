@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
+import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
+
 const CancelService = (props) => {
     const [show, setShow] = useState(false);
 
@@ -14,7 +16,7 @@ const CancelService = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}>Cancelar serviço</p>
+          <p id='optionsText' onClick={handleShow}><CancelServiceIcon sx={{ fontSize: 20 }}/> Cancelar serviço</p>
 
           <Modal
           show={show}

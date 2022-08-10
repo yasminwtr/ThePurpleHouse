@@ -1,6 +1,8 @@
-import React from 'react';
+import React from 'react'
 import './styles.css'
-// import email from './email.png'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import EditAccount from './Modal/EditAccount'
 import DeleteAccount from './Modal/DeleteAccount'
@@ -8,6 +10,11 @@ import Avaliations from './Modal/Avaliations'
 import AnnounceService from './Modal/AnnounceService'
 import CancelService from './Modal/CancelService'
 import Logout from './Modal/Logout'
+
+import EmailIcon from '@mui/icons-material/EmailRounded'
+import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
+import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
+import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 
 const Profile = () => {
     return(
@@ -18,24 +25,23 @@ const Profile = () => {
                     <p id='nameProfile'>Mario Silvo</p>
                 </div>
 
-                <div className='part2Profile'>
-                    <div className='info1Profile'>
-                        {/* <img src={email} alt="emailIcon" id='iconsProfile'/> */}
-                        <p id='titleProfile'>E-mail</p>
+                <Row className="part2Profile">
+                    <Col md>
+                        <p id='titleProfile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
                         <p id='textProfile'>mariosilva@gmail.com</p>
 
-                        <p id='titleProfile'>Telefone</p>
+                        <p id='titleProfile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
                         <p id='textProfile'>(48) 99160-1340</p>
 
-                        <p id='titleProfile'>Data de nascimento</p>
+                        <p id='titleProfile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
                         <p id='textProfile'>18/02/2004</p>
-                    </div>
+                    </Col>
 
-                    <div className='info2Profile'>
-                        <p id='serviceTitleProfile'>Serviços anunciados</p>
+                    <Col md={4}>
+                        <p id='serviceTitleProfile'><ServiceIcon sx={{ fontSize: 22 }}/> Serviços anunciados</p>
                         <p id='serviceTextProfile'>Jardineiro</p>
-                    </div>
-                </div>
+                    </Col>
+                </Row>   
             </div>
 
             <div className='containerConfig'>

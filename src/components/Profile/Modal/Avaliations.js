@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+import AvaliationIcon from '@mui/icons-material/StarRounded'
+
 const Avaliations = (props) => {
     const [show, setShow] = useState(false);
 
@@ -13,7 +15,7 @@ const Avaliations = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}>Serviços avaliados</p>
+          <p id='optionsText' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 22 }}/> Serviços avaliados</p>
 
           <Modal
           show={show}
