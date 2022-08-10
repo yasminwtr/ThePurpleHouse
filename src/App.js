@@ -9,7 +9,7 @@ import '../src/components/Home/styles.css'
 // import Login from './components/Login'
 // import Cadastro from './components/Cadastro'
 
-// import Profile from './components/Profile'
+import Profile from './components/Profile'
 // import WorkerProfile from './components/WorkerProfile'
 
 import Header from './components/Home/header/Header'
@@ -23,7 +23,11 @@ function App() {
     <Router>
       <Header/>
       <Switch>
+<<<<<<< HEAD
         <Route path="/" exact  component={HomePage}/>
+=======
+        <Route path="/" exact  component={Profile}/>
+>>>>>>> 650b88325e14dfb716fae1a6cbf86587492deb6a
       </Switch>
       <Footer/>
     </Router>

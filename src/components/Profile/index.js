@@ -5,7 +5,9 @@ import './styles.css'
 import EditAccount from './Modal/EditAccount'
 import DeleteAccount from './Modal/DeleteAccount'
 import Avaliations from './Modal/Avaliations'
+import AnnounceService from './Modal/AnnounceService'
 import CancelService from './Modal/CancelService'
+import Logout from './Modal/Logout'
 
 const Profile = () => {
     return(
@@ -46,11 +48,11 @@ const Profile = () => {
                 <div className='optionsConfig'>
                     <p id='optionsTitle'>Serviços</p>
                     <Avaliations/>
-                    <p id='optionsText'>Anunciar um serviço</p>
+                    <AnnounceService/>
                     <CancelService/>
                 </div>
 
-                <p id='optionsLogout'>Sair</p>
+                <Logout/>
             </div>
         </div>
     )
