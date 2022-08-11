@@ -5,14 +5,15 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import person from '../assets/person.png'
 import "./styles.css"
+import CloseIcon from '@mui/icons-material/Close';
 
 const DropdownProfile = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
     <>
-      <div className="dropdown-wrapper">
-        <button onClick={setShowDropdown} className="trigger-button">
-          Meu perfil
+      <div className="dropdown-wrapper" >
+        <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>
+          {showDropdown ? <CloseIcon /> : <a>Meu Perfil</a>}
         </button>
         <ul id='showDropdown' className={showDropdown ? "active" : ""}>
           <Dropdown.ItemText className='img-dropdown' eventKey="1">

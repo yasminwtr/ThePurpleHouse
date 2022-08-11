@@ -49,6 +49,8 @@
   display: flex;
   align-items: center;
   z-index: 1;
+  display: none;
+
 }
 
 #showDropdown {
@@ -80,4 +82,18 @@
   font-size: 19px;
   cursor: pointer;
   z-index: 1;
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) { 
+  .trigger-button {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .trigger-button {
+    display: none;
+    visibility: hidden;
+  }
 }
