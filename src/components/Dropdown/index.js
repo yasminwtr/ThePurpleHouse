@@ -10,7 +10,7 @@ const DropdownProfile = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
     <>
-      <div className="dropdown-wrapper">
+      <ul className="dropdown-wrapper">
         <button onClick={setShowDropdown} className="trigger-button">
           Meu perfil
         </button>
@@ -33,7 +33,7 @@ const DropdownProfile = () => {
             Sair
           </Dropdown.Item>
         </ul>
-      </div>
+      </ul>
     </>
   )
 }
