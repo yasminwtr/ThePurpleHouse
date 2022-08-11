@@ -17,21 +17,18 @@ import './styles.css'
 const Home =() =>{
     return (
         <>
-<section className="hero">
-      <div className="container">
-      <img src={landing}alt="" className="img"/>
-        <div>
-          <h2 className="h2Home">
-          Contrate prestadores para sua casa!
-          </h2>
-          <p className="pHome">
-          Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!
-          </p>
-          <a href="#" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a>
-        </div>
+<section className="QuemS">
+<div className="Quem-img">
+                <img src={landing} alt='quemsomos' className="imgQuemS"/>
+            </div>
+            <div className="Quem-text">
+                <h1 className="text-h1">Contrate prestadores para sua casa!</h1>
+                <p> Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!</p>
+                <a href="/Cadastro" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a>
+            </div>
 
-      </div>
-    </section>
+           
+        </section>
     
 
 
