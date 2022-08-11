@@ -10,7 +10,7 @@ import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 
-const Profile = () => {
+const WorkerProfile = () => {
     return(  
         <div className='allWorkerProfile'>
             <div className='containerWorkerProfile'>
@@ -156,4 +156,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default WorkerProfile;
