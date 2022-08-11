@@ -84,7 +84,7 @@ const Home =() =>{
      </div>
     </div>
         <section className="ContainerButtonHomeS">
-            <button>VER MAIS</button>
+            <button className="seeMoreButton">VER MAIS</button>
         </section>
     </section>  
 

@@ -144,7 +144,7 @@
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-   
+
   }
   .titleServices h2{
         color: #655A78;
@@ -166,10 +166,10 @@
         overflow: hidden;
         text-align: center;
     }
-  
- 
+
+
 .cardS .imgEletricista{
-	
+
 	text-align: center;
 	margin: 15px 0px;
 
@@ -212,19 +212,19 @@
     font-family: sans-serif;
     font-weight: 500;
     width: 20%;
-    margin: auto; 
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
 }
-button:hover{
+.seeMoreButton:hover{
     background-color: #8058C4;
     border: none;
     color: #fff;
     cursor: pointer;
     box-shadow: 0 10px 17px 0 #7E57C2;
-    
+
 }
 
 /* -----------Como Funciona styles-------------- */
@@ -277,13 +277,13 @@ button:hover{
             overflow: hidden;
             text-align: center;
         }
-      
-     
+
+
     .cardS2 .imgEletricista2{
-        
+
         text-align: center;
         margin: 15px 0px;
-    
+
     }
     .imgEletricista2{
         width: 40%;
@@ -308,7 +308,7 @@ button:hover{
         line-height: 27px;
         margin-bottom: 25px;
     }
-    
+
     /* -----------Como Funciona styles-------------- */
     /* -------------serviços--------------- */
 
@@ -424,15 +424,15 @@ button:hover{
       padding: 0;
       margin: 0;
   }
-  
+
   .cards {
       display: block;
   }
-  
+
   .card {
       border-bottom: 1px solid;
   }
-  
+
   .text--medium {
       color: black;
-  } */ 
+  } */
