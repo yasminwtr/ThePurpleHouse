@@ -30,7 +30,9 @@ const DropdownProfile = () => {
           <Dropdown.Item className='dropdown-Item2' eventKey="4">
             <img width={20} />
             <LogoutRoundedIcon />
-            Sair
+            <Link to='/WorkerProfile'>
+              Perfil externo
+            </Link>
           </Dropdown.Item>
         </ul>
       </ul>

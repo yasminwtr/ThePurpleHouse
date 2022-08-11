@@ -38,13 +38,13 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5vw;
 }
 
-/* profile */
+/* worker profile */
 
-.allProfile{
+.allWorkerProfile{
     margin-top: 4%;
 }
 
-.containerProfile{
+.containerWorkerProfile{
     margin-top: 6%;
     width: 50%;
     margin: auto;
@@ -52,14 +52,14 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.part1Profile{
+.part1WorkerProfile{
     background-color: #A58AD2;
     text-align: center;
     border-radius: 32px 32px 0 0;
     padding: 10px;
 }
 
-.part2Profile{
+.part2WorkerProfile{
     border-color: #A58AD2;
     border-width: 2px;
     border-style: solid;
@@ -68,13 +68,13 @@ body::-webkit-scrollbar-thumb {
     padding-bottom: 15px;
 }
 
-#iconProfile{
+#iconWorkerProfile{
     width: 14%;
     height: 14%;
     margin-top: 2%;
 }
 
-#nameProfile{
+#nameWorkerProfile{
     font-size: 24px;
     margin-block-start: 0.2em;
     margin-block-end: 0em;
@@ -82,7 +82,7 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
-#categorieProfile{
+#categorieWorkerProfile{
     font-size: 18px;
     margin-block-start: -0.2em;
     margin-block-end: 0em;
@@ -90,7 +90,7 @@ body::-webkit-scrollbar-thumb {
     color: #F5F0FE; 
 }
 
-#starsProfile{
+#starsWorkerProfile{
     color: #FFC107;
     margin-block-start: 0em;
     margin-block-end: 0.9em;
@@ -107,18 +107,18 @@ body::-webkit-scrollbar-thumb {
     font-family: Inter-Medium;
 }
 
-#iconsProfile{
+#iconsWorkerProfile{
     width: 3%;
 }
 
-#titleProfile{
+#titleWorkerProfile{
     margin-block-start: 0em;
     margin-block-end: 0.1em;
     font-size: 16px;
     font-family: Inter-SemiBold;
 }
 
-#textProfile{
+#textWorkerProfile{
     margin-block-start: 0em;
     margin-block-end: 1.4em;
     font-size: 16px;
@@ -126,14 +126,14 @@ body::-webkit-scrollbar-thumb {
     text-align: justify;
 }
 
-#serviceTitleProfile{
+#serviceTitleWorkerProfile{
     margin-block-start: 0em;
     margin-block-end: 0.2em;
     font-size: 16px;
     font-family: Inter-SemiBold;
 }
 
-#serviceTextProfile{
+#serviceTextWorkerProfile{
     margin-block-start: 0em;
     margin-block-end: 2em;
     font-size: 16px;

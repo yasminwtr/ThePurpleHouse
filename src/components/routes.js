@@ -7,6 +7,7 @@ import Home from "./Home/homes/home";
 import QuemSomos from "./QuemSomos";
 import Cadastro from "./Cadastro/index"
 import Profile from "./Profile";
+import WorkerProfile from "./WorkerProfile";
 
 const Routes = () => {
   return (
@@ -16,6 +17,7 @@ const Routes = () => {
       <Route component={QuemSomos} path="/QuemSomos" exact />
       <Route component={Cadastro} path="/Cadastro" exact />
       <Route component={Profile} path="/Profile" exact />
+      <Route component={WorkerProfile} path="/WorkerProfile" exact />
       <Footer />
     </BrowserRouter>
   )

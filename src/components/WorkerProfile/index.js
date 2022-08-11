@@ -10,36 +10,36 @@ import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 
-const Profile = () => {
+const WorkerProfile = () => {
     return(  
-        <div className='allProfile'>
-            <div className='containerProfile'>
-                <div className='part1Profile'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconProfile' alt="Profile"/>
-                    <p id='nameProfile'>Mario Silvo</p>
-                    <p id='categorieProfile'>Jardineiro, 25 anos</p>
-                    <p id='starsProfile'><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p>
+        <div className='allWorkerProfile'>
+            <div className='containerWorkerProfile'>
+                <div className='part1WorkerProfile'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconWorkerProfile' alt="Profile"/>
+                    <p id='nameWorkerProfile'>Mario Silvo</p>
+                    <p id='categorieWorkerProfile'>Jardineiro, 25 anos</p>
+                    <p id='starsWorkerProfile'><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p>
                     <button className='messageButton'>Enviar mensagem</button>
                 </div>
 
-                <div className='part2Profile'>
-                        <p id='titleProfile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
-                        <p id='textProfile'>mariosilva@gmail.com</p>
+                <div className='part2WorkerProfile'>
+                        <p id='titleWorkerProfile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
+                        <p id='textWorkerProfile'>mariosilva@gmail.com</p>
 
-                        <p id='titleProfile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
-                        <p id='textProfile'>(48) 99160-1340</p>
+                        <p id='titleWorkerProfile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
+                        <p id='textWorkerProfile'>(48) 99160-1340</p>
 
-                        <p id='titleProfile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
-                        <p id='textProfile'>18/02/2004</p>
+                        <p id='titleWorkerProfile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
+                        <p id='textWorkerProfile'>18/02/2004</p>
 
-                        <p id='titleProfile'><LocationIcon sx={{ fontSize: 20 }}/> Localização</p>
-                        <p id='textProfile'>Florianópolis, Santa Catarina</p>
+                        <p id='titleWorkerProfile'><LocationIcon sx={{ fontSize: 20 }}/> Localização</p>
+                        <p id='textWorkerProfile'>Florianópolis, Santa Catarina</p>
 
-                        <p id='titleProfile'><PriceIcon sx={{ fontSize: 20 }}/> Preço médio dos serviços</p>
-                        <p id='textProfile'>R$ 40,97</p>
+                        <p id='titleWorkerProfile'><PriceIcon sx={{ fontSize: 20 }}/> Preço médio dos serviços</p>
+                        <p id='textWorkerProfile'>R$ 40,97</p>
 
-                        <p id='titleProfile'><DescriptionIcon sx={{ fontSize: 20 }}/> Descrição</p>
-                        <p id='textProfile'>Preparar, conservar e limpar jardins, compreendendo: capina, corte, replantio, adubação periódica, irrigação, varredura, pulverização simples e polvilhamento. Preparar as sementes. Fazer a repicagem e o transplante das mudas, incluindo desmate, transporte e embalagem. Atendo residências e comércios.</p>
+                        <p id='titleWorkerProfile'><DescriptionIcon sx={{ fontSize: 20 }}/> Descrição</p>
+                        <p id='textWorkerProfile'>Preparar, conservar e limpar jardins, compreendendo: capina, corte, replantio, adubação periódica, irrigação, varredura, pulverização simples e polvilhamento. Preparar as sementes. Fazer a repicagem e o transplante das mudas, incluindo desmate, transporte e embalagem. Atendo residências e comércios.</p>
                 </div>
             </div>
 
@@ -156,4 +156,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default WorkerProfile;
