@@ -23,9 +23,10 @@ const Header = () => {
             <img src={logo} width={40} alt="logo" />
           </div>
           <div className="nav">
+            <DropdownProfile />
             <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
-              <DropdownProfile />
               <li><Link to='/'>Inicial</Link> </li>
+              <li className='li-link'><Link to='/Profile'>Meu Perfil</Link> </li>
               <li><Link to='/QuemSomos'>Quem somos</Link> </li>
               <li className="icon">
                 {/* <SearchIcon className="HeaderIcon"/>
