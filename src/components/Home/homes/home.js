@@ -26,9 +26,7 @@ const Home =() =>{
                 <p> Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!</p>
                 <a href="/Cadastro" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a>
             </div>
-
-           
-        </section>
+</section>
     
 
 
