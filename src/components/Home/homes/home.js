@@ -17,12 +17,12 @@ import './styles.css'
 const Home =() =>{
     return (
         <>
-<section className="QuemS">
+<section className="container-Home">
 <div className="Quem-img">
-                <img src={landing} alt='quemsomos' className="imgQuemS"/>
+                <img src={landing} alt='quemsomos' className="img-landingPage"/>
             </div>
-            <div className="Quem-text">
-                <h1 className="text-h1">Contrate prestadores para sua casa!</h1>
+            <div className="Title-home">
+                <h1 className="text-h1-home">Contrate prestadores para sua casa!</h1>
                 <p> Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!</p>
                 <a href="/Cadastro" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a>
             </div>
