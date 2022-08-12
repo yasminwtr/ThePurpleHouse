@@ -1,7 +1,12 @@
 import React from 'react'
 import './style.css'
 import logo from '../assets/logo.png'
-import {AiOutlineUser} from 'react-icons/ai'
+import { FaUser } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import { BsFillTelephoneFill } from 'react-icons/bs'
+import { GiPadlock } from 'react-icons/gi'
+import { AiFillEye } from 'react-icons/ai'
+import { AiFillEyeInvisible } from 'react-icons/ai'
 
 
 function Cadastro() {
@@ -16,7 +21,10 @@ function Cadastro() {
                         <h1 className='h1-cadastro'>Crie sua conta!</h1>
                     </div>
                     <div className='form-cadastro'>
-                        <input className='input-cadastro' type={'text'} placeholder='Nome completo'/> 
+                        <div className='icon-cadastro'>
+                            {/* <i><FaUser className='i-cadastro'/></i> */}
+                            <input className='input-cadastro' type={'text'} placeholder='Nome completo' />
+                        </div>
                         <input className='input-cadastro' type={'email'} placeholder='E-mail' />
                         <input className='input-cadastro' type={'tel'} placeholder='Numero Celular' />
                         <input className='input-cadastro' type={'date'} placeholder='Data de Nascimento' />

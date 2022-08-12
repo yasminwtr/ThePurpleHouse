@@ -54,12 +54,16 @@
     box-shadow: 0px 4px 5px #c8bae5;
 }
 
+/* .i-cadastro{
+    font-size: 23px;
+} */
+
 .input-cadastro:hover{
-    border: 1px solid #9472ce;
+    border: 1px solid #9472ce8f;
 }
 
 .input-cadastro:focus{
-    border: 1px solid #9472ce;
+    border: none;
 }
 
 .input-cadastro::placeholder{
