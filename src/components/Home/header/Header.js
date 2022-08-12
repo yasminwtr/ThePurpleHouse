@@ -26,6 +26,7 @@ const Header = () => {
             <DropdownProfile />
             <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
               <li><Link to='/'>Inicial</Link> </li>
+              <li><Link to='/Categories'>Categorias</Link> </li>
               <li className='li-link'><Link to='/Profile'>Meu Perfil</Link> </li>
               <li><Link to='/QuemSomos'>Quem somos</Link> </li>
               <li><Link to='/Chat'>Mensagens</Link> </li>

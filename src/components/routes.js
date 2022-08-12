@@ -9,6 +9,7 @@ import Cadastro from "./Cadastro/index"
 import Profile from "./Profile";
 import WorkerProfile from "./WorkerProfile";
 import Chat from './Chat'
+import Categories from "./Categories";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route component={Profile} path="/Profile" exact />
       <Route component={WorkerProfile} path="/WorkerProfile" exact />
       <Route component={Chat} path="/Chat" exact />
+      <Route component={Categories} path="/Categories" exact />
       <Footer />
     </BrowserRouter>
   )
