@@ -37,8 +37,11 @@
 .dropdown-wrapper {
   position: absolute;
   width: 10px;
-  top: 27px;
-  left: 60%;
+  top: 20px;
+  left: 18%;
+  align-self: center;
+  margin-top: 8px;
+  margin-right: 45px;
 }
 
 .dropdown-wrapper .dropdown {
