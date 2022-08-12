@@ -1,0 +1,75 @@
+body {
+    margin: auto;
+}
+
+.allChat{
+    display: flex;
+    margin: 4% 0 5% 0;
+}
+
+.containerChat{
+    margin-top: 6%;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    max-height: 500px;
+}
+
+.headerChat{
+    display: flex;
+    background-color: #A58AD2;
+    border-radius: 32px 32px 20px 20px;
+    padding: 10px;
+}
+
+#iconIndividualChat{
+    width: 8%;
+    height: 8%;  
+    margin-left: 4%;
+}
+
+#nameAccount{
+    font-family: Inter-Medium;
+    margin: auto 10px auto;
+    font-size: 22px;
+    color: #fff;
+}
+
+.messagesChat{
+    padding: 30px 40px 20px 40px;
+    font-family: Inter-Regular;
+    font-size: 16px;
+}
+
+#leftMessage{
+    background-color: rgb(248, 248, 248);
+    max-width: 50%;
+    border-radius: 20px 20px 20px 0px;
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+#rightMessage{
+    background-color: #d5cce4;
+    max-width: 50%;
+    border-radius: 20px 0 20px 20px;
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+    margin-left: auto; /* sei q é margin, mas testei e fica responsivo pq é auto */
+}
+
+.typeMessage{
+    padding: 20px;
+    font-family: Inter-Regular;
+    background-color: #A58AD2;
+    border-radius: 20px 20px 32px 32px;
+}
+
+.typeMessage::placeholder{
+    color: #fff;
+}

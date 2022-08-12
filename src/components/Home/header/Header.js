@@ -28,6 +28,7 @@ const Header = () => {
               <li><Link to='/'>Inicial</Link> </li>
               <li className='li-link'><Link to='/Profile'>Meu Perfil</Link> </li>
               <li><Link to='/QuemSomos'>Quem somos</Link> </li>
+              <li><Link to='/Chat'>Mensagens</Link> </li>
               <li className="icon">
                 {/* <SearchIcon className="HeaderIcon"/>
                              <KeyboardArrowRightIcon className="HeaderIcon"/> */}

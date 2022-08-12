@@ -8,6 +8,7 @@ import QuemSomos from "./QuemSomos";
 import Cadastro from "./Cadastro/index"
 import Profile from "./Profile";
 import WorkerProfile from "./WorkerProfile";
+import Chat from './Chat'
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
       <Route component={Cadastro} path="/Cadastro" exact />
       <Route component={Profile} path="/Profile" exact />
       <Route component={WorkerProfile} path="/WorkerProfile" exact />
+      <Route component={Chat} path="/Chat" exact />
       <Footer />
     </BrowserRouter>
   )
