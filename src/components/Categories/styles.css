@@ -53,7 +53,7 @@
 
 .categories {
   color: #655A78;
-} 
+}
 
 .boxCategories {
   background: #f5f5f5;
@@ -62,6 +62,17 @@
   margin: 10px;
   height: 130px;
   padding: 30px;
+}
+
+.boxCategories:hover {
+  cursor: pointer;
+  border: 1px solid #A16FF7;
+  background-color: #D1BAF9;
+}
+
+.boxCategories:active {
+  background-color: #A16FF7;
+  color: #fff;
 }
 
 .resultCategories {
@@ -73,7 +84,7 @@
   color: #655A78;
   margin-top: 80px;
   margin-bottom: 30px;
-  padding: 20px;  
+  padding: 20px;
   font-family: Inter-Regular;
 }
 
@@ -96,13 +107,13 @@
   align-self: center;
 }
 
-.inputSearch::placeholder{
+.inputSearch::placeholder {
   text-align: left;
   color: #000000;
   font-size: 17px;
 }
 
-.buttonSearch{
+.buttonSearch {
   align-self: center;
   color: #655A78;
   border: none;
@@ -119,13 +130,13 @@
   font-family: Inter-Bold;
 }
 
-.buttonSearch:hover{
+.buttonSearch:hover {
   background: #8058C4;
   border: 3px solid #8058C4;
-  box-shadow: 0 2px 5px 0  rgba(102, 23, 117, 0.712);
+  box-shadow: 0 2px 5px 0 rgba(102, 23, 117, 0.712);
 }
 
-.containerSearch{
+.containerSearch {
   display: flex;
   flex-direction: row;
 }
@@ -134,22 +145,25 @@
   .page {
     flex-direction: column;
   }
+
   .resultCategories {
     width: 390px;
     margin-bottom: 30px;
     align-self: center;
   }
+
   .containerCategories {
     margin: 10px;
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 960px) { 
+@media screen and (min-width: 600px) and (max-width: 960px) {
   .resultCategories {
     margin-right: 20px;
     margin-bottom: 30px;
     align-self: center;
   }
+
   .containerCategories {
     margin: 10px;
     width: 500px;
@@ -157,12 +171,13 @@
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1264px) { 
+@media screen and (min-width: 960px) and (max-width: 1264px) {
   .resultCategories {
     margin-right: 20px;
     margin-bottom: 30px;
     align-self: center;
   }
+
   .containerCategories {
     margin: 10px;
     width: 500px;

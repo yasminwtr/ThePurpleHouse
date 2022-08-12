@@ -8,7 +8,7 @@
 }
 
 .trigger-button:hover {
-  color: #655A78;
+  color: #655A78; transition: 0.60s !important;
 }
 
 .dropdown-Item2:hover {

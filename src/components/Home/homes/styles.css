@@ -11,14 +11,6 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 980px;
-  margin: 0;
-}
 /* ===========SECTION HOME================ */
 .container-Home{
   width: 100%;
