@@ -7,8 +7,8 @@
   box-sizing: border-box;
 }
 body{
-  background-image: url(../assets/wallpaper.png);
-  background-size:cover;
+  background-image: url(../assets/fundoo.png);
+  background-size:210vh;
   font-family: 'Rubik', sans-serif;
 }
 .container{
