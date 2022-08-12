@@ -24,14 +24,14 @@ const DropdownProfile = () => {
           </Dropdown.ItemText>
           <Dropdown.Item className='dropdown-Item2' eventKey="2">
             <img width={20} /><StarRoundedIcon />
-            <Link to='/Profile'>
+            <Link className='link-profile' to='/Profile'>
               Ver Perfil
             </Link>
           </Dropdown.Item>
           <Dropdown.Item className='dropdown-Item2' eventKey="4">
             <img width={20} />
             <LogoutRoundedIcon />
-            <Link to='/WorkerProfile'>
+            <Link className='link-profile' to='/WorkerProfile'>
               Perfil externo
             </Link>
           </Dropdown.Item>
