@@ -8,7 +8,7 @@
 }
 body{
   background-image: url(../assets/fundoo.png);
-  background-size:210vh;
+  background-size:100%;
   font-family: 'Rubik', sans-serif;
 }
 .container{
