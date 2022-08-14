@@ -55,6 +55,7 @@ body {
   width: 8%;
   height: 8%;
   margin-left: 4%;
+  cursor: pointer;
 }
 
 #nameAccount {
@@ -62,6 +63,7 @@ body {
   margin: auto 10px auto;
   font-size: 22px;
   color: #fff;
+  cursor: pointer;
 }
 
 .messagesChat {
@@ -74,21 +76,21 @@ body {
 }
 
 .messagesChat::-webkit-scrollbar {
-    width: 1vw;
+  width: 1vw;
 }
 
 .messagesChat::-webkit-scrollbar-button {
-    height: 5px;
+  height: 5px;
 }
   
 .messagesChat::-webkit-scrollbar-track {
-    background-color: #fff;
+  background-color: #fff;
 }
   
 .messagesChat::-webkit-scrollbar-thumb {
-    background-color: #aeb0b1;
-    border: 0.3vw solid #fff;
-    border-radius: 5vw;
+  background-color: #aeb0b1;
+  border: 0.3vw solid #fff;
+  border-radius: 5vw;
 }
 
 #leftMessage {
@@ -125,26 +127,26 @@ body {
 }
 
 .inputMessage{
-    border: 0;
-    background-color: #F8F8F8;
-    padding: 15px;
-    border-radius: 10px;
-    width: 91%;
+  border: 0;
+  background-color: #F8F8F8;
+  padding: 15px;
+  border-radius: 10px;
+  width: 91%;
 }
 
 #sendIcon{
-    color: #A58AD2;
-    background-color: #F8F8F8;
-    border-radius: 30px;
-    padding: 10px;
-    font-size: 50px;
-    transform: rotate(-20deg);
-    margin-left: 1%;
-    cursor: pointer;
+  color: #A58AD2;
+  background-color: #F8F8F8;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 50px;
+  transform: rotate(-20deg);
+  margin-left: 1%;
+  cursor: pointer;
 }
 
 #sendIcon:hover{
-    color: #655A78;
+  color: #655A78;
 }
 
 /* search users */
@@ -160,33 +162,48 @@ body {
   padding: 20px;
 }
 
-.boxInputSearch {
-    background-color: #f8f8f8;
-    height: 50px;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    align-self: center;
-    width: 68%;
-    padding: 10px;
-    align-items: flex-start !important;
-  }
+.containerBoxSearch{
+  display: flex;
+  align-items: center;
+}
+
+#searchIconChat{
+  color: #655A78 !important;
+}
+
+.containerInput{
+  display: flex;
+  background-color: #f8f8f8;
+  height: 40px;
+  border-radius: 15px;
+  align-items: center;
+  padding: 10px;
+  width: 73%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inputSearchChat{
+  background-color: #f8f8f8;
+  border: none;
+  outline: none;
+  font-family: Inter-Regular;
+  width: 85%;
+  margin-left: 3%;
+}
 
 .buttonSearchChat {
   align-self: center;
   color: #655A78 !important;
-  border: none;
-  height: 50px;
-  width: 30%;
-  font-size: 16px;
+  border: 2px solid transparent;
+  height: 40px;
+  width: 25%;
+  font-size: 15px;
   font-weight: bold;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: #D1BAF9;
   color: #fff;
   font-family: Inter-Bold;
   border-radius: 15px;
-  padding: 10px;
   transition: 0.5s;
   margin-left: 2%;
 }
@@ -194,6 +211,58 @@ body {
 .buttonSearchChat:hover {
   color: #fff !important;
   border: 2px solid #A58AD2 !important;
+}
+
+.listChatProfiles{
+  margin-top: 10%;
+  max-height: 390px;
+  min-height: 390px;
+  overflow-y: scroll;
+}
+
+.individualChatProfile{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 6%;
+  padding: 8px 8px 8px 12px;
+  border-radius: 15px;
+  background-color: #f8f8f8; 
+}
+
+#iconIndividualChatProfile{
+  width: 12%;
+  height: 12%;
+  margin-right: 3%;
+}
+
+#nameChatProfile{
+  font-family: Inter-Regular;
+  font-size: 17px;
+  margin: auto 0 auto;
+}
+
+.individualChatProfile:hover{
+  background-color: #dbc9fa;
+  color: #fff;
+}
+
+.listChatProfiles::-webkit-scrollbar {
+  width: 1vw;
+}
+
+.listChatProfiles::-webkit-scrollbar-button {
+  height: 0px;
+}
+
+.listChatProfiles::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.listChatProfiles::-webkit-scrollbar-thumb {
+  background-color: #aeb0b1;
+  border: 0.3vw solid #fff;
+  border-radius: 5vw;
 }
 
 /* responsividade */

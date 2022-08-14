@@ -11,15 +11,28 @@ const Chat = () => {
   return (
     <div className='allChat'>
       <div className='boxSearchChat'>
-        <div className="containerSearch">
-          <Box className="boxInputSearch">
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <SearchIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-              <TextField id="input-with-sx" label="Pesquisar usuário" variant="standard" className='inputSearchChat'/>
-            </Box>
-          </Box>
-          
+        <div className='containerBoxSearch'>
+          <div className='containerInput'>
+            <SearchIcon id='searchIconChat'/>
+            <input
+            className='inputSearchChat'
+            placeholder='Pesquisar usuário'
+            />
+          </div>
+
           <button className="buttonSearchChat">Buscar</button>
+        </div>
+
+        <div className='listChatProfiles'>
+          <div className='individualChatProfile'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconIndividualChatProfile' alt="Profile" />
+            <p id='nameChatProfile'>Mario Silvo</p>
+          </div>
+
+          <div className='individualChatProfile'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconIndividualChatProfile' alt="Profile" />
+            <p id='nameChatProfile'>Mario Silvo</p>
+          </div>
         </div>
       </div>
 
