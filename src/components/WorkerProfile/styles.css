@@ -200,10 +200,30 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5vw;
 }
 
+.inicialAvaliations{
+    display: flex;
+}
+
+#leaveAvaliation{
+    font-size: 14px;
+    font-family: Inter-SemiBold;
+    width: 100%;
+    background-color: #fccc3e;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#leaveAvaliation:hover{
+    background-color: #ffd864;
+}
+
 #numberAvaliations{
     text-align: end;
     font-size: 14px;
     font-family: Inter-SemiBold;
+    width: 51%;
+    padding: 5px;
 }
 
 .blockAvaliation{

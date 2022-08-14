@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LeaveAvaliation from './Modal/LeaveAvaliation'
 
 import StarIcon from '@mui/icons-material/StarRounded'
 import EmailIcon from '@mui/icons-material/EmailRounded'
@@ -102,7 +103,10 @@ const WorkerProfile = () => {
                     <p id='titleBlocks'>Avaliações</p>
 
                     <div className='feedAvaliations'>
-                        <p id='numberAvaliations'>2 avaliações</p> 
+                        <div className='inicialAvaliations'>
+                            <LeaveAvaliation/> 
+                            <p id='numberAvaliations'>2 avaliações</p> 
+                        </div>
 
                         <div>
                             <div className='blockAvaliation'>

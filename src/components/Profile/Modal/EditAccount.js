@@ -73,7 +73,6 @@ const EditAccount = (props) => {
                         />
                     </Form.Group>
                 </Form>
-
             </Modal.Body>
 
             <Modal.Footer>

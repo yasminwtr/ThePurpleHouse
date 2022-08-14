@@ -43,7 +43,8 @@ const DeleteAccount = (props) => {
                             maxLength={25}
                         />
                     </Form.Group>
-                </Form></Modal.Body>
+                </Form>
+            </Modal.Body>
 
             <Modal.Footer>
               <Button variant="danger" onClick={handleClose}>
