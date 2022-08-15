@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import DropdownProfile from "../../Dropdown/index"
+import DropdownProfile from "./Dropdown/index"
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.png'
+import logo from '../assets/img/logo.png'
 // import  SearchIcon from '@mui/icons-material/Search';
 // import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
+import './styles.css'
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false)

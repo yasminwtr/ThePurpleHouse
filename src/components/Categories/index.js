@@ -1,15 +1,12 @@
 import "./styles.css"
-
-import electrician from "../assets/electrician.png"
-import clean from "../assets/clean.png"
-import gardening from "../assets/gardening.png"
-import baby from "../assets/baby.png"
-
+import electrician from '../assets/img/electrician.png'
+import clean from "../assets/img/clean.png"
+import gardening from "../assets/img/gardening.png"
+import baby from "../assets/img/baby.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PlaceIcon from '@mui/icons-material/Place';

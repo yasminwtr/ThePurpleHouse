@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 
-import Header from "./Home/header/Header";
-import Footer from "./Home/footer/Footer";
-import Home from "./Home/homes/home";
+import Header from "./Header";
+import Footer from "./Footer";
+import Home from "./Home/";
 import QuemSomos from "./QuemSomos";
-import Cadastro from "./Cadastro/index"
+import Cadastro from "./Cadastro/"
 import Profile from "./Profile";
 import WorkerProfile from "./WorkerProfile";
 import Chat from './Chat'

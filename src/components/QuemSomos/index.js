@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css'
 // import imgCode from '../assets/imgcode.png'
-import Team from '../assets/Collab.png'
+import Team from '../assets/img/Collab.png'
 
 const QuemSomos =() =>{
     return(

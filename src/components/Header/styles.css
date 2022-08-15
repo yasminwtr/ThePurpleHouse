@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url(../assets/fonts/Inter-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url(../assets/fonts/Inter-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url(../assets/fonts/Inter-SemiBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url(../assets/fonts/Inter-Bold.woff) format('woff');
+}
+
+header {
+  padding: 20px 0;
+  background-color: #A58AD2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter-Medium;
+}
+
+header ul {
+  display: inline-block;
+}
+
+header ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+header ul li a {
+  font-weight: 500;
+  transition: 0.5s;
+  color: #fff;
+  text-decoration: none;
+}
+
+header ul li a:hover {
+  color: #655A78;
+}
+
+.HeaderIcon {
+  margin-left: 20px;
+  transition: 0.5s;
+}
+
+.navbar-itens-icon {
+  color: #fff !important;
+  display: none;
+}
+
+header.active {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  z-index: 10;
+}
+
+.button {
+  width: 120px;
+  height: 40px;
+  background-color: #A58AD2;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  border: 3px solid #8058C4;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #D1BAF9;
+  color: #8058C4;
+  font-size: 16px;
+  border: 3px solid #8058C4;
+}
+
+@media screen and (max-width:768px) {
+  header.icon {
+    display: none;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links-sidebar {
+    position: absolute;
+    display: block;
+    background-color: #d1baf9f3;
+    left: 0px;
+    top: 84px;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    padding-top: 30px;
+  }
+  .nav-links-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  header ul li {
+    margin-bottom: 30px;
+  }
+  .navbar-itens-icon {
+    display: block;
+    position: absolute;
+    right: 30px;
+    color: #000;
+    border-radius: 10px;
+    background-color: #D1BAF9;
+    border: 0px solid #655A78;
+    padding: 5px 10px;
+  }
+}

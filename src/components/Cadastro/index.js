@@ -129,10 +129,9 @@
 
 import React from 'react'
 import './style.css'
-import logo from '../assets/logo.png'
+import logo from '../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
-
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -140,11 +139,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
-
-
 import EmailIcon from '@mui/icons-material/Email';
-
 
 function Cadastro() {
      const [values, setValues] = React.useState({

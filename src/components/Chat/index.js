@@ -6,7 +6,6 @@ import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import SendIcon from '@mui/icons-material/SendRounded'
 
-
 const Chat = () => {
   return (
     <div className='allChat'>
