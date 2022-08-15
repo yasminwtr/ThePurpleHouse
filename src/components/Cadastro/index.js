@@ -151,7 +151,6 @@ function Cadastro() {
                     </div>
                     <div className='form-cadastro'>
                         <div className='icon-cadastro'>
-                            {/* <i><FaUser className='i-cadastro'/></i> */}
                             <input className='input-cadastro' type={'text'} placeholder='Nome completo' />
                         </div>
                         <input className='input-cadastro' type={'email'} placeholder='E-mail' />
