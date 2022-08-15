@@ -192,7 +192,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 450px; 
+    height: 400px; 
 }
 
 .input-cadastro{
@@ -228,9 +228,9 @@
     background-color: #8058C4;
     color: #FFFFFF;
     border: none;
-    border-radius: 30px;
-    height: 45px;
-    width: 250px;
+    border-radius: 20px;
+    height: 80%;
+    width: 100%;
     font-size: 20px;
     font-weight: bold
 }
@@ -255,3 +255,29 @@
     color: #000000;
     font-size: 17px;
 }
+
+.containerInputRegister{
+    display: flex;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    align-items: center;
+    width: 85%;
+
+    padding: 10px;
+    color: #000000;
+    font-size: 17px;
+    height: 40px;
+    border: 1px solid #F5F0FE;
+    box-shadow: 0px 4px 5px #c8bae5;
+  }
+  .inputSearchChatRegister{
+    background-color: #f8f8f8;
+    border: none;
+    outline: none;
+    font-family: Inter-Regular;
+    width: 85%;
+    margin-left: 3%;
+  }
+  #searchIconRegister{
+    color: #655A78 !important;
+  }

@@ -131,14 +131,42 @@ import React from 'react'
 import './style.css'
 import logo from '../assets/logo.png'
 import { FaUser } from 'react-icons/fa'
-import { HiOutlineMail } from 'react-icons/hi'
 import { BsFillTelephoneFill } from 'react-icons/bs'
-import { GiPadlock } from 'react-icons/gi'
-import { AiFillEye } from 'react-icons/ai'
-import { AiFillEyeInvisible } from 'react-icons/ai'
+
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
+
+
+import EmailIcon from '@mui/icons-material/Email';
 
 
 function Cadastro() {
+     const [values, setValues] = React.useState({
+  
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
     return (
         <div>
             <div className='header-cadastro'>
@@ -150,15 +178,63 @@ function Cadastro() {
                         <h1 className='h1-cadastro'>Crie sua conta!</h1>
                     </div>
                     <div className='form-cadastro'>
-                        <div className='icon-cadastro'>
-                            <input className='input-cadastro' type={'text'} placeholder='Nome completo' />
+                        
+
+
+                        <div className='containerInputRegister'>
+                            <FaUser id='searchIconRegister'/>
+                            <input className='inputSearchChatRegister'  placeholder='Nome completo' />
                         </div>
-                        <input className='input-cadastro' type={'email'} placeholder='E-mail' />
-                        <input className='input-cadastro' type={'tel'} placeholder='Numero Celular' />
-                        <input className='input-cadastro' type={'date'} placeholder='Data de Nascimento' />
-                        <input className='input-cadastro' type={'password'} placeholder='Senha' />
+                        
+                        <div className='containerInputRegister'>
+                            < EmailIcon id='searchIconRegister'/>
+                            <input className='inputSearchChatRegister'  placeholder='E-mail' />
+                        </div>
+
+                        <div className='containerInputRegister'>
+                            <BsFillTelephoneFill id='searchIconRegister'/>
+                            <input className='inputSearchChatRegister'  placeholder='Numero Celular' />
+                        </div>
+
+                        <div className='containerInputRegister'>
+                            <input className='inputSearchChatRegister' type={'date'} placeholder='Numero Celular' />
+                        </div>
+
+                <div className="containerInputRegister" sx={{ '& > :not(style)': { mr: 0, m: 0} }}>
+                    <div>
+                    <FormControl sx={{ m: 0 , width: '28ch', }} >
+                        
+                        <Input className='inputSearchChatRegister'
+                             placeholder='Senha'
+                            type={values.showPassword ? 'text' : 'password'}
+                            value={values.password}
+                            onChange={handleChange('password')}
+                            endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton sx={{ color: '#3E3848', mr: 0.-2, my: 1.5 }}
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {values.showPassword ?  <Visibility />:  <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                            }
+                        />
+                        </FormControl>
+      
+                     </div>
+                </div>
+
+                        
+
+
+{/* 
+                      
+                       
+                        <input className='input-cadastro' type={'password'} placeholder='Senha' /> */}
                         <div>
-                            <button className='button-cadastro'>Entrar</button>
+                            <button className='button-cadastro'>Cadastrar</button>
                             <div>
                                 <label className='label-cadastro'>Já possui uma conta?</label>
                                 <a className='a-cadastro' href=''>Entre</a>
