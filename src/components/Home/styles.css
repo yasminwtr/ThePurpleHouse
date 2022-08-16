@@ -22,7 +22,7 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   background-image: url(../assets/img/fundoo.png);
-  background-size: 100%;
+  background-size: cover;
 }
 /* ===========SECTION HOME================ */
 .container-Home{

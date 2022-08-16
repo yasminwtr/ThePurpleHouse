@@ -133,13 +133,13 @@ import logo from '../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
+
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
+import RiLockPasswordFill from 'react-icons/ri'
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import {Link} from 'react-router-dom'
 
 function Cadastro() {
      const [values, setValues] = React.useState({
@@ -178,61 +178,51 @@ function Cadastro() {
 
                         <div className='containerInputRegister'>
                             <FaUser id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister'  placeholder='Nome completo' />
+                            <input className='inputSearchChatRegister' type={'text'} placeholder='Nome completo' />
                         </div>
                         
                         <div className='containerInputRegister'>
                             < EmailIcon id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister'  placeholder='E-mail' />
+                            <input className='inputSearchChatRegister' type={'email'} placeholder='E-mail' />
                         </div>
 
                         <div className='containerInputRegister'>
                             <BsFillTelephoneFill id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister'  placeholder='Numero Celular' />
+                            <input className='inputSearchChatRegister'  type={'tel'} placeholder='Numero Celular' />
                         </div>
 
                         <div className='containerInputRegister'>
                             <input className='inputSearchChatRegister' type={'date'} placeholder='Numero Celular' />
                         </div>
 
-                <div className="containerInputRegister" sx={{ '& > :not(style)': { mr: 0, m: 0} }}>
-                    <div>
-                    <FormControl sx={{ m: 0 , width: '28ch', }} >
-                        
-                        <Input className='inputSearchChatRegister'
-                             placeholder='Senha'
+                  
+                    
+                    <div  className='containerInputRegister' >
+                         <LockOpenIcon id='searchIconRegister'/>
+                            <input className='inputSearchChatRegister'
+                            placeholder='Senha'
                             type={values.showPassword ? 'text' : 'password'}
-                            value={values.password}
-                            onChange={handleChange('password')}
-                            endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton sx={{ color: '#3E3848', mr: 0.-2, my: 1.5 }}
+                            value={values.password}/>
+                             <div>
+                                 <IconButton sx={{ color: '#655A78'}}
                                 aria-label="toggle password visibility"
                                 onClick={handleClickShowPassword}
                                 onMouseDown={handleMouseDownPassword}
                                 >
                                 {values.showPassword ?  <Visibility />:  <VisibilityOff />}
-                                </IconButton>
-                            </InputAdornment>
-                            }
-                        />
-                        </FormControl>
-      
-                     </div>
-                </div>
+                                </IconButton> 
+                            </div>
+                    </div>
+                   
 
-                        
-
-
-{/* 
-                      
-                       
-                        <input className='input-cadastro' type={'password'} placeholder='Senha' /> */}
+                    
+                 {/*   <input className='input-cadastro' type={'password'} placeholder='Senha' /> */}
                         <div>
                             <button className='button-cadastro'>Cadastrar</button>
                             <div>
                                 <label className='label-cadastro'>Já possui uma conta?</label>
-                                <a className='a-cadastro' href=''>Entre</a>
+                                {/* <a className='a-cadastro' href=''>Entre</a> */}
+                                <a  href="/Login" className='a-cadastro'><Link to='/Login' className='a-cadastro'>Entre</Link></a>
                             </div>
                         </div>
                     </div>

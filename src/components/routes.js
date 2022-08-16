@@ -10,6 +10,7 @@ import Profile from "./Profile";
 import WorkerProfile from "./WorkerProfile";
 import Chat from './Chat'
 import Categories from "./Categories";
+import Login from "./Login"
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
       <Route component={WorkerProfile} path="/WorkerProfile" exact />
       <Route component={Chat} path="/Chat" exact />
       <Route component={Categories} path="/Categories" exact />
+      <Route component={Login} path="/Login" exact />
       <Footer />
     </BrowserRouter>
   )

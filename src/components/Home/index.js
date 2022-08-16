@@ -21,7 +21,8 @@ const Home = () => {
         <div className="Title-home">
           <h1 className="text-h1-home">Contrate prestadores para sua casa!</h1>
           <p> Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!</p>
-          <a className="a-link-home" href="/Cadastro" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a>
+          {/* <a  href="/Cadastro" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a> */}
+          <a  href="/Login" className="buttonHome"><Link to='/Login'>COMEÇAR</Link></a>
         </div>
       </section>
 
