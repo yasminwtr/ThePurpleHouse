@@ -136,3 +136,12 @@ body{
     color: #655A78 !important;
     font-size: 20px;
 }
+
+.input-feedback{
+  margin: -3% 0 2% 0%;
+  font-size: 15px;
+}
+
+::-webkit-calendar-picker-indicator {
+  display: none;
+}

@@ -9,6 +9,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
 import RiLockPasswordFill from 'react-icons/ri'
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
+import CalendarIcon from '@mui/icons-material/CalendarMonthRounded';
 import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -119,7 +120,12 @@ const Cadastro = () => {
                     </div>
 
                     <div className='containerInputRegister'>
-                      <input className='inputRegister' type={'date'}/>
+                      <CalendarIcon id='iconRegister' />
+                      <input
+                        className='inputRegister'
+                        type={'date'}
+                        />
+                      {/* <input className='inputRegister' type={'date'}/> */}
                     </div>
 
                     <div className='containerInputRegister' >
