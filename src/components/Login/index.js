@@ -10,7 +10,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
 import RiLockPasswordFill from 'react-icons/ri'
-import LockOpenIcon from '@mui/icons-material/LockOpen';
+import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import {Link} from 'react-router-dom'
 
 function Login() {
@@ -50,13 +50,13 @@ function Login() {
 
 
                         <div className='containerInputLogin'>
-                            <FaUser id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister' type={'text'} placeholder='Email ou Telefone' />
+                            <FaUser id='iconRegister'/>
+                            <input className='inputRegister' type={'text'} placeholder='E-mail' />
                         </div>
 
                          <div  className='containerInputLogin' >
-                         <LockOpenIcon id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister'
+                         <LockOpenIcon id='iconRegister'/>
+                            <input className='inputRegister'
                             placeholder='Senha'
                             type={values.showPassword ? 'text' : 'password'}
                             value={values.password}/>
@@ -79,7 +79,7 @@ function Login() {
                             <div>
                                 <label className='label-cadastro'>Não possui uma conta? </label>
                                 {/* <a className='a-cadastro' href=''>Cadastre-se</a> */}
-                                <a  href="/Cadastro" className='a-cadastro'><Link to='/Cadastro' className='a-cadastro'>Cadastre-se</Link></a>
+                                <a  href="/Cadastro" className='a-cadastro'><Link to='/Cadastro' className='a-cadastro'> Cadastre-se</Link></a>
                             </div>
                         </div>
                     </div>
