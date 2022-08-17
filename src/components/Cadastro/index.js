@@ -37,10 +37,10 @@ const Cadastro = () => {
 
   return (
     <Formik
-      initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "" }}
-      onSubmit={(values, { setSubmitting }) => {
+      initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "", password: "" }}
+      onSubmit={(valuesForm, { setSubmitting }) => {
         setTimeout(() => {
-          console.log("Logging in", values);
+          console.log("Logging in", valuesForm);
           setSubmitting(false);
         }, 500);
       }}
@@ -60,7 +60,7 @@ const Cadastro = () => {
     >
       {props => {
         const {
-          values,
+          // valuesForm,
           touched,
           errors,
           isSubmitting,
@@ -85,7 +85,6 @@ const Cadastro = () => {
                       <FaUser id='iconRegister' />
                       <input
                         name="fullName"
-                        value={values.fullName}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={errors.fullName && touched.fullName && "error"}
@@ -99,7 +98,6 @@ const Cadastro = () => {
                       < EmailIcon id='iconRegister' />
                       <input
                         id='email'
-                        value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={errors.email && touched.email && "error"}
@@ -110,7 +108,6 @@ const Cadastro = () => {
                     <div className='containerInputRegister'>
                       <BsFillTelephoneFill id='iconRegister' />
                       <input
-                        value={values.phoneNumber}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={errors.phoneNumber && touched.phoneNumber && "error"}
