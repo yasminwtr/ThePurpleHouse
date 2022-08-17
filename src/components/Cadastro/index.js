@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './styles.css'
 import logo from '../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'

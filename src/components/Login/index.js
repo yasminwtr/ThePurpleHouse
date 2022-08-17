@@ -37,26 +37,26 @@ function Login() {
 
     return (
         <div>
-            <div className='header-cadastro'>
-                <img className='logo-cadastro' src={logo} />
+            <div className='header-login'>
+                <img className='logo-login' src={logo} />
             </div>
-            <div className='container-cadastro'>
-                <div className='box-cadastro'>
+            <div className='container-login'>
+                <div className='box-login'>
                     <div>
-                        <h1 className='h1-cadastro'>Acesse sua conta</h1>
+                        <h1 className='h1-login'>Acesse sua conta</h1>
                     </div>
                     <div className='form-login'>
                         
 
 
                         <div className='containerInputLogin'>
-                            <FaUser id='iconRegister'/>
-                            <input className='inputRegister' type={'text'} placeholder='E-mail' />
+                            <FaUser id='iconLogin'/>
+                            <input className='inputLogin' type={'text'} placeholder='E-mail' />
                         </div>
 
                          <div  className='containerInputLogin' >
-                         <LockOpenIcon id='iconRegister'/>
-                            <input className='inputRegister'
+                         <LockOpenIcon id='iconLogin'/>
+                            <input className='inputLogin'
                             placeholder='Senha'
                             type={values.showPassword ? 'text' : 'password'}
                             value={values.password}/>
@@ -75,11 +75,11 @@ function Login() {
                     
                  {/*   <input className='input-cadastro' type={'password'} placeholder='Senha' /> */}
                         <div>
-                            <button className='button-cadastro'>Entrar</button>
+                            <button className='button-login'>Entrar</button>
                             <div>
-                                <label className='label-cadastro'>Não possui uma conta? </label>
+                                <label className='label-login'>Não possui uma conta? </label>
                                 {/* <a className='a-cadastro' href=''>Cadastre-se</a> */}
-                                <a  href="/Cadastro" className='a-cadastro'><Link to='/Cadastro' className='a-cadastro'> Cadastre-se</Link></a>
+                                <a  href="/Cadastro" className='a-login'><Link to='/Cadastro' className='a-login'> Cadastre-se</Link></a>
                             </div>
                         </div>
                     </div>
