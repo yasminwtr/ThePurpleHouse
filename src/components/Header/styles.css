@@ -118,3 +118,14 @@ header.active {
     padding: 5px 10px;
   }
 }
+
+.logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.titleHeader {
+  margin-left: 10px;
+  font-size: 25px;
+}

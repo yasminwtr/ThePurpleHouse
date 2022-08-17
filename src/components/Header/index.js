@@ -21,7 +21,8 @@ const Header = () => {
       <header className="header">
         <div className="container flex">
           <div className="logo">
-            <img src={logo} width={40} alt="logo" />
+            <img src={logo} width={50} alt="logo" />
+            <span className='titleHeader'>The Purple House</span>
           </div>
           <div className="nav">
             <DropdownProfile />
