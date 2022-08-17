@@ -12,6 +12,7 @@ import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
+import api from "../../api/";
 
 const Cadastro = () => {
   const [values, setValues] = React.useState({
@@ -34,12 +35,29 @@ const Cadastro = () => {
     event.preventDefault();
   };
 
+  async function registerNewUser() {
+    let fullName = document.getElementById('fullName').value
+    let email = document.getElementById('email').value
+    let phoneNumber= document.getElementById('phoneNumber').value
+    let password = document.getElementById('password').value
+    console.log('fullName:',fullName,'\n','email:',email,'\n','phoneNumber',phoneNumber,'\n','password:',password);
+    
+    try {
+      // console.log('fullName.value', fullName);
+      const response = await api.post('/registerUser', { fullName, email, password, phoneNumber });
+      console.log('response registerUser:', response);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  
   return (
     <Formik
       initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "" }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          console.log("Logging in", values);
+          console.log("Valores pegos dos inputs:", values);
           setSubmitting(false);
         }, 500);
       }}
@@ -65,7 +83,7 @@ const Cadastro = () => {
           isSubmitting,
           handleChange,
           handleBlur,
-          handleSubmit  
+          handleSubmit
         } = props;
 
         return (
@@ -145,7 +163,7 @@ const Cadastro = () => {
                     <div className="input-feedback">{errors.password}</div>
 
                     <div>
-                      <button type='submit' disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
+                      <button type='submit' onClick={() => registerNewUser()} disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
                       <div>
                         <label className='label-cadastro'>Já possui uma conta?</label>
                         {/* <a className='a-cadastro' href=''>Entre</a> */}
