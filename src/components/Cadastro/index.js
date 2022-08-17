@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 import logo from '../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
@@ -36,23 +36,27 @@ const Cadastro = () => {
     event.preventDefault();
   };
 
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [password, setPassword] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+
   async function registerNewUser() {
-    let fullName = document.getElementById('fullName').value
-    let email = document.getElementById('email').value
-    let phoneNumber= document.getElementById('phoneNumber').value
-    let password = document.getElementById('password').value
-    console.log('fullName:',fullName,'\n','email:',email,'\n','phoneNumber',phoneNumber,'\n','password:',password);
-    
+
+
+    console.log('fullName:', fullName, '\n', 'email:', email, '\n', 'phoneNumber', phoneNumber, '\n', 'password:', password);
+
     try {
       // console.log('fullName.value', fullName);
-      const response = await api.post('/registerUser', { fullName, email, password, phoneNumber });
+      const response = await api.post('/registerUser', { fullName, email, password, phoneNumber, birthDate });
       console.log('response registerUser:', response);
     } catch (error) {
       console.log(error)
     }
   }
 
-  
+
   return (
     <Formik
       initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "", password: "" }}
@@ -78,7 +82,6 @@ const Cadastro = () => {
     >
       {props => {
         const {
-          // valuesForm,
           touched,
           errors,
           isSubmitting,
@@ -103,7 +106,8 @@ const Cadastro = () => {
                       <FaUser id='iconRegister' />
                       <input
                         name="fullName"
-                        onChange={handleChange}
+                        onChange={(event) => setFullName(event.target.value)}
+                        onInputCapture={handleChange}
                         onBlur={handleBlur}
                         className={errors.fullName && touched.fullName && "error"}
                         id='fullName'
@@ -116,7 +120,8 @@ const Cadastro = () => {
                       < EmailIcon id='iconRegister' />
                       <input
                         id='email'
-                        onChange={handleChange}
+                        onChange={(event) => setEmail(event.target.value)}
+                        onInputCapture={handleChange}
                         onBlur={handleBlur}
                         className={errors.email && touched.email && "error"}
                         placeholder='E-mail'
@@ -126,7 +131,8 @@ const Cadastro = () => {
                     <div className='containerInputRegister'>
                       <BsFillTelephoneFill id='iconRegister' />
                       <input
-                        onChange={handleChange}
+                        onChange={(event) => setPhoneNumber(event.target.value)}
+                        onInputCapture={handleChange}
                         onBlur={handleBlur}
                         className={errors.phoneNumber && touched.phoneNumber && "error"}
                         id='phoneNumber'
@@ -137,16 +143,18 @@ const Cadastro = () => {
                     <div className='containerInputRegister'>
                       <CalendarIcon id='iconRegister' />
                       <input
+                        onChange={(event) => setBirthDate(event.target.value)}
                         className='inputRegister'
                         type={'date'}
-                        />
+                      />
                       {/* <input className='inputRegister' type={'date'}/> */}
                     </div>
 
                     <div className='containerInputRegister' >
                       <LockOpenIcon id='iconRegister' />
                       <input
-                        onChange={handleChange}
+                        onChange={(event) => setPassword(event.target.value)}
+                        onInputCapture={handleChange}
                         onBlur={handleBlur}
                         className={errors.password && touched.password && "error"}
                         placeholder='Senha'
