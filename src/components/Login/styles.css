@@ -1,6 +1,4 @@
-
-
-.container-cadastro{
+.container-login{
     margin: 0;
     width: 100%;
     height: 80vh;
@@ -9,31 +7,29 @@
     align-items: center;
 }
 
-.header-cadastro{
+.header-login{
     height: 12vh;
     padding: 15px;
 }
 
-.logo-cadastro{
+.logo-login{
     width: 55px;
 }
 
-.box-cadastro{
+.box-login{
     background-color: #F5F0FE;
     text-align: center;
     width: 25%;   
     border-radius: 25px;
     box-shadow: 0px 4px 5px #c8bae5;
-    padding: 20px;
+    padding: 40px 20px 60px 20px;
 }
 
-.title-cadastro{
-    text-align: center;
-}
-
-.h1-cadastro{
+.h1-login{
     color: #3E3848;
-    font-size: 34px;
+    font-size: 32px;
+    margin-block-end: 0.6em;
+    font-family: Inter-Medium;
 }
 
 .form-login{
@@ -42,10 +38,10 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 240px; 
+    height: 220px; 
 }
 
-.input-cadastro{
+.input-login{
     padding: 10px;
     color: #000000;
     font-size: 17px;
@@ -56,52 +52,52 @@
     box-shadow: 0px 4px 5px #c8bae5;
 }
 
-/* .i-cadastro{
+/* .i-login{
     font-size: 23px;
 } */
 
-.input-cadastro:hover{
+.input-login:hover{
     border: 1px solid #9472ce8f;
 }
 
-.input-cadastro:focus{
+.input-login:focus{
     border: none;
 }
 
-.input-cadastro::placeholder{
+.input-login::placeholder{
     color: #000000;
     font-size: 17px;
 }
 
-.button-cadastro{
+.button-login{
     text-align: center;
     background-color: #8058C4;
     color: #FFFFFF;
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
     height: 80%;
-    width: 100%;
+    width: 75%;
     font-size: 20px;
-    font-weight: bold
+    font-family: Inter-SemiBold;
 }
 
-.button-cadastro:hover{
+.button-login:hover{
     background-color: #9472ce;
 }
 
-.a-cadastro{
-    margin-top: 10px;
+.a-login{
+    margin-top: 5%;
     color: #7E57C2;
     text-decoration: none;
     font-size: 17px;
 }
 
-.a-cadastro:hover{
+.a-login:hover{
     color: #3E3848;
 }
 
-.label-cadastro{
-    margin-top: 10px;
+.label-login{
+    margin-top: 5%;
     color: #000000;
     font-size: 17px;
 }
@@ -112,22 +108,25 @@
     border-radius: 8px;
     align-items: center;
     width: 85%;
-
     padding: 10px;
     color: #000000;
     font-size: 17px;
     height: 50px;
     border: 1px solid #F5F0FE;
     box-shadow: 0px 4px 5px #c8bae5;
-  }
-  .inputSearchChatRegister{
+    margin-bottom: 6%;
+}
+
+.inputLogin{
     background-color: #f8f8f8;
     border: none;
     outline: none;
     font-family: Inter-Regular;
     width: 85%;
     margin-left: 3%;
-  }
-  #searchIconRegister{
+}
+
+#iconLogin{
     color: #655A78 !important;
-  }
+    font-size: 20px;
+}
