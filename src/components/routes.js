@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home/";
 import QuemSomos from "./QuemSomos";
-import Cadastro from "./Cadastro/"
+import Cadastro from "./Cadastro"
 import Profile from "./Profile";
 import WorkerProfile from "./WorkerProfile";
 import Chat from './Chat'

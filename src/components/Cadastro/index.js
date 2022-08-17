@@ -82,7 +82,7 @@
 //           <Box className="inputRegisterPass" sx={{ '& > :not(style)': { mr: 2.5, m: 1.5 } }}>
 //           <div>
 //       <FormControl sx={{ m: 0, width: '23ch' }} variant="standard">
-        
+
 //           <InputLabel htmlFor="standard-adornment-password">Senha</InputLabel>
 //           <Input
 //             id="standard-adornment-password"
@@ -102,7 +102,7 @@
 //             }
 //           />
 //         </FormControl>
-      
+
 //       </div>
 //     </Box>
 
@@ -116,7 +116,7 @@
 //             </div>
 
 //    </div>
-   
+
 
 //       </div>
 
@@ -133,17 +133,18 @@ import logo from '../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
-
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
 import RiLockPasswordFill from 'react-icons/ri'
 import LockOpenIcon from '@mui/icons-material/LockOpen';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Formik } from "formik";
+import * as Yup from "yup";
 
-function Cadastro() {
-     const [values, setValues] = React.useState({
-  
+const Cadastro = () => {
+  const [values, setValues] = React.useState({
+
     showPassword: false,
   });
 
@@ -162,74 +163,139 @@ function Cadastro() {
     event.preventDefault();
   };
 
-    return (
-        <div>
-            <div className='header-cadastro'>
+  return (
+    <Formik
+      initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "" }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          console.log("Logging in", values);
+          setSubmitting(false);
+        }, 500);
+      }}
+
+      validationSchema={Yup.object().shape({
+        fullName: Yup.string()
+          .required(''),
+        email: Yup.string()
+          .email('Digite um e-mail válido')
+          .required(''),
+        phoneNumber: Yup.string()
+          .required(''),
+        password: Yup.string()
+          .required('')
+          .min(8, 'A senha deve ter no minímo 8 caracteres')
+      })}
+    >
+      {props => {
+        const {
+          values,
+          touched,
+          errors,
+          isSubmitting,
+          handleChange,
+          handleBlur,
+          handleSubmit  
+        } = props;
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <div>
+              <div className='header-cadastro'>
                 <img className='logo-cadastro' src={logo} />
-            </div>
-            <div className='container-cadastro'>
+              </div>
+              <div className='container-cadastro'>
                 <div className='box-cadastro'>
+                  <div>
+                    <h1 className='h1-cadastro'>Crie sua conta!</h1>
+                  </div>
+                  <div className='form-cadastro'>
+                    <div className='containerInputRegister'>
+                      <FaUser id='searchIconRegister' />
+                      <input
+                        name="fullName"
+                        value={values.fullName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.fullName && touched.fullName && "error"}
+                        className='inputSearchChatRegister'
+                        id='fullName'
+                        placeholder='Nome completo'
+                        type={'text'}
+                      />
+                    </div>
+                    <div className="input-feedback">{errors.fullName}</div>
+                    <div className='containerInputRegister'>
+                      < EmailIcon id='searchIconRegister' />
+                      <input
+                        id='email'
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.email && touched.email && "error"}
+                        className='inputSearchChatRegister'
+                        placeholder='E-mail'
+                      />
+                    </div>
+                    <div className="input-feedback">{errors.email}</div>
+                    <div className='containerInputRegister'>
+                      <BsFillTelephoneFill id='searchIconRegister' />
+                      <input
+                        value={values.phoneNumber}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.phoneNumber && touched.phoneNumber && "error"}
+                        id='phoneNumber'
+                        className='inputSearchChatRegister'
+                        type={'tel'}
+                        placeholder='Numero Celular' />
+                    </div>
+
+                    <div className='containerInputRegister'>
+                      <input className='inputSearchChatRegister' type={'date'} placeholder='Numero Celular' />
+                    </div>
+
+                    <div className='containerInputRegister' >
+                      <LockOpenIcon id='searchIconRegister' />
+                      <input
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.password && touched.password && "error"}
+                        className='inputSearchChatRegister'
+                        placeholder='Senha'
+                        id='password'
+                        type={values.showPassword ? 'text' : 'password'}
+                        value={values.password} />
+                      <div>
+                        <IconButton sx={{ color: '#655A78' }}
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                        >
+                          {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                        </IconButton>
+                      </div>
+                    </div>
+                    <div className="input-feedback">{errors.password}</div>
+
                     <div>
-                        <h1 className='h1-cadastro'>Crie sua conta!</h1>
+                      <button type='submit' disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
+                      <div>
+                        <label className='label-cadastro'>Já possui uma conta?</label>
+                        {/* <a className='a-cadastro' href=''>Entre</a> */}
+                        <a href="/Login" className='a-cadastro'><Link to='/Login' className='a-cadastro'>Entre</Link></a>
+                      </div>
                     </div>
-                    <div className='form-cadastro'>
-                        
-
-
-                        <div className='containerInputRegister'>
-                            <FaUser id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister' type={'text'} placeholder='Nome completo' />
-                        </div>
-                        
-                        <div className='containerInputRegister'>
-                            < EmailIcon id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister' type={'email'} placeholder='E-mail' />
-                        </div>
-
-                        <div className='containerInputRegister'>
-                            <BsFillTelephoneFill id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister'  type={'tel'} placeholder='Numero Celular' />
-                        </div>
-
-                        <div className='containerInputRegister'>
-                            <input className='inputSearchChatRegister' type={'date'} placeholder='Numero Celular' />
-                        </div>
-
-                  
-                    
-                    <div  className='containerInputRegister' >
-                         <LockOpenIcon id='searchIconRegister'/>
-                            <input className='inputSearchChatRegister'
-                            placeholder='Senha'
-                            type={values.showPassword ? 'text' : 'password'}
-                            value={values.password}/>
-                             <div>
-                                 <IconButton sx={{ color: '#655A78'}}
-                                aria-label="toggle password visibility"
-                                onClick={handleClickShowPassword}
-                                onMouseDown={handleMouseDownPassword}
-                                >
-                                {values.showPassword ?  <Visibility />:  <VisibilityOff />}
-                                </IconButton> 
-                            </div>
-                    </div>
-                   
-
-                    
-                 {/*   <input className='input-cadastro' type={'password'} placeholder='Senha' /> */}
-                        <div>
-                            <button className='button-cadastro'>Cadastrar</button>
-                            <div>
-                                <label className='label-cadastro'>Já possui uma conta?</label>
-                                {/* <a className='a-cadastro' href=''>Entre</a> */}
-                                <a  href="/Login" className='a-cadastro'><Link to='/Login' className='a-cadastro'>Entre</Link></a>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    )
-}
+          </form>
+        )
+      }
+      }
+    </Formik>
+  )
 
+
+}
 export default Cadastro
