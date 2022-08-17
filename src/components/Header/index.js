@@ -34,7 +34,7 @@ const Header = () => {
               <li className="icon">
                 {/* <SearchIcon className="HeaderIcon"/>
                              <KeyboardArrowRightIcon className="HeaderIcon"/> */}
-                <button className="button"><Link to='/Cadastro'>Entrar</Link></button>
+                <button className="button"><Link to='/Register'>Entrar</Link></button>
               </li>
             </ul>
           </div>

@@ -1,4 +1,6 @@
-
+body{
+  font-family: Inter-Regular;
+}
 
 .container-cadastro{
     margin: 0;
@@ -24,7 +26,7 @@
     width: 25%;   
     border-radius: 25px;
     box-shadow: 0px 4px 5px #c8bae5;
-    padding: 20px;
+    padding: 30px 20px 40px 20px;
 }
 
 .title-cadastro{
@@ -41,7 +43,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: 400px; 
 }
 
@@ -78,12 +80,12 @@
     background-color: #8058C4;
     color: #FFFFFF;
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
     height: 80%;
     width: 100%;
     font-size: 20px;
-    font-weight: bold
-}
+    font-family: Inter-SemiBold;
+  }
 
 .button-cadastro:hover{
     background-color: #9472ce;
@@ -94,6 +96,7 @@
     color: #7E57C2;
     text-decoration: none;
     font-size: 17px;
+    font-family: Inter-Regular;
 }
 
 .a-cadastro:hover{
@@ -104,6 +107,7 @@
     margin-top: 10px;
     color: #000000;
     font-size: 17px;
+    font-family: Inter-Regular;
 }
 
 .containerInputRegister{
@@ -112,15 +116,15 @@
     border-radius: 8px;
     align-items: center;
     width: 85%;
-
     padding: 10px;
     color: #000000;
     font-size: 17px;
-    height: 40px;
+    height: 45px;
     border: 1px solid #F5F0FE;
     box-shadow: 0px 4px 5px #c8bae5;
   }
-  .inputSearchChatRegister{
+
+  .inputRegister, #fullName, #email, #phoneNumber, #password{
     background-color: #f8f8f8;
     border: none;
     outline: none;
@@ -128,6 +132,8 @@
     width: 85%;
     margin-left: 3%;
   }
-  #searchIconRegister{
+
+  #iconRegister{
     color: #655A78 !important;
+    font-size: 20px;
   }
