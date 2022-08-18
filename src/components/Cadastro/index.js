@@ -31,7 +31,7 @@ const Cadastro = () => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
-  
+
   const [values, setValues] = React.useState({
 
     showPassword: false,
