@@ -29,28 +29,17 @@
 }
 
 .page {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   font-family: Inter-SemiBold;
-
+  margin: 0;
+  height: 80vh;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
 }
 
 .containerCategories {
-  display: flex;
+  /* display: flex; */
   font-family: Inter-Bold;
-}
-
-.buttonMessages {
-  text-align: center;
-  background-color: #D1BAF9;
-  color: #655A78;
-  border: none;
-  border-radius: 16px;
-  height: 40px;
-  width: 140px;
-  font-size: 18px !important;
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
 }
 
 .titleContainerCategories {
@@ -58,7 +47,9 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-family: Inter-Bold;
-  width: 450px;
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .categories {
@@ -66,12 +57,12 @@
 }
 
 .boxCategories {
-  background: #f5f5f5;
+  background: #FAFAFA;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
   border-radius: 10px;
   margin: 10px;
-  height: 130px;
-  padding: 30px;
+  height: 120px;
+  padding: 10px;
 }
 
 .boxCategories:hover {
@@ -83,72 +74,6 @@
 .boxCategories:active {
   background-color: #A16FF7;
   color: #fff;
-}
-
-.resultCategories {
-  background-color: #f5f5f5;
-  text-align: center;
-  border-radius: 30px;
-  height: 500px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  color: #655A78;
-  margin-top: 80px;
-  margin-bottom: 30px;
-  padding: 20px;
-  font-family: Inter-Regular;
-}
-
-.searchCategories {
-  margin: 20px;
-}
-
-.inputSearch {
-  background-color: #fff;
-  height: 60px;
-  width: 250px;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 10px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  align-self: center;
-}
-
-.inputSearch::placeholder {
-  text-align: left;
-  color: #000000;
-  font-size: 17px;
-}
-
-.buttonSearch {
-  align-self: center;
-  color: #655A78;
-  border: none;
-  height: 60px;
-  width: 100px;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 20px;
-  background-color: #A58AD2;
-  border-radius: 15px;
-  border: 3px solid #8058C4;
-  color: #fff;
-  font-family: Inter-Bold;
-}
-
-.buttonSearch:hover {
-  background: #8058C4;
-  border: 3px solid #8058C4;
-  box-shadow: 0 2px 5px 0 rgba(102, 23, 117, 0.712);
-}
-
-.containerSearch {
-  display: flex;
-  flex-direction: row;
 }
 
 @media screen and (max-width: 600px) {

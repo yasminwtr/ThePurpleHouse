@@ -127,6 +127,11 @@
     margin-bottom: 6%;
 }
 
+.containerInputRegister:hover{
+    border: 1px solid #9472ce;
+}
+
+
 .inputRegister, #fullName, #email, #phoneNumber, #password{
     background-color: #f8f8f8;
     border: none;
