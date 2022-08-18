@@ -15,7 +15,23 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import api from "../../api/";
 
+
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const Cadastro = () => {
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [password, setPassword] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+  
   const [values, setValues] = React.useState({
 
     showPassword: false,
@@ -36,26 +52,38 @@ const Cadastro = () => {
     event.preventDefault();
   };
 
-  const [fullName, setFullName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
-  const [password, setPassword] = useState('')
-  const [birthDate, setBirthDate] = useState('')
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+  function validationFields() {
+    if ((fullName, email, phoneNumber, password, birthDate) !== '') {
+      registerNewUser()
+    } else {
+      setOpen(true)
+      return;
+    }
+  }
 
   async function registerNewUser() {
-
-
-    console.log('fullName:', fullName, '\n', 'email:', email, '\n', 'phoneNumber', phoneNumber, '\n', 'password:', password);
-
     try {
-      // console.log('fullName.value', fullName);
       const response = await api.post('/registerUser', { fullName, email, password, phoneNumber, birthDate });
-      console.log('response registerUser:', response);
+      console.log('response', response);
     } catch (error) {
       console.log(error)
     }
   }
-
 
   return (
     <Formik
@@ -174,7 +202,7 @@ const Cadastro = () => {
                     <div className="input-feedback">{errors.password}</div>
 
                     <div>
-                      <button type='submit' onClick={() => registerNewUser()} disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
+                      <button type='submit' onClick={() => validationFields()} disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
                       <div>
                         <label className='label-cadastro'>Já possui uma conta?</label>
                         {/* <a className='a-cadastro' href=''>Entre</a> */}
@@ -185,13 +213,16 @@ const Cadastro = () => {
                 </div>
               </div>
             </div>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+              <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                Por favor, preencha o formulário para realizar o cadastro!
+              </Alert>
+            </Snackbar>
           </form>
         )
       }
       }
     </Formik>
   )
-
-
 }
 export default Cadastro
