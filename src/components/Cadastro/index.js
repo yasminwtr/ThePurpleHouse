@@ -119,7 +119,7 @@ const Cadastro = () => {
         } = props;
 
         return (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}  className="body-cadastro">
             <div>
               <div className='header-cadastro'>
                 <img className='logo-cadastro' src={logo} />

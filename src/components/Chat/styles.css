@@ -18,8 +18,9 @@
   src: url(../assets/fonts/Inter-Bold.woff) format('woff');
 }
 
-body {
+.body-chat {
   margin: auto;
+  
 }
 
 .allChat {

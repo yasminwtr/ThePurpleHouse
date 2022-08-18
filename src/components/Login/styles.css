@@ -1,3 +1,9 @@
+.bodylogin{
+    height: 100%;
+    background-image: url(../assets/img/imgFundo.png) !important;
+    background-size: cover;
+}
+
 .container-login{
     margin: 0;
     width: 100%;
@@ -115,6 +121,10 @@
     border: 1px solid #F5F0FE;
     box-shadow: 0px 4px 5px #c8bae5;
     margin-bottom: 6%;
+}
+
+.containerInputLogin:hover{
+    border: 1px solid #9472ce;
 }
 
 .inputLogin{
