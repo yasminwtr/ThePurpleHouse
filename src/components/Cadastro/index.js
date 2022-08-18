@@ -105,7 +105,7 @@ const Cadastro = () => {
           .required(''),
         password: Yup.string()
           .required('')
-          .min(8, 'A senha deve ter no minímo 8 caracteres')
+          .min(8, 'A senha deve ter no mínimo 8 caracteres')
       })}
     >
       {props => {

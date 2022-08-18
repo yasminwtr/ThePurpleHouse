@@ -2,6 +2,7 @@ import React from "react";
 import './style.css'
 // import imgCode from '../assets/imgcode.png'
 import Team from '../assets/img/Collab.png'
+import {Link} from 'react-router-dom'
 
 const QuemSomos = () => {
     return (
@@ -11,7 +12,7 @@ const QuemSomos = () => {
                     <h1 className="text-h1">Quem somos</h1>
                     <p>The Purple House é um projeto desenvolvido pelo grupo 4tec, que acredita que a tecnologia está mudando profundamente o mundo, dando autonomia aos indivíduos, eliminando intermediários e viabilizando sonhos.
                     </p>
-                    <p>The Purple House foi criado para facilitar o dia a dia de profissionais que tem a dificuldade de mostrar seus serviços e tambem para clientes que precisam de facilidade para pedir determinado serviço residencial. Assim mostrando que a tecnologia muda vidas.
+                    <p>The Purple House foi criado para facilitar o dia a dia de profissionais que tem a dificuldade de mostrar seus serviços e também para clientes que precisam de facilidade para pedir determinado serviço residencial. Assim mostrando que a tecnologia muda vidas.
                     </p>
 
                 </div>
@@ -26,7 +27,8 @@ const QuemSomos = () => {
                     <h1 className="text-h1-quem">O que queremos?</h1>
                     <p>Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
                 </div>
-                <button>FAÇA PARTE</button>
+                {/* <button></button> */}
+                <div className="div-btnQuemSomos"> <a  href="/Cadastro" className="buttonQuemSomos"><Link to='/Cadastro' >FAÇA PARTE</Link></a></div>
             </section>
 
         </body>

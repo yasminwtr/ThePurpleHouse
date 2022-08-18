@@ -62,34 +62,27 @@
   margin-bottom: 4% ;
   box-shadow: 0 7px 7px 0  #B3B3B3;
   }
-
-  .ContainerText button{
-    padding: 10PX 35PX;
-    border: none ;
+.div-btnQuemSomos{
+  margin-bottom: 20px;
+}
+.buttonQuemSomos a{
     background-color: #A16FF7;
-    border-radius: 15px;
+    padding: 13PX 35PX;
+    border: none ;
+    text-decoration: #A16FF7;
     color: #fff;
-    font-size: 1.2rem;
+    border-radius: 15px;
+    font-size: 1.2rem; 
     font-weight: 500;
-    /* border-color:#695cdd ;
-    border-width: 2px;
-    border-style: solid; */
+    font-family: sans-serif;
     transition: all 0.5s;
-
   }
-  .ContainerText button:hover{
-   background-color: #8058C4;
-   border: none;
-   /* border-color:#77A3D4 ;
-   border-width: 2px;
-   border-style: solid; */
-   color: #fff;
-   font-size: 1.2rem;
-   font-weight: 500;
-   box-shadow: 0 10px 17px 0 #7E57C2;
-
-
+  .buttonQuemSomos a:hover{
+    background-color: #8058C4;
+    text-decoration:#8058C4 ;
+    box-shadow: 0 5px 10px 0 #7E57C2;
   }
+
   .ContainerText p{
     color: #000;
       font-size: 1.1rem;

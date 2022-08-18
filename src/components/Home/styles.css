@@ -56,20 +56,29 @@ color: #000;
   margin-left: 36px;
 }
 
-.buttonHome a {
+
+.buttonHome-a a{
   display: inline-block;
+  background-color: #A16FF7;
+  padding: 12px 36px;
   font-size: 1.2rem;
-  font-family: sans-serif;
-  font-weight: 600;
-  color: rgb(255, 255, 255);
-  background-color: #A58AD2;
-  border: 3px solid #8058C4;
   margin: 15px 0px 0px;
-  padding: 12px 30px;
+  border:none;
+  border-radius:17px;
+  color: #fff;
   text-decoration: none;
-  border-radius: 15px;
-  transition: all 150ms linear 0s;
+  font-family: sans-serif;
+  font-weight: 700;
+  transition: all 0.5s;
 }
+.buttonHome-a :hover{
+  background-color: #8058C4;
+  color: #fff;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-shadow: 0 10px 17px 0 #8058c4cf;
+}
+
 
 /* ===========SECTION HOME================ */
 
@@ -121,6 +130,7 @@ padding: 30px 0px;
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 25px;
+  font-family: sans-serif;
 }
 .p{
   color: black;
@@ -135,29 +145,35 @@ padding: 30px 0px;
   margin: auto;
   margin-bottom: 7.4%;
 }
-.ContainerButtonHomeS button{
+
+
+.buttonHome2-a a{
+  justify-content: center;
   padding: 20PX 35PX;
   border: none;
   background-color: #A16FF7;
+  text-decoration: #A16FF7;
   border-radius: 15px;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: sans-serif;
   font-weight: 500;
   width: 20%;
   margin: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
   transition: all 0.5s;
 }
-.seeMoreButton:hover{
+.buttonHome2-a:hover{
   background-color: #8058C4;
-  border: none;
   color: #fff;
-  cursor: pointer;
+  text-decoration: #8058C4;
   box-shadow: 0 10px 17px 0 #7E57C2;
 }
+a{
+  text-decoration: none;
+}
+
 
 /* -----------Como Funciona styles-------------- */
 /* Titulos */
