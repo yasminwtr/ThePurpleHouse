@@ -81,7 +81,7 @@ const Home = () => {
       <section className="ContainerTextServices">
         <div className="texts-ComoF">
           <h1 className="text-h1-ComoF">COMO FUNCIONA?</h1>
-          <p>A S|R é uma plataforma que facilita a conexão entre clientes
+          <p>A The Purple House é uma plataforma que facilita a conexão entre clientes
             e trabalhadores independentes, de diversas atividades.</p>
         </div>
       </section>
