@@ -123,6 +123,10 @@
     margin-bottom: 6%;
 }
 
+.containerInputLogin:hover{
+    border: 1px solid #9472ce;
+}
+
 .inputLogin{
     background-color: #f8f8f8;
     border: none;
