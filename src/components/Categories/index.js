@@ -15,7 +15,6 @@ import Col from 'react-bootstrap/Col';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PlaceIcon from '@mui/icons-material/Place';
-import { Transition, animated } from "react-spring";
 import ResultCategories from './boxResultCategories'
 
 function Categories() {
@@ -23,33 +22,34 @@ function Categories() {
   const showOrHide = () => setShowElement(true)
 
   return (
-    <div className="page">
-      <div onClick={() => showOrHide} >
-        {showElement ? <p>
-          <ResultCategories />
-        </p> : null}
-      </div>
-      <div className="containerCategories">
-        <Container className="categories">
-          <h1 className="titleContainerCategories">
-            Selecione a categoria do serviço que está procurando
-          </h1>
-          <Row>
-            <Col onClick={showOrHide} className="boxCategories"><img src={electrician} />Eletricista</Col>
-            <Col onClick={showOrHide} className="boxCategories"><img src={clean} />Diarista</Col>
-            <Col onClick={showOrHide} className="boxCategories"><img src={gardening} />Jardinagem</Col>
-            <Col onClick={showOrHide} className="boxCategories"><img src={baby} />Babá</Col>
-          </Row>
-          <Row>
-            <Col onClick={showOrHide} className="boxCategories"><img src={terapia} />Fisioterapia</Col>
-            <Col onClick={showOrHide} className="boxCategories"><img src={marceneiro} />Marceneiro</Col>
-            <Col onClick={showOrHide} className="boxCategories"><img src={cozinheiro} />Cozinheiro</Col>
-            <Col onClick={showOrHide} className="boxCategories"><img src={maquiagem} />Esteticista</Col>
-          </Row>
-        </Container>
-      </div>
-    </div >
-  </body>
+    <body>
+      <div className="page">
+        <div onClick={() => showOrHide} >
+          {showElement ? <p>
+            <ResultCategories />
+          </p> : null}
+        </div>
+        <div className="containerCategories">
+          <Container className="categories">
+            <h1 className="titleContainerCategories">
+              Selecione a categoria do serviço que está procurando
+            </h1>
+            <Row>
+              <Col onClick={showOrHide} className="boxCategories"><img src={electrician} />Eletricista</Col>
+              <Col onClick={showOrHide} className="boxCategories"><img src={clean} />Diarista</Col>
+              <Col onClick={showOrHide} className="boxCategories"><img src={gardening} />Jardinagem</Col>
+              <Col onClick={showOrHide} className="boxCategories"><img src={baby} />Babá</Col>
+            </Row>
+            <Row>
+              <Col onClick={showOrHide} className="boxCategories"><img src={terapia} />Fisioterapia</Col>
+              <Col onClick={showOrHide} className="boxCategories"><img src={marceneiro} />Marceneiro</Col>
+              <Col onClick={showOrHide} className="boxCategories"><img src={cozinheiro} />Cozinheiro</Col>
+              <Col onClick={showOrHide} className="boxCategories"><img src={maquiagem} />Esteticista</Col>
+            </Row>
+          </Container>
+        </div>
+      </div >
+    </body>
   );
 }
 
