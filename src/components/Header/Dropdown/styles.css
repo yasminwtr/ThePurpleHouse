@@ -93,7 +93,7 @@
 
 .link-profile:hover {
   text-decoration: none;
-  color: #A58AD2;
+  color: #8058C4 !important;
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px) { 
