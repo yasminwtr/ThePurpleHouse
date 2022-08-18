@@ -3,6 +3,10 @@ import electrician from '../assets/img/electrician.png'
 import clean from "../assets/img/clean.png"
 import gardening from "../assets/img/gardening.png"
 import baby from "../assets/img/baby.png"
+import terapia from '../assets/img/terapia.png'
+import marceneiro from '../assets/img/marcenaria.png'
+import cozinheiro from '../assets/img/chef.png'
+import maquiagem from '../assets/img/maquiagem.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -26,10 +30,10 @@ function Categories() {
             <Col className="boxCategories"><img src={baby} />Babá</Col>
           </Row>
           <Row>
-            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
-            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
-            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
-            <Col className="boxCategories"><img src={electrician} />Eletricista</Col>
+            <Col className="boxCategories"><img src={terapia} />Fisioterapia</Col>
+            <Col className="boxCategories"><img src={marceneiro} />Marceneiro</Col>
+            <Col className="boxCategories"><img src={cozinheiro} />Cozinheiro</Col>
+            <Col className="boxCategories"><img src={maquiagem} />Esteticista</Col>
           </Row>
         </Container>
 
