@@ -1,5 +1,9 @@
-body{
-  font-family: Inter-Regular;
+.body-cadastro{
+    font-family: "Source Sans Pro";
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    background-image: url(../assets/img/imgFundo.png) !important;
+    background-size: cover;
 }
 
 .container-cadastro{

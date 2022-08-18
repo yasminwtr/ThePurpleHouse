@@ -17,6 +17,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 
 function Categories() {
   return (
+    <body className="body-categories">
     <div className="page">
       <div className="containerCategories">
         <Container className="categories">
@@ -53,6 +54,7 @@ function Categories() {
         </div>
       </div>
     </div >
+  </body>
   );
 }
 

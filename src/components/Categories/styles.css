@@ -18,6 +18,15 @@
   src: url(../assets/fonts/Inter-Bold.woff) format('woff');
 }
 
+.body-categories{
+   width: 100%;
+    font-family: "Source Sans Pro";
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    background-image: url(../assets/img/imgFundo3.png) !important;
+    background-size: cover;
+}
+
 .page {
   display: flex;
   flex-direction: row;

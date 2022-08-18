@@ -5,7 +5,7 @@ import Team from '../assets/img/Collab.png'
 
 const QuemSomos =() =>{
     return(
-        <>
+        <body className="body-quemSomos">
         <section className="QuemS">
             <div className="Quem-text">
                 <h1 className="text-h1">Quem somos</h1>
@@ -27,7 +27,7 @@ const QuemSomos =() =>{
             <button>FAÇA PARTE</button>
         </section>
 
-        </>
+        </body>
     )
 }
 

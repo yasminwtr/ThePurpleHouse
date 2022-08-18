@@ -16,12 +16,12 @@ a-link-home {
   text-decoration: none;
   color: #fff;
 }
-body {
-  height: 100vh;
+.bodyHome {
+  height: 100%;
   font-family: "Source Sans Pro";
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  background-image: url(../assets/img/fundoo.png);
+  background-image: url(../assets/img/fundoo.png) !important;
   background-size: cover;
 }
 /* ===========SECTION HOME================ */

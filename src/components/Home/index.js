@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import './styles.css'
 const Home = () => {
   return (
-    <>
+    <body className="bodyHome">
       <section className="container-Home">
         <div className="Quem-img">
           <img src={landing} alt='quemsomos' className="img-landingPage" />
@@ -140,7 +140,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </>
+      </body>
   )
 }
 
