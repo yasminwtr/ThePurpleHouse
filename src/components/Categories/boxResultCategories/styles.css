@@ -1,9 +1,9 @@
 .resultCategories {
   background-color: #FAFAFA;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 10px;
   height: 500px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1 );
   color: #655A78;
   margin-top: 80px;
   margin-bottom: 30px;
@@ -12,39 +12,25 @@
   margin-right: 100px;
 }
 
-/* .resultCategories {
-  background: #fff;
-  position: absolute;
-  font-family: "Open Sans";
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  display: none;
-} */
-
-/* .resultCategories:hover {
-  transition: 10s !important;
-  width: 100px;
-} */
-
 .searchCategories {
   margin: 20px;
 }
 
-.inputSearch {
-  background-color: #fff;
-  height: 60px;
-  width: 250px;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 10px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  align-self: center;
+.input-search {
+  display: flex;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  align-items: center;
+  width: 85%;
+  padding: 10px;
+  color: #000000;
+  font-size: 17px;
+  height: 45px;
+  border: 1px solid #F5F0FE;
+  box-shadow: 0px 4px 5px #c8bae5;
+  margin-bottom: 6%;
+  border: none !important;
+  outline: none !important;
 }
 
 .inputSearch::placeholder {
@@ -57,26 +43,26 @@
   align-self: center;
   color: #655A78;
   border: none;
-  height: 60px;
-  width: 100px;
+  height: 40px;
+  width: 80px;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.10);
   margin-top: 20px;
-  background-color: #A58AD2;
+  background-color:transparent;
   border-radius: 15px;
-  border: 3px solid #8058C4;
-  color: #fff;
+  border: 2px solid #655A78;
+  color: #655A78;
   font-family: Inter-Bold;
 }
 
 .buttonSearch:hover {
-  background: #8058C4;
-  border: 3px solid #8058C4;
-  box-shadow: 0 2px 5px 0 rgba(102, 23, 117, 0.712);
+  border: 2px solid #A58AD2;
+  color: #A58AD2;
+  width: 85px;
+  transition: width 100ms;
 }
 
 .containerSearch {
-  /* display: flex; */
   flex-direction: row;
 }

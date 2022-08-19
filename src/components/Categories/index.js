@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./styles.css"
 import electrician from '../assets/img/electrician.png'
 import clean from "../assets/img/clean.png"
@@ -9,17 +9,54 @@ import marceneiro from '../assets/img/marcenaria.png'
 import cozinheiro from '../assets/img/chef.png'
 import maquiagem from '../assets/img/maquiagem.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import PlaceIcon from '@mui/icons-material/Place';
 import ResultCategories from './boxResultCategories'
+import Grid from '@mui/material/Unstable_Grid2';
 
 function Categories() {
   const [showElement, setShowElement] = useState(false)
   const showOrHide = () => setShowElement(true)
+  const [selectedCategory, setSelectedCategory] = useState(null)
+
+  useEffect(() => {
+    selectedCategory != null ? setShowElement(true) : setShowElement(false)
+  }, [selectedCategory])
+
+  const categories = [
+    {
+      title: 'Eletricista',
+      img: electrician,
+      id: 1
+    }, {
+      title: 'Diarista',
+      img: clean,
+      id: 2
+    }, {
+      title: 'Jardinagem',
+      img: gardening,
+      id: 3
+    }, {
+      title: 'Babá',
+      img: baby,
+      id: 4
+    }, {
+      title: 'Fisioterapia',
+      img: terapia,
+      id: 5
+    }, {
+      title: 'Marceneiro',
+      img: marceneiro,
+      id: 6
+    }, {
+      title: 'Cozinheiro',
+      img: cozinheiro,
+      id: 7
+    }, {
+      title: 'Esteticista',
+      img: maquiagem,
+      id: 8
+    }
+  ];
 
   return (
     <body>
@@ -30,23 +67,20 @@ function Categories() {
           </p> : null}
         </div>
         <div className="containerCategories">
-          <Container className="categories">
-            <h1 className="titleContainerCategories">
-              Selecione a categoria do serviço que está procurando
-            </h1>
-            <Row>
-              <Col onClick={showOrHide} className="boxCategories"><img src={electrician} />Eletricista</Col>
-              <Col onClick={showOrHide} className="boxCategories"><img src={clean} />Diarista</Col>
-              <Col onClick={showOrHide} className="boxCategories"><img src={gardening} />Jardinagem</Col>
-              <Col onClick={showOrHide} className="boxCategories"><img src={baby} />Babá</Col>
-            </Row>
-            <Row>
-              <Col onClick={showOrHide} className="boxCategories"><img src={terapia} />Fisioterapia</Col>
-              <Col onClick={showOrHide} className="boxCategories"><img src={marceneiro} />Marceneiro</Col>
-              <Col onClick={showOrHide} className="boxCategories"><img src={cozinheiro} />Cozinheiro</Col>
-              <Col onClick={showOrHide} className="boxCategories"><img src={maquiagem} />Esteticista</Col>
-            </Row>
-          </Container>
+          <h1 className="titleContainerCategories">
+            Selecione a categoria do serviço que está procurando
+          </h1>
+          <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
+            {categories.map((category, index) => (
+              <Grid className="grid-categories" xs={2} key={index}>
+                <Col xs={8} onClick={() => setSelectedCategory(category.id)} className={`boxCategories ${selectedCategory === category.id ? 'boxSelected' : null}`}>
+                  <img className='imgBoxCategories' src={category.img} />
+                  <p>{category.title}</p>
+                  <p className='p-boxCategories'>Ver mais</p>
+                </Col>
+              </Grid>
+            ))}
+          </Grid>
         </div>
       </div >
     </body>

@@ -14,8 +14,6 @@ import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
 import api from "../../api/";
-
-
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
@@ -119,7 +117,7 @@ const Cadastro = () => {
         } = props;
 
         return (
-          <form onSubmit={handleSubmit}  className="body-cadastro">
+          <form onSubmit={handleSubmit} className="body-cadastro">
             <div>
               <div className='header-cadastro'>
                 <img className='logo-cadastro' src={logo} />
