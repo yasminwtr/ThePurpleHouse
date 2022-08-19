@@ -17,11 +17,9 @@
   align-items: center;
   background-image: url(../../assets/img/imgFundo3.png) !important;
   user-select: none; 
-
 }
 
 .containerCategories {
-  /* display: flex; */
   font-family: Inter-Bold;
 }
 
@@ -30,7 +28,6 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 27px;
   font-family: Inter-Bold;
-  width: 100%;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -71,43 +68,68 @@
 @media screen and (max-width: 600px) {
   .page {
     flex-direction: column;
-  }
+    background-color: cadetblue !important;
+    overflow-y: scroll;
 
+  }
   .resultCategories {
     width: 390px;
     margin-bottom: 30px;
     align-self: center;
+    background-color: chartreuse !important;
   }
 
   .containerCategories {
-    margin: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow-y: scroll;
   }
+
+  .containerCategories::-webkit-scrollbar {
+    background-color: #A16FF7;
+    border-radius: 1vw;
+    width: 1px;
+  }
+  
+  .containerCategories::-webkit-scrollbar-button {
+    background-color: #A16FF7;
+    border-radius: 1vw;
+  }
+    
+  .containerCategories::-webkit-scrollbar-track {
+    background-color: #A16FF7;
+    border-radius: 1vw;
+  }
+    
+  .containerCategories::-webkit-scrollbar-thumb {
+    background-color: #A16FF7;
+    border-radius: 1vw;
+  }
+
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px) {
-  .resultCategories {
-    margin-right: 20px;
-    margin-bottom: 30px;
-    align-self: center;
+  .page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    
   }
-
-  .containerCategories {
-    margin: 10px;
-    width: 500px;
-    align-self: center;
+  .container-categories-search {
+    width: 300px !important;
+    margin-left: 20px !important;
   }
 }
 
 @media screen and (min-width: 960px) and (max-width: 1264px) {
-  .resultCategories {
-    margin-right: 20px;
-    margin-bottom: 30px;
-    align-self: center;
-  }
-
   .containerCategories {
-    margin: 10px;
-    width: 500px;
-    align-self: center;
+    width: 90%;
+    margin:20px
+  }
+  .container-categories-search {
+    width: 300px !important;
+    margin-left: 20px !important;
   }
 }

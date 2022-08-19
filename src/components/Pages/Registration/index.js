@@ -80,6 +80,7 @@ const Cadastro = () => {
       const response = await api.post('/registerUser', { fullName, email, password, phoneNumber, birthDate });
       await signIn({ email, password })
       console.log('response', response);
+      
     } catch (error) {
       console.log(error)
     }
@@ -202,7 +203,7 @@ const Cadastro = () => {
                     <div className="input-feedback">{errors.password}</div>
 
                     <div>
-                      <button type='submit' onClick={() => validationFields()} disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
+                      <button type='submit' onClick={() => validationFields() } disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
                       <div>
                         <label className='label-cadastro'>Já possui uma conta?</label>
                         {/* <a className='a-cadastro' href=''>Entre</a> */}
