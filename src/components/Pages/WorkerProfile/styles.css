@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'Inter-Regular';
-  src: url(../assets/fonts/Inter-Regular.woff) format('woff');
+  src: url(../../assets/fonts/Inter-Regular.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Inter-Medium';
-  src: url(../assets/fonts/Inter-Medium.woff) format('woff');
+  src: url(../../assets/fonts/Inter-Medium.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Inter-SemiBold';
-  src: url(../assets/fonts/Inter-SemiBold.woff) format('woff');
+  src: url(../../assets/fonts/Inter-SemiBold.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Inter-Bold';
-  src: url(../assets/fonts/Inter-Bold.woff) format('woff');
+  src: url(../../assets/fonts/Inter-Bold.woff) format('woff');
 }
 
 body {
@@ -478,9 +478,9 @@ ol, li {
 }
   
 .carousel::before {
-    background-image: url('../assets/img/left.png');
+    background-image: url('../../assets/img/left.png');
 }
   
 .carousel::after {
-    background-image: url('../assets/img/right.png');
+    background-image: url('../../assets/img/right.png');
 }

@@ -1,13 +1,13 @@
 import React from "react";
 
-import landing from '../assets/img/landing.png'
-import eletricista from '../assets/img/eletricistaicon.png'
-import diarista from '../assets/img/diarista.png'
-import baba from '../assets/img/baba.png'
-import encontre from '../assets/img/busca.png'
-import escolha from '../assets/img/selecao.png'
-import negocie from '../assets/img/chat.png'
-import avaliacao from '../assets/img/avaliacao.png'
+import landing from '../../assets/img/landing.png'
+import eletricista from '../../assets/img/eletricistaicon.png'
+import diarista from '../../assets/img/diarista.png'
+import baba from '../../assets/img/baba.png'
+import encontre from '../../assets/img/busca.png'
+import escolha from '../../assets/img/selecao.png'
+import negocie from '../../assets/img/chat.png'
+import avaliacao from '../../assets/img/avaliacao.png'
 import { Link } from "react-router-dom";
 
 import './styles.css'

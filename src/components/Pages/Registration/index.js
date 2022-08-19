@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './styles.css'
-import logo from '../assets/img/logo.png'
+import logo from '../../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
@@ -12,7 +12,7 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded';
 import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
-import api from "../../api";
+import api from "../../../api";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';

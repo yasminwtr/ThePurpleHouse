@@ -21,7 +21,7 @@ a-link-home {
   font-family: "Source Sans Pro";
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  background-image: url(../assets/img/fundoo.png) !important;
+  background-image: url(../../assets/img/fundoo.png) !important;
   background-size: cover;
 }
 /* ===========SECTION HOME================ */

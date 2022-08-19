@@ -3,14 +3,14 @@ import { Route, BrowserRouter } from "react-router-dom";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import Home from "./Home/";
-import About from "./About";
-import Registration from "./Registration"
-import Profile from "./Profile";
-import WorkerProfile from "./WorkerProfile";
-import Chat from './Chat'
-import Categories from "./Categories";
-import Login from "./Login"
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Registration from "./Pages/Registration"
+import Profile from "./Pages/Profile";
+import WorkerProfile from "./Pages/WorkerProfile";
+import Chat from './Pages/Chat'
+import Categories from "./Pages/Categories";
+import Login from "./Pages/Login"
 
 const Routes = () => {
   return (

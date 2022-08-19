@@ -1,7 +1,7 @@
 
 import React from 'react'
 import './styles.css'
-import logo from '../assets/img/logo.png'
+import logo from '../../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
 import IconButton from '@mui/material/IconButton';
 
