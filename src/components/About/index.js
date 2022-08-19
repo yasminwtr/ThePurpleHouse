@@ -28,7 +28,7 @@ const QuemSomos = () => {
                     <p>Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
                 </div>
                 {/* <button></button> */}
-                <div className="div-btnQuemSomos"> <a  href="/Cadastro" className="buttonQuemSomos"><Link to='/Cadastro' >FAÇA PARTE</Link></a></div>
+                <div className="div-btnQuemSomos"> <a  href="/Registration" className="buttonQuemSomos"><Link to='/Registration' >FAÇA PARTE</Link></a></div>
             </section>
 
         </body>

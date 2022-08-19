@@ -3,7 +3,6 @@ import React from 'react'
 import './styles.css'
 import logo from '../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
-import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
 
 import Visibility from '@mui/icons-material/Visibility';
@@ -79,7 +78,7 @@ function Login() {
                             <div>
                                 <label className='label-login'>Não possui uma conta? </label>
                                 {/* <a className='a-cadastro' href=''>Cadastre-se</a> */}
-                                <a  href="/Cadastro" className='a-login'><Link to='/Cadastro' className='a-login'> Cadastre-se</Link></a>
+                                <a  href="/Registration" className='a-login'><Link to='/Registration' className='a-login'> Cadastre-se</Link></a>
                             </div>
                         </div>
                     </div>

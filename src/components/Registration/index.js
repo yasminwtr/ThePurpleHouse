@@ -7,13 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
-import RiLockPasswordFill from 'react-icons/ri'
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded';
 import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
-import api from "../../api/";
+import api from "../../api";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
