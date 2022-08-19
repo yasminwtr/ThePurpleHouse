@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './styles.css'
 import logo from '../../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
@@ -17,6 +17,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import AuthContext from '../../contexts/auth'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -28,6 +29,7 @@ const Cadastro = () => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
+  const { signIn } = useContext(AuthContext);
 
   const [values, setValues] = React.useState({
 
@@ -76,6 +78,7 @@ const Cadastro = () => {
   async function registerNewUser() {
     try {
       const response = await api.post('/registerUser', { fullName, email, password, phoneNumber, birthDate });
+      await signIn({ email, password })
       console.log('response', response);
     } catch (error) {
       console.log(error)
