@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import "./styles.css"
-import electrician from '../assets/img/electrician.png'
-import clean from "../assets/img/clean.png"
-import gardening from "../assets/img/gardening.png"
-import baby from "../assets/img/baby.png"
-import terapia from '../assets/img/terapia.png'
-import marceneiro from '../assets/img/marcenaria.png'
-import cozinheiro from '../assets/img/chef.png'
-import maquiagem from '../assets/img/maquiagem.png'
+import electrician from '../../assets/img/electrician.png'
+import clean from "../../assets/img/clean.png"
+import gardening from "../../assets/img/gardening.png"
+import baby from "../../assets/img/baby.png"
+import terapia from '../../assets/img/terapia.png'
+import marceneiro from '../../assets/img/marcenaria.png'
+import cozinheiro from '../../assets/img/chef.png'
+import maquiagem from '../../assets/img/maquiagem.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import ResultCategories from './boxResultCategories'

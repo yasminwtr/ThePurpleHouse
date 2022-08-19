@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
-import api from "../../../api";
+import api from "../../../../api";
 
 const CancelService = (props) => {
     const [show, setShow] = useState(false);

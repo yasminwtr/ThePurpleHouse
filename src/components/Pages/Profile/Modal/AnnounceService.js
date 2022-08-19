@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import AnnounceIcon from '@mui/icons-material/CampaignRounded'
-import api from "../../../api";
+import api from "../../../../api";
 
 const AnnounceService = (props) => {
     const [show, setShow] = useState(false);

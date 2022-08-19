@@ -1,13 +1,13 @@
 import React from "react";
 
-import landing from '../assets/img/landing.png'
-import eletricista from '../assets/img/eletricistaicon.png'
-import diarista from '../assets/img/diarista.png'
-import baba from '../assets/img/baba.png'
-import encontre from '../assets/img/busca.png'
-import escolha from '../assets/img/selecao.png'
-import negocie from '../assets/img/chat.png'
-import avaliacao from '../assets/img/avaliacao.png'
+import landing from '../../assets/img/landing.png'
+import eletricista from '../../assets/img/eletricistaicon.png'
+import diarista from '../../assets/img/diarista.png'
+import baba from '../../assets/img/baba.png'
+import encontre from '../../assets/img/busca.png'
+import escolha from '../../assets/img/selecao.png'
+import negocie from '../../assets/img/chat.png'
+import avaliacao from '../../assets/img/avaliacao.png'
 import { Link } from "react-router-dom";
 
 import './styles.css'
@@ -22,7 +22,7 @@ const Home = () => {
           <h1 className="text-h1-home">Contrate prestadores para sua casa!</h1>
           <p> Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!</p>
           {/* <a  href="/Cadastro" className="buttonHome"><Link to='/Cadastro'>COMEÇAR</Link></a> */}
-          <div> <a  href="/Cadastro" className="buttonHome-a"><Link to='/Cadastro'>COMEÇAR</Link></a></div>
+          <div> <a  href="/Registration" className="buttonHome-a"><Link to='/Registration'>COMEÇAR</Link></a></div>
          
         </div>
       </section>

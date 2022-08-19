@@ -14,8 +14,8 @@ const Footer = ()=>{
                 <div className="footer">
                     <ul className='footer-links'>
                         <li><Link to='/'>Inicial</Link> </li>
-                        <li><Link to='/quemsomos'>Quem somos</Link> </li>
-                        <li><Link to='/quemsomos'>Serviços</Link> </li>
+                        <li><Link to='/About'>Quem somos</Link> </li>
+                        <li><Link to='/'>Serviços</Link> </li>
                     </ul>
 
                 </div>
