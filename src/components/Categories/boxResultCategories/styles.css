@@ -1,68 +1,60 @@
-.resultCategories {
+.container-search {
   background-color: #FAFAFA;
-  text-align: center;
-  border-radius: 10px;
-  height: 500px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1 );
   color: #655A78;
-  margin-top: 80px;
-  margin-bottom: 30px;
-  padding: 20px;
   font-family: Inter-Regular;
   margin-right: 100px;
+  height: 500px;
+} 
+
+.grid-search {
+  text-align: center;
 }
 
-.searchCategories {
-  margin: 20px;
+.button-search {
+  color: #A58AD2;
+  border: none;
+  font-weight: bold;
+  background-color:transparent;
+  border-radius: 8px;
+  border: 2px solid #A58AD2;
+  font-family: Inter-Bold;
+  height: 47px;
+  width: 80px;
+  margin-left: 20px;
+}
+
+.button-search:hover {
+  border: 2px solid #655A78;
+  color: #655A78;
 }
 
 .input-search {
   display: flex;
   background-color: #f8f8f8;
   border-radius: 8px;
-  align-items: center;
-  width: 85%;
-  padding: 10px;
+  width: 200px ;
+  padding: 10px ;
   color: #000000;
   font-size: 17px;
-  height: 45px;
   border: 1px solid #F5F0FE;
-  box-shadow: 0px 4px 5px #c8bae5;
-  margin-bottom: 6%;
-  border: none !important;
-  outline: none !important;
+  margin-left: 30px;
 }
 
-.inputSearch::placeholder {
-  text-align: left;
-  color: #000000;
-  font-size: 17px;
+.input-search:hover{
+  border: 1px solid #9472ce !important;
 }
 
-.buttonSearch {
-  align-self: center;
-  color: #655A78;
+#icon-search{
+  color: #655A78 !important;
+  font-size: 25px;
+}
+
+.input-search-content {
+  background-color: #f8f8f8;
   border: none;
-  height: 40px;
-  width: 80px;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.10);
-  margin-top: 20px;
-  background-color:transparent;
-  border-radius: 15px;
-  border: 2px solid #655A78;
-  color: #655A78;
-  font-family: Inter-Bold;
-}
-
-.buttonSearch:hover {
-  border: 2px solid #A58AD2;
-  color: #A58AD2;
-  width: 85px;
-  transition: width 100ms;
-}
-
-.containerSearch {
-  flex-direction: row;
+  outline: none;
+  font-family: Inter-Regular;
+  width: 85%;
+  margin-left: 3%;
 }
