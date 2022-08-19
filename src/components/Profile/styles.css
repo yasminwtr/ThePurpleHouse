@@ -282,6 +282,15 @@ textarea:focus, input:focus, select:focus {
     margin: .5rem 0 .02rem 0 !important;
 }
 
+#linkWhatsapp{
+    color: #A58AD2;
+    text-decoration: none;
+}
+
+#linkWhatsapp:hover{
+    color: #675880;
+}
+
 .modal::-webkit-scrollbar {
     width: 1vw;
 }
