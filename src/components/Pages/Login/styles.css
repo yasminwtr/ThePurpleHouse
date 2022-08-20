@@ -22,6 +22,10 @@
     width: 55px;
 }
 
+.testeAlert{
+    font-family: Inter-Regular;
+}
+
 .box-login{
     background-color: #F5F0FE;
     text-align: center;
