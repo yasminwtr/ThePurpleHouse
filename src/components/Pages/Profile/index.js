@@ -52,7 +52,7 @@ const Profile = () => {
                 </div>
 
                 <div className='options-config'>
-                    <p id='options-ttle'>Serviços</p>
+                    <p id='options-title'>Serviços</p>
                     <Avaliations/>
                     <AnnounceService/>
                     <CancelService/>
