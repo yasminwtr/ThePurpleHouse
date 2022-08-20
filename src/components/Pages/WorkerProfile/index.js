@@ -13,40 +13,40 @@ import DescriptionIcon from '@mui/icons-material/InfoRounded'
 
 const WorkerProfile = () => {
     return(  
-        <div className='allWorkerProfile'>
-            <div className='containerWorkerProfile'>
-                <div className='part1WorkerProfile'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconWorkerProfile' alt="Profile"/>
-                    <p id='nameWorkerProfile'>Mario Silvo</p>
-                    <p id='categorieWorkerProfile'>Jardineiro, 25 anos</p>
-                    <p id='starsWorkerProfile'><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p>
-                    <button className='messageButton'>Enviar mensagem</button>
+        <div className='all-worker-profile'>
+            <div className='container-worker-profile'>
+                <div className='part1-worker-profile'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile"/>
+                    <p id='name-worker-profile'>Mario Silvo</p>
+                    <p id='categorie-worker-profile'>Jardineiro, 25 anos</p>
+                    <p id='stars-worker-profile'><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p>
+                    <button className='message-button'>Enviar mensagem</button>
                 </div>
 
-                <div className='part2WorkerProfile'>
-                        <p id='titleWorkerProfile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
-                        <p id='textWorkerProfile'>mariosilva@gmail.com</p>
+                <div className='part2-worker-profile'>
+                        <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
+                        <p id='text-worker-profile'>mariosilva@gmail.com</p>
 
-                        <p id='titleWorkerProfile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
-                        <p id='textWorkerProfile'>(48) 99160-1340</p>
+                        <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
+                        <p id='text-worker-profile'>(48) 99160-1340</p>
 
-                        <p id='titleWorkerProfile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
-                        <p id='textWorkerProfile'>18/02/2004</p>
+                        <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
+                        <p id='text-worker-profile'>18/02/2004</p>
 
-                        <p id='titleWorkerProfile'><LocationIcon sx={{ fontSize: 20 }}/> Localização</p>
-                        <p id='textWorkerProfile'>Florianópolis, Santa Catarina</p>
+                        <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20 }}/> Localização</p>
+                        <p id='text-worker-profile'>Florianópolis, Santa Catarina</p>
 
-                        <p id='titleWorkerProfile'><PriceIcon sx={{ fontSize: 20 }}/> Preço médio dos serviços</p>
-                        <p id='textWorkerProfile'>R$ 40,97</p>
+                        <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20 }}/> Preço médio dos serviços</p>
+                        <p id='text-worker-profile'>R$ 40,97</p>
 
-                        <p id='titleWorkerProfile'><DescriptionIcon sx={{ fontSize: 20 }}/> Descrição</p>
-                        <p id='textWorkerProfile'>Preparar, conservar e limpar jardins, compreendendo: capina, corte, replantio, adubação periódica, irrigação, varredura, pulverização simples e polvilhamento. Preparar as sementes. Fazer a repicagem e o transplante das mudas, incluindo desmate, transporte e embalagem. Atendo residências e comércios.</p>
+                        <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20 }}/> Descrição</p>
+                        <p id='text-worker-profile'>Preparar, conservar e limpar jardins, compreendendo: capina, corte, replantio, adubação periódica, irrigação, varredura, pulverização simples e polvilhamento. Preparar as sementes. Fazer a repicagem e o transplante das mudas, incluindo desmate, transporte e embalagem. Atendo residências e comércios.</p>
                 </div>
             </div>
 
-            <div className='containerBlocks'>
+            <div className='container-blocks'>
                 <div className='gallery'>
-                    <p id='titleBlocks'>Galeria de serviços</p>
+                    <p id='title-blocks'>Galeria de serviços</p>
 
                     <section className='carousel' aria-label='Gallery'>
                         <ol className='carousel__viewport'>
@@ -100,57 +100,57 @@ const WorkerProfile = () => {
 
 
                 <div className='avaliations'>
-                    <p id='titleBlocks'>Avaliações</p>
+                    <p id='title-blocks'>Avaliações</p>
 
-                    <div className='feedAvaliations'>
-                        <div className='inicialAvaliations'>
+                    <div className='feed-avaliations'>
+                        <div className='inicial-avaliations'>
                             <LeaveAvaliation/> 
-                            <p id='numberAvaliations'>2 avaliações</p> 
+                            <p id='number-avaliations'>2 avaliações</p> 
                         </div>
 
                         <div>
-                            <div className='blockAvaliation'>
-                                <div className='part1Avaliation'>
-                                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconAvaliation' alt="Profile"/>
+                            <div className='block-avaliation'>
+                                <div className='part1-avaliation'>
+                                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile"/>
                                 </div>
 
                                 <div>
-                                    <p id='nameAvaliation'>Maria Silva</p>
-                                    <p id='nameAvaliation'>★★★★★</p>
+                                    <p id='name-avaliation'>Maria Silva</p>
+                                    <p id='name-avaliation'>★★★★★</p>
                                 </div>
                             </div>
 
-                            <p id='textAvaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                            <p id='text-avaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
                         </div>
 
                         <div>
-                            <div className='blockAvaliation'>
-                                <div className='part1Avaliation'>
-                                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconAvaliation' alt="Profile"/>
+                            <div className='block-avaliation'>
+                                <div className='part1-avaliation'>
+                                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile"/>
                                 </div>
 
                                 <div>
-                                    <p id='nameAvaliation'>Maria Silva</p>
-                                    <p id='nameAvaliation'>★★★★★</p>
+                                    <p id='name-avaliation'>Maria Silva</p>
+                                    <p id='name-avaliation'>★★★★★</p>
                                 </div>
                             </div>
 
-                            <p id='textAvaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                            <p id='text-avaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
                         </div>  
 
                         <div>
-                            <div className='blockAvaliation'>
-                                <div className='part1Avaliation'>
-                                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconAvaliation' alt="Profile"/>
+                            <div className='block-avaliation'>
+                                <div className='part1-avaliation'>
+                                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile"/>
                                 </div>
 
                                 <div>
-                                    <p id='nameAvaliation'>Maria Silva</p>
-                                    <p id='nameAvaliation'>★★★★★</p>
+                                    <p id='name-avaliation'>Maria Silva</p>
+                                    <p id='name-avaliation'>★★★★★</p>
                                 </div>
                             </div>
 
-                            <p id='textAvaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                            <p id='text-avaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
                         </div>  
                     </div>
                 </div>

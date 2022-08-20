@@ -16,7 +16,7 @@ const EditAccount = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}><EditIcon sx={{ fontSize: 20 }}/> Editar conta</p>
+          <p id='options-text' onClick={handleShow}><EditIcon sx={{ fontSize: 20 }}/> Editar conta</p>
 
           <Modal
           show={show}

@@ -4,12 +4,12 @@ import './style.css'
 import Team from '../../assets/img/Collab.png'
 import {Link} from 'react-router-dom'
 
-const QuemSomos = () => {
+const About = () => {
     return (
-        <body className="body-quemSomos">
-            <section className="QuemS">
-                <div className="Quem-text">
-                    <h1 className="text-h1">Quem somos</h1>
+        <body className="body-about">
+            <section className="about">
+                <div className="about-text">
+                    <h1 className="text-h1-about">Quem somos</h1>
                     <p>The Purple House é um projeto desenvolvido pelo grupo 4tec, que acredita que a tecnologia está mudando profundamente o mundo, dando autonomia aos indivíduos, eliminando intermediários e viabilizando sonhos.
                     </p>
                     <p>The Purple House foi criado para facilitar o dia a dia de profissionais que tem a dificuldade de mostrar seus serviços e também para clientes que precisam de facilidade para pedir determinado serviço residencial. Assim mostrando que a tecnologia muda vidas.
@@ -17,22 +17,22 @@ const QuemSomos = () => {
 
                 </div>
 
-                <div className="Quem-img">
-                    <img src={Team} alt='quemsomos' className="imgQuemS" />
+                <div className="about-img">
+                    <img src={Team} alt='about' className="img-about" />
                 </div>
             </section>
 
-            <section className="ContainerText">
-                <div className="texts-quemSomos">
-                    <h1 className="text-h1-quem">O que queremos?</h1>
+            <section className="container-about-text">
+                <div className="texts-about">
+                    <h1 className="text-h1-about">O que queremos?</h1>
                     <p>Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
+                    
+                    <div className="div-btn-about"> <a  href="/Registration" className="button-about"><Link to='/Registration' >FAÇA PARTE</Link></a></div>
                 </div>
-                {/* <button></button> */}
-                <div className="div-btnQuemSomos"> <a  href="/Registration" className="buttonQuemSomos"><Link to='/Registration' >FAÇA PARTE</Link></a></div>
             </section>
 
         </body>
     )
 }
 
-export default QuemSomos
+export default About

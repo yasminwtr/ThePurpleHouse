@@ -35,13 +35,13 @@ a-link-home {
 }
 .Title-home{
   max-width: 37rem;
+  font-family: 'Inter-Regular';
 }
 .Title-home .text-h1-home{
   font-size: 3.4rem;
-  font-weight: 700;
   margin-bottom: 1rem;
   line-height: 4rem;
-  font-family: sans-serif;
+  font-family: 'Inter-Bold';
 
 }
 .Title-home p{
@@ -67,15 +67,13 @@ color: #000;
   border-radius:17px;
   color: #fff;
   text-decoration: none;
-  font-family: sans-serif;
-  font-weight: 700;
+  font-family: 'Inter-SemiBold';
   transition: all 0.5s;
 }
 .buttonHome-a :hover{
   background-color: #8058C4;
   color: #fff;
   text-decoration: none;
-  font-family: sans-serif;
   box-shadow: 0 10px 17px 0 #8058c4cf;
 }
 
@@ -122,7 +120,7 @@ padding: 30px 0px;
 .h5HomeCard{
   color: #655A78;
   font-size: 33px;
-  font-family: sans-serif;
+  font-family: 'Inter-Medium';
   margin-bottom: 15px;
 }
 .pra p{
@@ -130,7 +128,7 @@ padding: 30px 0px;
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 25px;
-  font-family: sans-serif;
+  font-family: 'Inter-Regular';
 }
 .p{
   color: black;
@@ -156,8 +154,7 @@ padding: 30px 0px;
   border-radius: 15px;
   color: #fff;
   font-size: 1.3rem;
-  font-family: sans-serif;
-  font-weight: 500;
+  font-family: 'Inter-SemiBold';
   width: 20%;
   margin: auto;
   display: flex;
@@ -183,17 +180,16 @@ a{
 }
 .texts-ComoF .text-h1-ComoF{
   font-size: 2.4rem;
-  font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
   line-height: 2rem;
   color: #655A78;
-  font-family: sans-serif;
+  font-family: 'Inter-SemiBold';
   }
 .ContainerTextServices p{
   color: #000;
   font-size: 1.6rem;
-  font-family: sans-serif;
+  font-family: 'Inter-Regular';
   text-align: center;
   line-height: 2.5rem;
   margin: 10px 0px 0px;
@@ -235,14 +231,13 @@ a{
 .h5HomeCard2{
   color: #655A78;
   font-size: 20px;
-  font-weight: bold;
-  font-family: sans-serif;
+  font-family: 'Inter-SemiBold';
   margin-bottom: 15px;
 }
 .pra2 p{
   color: black;
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: 'Inter-Regular';
   line-height: 20px;
   margin-bottom: 25px;
 }

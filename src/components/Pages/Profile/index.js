@@ -18,41 +18,41 @@ import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 
 const Profile = () => {
     return(
-        <div className='allProfile'>
-            <div className='containerProfile'>
-                <div className='part1Profile'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconProfile' alt="Profile"/>
-                    <p id='nameProfile'>Mario Silvo</p>
+        <div className='all-profile'>
+            <div className='container-profile'>
+                <div className='part1-profile'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile"/>
+                    <p id='name-profile'>Mario Silvo</p>
                 </div>
 
-                <Row className="part2Profile">
+                <Row className="part2-profile">
                     <Col md>
-                        <p id='titleProfile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
-                        <p id='textProfile'>mariosilva@gmail.com</p>
+                        <p id='title-profile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
+                        <p id='text-profile'>mariosilva@gmail.com</p>
 
-                        <p id='titleProfile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
-                        <p id='textProfile'>(48) 99160-1340</p>
+                        <p id='title-profile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
+                        <p id='text-profile'>(48) 99160-1340</p>
 
-                        <p id='titleProfile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
-                        <p id='textProfile'>18/02/2004</p>
+                        <p id='title-profile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
+                        <p id='text-profile'>18/02/2004</p>
                     </Col>
 
                     <Col md={4}>
-                        <p id='serviceTitleProfile'><ServiceIcon sx={{ fontSize: 22 }}/> Serviços anunciados</p>
-                        <p id='serviceTextProfile'>Jardineiro</p>
+                        <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22 }}/> Serviços anunciados</p>
+                        <p id='service-text-profile'>Jardineiro</p>
                     </Col>
                 </Row>   
             </div>
 
-            <div className='containerConfig'>
-                <div className='optionsConfig'>
-                    <p id='optionsTitle'>Configurações</p>
+            <div className='container-config'>
+                <div className='options-config'>
+                    <p id='options-title'>Configurações</p>
                     <EditAccount/>
                     <DeleteAccount/>
                 </div>
 
-                <div className='optionsConfig'>
-                    <p id='optionsTitle'>Serviços</p>
+                <div className='options-config'>
+                    <p id='options-ttle'>Serviços</p>
                     <Avaliations/>
                     <AnnounceService/>
                     <CancelService/>

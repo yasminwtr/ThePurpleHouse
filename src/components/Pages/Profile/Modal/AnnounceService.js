@@ -49,7 +49,7 @@ const AnnounceService = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22 }}/> Anunciar serviço</p>
+          <p id='options-text' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22 }}/> Anunciar serviço</p>
 
           <Modal
           show={show}
@@ -96,8 +96,8 @@ const AnnounceService = (props) => {
                         />
                     </Form.Group>
 
-                    <Row className="g-2 mb-3 rowLocalization">
-                        <Form.Label id='localizationLabel'>Localização em que você atua</Form.Label>
+                    <Row className="g-2 mb-3 row-localization">
+                        <Form.Label id='localization-label'>Localização em que você atua</Form.Label>
 
                         <Col md={3}>
                             <Form.Control
@@ -133,7 +133,7 @@ const AnnounceService = (props) => {
                     </InputGroup>
 
                     <Form.Group className="mb-3">
-                        <Form.Label>Adicione o seu link para o WhatsApp personalizado <a id='linkWhatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
+                        <Form.Label>Adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
 
                         <Form.Control
                         placeholder="Cole o link gerado aqui"

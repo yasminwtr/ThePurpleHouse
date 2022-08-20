@@ -9,57 +9,57 @@ import SendIcon from '@mui/icons-material/SendRounded'
 const Chat = () => {
   return (
     <body className='body-chat'>
-    <div className='allChat'>
-      <div className='boxSearchChat'>
-        <div className='containerBoxSearch'>
-          <div className='containerInput'>
-            <SearchIcon id='searchIconChat'/>
+    <div className='all-chat'>
+      <div className='box-search-chat'>
+        <div className='container-box-search'>
+          <div className='container-input'>
+            <SearchIcon id='search-icon-chat'/>
             <input
-            className='inputSearchChat'
+            className='input-search-chat'
             placeholder='Pesquisar usuário'
             />
           </div>
 
-          <button className="buttonSearchChat">Buscar</button>
+          <button className="button-search-chat">Buscar</button>
         </div>
 
-        <div className='listChatProfiles'>
-          <div className='individualChatProfile'>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconIndividualChatProfile' alt="Profile" />
-            <p id='nameChatProfile'>Mario Silvo</p>
+        <div className='list-chat-profiles'>
+          <div className='individual-chat-profile'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+            <p id='name-chat-profile'>Mario Silvo</p>
           </div>
 
-          <div className='individualChatProfile'>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconIndividualChatProfile' alt="Profile" />
-            <p id='nameChatProfile'>Mario Silvo</p>
+          <div className='individual-chat-profile'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+            <p id='name-chat-profile'>Mario Silvo</p>
           </div>
         </div>
       </div>
 
-      <div className='containerChat'>
-        <div className='headerChat'>
-          <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconIndividualChat' alt="Profile" />
-          <p id='nameAccount'>Mario Silvo</p>
+      <div className='container-chat'>
+        <div className='header-chat'>
+          <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
+          <p id='name-account'>Mario Silvo</p>
         </div>
 
-        <div className='messagesChat'>
-          <p id='leftMessage'>Lorem ipsum dolor sit amet?</p>
-          <p id='rightMessage'>Aliquam lacinia, magna quis</p>
+        <div className='messages-chat'>
+          <p id='left-message'>Lorem ipsum dolor sit amet?</p>
+          <p id='right-message'>Aliquam lacinia, magna quis</p>
 
-          <p id='leftMessage'>Justo varius magna</p>
-          <p id='rightMessage'>Vitae dapibus!</p>
+          <p id='left-message'>Justo varius magna</p>
+          <p id='right-message'>Vitae dapibus!</p>
 
-          <p id='leftMessage'>Dolorem ipsum quia dolor :)</p>
-          <p id='rightMessage'>Fermentum felis pellentesque congue</p>
+          <p id='left-message'>Dolorem ipsum quia dolor :)</p>
+          <p id='right-message'>Fermentum felis pellentesque congue</p>
         </div>
 
-        <div className='typeMessage'>
+        <div className='type-message'>
           <input
-            className='inputMessage'
+            className='input-message'
             placeholder='Digite sua mensagem aqui'
           />
           
-          <SendIcon id='sendIcon'/>
+          <SendIcon id='send-icon'/>
         </div>
       </div>
     </div>

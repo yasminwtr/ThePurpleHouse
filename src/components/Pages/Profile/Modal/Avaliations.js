@@ -15,7 +15,7 @@ const Avaliations = (props) => {
 
     return(
         <div>
-          <p id='optionsText' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 22 }}/> Serviços avaliados</p>
+          <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 22 }}/> Serviços avaliados</p>
 
           <Modal
           show={show}
@@ -30,52 +30,52 @@ const Avaliations = (props) => {
             </Modal.Header>
 
             <Modal.Body>
-              <div className='feedAvaliationsModal'>
+              <div className='feed-valiations-modal'>
                 <p>Você já avaliou 2 serviços.</p>
 
-                <div className='individualAvaliationModal'>
-                    <div className='blockAvaliationModal'>
-                        <div className='part1AvaliationModal'>
-                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconAvaliationModal' alt="Profile"/>
+                <div className='individual-avaliation-modal'>
+                    <div className='block-avaliation-modal'>
+                        <div className='part1-avaliation-modal'>
+                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile"/>
                         </div>
 
                         <div>
-                            <p id='nameAvaliationModal'>Maria Silva, Jardineiro</p>
-                            <p id='nameAvaliationModal'>★★★★★</p>
+                            <p id='name-avaliation-modal'>Maria Silva, Jardineiro</p>
+                            <p id='name-avaliation-modal'>★★★★★</p>
                         </div>
                     </div>
 
-                    <p id='textAvaliationModal'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                    <p id='text-avaliation-modal'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
                 </div>
 
-                <div className='individualAvaliationModal'>
-                    <div className='blockAvaliationModal'>
-                        <div className='part1AvaliationModal'>
-                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconAvaliationModal' alt="Profile"/>
+                <div className='individual-avaliation-modal'>
+                    <div className='block-avaliation-modal'>
+                        <div className='part1-avaliation-modal'>
+                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile"/>
                         </div>
 
                         <div>
-                            <p id='nameAvaliationModal'>Maria Silva, Jardineiro</p>
-                            <p id='nameAvaliationModal'>★★★★★</p>
+                            <p id='name-avaliation-modal'>Maria Silva, Jardineiro</p>
+                            <p id='name-avaliation-modal'>★★★★★</p>
                         </div>
                     </div>
 
-                    <p id='textAvaliationModal'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                    <p id='text-avaliation-modal'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
                 </div>
 
-                <div className='individualAvaliationModal'>
-                    <div className='blockAvaliationModal'>
-                        <div className='part1AvaliationModal'>
-                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='iconAvaliationModal' alt="Profile"/>
+                <div className='individual-avaliation-modal'>
+                    <div className='block-avaliation-modal'>
+                        <div className='part1-avaliation-modal'>
+                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile"/>
                         </div>
 
                         <div>
-                            <p id='nameAvaliationModal'>Maria Silva, Jardineiro</p>
-                            <p id='nameAvaliationModal'>★★★★★</p>
+                            <p id='name-avaliation-modal'>Maria Silva, Jardineiro</p>
+                            <p id='name-avaliation-modal'>★★★★★</p>
                         </div>
                     </div>
 
-                    <p id='textAvaliationModal'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                    <p id='text-avaliation-modal'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
                 </div>
               </div>
 

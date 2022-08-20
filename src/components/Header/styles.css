@@ -46,7 +46,7 @@ header ul li a:hover {
   color: #655A78;
 }
 
-.HeaderIcon {
+.Header-icon {
   margin-left: 20px;
   transition: 0.5s;
 }
@@ -126,7 +126,7 @@ header.active {
   align-items: center;
 }
 
-.titleHeader {
+.title-header {
   margin-left: 10px;
   font-size: 25px;
 }

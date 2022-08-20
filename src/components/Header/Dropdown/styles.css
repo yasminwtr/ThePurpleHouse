@@ -11,16 +11,16 @@
   color: #655A78; transition: 0.60s !important;
 }
 
-.dropdown-Item1 {
+.dropdown-item1 {
   text-align: center;
   color: #fff;
 }
 
-.dropdown-Item2 {
+.dropdown-item2 {
   text-align: center;
 }
 
-.dropdown-Item2:hover {
+.dropdown-item2:hover {
   background-color: #D0C0EB;
   color: #8058C4 !important;
   border-radius: 10px;
@@ -54,7 +54,7 @@
   display: none;
 }
 
-#showDropdown {
+#show-dropdown {
   background-color: #A58AD2 !important ;
   border: none;
   width: 300px !important;
@@ -70,7 +70,7 @@
   z-index: 1;
 }
 
-#showDropdown.active {
+#show-dropdown.active {
   height: 230px;
   padding: 20px;
   width: 200px;

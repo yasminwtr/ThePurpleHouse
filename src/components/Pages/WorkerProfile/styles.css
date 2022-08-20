@@ -40,11 +40,11 @@ body::-webkit-scrollbar-thumb {
 
 /* worker profile */
 
-.allWorkerProfile{
+.all-worker-profile{
     margin-top: 4%;
 }
 
-.containerWorkerProfile{
+.container-worker-profile{
     margin-top: 6%;
     width: 50%;
     margin: auto;
@@ -52,14 +52,14 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.part1WorkerProfile{
+.part1-worker-profile{
     background-color: #A58AD2;
     text-align: center;
     border-radius: 32px 32px 0 0;
     padding: 10px;
 }
 
-.part2WorkerProfile{
+.part2-worker-profile{
     border-color: #A58AD2;
     border-width: 2px;
     border-style: solid;
@@ -68,13 +68,13 @@ body::-webkit-scrollbar-thumb {
     padding-bottom: 15px;
 }
 
-#iconWorkerProfile{
+#icon-worker-profile{
     width: 14%;
     height: 14%;
     margin-top: 2%;
 }
 
-#nameWorkerProfile{
+#name-worker-profile{
     font-size: 24px;
     margin-block-start: 0.2em;
     margin-block-end: 0em;
@@ -82,7 +82,7 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
-#categorieWorkerProfile{
+#categorie-worker-profile{
     font-size: 18px;
     margin-block-start: -0.2em;
     margin-block-end: 0em;
@@ -90,13 +90,13 @@ body::-webkit-scrollbar-thumb {
     color: #F5F0FE; 
 }
 
-#starsWorkerProfile{
+#stars-worker-profile{
     color: #FFC107;
     margin-block-start: 0em;
     margin-block-end: 0.9em;
 }
 
-.messageButton{
+.message-button{
     border-radius: 40px;
     color: #6B4D9E;
     background-color: #ffffff;
@@ -107,24 +107,24 @@ body::-webkit-scrollbar-thumb {
     font-family: Inter-Medium;
 }
 
-.messageButton:hover{
+.message-button:hover{
     color: #6B4D9E;
     background-color: #f3f3f3;
     border-color: #f0f0f0;
 }
 
-#iconsWorkerProfile{
+#icons-worker-profile{
     width: 3%;
 }
 
-#titleWorkerProfile{
+#title-worker-profile{
     margin-block-start: 0em;
     margin-block-end: 0.1em;
     font-size: 16px;
     font-family: Inter-SemiBold;
 }
 
-#textWorkerProfile{
+#text-worker-profile{
     margin-block-start: 0em;
     margin-block-end: 1.4em;
     font-size: 16px;
@@ -132,14 +132,14 @@ body::-webkit-scrollbar-thumb {
     text-align: justify;
 }
 
-#serviceTitleWorkerProfile{
+#service-title-worker-profile{
     margin-block-start: 0em;
     margin-block-end: 0.2em;
     font-size: 16px;
     font-family: Inter-SemiBold;
 }
 
-#serviceTextWorkerProfile{
+#service-text-worker-profile{
     margin-block-start: 0em;
     margin-block-end: 2em;
     font-size: 16px;
@@ -148,14 +148,14 @@ body::-webkit-scrollbar-thumb {
 
 /* geral de galeria e avaliações */
 
-.containerBlocks{
+.container-blocks{
     margin: 4% 0 4% 0;
     display: flex;
     width: 100%;
     justify-content: space-evenly;
 }
 
-#titleBlocks{
+#title-blocks{
     color: #6B4D9E;
     margin-block-end: 0.5em;
     text-align: center;
@@ -169,7 +169,7 @@ body::-webkit-scrollbar-thumb {
     width: 30%;
 }
 
-.feedAvaliations{
+.feed-avaliations{
     border-color: #A58AD2;
     border-width: 2px;
     border-style: solid;
@@ -182,29 +182,29 @@ body::-webkit-scrollbar-thumb {
     overflow-y: scroll;
 }
 
-.feedAvaliations::-webkit-scrollbar {
+.feed-avaliations::-webkit-scrollbar {
     width: 1vw;
 }
 
-.feedAvaliations::-webkit-scrollbar-button {
+.feed-avaliations::-webkit-scrollbar-button {
     height: 30px;
 }
   
-.feedAvaliations::-webkit-scrollbar-track {
+.feed-avaliations::-webkit-scrollbar-track {
     background-color: #F5F0FE;
 }
   
-.feedAvaliations::-webkit-scrollbar-thumb {
+.feed-avaliations::-webkit-scrollbar-thumb {
     background-color: #A58AD2;
     border: 0.3vw solid #F5F0FE;
     border-radius: 5vw;
 }
 
-.inicialAvaliations{
+.inicial-avaliations{
     display: flex;
 }
 
-#leaveAvaliation{
+#leave-avaliation{
     font-size: 14px;
     font-family: Inter-SemiBold;
     width: 100%;
@@ -214,11 +214,11 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-#leaveAvaliation:hover{
+#leave-avaliation:hover{
     background-color: #ffd864;
 }
 
-#numberAvaliations{
+#number-avaliations{
     text-align: end;
     font-size: 14px;
     font-family: Inter-SemiBold;
@@ -226,22 +226,22 @@ body::-webkit-scrollbar-thumb {
     padding: 5px;
 }
 
-.blockAvaliation{
+.block-avaliation{
     display: flex;
 }
 
-.part1Avaliation{
+.part1-avaliation{
     width: 14%;
     margin: 0 2% 2% 0;
 }
 
-#iconAvaliation{
+#icon-avaliation{
     width: 100%;
     height: fit-content;
     margin: 0;
 }
 
-#nameAvaliation{
+#name-avaliation{
     margin-block-start: 0em;
     margin-block-end: 0em;
     font-size: 16px;
@@ -249,7 +249,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 2%;
 }
 
-#textAvaliation{
+#text-avaliation{
     text-align: justify;
     font-size: 16px;
     font-family: Inter-Regular;

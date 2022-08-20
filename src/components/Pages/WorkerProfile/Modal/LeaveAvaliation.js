@@ -17,7 +17,7 @@ const LeaveAvaliation = (props) => {
 
     return(
         <div>
-          <p id='leaveAvaliation' onClick={handleShow}><ReviewIcon sx={{ fontSize: 20 }}/> Escrever avaliação</p>
+          <p id='leave-avaliation' onClick={handleShow}><ReviewIcon sx={{ fontSize: 20 }}/> Escrever avaliação</p>
 
           <Modal
           show={show}

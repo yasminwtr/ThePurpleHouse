@@ -16,7 +16,7 @@ const Logout = (props) => {
 
     return(
         <div>
-          <p id='optionsLogout' onClick={handleShow}><LogoutIcon sx={{ fontSize: 22 }}/> Sair</p>
+          <p id='options-logout' onClick={handleShow}><LogoutIcon sx={{ fontSize: 22 }}/> Sair</p>
 
           <Modal
           show={show}

@@ -15,20 +15,20 @@ const DropdownProfile = () => {
         <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>
           {showDropdown ? <CloseIcon /> : <a>Meu Perfil</a>}
         </button>
-        <ul id='showDropdown' className={showDropdown ? "active" : ""}>
+        <ul id='show-dropdown' className={showDropdown ? "active" : ""}>
           <Dropdown.ItemText className='img-dropdown' eventKey="1">
             <img width={100} src={person} />
           </Dropdown.ItemText>
-          <Dropdown.ItemText className='dropdown-Item1'>
+          <Dropdown.ItemText className='dropdown-item1'>
             Mario Silvo
           </Dropdown.ItemText>
-          <Dropdown.Item className='dropdown-Item2' eventKey="2">
+          <Dropdown.Item className='dropdown-item2' eventKey="2">
             <img width={20} /><StarRoundedIcon />
             <Link className='link-profile' to='/Profile'>
               Ver Perfil
             </Link>
           </Dropdown.Item>
-          <Dropdown.Item className='dropdown-Item2' eventKey="4">
+          <Dropdown.Item className='dropdown-item2' eventKey="4">
             <img width={20} />
             <LogoutRoundedIcon />
             <Link className='link-profile' to='/WorkerProfile'>

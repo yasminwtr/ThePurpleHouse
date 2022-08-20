@@ -20,7 +20,7 @@ const Header = () => {
         <div className="container flex">
           <div className="logo">
             <img src={logo} width={50} alt="logo" />
-            <span className='titleHeader'>The Purple House</span>
+            <span className='title-header'>The Purple House</span>
           </div>
           <div className="nav">
             <DropdownProfile />

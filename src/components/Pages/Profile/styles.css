@@ -40,12 +40,12 @@ body::-webkit-scrollbar-thumb {
 
 /* profile */
 
-.allProfile{
+.all-profile{
     display: flex;
     margin: 4% 0 5% 0;
 }
 
-.containerProfile{
+.container-profile{
     margin-top: 6%;
     width: 50%;
     margin: auto;
@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb {
     max-height: 490px;
 }
 
-.part1Profile{
+.part1-profile{
     background-color: #A58AD2;
     text-align: center;
     border-radius: 32px 32px 0 0;
@@ -64,7 +64,7 @@ body::-webkit-scrollbar-thumb {
     max-height: 180px;
 }
 
-.part2Profile{
+.part2-profile{
     border-color: #A58AD2;
     border-width: 2px;
     border-style: solid;
@@ -80,13 +80,13 @@ body::-webkit-scrollbar-thumb {
     --bs-gutter-x: 0 !important;
 }
 
-#iconProfile{
+#icon-profile{
     width: 14%;
     height: 14%;
     margin-top: 2%;
 }
 
-#nameProfile{
+#name-profile{
     font-size: 24px;
     margin-block-start: 0.2em;
     margin-block-end: 0.8em;
@@ -94,48 +94,48 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
-.info1Profile{
+.info1-profile{
     width: 70%;
     margin: 1%;
 }
 
-.info2Profile{
+.info2-profile{
     width: 30%;
 }
 
-#iconsProfile{
+#icons-profile{
     width: 3%;
 }
 
-#titleProfile{
+#title-profile{
     margin-block-start: 0em;
     margin-block-end: 0.2em;
     font-size: 16px;
     font-family: Inter-SemiBold;
 }
 
-#textProfile{
+#text-profile{
     margin-block-start: 0em;
     margin-block-end: 2em;
     font-size: 16px;
     font-family: Inter-Regular;
 }
 
-#serviceTitleProfile{
+#service-title-profile{
     margin-block-start: 0em;
     margin-block-end: 0.2em;
     font-size: 16px;
     font-family: Inter-SemiBold;
 }
 
-#serviceTextProfile{
+#service-text-profile{
     margin-block-start: 0em;
     margin-block-end: 2em;
     font-size: 16px;
     font-family: Inter-Regular;
 }
 
-.containerConfig{
+.container-config{
     border-color: #A58AD2;
     border-width: 2px;
     border-style: solid;
@@ -148,14 +148,14 @@ body::-webkit-scrollbar-thumb {
     max-height: 490px;
 }
 
-#optionsTitle{
+#options-title{
     margin-block-start: 2em;
     margin-block-end: 0.8em;
     font-size: 16.5px;
     font-family: Inter-Bold;
 }
 
-#optionsText{
+#options-text{
     margin-block-start: 0em;
     margin-block-end: 0.5em;
     font-size: 16px;
@@ -163,11 +163,11 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-#optionsText:hover, #optionsLogout:hover{
+#options-text:hover, #optionsLogout:hover{
     color: #675880;
 }
 
-#optionsLogout{
+#options-logout{
     margin-block-start: 5em;
     margin-block-end: 0em;
     font-size: 17px;
@@ -200,53 +200,53 @@ textarea:focus, input:focus, select:focus {
 } 
 
 /* my avaliations */
-.feedAvaliationsModal{
+.feed-avaliations-modal{
     min-height: 300px;
     max-height: 300px;
     overflow-y: scroll;
 }
 
-.feedAvaliationsModal::-webkit-scrollbar {
+.feed-avaliations-modal::-webkit-scrollbar {
     width: 1vw;
 }
 
-.feedAvaliationsModal::-webkit-scrollbar-track {
+.feed-avaliations-modal::-webkit-scrollbar-track {
     background-color: #ffffff;
 }
 
-.feedAvaliationsModal::-webkit-scrollbar-thumb {
+.feed-avaliations-modal::-webkit-scrollbar-thumb {
     background-color: #6c757d;
     border: 0.34vw solid #ffffff;
     border-radius: 5vw;
 }
 
-.individualAvaliationModal{
+.individual-avaliation-Modal{
     width: 96%;
 }
 
-.blockAvaliationModal{
+.block-avaliation-modal{
     display: flex;
 }
 
-.part1AvaliationModal{
+.part1-avaliation-modal{
     width: 10%;
     margin: 0 2% 2% 0;
 }
 
-#iconAvaliationModal{
+#icon-avaliation-modal{
     width: 100%;
     height: fit-content;
     margin: 0;
 }
 
-#nameAvaliationModal{
+#name-avaliation-modal{
     margin-block-start: 0em;
     margin-block-end: 0em;
     font-size: 16px;
     font-family: Inter-Medium;
 }
 
-#textAvaliationModal{
+#text-avaliation-modal{
     text-align: justify;
     font-size: 16px;
     font-family: Inter-Regular;
@@ -255,7 +255,7 @@ textarea:focus, input:focus, select:focus {
 
 /* cancel service */
 
-.categoryButton{
+.category-button{
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
     background-color: #ffffff;
     color: #000;
@@ -266,28 +266,28 @@ textarea:focus, input:focus, select:focus {
     border: 1px solid #e0dde6;
 }
 
-.categoryButton:hover{
+.category-button:hover{
     background-color: #e9e9e9;
     color: #000;
 } 
 
 /* announce service */
 
-.rowLocalization{
+.row-localization{
     --bs-gutter-x: 0.5rem !important;
     --bs-gutter-y: 0.5rem;
 }
 
-#localizationLabel{
+#localization-label{
     margin: .5rem 0 .02rem 0 !important;
 }
 
-#linkWhatsapp{
+#link-whatsapp{
     color: #A58AD2;
     text-decoration: none;
 }
 
-#linkWhatsapp:hover{
+#link-whatsapp:hover{
     color: #675880;
 }
 
