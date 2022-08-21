@@ -103,6 +103,7 @@
 .info-user-category:hover {
   background-color: #dbc9fa;
   color: #fff;
+  transition: 0.5s;
 }
 
 .photo-user-profile {

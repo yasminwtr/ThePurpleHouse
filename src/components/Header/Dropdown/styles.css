@@ -1,10 +1,9 @@
 .trigger-button {
   background: transparent;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   border-radius: 10px;
-  width: 100px;
 }
 
 .trigger-button:hover {
@@ -14,10 +13,13 @@
 .dropdown-item1 {
   text-align: center;
   color: #fff;
+  margin-bottom: 2%;
+  font-size: 20px;
 }
 
 .dropdown-item2 {
   text-align: center;
+  margin-bottom: 1%;
 }
 
 .dropdown-item2:hover {
@@ -33,20 +35,9 @@
   background-color: transparent;
 }
 
-.dropdown-wrapper {
-  position: absolute;
-  width: 10px;
-  top: 20px;
-  right: 48%;
-  align-self: center;
-  margin-top: 8px;
-  margin-right: 45px;
-}
-
 .dropdown-wrapper .dropdown {
   background: #fff;
   position: absolute;
-  font-family: "Open Sans";
   font-size: 22px;
   display: flex;
   align-items: center;
@@ -62,16 +53,20 @@
   border-radius: 0px 0px 20px 20px;
   color: #fff;
   list-style: none;
-  margin: 0;
   font-size: 18px;
   overflow: hidden;
   height: 0px;
   transition: height 0.4s ease;
   z-index: 1;
+  position: absolute;
+  width: 10px;
+  top: 12%;
+  right: 5%;
+  align-self: center;
 }
 
 #show-dropdown.active {
-  height: 230px;
+  height: 235px;
   padding: 20px;
   width: 200px;
 }

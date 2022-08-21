@@ -111,6 +111,7 @@ body::-webkit-scrollbar-thumb {
     color: #6B4D9E;
     background-color: #f3f3f3;
     border-color: #f0f0f0;
+    transition: 0.5s;
 }
 
 #icons-worker-profile{
@@ -216,6 +217,7 @@ body::-webkit-scrollbar-thumb {
 
 #leave-avaliation:hover{
     background-color: #ffd864;
+    transition: 0.5s;
 }
 
 #number-avaliations{

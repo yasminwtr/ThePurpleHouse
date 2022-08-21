@@ -123,7 +123,7 @@ const Cadastro = () => {
           <form onSubmit={handleSubmit} className="body-cadastro">
             <div>
               <div className='header-cadastro'>
-                <img className='logo-cadastro' src={logo} />
+                <Link to='/'><img className='logo-cadastro' src={logo} /></Link> 
               </div>
               <div className='container-cadastro'>
                 <div className='box-cadastro'>

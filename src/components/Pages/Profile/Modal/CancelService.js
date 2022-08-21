@@ -6,24 +6,36 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
 import api from "../../../../api";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const CancelService = (props) => {
     const [show, setShow] = useState(false);
+    const [showError, setShowError] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
     const [selectValue, setSelectValue] = useState(''); 
     const [services, setServices] = useState([]);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleCloseError = () => setShowError(false);
+    const handleCloseSuccess = () => setShowSuccess(false);
 
     async function deleteService() {
       try {
-          if (selectValue !== 'Serviços') {
-          const idPerson = 1;
-          const response = await api.delete(`/workers/${idPerson}`, {data: {idService: selectValue}})
-          console.log('response', response)
+          if (selectValue !== 'Serviços' && selectValue !== '') {
+            const idPerson = 1;
+            const response = await api.delete(`/workers/${idPerson}`, {data: {idService: selectValue}})
+            console.log('response', response);
+            setShowSuccess(true)
+            setShow(false)
           
           } else {
-          console.log('campo nao preenchiddddo');
+              setShowError(true)
           }
       } catch (error) {
 
@@ -79,7 +91,19 @@ const CancelService = (props) => {
                 Cancelar serviço
               </Button>
             </Modal.Footer>
-          </Modal> 
+          </Modal>
+
+          <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+            <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+              Selecione um serviço para cancelar
+            </Alert>
+          </Snackbar>
+
+          <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+            <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+              Serviço cancelado com sucesso
+            </Alert>
+          </Snackbar> 
         </div>
     )
 }

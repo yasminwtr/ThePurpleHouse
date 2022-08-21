@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../styles.css'
-
+import AuthContext from '../../../contexts/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-
 import LogoutIcon from '@mui/icons-material/ExitToAppRounded'
 
 const Logout = (props) => {
+    const { signOut } = useContext(AuthContext);
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -35,7 +34,7 @@ const Logout = (props) => {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="danger" onClick={handleClose}>
+              <Button variant="danger" onClick={() => signOut()}>
                 Sair
               </Button>
             </Modal.Footer>
