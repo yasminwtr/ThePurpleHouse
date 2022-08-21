@@ -93,6 +93,7 @@
 
 .button-login:hover{
     background-color: #9472ce;
+    transition: 0.5s;
 }
 
 .a-login{

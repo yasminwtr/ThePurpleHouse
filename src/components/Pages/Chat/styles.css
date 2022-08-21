@@ -151,6 +151,7 @@
 
 #send-icon:hover{
   color: #655A78;
+  transition: 0.5s;
 }
 
 /* search users */
@@ -249,6 +250,7 @@
 .individual-chat-profile:hover{
   background-color: #dbc9fa;
   color: #fff;
+  transition: 0.5s;
 }
 
 .list-chat-profiles::-webkit-scrollbar {

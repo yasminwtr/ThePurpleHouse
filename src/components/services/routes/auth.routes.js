@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Header from "../../Header/"
 import Footer from "../../Footer";
 import Home from "../../Pages/Home/"
@@ -10,12 +10,20 @@ import Login from "../../Pages/Login"
 const AuthRoutes = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Route component={Home} path="/" exact />
-      <Route component={About} path="/About" exact />
-      <Route component={Registration} path="/Registration" exact />
-      <Route component={Login} path="/Login" exact />
-      <Footer />
+        <Route path="/" exact>
+          <Header/>
+          <Home/>
+          <Footer/>
+        </Route>
+        
+        <Route path="/About" exact >
+          <Header/>
+          <About/>
+          <Footer/>
+        </Route>
+  
+        <Route component={Login} path="/Login" exact />
+        <Route component={Registration} path="/Registration" exact />
     </BrowserRouter>
   )
 }

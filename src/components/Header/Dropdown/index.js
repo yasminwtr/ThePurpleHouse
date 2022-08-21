@@ -10,7 +10,6 @@ import './styles.css'
 const DropdownProfile = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
-    <>
       <div className="dropdown-wrapper" >
         <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>
           {showDropdown ? <CloseIcon /> : <a>Meu Perfil</a>}
@@ -22,22 +21,22 @@ const DropdownProfile = () => {
           <Dropdown.ItemText className='dropdown-item1'>
             Mario Silvo
           </Dropdown.ItemText>
+
           <Dropdown.Item className='dropdown-item2' eventKey="2">
-            <img width={20} /><StarRoundedIcon />
+            <img width={20} />
             <Link className='link-profile' to='/Profile'>
-              Ver Perfil
+            <StarRoundedIcon />Ver Perfil
             </Link>
           </Dropdown.Item>
+
           <Dropdown.Item className='dropdown-item2' eventKey="4">
             <img width={20} />
-            <LogoutRoundedIcon />
             <Link className='link-profile' to='/WorkerProfile'>
-              Perfil externo
+            <LogoutRoundedIcon />Perfil externo
             </Link>
           </Dropdown.Item>
         </ul>
       </div>
-    </>
   )
 }
 

@@ -71,7 +71,7 @@ function Login() {
   return (
     <div className='bodylogin'>
       <div className='header-login'>
-        <img className='logo-login' src={logo} />
+       <Link to='/'><img className='logo-login' src={logo} /></Link>
       </div>
       <div className='container-login'>
         <div className='box-login'>
