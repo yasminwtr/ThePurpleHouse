@@ -61,7 +61,33 @@ function Categories() {
   return (
     <body>
       <div className="page">
+        {showElement ?
+        <>
         <div onClick={() => showOrHide} >
+          {showElement ? <p>
+            <ResultCategories />
+          </p> : null}
+        </div>
+        <div className="container-categories-side">
+          <h1 className="titleContainerCategories">
+            Selecione a categoria do serviço que está procurando
+          </h1>
+          <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
+            {categories.map((category, index) => (
+              <Grid className="grid-categories" xs={2} key={index}>
+                <Col xs={8} onClick={() => setSelectedCategory(category.id)} className={`boxCategories ${selectedCategory === category.id ? 'boxSelected' : null}`}>
+                  <img className='imgBoxCategories' src={category.img} />
+                  <p>{category.title}</p>
+                  <p className='p-boxCategories'>Ver mais</p>
+                </Col>
+              </Grid>
+            ))}
+          </Grid>
+        </div>
+        </>
+        :
+        <>
+              <div onClick={() => showOrHide} >
           {showElement ? <p>
             <ResultCategories />
           </p> : null}
@@ -81,8 +107,9 @@ function Categories() {
               </Grid>
             ))}
           </Grid>
-        </div>
-      </div >
+        </div>  
+        </>}
+      </div>
     </body>
   );
 }
