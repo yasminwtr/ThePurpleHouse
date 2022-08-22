@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
@@ -14,9 +14,38 @@ import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 import AuthContext from '../../contexts/auth';
+import api from '../../../api';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
+  const [userServices, setUserServices] = useState([])
+
+  // async function getServicesFromUser(idperson) {
+  //   try {
+  //     const response = await api.get(`/servicesFromUser/${idperson}`);      console.log('userServices',userServices);
+  //     console.log('response.data',response.data);
+  //     // return setUserServices(response.data)
+  //     console.log('setUserServices(response.data)',setUserServices(response.data));
+  //   } catch (error) {
+  //     console.log('aa');
+  //     setUserServices([])
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getServicesFromUser(user.idperson)
+  //   // console.log(user.idperson);
+  // }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await api.get('/getServicesFromUser/${idperson}');
+      setUserServices(response.data)
+    }
+    fetchData()
+      .catch(console.error);
+  }, [])
+
 
   return (
     <div className='all-profile'>
@@ -40,7 +69,7 @@ const Profile = () => {
 
           <Col md={4}>
             <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22 }} /> Serviços anunciados</p>
-            <p id='service-text-profile'>Jardineiro</p>
+            <p id='service-text-profile'>aaa</p>
           </Col>
         </Row>
       </div>
