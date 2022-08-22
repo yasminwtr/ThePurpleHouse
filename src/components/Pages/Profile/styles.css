@@ -166,7 +166,7 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-#options-text:hover, #optionsLogout:hover{
+#options-text:hover, #options-logout:hover{
     color: #675880;
     transition: 0.5s;
 }

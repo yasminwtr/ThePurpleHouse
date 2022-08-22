@@ -27,7 +27,7 @@ const Header = () => {
             </div>
             <div className="nav">
               <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
-                <li><Link to='/Categories'>Categorias</Link> </li>
+                <li><Link to='/Categories'>Serviços</Link> </li>
                 <li><Link to='/Chat'>Mensagens</Link> </li>
                 <li><DropdownProfile /></li>
               </ul>

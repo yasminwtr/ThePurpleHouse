@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import './style.css'
 // import imgCode from '../assets/imgcode.png'
 import Team from '../../assets/img/Collab.png'
 import {Link} from 'react-router-dom'
+import AuthContext from '../../contexts/auth'
 
 const About = () => {
+    const { signed } = useContext(AuthContext);
+
     return (
         <body className="body-about">
             <section className="about">
@@ -27,7 +30,13 @@ const About = () => {
                     <h1 className="text-h1-about">O que queremos?</h1>
                     <p>Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
                     
-                    <div className="div-btn-about"> <a  href="/Registration" className="button-about"><Link to='/Registration' >FAÇA PARTE</Link></a></div>
+                    {signed ? 
+                    <>
+                        <div className="div-btn-about"> <a  href="/Categories" className="button-about"><Link to='/Categories' >OBRIGADA POR FAZER PARTE! :)</Link></a></div>
+                    </> :
+                    <>
+                        <div className="div-btn-about"> <a  href="/Registration" className="button-about"><Link to='/Registration' >FAÇA PARTE</Link></a></div>
+                    </>}
                 </div>
             </section>
 

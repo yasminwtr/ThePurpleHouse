@@ -216,7 +216,7 @@ const Cadastro = () => {
             </div>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
               <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-                Por favor, preencha o formulário para realizar o cadastro!
+                Preencha o formulário para realizar o cadastro
               </Alert>
             </Snackbar>
           </form>
