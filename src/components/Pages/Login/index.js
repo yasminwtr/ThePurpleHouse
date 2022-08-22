@@ -69,7 +69,7 @@ function Login() {
   }
 
   return (
-    <div className='bodylogin'>
+    <body className='bodylogin'>
       <div className='header-login'>
        <Link to='/'><img className='logo-login' src={logo} /></Link>
       </div>
@@ -123,7 +123,7 @@ function Login() {
           Preencha o formulário para realizar o login
         </Alert>
       </Snackbar>
-    </div>
+    </body>
   )
 }
 

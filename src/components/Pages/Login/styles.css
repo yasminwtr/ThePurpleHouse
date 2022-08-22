@@ -1,5 +1,5 @@
 .bodylogin{
-    height: 100%;
+    height: 100vh;
     background-image: url(../../assets/img/imgFundo.png) !important;
     background-size: cover;
 }

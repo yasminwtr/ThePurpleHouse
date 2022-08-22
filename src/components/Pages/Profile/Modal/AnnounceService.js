@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -11,12 +11,14 @@ import AnnounceIcon from '@mui/icons-material/CampaignRounded'
 import api from "../../../../api";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import AuthContext from '../../../contexts/auth'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
 const AnnounceService = (props) => {
+    const { user } = useContext(AuthContext);
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -37,7 +39,7 @@ const AnnounceService = (props) => {
     async function registerWorker() {
         try {
             if ((selectValue, description, price, city, localization, whatsapp) !== '' && selectValue !== 'Serviços') {
-                const response = await api.post('/registerWorker', { idPerson: 1, idService: selectValue, descriptionService: description, priceService: price, city: city, localization: localization, whatsapp: whatsapp });
+                const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, descriptionService: description, priceService: price, city: city, localization: localization, whatsapp: whatsapp });
                 console.log('response', response);
                 setShowSuccess(true)
                 setShow(false)

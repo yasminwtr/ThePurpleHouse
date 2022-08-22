@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -8,12 +8,14 @@ import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
 import api from "../../../../api";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import AuthContext from '../../../contexts/auth'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 const CancelService = (props) => {
+    const { user } = useContext(AuthContext);
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -28,7 +30,7 @@ const CancelService = (props) => {
     async function deleteService() {
       try {
           if (selectValue !== 'Serviços' && selectValue !== '') {
-            const idPerson = 1;
+            const idPerson = user.idperson;
             const response = await api.delete(`/workers/${idPerson}`, {data: {idService: selectValue}})
             console.log('response', response);
             setShowSuccess(true)
