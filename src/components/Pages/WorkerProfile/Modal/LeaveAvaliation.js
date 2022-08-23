@@ -9,6 +9,10 @@ import Form from 'react-bootstrap/Form';
 import ReviewIcon from '@mui/icons-material/RateReviewRounded'
 import StarIcon from '@mui/icons-material/StarRounded'
 
+
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+
 const LeaveAvaliation = (props) => {
     const [show, setShow] = useState(false);
 
@@ -35,9 +39,13 @@ const LeaveAvaliation = (props) => {
               Sua avaliação é muito importante para nós. Não deixe de falar o que achou sobre os serviços contratados! :)
               <Form>
                     <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Quantas estrelas você daria?</Form.Label>
+                  <Form.Label>Quantas estrelas você daria?</Form.Label>
 
-                        <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
+                  <Stack spacing={1}>
+                    <Rating name="half-rating" defaultValue={0} precision={1} />
+                  </Stack>
+
+                        
                     </Form.Group>
 
                     <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlInput1">
