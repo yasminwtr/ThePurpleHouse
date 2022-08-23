@@ -31,49 +31,35 @@ import EditIcon from '@mui/icons-material/EditRounded'
 
     const { user } = useContext(AuthContext)
 
-    const [emailPerson, setEmail] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
    
-  
-    // const [Visible, setVisible] = useState(false);
 
-    // async function validationFields() {
-        
-    //    try{
-    //     if ((emailPerson && password) !== '') {
-    //         const response = await api.post('/updateUser', { idPerson: user.idperson, emailPerson: emailPerson, passwordPerson: password });
-    //         console.log('response', response);
-    //         setShowSuccess(true)
-    //         setShow(false)
-    //     } else {
-    //         setShowError(true)
-    //     }
-    //    } catch (error) {
-
-    //    }
-    //   }
-    
-    
-      const validationFields = async () => {
-        // const idPerson = user.idperson;
-        try {
+    const updateUser = async () => {
+      const idPerson = user.idperson;
+      try {
+          if ((email && password) !== ''){
+            const response = await api.put(`/users/${idPerson}`, { email, password})
+            const data = response;
+            console.log('updateUserData', data);
       
-          const response = await api.post('/updateUser', { idPerson: user.idperson, emailPerson: emailPerson, passwordPerson: password });
-          const data = response;
-          console.log('updateUser', data);
-    
-          user.emailPerson = data.emailPerson;
-          user.password = data.password;
+            user.email = data.email;
+            user.password = data.password;
+      
+            setEmail(email)
+            setPassword(password)
+
+            setShowSuccess(true)
+            setShow(false)
           
-    
-          setEmail(emailPerson)
-          setPassword(password)
-         
-    
-        } catch (error) {
-          console.log(error)
-        }
+          }
+          else {
+              setShowError(true)
+          }
+      } catch (error) {
+        console.log(error)
       }
+  }
 
     return(
         <div>
@@ -98,10 +84,10 @@ import EditIcon from '@mui/icons-material/EditRounded'
 
                         <Form.Control
                             type="email"
-                            placeholder="nome@exemplo.com"
+                            placeholder="Novo e-mail"
                             autoFocus
                             maxLength={45}
-                            id ='emailPerson'
+                            id = 'email'
                             onChange={(event) => setEmail(event.target.value)}
                         />
                     </Form.Group>
@@ -113,7 +99,7 @@ import EditIcon from '@mui/icons-material/EditRounded'
 
                         <Form.Control
                             type="password"
-                            placeholder="******"
+                            placeholder="Nova senha"
                             maxLength={25}
                             id = 'password'
                             onChange={(event) => setPassword(event.target.value)}
@@ -133,7 +119,7 @@ import EditIcon from '@mui/icons-material/EditRounded'
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="success"  onClick={() => validationFields()}>
+              <Button variant="success"  onClick={() => updateUser()}>
                 Salvar
               </Button>
             </Modal.Footer>
