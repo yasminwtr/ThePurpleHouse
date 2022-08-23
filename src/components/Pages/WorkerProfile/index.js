@@ -120,7 +120,7 @@ const WorkerProfile = () => {
                                 </div>
                             </div>
 
-                            <p id='text-avaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                            <p id='text-avaliation'>Adorei, podou minhas minha árvores do jeito que eu pedi e muito bem educado.</p>
                         </div>
 
                         <div>
@@ -135,7 +135,7 @@ const WorkerProfile = () => {
                                 </div>
                             </div>
 
-                            <p id='text-avaliation'>Adorei, podou minhas árvores do jeito que eu pedi e muito bem educado.</p>
+                            <p id='text-avaliation'>Adorei, podou minhas minha árvores do jeito que eu pedi e muito bem educado.</p>
                         </div>  
 
                         <div>
