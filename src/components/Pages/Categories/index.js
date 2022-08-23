@@ -1,62 +1,36 @@
 import React, { useState, useEffect } from 'react'
 import "./styles.css"
-import electrician from '../../assets/img/electrician.png'
-import clean from "../../assets/img/clean.png"
-import gardening from "../../assets/img/gardening.png"
-import baby from "../../assets/img/baby.png"
-import terapia from '../../assets/img/terapia.png'
-import marceneiro from '../../assets/img/marcenaria.png'
-import cozinheiro from '../../assets/img/chef.png'
-import maquiagem from '../../assets/img/maquiagem.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import ResultCategories from './boxResultCategories'
 import Grid from '@mui/material/Unstable_Grid2';
+import api from '../../../api'
 
 function Categories() {
   const [showElement, setShowElement] = useState(false)
   const showOrHide = () => setShowElement(true)
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [services, setServices] = useState([])
 
   useEffect(() => {
     selectedCategory != null ? setShowElement(true) : setShowElement(false)
   }, [selectedCategory])
 
-  const categories = [
-    {
-      title: 'Eletricista',
-      img: electrician,
-      id: 1
-    }, {
-      title: 'Diarista',
-      img: clean,
-      id: 2
-    }, {
-      title: 'Jardinagem',
-      img: gardening,
-      id: 3
-    }, {
-      title: 'Babá',
-      img: baby,
-      id: 4
-    }, {
-      title: 'Fisioterapia',
-      img: terapia,
-      id: 5
-    }, {
-      title: 'Marceneiro',
-      img: marceneiro,
-      id: 6
-    }, {
-      title: 'Cozinheiro',
-      img: cozinheiro,
-      id: 7
-    }, {
-      title: 'Esteticista',
-      img: maquiagem,
-      id: 8
+  async function getServices(idService) {
+    try {
+      const response = await api.get(`/services`);
+      console.log('response.data @ categories',response.data);
+      return setServices(response.data)
+    } catch (error) {
+      console.log(error);
+      setServices([])
     }
-  ];
+  }
+
+  useEffect(() => {
+    getServices()
+    console.log('getServices',getServices());
+  }, [])
 
   return (
     <body>
@@ -73,11 +47,11 @@ function Categories() {
             Selecione a categoria do serviço que está procurando
           </h1>
           <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
-            {categories.map((category, index) => (
+            {services.map((category, index) => (
               <Grid className="grid-categories" xs={2} key={index}>
-                <Col xs={8} onClick={() => setSelectedCategory(category.id)} className={`boxCategories ${selectedCategory === category.id ? 'boxSelected' : null}`}>
-                  <img className='imgBoxCategories' src={category.img} />
-                  <p>{category.title}</p>
+                <Col xs={8} onClick={() => setSelectedCategory(category.idservice)} className={`boxCategories ${selectedCategory === category.idservice ? 'boxSelected' : null}`}>
+                  <img className='imgBoxCategories' src={category.icon} width={64} />
+                  <p>{category.titleservice}</p>
                   <p className='p-boxCategories'>Ver mais</p>
                 </Col>
               </Grid>
@@ -97,11 +71,11 @@ function Categories() {
             Selecione a categoria do serviço que está procurando
           </h1>
           <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
-            {categories.map((category, index) => (
+            {services.map((category, index) => (
               <Grid className="grid-categories" xs={2} key={index}>
-                <Col xs={8} onClick={() => setSelectedCategory(category.id)} className={`boxCategories ${selectedCategory === category.id ? 'boxSelected' : null}`}>
-                  <img className='imgBoxCategories' src={category.img} />
-                  <p>{category.title}</p>
+                <Col xs={8} onClick={() => setSelectedCategory(category.idservice)} className={`boxCategories ${selectedCategory === category.idservice ? 'boxSelected' : null}`}>
+                  <img className='imgBoxCategories' src={category.icon}  width={64}/>
+                  <p>{category.titleservice}</p>
                   <p className='p-boxCategories'>Ver mais</p>
                 </Col>
               </Grid>
