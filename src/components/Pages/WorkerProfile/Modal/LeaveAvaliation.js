@@ -31,7 +31,7 @@ const LeaveAvaliation = (props) => {
 
     async function registerReview() {
       try {
-          if (messageReview !== '' && rating !== null) {
+          if ((messageReview) !== '' && rating !== null) {
               const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: 1, messageReview: messageReview, stars: rating });
               console.log('response', response);
               setShowSuccess(true)
@@ -90,13 +90,14 @@ const LeaveAvaliation = (props) => {
                       })}                        
                     </Form.Group>
 
-                    <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group className="mt-3 mb-3">
                         <Form.Label>Escreva aqui a sua experiência com esse trabalhador</Form.Label>
 
                         <Form.Control
                         as="textarea"
                         rows={6}
                         maxLength={245}
+                        id='messageReview'
                         onChange={(event) => setMessageReview(event.target.value)}
                         />
                     </Form.Group>
