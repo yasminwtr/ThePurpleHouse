@@ -93,7 +93,7 @@ const Home = () => {
         <div className="servicoscards2">
           <div className="boxHome2">
             <div className="cardS2">
-              <img src={encontre} alt='encontre-icon' className="imgEletricista2" />
+              <img src={encontre} alt='encontre-icon' className="imgEletricista3" />
               <h5 className="h5HomeCard2">ENCONTRE</h5>
               <div className="pra2">
                 <p>Selecione a atividade desejada, indique uma região de atendimento e tenha acesso à inúmeros profissionais</p>
