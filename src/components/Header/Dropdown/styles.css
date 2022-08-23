@@ -35,6 +35,10 @@
   background-color: transparent;
 }
 
+#my-profile-label{
+  cursor: pointer;
+}
+
 .dropdown-wrapper .dropdown {
   background: #fff;
   position: absolute;
