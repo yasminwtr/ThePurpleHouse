@@ -12,7 +12,7 @@ const DropdownProfile = () => {
   return (
       <div className="dropdown-wrapper" >
         <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>
-          {showDropdown ? <CloseIcon /> : <a>Meu Perfil</a>}
+          {showDropdown ? <CloseIcon /> : <label id='my-profile-label'>Meu Perfil</label>}
         </button>
         <ul id='show-dropdown' className={showDropdown ? "active" : ""}>
           <Dropdown.ItemText className='img-dropdown' eventKey="1">

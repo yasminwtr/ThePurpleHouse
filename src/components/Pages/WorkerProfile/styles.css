@@ -258,6 +258,16 @@ body::-webkit-scrollbar-thumb {
     margin-block-end: 1.6em;  
 }
 
+input[type='radio']{
+  display: none;
+}
+
+.star{
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 200ms;
+}
+
 /* gallery of services */
 
 .gallery{
