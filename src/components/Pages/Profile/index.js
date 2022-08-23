@@ -18,9 +18,9 @@ import api from '../../../api';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  console.log('user.birthdate',user.birthdate);
 
   const [userServices, setUserServices] = useState([])
+  const [formattedBirthDate, setFormattedBirthDate] = useState("");
 
   async function getServices(idperson) {
     try {
@@ -35,7 +35,10 @@ const Profile = () => {
     getServices(user.idperson)
   }, [])
 
-
+  useEffect(() => {
+    const [year, month, day] = user.birthdate.split("T", 10)[0]?.split("-")
+    setFormattedBirthDate(`${day}/${month}/${year}`);
+  }, [user])
 
   return (
     <div className='all-profile'>
@@ -54,7 +57,7 @@ const Profile = () => {
             <p id='text-profile'>{user.phonenumber}</p>
 
             <p id='title-profile'><CalendarIcon sx={{ fontSize: 20 }} /> Data de nascimento</p>
-            <p id='text-profile'>{user.birthdate}</p>
+            <p id='text-profile'>{formattedBirthDate}</p>
           </Col>
 
           <Col md={4}>
@@ -73,8 +76,6 @@ const Profile = () => {
           </Col>
         </Row>
       </div>
-
-
 
       <div className='container-config'>
         <div className='options-config'>
