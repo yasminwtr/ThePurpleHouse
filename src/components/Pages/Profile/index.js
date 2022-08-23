@@ -18,33 +18,23 @@ import api from '../../../api';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
+  console.log('user.birthdate',user.birthdate);
+
   const [userServices, setUserServices] = useState([])
 
-  // async function getServicesFromUser(idperson) {
-  //   try {
-  //     const response = await api.get(`/servicesFromUser/${idperson}`);      console.log('userServices',userServices);
-  //     console.log('response.data',response.data);
-  //     // return setUserServices(response.data)
-  //     console.log('setUserServices(response.data)',setUserServices(response.data));
-  //   } catch (error) {
-  //     console.log('aa');
-  //     setUserServices([])
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   getServicesFromUser(user.idperson)
-  //   // console.log(user.idperson);
-  // }, [])
+  async function getServices(idperson) {
+    try {
+      const response = await api.get(`/getServicesFromUser/${idperson}`);
+      return setUserServices(response.data)
+    } catch (error) {
+      setUserServices([])
+    }
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await api.get('/getServicesFromUser/${idperson}');
-      setUserServices(response.data)
-    }
-    fetchData()
-      .catch(console.error);
+    getServices(user.idperson)
   }, [])
+
 
 
   return (
@@ -69,10 +59,22 @@ const Profile = () => {
 
           <Col md={4}>
             <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22 }} /> Serviços anunciados</p>
-            <p id='service-text-profile'>aaa</p>
+            {
+              userServices.map((item, index) => {
+                return (
+                  <div>
+                    <p id='service-text-profile'>
+                      {item.titleservice}
+                    </p>
+                  </div>
+                )
+              })
+            }
           </Col>
         </Row>
       </div>
+
+
 
       <div className='container-config'>
         <div className='options-config'>
@@ -90,7 +92,7 @@ const Profile = () => {
 
         <Logout />
       </div>
-    </div>
+    </div >
   )
 }
 
