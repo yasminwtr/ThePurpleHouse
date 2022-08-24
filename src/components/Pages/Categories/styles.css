@@ -91,29 +91,6 @@
     flex-direction: row-reverse;
     overflow-y: scroll;
   }
-
-  .containerCategories::-webkit-scrollbar {
-    background-color: #A16FF7;
-    border-radius: 1vw;
-    width: 1px;
-  }
-  
-  .containerCategories::-webkit-scrollbar-button {
-    background-color: #A16FF7;
-    border-radius: 1vw;
-  }
-    
-  .containerCategories::-webkit-scrollbar-track {
-    background-color: #A16FF7;
-    border-radius: 1vw;
-  }
-    
-  .containerCategories::-webkit-scrollbar-thumb {
-    background-color: #A16FF7;
-    border-radius: 1vw;
-  }
-
-
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px) {

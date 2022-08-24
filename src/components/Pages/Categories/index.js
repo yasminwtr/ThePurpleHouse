@@ -16,10 +16,9 @@ function Categories() {
     selectedCategory != null ? setShowElement(true) : setShowElement(false)
   }, [selectedCategory])
 
-  async function getServices(idService) {
+  async function getServices() {
     try {
       const response = await api.get(`/services`);
-      console.log('response.data @ categories',response.data);
       return setServices(response.data)
     } catch (error) {
       console.log(error);
@@ -29,20 +28,17 @@ function Categories() {
 
   useEffect(() => {
     getServices()
-    console.log('getServices',getServices());
   }, [])
 
   return (
     <body>
       <div className="page">
-        {showElement ?
-        <>
         <div onClick={() => showOrHide} >
           {showElement ? <p>
-            <ResultCategories />
+            <ResultCategories category={selectedCategory} />
           </p> : null}
         </div>
-        <div className="container-categories-side">
+        <div className={showElement ? "container-categories-side" : "containerCategories"}>
           <h1 className="titleContainerCategories">
             Selecione a categoria do serviço que está procurando
           </h1>
@@ -58,31 +54,6 @@ function Categories() {
             ))}
           </Grid>
         </div>
-        </>
-        :
-        <>
-              <div onClick={() => showOrHide} >
-          {showElement ? <p>
-            <ResultCategories />
-          </p> : null}
-        </div>
-        <div className="containerCategories">
-          <h1 className="titleContainerCategories">
-            Selecione a categoria do serviço que está procurando
-          </h1>
-          <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
-            {services.map((category, index) => (
-              <Grid className="grid-categories" xs={2} key={index}>
-                <Col xs={8} onClick={() => setSelectedCategory(category.idservice)} className={`boxCategories ${selectedCategory === category.idservice ? 'boxSelected' : null}`}>
-                  <img className='imgBoxCategories' src={category.icon}  width={64}/>
-                  <p>{category.titleservice}</p>
-                  <p className='p-boxCategories'>Ver mais</p>
-                </Col>
-              </Grid>
-            ))}
-          </Grid>
-        </div>  
-        </>}
       </div>
     </body>
   );

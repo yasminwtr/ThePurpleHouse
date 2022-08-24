@@ -3,24 +3,22 @@ import "./styles.css"
 import PlaceIcon from '@mui/icons-material/Place';
 import api from '../../../../api'
 
-const ResultCategories = () => {
+const ResultCategories = props => {
+  const { category } = props;
   const [workers, setWorkers] = useState([])
 
   const getWorkers = async () => {
     try {
-      const response = await api.get('/workers')
+      const response = await api.get(`/workersByCategory/${category}`);
       setWorkers(response.data)
-
     } catch (error) {
-      console.log(error)
       setWorkers([])
     }
   }
 
   useEffect(() => {
     getWorkers()
-  }, [])
-
+  }, [category])
 
   return (
     <>
@@ -34,24 +32,17 @@ const ResultCategories = () => {
           />
         </div>
         <button className="btn-search-categories">Buscar</button>
-
         <div className='list-users-category'>
           {
-            workers.map((item) => {
+            workers.map((worker) => {
               return (
-                <div className='info-user-category' key={item.idworker}>
-                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
-                <p className='name-user-category' >{item.fullname}</p>
+                <div className='info-user-category' key={worker.idworker}>
+                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
+                  <p className='name-user-category' >{worker.fullname}</p>
                 </div>
-                // <option key={item.idservice} value={item.idservice}>{item.titleservice}</option>
               )
             })
           }
-
-          <div className='info-user-category'>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
-            <p className='name-user-category' >Mario Silvo</p>
-          </div>
         </div>
       </div>
     </>
