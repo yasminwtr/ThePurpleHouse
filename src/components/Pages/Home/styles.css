@@ -274,6 +274,10 @@ a{
     width: 70%;
   
   }
+  .img-landingPage {
+    width: 70%;
+    /* margin-left: 36px; */
+}
   .Title-home{
     padding:10px 7% ;
   }
