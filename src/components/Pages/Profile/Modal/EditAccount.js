@@ -12,6 +12,10 @@ import api from '../../../../api/index';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 
 import EditIcon from '@mui/icons-material/EditRounded'
 
@@ -28,6 +32,23 @@ import EditIcon from '@mui/icons-material/EditRounded'
     const handleShow = () => setShow(true);
     const handleCloseError = () => setShowError(false);
     const handleCloseSuccess = () => setShowSuccess(false);
+
+// --------------------- olhinho -----------------------
+    const [values, setValues] = React.useState({
+      showPassword: false,
+    });
+  
+    const handleClickShowPassword = () => {
+      setValues({
+        ...values,
+        showPassword: !values.showPassword,
+      });
+    };
+  
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
+// -------------------------- ----------------------------
 
     const { user } = useContext(AuthContext)
 
@@ -81,7 +102,7 @@ import EditIcon from '@mui/icons-material/EditRounded'
                 <Form>
                     <Form.Group className="mb-3">
                         <Form.Label>E-mail</Form.Label>
-
+                    <div className='containerInputEdit'>
                         <Form.Control
                             type="email"
                             placeholder="Novo e-mail"
@@ -90,20 +111,32 @@ import EditIcon from '@mui/icons-material/EditRounded'
                             id = 'email'
                             onChange={(event) => setEmail(event.target.value)}
                         />
+                      </div>
                     </Form.Group>
 
                    
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Senha</Form.Label>
-
-                        <Form.Control
-                            type="password"
-                            placeholder="Nova senha"
-                            maxLength={25}
-                            id = 'password'
-                            onChange={(event) => setPassword(event.target.value)}
-                        />
+                    <Form.Group >
+                      <Form.Label>Senha</Form.Label>
+                        <div className='containerInputEdit'>
+                            <Form.Control
+                                type={values.showPassword ? 'text' : 'password'}
+                                value={values.password}
+                                placeholder="Nova senha"
+                                maxLength={25}
+                                id = 'password'
+                                onChange={(event) => setPassword(event.target.value)}
+                            />
+                            <div>
+                              <IconButton sx={{ color: '#515151' }}
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                              </IconButton>
+                            </div>
+                        </div>
                     </Form.Group>
 
                     {/* <Form.Group className="mb-3">

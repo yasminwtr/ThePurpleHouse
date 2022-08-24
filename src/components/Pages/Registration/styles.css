@@ -135,13 +135,21 @@
 }
 
 
-.inputRegister, #fullName, #email, #phoneNumber, #password{
+.inputRegister, #fullName, #phoneNumber{
     background-color: #f8f8f8;
     border: none;
     outline: none;
     font-family: Inter-Regular;
     width: 85%;
     margin-left: 3%;
+}
+.inputRegister, #email, #password{
+    background-color: #fff;
+    border: none;
+    outline: none;
+    font-family: Inter-Regular;
+    width: 100%;
+    margin-left: -10px;
 }
 
 #iconRegister{
