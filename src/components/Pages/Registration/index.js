@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import './styles.css'
 import logo from '../../assets/img/logo.png'
 import { FaUser } from 'react-icons/fa'
@@ -30,9 +30,9 @@ const Cadastro = () => {
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const { signIn } = useContext(AuthContext);
+  const [allEmails, setAllEmails] = useState([])
 
   const [values, setValues] = React.useState({
-
     showPassword: false,
   });
 
@@ -64,6 +64,20 @@ const Cadastro = () => {
 
     setOpen(false);
   };
+
+  async function getEmail() {
+    try {
+      const response = await api.get(`/personEmails`);
+      return setAllEmails(response.data)
+
+    } catch (error) {
+      setAllEmails([])
+    }
+  }
+
+  useEffect(() => {
+    getEmail()
+  }, [])
 
 
   function validationFields() {

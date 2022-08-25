@@ -12,6 +12,7 @@ import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 
 const WorkerProfile = () => {
+
     return(  
         <div className='all-worker-profile'>
             <div className='container-worker-profile'>
