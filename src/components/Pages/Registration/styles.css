@@ -143,13 +143,13 @@
     width: 85%;
     margin-left: 3%;
 }
-.inputRegister, #email, #password{
+#email, #password{
     background-color: #fff;
     border: none;
     outline: none;
     font-family: Inter-Regular;
-    width: 100%;
-    margin-left: -10px;
+    width: 85%;
+    margin-left: 3px;
 }
 
 #iconRegister{

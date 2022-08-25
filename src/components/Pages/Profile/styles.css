@@ -140,6 +140,7 @@ body::-webkit-scrollbar-thumb {
 
 .container-config{
     border-color: #A58AD2;
+    background-color: #fff;
     border-width: 2px;
     border-style: solid;
     width: 17.5%;
