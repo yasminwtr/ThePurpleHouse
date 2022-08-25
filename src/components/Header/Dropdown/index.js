@@ -15,21 +15,21 @@ const DropdownProfile = () => {
           {showDropdown ? <CloseIcon /> : <label id='my-profile-label'>Meu Perfil</label>}
         </button>
         <ul id='show-dropdown' className={showDropdown ? "active" : ""}>
-          <Dropdown.ItemText className='img-dropdown' eventKey="1">
+          <Dropdown.ItemText className='img-dropdown' eventkey="1">
             <img width={100} src={person} />
           </Dropdown.ItemText>
           <Dropdown.ItemText className='dropdown-item1'>
             Mario Silvo
           </Dropdown.ItemText>
 
-          <Dropdown.Item className='dropdown-item2' eventKey="2">
+          <Dropdown.Item className='dropdown-item2' eventkey="2">
             <img width={20} />
             <Link className='link-profile' to='/Profile'>
             <StarRoundedIcon />Ver Perfil
             </Link>
           </Dropdown.Item>
-
-          <Dropdown.Item className='dropdown-item2' eventKey="4">
+          
+          <Dropdown.Item className='dropdown-item2' eventkey="4">
             <img width={20} />
             <Link className='link-profile' to='/WorkerProfile'>
             <LogoutRoundedIcon />Perfil externo
