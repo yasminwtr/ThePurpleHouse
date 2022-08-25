@@ -308,26 +308,27 @@ textarea:focus, input:focus, select:focus {
     border: 0.3vw solid #F5F0FE;
     border-radius: 5vw;
 }
-/* ------------ editar senha e email ----------- */
+
+/* ------------ edit account ----------- */
+
 .containerInputEdit{
     display: flex;
     width: 100%;
-    padding: 0.175rem 0.75rem;
+    padding: 0.135rem 0.65rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #515151;
+    border: 1px solid #ced4da;
     appearance: none;
     border-radius: 0.375rem;
     align-items: center;
-    
 }
 
-.containerInputLogin:hover{
-    border: 1px solid #9472ce;
+.containerInputEdit:focus{
+    border: 1px solid #000000 !important;
 }
 
 .inputLogin{

@@ -127,6 +127,7 @@ import EditIcon from '@mui/icons-material/EditRounded'
                                 id = 'password'
                                 onChange={(event) => setPassword(event.target.value)}
                             />
+                            
                             <div>
                               <IconButton sx={{ color: '#515151' }}
                                 aria-label="toggle password visibility"
