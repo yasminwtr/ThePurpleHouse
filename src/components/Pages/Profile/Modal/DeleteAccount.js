@@ -62,8 +62,7 @@ const DeleteAccount = (props) => {
         //console.log(user, 'aaaaa');
       } else {
         setShowError(true)
-        //console.log('errou');
-      }
+      } 
     }
 
     return(
@@ -88,6 +87,7 @@ const DeleteAccount = (props) => {
                     <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Digite sua senha para completar a ação</Form.Label>
 
+                      <div className='containerInputEdit'>
                         <Form.Control
                             type="password"
                             placeholder="******"
@@ -96,6 +96,7 @@ const DeleteAccount = (props) => {
                             id = 'password'
                             onChange={(event) => setPassword(event.target.value)}
                         />
+                      </div>
                     </Form.Group>
                 </Form>
             </Modal.Body>
@@ -112,7 +113,7 @@ const DeleteAccount = (props) => {
 
           <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
             <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-            Erro ao excluir a conta 
+            Erro ao excluir a conta, certifique-se de que você não esta cadastrado em nenhum serviço.
             </Alert>
           </Snackbar>
 
