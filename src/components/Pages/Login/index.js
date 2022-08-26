@@ -69,6 +69,7 @@ function Login() {
     if (incorrectCredentials) {
       console.log('Usuário ou senha incorretos')
       setOpen(true)
+      navigate("/Login", { replace: true });
     }
   }
   

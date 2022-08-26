@@ -50,7 +50,7 @@ const Profile = () => {
     let nameformatted = fullname.join(' ');
     setFormattedFullName(`${nameformatted}`);
   }, [user])
-  
+
   return (
     <div className='all-profile'>
       <div className='container-profile'>
