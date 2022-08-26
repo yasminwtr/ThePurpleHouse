@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../../contexts/auth'
+import { useNavigate } from "react-router-dom";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -31,6 +32,8 @@ const Cadastro = () => {
   const [birthDate, setBirthDate] = useState('')
   const { signIn } = useContext(AuthContext);
   const [allEmails, setAllEmails] = useState([])
+
+  let navigate = useNavigate();
 
   const [values, setValues] = React.useState({
     showPassword: false,
@@ -83,6 +86,7 @@ const Cadastro = () => {
   function validationFields() {
     if ((fullName, email, phoneNumber, password, birthDate) !== '') {
       registerNewUser()
+      navigate("/Categories", { replace: true });
     } else {
       setOpen(true)
       return;
