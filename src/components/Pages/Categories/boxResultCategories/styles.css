@@ -25,9 +25,9 @@
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   padding: 20px;
-  flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+  flex-direction: column;
   width: 50%;
   margin: auto;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
@@ -36,6 +36,8 @@
   padding: 20px;
   margin-right: 10%;
   margin-left: 30%;
+  max-width: 750px;
+  min-width: 250px;
 }                            
 
 .container-input-search{
@@ -47,6 +49,11 @@
   padding: 10px;
   width: 70%;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-search-section {
+  display: flex;
+  flex-direction: row;
 }
 
 .place-icon{
@@ -87,8 +94,6 @@
 .list-users-category{
   margin-top: 10%;
   overflow-y: scroll;
-  width: 390px;
-  height: 390px;
 }
 
 .info-user-category {

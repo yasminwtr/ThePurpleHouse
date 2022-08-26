@@ -45,7 +45,7 @@ function Categories() {
           <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
             {services.map((category, index) => (
               <Grid className="grid-categories" xs={2} key={index}>
-                <Col xs={8} onClick={() => setSelectedCategory(category.idservice)} className={`boxCategories ${selectedCategory === category.idservice ? 'boxSelected' : null}`}>
+                <Col xs={8} onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
                   <img className='imgBoxCategories' src={category.icon} width={64} />
                   <p>{category.titleservice}</p>
                   <p className='p-boxCategories'>Ver mais</p>

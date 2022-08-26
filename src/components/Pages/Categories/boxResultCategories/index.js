@@ -9,7 +9,7 @@ const ResultCategories = props => {
 
   const getWorkers = async () => {
     try {
-      const response = await api.get(`/workersByCategory/${category}`);
+      const response = await api.get(`/workersByCategory/${category.idservice}`);
       setWorkers(response.data)
     } catch (error) {
       setWorkers([])
@@ -23,15 +23,17 @@ const ResultCategories = props => {
   return (
     <>
       <div className='container-categories-search'>
-        <h1 className='title-service-category'>Jardinagem</h1>
-        <div className='container-input-search'>
-          <PlaceIcon className='place-icon' />
-          <input
-            className='input-search-categories'
-            placeholder='Onde?'
-          />
+        <h1 className='title-service-category'>{category.titleservice}</h1>
+        <div className="container-search-section">
+          <div className='container-input-search'>
+            <PlaceIcon className='place-icon' />
+            <input
+              className='input-search-categories'
+              placeholder='Onde?'
+            />
+          </div>
+          <button className="btn-search-categories">Buscar</button>
         </div>
-        <button className="btn-search-categories">Buscar</button>
         <div className='list-users-category'>
           {
             workers.map((worker) => {

@@ -12,6 +12,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import './styles.css'
 
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -20,7 +21,6 @@ function Login() {
   const { signIn } = useContext(AuthContext);
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -71,7 +71,7 @@ function Login() {
   return (
     <body className='bodylogin'>
       <div className='header-login'>
-       <Link to='/'><img className='logo-login' src={logo} /></Link>
+        <Link to='/'><img className='logo-login' src={logo} /></Link>
       </div>
       <div className='container-login'>
         <div className='box-login'>
