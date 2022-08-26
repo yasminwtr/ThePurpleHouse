@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import AuthContext from '../../contexts/auth';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useNavigate } from "react-router-dom";
 import './styles.css'
 
 
@@ -22,6 +23,8 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [open, setOpen] = useState(false);
+
+  let navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(true);
@@ -62,12 +65,13 @@ function Login() {
       return;
     }
     const incorrectCredentials = await signIn({ email: email, password: password })
+    navigate("/Categories", { replace: true });
     if (incorrectCredentials) {
       console.log('Usuário ou senha incorretos')
       setOpen(true)
     }
   }
-
+  
   return (
     <body className='bodylogin'>
       <div className='header-login'>

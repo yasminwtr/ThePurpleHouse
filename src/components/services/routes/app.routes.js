@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "../../Header/"
 import Footer from "../../Footer";
 import About from "../../Pages/About";
@@ -12,12 +12,13 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Route component={Categories} path="/" exact />
-      <Route component={About} path="/About" exact />
-      <Route component={Profile} path="/Profile" exact />
-      <Route component={WorkerProfile} path="/WorkerProfile" exact />
-      <Route component={Chat} path="/Chat" exact />
-      <Route component={Categories} path="/Categories" exact />
+      <Routes>
+        <Route path="/Categories" element={<Categories />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/WorkerProfile" element={<WorkerProfile />} />
+        <Route path="/Chat" element={<Chat />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   )
