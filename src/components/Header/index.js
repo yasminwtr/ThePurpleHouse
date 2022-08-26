@@ -17,50 +17,38 @@ const Header = () => {
   })
 
   return (
-    signed ?
-      <>
-        <header className="header">
-          <div className="container flex">
-            <div className="logo">
-              <Link to='/'><img src={logo} width={50} alt="logo" /></Link>
-              <span className='title-header'>The Purple House</span>
-            </div>
-            <div className="nav">
-              <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
-                <li><Link to='/Categories'>Serviços</Link> </li>
-                <li><Link to='/Chat'>Mensagens</Link> </li>
-                <li><DropdownProfile /></li>
-              </ul>
-            </div>
-            <button className="navbar-itens-icon" onClick={() => setSidebar(!sidebar)}>
-              {sidebar ? <CloseIcon /> : <MenuIcon />}
-            </button>
+    <>
+      <header className="header">
+        <div className="container flex">
+          <div className="logo">
+            <Link to='/'><img src={logo} width={50} alt="logo" /></Link>
+            <span className='title-header'>The Purple House</span>
           </div>
-        </header>
-      </>
-      :
-      <>
-        <header className="header">
-          <div className="container flex">
-            <div className="logo">
-              <Link to='/'><img src={logo} width={50} alt="logo" /></Link>
-              <span className='title-header'>The Purple House</span>
-            </div>
-            <div className="nav">
-              <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
-                <li><Link to='/'>Inicial</Link> </li>
-                <li><Link to='/About'>Quem somos</Link> </li>
-                <li className="icon">
-                <Link to='/Login' ><button className="button">Entrar</button></Link>
-                </li>
-              </ul>
-            </div>
-            <button className="navbar-itens-icon" onClick={() => setSidebar(!sidebar)}>
-              {sidebar ? <CloseIcon /> : <MenuIcon />}
-            </button>
+          <div className="nav">
+            <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
+              {signed ?
+                <>
+                  <li><Link to='/Categories'>Categorias</Link> </li>
+                  <li><Link to='/Chat'>Mensagens</Link> </li>
+                  <li><DropdownProfile /></li>
+                </>
+                :
+                <>
+                  <li><Link to='/'>Inicial</Link> </li>
+                  <li><Link to='/About'>Quem somos</Link> </li>
+                  <li className="icon">
+                    <Link to='/Login' ><button className="button">Entrar</button></Link>
+                  </li>
+                </>
+              }
+            </ul>
           </div>
-        </header>
-      </>
+          <button className="navbar-itens-icon" onClick={() => setSidebar(!sidebar)}>
+            {sidebar ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
+      </header>
+    </>
   )
 }
 export default Header
