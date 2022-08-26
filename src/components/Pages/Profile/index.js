@@ -21,6 +21,7 @@ const Profile = () => {
 
   const [userServices, setUserServices] = useState([])
   const [formattedBirthDate, setFormattedBirthDate] = useState("");
+  const [formattedFullName, setFormattedFullName] = useState("");
 
   async function getServices(idperson) {
     try {
@@ -40,12 +41,22 @@ const Profile = () => {
     setFormattedBirthDate(`${day}/${month}/${year}`);
   }, [user])
 
+  useEffect(() => {
+    const fullNameParts = `${user.fullname}`
+    const fullname = fullNameParts.split(' ')
+    for (let i = 0; i < fullname.length; i++) {
+      fullname[i] = fullname[i][0].toUpperCase() + fullname[i].slice(1);
+    }
+    let nameformatted = fullname.join(' ');
+    setFormattedFullName(`${nameformatted}`);
+  }, [user])
+  
   return (
     <div className='all-profile'>
       <div className='container-profile'>
         <div className='part1-profile'>
           <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile" />
-          <p id='name-profile'>{user.fullname}</p>
+          <p id='name-profile'>{formattedFullName}</p>
         </div>
 
         <Row className="part2-profile">
