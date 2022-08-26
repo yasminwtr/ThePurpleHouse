@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-.dropdown-wrapper .dropdown {
+/* .dropdown-wrapper .dropdown {
   background: #fff;
   position: absolute;
   font-size: 22px;
@@ -47,7 +47,7 @@
   align-items: center;
   z-index: 1;
   display: none;
-}
+} */
 
 #show-dropdown {
   background-color: #A58AD2 !important ;
@@ -63,9 +63,8 @@
   transition: height 0.4s ease;
   z-index: 1;
   position: absolute;
-  width: 10px;
-  top: 12%;
-  right: 5%;
+  top: 8%;
+  right: 8%;
   align-self: center;
 }
 
