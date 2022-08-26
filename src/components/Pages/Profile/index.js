@@ -86,8 +86,8 @@ const Profile = () => {
             }
           </Col>
         </Row>
-      </div>
 
+      </div>
       <div className='container-config'>
         <div className='options-config'>
           <p id='options-title'>Configurações</p>
