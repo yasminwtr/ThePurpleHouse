@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import EditAccount from './Modal/EditAccount'
 import DeleteAccount from './Modal/DeleteAccount'
-import Avaliations from './Modal/Avaliations'
+import ServicesReviewed from './Modal/ServicesReviewed'
 import AnnounceService from './Modal/AnnounceService'
 import CancelService from './Modal/CancelService'
 import Logout from './Modal/Logout'
@@ -97,7 +97,7 @@ const Profile = () => {
 
         <div className='options-config'>
           <p id='options-title'>Serviços</p>
-          <Avaliations />
+          <ServicesReviewed />
           <AnnounceService />
           <CancelService />
         </div>

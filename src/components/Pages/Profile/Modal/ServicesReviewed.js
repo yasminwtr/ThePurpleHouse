@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import AuthContext from '../../../contexts/auth'
 import AvaliationIcon from '@mui/icons-material/StarRounded'
+import MyReviews from './MyReviews'
 
 const Avaliations = (props) => {
   const { user } = useContext(AuthContext);
@@ -64,29 +65,10 @@ const Avaliations = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div className='feed-valiations-modal'>
+          <div className='feed-avaliations-modal'>
             <p>{numberReviews}</p>
 
-            {
-              workersReviewed.map((item) => {
-                return (
-                  <div className='individual-avaliation-modal' key={item.idreview}>
-                    <div className='block-avaliation-modal'>
-                      <div className='part1-avaliation-modal'>
-                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                      </div>
-
-                      <div>
-                        <p id='name-avaliation-modal'>{item.fullnameworker}, {item.titleservice}</p>
-                        <p id='name-avaliation-modal'>{item.stars}</p>
-                      </div>
-                    </div>
-
-                    <p id='text-avaliation-modal'>{item.messagereview}</p>
-                  </div>
-                )
-              })
-            }
+            <MyReviews/>
           </div>
 
 

@@ -228,8 +228,8 @@ textarea:focus, input:focus, select:focus {
   border-radius: 5vw;
 }
 
-.individual-avaliation-Modal{
-  width: 96%;
+.individual-avaliation-modal{
+  width: 98%;
 }
 
 .block-avaliation-modal{
@@ -237,12 +237,12 @@ textarea:focus, input:focus, select:focus {
 }
 
 .part1-avaliation-modal{
-  width: 10%;
+  width: 11%;
   margin: 0 2% 2% 0;
 }
 
 #icon-avaliation-modal{
-  width: 100%;
+  width: 106%;
   height: fit-content;
   margin: 0;
 }
