@@ -67,7 +67,7 @@ const DeleteAccount = (props) => {
 
     return(
         <div>
-          <p id='options-text' onClick={handleShow}><DeleteAccountIcon sx={{ fontSize: 22 }}/> Excluir conta</p>
+          <p id='options-text' onClick={handleShow}><DeleteAccountIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Excluir conta</p>
 
           <Modal
           show={show}

@@ -84,7 +84,7 @@ import EditIcon from '@mui/icons-material/EditRounded'
 
     return(
         <div>
-          <p id='options-text' onClick={handleShow}><EditIcon sx={{ fontSize: 20 }}/> Editar conta</p>
+          <p id='options-text' onClick={handleShow}><EditIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Editar conta</p>
 
           <Modal
           show={show}

@@ -64,8 +64,8 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   border-radius: 32px 32px 0 0;
   padding: 10px;
-  min-height: 180px;
-  max-height: 180px;
+  min-height: 170px;
+  max-height: 170px;
 }
 
 .part2-profile{
@@ -76,8 +76,8 @@ body::-webkit-scrollbar-thumb {
   padding: 40px;
   padding-bottom: 15px;
   display: flex;
-  max-height: 310px;
-  min-height: 310px;
+  max-height: 320px;
+  min-height: 320px;
 }
 
 .row {
@@ -87,7 +87,7 @@ body::-webkit-scrollbar-thumb {
 #icon-profile{
   width: 12%;
   height: 12%;
-  margin-top: 2%;
+  margin-top: 3%;
 }
 
 #name-profile{
@@ -114,6 +114,8 @@ body::-webkit-scrollbar-thumb {
   margin-block-end: 0.2em;
   font-size: 16px;
   font-family: Inter-SemiBold;
+  display: flex;
+  align-items: center;
 }
 
 #text-profile{
@@ -128,6 +130,8 @@ body::-webkit-scrollbar-thumb {
   margin-block-end: 0.2em;
   font-size: 16px;
   font-family: Inter-SemiBold;
+  display: flex;
+  align-items: center;
 }
 
 #service-text-profile{
@@ -168,6 +172,8 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
   font-family: Inter-Regular;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 #options-text:hover, #options-logout:hover{

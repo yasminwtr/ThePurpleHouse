@@ -55,7 +55,7 @@ const CancelService = (props) => {
 
     return(
         <div>
-          <p id='options-text' onClick={handleShow}><CancelServiceIcon sx={{ fontSize: 20 }}/> Cancelar serviço</p>
+          <p id='options-text' onClick={handleShow}><CancelServiceIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Cancelar serviço</p>
 
           <Modal
           show={show}

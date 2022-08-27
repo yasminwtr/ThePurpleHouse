@@ -61,18 +61,18 @@ const Profile = () => {
 
         <Row className="part2-profile">
           <Col md>
-            <p id='title-profile'><EmailIcon sx={{ fontSize: 20 }} /> E-mail</p>
+            <p id='title-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
             <p id='text-profile'>{user.email}</p>
 
-            <p id='title-profile'><PhoneIcon sx={{ fontSize: 22 }} /> Telefone</p>
+            <p id='title-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Telefone</p>
             <p id='text-profile'>{user.phonenumber}</p>
 
-            <p id='title-profile'><CalendarIcon sx={{ fontSize: 20 }} /> Data de nascimento</p>
+            <p id='title-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
             <p id='text-profile'>{formattedBirthDate}</p>
           </Col>
 
           <Col md={4}>
-            <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22 }} /> Serviços anunciados</p>
+            <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Serviços anunciados</p>
             {
               userServices.map((item, index) => {
                 return (

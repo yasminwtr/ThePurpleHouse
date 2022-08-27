@@ -50,7 +50,7 @@ const Avaliations = (props) => {
 
   return (
     <div>
-      <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 22 }} /> Serviços avaliados</p>
+      <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Serviços avaliados</p>
 
       <Modal
         show={show}
