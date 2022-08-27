@@ -25,22 +25,22 @@ const WorkerProfile = () => {
                 </div>
 
                 <div className='part2-worker-profile'>
-                        <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20 }}/> E-mail</p>
+                        <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> E-mail</p>
                         <p id='text-worker-profile'>mariosilva@gmail.com</p>
 
-                        <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22 }}/> Telefone</p>
+                        <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }}/> Telefone</p>
                         <p id='text-worker-profile'>(48) 99160-1340</p>
 
-                        <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20 }}/> Data de nascimento</p>
+                        <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Data de nascimento</p>
                         <p id='text-worker-profile'>18/02/2004</p>
 
-                        <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20 }}/> Localização</p>
+                        <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Localização</p>
                         <p id='text-worker-profile'>Florianópolis, Santa Catarina</p>
 
-                        <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20 }}/> Preço médio dos serviços</p>
+                        <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Preço médio dos serviços</p>
                         <p id='text-worker-profile'>R$ 40,97</p>
 
-                        <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20 }}/> Descrição</p>
+                        <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Descrição</p>
                         <p id='text-worker-profile'>Preparar, conservar e limpar jardins, compreendendo: capina, corte, replantio, adubação periódica, irrigação, varredura, pulverização simples e polvilhamento. Preparar as sementes. Fazer a repicagem e o transplante das mudas, incluindo desmate, transporte e embalagem. Atendo residências e comércios.</p>
                 </div>
             </div>
