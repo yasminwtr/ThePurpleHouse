@@ -6,8 +6,6 @@ import Home from "../../Pages/Home/"
 import About from "../../Pages/About";
 import Registration from "../../Pages/Registration"
 import Login from "../../Pages/Login"
-import WorkerProfile from "../../Pages/WorkerProfile";
-import Categories from "../../Pages/Categories";
 
 const AuthRoutes = () => {
   return (
@@ -18,8 +16,8 @@ const AuthRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Registration" element={<Registration />} />
-        <Route path="/WorkerProfile" element={<WorkerProfile />} />
-        <Route path="/Categories" element={<Categories />} />
+        {/* <Route path="/WorkerProfile" element={<WorkerProfile />} />
+        <Route path="/Categories" element={<Categories />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter >

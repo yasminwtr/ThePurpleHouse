@@ -5,13 +5,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import LogoutIcon from '@mui/icons-material/ExitToAppRounded'
+import { useNavigate } from "react-router-dom";
 
 const Logout = (props) => {
     const { signOut } = useContext(AuthContext);
     const [show, setShow] = useState(false);
+    const navigate = useNavigate()
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    function signOutRedirect(){
+      signOut()
+      navigate("/", { replace: true })
+    }
 
     return(
         <div>
@@ -34,7 +41,7 @@ const Logout = (props) => {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="danger" onClick={() => signOut()}>
+              <Button variant="danger" onClick={() => signOutRedirect()}>
                 Sair
               </Button>
             </Modal.Footer>

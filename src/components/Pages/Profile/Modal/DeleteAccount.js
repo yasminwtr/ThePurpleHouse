@@ -1,14 +1,10 @@
 import React, { useState, useContext } from 'react';
 import '../styles.css'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../../../contexts/auth'
-
-
-
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import DeleteAccountIcon from '@mui/icons-material/DeleteForeverRounded'

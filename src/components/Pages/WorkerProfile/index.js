@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState }  from 'react';
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from './Modal/LeaveAvaliation'
@@ -13,6 +13,12 @@ import { useLocation } from 'react-router-dom';
 
 const WorkerProfile = () => {
     const location = useLocation();
+    const [formattedBirthDate, setFormattedBirthDate] = useState('');
+
+    useEffect(() => {
+        const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
+        setFormattedBirthDate(`${day}/${month}/${year}`);
+      }, [location])
 
     return(  
         <div className='all-worker-profile'>
@@ -33,7 +39,7 @@ const WorkerProfile = () => {
                         <p id='text-worker-profile'>{location.state.phone}</p>
 
                         <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Data de nascimento</p>
-                        <p id='text-worker-profile'>{location.state.birthdate}</p>
+                        <p id='text-worker-profile'>{formattedBirthDate}</p>
 
                         <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Localização</p>
                         <p id='text-worker-profile'>{location.state.city}, {location.state.cityState}</p>

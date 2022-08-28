@@ -23,8 +23,7 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [open, setOpen] = useState(false);
-
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(true);

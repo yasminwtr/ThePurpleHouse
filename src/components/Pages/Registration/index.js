@@ -32,8 +32,7 @@ const Cadastro = () => {
   const [birthDate, setBirthDate] = useState('')
   const { signIn } = useContext(AuthContext);
   const [allEmails, setAllEmails] = useState([])
-
-  let navigate = useNavigate();
+  const navigate = useNavigate()
 
   const [values, setValues] = React.useState({
     showPassword: false,

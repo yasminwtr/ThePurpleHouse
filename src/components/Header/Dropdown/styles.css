@@ -87,6 +87,7 @@
 .link-profile {
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .link-profile:hover {

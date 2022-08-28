@@ -7,12 +7,19 @@ import person from '../../assets/img/person.png'
 import CloseIcon from '@mui/icons-material/Close';
 import AuthContext from '../../contexts/auth';
 import './styles.css'
+import { useNavigate } from "react-router-dom";
 
 const DropdownProfile = () => {
   const { user } = useContext(AuthContext);
-
+  const { signOut } = useContext(AuthContext);
+  const navigate = useNavigate()
   const [showDropdown, setShowDropdown] = useState(false);
   const [formattedFullName, setFormattedFullName] = useState("");
+
+  function signOutRedirect(){
+    signOut()
+    navigate("/", { replace: true })
+  }
 
   useEffect(() => {
     const fullNameParts = `${user.fullname}`
@@ -46,9 +53,9 @@ const DropdownProfile = () => {
 
         <Dropdown.Item className='dropdown-item2' eventkey="4">
           <img width={20} />
-          <Link className='link-profile' to='/WorkerProfile'>
-            <LogoutRoundedIcon />Perfil externo
-          </Link>
+          <label className='link-profile' onClick={() => signOutRedirect()}>
+            <LogoutRoundedIcon />Sair
+          </label>
         </Dropdown.Item>
       </ul>
     </div>

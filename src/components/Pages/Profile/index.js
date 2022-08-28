@@ -18,10 +18,9 @@ import api from '../../../api';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-
   const [userServices, setUserServices] = useState([])
-  const [formattedBirthDate, setFormattedBirthDate] = useState("");
-  const [formattedFullName, setFormattedFullName] = useState("");
+  const [formattedBirthDate, setFormattedBirthDate] = useState('');
+  const [formattedFullName, setFormattedFullName] = useState('');
 
   async function getServices(idperson) {
     try {
