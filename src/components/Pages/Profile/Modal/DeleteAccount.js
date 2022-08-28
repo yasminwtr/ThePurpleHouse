@@ -10,9 +10,6 @@ import MuiAlert from '@mui/material/Alert';
 import DeleteAccountIcon from '@mui/icons-material/DeleteForeverRounded'
 
 const DeleteAccount = (props) => {
-
- 
-    
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
    

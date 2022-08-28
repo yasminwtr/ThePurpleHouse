@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthContext from '../../../contexts/auth'
 import { FaStar } from 'react-icons/fa'
 
-const Stars = (props) => {
+const MyReviews = (props) => {
     const { user } = useContext(AuthContext);
     const [servicesReviewed, setServicesReviewed] = useState([]);
 
@@ -37,7 +37,7 @@ const Stars = (props) => {
 
                                     <div>
                                         <p id='name-avaliation-modal'>{worker.fullnameworker}, {worker.titleservice}</p>
-                                        <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
+                                        <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
                                     </div>
                                 </div>
 
@@ -118,4 +118,4 @@ const Stars = (props) => {
     )
 }
 
-export default Stars; 
+export default MyReviews; 

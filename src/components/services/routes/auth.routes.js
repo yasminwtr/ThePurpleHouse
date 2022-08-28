@@ -16,8 +16,6 @@ const AuthRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Registration" element={<Registration />} />
-        {/* <Route path="/WorkerProfile" element={<WorkerProfile />} />
-        <Route path="/Categories" element={<Categories />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter >

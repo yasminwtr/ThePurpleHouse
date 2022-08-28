@@ -32,7 +32,7 @@ const Avaliations = (props) => {
     if(reviewsLength > 1) {
       setNumberReviews(`Você já avaliou ${reviewsLength} serviços.`)
 
-    } else if(reviewsLength === 1) {
+    } else if(reviewsLength == 1) {
       setNumberReviews(`Você já avaliou ${reviewsLength} serviço.`)
 
     } else {

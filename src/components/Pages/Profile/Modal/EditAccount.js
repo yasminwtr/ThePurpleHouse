@@ -11,15 +11,16 @@ import MuiAlert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
-
 import EditIcon from '@mui/icons-material/EditRounded'
 
-    const Alert = React.forwardRef(function Alert(props, ref) {
-        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-    });
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
-    const EditAccount = (props) => {
+const EditAccount = (props) => {
+    const { user } = useContext(AuthContext)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -44,13 +45,7 @@ import EditIcon from '@mui/icons-material/EditRounded'
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
     };
-// -------------------------- ----------------------------
-
-    const { user } = useContext(AuthContext)
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-   
+// -------------------------- ----------------------------   
 
     const updateUser = async () => {
       const idPerson = user.idperson;

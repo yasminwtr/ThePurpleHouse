@@ -236,12 +236,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-avaliation{
-    width: 14%;
+    width: 15%;
     margin: 0 2% 2% 0;
 }
 
 #icon-avaliation{
-    width: 100%;
+    width: 105%;
     height: fit-content;
     margin: 0;
 }
@@ -252,6 +252,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 16px;
     font-family: Inter-Medium;
     margin-top: 2%;
+    margin-bottom: -5px;
 }
 
 #text-avaliation{
