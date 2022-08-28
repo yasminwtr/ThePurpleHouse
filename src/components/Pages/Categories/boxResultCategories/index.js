@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import './styles.css'
 import PlaceIcon from '@mui/icons-material/Place';
 import api from '../../../../api'
+import { useNavigate } from 'react-router-dom';
 
 const ResultCategories = props => {
   const { category } = props;
   const [workers, setWorkers] = useState([])
+  const navigate = useNavigate()
 
   const getWorkers = async () => {
     try {
@@ -38,7 +40,7 @@ const ResultCategories = props => {
           {
             workers.map((worker) => {
               return (
-                <div className='info-user-category' key={worker.idworker}>
+                <div className='info-user-category' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, name: worker.fullname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice }})}>
                   <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
                   <p className='name-user-category' >{worker.fullname}</p>
                 </div>

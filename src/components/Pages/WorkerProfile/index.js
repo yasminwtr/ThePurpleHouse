@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from './Modal/LeaveAvaliation'
-
 import StarIcon from '@mui/icons-material/StarRounded'
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
@@ -10,38 +9,40 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
+import { useLocation } from 'react-router-dom';
 
 const WorkerProfile = () => {
+    const location = useLocation();
 
     return(  
         <div className='all-worker-profile'>
             <div className='container-worker-profile'>
                 <div className='part1-worker-profile'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile"/>
-                    <p id='name-worker-profile'>Mario Silvo</p>
-                    <p id='categorie-worker-profile'>Jardineiro, 25 anos</p>
+                    <p id='name-worker-profile'>{location.state.name}</p>
+                    <p id='categorie-worker-profile'>{location.state.service}, 25 anos</p>
                     <p id='stars-worker-profile'><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p>
                     <button className='message-button'>Enviar mensagem</button>
                 </div>
 
                 <div className='part2-worker-profile'>
                         <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> E-mail</p>
-                        <p id='text-worker-profile'>mariosilva@gmail.com</p>
+                        <p id='text-worker-profile'>{location.state.email}</p>
 
                         <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }}/> Telefone</p>
-                        <p id='text-worker-profile'>(48) 99160-1340</p>
+                        <p id='text-worker-profile'>{location.state.phone}</p>
 
                         <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Data de nascimento</p>
-                        <p id='text-worker-profile'>18/02/2004</p>
+                        <p id='text-worker-profile'>{location.state.birthdate}</p>
 
                         <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Localização</p>
-                        <p id='text-worker-profile'>Florianópolis, Santa Catarina</p>
+                        <p id='text-worker-profile'>{location.state.city}, {location.state.cityState}</p>
 
                         <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Preço médio dos serviços</p>
-                        <p id='text-worker-profile'>R$ 40,97</p>
+                        <p id='text-worker-profile'>R$ {location.state.price}</p>
 
                         <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }}/> Descrição</p>
-                        <p id='text-worker-profile'>Preparar, conservar e limpar jardins, compreendendo: capina, corte, replantio, adubação periódica, irrigação, varredura, pulverização simples e polvilhamento. Preparar as sementes. Fazer a repicagem e o transplante das mudas, incluindo desmate, transporte e embalagem. Atendo residências e comércios.</p>
+                        <p id='text-worker-profile'>{location.state.description}</p>
                 </div>
             </div>
 

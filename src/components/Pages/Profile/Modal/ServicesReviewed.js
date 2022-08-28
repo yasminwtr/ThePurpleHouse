@@ -10,21 +10,21 @@ import MyReviews from './MyReviews'
 
 const Avaliations = (props) => {
   const { user } = useContext(AuthContext);
-  const [workersReviewed, setWorkersReviewed] = useState([]);
+  const [servicesReviewed, setServicesReviewed] = useState([]);
   const [numberReviews, setNumberReviews] = useState('')
-  const reviewsLength = workersReviewed.length
+  const reviewsLength = servicesReviewed.length
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  async function getWorkersReviewed(idperson) {
+  async function getServicesReviewed(idperson) {
     try {
-      const response = await api.get(`/workersReviewed/${idperson}`);
-      return setWorkersReviewed(response.data)
+      const response = await api.get(`/servicesReviewed/${idperson}`);
+      return setServicesReviewed(response.data)
 
     } catch (error) {
-      setWorkersReviewed([])
+      setServicesReviewed([])
     }
   }
 
@@ -41,7 +41,7 @@ const Avaliations = (props) => {
   }
 
   useEffect(() => {
-    getWorkersReviewed(user.idperson)
+    getServicesReviewed(user.idperson)
   }, [])
 
   useEffect(() => {
