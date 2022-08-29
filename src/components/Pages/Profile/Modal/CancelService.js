@@ -46,7 +46,8 @@ const CancelService = (props) => {
   
     useEffect(() => {
       const fetchData = async () => {
-        const response = await api.get('/services');
+        let idPerson = user.idperson
+        const response = await api.get(`/getServicesFromUser/${idPerson}`);
         setServices(response.data)
       }
       fetchData()
