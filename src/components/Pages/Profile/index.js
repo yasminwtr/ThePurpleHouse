@@ -15,12 +15,14 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 import AuthContext from '../../contexts/auth';
 import api from '../../../api';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
   const [userServices, setUserServices] = useState([])
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
   const [formattedFullName, setFormattedFullName] = useState('');
+  const navigate = useNavigate()
 
   async function getServices(idperson) {
     try {
@@ -73,13 +75,11 @@ const Profile = () => {
           <Col md={4}>
             <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Serviços anunciados</p>
             {
-              userServices.map((item, index) => {
+              userServices.map((item) => {
                 return (
-                  <div>
-                    <p id='service-text-profile'>
+                    <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, name: item.fullname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice }})}>
                       {item.titleservice}
                     </p>
-                  </div>
                 )
               })
             }

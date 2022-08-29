@@ -231,6 +231,14 @@ body::-webkit-scrollbar-thumb {
     padding: 5px;
 }
 
+#number-avaliations-else{
+  text-align: end;
+  font-size: 14px;
+  font-family: Inter-SemiBold;
+  width: 100%;
+  padding: 5px;
+}
+
 .block-avaliation{
     display: flex;
 }

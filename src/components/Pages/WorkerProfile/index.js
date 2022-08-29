@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from './Modal/LeaveAvaliation'
@@ -12,8 +12,10 @@ import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../../../api';
 import { useLocation } from 'react-router-dom';
 import WorkerReviews from './WorkerReviews';
+import AuthContext from '../../contexts/auth';
 
 const WorkerProfile = () => {
+  const { user } = useContext(AuthContext);
     const location = useLocation();
     const [formattedBirthDate, setFormattedBirthDate] = useState('');
     const [workerReviews, setWorkerReviews] = useState([]);
@@ -149,8 +151,15 @@ const WorkerProfile = () => {
 
                     <div className='feed-avaliations'>
                         <div className='inicial-avaliations'>
+                            {user.idperson == location.state.workerId ?
+                            <>
+                            <p id='number-avaliations-else'>{numberWorkerReviews}</p>
+                            </>
+                            :
+                            <>
                             <LeaveAvaliation />
                             <p id='number-avaliations'>{numberWorkerReviews}</p>
+                            </>}
                         </div>
 
                         <WorkerReviews />
