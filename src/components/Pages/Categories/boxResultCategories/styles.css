@@ -29,14 +29,15 @@
   justify-content: center;
   flex-direction: column;
   width: 50%;
-  margin: auto;
+  height: 400px;
+  justify-content: flex-start;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
   background-color: #fff;
   padding: 20px;
   margin-right: 10%;
   margin-left: 30%;
-  max-width: 750px;
+  max-width: 650px !important;
   min-width: 250px;
 }                            
 
@@ -57,7 +58,7 @@
 }
 
 .place-icon{
-  color: #655A78 !important;
+  color: #655A78 !important;  
 }
 
 .input-search-categories{
@@ -98,6 +99,7 @@
 
 .info-user-category {
   display: flex;
+  max-width: 550px;
   align-items: center;
   cursor: pointer;
   margin-bottom: 6%;

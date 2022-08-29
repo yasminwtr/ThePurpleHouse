@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import ResultCategories from './boxResultCategories'
 import Grid from '@mui/material/Unstable_Grid2';
 import api from '../../../api'
+import 'animate.css'
 
 function Categories() {
   const [showElement, setShowElement] = useState(false)
@@ -34,11 +35,11 @@ function Categories() {
     <body>
       <div className="page">
         <div onClick={() => showOrHide} >
-          {showElement ? <p>
+          {showElement ? <p className="animate__animated animate__zoomIn">
             <ResultCategories category={selectedCategory} />
           </p> : null}
         </div>
-        <div className={showElement ? "container-categories-side" : "containerCategories"}>
+        <div className={showElement ? "container-categories-side animate__animated animate__slideInLeft" : "containerCategories"}>
           <h1 className="titleContainerCategories">
             Selecione a categoria do serviço que está procurando
           </h1>

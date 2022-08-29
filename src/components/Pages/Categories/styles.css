@@ -8,6 +8,12 @@
   background-size: cover;
 }
 
+.animate__animated.animate__slideInLeft {
+  --animate-duration: 2s;
+}
+.animate__animated.animate__zoomIn {
+  --animate-duration: 0.9s;
+}
 .page {
   font-family: Inter-SemiBold;
   margin: 0;
