@@ -20,7 +20,7 @@
 
 header {
   padding: 20px 0;
-  background-color: #A58AD2;
+  background-color: #faf8fc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   font-family: Inter-Medium;
   user-select: none; 
@@ -36,10 +36,12 @@ header ul li {
 }
 
 header ul li a {
-  font-weight: 500;
+  font-weight: 100 !important;
+  font-family: Inter-Regular;
   transition: 0.5s;
   color: #fff;
   text-decoration: none;
+  color: #000;
 }
 
 .nav-links{
@@ -73,11 +75,12 @@ header.active {
 .button {
   width: 100px;
   height: 40px;
-  border-radius: 15px;
+  border-radius: 100px;
   color: #fff;
   font-size: 18px;
-  border: 2px solid #D1BAF9;
-  background-color: #8058C4;
+  background-color: #A58AD2;
+  border: none;
+  font-family: Inter-Regular;
 }
 
 .button:hover {
@@ -85,7 +88,6 @@ header.active {
   background-color: #D1BAF9;
   color: #655A78;
   font-size: 18px;
-  border: 2px solid #8058C4;
   transition: 0.5s;
 }
 
@@ -135,4 +137,6 @@ header.active {
 .title-header {
   margin-left: 10px;
   font-size: 25px;
+  color: #000;
+  font-family: Inter-Regular;
 }

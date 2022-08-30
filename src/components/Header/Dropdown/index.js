@@ -16,7 +16,7 @@ const DropdownProfile = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [formattedFullName, setFormattedFullName] = useState("");
 
-  function signOutRedirect(){
+  function signOutRedirect() {
     signOut()
     navigate("/", { replace: true })
   }
@@ -40,18 +40,18 @@ const DropdownProfile = () => {
         <Dropdown.ItemText className='img-dropdown' eventkey="1">
           <img width={100} src={person} />
         </Dropdown.ItemText>
-        <Dropdown.ItemText className='dropdown-item1'>
+        <Dropdown.ItemText className='dropdown-fullname'>
           {formattedFullName}
         </Dropdown.ItemText>
 
-        <Dropdown.Item className='dropdown-item2' eventkey="2">
+        <Dropdown.Item className='dropdown-item' eventkey="2">
           <img width={20} />
           <Link className='link-profile' to='/Profile'>
             <StarRoundedIcon />Ver Perfil
           </Link>
         </Dropdown.Item>
 
-        <Dropdown.Item className='dropdown-item2' eventkey="4">
+        <Dropdown.Item className='dropdown-item' eventkey="4">
           <img width={20} />
           <label className='link-profile' onClick={() => signOutRedirect()}>
             <LogoutRoundedIcon />Sair

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import DropdownProfile from "./Dropdown/index"
 import AuthContext from '../contexts/auth'
 import { Link } from "react-router-dom";
-import logo from '../assets/img/logo.png'
+import logo1 from '../assets/img/logo1.png';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import './styles.css'
@@ -21,7 +21,7 @@ const Header = () => {
       <header className="header">
         <div className="container flex">
           <div className="logo">
-            <Link to='/'><img src={logo} width={50} alt="logo" /></Link>
+            <Link to='/'><img src={logo1} width={50} alt="logo1" /></Link>
             <span className='title-header'>The Purple House</span>
           </div>
           <div className="nav">

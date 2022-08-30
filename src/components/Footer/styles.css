@@ -7,7 +7,7 @@
 footer{
   padding: 16px 0;
   display: flex;
-  background-color: #D0C0EB;
+  background-color: #faf8fc;
   font-family: Inter-Medium;
   height: 60px;
   position: absolute;
@@ -30,8 +30,8 @@ footer ul li{
 
 footer ul li a{
   font-weight: 500; transition: 0.5s;
-  color: #fff;
   text-decoration:none; 
+  color: #000;
 }
 
 footer ul li a:hover{
@@ -55,9 +55,8 @@ footer ul li a:hover{
 }
 
 .footer-links{
-  /* margin-top: 1%; */
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   font-family: Inter-Regular;
 }
 

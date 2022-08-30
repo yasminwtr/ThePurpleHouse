@@ -1,3 +1,4 @@
+
 .trigger-button {
   background: transparent;
   color: #fff;
@@ -7,25 +8,14 @@
 }
 
 .trigger-button:hover {
-  color: #655A78; transition: 0.60s !important;
+  color: #655A78; transition: 0.40s !important;
 }
 
-.dropdown-item1 {
+.dropdown-fullname {
   text-align: center;
-  color: #fff;
+  color: #8058C4 !important;
   margin-bottom: 2%;
   font-size: 20px;
-}
-
-.dropdown-item2 {
-  text-align: center;
-  margin-bottom: 1%;
-}
-
-.dropdown-item2:hover {
-  background-color: #D0C0EB;
-  color: #8058C4 !important;
-  border-radius: 10px;
 }
 
 .img-dropdown {
@@ -37,20 +27,29 @@
 
 #my-profile-label{
   cursor: pointer;
+  width: 100px;
+  height: 40px;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 18px;
+  background-color: #A58AD2;
+  border: none;
+  font-family: Inter-Regular;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse
 }
 
-/* .dropdown-wrapper .dropdown {
-  background: #fff;
-  position: absolute;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  display: none;
-} */
+#my-profile-label:hover {
+  cursor: pointer;
+  background-color: #D1BAF9;
+  color: #655A78;
+  font-size: 18px;
+  transition: 0.5s;
+}
 
 #show-dropdown {
-  background-color: #A58AD2 !important ;
+  background-color: #faf8fc !important ;
   border: none;
   width: 300px !important;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
@@ -86,13 +85,17 @@
 
 .link-profile {
   text-decoration: none;
-  color: #fff;
+  color: #8058C4;
   cursor: pointer;
 }
 
-.link-profile:hover {
-  text-decoration: none;
-  color: #8058C4 !important;
+.link-profile:hover{
+  color: #8058C4;
+}
+
+.dropdown-item {
+  text-align: center;
+  margin-bottom: 1%;
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px) { 

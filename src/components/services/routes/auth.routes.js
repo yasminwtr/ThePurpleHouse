@@ -26,7 +26,7 @@ const AuthRoutes = () => {
         <Route forceRefresh={true} path="/Login" element={<Login />} />
         <Route forceRefresh={true} path="/Registration" element={<Registration />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter >
   )
 }

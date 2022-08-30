@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from '../assets/img/logo.png'
+import logo1 from '../assets/img/logo1.png'
 import AuthContext from '../contexts/auth'
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +13,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="container-footer">
           <div className="footer-logo">
-            <img src={logo} width={30} alt="logo" />
+            <img src={logo1} width={30} alt="logo1" />
           </div>
           <div className="div-links">
             <ul className='footer-links'>
