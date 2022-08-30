@@ -12,180 +12,232 @@ import api from "../../../../api";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../../../contexts/auth'
+import axios from 'axios';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const AnnounceService = (props) => {
-    const { user } = useContext(AuthContext);
-    const [show, setShow] = useState(false);
-    const [showError, setShowError] = useState(false);
-    const [showSuccess, setShowSuccess] = useState(false);
+  const { user } = useContext(AuthContext);
+  const [show, setShow] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-    const [selectValue, setSelectValue] = useState(''); 
-    const [services, setServices] = useState([]);
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState('');
-    const [city, setCity] = useState('');
-    const [localization, setLocalization] = useState('');
-    const [whatsapp, setWhatsapp] = useState(''); 
+  const [selectValue, setSelectValue] = useState('');
+  const [services, setServices] = useState([]);
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [city, setCity] = useState('');
+  const [localization, setLocalization] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const handleCloseError = () => setShowError(false);
-    const handleCloseSuccess = () => setShowSuccess(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleCloseError = () => setShowError(false);
+  const handleCloseSuccess = () => setShowSuccess(false);
 
-    async function registerWorker() {
-        try {
-            if ((selectValue, description, price, city, localization, whatsapp) !== '' && selectValue !== 'Serviços') {
-                const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, fullNameWorker: user.fullname, descriptionService: description, priceService: price, city: city, localization: localization, whatsapp: whatsapp });
-                console.log('response', response);
-                setShowSuccess(true)
-                setShow(false)
-            
-            }
-            else {
-                setShowError(true)
-            }
-        } catch (error) {
+  const [ufs, setUfs] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [selectedUf, setSelectedUf] = useState("0");
+  const [selectedCity, setSelectedCity] = useState("0");
 
-        }
+  useEffect(() => {
+    if (selectedUf === "0") {
+      return;
     }
+    axios
+      .get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`
+      )
+      .then((response) => {
+        setCities(response.data);
+      });
+  });
 
-    useEffect(() => {
-        const fetchData = async () => {
-          const response = await api.get('/services');
-          setServices(response.data)
-        }
-        fetchData()
-          .catch(console.error);
-      }, [])
+  useEffect(() => {
+    axios
+      .get("https://servicodados.ibge.gov.br/api/v1/localidades/estados/")
+      .then((response) => {
+        setUfs(response.data);
+      });
+  }, [selectedUf]);
 
-    return(
-        <div>
-          <p id='options-text' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22, marginRight: 0.5 }}/> Anunciar serviço</p>
+  function handleSelectUf(event) {
+    const uf = event.target.value;
+    setSelectedUf(uf);
+  }
 
-          <Modal
-          show={show}
-          onHide={handleClose}
-          {...props}
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          >
+  function handleSelectCity(event) {
+    const city = event.target.value;
+    setSelectedCity(city);
+  }
 
-            <Modal.Header closeButton>
-              <Modal.Title>Anunciar serviço</Modal.Title>
-            </Modal.Header>
+  async function registerWorker() {
+    try {
+      if ((selectValue, description, price, city, localization, whatsapp) !== '' && selectValue !== 'Serviços') {
+        const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, fullNameWorker: user.fullname, descriptionService: description, priceService: price, city: city, localization: localization, whatsapp: whatsapp });
+        console.log('response', response);
+        setShowSuccess(true)
+        setShow(false)
 
-            <Modal.Body>
-                <Form>
-                    <Form.Group className="mb-3">
-                        <Form.Label>Selecione o serviço que você deseja anunciar</Form.Label>
+      }
+      else {
+        setShowError(true)
+      }
+    } catch (error) {
 
-                        <Form.Select
-                        autoFocus
-                        value={selectValue}
-                        onChange={e => setSelectValue(e.target.value)}
-                        >
-                            <option>Serviços</option>
-                            {
-                                services.map((item) => {
-                                    return (
-                                        <option key={item.idservice} value={item.idservice}>{item.titleservice}</option>
-                                    )
-                                })
-                            }
-                        </Form.Select>   
-                    </Form.Group>
+    }
+  }
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Descreva mais sobre os serviços que você faz!</Form.Label>
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await api.get('/services');
+      setServices(response.data)
+    }
+    fetchData()
+      .catch(console.error);
+  }, [])
 
-                        <Form.Control
-                        as="textarea"
-                        rows={6}
-                        maxLength={300}
-                        onChange={(event) => setDescription(event.target.value)}
-                        id='description'
-                        />
-                    </Form.Group>
+  return (
+    <div>
+      <p id='options-text' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Anunciar serviço</p>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        {...props}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
 
-                    <Row className="g-2 mb-3 row-localization">
-                        <Form.Label id='localization-label'>Localização em que você atua</Form.Label>
+        <Modal.Header closeButton>
+          <Modal.Title>Anunciar serviço</Modal.Title>
+        </Modal.Header>
 
-                        <Col md={3}>
-                            <Form.Control
-                            type="text"
-                            placeholder="Estado"
-                            maxLength={2}
-                            onChange={(event) => setLocalization(event.target.value)}
-                            id='localization'
-                            /> 
-                        </Col>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Selecione o serviço que você deseja anunciar</Form.Label>
 
-                        <Col md>
-                            <Form.Control
-                            type="text"
-                            placeholder="Cidade"
-                            maxLength={25}
-                            onChange={(event) => setCity(event.target.value)}
-                            id='city'
-                            /> 
-                        </Col>
-                    </Row>
+              <Form.Select
+                autoFocus
+                value={selectValue}
+                onChange={e => setSelectValue(e.target.value)}
+              >
+                <option>Serviços</option>
+                {
+                  services.map((item) => {
+                    return (
+                      <option key={item.idservice} value={item.idservice}>{item.titleservice}</option>
+                    )
+                  })
+                }
+              </Form.Select>
+            </Form.Group>
 
-                    <Form.Label>Preço médio dos seus serviços</Form.Label>
-                    <InputGroup className="mb-3">
-                        <InputGroup.Text>R$</InputGroup.Text>
-                        <Form.Control
-                        type="number"
-                        placeholder='38.99'
-                        maxLength={10}
-                        onChange={(event) => setPrice(event.target.value)}
-                        id='price'
-                        />
-                    </InputGroup>
+            <Form.Group className="mb-3">
+              <Form.Label>Descreva mais sobre os serviços que você faz!</Form.Label>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={6}
+                maxLength={300}
+                onChange={(event) => setDescription(event.target.value)}
+                id='description'
+              />
+            </Form.Group>
 
-                        <Form.Control
-                        placeholder="Cole o link gerado aqui"
-                        maxLength={100}
-                        onChange={(event) => setWhatsapp(event.target.value)}
-                        id='whatsapp'
-                        />
-                    </Form.Group>
+            <Row className="g-2 mb-3 row-localization">
+              <Form.Label id='localization-label'>Localização em que você atua</Form.Label>
+              <Col md={3}>
+                {/* <Form.Control
+                  type="text"
+                  placeholder="Estado"
+                  maxLength={2}
+                  onChange={(event) => setLocalization(event.target.value)}
+                  id='localization'
+                /> */}
+                <Form.Select name="uf" id="uf" onChange={handleSelectUf}>
+                  <option value="0">Estado</option>
+                  {ufs.map((uf) => (
+                    <option value={uf.sigla}>{uf.nome}</option>
+                  ))}
+                </Form.Select>
+              </Col>
+              <Col md>
+                {/* <Form.Control
+                  type="text"
+                  placeholder="Cidade"
+                  maxLength={25}
+                  onChange={(event) => setCity(event.target.value)}
+                  id='city'
+                /> */}
+                <Form.Select
+                  name="City"
+                  id="City"
+                  value={selectedCity}
+                  onChange={handleSelectCity}
+                >
+                  <option value="0">Cidade</option>
+                  {cities.map((city) => (
+                    <option key={city.id} value={city.nome}>
+                      {city.nome}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Col>
+            </Row>
+            <Form.Label>Preço médio dos seus serviços</Form.Label>
+            <InputGroup className="mb-3">
+              <InputGroup.Text>R$</InputGroup.Text>
+              <Form.Control
+                type="number"
+                placeholder='38.99'
+                maxLength={10}
+                onChange={(event) => setPrice(event.target.value)}
+                id='price'
+              />
+            </InputGroup>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Por fim, adicione até 10 fotos de serviços já realizados!</Form.Label>
-                        <Form.Control type="file" multiple />
-                    </Form.Group>
-                </Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
 
-            </Modal.Body>
+              <Form.Control
+                placeholder="Cole o link gerado aqui"
+                maxLength={100}
+                onChange={(event) => setWhatsapp(event.target.value)}
+                id='whatsapp'
+              />
+            </Form.Group>
 
-            <Modal.Footer>
-              <Button variant="success" onClick={() => registerWorker()}>
-                Anunciar serviço
-              </Button>
-            </Modal.Footer>
-          </Modal> 
+            <Form.Group className="mb-3">
+              <Form.Label>Por fim, adicione até 10 fotos de serviços já realizados!</Form.Label>
+              <Form.Control type="file" multiple />
+            </Form.Group>
+          </Form>
 
-          <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-            <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-              Preencha o formulário para anunciar um serviço
-            </Alert>
-          </Snackbar>
+        </Modal.Body>
 
-          <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-            <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-              Serviço anunciado com sucesso
-            </Alert>
-          </Snackbar> 
-        </div>
-    )
+        <Modal.Footer>
+          <Button variant="success" onClick={() => registerWorker()}>
+            Anunciar serviço
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+          Preencha o formulário para anunciar um serviço
+        </Alert>
+      </Snackbar>
+
+      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+          Serviço anunciado com sucesso
+        </Alert>
+      </Snackbar>
+    </div>
+  )
 }
 
 export default AnnounceService;
