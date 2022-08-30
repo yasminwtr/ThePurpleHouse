@@ -20,7 +20,9 @@ const WorkerProfile = () => {
     const [formattedBirthDate, setFormattedBirthDate] = useState('');
     const [workerReviews, setWorkerReviews] = useState([]);
     const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
-    const workerReviewsLength = workerReviews.length
+    const workerReviewsLength = workerReviews.length 
+    const dateAtual = new Date()
+    console.log(dateAtual.getDate() , dateAtual.getMonth() , dateAtual.getFullYear());
 
     async function getReviewsByWorker() {
         const idWorker = location.state.workerId
@@ -32,6 +34,10 @@ const WorkerProfile = () => {
         } catch (error) {
             setWorkerReviews([])
         }
+    }
+
+    function cacularIdade(){
+        
     }
 
     function validationWorkerNumberReviews() {

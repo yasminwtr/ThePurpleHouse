@@ -83,7 +83,7 @@ const Cadastro = () => {
 
 
   function validationFields() {
-    if ((fullName, email, phoneNumber, password, birthDate) !== '') {
+    if ((fullName, email, phoneNumber, password, birthDate) !== '' && password.length >= 8) {
       registerNewUser()
       navigate("/Categories", { replace: true });
     } else {
@@ -224,7 +224,7 @@ const Cadastro = () => {
                       <div>
                         <label className='label-cadastro'>Já possui uma conta?</label>
                         {/* <a className='a-cadastro' href=''>Entre</a> */}
-                        <a href="/Login" className='a-cadastro'><Link to='/Login' className='a-cadastro'> Entrar</Link></a>
+                        <a href="/Login" className='a-cadastro'><Link to='/Login' className='a-cadastro'> Entrar </Link></a>
                       </div>
                     </div>
                   </div>
