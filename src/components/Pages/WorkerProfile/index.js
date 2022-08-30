@@ -11,8 +11,9 @@ import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../../../api';
 import { useLocation } from 'react-router-dom';
-import WorkerReviews from './WorkerReviews';
+import WorkerReviews from './Reviews/WorkerReviews';
 import AuthContext from '../../contexts/auth';
+import AverageRating from './Reviews/AverageRating'
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
@@ -72,7 +73,7 @@ const WorkerProfile = () => {
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
                     <p id='name-worker-profile'>{location.state.name}</p>
                     <p id='categorie-worker-profile'>{location.state.service}, 25 anos</p>
-                    <p id='stars-worker-profile'><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></p>
+                    <AverageRating/>
                     <button className='message-button'>Enviar mensagem</button>
                 </div>
 
