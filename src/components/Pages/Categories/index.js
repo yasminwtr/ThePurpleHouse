@@ -35,11 +35,11 @@ function Categories() {
     <body>
       <div className="page">
         <div onClick={() => showOrHide} >
-          {showElement ? <p className="animate__animated animate__zoomIn">
+          {showElement ? <p className="animate__animated animate__fadeInLeft">
             <ResultCategories category={selectedCategory} />
           </p> : null}
         </div>
-        <div className={showElement ? "container-categories-side animate__animated animate__slideInLeft" : "containerCategories"}>
+        <div className={showElement ? "container-categories-side" : "containerCategories"}>
           <h1 className="titleContainerCategories">
             Selecione a categoria do serviço que está procurando
           </h1>
