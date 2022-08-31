@@ -40,7 +40,7 @@ function Categories() {
             <ResultCategories category={selectedCategory} />
           </p> : null}
         </div>
-        <div className={showElement ? "container-categories-side" : "containerCategories"}>
+        <div className={showElement ? "container-categories-side" : "container-categories"}>
           <h1 className="titleContainerCategories">
             Selecione a categoria do serviço que está procurando
           </h1>
