@@ -49,11 +49,15 @@ const AverageRating = (props) => {
               <p id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
             </>
 
-          } else if (review.avg < 2) {
+          } else if (review.avg < 2 && review.avg !== null) {
             return <>
               <p id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
             </>
 
+          } else if (review.avg == null) {
+            return <>
+              <p id='stars-worker-profile'><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
+            </>
           }
         })
       }
