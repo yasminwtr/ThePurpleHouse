@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 import landing from '../../assets/img/landing.png'
 import eletricista from '../../assets/img/eletricistaicon.png'
@@ -10,8 +11,33 @@ import negocie from '../../assets/img/chat.png'
 import avaliacao from '../../assets/img/avaliacao.png'
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+import { servicesAnimations } from "../../animation";
+import { useScroll } from "./useScroll";
+
 import './styles.css'
-const Home = () => {
+
+function Home ()  {
+  const [element, controls] = useScroll();
+
+  const data = [
+    {
+      type: "Eletricista",
+      text: "Implementação, manutenção e reparação deinstalações elétricas, tanto residenciais quanto industriais.",
+      image: eletricista,
+    },
+    {
+      type: "Diarista",
+      text: "Limpeza, organização e higienização do ambiente. ",
+      image: diarista,
+    },
+    {
+      type: "Baba",
+      text: "Cuida de bebês e crianças, zelando pelo bem-estar, saúde, alimentação, higiene pessoal, educação, cultura, recreação e lazer. ",
+      image: baba,
+    },
+  ];
+
   return (
     <body className="bodyHome">
       <section className="container-Home">
@@ -34,49 +60,49 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="serviceHome">
+        <section id="services" ref={element} >
+        <div className="services">
+        {data.map(({type,text,image},index) => {
+            return (
+              <motion.div className="servicoscards"
+              variants={servicesAnimations}
+              animate={controls}
+              transition={{
+                delay: 0.03,
+                type: "spring",
+                duration: 0.7,
+              }}
+              >
+                  <div className="services__service__image">
+                    <img src={image} alt="Service"  />  
+                  </div>
+                  <div className="services__service__title">  
+                    <h2 className="h5HomeCard">{type}</h2>
+                  </div>
+                  <div className="pra">
+                  <p >{text}</p>
+                  </div>
+                 
+              </motion.div>
+            )
+          })}
+    </div>
+    </section>
 
-          <div className="servicoscards">
-            <div className="boxHome">
-              <div className="cardS">
-                <h5 className="h5HomeCard">Eletricista</h5>
-                <img src={eletricista} alt='eletricista-icon' className="imgEletricista" />
-                <div className="pra">
-                  <p>Implementação, manutenção e reparação deinstalações elétricas, tanto residenciais quanto industriais.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div className="servicoscards">
-            <div className="boxHome">
-              <div className="cardS">
-                <h5 className="h5HomeCard">Diarista</h5>
-                <img src={diarista} alt='diarista-icon' className="imgEletricista" />
-                <div className="pra">
-                  <p>Limpeza, organização e higienização do ambiente. </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="servicoscards">
-            <div className="boxHome">
-              <div className="cardS">
-                <h5 className="h5HomeCard">Babá</h5>
-                <img src={baba} alt='baba-icon' className="imgEletricista" />
-                <div className="pra">
-                  <p>Cuida de bebês e crianças, zelando pelo bem-estar, saúde, alimentação, higiene pessoal, educação, cultura, recreação e lazer. </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <section className="ContainerButtonHomeS">
+        
+        <section className="ContainerButtonHomeS" id="services" ref={element}>
           {/* <button className="seeMoreButton"></button> */}
-          <div> <a  href="/Categories" className="buttonHome2-a"><Link to='/Categories'  className="buttonHome2-a">VER MAIS</Link></a></div>
+          <motion.div
+           variants={servicesAnimations}
+           animate={controls}
+           transition={{
+             delay: 0.3,
+             type: "tween",
+             duration: 0.5,
+           }}
+          > 
+            <a  href="/Categories" className="buttonHome2-a"><Link to='/Categories'  className="buttonHome2-a">VER MAIS</Link></a>
+          </motion.div>
         </section>
       </section>
 

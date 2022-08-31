@@ -8,10 +8,12 @@ import AuthContext from '../../../contexts/auth'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import DeleteAccountIcon from '@mui/icons-material/DeleteForeverRounded'
+import { useNavigate } from "react-router-dom";
 
 const DeleteAccount = (props) => {
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
+    const navigate = useNavigate()
    
     const [showSuccess, setShowSuccess] = useState(false);
 
@@ -50,6 +52,7 @@ const DeleteAccount = (props) => {
       if (password === user.pass) {
         deleteUser(user.idperson)
         signOut()
+        navigate("/", { replace: true })
         // setShowSuccess(true)
         // setShow(false)
         //console.log(user, 'aaaaa');
