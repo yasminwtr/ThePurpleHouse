@@ -23,7 +23,8 @@ const WorkerProfile = () => {
     const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
     const workerReviewsLength = workerReviews.length 
     const dateAtual = new Date()
-    console.log(dateAtual.getDate() , dateAtual.getMonth() , dateAtual.getFullYear());
+    const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
+    const [idade, setIdade] = useState(dateAtual.getFullYear() - year);
 
     async function getReviewsByWorker() {
         const idWorker = location.state.workerId
@@ -37,9 +38,18 @@ const WorkerProfile = () => {
         }
     }
 
-    function cacularIdade(){
-        
+    function cacularIdade(idade){
+        if(month > dateAtual.getMonth()+1 
+        || (month == dateAtual.getMonth()+1 && day > dateAtual.getDate()+1)){
+            idade--
+            console.log("denovoooo", idade)
+        }
+        return idade
     }
+
+    useEffect(() => {
+        setIdade(cacularIdade(idade))
+      }, [])
 
     function validationWorkerNumberReviews() {
         if(workerReviewsLength > 1) {
@@ -72,7 +82,7 @@ const WorkerProfile = () => {
                 <div className='part1-worker-profile'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
                     <p id='name-worker-profile'>{location.state.name}</p>
-                    <p id='categorie-worker-profile'>{location.state.service}, 25 anos</p>
+                    <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
                     <AverageRating/>
                     <button className='message-button'>Enviar mensagem</button>
                 </div>
