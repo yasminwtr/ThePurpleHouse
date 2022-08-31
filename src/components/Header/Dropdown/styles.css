@@ -14,8 +14,16 @@
 .dropdown-fullname {
   text-align: center;
   color: #A58AD2 !important;
-  margin-bottom: 2%;
+  margin-bottom: 8%;
   font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.line {
+  background-color: #d4d4d4;
+  height: 0.01pc;
+  opacity: 30%;
+  margin: 5px;
 }
 
 .img-dropdown {
@@ -51,9 +59,9 @@
 #show-dropdown {
   background-color: #faf8fc !important ;
   border: none;
-  width: 300px !important;
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 20px 20px;
+  width: 270px !important;
+  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 8px 8px;
   color: #fff;
   list-style: none;
   font-size: 18px;
@@ -64,13 +72,13 @@
   position: absolute;
   top: 8%;
   right: 8%;
-  align-self: center;
+  margin-top: 20px;
 }
 
 #show-dropdown.active {
-  height: 235px;
+  height: 280px;
   padding: 20px;
-  width: 200px;
+  width: 270px !important;
 }
 
 .li-item {

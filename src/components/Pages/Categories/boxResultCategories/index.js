@@ -60,10 +60,10 @@ const ResultCategories = props => {
   }
 
   return (
-    <>
+    <div className='page-categories-search'>
       <div className='container-categories-search'>
         <h1 className='title-service-category'>{category.titleservice}</h1>
-        <div className="container-search-section">
+        {/* <div className="container-search-section">
           <div className='container-input-search-state'>
             <select name="uf" id="uf" onChange={handleSelectUf} className='input-search-categories-state'>
               <option value="0">Estado</option>
@@ -87,9 +87,9 @@ const ResultCategories = props => {
               </option>
             ))}
           </select>
-          </div>
-          <button className="btn-search-categories">Buscar</button>
-        </div>
+          </div> */}
+        {/* <button className="btn-search-categories">Buscar</button> */}
+        {/* </div> */}
         <div className='list-users-category'>
           {
             workers.map((worker) => {
@@ -103,7 +103,7 @@ const ResultCategories = props => {
           }
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
