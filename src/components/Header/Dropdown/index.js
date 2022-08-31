@@ -50,7 +50,7 @@ const DropdownProfile = () => {
             <StarRoundedIcon />Ver Perfil
           </Link>
         </Dropdown.Item>
-
+        <div className='line'/>
         <Dropdown.Item className='dropdown-item' eventkey="4">
           <img width={20} />
           <label className='link-profile' onClick={() => signOutRedirect()}>
