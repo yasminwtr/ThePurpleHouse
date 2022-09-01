@@ -76,9 +76,9 @@
 
 /* categories when button clicked */
 
-.container-categories-side {
+/* .container-categories-side {
   margin-right: 10%;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .page {
@@ -90,7 +90,6 @@
   .container-categories {
     display: flex;
     flex-direction: row;
-    /* overflow-y: scroll; */
     height: 700px !important;
     width: 100%;
     height: 20%;
@@ -128,7 +127,7 @@
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 960px) {
+/* @media screen and (min-width: 600px) and (max-width: 960px) {
   .page {
     display: flex;
     flex-direction: row;
@@ -153,4 +152,4 @@
     width: 300px !important;
     margin-left: 20px !important;
   }
-}
+} */
