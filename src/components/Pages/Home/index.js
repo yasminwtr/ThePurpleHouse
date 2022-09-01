@@ -12,13 +12,15 @@ import avaliacao from '../../assets/img/avaliacao.png'
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
-import { servicesAnimations } from "../../animation";
+import { servicesAnimations } from "./animation";
+import { milestonesAnimations } from "./animation";
 import { useScroll } from "./useScroll";
 
 import './styles.css'
 
 function Home ()  {
   const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
 
   const data = [
     {
@@ -37,6 +39,29 @@ function Home ()  {
       image: baba,
     },
   ];
+
+  const milestone = [
+    {
+      image2: encontre,
+      data: "Selecione a atividade desejada, indique uma região de atendimento e tenha acesso à inúmeros profissionais",
+      amount: "ENCONTRE",
+    },
+    {
+      image2: escolha,
+      data: "Filtros por avaliação, tempo de experiência e distância permitem a escolha do profissional ideal",
+      amount: "ESCOLHA",
+    },
+    {
+      image2: negocie,
+      data: "Fale direto com o profissional para combinar orçamentos e o melhor horário para o atendimento",
+      amount: "NEGOCIE",
+    },
+    {
+      image2: avaliacao,
+      data: "Seu feedback faz toda a diferença! Ajude o profissional e outras pessoas a encontrarem a ajuda ideal",
+      amount: "AVALIE E AJUDE ",
+    },
+]
 
   return (
     <body className="bodyHome">
@@ -70,15 +95,16 @@ function Home ()  {
               transition={{
                 delay: 0.03,
                 type: "spring",
-                duration: 0.7,
+                duration: 0.5,
               }}
               >
+                <div className="services__service__title">  
+                    <h2 className="h5HomeCard">{type}</h2>
+                  </div>
                   <div className="services__service__image">
                     <img src={image} alt="Service"  />  
                   </div>
-                  <div className="services__service__title">  
-                    <h2 className="h5HomeCard">{type}</h2>
-                  </div>
+                  
                   <div className="pra">
                   <p >{text}</p>
                   </div>
@@ -97,7 +123,7 @@ function Home ()  {
            animate={controls}
            transition={{
              delay: 0.3,
-             type: "tween",
+             type: "spring",
              duration: 0.5,
            }}
           > 
@@ -114,60 +140,35 @@ function Home ()  {
         </div>
       </section>
 
-      <section className="serviceHome2">
-
-        <div className="servicoscards2">
-          <div className="boxHome2">
-            <div className="cardS2">
-              <img src={encontre} alt='encontre-icon' className="imgEletricista3" />
-              <h5 className="h5HomeCard2">ENCONTRE</h5>
-              <div className="pra2">
-                <p>Selecione a atividade desejada, indique uma região de atendimento e tenha acesso à inúmeros profissionais</p>
+      <section ref={element2}  className="serviceHome2">
+      <div className="milestones">
+      {
+        milestone.map(({ image2, data, amount }) => {
+          return (
+            <motion.div className="milestone"
+            variants={milestonesAnimations}
+            animate={controls2}
+            transition={{
+              delay: 0.03,
+              type: "spring",
+              duration: 0.8,
+            }}
+            >
+              <img src={image2} alt="Milestone"  className="imgEletricista2" />
+              <p className="h5HomeCard2">{amount}</p>
+              <div className="pra2"> 
+                <p>{data}</p>
               </div>
-            </div>
+               
+            </motion.div>
+          );
+        })
+      }  
+    </div>
 
-          </div>
-        </div>
-
-        <div className="servicoscards2">
-          <div className="boxHome2">
-            <div className="cardS2">
-              <img src={escolha} alt='escolha-icon' className="imgEletricista2" />
-              <h5 className="h5HomeCard2">ESCOLHA</h5>
-              <div className="pra2">
-                <p>Filtros por avaliação, tempo de experiência e distância permitem a escolha do profissional ideal</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="servicoscards2">
-          <div className="boxHome2">
-            <div className="cardS2">
-              <img src={negocie} alt='negocie-icon' className="imgEletricista2" />
-              <h5 className="h5HomeCard2">NEGOCIE</h5>
-              <div className="pra2">
-                <p>Fale direto com o profissional para combinar orçamentos e o melhor horário para o atendimento</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="servicoscards2">
-          <div className="boxHome2">
-            <div className="cardS2">
-              <img src={avaliacao} alt='avaliacao-icon' className="imgEletricista2" />
-              <h5 className="h5HomeCard2">AVALIE E AJUDE</h5>
-              <div className="pra2">
-                <p>Seu feedback faz toda a diferença! Ajude o profissional e outras pessoas a encontrarem a ajuda ideal</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </section>
+
+      
     </body>
   )
 }
