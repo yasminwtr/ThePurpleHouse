@@ -42,7 +42,6 @@ const WorkerProfile = () => {
         if(month > dateAtual.getMonth()+1 
         || (month == dateAtual.getMonth()+1 && day > dateAtual.getDate()+1)){
             idade--
-            console.log("denovoooo", idade)
         }
         return idade
     }

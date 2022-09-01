@@ -31,7 +31,7 @@ const Cadastro = () => {
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const { signIn } = useContext(AuthContext);
-  const [allEmails, setAllEmails] = useState([])
+  const [validEmail, setValidEmail] = useState(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/)
   const navigate = useNavigate()
 
   const [values, setValues] = React.useState({
@@ -65,25 +65,13 @@ const Cadastro = () => {
     }
 
     setOpen(false);
-  };
-
-  async function getEmail() {
-    try {
-      const response = await api.get(`/personEmails`);
-      return setAllEmails(response.data)
-
-    } catch (error) {
-      setAllEmails([])
-    }
-  }
-
-  useEffect(() => {
-    getEmail()
-  }, [])
+  }; 
 
 
   function validationFields() {
-    if ((fullName, email, phoneNumber, password, birthDate) !== '' && password.length >= 8) {
+    if ((fullName, email, phoneNumber, password, birthDate) !== '' 
+        && password.length >= 8
+        && email.match(validEmail)) {
       registerNewUser()
       navigate("/Categories", { replace: true });
     } else {
