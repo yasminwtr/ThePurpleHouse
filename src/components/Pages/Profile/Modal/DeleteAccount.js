@@ -39,7 +39,7 @@ const DeleteAccount = (props) => {
       }
       try {
         console.log(deleteId)
-        await fetch('http://localhost:3000/users/' + deleteId, requestOptions)
+        await fetch('http://localhost:3001/users/' + deleteId, requestOptions)
         setPerson(person.filter(person => person.idPerson !== deleteId))
         console.log('funfou');
       
@@ -116,7 +116,7 @@ const DeleteAccount = (props) => {
         
           <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
             <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-            Conta excluída com sucesso!
+            Conta excluída com sucesso! É uma pena ver você ir :( Agradecemos pela colaboração.
             </Alert>
           </Snackbar> 
         </div>
