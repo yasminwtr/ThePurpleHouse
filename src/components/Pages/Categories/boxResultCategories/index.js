@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './styles.css'
-import PlaceIcon from '@mui/icons-material/Place';
 import api from '../../../../api'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import TuneIcon from '@mui/icons-material/Tune';
+import FilterWorkers from './filterWorkers';
 
 const ResultCategories = props => {
   const { category } = props;
@@ -63,33 +64,7 @@ const ResultCategories = props => {
     <div className='page-categories-search'>
       <div className='container-categories-search'>
         <h1 className='title-service-category'>{category.titleservice}</h1>
-        {/* <div className="container-search-section">
-          <div className='container-input-search-state'>
-            <select name="uf" id="uf" onChange={handleSelectUf} className='input-search-categories-state'>
-              <option value="0">Estado</option>
-              {ufs.map((uf) => (
-                <option value={uf.sigla}>{uf.nome}</option>
-              ))}
-            </select>
-          </div>
-          <div className='container-input-search-city'>
-          <select
-            name="City"
-            id="City"
-            value={selectedCity}
-            onChange={handleSelectCity}
-            className='input-search-categories-city'
-          >
-            <option value="0">Cidade</option>
-            {cities.map((city) => (
-              <option key={city.id} value={city.nome}>
-                {city.nome}
-              </option>
-            ))}
-          </select>
-          </div> */}
-        {/* <button className="btn-search-categories">Buscar</button> */}
-        {/* </div> */}
+          <FilterWorkers />
         <div className='list-users-category'>
           {
             workers.map((worker) => {
