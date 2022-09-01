@@ -83,7 +83,6 @@ color: #000;
 /* -------------serviços--------------- */
 
 .serviceHome{
-  padding: 30px 60px;
   /* margin: 0% 0 5% 0; */
   display: flex;
   width: 100%;
@@ -98,15 +97,25 @@ color: #000;
   text-align: center;
   }
 .servicoscards{
-  height: 335px;
+  height: 365px;
+  width: 350px;
   padding: 20px 35px;
   background: #D9D9D9;
-  box-shadow: 0 10px 10px 0  #999999;
+  box-shadow: 0 10px 10px 0 #999999;
   border-radius: 20px;
   margin: 15px;
   position: relative;
   overflow: hidden;
   text-align: center;
+}
+
+.services{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 100%;
+  margin: 1rem 7rem;
+  gap: 2rem;
 }
 
 .cardS .imgEletricista{
@@ -118,16 +127,16 @@ color: #000;
 }
 .h5HomeCard{
   color: #655A78;
-  font-size: 33px;
+  font-size: 2.5rem;
   font-family: 'Inter-Medium';
   margin-top: 15px;
   margin-bottom: 15px;
 }
 .pra p{
   color: black;
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 25px;
   font-family: 'Inter-Regular';
 }
 .p{
@@ -142,9 +151,8 @@ color: #000;
   height: 10vh;
   margin: auto;
   margin-top: 3.4%;
-  margin-bottom: 7.4%;
+  margin-bottom: 6.7%;
 }
-
 
 .buttonHome2-a a{
   justify-content: center;
@@ -198,7 +206,6 @@ a{
 
 /* Cards */
 .serviceHome2{
-  padding: 30px 50px;
   height: 60vh;
   display: flex;
   width: 100%;
@@ -222,14 +229,8 @@ a{
   overflow: hidden;
   text-align: center;
 }
-.cardS2 .imgEletricista2{
-  text-align: center;
-  margin: 15px 0px;
-}
-.cardS2 .imgEletricista3{
-  text-align: center;
-  margin: 15px 0px;
-}
+
+
 .imgEletricista2{
   width: 40%;
 }
@@ -260,7 +261,7 @@ a{
 /* -------------serviços--------------- */
 /* ----------responsividade------------ */
 
-@media (max-width:965px){
+@media (max-width:991px) and (max-width:973px){
   .container-Home{
     padding: 100px 2%;
     height: 70%;
@@ -269,6 +270,7 @@ a{
     overflow: hidden;
     gap: 5rem;
   }
+  
   .Title-home .text-h1-home{
     font-size: 3rem;
   }
@@ -279,6 +281,12 @@ a{
   .img-landingPage {
     width: 70%;
     /* margin-left: 36px; */
+}
+.imgEletricista {
+  width: 20%;
+}
+.imgEletricista2 {
+  width: 60%;
 }
   
   .Title-home p{
@@ -295,7 +303,7 @@ a{
     display: block;
     }
     .servicoscards{
-      width: 70%;
+      width: 90%;
       padding: 20px 35px;
       background: #D9D9D9;
       box-shadow: 0 10px 10px 0 #999999;
@@ -316,11 +324,7 @@ a{
     overflow: hidden;
     text-align: center;
     }
-    .cardS2 .imgEletricista3 {
-      text-align: center;
-      margin: 15px 0px;
-      margin-left: 10%;
-  }
+    
   .pra2 p {
     color: black;
     font-size: 1.5rem;
@@ -330,7 +334,7 @@ a{
 }
 .h5HomeCard2 {
   color: #655A78;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-family: 'Inter-SemiBold';
   margin-bottom: 15px;
 }
@@ -346,26 +350,112 @@ a{
 
  @media (max-width: 1282px) {
 
-  .container-Home {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .container-Home{
+    padding: 100px 2%;
+    height: 70%;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
     gap: 1rem;
+  }
+  
+  .Title-home .text-h1-home{
+    font-size: 3rem;
+  }
+  .Title-home {
+    max-width: 37rem;
+    font-family: 'Inter-Regular';
 }
-
+  .Title-home p {
+    color: #000;
+    font-size: 2.2rem;
+    font-family: sans-serif;
+    line-height: 2.5rem;
+    margin: 50px 0px;
 }
-
-.services{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
+  .imgQuemS {
+    width: 70%;
+  
+  }
+  .img-landingPage {
+    width: 70%;
+    /* margin-left: 36px; */
+}
+.serviceHome2{
+  padding: 5rem 2rem;
+  min-height: 100ch;
   height: 100%;
-  margin: 1rem 7rem;
-  margin-top: 7rem;
-  gap: 2rem;
 }
+.milestones {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0rem;
+}
+.servicoscards{
+  width: 90%;
+  padding: 20px 35px;
+  background: #D9D9D9;
+  box-shadow: 0 10px 10px 0 #999999;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.servicoscards2{
+  width: 70%;
+height: 450px;
+padding: 30px 35px;
+border-radius: 20px;
+margin: auto;
+position: relative;
+overflow: hidden;
+text-align: center;
+}
+.h5HomeCard {
+  color: #655A78;
+  font-size: 2rem;
+  font-family: 'Inter-Medium';
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.imgEletricista {
+  width: 20%;
+}
+.pra p {
+  color: black;
+  font-size: 1.2rem;
+  line-height: 24px;
+  margin-bottom: 25px;
+  font-family: 'Inter-Regular';
+}
+
+}
+/* @media (max-width:1016px){
+  .servicoscards {
+    height: 275px;
+    width: 650px;
+    padding: 20px 35px;
+    background: #D9D9D9;
+    box-shadow: 0 10px 10px 0 #999999;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+.h5HomeCard {
+  color: #655A78;
+  font-size: 2rem;
+  font-family: 'Inter-Medium';
+}
+.imgEletricista {
+  width: 80px;
+}
+} */
+
+
 .milestones{
   display: grid;
   grid-template-columns: repeat(4, 1fr);

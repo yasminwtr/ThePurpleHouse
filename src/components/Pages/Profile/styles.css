@@ -352,7 +352,7 @@ textarea:focus, input:focus, select:focus {
 }
 
 .inputLogin{
-  background-color: #f8f8f8;
+  background-color: #fff;
   border: none;
   outline: none;
   font-family: Inter-Regular;

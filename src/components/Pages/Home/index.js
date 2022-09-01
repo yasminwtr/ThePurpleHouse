@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import landing from '../../assets/img/landing.png'
 import eletricista from '../../assets/img/eletricistaicon.png'
@@ -13,19 +12,21 @@ import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { servicesAnimations } from "./animation";
+import { servicesAnimations2 } from "./animation";
 import { milestonesAnimations } from "./animation";
+
 import { useScroll } from "./useScroll";
 
 import './styles.css'
 
-function Home ()  {
+const Home = () => {
   const [element, controls] = useScroll();
   const [element2, controls2] = useScroll();
 
   const data = [
     {
       type: "Eletricista",
-      text: "Implementação, manutenção e reparação deinstalações elétricas, tanto residenciais quanto industriais.",
+      text: "Implementação, manutenção e reparação de instalações elétricas, tanto residenciais quanto industriais.",
       image: eletricista,
     },
     {
@@ -34,7 +35,7 @@ function Home ()  {
       image: diarista,
     },
     {
-      type: "Baba",
+      type: "Babá",
       text: "Cuida de bebês e crianças, zelando pelo bem-estar, saúde, alimentação, higiene pessoal, educação, cultura, recreação e lazer. ",
       image: baba,
     },
@@ -85,7 +86,7 @@ function Home ()  {
           </div>
         </section>
 
-        <section id="services" ref={element} >
+        <section id="services" ref={element} className="serviceHome">
         <div className="services">
         {data.map(({type,text,image},index) => {
             return (
@@ -93,7 +94,7 @@ function Home ()  {
               variants={servicesAnimations}
               animate={controls}
               transition={{
-                delay: 0.03,
+                delay: 0.00,
                 type: "spring",
                 duration: 0.5,
               }}
@@ -102,7 +103,7 @@ function Home ()  {
                     <h2 className="h5HomeCard">{type}</h2>
                   </div>
                   <div className="services__service__image">
-                    <img src={image} alt="Service"  />  
+                    <img src={image} alt="Service" className="imgEletricista" />  
                   </div>
                   
                   <div className="pra">
@@ -119,7 +120,7 @@ function Home ()  {
         <section className="ContainerButtonHomeS" id="services" ref={element}>
           {/* <button className="seeMoreButton"></button> */}
           <motion.div
-           variants={servicesAnimations}
+           variants={servicesAnimations2}
            animate={controls}
            transition={{
              delay: 0.3,
@@ -127,7 +128,7 @@ function Home ()  {
              duration: 0.5,
            }}
           > 
-            <a  href="/Categories" className="buttonHome2-a"><Link to='/Categories'  className="buttonHome2-a">VER MAIS</Link></a>
+            <a  href="/Login" className="buttonHome2-a"><Link to='/Login'  className="buttonHome2-a">VER MAIS</Link></a>
           </motion.div>
         </section>
       </section>
@@ -150,7 +151,7 @@ function Home ()  {
             animate={controls2}
             transition={{
               delay: 0.03,
-              type: "spring",
+              type: "just",
               duration: 0.8,
             }}
             >

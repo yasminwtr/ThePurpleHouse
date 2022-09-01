@@ -117,7 +117,7 @@
 
 .containerInputRegister{
     display: flex;
-    background-color: #f8f8f8;
+    background-color: #fff;
     border-radius: 8px;
     align-items: center;
     width: 85%;
@@ -136,7 +136,7 @@
 
 
 .inputRegister, #fullName, #phoneNumber{
-    background-color: #f8f8f8;
+    background-color: #fff;
     border: none;
     outline: none;
     font-family: Inter-Regular;
