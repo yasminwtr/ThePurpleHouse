@@ -76,7 +76,7 @@ const AnnounceService = (props) => {
   async function registerWorker() {
     try {
       if ((selectValue, description, price, city, localization, whatsapp) !== '' && selectValue !== 'Serviços') {
-        const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, fullNameWorker: user.fullname, descriptionService: description, priceService: price, city: city, localization: localization, whatsapp: whatsapp });
+        const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, fullNameWorker: user.fullname, descriptionService: description, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
         console.log('response', response);
         setShowSuccess(true)
         setShow(false)
@@ -150,28 +150,15 @@ const AnnounceService = (props) => {
             <Row className="g-2 mb-3 row-localization">
               <Form.Label id='localization-label'>Localização em que você atua</Form.Label>
               <Col md={3}>
-                {/* <Form.Control
-                  type="text"
-                  placeholder="Estado"
-                  maxLength={2}
-                  onChange={(event) => setLocalization(event.target.value)}
-                  id='localization'
-                /> */}
                 <Form.Select name="uf" id="uf" onChange={handleSelectUf}>
                   <option value="0">Estado</option>
                   {ufs.map((uf) => (
-                    <option value={uf.sigla}>{uf.nome}</option>
+                    <option value={uf.sigla}>{uf.sigla}</option>
                   ))}
                 </Form.Select>
               </Col>
               <Col md>
-                {/* <Form.Control
-                  type="text"
-                  placeholder="Cidade"
-                  maxLength={25}
-                  onChange={(event) => setCity(event.target.value)}
-                  id='city'
-                /> */}
+
                 <Form.Select
                   name="City"
                   id="City"
@@ -212,7 +199,7 @@ const AnnounceService = (props) => {
 
             <Form.Group className="mb-3">
               <Form.Label>Por fim, adicione até 10 fotos de serviços já realizados!</Form.Label>
-              <Form.Control type="file" multiple />
+              <Form.Control type="file" multiple accept='.png, .jpeg, .jpg'/>
             </Form.Group>
           </Form>
 
