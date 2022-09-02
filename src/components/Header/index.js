@@ -25,7 +25,7 @@ const Header = () => {
         <header className="header">
           <div className="container flex">
             <div className="logo">
-              <Link to='/'><img src={logo1} width={50} alt="logo1" /></Link>
+              <Link to='/'><img src={logo1} width={55} alt="logo1" /></Link>
               <span className='title-header'>The Purple House</span>
             </div>
             <div className="nav">

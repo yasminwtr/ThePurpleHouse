@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import './styles.css'
-import logo from '../../components/assets/img/logo.png'
+import logo from '../../components/assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';

@@ -1,6 +1,6 @@
 
 import React, { useState, useContext } from 'react'
-import logo from '../../components/assets/img/logo.png'
+import logo from '../../components/assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';

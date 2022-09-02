@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from '../../components/Reviews/LeaveAvaliation'
-import StarIcon from '@mui/icons-material/StarRounded'
+import whatsapp from '../../components/assets/img/whatsapp.png'
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
@@ -16,12 +16,12 @@ import AuthContext from '../../components/contexts/auth'
 import AverageRating from '../../components/Reviews/AverageRating'
 
 const WorkerProfile = () => {
-  const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const location = useLocation();
     const [formattedBirthDate, setFormattedBirthDate] = useState('');
     const [workerReviews, setWorkerReviews] = useState([]);
     const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
-    const workerReviewsLength = workerReviews.length 
+    const workerReviewsLength = workerReviews.length
     const dateAtual = new Date()
     const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
     const [idade, setIdade] = useState(dateAtual.getFullYear() - year);
@@ -38,9 +38,9 @@ const WorkerProfile = () => {
         }
     }
 
-    function cacularIdade(idade){
-        if(month > dateAtual.getMonth()+1 
-        || (month == dateAtual.getMonth()+1 && day > dateAtual.getDate()+1)){
+    function cacularIdade(idade) {
+        if (month > dateAtual.getMonth() + 1
+            || (month == dateAtual.getMonth() + 1 && day > dateAtual.getDate() + 1)) {
             idade--
         }
         return idade
@@ -48,19 +48,19 @@ const WorkerProfile = () => {
 
     useEffect(() => {
         setIdade(cacularIdade(idade))
-      }, [])
+    }, [])
 
     function validationWorkerNumberReviews() {
-        if(workerReviewsLength > 1) {
-          setNumberWorkerReviews(`${workerReviewsLength} avaliações`)
-    
-        } else if(workerReviewsLength == 1) {
-          setNumberWorkerReviews(`${workerReviewsLength} avaliação`)
-    
+        if (workerReviewsLength > 1) {
+            setNumberWorkerReviews(`${workerReviewsLength} avaliações`)
+
+        } else if (workerReviewsLength == 1) {
+            setNumberWorkerReviews(`${workerReviewsLength} avaliação`)
+
         } else {
-          setNumberWorkerReviews(`Nenhuma avaliação`)
+            setNumberWorkerReviews(`Nenhuma avaliação`)
         }
-      }
+    }
 
     useEffect(() => {
         getReviewsByWorker()
@@ -68,7 +68,7 @@ const WorkerProfile = () => {
 
     useEffect(() => {
         validationWorkerNumberReviews()
-      })
+    })
 
     useEffect(() => {
         const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
@@ -82,7 +82,7 @@ const WorkerProfile = () => {
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
                     <p id='name-worker-profile'>{location.state.name}</p>
                     <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
-                    <AverageRating/>
+                    <AverageRating />
                     <button className='message-button'>Enviar mensagem</button>
                 </div>
 
@@ -90,8 +90,14 @@ const WorkerProfile = () => {
                     <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
                     <p id='text-worker-profile'>{location.state.email}</p>
 
-                    <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} /> Telefone</p>
-                    <p id='text-worker-profile'>{location.state.phone}</p>
+                    <div className='contact-worker-profile'>
+                        <div>
+                            <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} /> Telefone</p>
+                            <p id='text-worker-profile'>{location.state.phone}</p>
+                        </div>
+
+                        <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
+                    </div>
 
                     <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
                     <p id='text-worker-profile'>{formattedBirthDate}</p>
@@ -168,14 +174,14 @@ const WorkerProfile = () => {
                     <div className='feed-avaliations'>
                         <div className='inicial-avaliations'>
                             {user.idperson == location.state.workerId ?
-                            <>
-                            <p id='number-avaliations-else'>{numberWorkerReviews}</p>
-                            </>
-                            :
-                            <>
-                            <LeaveAvaliation />
-                            <p id='number-avaliations'>{numberWorkerReviews}</p>
-                            </>}
+                                <>
+                                    <p id='number-avaliations-else'>{numberWorkerReviews}</p>
+                                </>
+                                :
+                                <>
+                                    <LeaveAvaliation />
+                                    <p id='number-avaliations'>{numberWorkerReviews}</p>
+                                </>}
                         </div>
 
                         <WorkerReviews />
