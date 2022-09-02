@@ -37,51 +37,6 @@
   min-width: 330px;
 }
 
-/* .container-input-search-state {
-  display: flex;
-  background-color: #f8f8f8;
-  height: 40px;
-  border-radius: 30px;
-  padding: 5px;
-  align-items: center;
-  width: 64px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.container-input-search-city {
-  display: flex;
-  background-color: #f8f8f8;
-  height: 40px;
-  border-radius: 30px;
-  align-items: center;
-  padding: 10px;
-  width: 400px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.input-search-categories-state {
-  background-color: #f8f8f8;
-  border: none;
-  outline: none;
-  font-family: Inter-Regular;
-  width: 100%;
-  margin-left: 3%;
-  text-align: center;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.input-search-categories-city {
-  background-color: #f8f8f8;
-  border: none;
-  outline: none;
-  font-family: Inter-Regular;
-  margin-left: 3%;
-  cursor: pointer;
-} */
-
 .btn-search-categories {
   align-self: center;
   color: #655A78 !important;

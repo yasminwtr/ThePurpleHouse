@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <>
-      {location.pathname !== "/Login" &&  location.pathname !== "/Registration"
+      {location.pathname !== "/Login" && location.pathname !== "/Registration"
         ?
         <footer className="footer">
           <div className="container-footer">
