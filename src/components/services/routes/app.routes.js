@@ -13,6 +13,7 @@ const AppRoutes = () => {
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/" element={<Categories />} />
         <Route path="/Categories" element={<Categories />} />
         <Route path="/About" element={<About />} />
         <Route path="/Profile" element={<Profile />} />

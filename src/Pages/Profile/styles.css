@@ -49,14 +49,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-profile{
-  margin-top: 120px !important;
+  margin: 4.5% auto 4.5% auto !important;
   width: 50%;
-  margin: auto;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
   min-height: 490px;
   max-height: 490px;
-  margin-bottom: 179px;
 }
 
 .part1-profile{
@@ -153,7 +151,7 @@ body::-webkit-scrollbar-thumb {
   width: 17.5%;
   border-radius: 32px;
   padding: 30px;
-  margin: auto auto 176px -1%;
+  margin: 4% auto auto -1%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   min-height: 490px;
   max-height: 490px;
