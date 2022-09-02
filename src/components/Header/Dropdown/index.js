@@ -30,7 +30,7 @@ const DropdownProfile = () => {
     let nameformatted = fullname.join(' ');
     setFormattedFullName(`${nameformatted}`);
   }, [user])
-
+  
   return (
     <div className="dropdown-wrapper" >
       <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>

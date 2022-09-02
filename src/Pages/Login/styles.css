@@ -1,0 +1,149 @@
+.bodylogin{
+    height: 100vh;
+    background-image: url(../../components/assets/img/imgFundo.png) !important;
+    background-size: cover;
+}
+
+.container-login{
+    margin: 0;
+    width: 100%;
+    height: 80vh;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.header-login{
+    height: 12vh;
+    padding: 15px;
+}
+
+.logo-login{
+    width: 55px;
+}
+
+.testeAlert{
+    font-family: Inter-Regular;
+}
+
+.box-login{
+    background-color: #F5F0FE;
+    text-align: center;
+    width: 30%;   
+    border-radius: 25px;
+    box-shadow: 0px 4px 5px #c8bae5;
+    padding: 40px 20px 60px 20px;
+}
+
+.h1-login{
+    color: #3E3848;
+    font-size: 32px;
+    margin-block-end: 0.6em;
+    font-family: Inter-Medium;
+}
+
+.form-login{
+    height: 75%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 220px; 
+}
+
+.input-login{
+    padding: 10px;
+    color: #000000;
+    font-size: 17px;
+    height: 40px;
+    width: 300px;
+    border: 1px solid #F5F0FE;
+    border-radius: 8px;
+    box-shadow: 0px 4px 5px #c8bae5;
+}
+
+/* .i-login{
+    font-size: 23px;
+} */
+
+.input-login:hover{
+    border: 1px solid #9472ce8f;
+}
+
+.input-login:focus{
+    border: none;
+}
+
+.input-login::placeholder{
+    color: #000000;
+    font-size: 17px;
+}
+
+.button-login{
+    text-align: center;
+    background-color: #8058C4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 40px;
+    height: 80%;
+    width: 75%;
+    font-size: 20px;
+    font-family: Inter-SemiBold;
+}
+
+.button-login:hover{
+    background-color: #9472ce;
+    transition: 0.5s;
+}
+
+.a-login{
+    margin-top: 5%;
+    color: #7E57C2;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Inter-Regular;
+}
+
+.a-login:hover{
+    color: #3E3848;
+}
+
+.label-login{
+    margin-top: 5%;
+    color: #000000;
+    font-size: 17px;
+    font-family: Inter-Regular;
+}
+
+.containerInputLogin{
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    align-items: center;
+    width: 85%;
+    padding: 10px;
+    color: #000000;
+    font-size: 17px;
+    height: 50px;
+    border: 1px solid #F5F0FE;
+    box-shadow: 0px 4px 5px #c8bae5;
+    margin-bottom: 6%;
+}
+
+.containerInputLogin:hover{
+    border: 1px solid #9472ce;
+}
+
+.inputLogin{
+    background-color: #f8f8f8;
+    border: none;
+    outline: none;
+    font-family: Inter-Regular;
+    width: 85%;
+    margin-left: 3%;
+}
+
+#iconLogin{
+    color: #655A78 !important;
+    font-size: 20px;
+}

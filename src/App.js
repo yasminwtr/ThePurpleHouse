@@ -1,5 +1,5 @@
-import '../src/components/Pages/Home/styles.css'
-import Routes from './components/services/routes/index';
+import '../src/Pages/Home/styles.css'
+import Routes from './components/services/routes/index'
 import { AuthProvider } from './components/contexts/auth';
 
 function App() {
