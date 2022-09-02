@@ -93,7 +93,7 @@ const EditAccount = (props) => {
                 <Form>
                     <Form.Group className="mb-3">
                         <Form.Label>E-mail</Form.Label>
-                    <div className='containerInputEdit'>
+                        
                         <Form.Control
                             type="email"
                             placeholder="Novo e-mail"
@@ -102,7 +102,6 @@ const EditAccount = (props) => {
                             id = 'email'
                             onChange={(event) => setEmail(event.target.value)}
                         />
-                      </div>
                     </Form.Group>
 
                    
@@ -120,7 +119,7 @@ const EditAccount = (props) => {
                             />
                             
                             <div>
-                              <IconButton sx={{ color: '#515151' }}
+                              <IconButton sx={{ color: '#515151', marginRight: 1 }}
                                 aria-label="toggle password visibility"
                                 onClick={handleClickShowPassword}
                                 onMouseDown={handleMouseDownPassword}

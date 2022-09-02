@@ -65,13 +65,13 @@ const Cadastro = () => {
     }
 
     setOpen(false);
-  }; 
+  };
 
 
   function validationFields() {
-    if ((fullName, email, phoneNumber, password, birthDate) !== '' 
-        && password.length >= 8
-        && email.match(validEmail)) {
+    if ((fullName, email, phoneNumber, password, birthDate) !== ''
+      && password.length >= 8
+      && email.match(validEmail)) {
       registerNewUser()
       navigate("/Categories", { replace: true });
     } else {
@@ -153,7 +153,7 @@ const Cadastro = () => {
                     <div className='containerInputRegister'>
                       < EmailIcon id='iconRegister' />
                       <input
-                        id='email'
+                        id='email-registration'
                         onChange={(event) => setEmail(event.target.value)}
                         onInputCapture={handleChange}
                         onBlur={handleBlur}
@@ -192,7 +192,7 @@ const Cadastro = () => {
                         onBlur={handleBlur}
                         className={errors.password && touched.password && "error"}
                         placeholder='Senha'
-                        id='password'
+                        id='password-registration'
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password} />
                       <div>

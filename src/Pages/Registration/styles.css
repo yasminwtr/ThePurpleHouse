@@ -143,7 +143,7 @@
     width: 85%;
     margin-left: 3%;
 }
-#email, #password{
+#email-registration, #password-registration{
     background-color: #fff;
     border: none;
     outline: none;

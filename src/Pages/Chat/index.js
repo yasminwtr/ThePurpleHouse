@@ -8,7 +8,7 @@ import SendIcon from '@mui/icons-material/SendRounded'
 
 const Chat = () => {
   return (
-    <body className='body-chat'>
+    <div className='body-chat'>
       <div className='all-chat'>
         <div className='box-search-chat'>
           <div className='container-box-search'>
@@ -63,7 +63,7 @@ const Chat = () => {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   )
 }
 

@@ -65,7 +65,7 @@ const Home = () => {
 ]
 
   return (
-    <body className="bodyHome">
+    <div className="bodyHome">
       <section className="container-Home">
         <div className="Quem-img">
           <img src={landing} alt='quemsomos' className="img-landingPage" />
@@ -91,6 +91,7 @@ const Home = () => {
         {data.map(({type,text,image},index) => {
             return (
               <motion.div className="servicoscards"
+              key={index}
               variants={servicesAnimations}
               animate={controls}
               transition={{
@@ -128,7 +129,7 @@ const Home = () => {
              duration: 0.5,
            }}
           > 
-            <a  href="/Login" className="buttonHome2-a"><Link to='/Login'  className="buttonHome2-a">VER MAIS</Link></a>
+            <a className="buttonHome2-a"><Link to='/Login'  className="buttonHome2-a">VER MAIS</Link></a>
           </motion.div>
         </section>
       </section>
@@ -147,6 +148,7 @@ const Home = () => {
         milestone.map(({ image2, data, amount }) => {
           return (
             <motion.div className="milestone"
+            key={image2}
             variants={milestonesAnimations}
             animate={controls2}
             transition={{
@@ -170,7 +172,7 @@ const Home = () => {
       </section>
 
       
-    </body>
+    </div>
   )
 }
 

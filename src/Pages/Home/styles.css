@@ -170,7 +170,7 @@ color: #000;
   align-items: center;
   transition: all 0.5s;
 }
-.buttonHome2-a:hover{
+.buttonHome2-a a:hover{
   background-color: #8058C4;
   color: #fff;
   text-decoration: #8058C4;

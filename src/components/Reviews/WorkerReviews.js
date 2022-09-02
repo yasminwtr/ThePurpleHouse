@@ -31,7 +31,7 @@ const WorkerReviews = (props) => {
                 workerReviews.map((review) => {
                     if (review.stars == 5) {
                         return <>
-                            <div>
+                            <div key={review.idreview}>
                                 <div className='block-avaliation'>
                                     <div className='part1-avaliation'>
                                         <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile" />
@@ -48,7 +48,7 @@ const WorkerReviews = (props) => {
 
                     } else if (review.stars == 4) {
                         return <>
-                            <div>
+                            <div key={review.idreview}>
                                 <div className='block-avaliation'>
                                     <div className='part1-avaliation'>
                                         <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile" />
@@ -65,7 +65,7 @@ const WorkerReviews = (props) => {
 
                     } else if (review.stars == 3) {
                         return <>
-                            <div>
+                            <div key={review.idreview}>
                                 <div className='block-avaliation'>
                                     <div className='part1-avaliation'>
                                         <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile" />
@@ -82,7 +82,7 @@ const WorkerReviews = (props) => {
 
                     } else if (review.stars == 2) {
                         return <>
-                            <div>
+                            <div key={review.idreview}>
                                 <div className='block-avaliation'>
                                     <div className='part1-avaliation'>
                                         <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile" />
@@ -99,7 +99,7 @@ const WorkerReviews = (props) => {
 
                     } else if (review.stars == 1) {
                         return <>
-                            <div>
+                            <div key={review.idreview}>
                                 <div className='block-avaliation'>
                                     <div className='part1-avaliation'>
                                         <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile" />

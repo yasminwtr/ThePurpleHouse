@@ -332,28 +332,19 @@ textarea:focus, input:focus, select:focus {
 .containerInputEdit{
   display: flex;
   width: 100%;
-  padding: 0.135rem 0.65rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
   color: #212529;
   background-color: #fff;
-  background-clip: padding-box;
   border: 1px solid #ced4da;
   appearance: none;
   border-radius: 0.375rem;
   align-items: center;
+  height: 38px;
+}
+
+#password{
+  border: transparent !important;
 }
 
 .containerInputEdit:focus{
   border: 1px solid #000000 !important;
-}
-
-.inputLogin{
-  background-color: #fff;
-  border: none;
-  outline: none;
-  font-family: Inter-Regular;
-  width: 85%;
-  margin-left: 3%;
 }

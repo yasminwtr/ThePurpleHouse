@@ -33,7 +33,7 @@ function Categories() {
   }, [])
 
   return (
-    <body>
+    <div>
       <div className="page">
         <div onClick={() => showOrHide} >
           {showElement ? <p className="animate__animated animate__fadeInLeft">
@@ -57,7 +57,7 @@ function Categories() {
           </Grid>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

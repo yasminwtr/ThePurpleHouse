@@ -86,7 +86,7 @@ const FilterWorkers = (props) => {
                 <Form.Select name="uf" id="uf" onChange={handleSelectUf}>
                   <option value="0">Estado</option>
                   {ufs.map((uf) => (
-                    <option value={uf.sigla}>{uf.sigla}</option>
+                    <option key={uf.id} value={uf.sigla}>{uf.sigla}</option>
                   ))}
                 </Form.Select>
               </Col>
