@@ -40,12 +40,13 @@ body::-webkit-scrollbar-thumb {
 
 /* worker profile */
 
-.all-worker-profile{
-    margin-top: 4%;
+body{
+    background-image: url(../../components/assets/img/imgFundo3.png);
+    background-size: 100%;
 }
 
 .container-worker-profile{
-    margin-top: 6%;
+    margin: 4.5% auto 4.5% auto !important;
     width: 50%;
     margin: auto;
     border-radius: 32px;
@@ -148,6 +149,18 @@ body::-webkit-scrollbar-thumb {
     margin-block-end: 2em;
     font-size: 16px;
     font-family: Inter-Regular;
+}
+
+.contact-worker-profile{
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp{
+    width: 8.5%;
+    height: auto;
+    margin-block-end: 1em;
+    margin-left: 20px;
 }
 
 /* geral de galeria e avaliações */
