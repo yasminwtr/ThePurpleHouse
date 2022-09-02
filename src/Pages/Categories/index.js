@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import ResultCategories from './boxResultCategories'
 import Grid from '@mui/material/Unstable_Grid2';
 import api from '../../api'
-import PlaceIcon from '@mui/icons-material/Place';
 import 'animate.css'
 
 function Categories() {

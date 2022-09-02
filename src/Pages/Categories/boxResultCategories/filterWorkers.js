@@ -10,20 +10,14 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import TuneIcon from '@mui/icons-material/Tune';
 import axios from 'axios';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { SpinnerAnimation } from 'components/SpinnerAnimation';
 
 const FilterWorkers = (props) => {
+  
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const [ufs, setUfs] = useState([]);
   const [cities, setCities] = useState([]);
@@ -104,22 +98,14 @@ const FilterWorkers = (props) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="success">
-            Filtrar
-          </Button>
+          <div>
+            {/* <Button variant="success" onClick={() => filterLocation}>
+              Filtrar
+            </Button> */}
+            <SpinnerAnimation />
+          </div>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Serviço anunciado com sucesso
-        </Alert>
-      </Snackbar>
     </div>
   )
 }
