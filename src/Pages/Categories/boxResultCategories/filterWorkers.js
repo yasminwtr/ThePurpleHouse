@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import TuneIcon from '@mui/icons-material/Tune';
 import axios from 'axios';
 import { SpinnerAnimation } from 'components/SpinnerAnimation';
 
 const FilterWorkers = (props) => {
-  
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -54,6 +51,8 @@ const FilterWorkers = (props) => {
     const city = event.target.value;
     setSelectedCity(city);
   }
+
+  // se a localização seleciona == localização do trabalhador
 
   return (
     <div>
@@ -99,9 +98,6 @@ const FilterWorkers = (props) => {
         </Modal.Body>
         <Modal.Footer>
           <div>
-            {/* <Button variant="success" onClick={() => filterLocation}>
-              Filtrar
-            </Button> */}
             <SpinnerAnimation />
           </div>
         </Modal.Footer>
