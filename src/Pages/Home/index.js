@@ -100,9 +100,12 @@ const Home = () => {
                 duration: 0.5,
               }}
               >
-                <div className="services__service__title">  
+                
+                   <div className="services__service__title">  
                     <h2 className="h5HomeCard">{type}</h2>
                   </div>
+
+            <div className="grid">
                   <div className="services__service__image">
                     <img src={image} alt="Service" className="imgEletricista" />  
                   </div>
@@ -110,6 +113,7 @@ const Home = () => {
                   <div className="pra">
                   <p >{text}</p>
                   </div>
+            </div>
                  
               </motion.div>
             )
