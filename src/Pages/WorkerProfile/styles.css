@@ -167,8 +167,8 @@ body{
 }
 
 .whatsapp{
-    width: 8.5%;
-    height: auto;
+    width: 50%;
+    height: fit-content;
     margin-block-end: 1em;
     margin-left: 20px;
 }
