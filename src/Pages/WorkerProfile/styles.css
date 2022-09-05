@@ -45,6 +45,16 @@ body{
     background-size: 100%;
 }
 
+.link-chat {
+    text-decoration: none;
+    color: #6B4D9E;
+}
+
+.link-chat:hover {
+    color: #6B4D9E;
+    transition: 0.5s;
+}
+
 .container-worker-profile{
     margin: 4.5% auto 4.5% auto !important;
     width: 50%;

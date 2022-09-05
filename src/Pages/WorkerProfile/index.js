@@ -10,7 +10,7 @@ import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../../api'
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import WorkerReviews from '../../components/Reviews/WorkerReviews';
 import AuthContext from '../../components/contexts/auth'
 import AverageRating from '../../components/Reviews/AverageRating'
@@ -83,7 +83,7 @@ const WorkerProfile = () => {
                     <p id='name-worker-profile'>{location.state.name}</p>
                     <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
                     <AverageRating />
-                    <button className='message-button'>Enviar mensagem</button>
+                    <button className='message-button'><Link className='link-chat' to='/Chat'>Enviar mensagem</Link></button>
                 </div>
 
                 <div className='part2-worker-profile'>
