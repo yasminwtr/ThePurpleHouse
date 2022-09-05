@@ -135,7 +135,7 @@
 }
 
 
-.inputRegister, #fullName, #phoneNumber{
+.inputRegister, #fullName, .phone-number-register{
     background-color: #fff;
     border: none;
     outline: none;

@@ -19,6 +19,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../../components/contexts/auth'
 import { useNavigate } from "react-router-dom";
+import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -107,8 +108,6 @@ const Cadastro = () => {
         email: Yup.string()
           .email('Digite um e-mail válido')
           .required(''),
-        phoneNumber: Yup.string()
-          .required(''),
         password: Yup.string()
           .required('')
           .min(8, 'A senha deve ter no mínimo 8 caracteres')
@@ -150,6 +149,7 @@ const Cadastro = () => {
                       />
                     </div>
                     <div className="input-feedback">{errors.fullName}</div>
+
                     <div className='containerInputRegister'>
                       < EmailIcon id='iconRegister' />
                       <input
@@ -162,16 +162,20 @@ const Cadastro = () => {
                       />
                     </div>
                     <div className="input-feedback">{errors.email}</div>
+
                     <div className='containerInputRegister'>
-                      <BsFillTelephoneFill id='iconRegister' />
-                      <input
+                      <BsFillTelephoneFill id='iconRegister' />                
+                      <TelefoneBrasileiroInput
                         onChange={(event) => setPhoneNumber(event.target.value)}
                         onInputCapture={handleChange}
                         onBlur={handleBlur}
-                        className={errors.phoneNumber && touched.phoneNumber && "error"}
-                        id='phoneNumber'
+                        className='phone-number-register'
                         type={'tel'}
-                        placeholder='Celular' />
+                        placeholder='Celular'
+                        value={phoneNumber}
+                        temDDD
+                        separaDDD
+                      />
                     </div>
 
                     <div className='containerInputRegister'>
