@@ -80,7 +80,6 @@ const AnnounceService = (props) => {
         console.log('response', response);
         setShowSuccess(true)
         setShow(false)
-
       }
       else {
         setShowError(true)
@@ -199,7 +198,7 @@ const AnnounceService = (props) => {
 
             <Form.Group className="mb-3">
               <Form.Label>Por fim, adicione até 10 fotos de serviços já realizados!</Form.Label>
-              <Form.Control type="file" multiple accept='.png, .jpeg, .jpg'/>
+              <Form.Control type="file" multiple accept='.png, .jpeg, .jpg' />
             </Form.Group>
           </Form>
 

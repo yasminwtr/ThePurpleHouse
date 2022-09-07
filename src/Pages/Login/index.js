@@ -88,7 +88,7 @@ function Login() {
               <input
                 onChange={(event) => setEmail(event.target.value)}
                 className='inputLogin'
-                type={'text'}
+                type={'email'}
                 placeholder='E-mail'
               />
             </div>

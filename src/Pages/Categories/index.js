@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import "./styles.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
-import ResultCategories from './boxResultCategories'
 import Grid from '@mui/material/Unstable_Grid2';
 import api from '../../api'
 import 'animate.css'
+import FilterWorkers from 'components/Categories/filterWorkers';
 
 function Categories() {
   const [showElement, setShowElement] = useState(false)
@@ -36,7 +36,7 @@ function Categories() {
       <div className="page">
         <div onClick={() => showOrHide} >
           {showElement ? <p className="animate__animated animate__fadeInLeft">
-            <ResultCategories category={selectedCategory} />
+            <FilterWorkers category={selectedCategory}/>
           </p> : null}
         </div>
         <div className={showElement ? "container-categories-side" : "container-categories"}>
