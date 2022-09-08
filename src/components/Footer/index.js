@@ -30,14 +30,20 @@ const Footer = () => {
           </div>
          
           <div className="footer-col">
-          <h4>Links Úteis</h4>
+          
             <ul>
               {signed ?
+              
                 <>
+                <h4>Links Úteis</h4>
+                  <li><Link to='/Categories'>Categorias</Link> </li>
+                  <li><Link to='/Profile'>Ver Perfil</Link> </li>
+                  <li><Link to='/Chat'>Mensagens</Link> </li>
                   <li><Link to='/About'>Sobre</Link> </li>
                 </>
                 :
                 <>
+                <h4>Links</h4>
                   <li><Link to='/'>Inicial</Link> </li>
                   <li><Link to='/Registration'>Fazer parte</Link> </li>
                   <li><Link to='/About'>Sobre</Link> </li>

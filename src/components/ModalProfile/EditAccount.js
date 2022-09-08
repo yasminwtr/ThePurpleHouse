@@ -63,13 +63,14 @@ const EditAccount = (props) => {
 
             setShowSuccess(true)
             setShow(false)
-          
+          console.log('funfou');
           }
           else {
               setShowError(true)
           }
       } catch (error) {
         console.log(error)
+        console.log('nao funfou');
       }
   }
 
@@ -95,7 +96,7 @@ const EditAccount = (props) => {
                         <Form.Label>E-mail</Form.Label>
                         
                         <Form.Control
-                            type="email"
+                            type={"email"}
                             placeholder="Novo e-mail"
                             autoFocus
                             maxLength={45}

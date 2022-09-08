@@ -15,7 +15,7 @@ const About = () => {
                     <h1 className="text-h1-about">Quem somos</h1>
                     <p>The Purple House é um projeto desenvolvido pelo grupo 4tec, que acredita que a tecnologia está mudando profundamente o mundo, dando autonomia aos indivíduos, eliminando intermediários e viabilizando sonhos.
                     </p>
-                    <p>The Purple House foi criado para facilitar o dia a dia de profissionais que tem a dificuldade de mostrar seus serviços e também para clientes que precisam de facilidade para pedir determinado serviço residencial. Assim mostrando que a tecnologia muda vidas.
+                    <p>The Purple House foi criado para facilitar o dia a dia de profissionais que tem dificuldade em mostrar seus serviços e também para clientes que precisam de facilidade para pedir determinado serviço residencial. Assim mostrando que a tecnologia muda vidas.
                     </p>
 
                 </div>
