@@ -343,6 +343,20 @@ select:focus {
   border-radius: 0.375rem;
   align-items: center;
   height: 38px;
+  
+}
+.containerInputEdit-tel{
+  display: flex;
+  width: 100%;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.375rem;
+  align-items: center;
+  height: 38px;
+  padding: .375rem .75rem;
+  
 }
 
 #password {
@@ -350,6 +364,10 @@ select:focus {
 }
 
 .containerInputEdit:focus {
+  border: 1px solid #000000 !important;
+}
+
+.containerInputEdit-tel:focus{
   border: 1px solid #000000 !important;
 }
 
