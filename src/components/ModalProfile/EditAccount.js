@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EditIcon from '@mui/icons-material/EditRounded'
+import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -21,6 +22,8 @@ const EditAccount = (props) => {
     const { user } = useContext(AuthContext)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -50,20 +53,24 @@ const EditAccount = (props) => {
     const updateUser = async () => {
       const idPerson = user.idperson;
       try {
-          if ((email && password) !== ''){
-            const response = await api.put(`/users/${idPerson}`, { email, password})
+          if ((email && password && phoneNumber) !== '') {
+            const response = await api.put(`/users/${idPerson}`, { email, password, phoneNumber })
             const data = response;
             console.log('updateUserData', data);
       
             user.email = data.email;
             user.password = data.password;
+            user.phoneNumber = data.phoneNumber;
+
       
             setEmail(email)
             setPassword(password)
+            setPhoneNumber(phoneNumber)
 
             setShowSuccess(true)
             setShow(false)
-          console.log('funfou');
+            console.log('valores update:', 'email: ',email,';','senha: ',password, ';' ,'telefone:', phoneNumber);
+            
           }
           else {
               setShowError(true)
@@ -92,6 +99,25 @@ const EditAccount = (props) => {
 
             <Modal.Body>
                 <Form>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Telefone</Form.Label>
+                        <div>
+
+                        <TelefoneBrasileiroInput
+                            className='containerInputEdit-tel'
+                            type={"tel"}
+                            placeholder="Novo telefone"
+                            autoFocus
+                            maxLength={45}
+                            id = 'phoneNumber'
+                            onChange={(event) => setPhoneNumber(event.target.value)}
+                            value={phoneNumber}
+                            temDDD
+                            separaDDD
+                        />
+                        </div>
+                    </Form.Group>
+
                     <Form.Group className="mb-3">
                         <Form.Label>E-mail</Form.Label>
                         

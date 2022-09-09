@@ -47,16 +47,19 @@ const Home = () => {
       data: "Selecione a atividade desejada, indique uma região de atendimento e tenha acesso à inúmeros profissionais",
       amount: "ENCONTRE",
     },
+
     {
       image2: escolha,
       data: "Filtros por avaliação, tempo de experiência e distância permitem a escolha do profissional ideal",
       amount: "ESCOLHA",
     },
+
     {
       image2: negocie,
       data: "Fale direto com o profissional para combinar orçamentos e o melhor horário para o atendimento",
       amount: "NEGOCIE",
     },
+
     {
       image2: avaliacao,
       data: "Seu feedback faz toda a diferença! Ajude o profissional e outras pessoas a encontrarem a ajuda ideal",
@@ -64,22 +67,23 @@ const Home = () => {
     },
 ]
 
-  return (
-    <div className="bodyHome">
-      <section className="container-Home">
+return (
+  <div className="bodyHome">
+
+    <section className="container-Home">
         <div className="Quem-img">
           <img src={landing} alt='quemsomos' className="img-landingPage" />
         </div>
+
         <div className="Title-home">
           <h1 className="text-h1-home">Contrate prestadores para sua casa!</h1>
           <p> Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais. Crie sua conta, utilize nossas ferramentas e divulgue seu negócio!</p>
-          
           <div> <label className="buttonHome-a"><Link to='/Registration' >COMEÇAR</Link></label></div>
-         
         </div>
       </section>
 
-      <section className="ServicesCards">
+    <section className="ServicesCards">
+
         <section className="ContainerTextServices">
           <div className="texts-ComoF">
             <h1 className="text-h1-ComoF">SERVIÇOS MAIS PEDIDOS</h1>
@@ -88,6 +92,7 @@ const Home = () => {
 
         <section id="services" ref={element} className="serviceHome">
         <div className="services">
+
         {data.map(({type,text,image},index) => {
             return (
               <motion.div className="servicoscards"
@@ -101,25 +106,25 @@ const Home = () => {
               }}
               >
                 
-                   <div className="services__service__title">  
-                    <h2 className="h5HomeCard">{type}</h2>
-                  </div>
+              <div className="services__service__title">  
+                <h2 className="h5HomeCard">{type}</h2>
+              </div>
 
-            <div className="grid">
-                  <div className="services__service__image">
-                    <img src={image} alt="Service" className="imgEletricista" />  
-                  </div>
-                  
-                  <div className="pra">
-                  <p >{text}</p>
-                  </div>
-            </div>
+              <div className="grid">
+                    <div className="services__service__image">
+                      <img src={image} alt="Service" className="imgEletricista" />  
+                    </div>
+                    
+                    <div className="pra">
+                      <p>{text}</p>
+                    </div>
+              </div>
                  
-              </motion.div>
+            </motion.div>
             )
-          })}
-    </div>
-    </section>
+            })}
+        </div>
+        </section>
 
         
         <section className="ContainerButtonHomeS" id="services" ref={element}>
@@ -133,10 +138,10 @@ const Home = () => {
              duration: 0.5,
            }}
           > 
-            <a className="buttonHome2-a"><Link to='/Login'  className="buttonHome2-a">VER MAIS</Link></a>
+            <a href="/Login" className="buttonHome2-a"><Link to='/Login'  className="buttonHome2-a">VER MAIS</Link></a>
           </motion.div>
         </section>
-      </section>
+    </section>
 
       <section className="ContainerTextServices">
         <div className="texts-ComoF">
@@ -172,10 +177,7 @@ const Home = () => {
         })
       }  
     </div>
-
       </section>
-
-      
     </div>
   )
 }

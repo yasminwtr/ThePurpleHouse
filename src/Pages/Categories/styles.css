@@ -39,13 +39,13 @@
 .page {
   font-family: Inter-SemiBold;
   margin: 0;
-  height: 80vh;
+  height: 88vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(../../components/assets/img/imgFundo3.png) !important;
   user-select: none;
-  margin-bottom: 38px;
+  /* margin-bottom: 38px; */
 }
 
 .container-categories {
