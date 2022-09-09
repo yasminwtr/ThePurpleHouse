@@ -10,14 +10,17 @@ const AverageRating = (props) => {
   const [averageRating, setAverageRating] = useState([])
 
   async function getAverageRatingByWorker() {
+    
+    if(props.rating) return setAverageRating({ avg: props.rating })
+
     const idWorker = location.state.workerId
     try {
       const response = await api.get(`/averageRatingByWorker/${idWorker}`);
       console.log(response);
-      return setAverageRating(response.data)
+      return setAverageRating(response.data[0])
 
     } catch (error) {
-      setAverageRating([])
+      setAverageRating({})
     }
   }
 
@@ -28,38 +31,48 @@ const AverageRating = (props) => {
   return (
     <div>
       {
-        averageRating.map((review) => {
-          if (review.avg == 5) {
-            return <>
-              <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /></p>
-            </>
+         [...Array(5)].map((_, index) => {
+          const ratingValue = index + 1 ;
 
-          } else if (review.avg >= 4 && review.avg < 5) {
-            return <>
-              <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-            </>
-
-          } else if (review.avg >= 3 && review.avg < 4) {
-            return <>
-              <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-            </>
-
-          } else if (review.avg >= 2 && review.avg < 3) {
-            return <>
-              <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-            </>
-
-          } else if (review.avg < 2 && review.avg !== null) {
-            return <>
-              <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-            </>
-
-          } else if (review.avg == null) {
-            return <>
-              <p key={review.avg} id='stars-worker-profile'><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-            </>
-          }
+          return (
+            <label key={index}>
+              <FaStar color={ratingValue <= Math.floor(parseInt(averageRating.avg)) ? '#fccc3e' : '#d9d9d9'} size={26} />
+            </label>
+          )
         })
+        
+        // averageRating.forEach((review) => {
+        //   if (review.avg == 5) {
+        //     return <>
+        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /></p>
+        //     </>
+
+        //   } else if (review.avg >= 4 && review.avg < 5) {
+        //     return <>
+        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
+        //     </>
+
+        //   } else if (review.avg >= 3 && review.avg < 4) {
+        //     return <>
+        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
+        //     </>
+
+        //   } else if (review.avg >= 2 && review.avg < 3) {
+        //     return <>
+        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
+        //     </>
+
+        //   } else if (review.avg < 2 && review.avg !== null) {
+        //     return <>
+        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
+        //     </>
+
+        //   } else if (review.avg == null) {
+        //     return <>
+        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
+        //     </>
+        //   }
+        // })
       }
     </div>
   )

@@ -10,7 +10,8 @@ import TuneIcon from '@mui/icons-material/Tune';
 import { SpinnerAnimation } from 'components/SpinnerAnimation';
 import axios from 'axios';
 import api from 'api';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import AverageRating from 'components/Reviews/AverageRating';
 
 const FilterWorkers = (props) => {
 
@@ -76,10 +77,6 @@ const FilterWorkers = (props) => {
     getWorkers()
   }, [category])
 
-  // useEffect(() => {
-  //   filterWorkers()
-  // }, [selectedCity, ufs])
-
   return (
     <div>
       <Modal
@@ -132,6 +129,7 @@ const FilterWorkers = (props) => {
                   <div className='info-user-category' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, name: worker.fullname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}>
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
                     <p className='name-user-category' >{worker.fullname}</p>
+                    <AverageRating rating={worker.avg}/>
                   </div>
                 )
               })
