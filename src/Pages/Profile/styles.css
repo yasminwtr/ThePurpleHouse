@@ -383,6 +383,10 @@ select:focus {
     margin-left: 36px;
     width: 300px;
     flex-direction: column;
+    margin-bottom: 20px;
+    min-height: 200px !important;
+    height: 400px;
+    justify-content: center;
   }
 
   .container-profile {
@@ -391,11 +395,29 @@ select:focus {
 
   .part2-profile {
     padding: 0px;
-    padding: 20px;
+    padding: 14px;
+    overflow-x: scroll
+  }
+
+  .part2-profile::-webkit-scrollbar {
+    width: 0.7vw !important;
+  }
+
+  .part2-profile::-webkit-scrollbar-button {
+    height: 10px !important;
+  }
+    
+  .part2-profile::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+    
+  .part2-profile::-webkit-scrollbar-thumb {
+    background-color: #aeb0b1;
+    border: 0.3vw solid #A58AD2;
   }
 
   #text-profile {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   #title-profile {
@@ -404,5 +426,9 @@ select:focus {
 
   #service-text-profile {
     font-size: 14px !important;
+  }
+
+  #options-text {
+    margin: -1px
   }
 }
