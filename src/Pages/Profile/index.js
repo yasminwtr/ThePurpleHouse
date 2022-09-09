@@ -72,7 +72,7 @@ const Profile = () => {
             <p id='text-profile'>{formattedBirthDate}</p>
           </Col>
 
-          <Col md={4}>
+          <Col className='col-services' md={4}>
             <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Serviços anunciados</p>
             {
               userServices.map((item) => {
