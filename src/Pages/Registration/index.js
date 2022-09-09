@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import './styles.css'
 import logo from '../../components/assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
@@ -13,8 +13,6 @@ import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
 import api from '../../api'
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../../components/contexts/auth'
@@ -85,7 +83,6 @@ const Cadastro = () => {
     try {
       const response = await api.post('/registerUser', { fullName, email, password, phoneNumber, birthDate });
       await signIn({ email, password })
-      console.log('response', response);
 
     } catch (error) {
       console.log(error)
@@ -97,7 +94,6 @@ const Cadastro = () => {
       initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "", password: "" }}
       onSubmit={(valuesForm, { setSubmitting }) => {
         setTimeout(() => {
-          console.log("Valores pegos dos inputs:", values);
           setSubmitting(false);
         }, 500);
       }}
@@ -153,7 +149,7 @@ const Cadastro = () => {
                     <div className='containerInputRegister'>
                       < EmailIcon id='iconRegister' />
                       <input
-                        id='email-registration'
+                        id='email'
                         onChange={(event) => setEmail(event.target.value)}
                         onInputCapture={handleChange}
                         onBlur={handleBlur}
@@ -164,7 +160,7 @@ const Cadastro = () => {
                     <div className="input-feedback">{errors.email}</div>
 
                     <div className='containerInputRegister'>
-                      <BsFillTelephoneFill id='iconRegister' />                
+                      <BsFillTelephoneFill id='iconRegister' />
                       <TelefoneBrasileiroInput
                         onChange={(event) => setPhoneNumber(event.target.value)}
                         onInputCapture={handleChange}
@@ -185,7 +181,6 @@ const Cadastro = () => {
                         className='inputRegister'
                         type={'date'}
                       />
-                      {/* <input className='inputRegister' type={'date'}/> */}
                     </div>
 
                     <div className='containerInputRegister' >
@@ -196,7 +191,7 @@ const Cadastro = () => {
                         onBlur={handleBlur}
                         className={errors.password && touched.password && "error"}
                         placeholder='Senha'
-                        id='password-registration'
+                        id='password'
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password} />
                       <div>
@@ -215,7 +210,6 @@ const Cadastro = () => {
                       <button type='submit' onClick={() => validationFields()} disabled={isSubmitting} className='button-cadastro'>Cadastrar</button>
                       <div>
                         <label className='label-cadastro'>Já possui uma conta?</label>
-                        {/* <a className='a-cadastro' href=''>Entre</a> */}
                         <a href="/Login" className='a-cadastro'><Link to='/Login' className='a-cadastro'> Entrar </Link></a>
                       </div>
                     </div>
