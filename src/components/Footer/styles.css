@@ -1,39 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-footer{
-    background-color:#e5ccfd;
+
+footer {
+    background-color: #e5ccfd;
     padding: 10px 0 0;
 }
 
-.container-footer{
+.container-footer {
     max-width: 1400px;
     padding: 0 4%;
     margin: auto;
 }
-.row-footer{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 90px 0;
-}
-.logoFooter{
-  width: 70%;
+
+.row-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 90px 0;
 }
 
-.footer-col{
+.logoFooter {
+    width: 70%;
+}
+
+.footer-col {
     width: 25%;
     padding: 0 15px;
 }
-.footer-col h4{
+
+.footer-col h4 {
     font-size: 22px;
     color: #3c3646;
     margin-bottom: 20px;
@@ -41,12 +45,13 @@ footer{
     position: relative;
     text-transform: uppercase;
 }
-.footer-col ul{
+
+.footer-col ul {
     list-style: none;
     padding-left: 0rem;
 }
 
-.footer-col ul li a{
+.footer-col ul li a {
     font-size: 16px;
     text-transform: capitalize;
     color: #655A78;
@@ -55,14 +60,17 @@ footer{
     display: block;
     transition: all 0.3s ease;
 }
-.footer-col ul li a:hover{
+
+.footer-col ul li a:hover {
     color: #7E57C2;
     padding-left: 10px;
 }
-.footer-col .medias-socias{
+
+.footer-col .medias-socias {
     margin-top: 30px;
 }
-.footer-col .medias-socias a{
+
+.footer-col .medias-socias a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -75,15 +83,17 @@ footer{
     border: 1px solid #655A78;
     transition: all 0.5s ease;
 }
-.footer-col .medias-socias a i{
+
+.footer-col .medias-socias a i {
     font-size: 20px;
 }
 
-.footer-col .medias-socias a:hover{
+.footer-col .medias-socias a:hover {
     color: #D1BAF9;
     background-color: #655A78;
 }
-.footer-col .form-sub input{
+
+.footer-col .form-sub input {
     width: 100%;
     padding: 10px;
     font-size: 15px;
@@ -92,13 +102,15 @@ footer{
     color: #655A78;
     background-color: #D1BAF9;
 }
-.footer-col .form-sub input::placeholder{
+
+.footer-col .form-sub input::placeholder {
     color: #655A78;
 }
-.footer-col .form-sub button{
+
+.footer-col .form-sub button {
     width: 100%;
     margin-top: 10px;
-    padding: 10px; 
+    padding: 10px;
     font-size: 17px;
     outline: none;
     border: none;
@@ -106,39 +118,49 @@ footer{
     color: #D1BAF9;
     border-radius: 3px;
     font-weight: bold;
-    background-color: #655A78;        
+    background-color: #655A78;
 }
+
+
 /* ----------------------------- */
-footer .bottom-details{
-  width: 100%;
-  background: #d2acf5;
+
+footer .bottom-details {
+    width: 100%;
+    background: #d2acf5;
 }
-footer .bottom-details .bottom_text{
-  max-width: 1250px;
-  margin: auto;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
+
+footer .bottom-details .bottom_text {
+    max-width: 1250px;
+    margin: auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
+
 .bottom-details .bottom_text span,
-.bottom-details .bottom_text a{
-  font-size: 14px;
-  font-weight: 300;
-  color: #000000;
-  opacity: 0.8;
-  text-decoration: none;
+.bottom-details .bottom_text a {
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000;
+    opacity: 0.8;
+    text-decoration: none;
 }
-.bottom-details .bottom_text a:hover{
-  opacity: 1;
-  text-decoration: underline;
+
+.bottom-details .bottom_text a:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
-.bottom-details .bottom_text a{
-  margin-right: 10px;
+
+.bottom-details .bottom_text a {
+    margin-right: 10px;
 }
+
+
 /* Responsivo */
+
 @media (max-width: 800px) {
-    .footer-col{
+    .footer-col {
         width: 50%;
         margin-bottom: 30px;
     }
@@ -151,7 +173,8 @@ footer .bottom-details .bottom_text{
         gap: 40px;
         margin-top: 30px;
     }
-    .bottom-details .bottom_text span, .bottom-details .bottom_text a {
+    .bottom-details .bottom_text span,
+    .bottom-details .bottom_text a {
         font-size: 14px;
         font-weight: 300;
         color: #000000;
@@ -160,34 +183,66 @@ footer .bottom-details .bottom_text{
         text-align: initial;
     }
 }
+
 @media (max-width:600px) {
-    .footer-col{
+    .footer-col {
         width: 100%;
     }
+    @media (max-width: 700px) {
+        footer {
+            position: relative;
+            padding: 0 0;
+            height: 70%;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+        .row-footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px 0;
+        }
+        .bottom-details .bottom_text span,
+        .bottom-details .bottom_text a {
+            font-size: 12px;
+        }
+    }
+}
 
-@media (max-width: 700px){
-  footer {
-    position: relative;
-    padding: 0 0;
-    height: 70%;
-    flex-direction: column;
-    text-align: center;
-    overflow: hidden;
-}
-.row-footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px 0;
-}
-  
-  .bottom-details .bottom_text span,
-  .bottom-details .bottom_text a{
-    font-size: 12px;
-  }
-}
+@media (max-width: 700px) {
+    .logoFooter {
+        width: 70px;
+    }
+    .footer-col {
+        width: 100px;
+        height: 100px;
+    }
+    .medias-socias {
+        width: 100px;
+    }
+    footer .bottom-details .bottom_text {
+        margin-top: 60px;
+    }
+    .footer-col h4 {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .row-footer {
+        padding: 10px 5px 0px;
+    }
+    .logoFooter {
+        margin-top: 60px;
+    }
+    .footer-col ul li a {
+        font-size: 14px;
+    }
+    .footer-col .medias-socias a {
+        height: 30px;
+        width: 30px;
+    }
 }
