@@ -14,6 +14,7 @@ const AverageRating = (props) => {
     if(props.rating) return setAverageRating({ avg: props.rating })
 
     const idWorker = location.state.workerId
+    
     try {
       const response = await api.get(`/averageRatingByWorker/${idWorker}`);
       console.log(response);

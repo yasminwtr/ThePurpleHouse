@@ -10,6 +10,7 @@ import ReviewIcon from '@mui/icons-material/RateReviewRounded'
 import { FaStar } from 'react-icons/fa'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useLocation } from 'react-router-dom';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -17,6 +18,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const LeaveAvaliation = (props) => {
     const { user } = useContext(AuthContext);
+    const location = useLocation();
     const [rating, setRating] = useState(null)
     const [hoverRating, setHoverRating] = useState(null)
     const [messageReview, setMessageReview] = useState('');
@@ -30,9 +32,10 @@ const LeaveAvaliation = (props) => {
     const handleCloseSuccess = () => setShowSuccess(false);
 
     async function registerReview() {
+      const idWorker = location.state.workerId
       try {
           if ((messageReview) !== '' && rating !== null) {
-              const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: 1, fullnamePerson: user.fullname, messageReview: messageReview, stars: rating });
+              const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: idWorker, fullnamePerson: user.fullname, messageReview: messageReview, stars: rating });
               console.log('response', response);
               setShowSuccess(true)
               setShow(false)
