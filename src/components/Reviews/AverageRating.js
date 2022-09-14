@@ -40,39 +40,6 @@ const AverageRating = (props) => {
             </label>
           )
         })
-        
-        // averageRating.forEach((review) => {
-        //   if (review.avg == 5) {
-        //     return <>
-        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /></p>
-        //     </>
-
-        //   } else if (review.avg >= 4 && review.avg < 5) {
-        //     return <>
-        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-        //     </>
-
-        //   } else if (review.avg >= 3 && review.avg < 4) {
-        //     return <>
-        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-        //     </>
-
-        //   } else if (review.avg >= 2 && review.avg < 3) {
-        //     return <>
-        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-        //     </>
-
-        //   } else if (review.avg < 2 && review.avg !== null) {
-        //     return <>
-        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#fccc3e' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-        //     </>
-
-        //   } else if (review.avg == null) {
-        //     return <>
-        //       <p key={review.avg} id='stars-worker-profile'><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /><FaStar color='#d9d9d9' size={26} /></p>
-        //     </>
-        //   }
-        // })
       }
     </div>
   )

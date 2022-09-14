@@ -36,7 +36,6 @@ header ul li {
 }
 
 header ul li a {
-  font-weight: 100 !important;
   font-family: Inter-Regular;
   transition: 0.5s;
   color: #fff;

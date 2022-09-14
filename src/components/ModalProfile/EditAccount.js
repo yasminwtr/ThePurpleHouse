@@ -106,7 +106,7 @@ const EditAccount = (props) => {
                         <TelefoneBrasileiroInput
                             className='containerInputEdit-tel'
                             type={"tel"}
-                            placeholder="Novo telefone"
+                            placeholder={user.phonenumber}
                             autoFocus
                             maxLength={45}
                             id = 'phoneNumber'
@@ -123,10 +123,10 @@ const EditAccount = (props) => {
                         
                         <Form.Control
                             type={"email"}
-                            placeholder="Novo e-mail"
+                            placeholder={user.email}
                             autoFocus
                             maxLength={45}
-                            id = 'email'
+                            id = 'emailEdit'
                             onChange={(event) => setEmail(event.target.value)}
                         />
                     </Form.Group>
@@ -156,16 +156,6 @@ const EditAccount = (props) => {
                             </div>
                         </div>
                     </Form.Group>
-
-                    {/* <Form.Group className="mb-3">
-                        <Form.Label>Confirmar senha</Form.Label>
-
-                        <Form.Control
-                            type="password"
-                            placeholder="******"
-                            maxLength={25}
-                        />
-                    </Form.Group> */}
                 </Form>
             </Modal.Body>
 

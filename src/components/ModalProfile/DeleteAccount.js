@@ -9,6 +9,13 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import DeleteAccountIcon from '@mui/icons-material/DeleteForeverRounded'
 import { useNavigate } from "react-router-dom";
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const DeleteAccount = (props) => {
     const [show, setShow] = useState(false);
@@ -25,9 +32,20 @@ const DeleteAccount = (props) => {
     const [person, setPerson] = useState([]);
     const [password, setPassword] = useState('')
 
-    const Alert = React.forwardRef(function Alert(props, ref) {
-      return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
+    const [values, setValues] = React.useState({
+      showPassword: false,
+    });
+  
+    const handleClickShowPassword = () => {
+      setValues({
+        ...values,
+        showPassword: !values.showPassword,
+      });
+    };
+  
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
 
     const deleteUser = async (deleteId) => {
       const requestOptions = {
@@ -80,16 +98,26 @@ const DeleteAccount = (props) => {
                     <Form.Group className="mt-3 mb-3">
                         <Form.Label>Digite sua senha para completar a ação</Form.Label>
 
-                      <div className='containerInputEdit'>
-                        <Form.Control
-                            type="password"
-                            placeholder="******"
-                            autoFocus
-                            maxLength={25}
-                            id = 'password'
-                            onChange={(event) => setPassword(event.target.value)}
-                        />
-                      </div>
+                        <div className='containerInputEdit'>
+                            <Form.Control
+                                type={values.showPassword ? 'text' : 'password'}
+                                value={values.password}
+                                placeholder="******"
+                                maxLength={25}
+                                id = 'password'
+                                onChange={(event) => setPassword(event.target.value)}
+                            />
+                            
+                            <div>
+                              <IconButton sx={{ color: '#515151', marginRight: 1 }}
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                              </IconButton>
+                            </div>
+                        </div>
                     </Form.Group>
                 </Form>
             </Modal.Body>

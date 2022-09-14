@@ -359,15 +359,16 @@ select:focus {
   
 }
 
+#emailEdit:focus, .containerInputEdit-tel:focus{
+  outline: none !important;
+  border: 1px solid #ced4da !important;
+}
+
 #password {
   border: transparent !important;
 }
 
 .containerInputEdit:focus {
-  border: 1px solid #000000 !important;
-}
-
-.containerInputEdit-tel:focus{
   border: 1px solid #000000 !important;
 }
 
