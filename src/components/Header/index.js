@@ -32,8 +32,8 @@ const Header = () => {
               <ul className={sidebar ? "nav-links-sidebar" : "nav-links"} onClick={() => setSidebar(false)}>
                 {signed ?
                   <>
-                    <li><Link to='/Categories'>Categorias</Link> </li>
-                    <li><Link to='/Chat'>Mensagens</Link> </li>
+                    <li className='link-sidebar' ><Link to='/Categories'>Categorias</Link> </li>
+                    <li className='link-sidebar' ><Link to='/Chat'>Mensagens</Link> </li>
                     <li><DropdownProfile /></li>
                   </>
                   :

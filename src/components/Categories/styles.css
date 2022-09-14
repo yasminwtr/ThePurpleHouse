@@ -20,3 +20,19 @@
   font-size: 18px;
   transition: 0.3s;
 }
+
+.btns-categories-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-icon {
+  cursor: pointer;
+  margin-right: 10px !important;
+}
+
+.refresh-icon:active {
+  cursor: wait;
+}

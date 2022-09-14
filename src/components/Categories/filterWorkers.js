@@ -12,6 +12,7 @@ import axios from 'axios';
 import api from 'api';
 import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const FilterWorkers = (props) => {
 
@@ -61,7 +62,6 @@ const FilterWorkers = (props) => {
   const getWorkers = async () => {
     try {
       const response = await api.get(`/workersByCategory/${category.idservice}`);
-      console.log('response @ getWorkers', response.data);
       setWorkers(response.data)
     } catch (error) {
       setWorkers([])
@@ -118,10 +118,13 @@ const FilterWorkers = (props) => {
       <div className='page-categories-search'>
         <div className='container-categories-search'>
           <h1 className='title-service-category'>{category.titleservice}</h1>
-          <p className='btn-filter-workers' onClick={handleShow}>
-            <TuneIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
-            Filtrar
-          </p>
+          <div className='btns-categories-search'>
+            <p className='btn-filter-workers' onClick={handleShow}>
+              <TuneIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
+              Filtrar
+            </p>
+            <RefreshIcon className='refresh-icon' />
+          </div>
           <div className='list-users-category'>
             {
               (filteredWorkers.length ? filteredWorkers : workers).map((worker) => {
@@ -129,7 +132,7 @@ const FilterWorkers = (props) => {
                   <div className='info-user-category' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, name: worker.fullname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}>
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
                     <p className='name-user-category' >{worker.fullname}</p>
-                    <AverageRating rating={worker.avg}/>
+                    <AverageRating rating={worker.avg} />
                   </div>
                 )
               })

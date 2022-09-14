@@ -64,6 +64,10 @@ header ul li a:hover {
 
 .title-header{
   font-family: Inter-Medium !important;
+  margin-left: 10px;
+  font-size: 25px;
+  color: #000;
+  font-family: Inter-Regular;
 }
 
 header.active {
@@ -111,10 +115,12 @@ header.active {
     height: fit-content;
     padding: 5px;
     padding-top: 30px;
-  }
-  .nav-links-sidebar {
     display: flex;
     flex-direction: column;
+  }
+  .link-sidebar:hover {
+    padding-left: 8px;
+    transition: 0.3s;
   }
   header ul li {
     margin-bottom: 30px;
@@ -135,11 +141,4 @@ header.active {
   color: #fff;
   display: flex;
   align-items: center;
-}
-
-.title-header {
-  margin-left: 10px;
-  font-size: 25px;
-  color: #000;
-  font-family: Inter-Regular;
 }
