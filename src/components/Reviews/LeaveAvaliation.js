@@ -35,7 +35,7 @@ const LeaveAvaliation = (props) => {
       const idWorker = location.state.workerId
       try {
           if ((messageReview) !== '' && rating !== null) {
-              const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: idWorker, fullnamePerson: user.fullname, messageReview: messageReview, stars: rating });
+              const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: idWorker, firstNamePerson: user.firstName, lastNamePerson: user.lastName, messageReview: messageReview, stars: rating });
               console.log('response', response);
               setShowSuccess(true)
               setShow(false)

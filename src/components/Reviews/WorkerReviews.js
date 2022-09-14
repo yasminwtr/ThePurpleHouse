@@ -38,7 +38,7 @@ const WorkerReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation'>{review.fullnameperson}</p>
+                                        <p id='name-avaliation'>{review.firstNamePerson} {review.lastNamePerson}</p>
                                         <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /></div>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ const WorkerReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation'>{review.fullnameperson}</p>
+                                        <p id='name-avaliation'>{review.firstNamePerson} {review.lastNamePerson}</p>
                                         <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@ const WorkerReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation'>{review.fullnameperson}</p>
+                                        <p id='name-avaliation'>{review.firstNamePerson} {review.lastNamePerson}</p>
                                         <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@ const WorkerReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation'>{review.fullnameperson}</p>
+                                        <p id='name-avaliation'>{review.firstNamePerson} {review.lastNamePerson}</p>
                                         <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@ const WorkerReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation'>{review.fullnameperson}</p>
+                                        <p id='name-avaliation'>{review.firstNamePerson} {review.lastNamePerson}</p>
                                         <div><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                                     </div>
                                 </div>

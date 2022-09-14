@@ -24,7 +24,8 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const Cadastro = () => {
-  const [fullName, setFullName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [password, setPassword] = useState('')
@@ -68,7 +69,7 @@ const Cadastro = () => {
 
 
   function validationFields() {
-    if ((fullName, email, phoneNumber, password, birthDate) !== ''
+    if ((firstName, lastName, email, phoneNumber, password, birthDate) !== ''
       && password.length >= 8
       && email.match(validEmail)) {
       registerNewUser()
@@ -81,7 +82,7 @@ const Cadastro = () => {
 
   async function registerNewUser() {
     try {
-      const response = await api.post('/registerUser', { fullName, email, password, phoneNumber, birthDate });
+      const response = await api.post('/registerUser', { firstName, lastName, email, password, phoneNumber, birthDate });
       await signIn({ email, password })
 
     } catch (error) {
@@ -91,7 +92,7 @@ const Cadastro = () => {
 
   return (
     <Formik
-      initialValues={{ fullName: "", email: "", phoneNumber: "", birthDate: "", password: "" }}
+      initialValues={{ firstName: "", email: "", phoneNumber: "", birthDate: "", password: "" }}
       onSubmit={(valuesForm, { setSubmitting }) => {
         setTimeout(() => {
           setSubmitting(false);
@@ -99,7 +100,7 @@ const Cadastro = () => {
       }}
 
       validationSchema={Yup.object().shape({
-        fullName: Yup.string()
+        firstName: Yup.string()
           .required(''),
         email: Yup.string()
           .email('Digite um e-mail válido')
@@ -134,17 +135,24 @@ const Cadastro = () => {
                     <div className='containerInputRegister'>
                       <FaUser id='iconRegister' />
                       <input
-                        name="fullName"
-                        onChange={(event) => setFullName(event.target.value)}
-                        onInputCapture={handleChange}
-                        onBlur={handleBlur}
-                        className={errors.fullName && touched.fullName && "error"}
-                        id='fullName'
-                        placeholder='Nome completo'
+                        name="firstName"
+                        onChange={(event) => setFirstName(event.target.value)}
+                        id='firstName'
+                        placeholder='Nome'
                         type={'text'}
                       />
                     </div>
-                    <div className="input-feedback">{errors.fullName}</div>
+
+                    <div className='containerInputRegister'>
+                      <FaUser id='iconRegister' />
+                      <input
+                        name="lastName"
+                        onChange={(event) => setLastName(event.target.value)}
+                        id='lastName'
+                        placeholder='Sobrenome'
+                        type={'text'}
+                      />
+                    </div>
 
                     <div className='containerInputRegister'>
                       < EmailIcon id='iconRegister' />
