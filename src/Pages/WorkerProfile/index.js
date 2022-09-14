@@ -80,7 +80,7 @@ const WorkerProfile = () => {
             <div className='container-worker-profile'>
                 <div className='part1-worker-profile'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
-                    <p id='name-worker-profile'>{location.state.name}</p>
+                    <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
                     <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
                     <AverageRating />
                     <button className='message-button'><Link className='link-chat' to='/Chat'>Enviar mensagem</Link></button>
