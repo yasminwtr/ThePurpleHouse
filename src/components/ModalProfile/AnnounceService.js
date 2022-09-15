@@ -82,6 +82,7 @@ const AnnounceService = (props) => {
         const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
         setShowSuccess(true)
         setShow(false)
+        props.getServices()
       }
       else {
         setShowError(true)

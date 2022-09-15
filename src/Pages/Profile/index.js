@@ -23,9 +23,9 @@ const Profile = () => {
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
   const navigate = useNavigate()
 
-  async function getServices(idperson) {
+  async function getServices() {
     try {
-      const response = await api.get(`/getServicesFromUser/${idperson}`);
+      const response = await api.get(`/getServicesFromUser/${user.idperson}`);
       return setUserServices(response.data)
     } catch (error) {
       setUserServices([])
@@ -33,7 +33,7 @@ const Profile = () => {
   }
 
   useEffect(() => {
-    getServices(user.idperson)
+    getServices()
   }, [])
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const Profile = () => {
         <div className='options-config'>
           <p id='options-title'>Serviços</p>
           <ServicesReviewed />
-          <AnnounceService />
+          <AnnounceService getServices={getServices} />
           <CancelService />
         </div>
 
