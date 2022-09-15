@@ -65,9 +65,6 @@ const Profile = () => {
             <p id='title-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
             <p id='text-profile'>{user.email}</p>
 
-            <p id='title-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Telefone</p>
-            <p id='text-profile'>{user.phonenumber}</p>
-
             <p id='title-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
             <p id='text-profile'>{formattedBirthDate}</p>
           </Col>

@@ -12,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EditIcon from '@mui/icons-material/EditRounded'
-import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 
@@ -24,7 +23,6 @@ const EditAccount = (props) => {
     const { user } = useContext(AuthContext)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
     
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
@@ -55,23 +53,21 @@ const EditAccount = (props) => {
     const updateUser = async () => {
       const idPerson = user.idperson;
       try {
-          if ((email && password && phoneNumber) !== '') {
-            const response = await api.put(`/users/${idPerson}`, { email, password, phoneNumber })
+          if ((email && password) !== '') {
+            const response = await api.put(`/users/${idPerson}`, { email, password })
             const data = response;
             console.log('updateUserData', data);
       
             user.email = data.email;
             user.password = data.password;
-            user.phoneNumber = data.phoneNumber;
 
       
             setEmail(email)
             setPassword(password)
-            setPhoneNumber(phoneNumber)
 
             setShowSuccess(true)
             setShow(false)
-            console.log('valores update:', 'email: ',email,';','senha: ',password, ';' ,'telefone:', phoneNumber);
+            console.log('valores update:', 'email: ',email,';','senha: ',password, ';');
             
           }
           else {
@@ -101,25 +97,6 @@ const EditAccount = (props) => {
 
             <Modal.Body>
                 <Form>
-                    <Form.Group className="mb-3">
-                        <Form.Label>Telefone</Form.Label>
-                        <div>
-
-                        <TelefoneBrasileiroInput
-                            className='containerInputEdit-tel'
-                            type={"tel"}
-                            placeholder={user.phonenumber}
-                            autoFocus
-                            maxLength={45}
-                            id = 'phoneNumber'
-                            onChange={(event) => setPhoneNumber(event.target.value)}
-                            value={phoneNumber}
-                            temDDD
-                            separaDDD
-                        />
-                        </div>
-                    </Form.Group>
-
                     <Form.Group className="mb-3">
                         <Form.Label>E-mail</Form.Label>
                         
