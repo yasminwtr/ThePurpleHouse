@@ -14,23 +14,12 @@ const DropdownProfile = () => {
   const { signOut } = useContext(AuthContext);
   const navigate = useNavigate()
   const [showDropdown, setShowDropdown] = useState(false);
-  const [formattedFullName, setFormattedFullName] = useState("");
 
   function signOutRedirect() {
     signOut()
     navigate("/", { replace: true })
   }
 
-  useEffect(() => {
-    const fullNameParts = `${user.firstname} ${user.lastname}`
-    const fullname = fullNameParts.split(' ')
-    for (let i = 0; i < fullname.length; i++) {
-      fullname[i] = fullname[i][0].toUpperCase() + fullname[i].slice(1);
-    }
-    let nameformatted = fullname.join(' ');
-    setFormattedFullName(`${nameformatted}`);
-  }, [user])
-  
   return (
     <div className="dropdown-wrapper" >
       <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>
@@ -41,7 +30,7 @@ const DropdownProfile = () => {
           <img width={100} src={person} />
         </Dropdown.ItemText>
         <Dropdown.ItemText className='dropdown-fullname'>
-          {formattedFullName}
+          {user.firstname}
         </Dropdown.ItemText>
 
         <Dropdown.Item className='dropdown-item' eventkey="2">
@@ -50,7 +39,7 @@ const DropdownProfile = () => {
             <StarRoundedIcon />Ver Perfil
           </Link>
         </Dropdown.Item>
-        <div className='line'/>
+        <div className='line' />
         <Dropdown.Item className='dropdown-item' eventkey="4">
           <img width={20} />
           <label className='link-profile' onClick={() => signOutRedirect()}>

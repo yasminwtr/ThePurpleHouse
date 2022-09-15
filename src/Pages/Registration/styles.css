@@ -30,7 +30,7 @@
     width: 30%;   
     border-radius: 25px;
     box-shadow: 0px 4px 5px #c8bae5;
-    padding: 40px 20px 60px 20px;
+    padding: 40px 20px 15px 20px;
 }
 
 .title-cadastro{
@@ -63,9 +63,10 @@
     box-shadow: 0px 4px 5px #c8bae5;
 }
 
-/* .i-cadastro{
-    font-size: 23px;
-} */
+.row-register{
+    width: 85%;
+    margin-bottom: 2%;
+}
 
 .input-cadastro:hover{
     border: 1px solid #9472ce8f;
@@ -90,6 +91,7 @@
     width: 100%;
     font-size: 20px;
     font-family: Inter-SemiBold;
+    margin-top: 2%;
   }
 
 .button-cadastro:hover{
@@ -130,10 +132,18 @@
     margin-bottom: 6%;
 }
 
+.input-name, .input-lastname{
+    width: 97%;
+    margin-left: 0 !important;
+}
+
+.input-lastname{
+    margin-left: 3% !important;
+}
+
 .containerInputRegister:hover{
     border: 1px solid #9472ce;
 }
-
 
 .inputRegister, #firstName, #lastName, .phone-number-register{
     background-color: #fff;
@@ -143,6 +153,7 @@
     width: 85%;
     margin-left: 3%;
 }
+
 #email, #password{
     background-color: #fff;
     border: none;

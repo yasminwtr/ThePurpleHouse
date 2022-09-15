@@ -18,6 +18,8 @@ import { useNavigate } from "react-router-dom";
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -27,7 +29,6 @@ const Cadastro = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const { signIn } = useContext(AuthContext);
@@ -69,7 +70,7 @@ const Cadastro = () => {
 
 
   function validationFields() {
-    if ((firstName, lastName, email, phoneNumber, password, birthDate) !== ''
+    if ((firstName, lastName, email, password, birthDate) !== ''
       && password.length >= 8
       && email.match(validEmail)) {
       registerNewUser()
@@ -82,7 +83,7 @@ const Cadastro = () => {
 
   async function registerNewUser() {
     try {
-      const response = await api.post('/registerUser', { firstName, lastName, email, password, phoneNumber, birthDate });
+      const response = await api.post('/registerUser', { firstName, lastName, email, password, birthDate });
       await signIn({ email, password })
 
     } catch (error) {
@@ -92,7 +93,7 @@ const Cadastro = () => {
 
   return (
     <Formik
-      initialValues={{ firstName: "", email: "", phoneNumber: "", birthDate: "", password: "" }}
+      initialValues={{ firstName: "", email: "", birthDate: "", password: "" }}
       onSubmit={(valuesForm, { setSubmitting }) => {
         setTimeout(() => {
           setSubmitting(false);
@@ -132,27 +133,32 @@ const Cadastro = () => {
                     <h1 className='h1-cadastro'>Crie sua conta!</h1>
                   </div>
                   <div className='form-cadastro'>
-                    <div className='containerInputRegister'>
-                      <FaUser id='iconRegister' />
-                      <input
-                        name="firstName"
-                        onChange={(event) => setFirstName(event.target.value)}
-                        id='firstName'
-                        placeholder='Nome'
-                        type={'text'}
-                      />
-                    </div>
+                    <Row className="g-3 row-register">
+                      <Col md={6}>
+                        <div className='containerInputRegister input-name'>
+                          <FaUser id='iconRegister' />
+                          <input
+                            name="firstName"
+                            onChange={(e) => {setFirstName(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}}
+                            id='firstName'
+                            placeholder='Nome'
+                            type={'text'}
+                          />
+                        </div>
+                      </Col>
+                      <Col md>
 
-                    <div className='containerInputRegister'>
-                      <FaUser id='iconRegister' />
-                      <input
-                        name="lastName"
-                        onChange={(event) => setLastName(event.target.value)}
-                        id='lastName'
-                        placeholder='Sobrenome'
-                        type={'text'}
-                      />
-                    </div>
+                        <div className='containerInputRegister input-lastname'>
+                          <input
+                            name="lastName"
+                            onChange={(e) => {setLastName(e.target.value.replace(/(^\w|\s\w)/g, m => m.toUpperCase()))}}
+                            id='lastName'
+                            placeholder='Sobrenome'
+                            type={'text'}
+                          />
+                        </div>
+                      </Col>
+                    </Row>
 
                     <div className='containerInputRegister'>
                       < EmailIcon id='iconRegister' />
@@ -166,21 +172,6 @@ const Cadastro = () => {
                       />
                     </div>
                     <div className="input-feedback">{errors.email}</div>
-
-                    <div className='containerInputRegister'>
-                      <BsFillTelephoneFill id='iconRegister' />
-                      <TelefoneBrasileiroInput
-                        onChange={(event) => setPhoneNumber(event.target.value)}
-                        onInputCapture={handleChange}
-                        onBlur={handleBlur}
-                        className='phone-number-register'
-                        type={'tel'}
-                        placeholder='Celular'
-                        value={phoneNumber}
-                        temDDD
-                        separaDDD
-                      />
-                    </div>
 
                     <div className='containerInputRegister'>
                       <CalendarIcon id='iconRegister' />

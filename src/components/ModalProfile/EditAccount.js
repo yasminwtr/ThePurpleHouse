@@ -12,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EditIcon from '@mui/icons-material/EditRounded'
-import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 import KeyIcon from '@mui/icons-material/Key';
@@ -54,32 +53,33 @@ const EditAccount = (props) => {
     event.preventDefault();
   };
 
-  const updateUser = async () => {
-    const idPerson = user.idperson;
-    try {
-      if ((email || password) !== '') {
-        const response = await api.put(`/users/${idPerson}`, { email, password })
-        const data = response;
-        console.log('updateUserData', data);
+    const updateUser = async () => {
+      const idPerson = user.idperson;
+      try {
+          if ((email && password) !== '') {
+            const response = await api.put(`/users/${idPerson}`, { email, password })
+            const data = response;
+            console.log('updateUserData', data);
+      
+            user.email = data.email;
+            user.password = data.password;
 
-        user.email = data.email;
-        user.password = data.password;
+            setEmail(email)
+            setPassword(password)
 
-        setEmail(email)
-        setPassword(password)
-
-        setShowSuccess(true)
-        setShow(false)
-        console.log('valores update:', 'email: ', email, ';', 'senha: ', password, ';');
+            setShowSuccess(true)
+            setShow(false)
+            console.log('valores update:', 'email: ',email,';','senha: ',password, ';');
+            
+          }
+          else {
+              setShowError(true)
+          }
+      } catch (error) {
+        console.log(error)
+        console.log('nao funfou');
       }
-      else {
-        setShowError(true)
-      }
-    } catch (error) {
-      console.log(error)
-      console.log('nao funfou');
-    }
-  }
+    } 
 
   return (
     <div>

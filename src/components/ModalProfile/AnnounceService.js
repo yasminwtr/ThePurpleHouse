@@ -13,6 +13,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../contexts/auth'
 import axios from 'axios';
+import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -27,6 +28,7 @@ const AnnounceService = (props) => {
   const [selectValue, setSelectValue] = useState('');
   const [services, setServices] = useState([]);
   const [description, setDescription] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [price, setPrice] = useState('');
   const [city, setCity] = useState('');
   const [localization, setLocalization] = useState('');
@@ -75,8 +77,8 @@ const AnnounceService = (props) => {
 
   async function registerWorker() {
     try {
-      if ((selectValue, description, price, city, localization, whatsapp) !== '' && selectValue !== 'Serviços' ) {
-        const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstName, lastNameWorker: user.lastName, descriptionService: description, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
+      if ((selectValue, description, phoneNumber, price, city, localization) !== '' && selectValue !== 'Serviços') {
+        const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
         setShowSuccess(true)
         setShow(false)
       }
@@ -145,6 +147,25 @@ const AnnounceService = (props) => {
               />
             </Form.Group>
 
+            <Form.Group className="mb-3">
+              <Form.Label>Telefone</Form.Label>
+              <div>
+
+                <TelefoneBrasileiroInput
+                  className='containerInputEdit-tel'
+                  type={"tel"}
+                  placeholder='Telefone com DDD'
+                  autoFocus
+                  maxLength={45}
+                  id='phoneNumber'
+                  onChange={(event) => setPhoneNumber(event.target.value)}
+                  value={phoneNumber}
+                  temDDD
+                  separaDDD
+                />
+              </div>
+            </Form.Group>
+
             <Row className="g-2 mb-3 row-localization">
               <Form.Label id='localization-label'>Localização em que você atua</Form.Label>
               <Col md={3}>
@@ -185,7 +206,7 @@ const AnnounceService = (props) => {
             </InputGroup>
 
             <Form.Group className="mb-3">
-              <Form.Label>Adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
+              <Form.Label>Opcional: adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
 
               <Form.Control
                 placeholder="Cole o link gerado aqui"

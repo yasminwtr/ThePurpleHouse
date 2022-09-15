@@ -21,7 +21,6 @@ const Profile = () => {
   const { user } = useContext(AuthContext);
   const [userServices, setUserServices] = useState([])
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
-  const [formattedFullName, setFormattedFullName] = useState('');
   const navigate = useNavigate()
 
   async function getServices(idperson) {
@@ -42,31 +41,18 @@ const Profile = () => {
     setFormattedBirthDate(`${day}/${month}/${year}`);
   }, [user])
 
-  useEffect(() => {
-    const fullNameParts = `${user.firstname} ${user.lastname}`
-    const fullname = fullNameParts.split(' ')
-    for (let i = 0; i < fullname.length; i++) {
-      fullname[i] = fullname[i][0].toUpperCase() + fullname[i].slice(1);
-    }
-    let nameformatted = fullname.join(' ');
-    setFormattedFullName(`${nameformatted}`);
-  }, [user])
-
   return (
     <div className='all-profile'>
       <div className='container-profile'>
         <div className='part1-profile'>
           <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile" />
-          <p id='name-profile'>{formattedFullName}</p>
+          <p id='name-profile'>{user.firstname} {user.lastname}</p>
         </div>
 
         <Row className="part2-profile">
           <Col md>
             <p id='title-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
             <p id='text-profile'>{user.email}</p>
-
-            <p id='title-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Telefone</p>
-            <p id='text-profile'>{user.phonenumber}</p>
 
             <p id='title-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
             <p id='text-profile'>{formattedBirthDate}</p>
