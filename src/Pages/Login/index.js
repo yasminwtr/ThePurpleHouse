@@ -3,8 +3,6 @@ import React, { useState, useContext } from 'react'
 import logo from '../../components/assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import { Link } from 'react-router-dom'
 import AuthContext from '../../components/contexts/auth'
@@ -12,6 +10,8 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
 import './styles.css'
+import { HiOutlineEye } from 'react-icons/hi';
+import { HiOutlineEyeOff } from 'react-icons/hi'
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -102,12 +102,12 @@ function Login() {
                 value={values.password}
               />
               <div>
-                <IconButton sx={{ color: '#655A78' }}
+                <IconButton sx={{ color: '#616161' }}
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                 >
-                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  {values.showPassword ? <HiOutlineEye /> : <HiOutlineEyeOff />}
                 </IconButton>
               </div>
             </div>

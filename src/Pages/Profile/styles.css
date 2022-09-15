@@ -364,12 +364,17 @@ select:focus {
   border: 1px solid #ced4da !important;
 }
 
-#password {
+#password-edit {
   border: transparent !important;
+  width: 90%;
 }
 
 .containerInputEdit:focus {
   border: 1px solid #000000 !important;
+}
+
+input::-ms-reveal, input::-ms-clear {
+  display: none;
 }
 
 @media screen and (min-width: 300px) and (max-width: 490px) {

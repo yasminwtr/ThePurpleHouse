@@ -9,10 +9,12 @@ import api from '../../api';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+// import Visibility from '@mui/icons-material/Visibility';
+// import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EditIcon from '@mui/icons-material/EditRounded'
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
+import { HiOutlineEye } from 'react-icons/hi';
+import { HiOutlineEyeOff } from 'react-icons/hi'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -141,17 +143,17 @@ const EditAccount = (props) => {
                                 value={values.password}
                                 placeholder="Nova senha"
                                 maxLength={25}
-                                id = 'password'
+                                id = 'password-edit'
                                 onChange={(event) => setPassword(event.target.value)}
                             />
                             
                             <div>
-                              <IconButton sx={{ color: '#515151', marginRight: 1 }}
+                              <IconButton sx={{ color: '#616161', marginRight: 1 }}
                                 aria-label="toggle password visibility"
                                 onClick={handleClickShowPassword}
                                 onMouseDown={handleMouseDownPassword}
                                 >
-                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                                {values.showPassword ? <HiOutlineEye /> : <HiOutlineEyeOff />}
                               </IconButton>
                             </div>
                         </div>

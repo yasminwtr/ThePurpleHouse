@@ -4,8 +4,6 @@ import logo from '../../components/assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded';
@@ -18,6 +16,8 @@ import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../../components/contexts/auth'
 import { useNavigate } from "react-router-dom";
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
+import { HiOutlineEye } from 'react-icons/hi';
+import { HiOutlineEyeOff } from 'react-icons/hi'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -203,12 +203,12 @@ const Cadastro = () => {
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password} />
                       <div>
-                        <IconButton sx={{ color: '#655A78' }}
+                        <IconButton sx={{ color: '#616161' }}
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
                           onMouseDown={handleMouseDownPassword}
                         >
-                          {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                          {values.showPassword ? <HiOutlineEye /> : <HiOutlineEyeOff />}
                         </IconButton>
                       </div>
                     </div>
