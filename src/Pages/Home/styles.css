@@ -21,8 +21,8 @@ a-link-home {
   font-family: "Source Sans Pro";
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  background-image: url(../../components/assets/img/fundoo.png) !important;
-  background-size: cover;
+  /* background-image: url(../../components/assets/img/fundoo.png) !important;
+  background-size: cover; */
 }
 /* ===========SECTION HOME================ */
 .container-Home{
@@ -62,7 +62,7 @@ color: #000;
   background-color: #A16FF7;
   padding: 12px 36px;
   font-size: 1.2rem;
-  margin: 15px 0px 0px;
+ 
   border:none;
   border-radius:17px;
   color: #fff;

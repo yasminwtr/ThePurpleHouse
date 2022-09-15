@@ -5,11 +5,14 @@ import Team from '../../components/assets/img/Collab.png'
 import {Link} from 'react-router-dom'
 import AuthContext from '../../components/contexts/auth'
 
+import Header from "components/Header";
+
 const About = () => {
     const { signed } = useContext(AuthContext);
 
     return (
         <body className="body-about">
+            <Header/>
             <section className="about">
                 <div className="about-text">
                     <h1 className="text-h1-about">Quem somos</h1>
