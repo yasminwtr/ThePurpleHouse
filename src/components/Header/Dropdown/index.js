@@ -22,7 +22,7 @@ const DropdownProfile = () => {
   }
 
   useEffect(() => {
-    const fullNameParts = `${user.fullname}`
+    const fullNameParts = `${user.firstname} ${user.lastname}`
     const fullname = fullNameParts.split(' ')
     for (let i = 0; i < fullname.length; i++) {
       fullname[i] = fullname[i][0].toUpperCase() + fullname[i].slice(1);

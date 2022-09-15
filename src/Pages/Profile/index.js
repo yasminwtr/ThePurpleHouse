@@ -43,7 +43,7 @@ const Profile = () => {
   }, [user])
 
   useEffect(() => {
-    const fullNameParts = `${user.fullname}`
+    const fullNameParts = `${user.firstname} ${user.lastname}`
     const fullname = fullNameParts.split(' ')
     for (let i = 0; i < fullname.length; i++) {
       fullname[i] = fullname[i][0].toUpperCase() + fullname[i].slice(1);
@@ -77,9 +77,9 @@ const Profile = () => {
             {
               userServices.map((item) => {
                 return (
-                    <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, name: item.fullname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice }})}>
-                      {item.titleservice}
-                    </p>
+                  <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, name: item.fullname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice } })}>
+                    {item.titleservice}
+                  </p>
                 )
               })
             }
