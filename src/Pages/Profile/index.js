@@ -35,7 +35,7 @@ const Profile = () => {
 
   useEffect(() => {
     getServices(user.idperson)
-  }, [])
+  }, [userServices])
 
   useEffect(() => {
     const [year, month, day] = user.birthdate.split("T", 10)[0]?.split("-")
