@@ -30,8 +30,8 @@ const AnnounceService = (props) => {
   const [description, setDescription] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [price, setPrice] = useState('');
-  const [city, setCity] = useState('');
-  const [localization, setLocalization] = useState('');
+  // const [city, setCity] = useState('');
+  // const [localization, setLocalization] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
 
   const handleClose = () => setShow(false);
@@ -72,12 +72,13 @@ const AnnounceService = (props) => {
 
   function handleSelectCity(event) {
     const city = event.target.value;
-    setSelectedCity(city);
+    setSelectedCity(city)
   }
-
+  
   async function registerWorker() {
+    
     try {
-      if ((selectValue, description, phoneNumber, price, city, localization) !== '' && selectValue !== 'Serviços') {
+      if ((selectValue, description, phoneNumber, price, selectedCity, selectedUf) !== '' && selectValue !== 'Serviços') {
         const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
         setShowSuccess(true)
         setShow(false)
