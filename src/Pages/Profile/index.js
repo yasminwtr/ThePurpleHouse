@@ -84,7 +84,7 @@ const Profile = () => {
           <p id='options-title'>Serviços</p>
           <ServicesReviewed />
           <AnnounceService getServices={getServices} />
-          <CancelService />
+          <CancelService getServices={getServices} />
         </div>
 
         <Logout />
