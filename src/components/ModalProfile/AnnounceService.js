@@ -77,7 +77,7 @@ const AnnounceService = (props) => {
 
   async function registerWorker() {
     try {
-      if ((selectValue, description, phoneNumber, price, city, localization, whatsapp) !== '' && selectValue !== 'Serviços') {
+      if ((selectValue, description, phoneNumber, price, city, localization) !== '' && selectValue !== 'Serviços') {
         const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
         setShowSuccess(true)
         setShow(false)
@@ -206,7 +206,7 @@ const AnnounceService = (props) => {
             </InputGroup>
 
             <Form.Group className="mb-3">
-              <Form.Label>Adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
+              <Form.Label>Opcional: adicione o seu link para o WhatsApp personalizado <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
 
               <Form.Control
                 placeholder="Cole o link gerado aqui"

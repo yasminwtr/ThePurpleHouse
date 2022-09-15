@@ -139,7 +139,7 @@ const Cadastro = () => {
                           <FaUser id='iconRegister' />
                           <input
                             name="firstName"
-                            onChange={(event) => setFirstName(event.target.value)}
+                            onChange={(e) => {setFirstName(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}}
                             id='firstName'
                             placeholder='Nome'
                             type={'text'}
@@ -151,7 +151,7 @@ const Cadastro = () => {
                         <div className='containerInputRegister input-lastname'>
                           <input
                             name="lastName"
-                            onChange={(event) => setLastName(event.target.value)}
+                            onChange={(e) => {setLastName(e.target.value.replace(/(^\w|\s\w)/g, m => m.toUpperCase()))}}
                             id='lastName'
                             placeholder='Sobrenome'
                             type={'text'}
