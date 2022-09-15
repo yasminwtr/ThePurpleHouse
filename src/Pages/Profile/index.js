@@ -63,7 +63,7 @@ const Profile = () => {
             {
               userServices.map((item) => {
                 return (
-                  <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, name: item.fullname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice } })}>
+                  <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, personWorkerId: item.idperson, name: item.fullname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice } })}>
                     {item.titleservice}
                   </p>
                 )

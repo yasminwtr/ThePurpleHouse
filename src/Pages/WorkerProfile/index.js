@@ -96,7 +96,15 @@ const WorkerProfile = () => {
                             <p id='text-worker-profile'>{location.state.phone}</p>
                         </div>
 
-                        <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
+                        {location.state.whatsapp == null ?
+                            <>
+
+                            </>
+                            :
+                            <>
+                                <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
+                            </>
+                        }
                     </div>
 
                     <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
@@ -173,7 +181,7 @@ const WorkerProfile = () => {
 
                     <div className='feed-avaliations'>
                         <div className='inicial-avaliations'>
-                            {user.idperson == location.state.workerId ?
+                            {user.idperson == location.state.personWorkerId ?
                                 <>
                                     <p id='number-avaliations-else'>{numberWorkerReviews}</p>
                                 </>
@@ -181,7 +189,8 @@ const WorkerProfile = () => {
                                 <>
                                     <LeaveAvaliation />
                                     <p id='number-avaliations'>{numberWorkerReviews}</p>
-                                </>}
+                                </>
+                            }
                         </div>
 
                         <WorkerReviews />
