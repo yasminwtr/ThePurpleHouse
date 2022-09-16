@@ -22,10 +22,10 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const EditProfileWorker = (props) => {
     const { user } = useContext(AuthContext)
     const location = useLocation();
-    const [description, setDescription] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [price, setPrice] = useState('');
-    const [whatsapp, setWhatsapp] = useState('');
+    const [description, setDescription] = useState(`${location.state.description}`);
+    const [phoneNumber, setPhoneNumber] = useState(`${location.state.phone}`);
+    const [price, setPrice] = useState(`${location.state.price}`);
+    const [whatsapp, setWhatsapp] = useState(`${location.state.whatsapp}`);
 
     const [show, setShow] = useState(false);
     const [showError, setShowError] = useState(false);
@@ -38,8 +38,8 @@ const EditProfileWorker = (props) => {
 
     const [ufs, setUfs] = useState([]);
     const [cities, setCities] = useState([]);
-    const [selectedUf, setSelectedUf] = useState("0");
-    const [selectedCity, setSelectedCity] = useState("0");
+    const [selectedUf, setSelectedUf] = useState(`${location.state.cityState}`);
+    const [selectedCity, setSelectedCity] = useState(`${location.state.city}`);
 
     useEffect(() => {
         if (selectedUf === "0") {
@@ -72,6 +72,41 @@ const EditProfileWorker = (props) => {
         setSelectedCity(city)
     }
 
+    const updateProfileWorker = async () => {
+        const idWorker = location.state.workerId
+        try {
+            // if ((description) !== '') {
+              const response = await api.put(`/updateworker/${idWorker}`, { descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp })
+              const data = response;
+              console.log('updateUserData', data)
+        
+              location.state.description = data.description
+              location.state.phone = data.phoneNumber
+              location.state.price = data.priceService
+              location.state.city = data.city
+              location.state.cityState = data.localization
+              location.state.whatsapp = data.whatsapp
+
+              setDescription(description)
+              setPhoneNumber(phoneNumber)
+              setPrice(price)
+              setSelectedCity(selectedCity)
+              setSelectedUf(selectedUf)
+              setWhatsapp(whatsapp)
+  
+              setShowSuccess(true)
+              setShow(false)
+              
+            // }
+            // else {
+            //     setShowError(true)
+            // }
+        } catch (error) {
+          console.log(error)
+          console.log('nao funfou');
+        }
+      } 
+
     return (
         <div>
             <button className='message-button' onClick={handleShow}>Editar perfil</button>
@@ -97,9 +132,10 @@ const EditProfileWorker = (props) => {
                                 as="textarea"
                                 rows={6}
                                 maxLength={300}
+                                autoFocus
                                 onChange={(event) => setDescription(event.target.value)}
                                 id='description'
-                                placeholder={location.state.description}
+                                value={description}
                             />
                         </Form.Group>
 
@@ -111,7 +147,6 @@ const EditProfileWorker = (props) => {
                                     className='containerInputEdit-tel'
                                     type={"tel"}
                                     placeholder={location.state.phone}
-                                    autoFocus
                                     maxLength={45}
                                     id='phoneNumber'
                                     onChange={(event) => setPhoneNumber(event.target.value)}
@@ -125,7 +160,7 @@ const EditProfileWorker = (props) => {
                         <Row className="g-2 mb-3 row-localization">
                             <Form.Label id='localization-label'>Nova localização</Form.Label>
                             <Col md={3}>
-                                <Form.Select name="uf" id="uf" onChange={handleSelectUf}>
+                                <Form.Select name="uf" id="uf" value={selectedUf} onChange={handleSelectUf}>
                                     <option value="0">Estado</option>
                                     {ufs.map((uf) => (
                                         <option key={uf.id} value={uf.sigla}>{uf.sigla}</option>
@@ -134,12 +169,7 @@ const EditProfileWorker = (props) => {
                             </Col>
                             <Col md>
 
-                                <Form.Select
-                                    name="City"
-                                    id="City"
-                                    value={selectedCity}
-                                    onChange={handleSelectCity}
-                                >
+                                <Form.Select name="City" id="City" value={selectedCity} onChange={handleSelectCity}>
                                     <option value="0">Cidade</option>
                                     {cities.map((city) => (
                                         <option key={city.id} value={city.nome}>
@@ -154,10 +184,10 @@ const EditProfileWorker = (props) => {
                             <InputGroup.Text>R$</InputGroup.Text>
                             <Form.Control
                                 type="number"
-                                placeholder={location.state.price}
                                 maxLength={10}
                                 onChange={(event) => setPrice(event.target.value)}
                                 id='price'
+                                value={price}
                             />
                         </InputGroup>
 
@@ -165,17 +195,17 @@ const EditProfileWorker = (props) => {
                             <Form.Label>Altere ou adicione o link para o seu whatsapp <a id='link-whatsapp' href='https://www.convertte.com.br/gerador-link-whatsapp/' target="_blank" rel="noopener noreferrer">(clique aqui para gerar o link)</a></Form.Label>
 
                             <Form.Control
-                                placeholder={location.state.whatsapp}
                                 maxLength={100}
                                 onChange={(event) => setWhatsapp(event.target.value)}
                                 id='whatsapp'
+                                value={whatsapp}
                             />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="success">
+                    <Button variant="success" onClick={() => updateProfileWorker()}>
                         Salvar
                     </Button>
                 </Modal.Footer>
