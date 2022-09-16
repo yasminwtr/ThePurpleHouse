@@ -1,26 +1,32 @@
 .home {
   padding: 120px 0 120px 0;
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 25px;
+
     .content {
       margin-top: 3rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       align-items: flex-start;
+
       .sub-title {
         color: var(--pink);
         text-transform: uppercase;
         letter-spacing: 0.1rem;
       }
+
       .title {
         color: var(--accent-color1);
       }
+
       .description {
         color: var(--accent-color3);
       }
+
       button {
         color: var(--accent-color1);
         background-color: var(--background);
@@ -37,17 +43,19 @@
         cursor: pointer;
         font-size: 18px;
         text-decoration: none;
+
         &:hover {
           box-shadow: none;
           color: #fff;
         }
       }
     }
+
     .image-container {
       text-align: center;
       position: relative;
       z-index: 10;
-      
+
       .ellipse-container {
         .ellipse {
           z-index: -1;
@@ -56,11 +64,13 @@
           width: 15rem;
           filter: blur(100px);
         }
+
         .pink {
           top: 40%;
           right: 40%;
           background-color: var(--pink);
         }
+
         .orange {
           bottom: 40%;
           left: 40%;
@@ -77,27 +87,33 @@
     position: relative;
     overflow-x: hidden;
     margin-top: 1rem;
+
     .container {
       font-size: 16px;
       grid-template-columns: 0.7fr;
+
       .image-container {
         position: absolute;
         right: -10%;
         top: 30%;
+
         .image {
           img {
             height: 10rem;
           }
         }
+
         .ellipse-container {
           .ellipse {
             height: 6rem;
             width: 6rem;
             filter: blur(30px);
           }
+
           .pink {
             right: 10%;
           }
+
           .orange {
             left: -5%;
           }

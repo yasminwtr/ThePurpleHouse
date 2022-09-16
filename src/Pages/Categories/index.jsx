@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import "./styles.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -12,7 +11,7 @@ function Categories() {
   const showOrHide = () => setShowElement(true)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [services, setServices] = useState([])
-  
+
   useEffect(() => {
     selectedCategory != null ? setShowElement(true) : setShowElement(false)
   }, [selectedCategory])
@@ -32,15 +31,15 @@ function Categories() {
   }, [])
 
   return (
-    <div>
+    <div className='categories'>
       <div className="page">
         <div onClick={() => showOrHide} >
           {showElement ? <p className="animate__animated animate__fadeInLeft">
-            <FilterWorkers category={selectedCategory}/>
+            <FilterWorkers category={selectedCategory} />
           </p> : null}
         </div>
         <div className={showElement ? "container-categories-side" : "container-categories"}>
-          <h1 className="titleContainerCategories">
+          <h1 className="title-container-categories">
             Selecione a categoria do serviço que está procurando
           </h1>
           <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>

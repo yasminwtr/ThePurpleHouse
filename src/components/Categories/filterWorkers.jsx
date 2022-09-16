@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../Pages/Categories/styles.css'
-import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -12,7 +10,6 @@ import axios from 'axios';
 import api from 'api';
 import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
-import RefreshIcon from '@mui/icons-material/Refresh';
 
 const FilterWorkers = (props) => {
 
@@ -124,7 +121,6 @@ const FilterWorkers = (props) => {
               <TuneIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
               Filtrar
             </p>
-            <RefreshIcon className='refresh-icon' />
           </div>
           <div className='list-users-category'>
             {

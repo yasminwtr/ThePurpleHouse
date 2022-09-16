@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import SuperRare from "./components/SuperRare";
 import scrollreveal from "scrollreveal";
 import "./sass/index.scss";
+
 function App() {
   const [theme, setTheme] = useState("light");
   const changeTheme = () => {
