@@ -31,6 +31,22 @@ export default function Navbar({ changeTheme, currentTheme }) {
           <Link to='/'><img src={logo} width={55} alt="logo1" /></Link>
           <span className="title-header">The Purple House</span>
         </div>
+        <div className="toggle-container">
+          <div className="toggle">
+            {navState ? (
+              <MdClose onClick={() => setNavState(false)} />
+            ) : (
+              <GiHamburgerMenu onClick={() => setNavState(true)} />
+            )}
+          </div>
+          <div className="mode" onClick={changeTheme}>
+            {currentTheme === "dark" ? (
+              <ImSun className="light" />
+            ) : (
+              <BsFillMoonFill className="dark" />
+            )}
+          </div>
+        </div>
       </div>
       <div className={`links-container ${navState ? "nav-visible" : ""}`}>
         <ul className="links">
