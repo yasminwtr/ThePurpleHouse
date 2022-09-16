@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from '../../components/Reviews/LeaveAvaliation'
+import EditProfileWorker from '../../components/ModalProfile/EditProfileWorker'
 import whatsapp from '../../components/assets/img/whatsapp.png'
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
@@ -83,7 +84,15 @@ const WorkerProfile = () => {
                     <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
                     <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
                     <AverageRating />
-                    <button className='message-button'><Link className='link-chat' to='/Chat'>Enviar mensagem</Link></button>
+                    {user.idperson == location.state.personWorkerId ?
+                        <>
+                            <EditProfileWorker/>
+                        </>
+                        :
+                        <>
+                            <button className='message-button'><Link className='link-chat' to='/Chat'>Enviar mensagem</Link></button>
+                        </>
+                    }
                 </div>
 
                 <div className='part2-worker-profile'>
@@ -96,7 +105,7 @@ const WorkerProfile = () => {
                             <p id='text-worker-profile'>{location.state.phone}</p>
                         </div>
 
-                        {location.state.whatsapp == null ?
+                        {location.state.whatsapp == null || location.state.whatsapp == '' ?
                             <>
 
                             </>

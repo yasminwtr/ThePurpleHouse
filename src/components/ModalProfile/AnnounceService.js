@@ -30,8 +30,6 @@ const AnnounceService = (props) => {
   const [description, setDescription] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [price, setPrice] = useState('');
-  // const [city, setCity] = useState('');
-  // const [localization, setLocalization] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
 
   const handleClose = () => setShow(false);
