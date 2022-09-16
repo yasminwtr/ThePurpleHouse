@@ -1,18 +1,24 @@
 .home {
-  padding: 120px 0 120px 0;
-
+  padding: 6rem 0 0.5rem 0;
   .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-size: 25px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // font-size: 25px;
 
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
     .content {
-      margin-top: 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      // margin-top: 3rem;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 2rem;
       align-items: flex-start;
 
+      max-width: 37rem;
       .sub-title {
         color: var(--pink);
         text-transform: uppercase;
@@ -21,10 +27,17 @@
 
       .title {
         color: var(--accent-color1);
+        font-size: 3.4rem;
+        margin-bottom: 2rem;
+        line-height: 4rem;
       }
 
       .description {
         color: var(--accent-color3);
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        margin: 10px 0px 0px;
+        margin-bottom: 3rem;
       }
 
       button {
@@ -66,14 +79,19 @@
         }
 
         .pink {
-          top: 40%;
-          right: 40%;
+          // top: 40%;
+          // right: 40%;
+
+          bottom: 40%;
+          left: 40%;
           background-color: var(--pink);
         }
 
         .orange {
-          bottom: 40%;
-          left: 40%;
+          // bottom: 40%;
+          // left: 40%;
+           top: 40%;
+          right: 40%;
           background-color: var(--orange);
         }
       }
@@ -84,30 +102,34 @@
 @media screen and (min-width: 280px) and (max-width: 1080px) {
   .home {
     padding: 1rem;
-    position: relative;
-    overflow-x: hidden;
-    margin-top: 1rem;
-
+    // position: relative;
+    // overflow-x: hidden;
+    // margin-top: 1rem;
     .container {
-      font-size: 16px;
-      grid-template-columns: 0.7fr;
-
+      // font-size: 16px;
+      // grid-template-columns: 0.7fr;
+      padding: 70px 2%;
+      height: 70%;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+      gap: 1rem;
       .image-container {
-        position: absolute;
-        right: -10%;
-        top: 30%;
-
+        // position: absolute;
+        // right: -10%;
+        // top: 30%;
         .image {
           img {
-            height: 10rem;
+            width : 20rem;
           }
         }
 
         .ellipse-container {
+          display: none;
           .ellipse {
-            height: 6rem;
-            width: 6rem;
-            filter: blur(30px);
+            height: 10rem;
+            width: 10rem;
+            filter: blur(50px);
           }
 
           .pink {

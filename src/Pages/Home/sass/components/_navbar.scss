@@ -89,8 +89,10 @@ nav {
     }
     .links-container {
       z-index: 30;
-      background-image: linear-gradient(101deg, var(--pink), var(--orange));
-      height: 100vh;
+      // background-image: linear-gradient(101deg, var(--pink), var(--orange));
+      background-color: #d1baf9f3;
+      height: 50vh;
+      border-bottom-left-radius: 30px;
       position: absolute;
       top: 0;
       right: 0;
@@ -103,9 +105,11 @@ nav {
       transition: 0.5s ease-in-out;
       .links {
         flex-direction: column;
+        gap: 2rem;
         li {
           a {
-            color: var(--background);
+            color: #fff;
+            font-size: 1.5rem;
           }
           &:last-of-type {
             display: none;

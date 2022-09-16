@@ -4,9 +4,9 @@
     padding: 50px;
     border-radius: 0.5rem;
   }
-  .green {
-    // background-color: var(--green);
-  }
+  // .green {
+  //    background-color: var(--green);
+  // }
   .texts-ComoF{
     width: 100%;
   
@@ -34,17 +34,14 @@
       padding: 20px;
       border-radius: 2rem;
       align-items: center;
-      .image {
-        img {
-        }
-      }
+      
       .title {
-        color: var(--accent-color4);
+        color: var(--accent-color1);
         font-size: 1.5rem;
       }
       
       .description {
-        color: var(--accent-color4);
+        color: var(--accent-color1);
         letter-spacing: 0.1rem;
         line-height: 1.5rem;
         font-size: 15px;
@@ -59,14 +56,17 @@
   .like {
     margin: 0;
     .container {
-      grid-template-columns: 1fr;
+     // grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 0;
       .content {
         padding: 1rem 2rem;
-        border-radius: 0;
-        &:nth-of-type(2) {
-          background-color: var(--background);
-        }
+        border-radius: 30px;
+        margin: 10px;
+        
+        // &:nth-of-type(2) {
+        //   background-color: var(--background);
+        // }
       }
     }
   }

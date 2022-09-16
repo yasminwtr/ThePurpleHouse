@@ -5,15 +5,17 @@ export default function Home() {
   return (
     <div className="home">
       <div className="container">
+
       <div className="image-container">
           <div className="image">
-            <img src={home} alt="home image" width={'80%'} />
+            <img src={home} alt="home image" width={'70%'}  />
           </div>
           <div className="ellipse-container">
             <div className="ellipse pink"></div>
             <div className="ellipse orange"></div>
           </div>
-        </div>
+      </div>
+
         <div className="content">
           {/* <p className="sub-title">Contrate prestadores para sua casa!</p> */}
           <h1 className="title">Contrate prestadores para sua casa!</h1>
