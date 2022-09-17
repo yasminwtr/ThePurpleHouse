@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import './styles.css'
+//import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
