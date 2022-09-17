@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo1 from '../assets/img/logo1.png'
 import AuthContext from '../contexts/auth'
-import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -12,7 +11,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Footer = () => {
   const { signed } = useContext(AuthContext)
-
   const location = useLocation()
 
   return (
@@ -33,7 +31,6 @@ const Footer = () => {
 
                 <ul>
                   {signed ?
-
                     <>
                       <h4>Links Úteis</h4>
                       <li><Link to='/Categories'>Categorias</Link> </li>
@@ -52,10 +49,9 @@ const Footer = () => {
                 </ul>
               </div>
 
-
-
               <div className="footer-col">
                 <h4>Nos siga!</h4>
+
                 {/* <div className="form-sub">
                   <form>
                       <input type="email" placeholder="Digite o seu e-mail"></input>
@@ -85,7 +81,6 @@ const Footer = () => {
         </footer>
         : null
       }
-
     </>
   )
 }

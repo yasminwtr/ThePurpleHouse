@@ -2,6 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem 4rem;
   .brand-container {
     .brand {
       img {
@@ -10,20 +11,19 @@ nav {
     }
     .toggle-container {
       display: none;
-      .toggle {
-      }
-      .mode {
-      }
     }
   }
+
   .title-header {
     font-family: Inter-Medium !important;
     margin-left: 10px;
     font-size: 25px;
     color:var(--accent-color1);
-}
+  }
+
   .links-container {
     .links {
+      align-items: center;
       list-style-type: none;
       display: flex;
       gap: 4rem;

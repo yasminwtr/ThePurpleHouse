@@ -25,8 +25,8 @@ const AppRoutes = () => {
           <Route path="/WorkerProfile" element={<WorkerProfile />} />
           <Route path="/Chat" element={<Chat />} />
         </Routes>
+        <Footer />
       </div>
-      <Footer />
     </BrowserRouter>
   )
 }
