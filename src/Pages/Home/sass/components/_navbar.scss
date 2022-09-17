@@ -140,3 +140,13 @@ nav {
     }
   }
 }
+@media (max-width: 375px) {
+  nav {
+    .title-header {
+      font-family: Inter-Medium !important;
+      margin-left: 10px;
+      font-size: 1rem;
+      color: var(--accent-color1);
+  }
+  }
+}

@@ -113,11 +113,9 @@
     .container {
       // font-size: 16px;
       // grid-template-columns: 0.7fr;
-      padding: 70px 2%;
       height: 70%;
       flex-direction: column;
       text-align: center;
-      overflow: hidden;
       gap: 1rem;
       .image-container {
         // position: absolute;
@@ -130,11 +128,11 @@
         }
 
         .ellipse-container {
-          display: none;
+         
           .ellipse {
             height: 10rem;
             width: 10rem;
-            filter: blur(50px);
+            filter: blur(100px);
           }
 
           .pink {
@@ -148,4 +146,28 @@
       }
     }
   }
+}
+@media (max-width: 375px) {
+  .home {
+
+    .container{
+
+      .content{
+        .title {
+          color: var(--accent-color1);
+          font-size: 2.2rem;
+          margin-bottom: 2rem;
+          line-height: 3rem;
+      } 
+      .description {
+        color: var(--accent-color3);
+        font-size: 1rem;
+        line-height: 2rem;
+        margin: 10px 0px 0px;
+        margin-bottom: 3rem;
+    }
+      }
+  }
+  }
+ 
 }
