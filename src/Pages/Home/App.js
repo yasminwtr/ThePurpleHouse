@@ -4,6 +4,7 @@ import Like from "./components/Like";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import SuperRare from "./components/SuperRare";
+import Footer from "components/Footer";
 import scrollreveal from "scrollreveal";
 import "./sass/index.scss";
 
@@ -52,6 +53,7 @@ function App() {
       <Home />
       <SuperRare />
       <Like />
+      <Footer/>
     </div>
   );
 }

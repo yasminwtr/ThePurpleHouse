@@ -61,7 +61,7 @@ export default function Navbar({ changeTheme, currentTheme }) {
                     <li><Link to='/'>Inicial</Link> </li>
                     <li><Link to='/About'>Quem somos</Link> </li>
                     <li className="icon">
-                      <Link to='/Login' ><button className="button">Entrar</button></Link>
+                      <Link to='/Login' ><button className="buttonNav">Entrar</button></Link>
                     </li>
                   </>
                 }

@@ -68,6 +68,11 @@
       text-align: center;
       position: relative;
       z-index: 10;
+      .image {
+        img {
+          width: 470px;
+        }
+      }
 
       .ellipse-container {
         .ellipse {

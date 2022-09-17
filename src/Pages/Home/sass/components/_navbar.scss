@@ -1,3 +1,4 @@
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -42,6 +43,21 @@ nav {
           a {
             color: var(--pink);
           }
+        }
+        .buttonNav{
+          cursor: pointer;
+          width: 130px;
+          height: 40px;
+          border-radius: 100px;
+          color: #fff;
+          font-size: 18px;
+          background-color: #A58AD2;
+          border: none;
+          font-family: Inter-Regular;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column-reverse;
         }
       }
     }

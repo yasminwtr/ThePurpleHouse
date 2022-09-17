@@ -29,24 +29,34 @@ export default function SuperRare() {
    
   ];
   return (
-    <div className="super-rare">
+    <>
       <div className="title-container">
-        <h2 className="title">SERVIÇOS MAIS PEDIDOS</h2>
-        
+        <h2 className="title">SERVIÇOS MAIS PEDIDOS</h2> 
       </div>
+
+    <div className="super-rare">
       <div className="cards">
         {data.map(({ image, series, title, price, tag, time }, index) => (
-          <Card
-            image={image} className
-            series={series}
-            title={title}
-            price={price}
-            tag={tag}
-            time={time}
-            key={index}
-          />
-        ))}
+
+            <div className="card">
+              <div className="card-image">
+                <img src={image} alt="super1" />
+              </div>
+
+              <div className="card-content">
+                <div className="card-details">
+                  <h4 className="card-title">{title}</h4>
+                </div>
+                
+                <div className="card-heading">
+                  <span className="card-series">{series}</span>
+                </div>
+              </div>
+            </div>
+
+          ))}
       </div>
     </div>
+    </>
   );
 }

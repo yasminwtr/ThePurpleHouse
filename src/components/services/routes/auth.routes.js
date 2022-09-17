@@ -27,7 +27,6 @@ const AuthRoutes = () => {
         <Route path="/Chat" element={<PrivateRoute />} />
         <Route path="*" element={<PrivateRoute />} />
       </Routes>
-      <Footer />
     </BrowserRouter >
   )
 }
