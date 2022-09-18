@@ -58,7 +58,6 @@
   width: 7%;
   height: 7%;
   margin-left: 4%;
-  cursor: pointer;
 }
 
 #name-account {
@@ -66,7 +65,6 @@
   margin: auto 10px auto;
   font-size: 22px;
   color: #fff;
-  cursor: pointer;
 }
 
 .messages-chat {
@@ -85,11 +83,11 @@
 .messages-chat::-webkit-scrollbar-button {
   height: 5px;
 }
-  
+
 .messages-chat::-webkit-scrollbar-track {
   background-color: #fff;
 }
-  
+
 .messages-chat::-webkit-scrollbar-thumb {
   background-color: #aeb0b1;
   border: 0.3vw solid #fff;
@@ -129,7 +127,7 @@
   max-height: 93px;
 }
 
-.input-message-chat{
+.input-message-chat {
   border: 0;
   background-color: #F8F8F8;
   padding: 15px;
@@ -137,7 +135,7 @@
   width: 91%;
 }
 
-#send-icon-chat{
+#send-icon-chat {
   color: #A58AD2;
   background-color: #F8F8F8;
   border-radius: 30px;
@@ -148,7 +146,7 @@
   cursor: pointer;
 }
 
-#send-icon-chat:hover{
+#send-icon-chat:hover {
   color: #655A78;
   transition: 0.5s;
 }
@@ -166,16 +164,16 @@
   padding: 20px;
 }
 
-.container-box-search{
+.container-box-search {
   display: flex;
   align-items: center;
 }
 
-#search-icon-chat{
+#search-icon-chat {
   color: #655A78 !important;
 }
 
-.container-input{
+.container-input {
   display: flex;
   background-color: #f8f8f8;
   height: 40px;
@@ -186,7 +184,7 @@
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-.input-search-chat{
+.input-search-chat {
   background-color: #f8f8f8;
   border: none;
   outline: none;
@@ -217,36 +215,42 @@
   border: 2px solid #A58AD2 !important;
 }
 
-.list-chat-profiles{
+.list-chat-profiles {
   margin-top: 10%;
   max-height: 390px;
   min-height: 390px;
   overflow-y: scroll;
 }
 
-.individual-chat-profile{
+.individual-chat-profile {
   display: flex;
   align-items: center;
   cursor: pointer;
   margin-bottom: 6%;
   padding: 8px 8px 8px 12px;
   border-radius: 15px;
-  background-color: #f8f8f8; 
+  background-color: #f8f8f8;
 }
 
-#icon-individual-chat-profile{
+#icon-individual-chat-profile {
   width: 12%;
   height: 12%;
   margin-right: 3%;
 }
 
-#name-chat-profile{
+#name-chat-profile {
   font-family: Inter-Regular;
   font-size: 17px;
   margin: auto 0 auto;
 }
 
-.individual-chat-profile:hover{
+.individual-chat-profile:hover {
+  background-color: #dbc9fa;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.chatSelected {
   background-color: #dbc9fa;
   color: #fff;
   transition: 0.5s;

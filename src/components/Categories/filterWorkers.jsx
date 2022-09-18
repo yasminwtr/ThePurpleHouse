@@ -12,7 +12,6 @@ import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
 
 const FilterWorkers = (props) => {
-
   const { category } = props;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

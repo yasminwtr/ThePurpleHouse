@@ -11,7 +11,7 @@ import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../../api'
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import WorkerReviews from '../../components/Reviews/WorkerReviews';
 import AuthContext from '../../components/contexts/auth'
 import AverageRating from '../../components/Reviews/AverageRating'
@@ -26,6 +26,7 @@ const WorkerProfile = () => {
     const dateAtual = new Date()
     const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
     const [idade, setIdade] = useState(dateAtual.getFullYear() - year);
+    const navigate = useNavigate();
 
     async function getReviewsByWorker() {
         const idWorker = location.state.workerId
@@ -63,6 +64,17 @@ const WorkerProfile = () => {
         }
     }
 
+    async function createChat() {
+        try {
+            const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName });
+            console.log('response', response);
+            navigate("/Chat", { replace: true });
+
+        } catch (error) {
+
+        }
+    }
+
     useEffect(() => {
         getReviewsByWorker()
     }, [])
@@ -86,11 +98,11 @@ const WorkerProfile = () => {
                     <AverageRating />
                     {user.idperson == location.state.personWorkerId ?
                         <>
-                            <EditProfileWorker/>
+                            <EditProfileWorker />
                         </>
                         :
                         <>
-                            <button className='message-button'><Link className='link-chat' to='/Chat'>Enviar mensagem</Link></button>
+                            <button className='message-button' onClick={() => createChat()}>Enviar mensagem</button>
                         </>
                     }
                 </div>

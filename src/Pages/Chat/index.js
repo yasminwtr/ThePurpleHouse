@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-import SendIcon from '@mui/icons-material/SendRounded'
+import IndividualChat from '../../components/Chat/IndividualChat'
+import AuthContext from '../../components/contexts/auth'
+import api from '../../api'
 
 const Chat = () => {
+  const { user } = useContext(AuthContext);
+  const [chats, setChats] = useState([])
+  const [selectedChat, setSelectedChat] = useState(null)
+  const [showChat, setShowChat] = useState(false)
+
+  useEffect(() => {
+    selectedChat != null ? setShowChat(true) : setShowChat(false)
+  }, [selectedChat])
+
+  const getChats = async () => {
+    const idPerson = user.idperson
+    try {
+      const response = await api.get(`/chats/${idPerson}`);
+      setChats(response.data)
+    } catch (error) {
+      setChats([])
+    }
+  }
+
+  useEffect(() => {
+    getChats()
+  }, []);
+
   return (
     <div className='body-chat'>
       <div className='all-chat'>
@@ -24,44 +47,16 @@ const Chat = () => {
           </div>
 
           <div className='list-chat-profiles'>
-            <div className='individual-chat-profile'>
-              <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-              <p id='name-chat-profile'>Mario Silvo</p>
-            </div>
-
-            <div className='individual-chat-profile'>
-              <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-              <p id='name-chat-profile'>Mario Silvo</p>
-            </div>
+            {chats.map((chat) => (
+              <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+                <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className='container-chat'>
-          <div className='header-chat'>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
-            <p id='name-account'>Mario Silvo</p>
-          </div>
-
-          <div className='messages-chat'>
-            <p id='left-message'>Lorem ipsum dolor sit amet?</p>
-            <p id='right-message'>Aliquam lacinia, magna quis</p>
-
-            <p id='left-message'>Justo varius magna</p>
-            <p id='right-message'>Vitae dapibus!</p>
-
-            <p id='left-message'>Dolorem ipsum quia dolor :)</p>
-            <p id='right-message'>Fermentum felis pellentesque congue</p>
-          </div>
-
-          <div className='type-message-chat'>
-            <input
-              className='input-message-chat'
-              placeholder='Digite sua mensagem aqui'
-            />
-
-            <SendIcon id='send-icon-chat' />
-          </div>
-        </div>
+        {showChat ? <IndividualChat chat={selectedChat} /> : null}
       </div>
     </div>
   )
