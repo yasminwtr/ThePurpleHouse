@@ -3,10 +3,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { ImSun } from "react-icons/im";
 import { BsFillMoonFill } from "react-icons/bs";
-import logo from "../../../components/assets/img/logo1.png";
+import logo from "../assets/img/logo1.png";
 
-import DropdownProfile from "../../../components/Dropdown/index"
-import AuthContext from '../../../components/contexts/auth'
+import DropdownProfile from "../Dropdown/index"
+import AuthContext from '../contexts/auth'
 import { Link, useLocation } from "react-router-dom";
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,14 +16,16 @@ export default function Navbar({ changeTheme, currentTheme }) {
   const { signed } = useContext(AuthContext);
   const [sidebar, setSidebar] = useState(false)
 
-  // window.addEventListener("scroll", function () {
-  //   const header = this.document.querySelector(".header")
-  //   header.classList.toggle("active", this.window.screenY > 200)
-  // })
+  window.addEventListener("scroll", function () {
+    const header = this.document.querySelector(".header")
+    header.classList.toggle("active", this.window.screenY > 200)
+  })
 
   const location = useLocation()
   return (
     <>
+     {location.pathname !== "/Login" && location.pathname !== "/Registration"
+        ?
   <nav>
     
       <div className="brand-container">
@@ -75,6 +77,8 @@ export default function Navbar({ changeTheme, currentTheme }) {
         </ul>
       </div>
     </nav>
+    : null
+      }
     </>
   );
 }

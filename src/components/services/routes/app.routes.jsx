@@ -6,7 +6,7 @@ import Profile from "../../../Pages/Profile";
 import WorkerProfile from "../../../Pages/WorkerProfile";
 import Chat from '../../../Pages/Chat'
 import Categories from "../../../Pages/Categories";
-import Navbar from "Pages/Home/components/Navbar";
+import Navbar from "components/Navbar/Navbar";
 
 const AppRoutes = () => {
   const [theme, setTheme] = useState("light");

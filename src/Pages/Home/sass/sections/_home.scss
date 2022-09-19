@@ -1,3 +1,22 @@
+.buttonHome-a a{
+  display: inline-block;
+  background-color: #A16FF7;
+  padding: 12px 36px;
+  font-size: 1.2rem;
+ 
+  border:none;
+  border-radius:17px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Inter-SemiBold';
+  transition: all 0.5s;
+}
+.buttonHome-a :hover{
+  background-color: #8058C4;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 17px 0 #8058c4cf;
+}
 .home {
   padding: 6rem 0 0.5rem 0;
   .container {
