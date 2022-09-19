@@ -1,3 +1,11 @@
+[data-theme="dark"] {
+  #show-dropdown.active {
+    background-color: #655a78d3 !important;
+  }
+  #show-dropdown {
+    background-color: #655a78d3 !important;
+  }
+}
 
 .trigger-button {
   background: transparent;
@@ -8,7 +16,8 @@
 }
 
 .trigger-button:hover {
-  color: #655A78; transition: 0.40s !important;
+  color: #655A78;
+  transition: 0.40s !important;
 }
 
 .dropdown-fullname {
@@ -33,7 +42,7 @@
   background-color: transparent;
 }
 
-#my-profile-label{
+#my-profile-label {
   cursor: pointer;
   width: 130px;
   height: 40px;
@@ -57,7 +66,7 @@
 }
 
 #show-dropdown {
-  background-color: #faf8fc !important ;
+  background-color: #faf8fc !important;
   border: none;
   width: 270px !important;
   box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.1);
@@ -97,7 +106,7 @@
   cursor: pointer;
 }
 
-.link-profile:hover{
+.link-profile:hover {
   color: #A58AD2;
 }
 
@@ -106,7 +115,7 @@
   margin-bottom: 1%;
 }
 
-@media screen and (min-width: 600px) and (max-width: 960px) { 
+@media screen and (min-width: 600px) and (max-width: 960px) {
   .trigger-button {
     display: none;
     visibility: hidden;

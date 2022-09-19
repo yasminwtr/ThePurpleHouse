@@ -5,7 +5,7 @@ import { ImSun } from "react-icons/im";
 import { BsFillMoonFill } from "react-icons/bs";
 import logo from "../../../components/assets/img/logo1.png";
 
-import DropdownProfile from "../../../components/Header/Dropdown/index"
+import DropdownProfile from "../../../components/Dropdown/index"
 import AuthContext from '../../../components/contexts/auth'
 import { Link, useLocation } from "react-router-dom";
 import CloseIcon from '@mui/icons-material/Close';

@@ -3,10 +3,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from "react-router-dom";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import person from '../../assets/img/person.png'
+import person from '../assets/img/person.png'
 import CloseIcon from '@mui/icons-material/Close';
-import AuthContext from '../../contexts/auth';
-import './styles.css'
+import AuthContext from '../contexts/auth';
 import { useNavigate } from "react-router-dom";
 
 const DropdownProfile = () => {
