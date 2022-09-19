@@ -6,6 +6,8 @@ import AuthContext from '../../components/contexts/auth'
 import api from '../../api'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import Button from 'react-bootstrap/Button';
+import DeleteChat from './DeleteChat';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -69,6 +71,8 @@ const IndividualChat = (props) => {
             <div className='header-chat'>
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+
+                <DeleteChat id='delete-chat-button'/>
             </div>
 
             <div className='messages-chat'>

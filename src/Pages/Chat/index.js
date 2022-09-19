@@ -3,6 +3,7 @@ import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchIcon from '@mui/icons-material/Search';
 import IndividualChat from '../../components/Chat/IndividualChat'
+import NullChat from '../../components/Chat/NullChat'
 import AuthContext from '../../components/contexts/auth'
 import api from '../../api'
 
@@ -32,31 +33,32 @@ const Chat = () => {
 
   return (
     <div className='body-chat'>
-      <div className='all-chat'>
-        <div className='box-search-chat'>
-          <div className='container-box-search'>
-            <div className='container-input'>
-              <SearchIcon id='search-icon-chat' />
-              <input
-                className='input-search-chat'
-                placeholder='Pesquisar usuário'
-              />
+      <div className='background-chat'>
+        <div className='all-chat'>
+          <div className='box-search-chat'>
+            <div className='container-box-search'>
+              <div className='container-input'>
+                <input
+                  className='input-search-chat'
+                  placeholder='Pesquisar usuário'
+                />
+
+                <SearchIcon id='search-icon-chat' />
+              </div>
             </div>
 
-            <button className="button-search-chat">Buscar</button>
+            <div className='list-chat-profiles'>
+              {chats.map((chat) => (
+                <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+                  <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className='list-chat-profiles'>
-            {chats.map((chat) => (
-              <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-                <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
-              </div>
-            ))}
-          </div>
+          {showChat ? <IndividualChat chat={selectedChat} /> : <NullChat/>}
         </div>
-
-        {showChat ? <IndividualChat chat={selectedChat} /> : null}
       </div>
     </div>
   )
