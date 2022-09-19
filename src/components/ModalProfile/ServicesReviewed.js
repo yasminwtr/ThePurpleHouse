@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react';
-import '../../Pages/Profile/styles.css'
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';

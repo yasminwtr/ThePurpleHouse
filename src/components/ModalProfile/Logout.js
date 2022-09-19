@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import '../../Pages/Profile/styles.css'
 import AuthContext from '../contexts/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';

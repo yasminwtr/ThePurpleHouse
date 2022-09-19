@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-//import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +9,6 @@ import AnnounceService from '../../components/ModalProfile/AnnounceService'
 import CancelService from '../../components/ModalProfile/CancelService'
 import Logout from '../../components/ModalProfile/Logout'
 import EmailIcon from '@mui/icons-material/EmailRounded'
-import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 import AuthContext from '../../components/contexts/auth'
