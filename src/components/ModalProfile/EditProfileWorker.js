@@ -41,6 +41,25 @@ const EditProfileWorker = (props) => {
   const [selectedUf, setSelectedUf] = useState(`${location.state.cityState}`);
   const [selectedCity, setSelectedCity] = useState(`${location.state.city}`);
 
+  const [img, setImg] = useState('')
+
+  const uploadImage = async () => {
+    // const dataUploadImage = new FormData();
+    // dataUploadImage.append("card", cardFile);
+    // console.log('dataUploadImage', dataUploadImage);
+
+    // ...
+    // Inserimos aqui nossa chamada POST/PUT
+    // para enviarmos nosso arquivo.
+
+    const response = await api.post('/updateworker', { img })
+    console.log('response.data', response.data);
+
+  };
+
+  console.log('img', img);
+
+
   useEffect(() => {
     if (selectedUf === "0") {
       return;
@@ -52,7 +71,7 @@ const EditProfileWorker = (props) => {
       .then((response) => {
         setCities(response.data);
       });
-  });
+  }, []);
 
   useEffect(() => {
     axios
@@ -80,6 +99,8 @@ const EditProfileWorker = (props) => {
       const data = response;
       console.log('updateUserData', data)
 
+      // uploadImage()
+
       location.state.description = data.description
       location.state.phone = data.phoneNumber
       location.state.price = data.priceService
@@ -97,10 +118,6 @@ const EditProfileWorker = (props) => {
       setShowSuccess(true)
       setShow(false)
 
-      // }
-      // else {
-      //     setShowError(true)
-      // }
     } catch (error) {
       console.log(error)
       console.log('nao funfou');
@@ -204,7 +221,7 @@ const EditProfileWorker = (props) => {
 
             <Form.Group className="mb-3">
               <Form.Label>Adicione até 10 fotos de serviços já realizados.</Form.Label>
-              <Form.Control type="file" multiple accept='.png, .jpeg, .jpg' />
+              <Form.Control onChange={(event) => setImg(event.target.value)} type="file" multiple accept='.png, .jpeg, .jpg' />
             </Form.Group>
 
           </Form>
