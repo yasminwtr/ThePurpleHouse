@@ -31,7 +31,7 @@
   margin: auto;
   background-color: #FBFBFC;
   padding: 20px;
-  margin: 2% auto 3% auto;
+  margin: 1% auto 3% auto;
 }
 
 /* chat */
@@ -67,7 +67,7 @@
 }
 
 #delete-chat-button{
-  margin-left: auto;
+  margin-left: auto !important;
 }
 
 .messages-chat {
