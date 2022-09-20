@@ -5,15 +5,64 @@ import Form from 'react-bootstrap/Form';
 import { UploadOutlined } from '@ant-design/icons';
 import '../../src/Pages/WorkerProfile/styles.css'
 import { Button, Upload } from 'antd';
+import axios from 'axios';
+import api from 'api'
+import { useLocation } from 'react-router-dom';
+
 
 export const UploadImage = (props) => {
 
-  const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const location = useLocation();
+
+  const idWorker = location.state.workerId
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [show, setShow] = useState(false);
+
+  const [image, setImage] = useState([])
+  const [file, setFile] = useState([])
+
+  const attemptSave = async () => {
+    const data = new FormData();
+    data.append("image", image);
+
+    axios({
+      method: "post",
+      url: "https://api.imgbb.com/1/upload?key=7313c33c5080a1cfde51ee1a33889274",
+      data: data,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then((response) => {
+        response = response.data.data.url
+
+        setFile(file)
+        setFile(response)
+
+        showImage()
+
+        console.log('response', response);
+        console.log('file', file);
+
+      })
+      .catch((response) => {
+        console.log(response);
+      });
+  };
+
+  const showImage = async () => {
+    try {
+      const response = await api.post(`/postImage`, { img: file, idWorker: idWorker });
+      // setFile(response.data)
+      console.log('fileeeeeeee',file);
+      console.log('response',response);
+    } catch (error) {
+      // setFile([])
+      console.log('error', error);
+    }
+  }
 
   return (
     <div>
@@ -33,28 +82,23 @@ export const UploadImage = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <Form>
-            <form enctype="multipart/form-data">
-              <Form.Group className="mb-3">
-                <Form.Label>Adicione até 10 fotos de serviços já realizados.</Form.Label>
-                {/* <Form.Control onChange={(e) => setImage(e.target.files[0])} type="file" multiple accept='.png, .jpeg, .jpg' /> */}
-                {/* <Form.Control type="file" multiple accept='.png, .jpeg, .jpg' /> */}
-                <Upload
-                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                  listType="picture"
-
-                  className="upload-list-inline"
-                >
-                  <Button icon={<UploadOutlined />}>Escolher Arquivos</Button>
-                </Upload>
-              </Form.Group>
-            </form>
+          <Form encType="multipart/form-data" onChange={(e) => setImage(e.target.files[0])} type="file" multiple accept='.png, .jpeg, .jpg'>
+            <Form.Group className="mb-3">
+              <Form.Label>Adicione até 5 imagens de serviços já realizados</Form.Label>
+              <Upload
+                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                listType="picture"
+                className="upload-list-inline"
+              >
+                <Button type='submit' icon={<UploadOutlined />}>Escolher Arquivos</Button>
+              </Upload>
+            </Form.Group>
 
           </Form>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="success">
+          <Button onClick={() => attemptSave()} variant="success">
             Salvar
           </Button>
         </Modal.Footer>

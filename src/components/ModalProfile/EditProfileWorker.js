@@ -40,26 +40,6 @@ const EditProfileWorker = (props) => {
   const [selectedUf, setSelectedUf] = useState(`${location.state.cityState}`);
   const [selectedCity, setSelectedCity] = useState(`${location.state.city}`);
 
-  const [image, setImage] = useState('')
-
-  const attemptSave = async () => {
-    const data = new FormData();
-    data.append("image", image);
-
-    axios({
-      method: "post",
-      url: "https://api.imgbb.com/1/upload?key=7313c33c5080a1cfde51ee1a33889274",
-      data: data,
-      headers: { "Content-Type": "multipart/form-data" },
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (response) {
-        console.log(response);
-      });
-  };
-
   useEffect(() => {
     if (selectedUf === "0") {
       return;
@@ -103,8 +83,6 @@ const EditProfileWorker = (props) => {
       location.state.city = data.city
       location.state.cityState = data.localization
       location.state.whatsapp = data.whatsapp
-
-      attemptSave()
 
       setDescription(description)
       setPhoneNumber(phoneNumber)
@@ -216,13 +194,6 @@ const EditProfileWorker = (props) => {
                 value={whatsapp}
               />
             </Form.Group>
-
-            <form enctype="multipart/form-data">
-              <Form.Group className="mb-3">
-                <Form.Label>Adicione até 10 fotos de serviços já realizados.</Form.Label>
-                <Form.Control onChange={(e) => setImage(e.target.files[0])} type="file" multiple accept='.png, .jpeg, .jpg' />
-              </Form.Group>
-            </form>
 
           </Form>
         </Modal.Body>
