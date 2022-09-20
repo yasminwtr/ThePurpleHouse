@@ -16,10 +16,10 @@ export default function Navbar({ changeTheme, currentTheme }) {
   const { signed } = useContext(AuthContext);
   const [sidebar, setSidebar] = useState(false)
 
-  window.addEventListener("scroll", function () {
-    const header = this.document.querySelector(".header")
-    header.classList.toggle("active", this.window.screenY > 200)
-  })
+  // window.addEventListener("scroll", function () {
+  //   const header = this.document.querySelector(".header")
+  //   header.classList.toggle("active", this.window.screenY > 200)
+  // })
 
   const location = useLocation()
   return (
