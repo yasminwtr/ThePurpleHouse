@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import './styles.css'
+// import './styles.css'
 import logo from '../../components/assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
@@ -194,7 +194,7 @@ const Cadastro = () => {
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password} />
                       <div>
-                        <IconButton sx={{ color: '#616161' }}
+                        <IconButton id='iconRegister'
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
                           onMouseDown={handleMouseDownPassword}

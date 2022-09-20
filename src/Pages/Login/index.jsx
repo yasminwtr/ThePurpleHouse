@@ -9,7 +9,7 @@ import AuthContext from '../../components/contexts/auth'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
-import './styles.css'
+// import './styles.css'
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 
@@ -102,7 +102,7 @@ function Login() {
                 value={values.password}
               />
               <div>
-                <IconButton sx={{ color: '#616161' }}
+                <IconButton id='iconLogin'
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
