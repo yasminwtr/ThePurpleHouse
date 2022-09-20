@@ -15,7 +15,7 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import WorkerReviews from '../../components/Reviews/WorkerReviews';
 import AuthContext from '../../components/contexts/auth'
 import AverageRating from '../../components/Reviews/AverageRating'
-import { Carousel } from './Carousel';
+import { Carousel } from '../../components/Carousel';
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
