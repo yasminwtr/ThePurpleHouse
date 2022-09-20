@@ -28,10 +28,13 @@
   --card-color: #3a0e53;
   --background: #160224;
   --font-family: "Inter", sans-serif;
+
+  --about:#341b55;
+  --btnaAbout:#6753ae;
 }
 
 [data-theme="light"] {
-  --background: #ffffff;
+  --background: #fff;
   --accent-color1: #000000;
   --accent-color2:#ffffff;
   --accent-color3: #777777;
@@ -51,6 +54,9 @@
   --borderLogin:#F5F0FE;
   --shadowInput:#c8bae5;
   --btnLogin:#9472ce;
+
+  --about:#f0f0f0;
+  --btnaAbout:#A16FF7;
 }
 
 [data-theme="dark"] {

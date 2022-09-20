@@ -1,3 +1,10 @@
+
+[data-theme="light"] {
+    .body-about{
+      // background-image: url(../../../../components/assets/img/imgquemsomos.png) !important;
+      background-size: cover;
+    }
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,8 +16,8 @@
     width: 100%;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
-    background-image: url(../../components/assets/img/imgquemsomos.png) !important;
-    background-size: cover;
+    // background-image: url(../../components/assets/img/imgquemsomos.png) !important;
+   background-color: var( --background);
 }
 
 .about{
@@ -31,6 +38,7 @@
     margin-bottom: 1rem;
     line-height: 4rem;
     font-family: Inter-SemiBold;
+    color: var(--accent-color1);
 }
 
 .about-text p{
@@ -39,11 +47,46 @@
     font-family: Inter-Regular;
     line-height: 1.5rem;
     margin: 10px 0px 0px;
+    color: var(--accent-color1);
 }
 
 .img-about {
   width: 550px;
   margin-left: 36px;
+}
+
+.image-container {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  .about-img {
+    img {
+      width: 550px;
+    }
+  }
+
+  .ellipse-container {
+    .ellipse {
+      z-index: -1;
+      position: absolute;
+      height: 13rem;
+      width: 13rem;
+      filter: blur(120px);
+    }
+
+    .pink {
+      top: 40%;
+      right: 40%;
+
+      background-color: var(--orange);
+    }
+
+    .orange {
+      bottom: 40%;
+      left: 40%;
+      background-color: var(--pink);
+    }
+  }
 }
 
 /* ----------- about --------------- */
@@ -56,7 +99,7 @@
 
 .texts-about{
     padding: 20px 25px;
-    background-color: #f0f0f0;
+    background-color: var(--about);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.20);
     color: #000;;
     border-radius: 20px;
@@ -71,10 +114,10 @@
 }
 
 .button-about a{
-    background-color: #A16FF7;
+    background-color: var(--btnaAbout);
     padding: 13PX 35PX;
     border: none ;
-    text-decoration: #A16FF7;
+    text-decoration: var(--btnaAbout);
     color: #fff;
     border-radius: 15px;
     font-family: Inter-Medium;
@@ -102,6 +145,12 @@
     margin-top: 1rem;
     line-height: 2rem;
     font-family: Inter-Regular;
+    color: var(--accent-color1);
+    
+    
+}
+p{
+  color: var(--accent-color1);
 }
 
 /* ------------about-------------- */
