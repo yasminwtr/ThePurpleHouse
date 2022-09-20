@@ -106,10 +106,10 @@ body::-webkit-scrollbar-thumb {
 
 /* worker profile */
 
-body {
+/* body {
   background-image: url(../../components/assets/img/imgFundo3.png);
   background-size: 100%;
-}
+} */
 
 .link-chat {
   text-decoration: none;

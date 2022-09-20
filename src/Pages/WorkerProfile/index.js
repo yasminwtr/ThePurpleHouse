@@ -158,7 +158,7 @@ const WorkerProfile = () => {
                 </>
                 :
                 <>
-                  <LeaveAvaliation />
+                  <LeaveAvaliation getReviewsByWorker={getReviewsByWorker}/>
                   <p id='number-avaliations'>{numberWorkerReviews}</p>
                 </>
               }

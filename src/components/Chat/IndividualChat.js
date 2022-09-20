@@ -55,9 +55,9 @@ const IndividualChat = (props) => {
         getMessages()
     };
 
-    useEffect(() => {
-        getMessages()
-    }, [messages])
+    // useEffect(() => {
+    //     getMessages()
+    // }, [messages])
 
     useEffect(() => {
         if (refBody.current.scrollHeight > refBody.current.offsetHeight) {
@@ -72,7 +72,7 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                <DeleteChat id='delete-chat-button'/>
+                <DeleteChat idChat={chat.idchat}/>
             </div>
 
             <div className='messages-chat'>
