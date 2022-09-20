@@ -40,24 +40,25 @@ const EditProfileWorker = (props) => {
   const [selectedUf, setSelectedUf] = useState(`${location.state.cityState}`);
   const [selectedCity, setSelectedCity] = useState(`${location.state.city}`);
 
-  const [img, setImg] = useState('')
+  const [image, setImage] = useState('')
 
-  const uploadImage = async () => {
-    // const dataUploadImage = new FormData();
-    // dataUploadImage.append("card", cardFile);
-    // console.log('dataUploadImage', dataUploadImage);
+  const attemptSave = async () => {
+    const data = new FormData();
+    data.append("image", image);
 
-    // ...
-    // Inserimos aqui nossa chamada POST/PUT
-    // para enviarmos nosso arquivo.
-
-    const response = await api.post('/updateworker', { img })
-    console.log('response.data', response.data);
-
+    axios({
+      method: "post",
+      url: "https://api.imgbb.com/1/upload?key=7313c33c5080a1cfde51ee1a33889274",
+      data: data,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (response) {
+        console.log(response);
+      });
   };
-
-  console.log('img', img);
-
 
   useEffect(() => {
     if (selectedUf === "0") {
@@ -96,16 +97,14 @@ const EditProfileWorker = (props) => {
       // if ((description) !== '') {
       const response = await api.put(`/updateworker/${idWorker}`, { descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp })
       const data = response;
-      console.log('updateUserData', data)
-
-      // uploadImage()
-
       location.state.description = data.description
       location.state.phone = data.phoneNumber
       location.state.price = data.priceService
       location.state.city = data.city
       location.state.cityState = data.localization
       location.state.whatsapp = data.whatsapp
+
+      attemptSave()
 
       setDescription(description)
       setPhoneNumber(phoneNumber)
@@ -218,10 +217,12 @@ const EditProfileWorker = (props) => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Adicione até 10 fotos de serviços já realizados.</Form.Label>
-              <Form.Control onChange={(event) => setImg(event.target.value)} type="file" multiple accept='.png, .jpeg, .jpg' />
-            </Form.Group>
+            <form enctype="multipart/form-data">
+              <Form.Group className="mb-3">
+                <Form.Label>Adicione até 10 fotos de serviços já realizados.</Form.Label>
+                <Form.Control onChange={(e) => setImage(e.target.files[0])} type="file" multiple accept='.png, .jpeg, .jpg' />
+              </Form.Group>
+            </form>
 
           </Form>
         </Modal.Body>
