@@ -12,9 +12,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const DeleteChat = (props) => {
-  const { idChat } = props
-  const [messages, setMessages] = useState([]);
-  const [chat, setChat] = useState([]);
+  const { chat, getChats } = props
 
   const [show, setShow] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -26,26 +24,26 @@ const DeleteChat = (props) => {
   const handleCloseSuccess = () => setShowSuccess(false);
 
   const deleteMessages = async () => {
+    const idChat = chat.idchat
     try {
-        const response = await api.delete(`/messages/${idChat}`);
-        setMessages(response.data)
+      await api.delete(`/messages/${idChat}`);
     } catch (error) {
-        console.log('erroooooooooooooo');
-    }
-}
-
-const deleteChat = async () => {
-  try {
-      const response = await api.delete(`/chat/${idChat}`);
-      setChat(response.data)
-  } catch (error) {
       console.log('erroooooooooooooo');
+    }
   }
-}
 
-  function deleteChatAndMessages() {
-    deleteMessages()
-    deleteChat()
+  const deleteChat = async () => {
+    const idChat = chat.idchat
+    try {
+      await api.delete(`/chat/${idChat}`);
+      setShowSuccess(true)
+      deleteMessages()
+      props.getChats()
+
+    } catch (error) {
+      console.log('erroooooooooooooo');
+      setShowError(true)
+    }
   }
 
   return (
@@ -70,7 +68,7 @@ const deleteChat = async () => {
 
         <Modal.Footer>
           <Button variant="danger"
-            onClick={() => { deleteChatAndMessages() }}
+            onClick={() => { deleteChat() }}
           >
             Excluir
           </Button>

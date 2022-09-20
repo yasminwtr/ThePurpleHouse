@@ -57,7 +57,7 @@ const Chat = () => {
             </div>
           </div>
 
-          {showChat ? <IndividualChat chat={selectedChat} /> : <NullChat/>}
+          {showChat ? <IndividualChat chat={selectedChat} getChats={getChats}/> : <NullChat/>}
         </div>
       </div>
     </div>

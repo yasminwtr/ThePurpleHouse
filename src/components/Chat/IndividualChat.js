@@ -15,7 +15,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const IndividualChat = (props) => {
     const { user } = useContext(AuthContext);
-    const { chat } = props
+    const { chat, getChats } = props
     const [messages, setMessages] = useState([])
     const [messageText, setMessageText] = useState('')
     const [showError, setShowError] = useState(false);
@@ -72,7 +72,7 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                <DeleteChat idChat={chat.idchat}/>
+                <DeleteChat chat={chat} getChats={getChats}/>
             </div>
 
             <div className='messages-chat'>

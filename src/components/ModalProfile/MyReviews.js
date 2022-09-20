@@ -39,6 +39,7 @@ const MyReviews = (props) => {
             await fetch(`http://localhost:3001/reviews/` + deleteId, requestOptions)
             setServicesReviewed(servicesReviewed.filter(worker => worker.idreview !== deleteId))
             setShowSuccess(true)
+            getServicesReviewed()
 
         } catch (error) {
             setShowError(true)
@@ -62,7 +63,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstNameWorker} {worker.lastNameWorker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
                                         <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
                                     </div>
 
@@ -81,7 +82,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstNameWorker} {worker.lastNameWorker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
@@ -100,7 +101,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstNameWorker} {worker.lastNameWorker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
@@ -119,7 +120,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstNameWorker} {worker.lastNameWorker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
@@ -138,7 +139,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstNameWorker} {worker.lastNameWorker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
