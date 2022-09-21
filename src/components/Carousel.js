@@ -22,7 +22,7 @@ export const Carousel = () => {
     }
   }
 
-  const log = () => console.log(image);
+  const log = () => console.log('image', image);
 
   useEffect(() => {
     showImage()
@@ -30,10 +30,29 @@ export const Carousel = () => {
 
   return (
     <div className='gallery'>
-      { image.forEach(image => (<p>{image.img}</p>))}
-      <p id='title-blocks'>Galeria de serviços</p>
 
+
+      {/* {image.forEach(image => (<p>{image.img}</p>))} */}
+      {image.map((image, index ) => (<img key={index} src={image.img} width={104} />))}
+
+      {/* <img className='imgBoxCategories' src={category.icon} width={64} /> */}
+
+      <p>aaaaaaaaaaaaaaaa</p>
+      {/* 
+      {services.map((category, index) => (
+              <Grid className="grid-categories" xs={2} key={index}>
+                <Col xs={8} onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
+                  <img className='imgBoxCategories' src={category.icon} width={64} />
+                  <p>{category.titleservice}</p>
+                  <p className='p-boxCategories'>Ver mais</p>
+                </Col>
+              </Grid>
+            ))} */}
+
+
+      <p id='title-blocks'>Galeria de serviços</p>
       <button onClick={log}>OOOOOOIIIII</button>
+
 
       <UploadImage />
 
@@ -46,6 +65,7 @@ export const Carousel = () => {
               <ol className='carousel__viewport'>
                 <li id='carousel__slide1' tabIndex='0' className='carousel__slide'>
                   <div className='carousel__snapper'>
+                  {image.map((image, index ) => (<img key={index} src={image.img} width={104} />))}
                     <a className='carousel__prev'>Go to last slide</a>
                     <a className='carousel__next'>Go to next slide</a>
                   </div>
