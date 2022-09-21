@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { UploadOutlined } from '@ant-design/icons';
-import '../../src/Pages/WorkerProfile/styles.css'
 import { Button, Upload } from 'antd';
 import axios from 'axios';
 import api from 'api'

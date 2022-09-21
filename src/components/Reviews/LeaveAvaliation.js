@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import '../../Pages/WorkerProfile/styles.css'
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';

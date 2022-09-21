@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from '../../components/Reviews/LeaveAvaliation'
 import EditProfileWorker from '../../components/ModalProfile/EditProfileWorker'
