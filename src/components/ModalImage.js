@@ -9,21 +9,15 @@ import axios from 'axios';
 import api from 'api'
 import { useLocation } from 'react-router-dom';
 
-
 export const UploadImage = (props) => {
 
   const location = useLocation();
-
   const idWorker = location.state.workerId
-
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const [show, setShow] = useState(false);
-
   const [image, setImage] = useState([])
-  const [file, setFile] = useState([])
+  const [file, setFile] = useState([]);
 
   const attemptSave = async () => {
     const data = new FormData();
@@ -38,35 +32,26 @@ export const UploadImage = (props) => {
       .then((response) => {
         response = response.data.data.url
 
-        setFile(file)
         setFile(response)
 
-        showImage()
-
-        console.log('response', response);
-        console.log('file', file);
-
+        saveImage()
       })
       .catch((response) => {
-        console.log(response);
+        console.log('response @ modalImage', response);
       });
   };
 
-  const showImage = async () => {
+  const saveImage = async () => {
     try {
       const response = await api.post(`/postImage`, { img: file, idWorker: idWorker });
-      // setFile(response.data)
-      console.log('fileeeeeeee',file);
-      console.log('response',response);
+      console.log('file @ saveImage', file);
     } catch (error) {
-      // setFile([])
       console.log('error', error);
     }
   }
 
   return (
     <div>
-
       <Button onClick={handleShow} icon={<UploadOutlined />}>Adicionar Imagens</Button>
 
       <Modal
@@ -93,7 +78,6 @@ export const UploadImage = (props) => {
                 <Button type='submit' icon={<UploadOutlined />}>Escolher Arquivos</Button>
               </Upload>
             </Form.Group>
-
           </Form>
         </Modal.Body>
 

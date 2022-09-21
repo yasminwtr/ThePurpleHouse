@@ -1,34 +1,72 @@
-import { UploadOutlined } from '@ant-design/icons';
-import { Button, message, Upload } from 'antd';
-import { UploadImage } from './ModalImage';
+import { useEffect, useState } from 'react';
+import { UploadImage } from './ModalImage'
+import { useLocation } from 'react-router-dom';
+
+import api from 'api';
 
 export const Carousel = () => {
-  // const props = {
-  //   name: "file",
-  //   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-  //   headers: {
-  //     authorization: "authorization-text"
-  //   },
 
-  //   onChange(info) {
-  //     if (info.file.status !== "uploading") {
-  //       console.log(info.file, info.fileList);
-  //     }
+  const location = useLocation();
+  const idWorker = location.state.workerId
 
-  //     if (info.file.status === "done") {
-  //       message.success(`${info.file.name} file uploaded successfully`);
-  //     } else if (info.file.status === "error") {
-  //       message.error(`${info.file.name} file upload failed.`);
-  //     }
-  //   }
-  // };
+  const [image, setImage] = useState([])
+
+  const showImage = async () => {
+    try {
+      const response = await api.get(`/getImageWorker/${idWorker}`, { idWorker: idWorker });
+
+      setImage(response.data)
+
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
+
+  const log = () => console.log(image);
+
+  useEffect(() => {
+    showImage()
+  }, [])
 
   return (
     <div className='gallery'>
-
+      { image.forEach(image => (<p>{image.img}</p>))}
       <p id='title-blocks'>Galeria de serviços</p>
-    
-      <UploadImage/>
+
+      <button onClick={log}>OOOOOOIIIII</button>
+
+      <UploadImage />
+
+      {
+        [...Array(5)].map((_, index) => {
+          // const ratingValue = index + 1;
+
+          return (
+            <section className='carousel' aria-label='Gallery'>
+              <ol className='carousel__viewport'>
+                <li id='carousel__slide1' tabIndex='0' className='carousel__slide'>
+                  <div className='carousel__snapper'>
+                    <a className='carousel__prev'>Go to last slide</a>
+                    <a className='carousel__next'>Go to next slide</a>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          )
+        })
+      }
+
+      {/* {
+        [...Array(5)].map((_, index) => {
+          const ratingValue = index + 1;
+
+          return (
+            <label key={index}>
+              <FaStar color={ratingValue <= Math.floor(parseInt(averageRating.avg)) ? '#fccc3e' : '#d9d9d9'} size={24} />
+            </label>
+          )
+        })
+      } */}
 
       <section className='carousel' aria-label='Gallery'>
         <ol className='carousel__viewport'>

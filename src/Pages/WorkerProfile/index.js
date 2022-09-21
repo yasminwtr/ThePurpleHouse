@@ -33,7 +33,6 @@ const WorkerProfile = () => {
     const idWorker = location.state.workerId
     try {
       const response = await api.get(`/reviewsByWorker/${idWorker}`);
-      console.log(response);
       return setWorkerReviews(response.data)
 
     } catch (error) {

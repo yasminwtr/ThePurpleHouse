@@ -17,7 +17,6 @@ const AverageRating = (props) => {
     
     try {
       const response = await api.get(`/averageRatingByWorker/${idWorker}`);
-      console.log(response);
       return setAverageRating(response.data[0])
 
     } catch (error) {
