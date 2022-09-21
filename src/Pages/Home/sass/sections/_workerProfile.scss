@@ -7,6 +7,8 @@
 .all-worker-profile {
   display: flex;
   flex-wrap: wrap;
+  letter-spacing: -0.5px;
+  line-height: -2px;
 }
 
 .upload-list-inline .ant-upload-list-item {
@@ -141,14 +143,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-worker-profile {
-  background-color: #A58AD2;
+  background-color: #a58ad2db;
   text-align: center;
   border-radius: 14px 14px 0 0;
   padding: 10px;
 }
 
 .part2-worker-profile {
-  border-color: #A58AD2;
+  border-color: #fff;
   border-width: 2px;
   border-style: solid;
   border-radius: 0 0 14px 14px;
@@ -266,7 +268,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   font-family: Inter-Regular;
   font-size: 1.4rem;
-  line-height: 4rem;
+  line-height: 1rem;
 }
 
 /* container de avaliações */
@@ -276,16 +278,18 @@ body::-webkit-scrollbar-thumb {
 }
 
 .feed-avaliations {
-  border-color: #a68ad2d2;
+  border-color: #a68ad207;
   border-width: 2px;
   border-style: solid;
-  border-radius: 12px;
-  padding: 20px 30px 20px 30px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
   background-color: #fff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
-  min-height: 300px;
-  max-height: 300px;
+  box-shadow: 0px 1px 6px 1px rgb(0 0 0 / 25%);
+  min-height: 320px;
+  max-height: 320px;
   overflow-y: scroll;
+  margin-top: 7vh;
+  width: 420px;
 }
 
 .feed-avaliations::-webkit-scrollbar {
@@ -351,7 +355,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #icon-avaliation {
-  width: 105%;
+  width: 90%;
   height: fit-content;
   margin: 0;
 }
@@ -369,7 +373,7 @@ body::-webkit-scrollbar-thumb {
   text-align: justify;
   font-size: 16px;
   font-family: Inter-Regular;
-  margin-block-end: 1.6em;
+  margin-block-end: 1.4em;
 }
 
 input[type='radio'] {

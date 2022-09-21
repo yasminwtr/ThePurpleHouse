@@ -58,7 +58,7 @@ export const Carousel = () => {
       {/* {image.map((image, index) => (<img key={index} src={image.img} width={104} />))} */}
 
       <p id='title-blocks'>Galeria de serviços</p>
-      <button onClick={log}>OOOOOOIIIII</button>
+      {/* <button onClick={log}>OOOOOOIIIII</button> */}
 
       <UploadImage />
 

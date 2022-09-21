@@ -48,10 +48,9 @@ body::-webkit-scrollbar-thumb {
 
 .all-profile {
   display: flex;
-  /* flex-direction: row !important; */
   width: 100%;
-  /* background-image: url(../../components/assets/img/imgFundo3.png) !important;
-    background-size: 100%; */
+  letter-spacing: -0.5px;
+
 }
 
 .container-profile {
@@ -64,9 +63,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-profile {
-  background-color: var(--profile);
+  background-color: #a58ad2db;
   text-align: center;
-  border-radius: 32px 32px 0 0;
+  border-radius: 14px 14px 0 0;
   padding: 10px;
   min-height: 170px;
   max-height: 170px;
@@ -77,7 +76,7 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--profile2);
   border-width: 2px;
   border-style: solid;
-  border-radius: 0 0 32px 32px;
+  border-radius: 0 0 14px 14px;
   padding: 40px;
   padding-bottom: 15px;
   display: flex;
@@ -97,8 +96,9 @@ body::-webkit-scrollbar-thumb {
 
 #name-profile {
   font-size: 24px;
-  font-family: Inter-Medium;
+  font-family: Inter-Regular;
   color: #fff;
+  letter-spacing: -1px;
 }
 
 .info1-profile {
@@ -144,7 +144,7 @@ body::-webkit-scrollbar-thumb {
 
 #service-text-profile {
   margin-block-end: -3px;
-  font-size: 16px;
+  font-size: 17px;
   font-family: Inter-Regular;
   color: var(--titleprofile1);
 }
@@ -160,7 +160,7 @@ body::-webkit-scrollbar-thumb {
   border-width: 2px;
   border-style: solid;
   width: 17.5%;
-  border-radius: 32px;
+  border-radius: 14px;
   padding: 30px;
   margin: 4% auto auto -1%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);

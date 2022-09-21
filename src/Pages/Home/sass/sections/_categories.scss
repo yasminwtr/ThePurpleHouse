@@ -6,6 +6,10 @@
   .container-categories-search {
     background-color: #fff;
   }
+
+  .boxCategories {
+    background-color: #fff;
+  }
 }
 
 @font-face {
@@ -52,7 +56,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-image: url(../../../../components/assets/img/imgFundo3.png) !important; 
   user-select: none;
 }
 
@@ -67,6 +70,8 @@
   margin-bottom: 50px;
   text-align: center;
   color: var(--accent-color6);
+  line-height: 30px;
+  letter-spacing: -1px;
 }
 
 .grid-categories {
@@ -87,6 +92,8 @@
   font-size: 12px !important;
   font-family: Inter-Regular;
   margin-top: -18px;
+  line-height: 2vh;
+  letter-spacing: 1px;
 }
 
 .imgBoxCategories {
@@ -188,6 +195,7 @@
   margin: auto 0 auto;
   margin-right: 10px;
   color: var(--accent-color1);
+  letter-spacing: -1px;
 }
 
 .title-service-category {
@@ -197,6 +205,7 @@
   justify-content: center;
   font-family: Inter-Regular;
   color: var(--accent-color6);
+  letter-spacing: -1px;
 }
 
 .tune-icon {
