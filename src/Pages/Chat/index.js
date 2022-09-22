@@ -11,6 +11,8 @@ const Chat = () => {
   const { user } = useContext(AuthContext);
   const [chats, setChats] = useState([])
   const [selectedChat, setSelectedChat] = useState(null)
+  const [filteredChats, setFilteredChats] = useState([]);
+  const [searchInputChat, setSearchInputChat] = useState('');
   const [showChat, setShowChat] = useState(false)
 
   useEffect(() => {
@@ -27,6 +29,19 @@ const Chat = () => {
     }
   }
 
+  const searchChats = (searchValue) => {
+    setSearchInputChat(searchValue)
+    if (searchInputChat !== '') {
+        const results = chats.filter((chat) => {
+            return Object.values(chat).join('').toLowerCase().includes(searchInputChat.toLowerCase())
+        })
+        setFilteredChats(results)
+    }
+    else{
+        setFilteredChats(chats)
+    }
+}
+
   useEffect(() => {
     getChats()
   }, []);
@@ -41,6 +56,7 @@ const Chat = () => {
                 <input
                   className='input-search-chat'
                   placeholder='Pesquisar usuário'
+                  onChange={(e) => searchChats(e.target.value)}
                 />
 
                 <SearchIcon id='search-icon-chat' />
@@ -48,16 +64,35 @@ const Chat = () => {
             </div>
 
             <div className='list-chat-profiles'>
-              {chats.map((chat) => (
+              {searchInputChat.length > 1 ? (
+                filteredChats.map((chat) => {
+                  return (
+                    <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+                      <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+                    </div>
+                  )
+                })
+              ) : (
+                chats.map((chat) => {
+                  return (
+                    <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+                      <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+                    </div>
+                  )
+                })
+              )}
+              {/* {chats.map((chat) => (
                 <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
                   <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
                   <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
 
-          {showChat ? <IndividualChat chat={selectedChat} getChats={getChats}/> : <NullChat/>}
+          {showChat ? <IndividualChat chat={selectedChat} getChats={getChats} /> : <NullChat />}
         </div>
       </div>
     </div>
