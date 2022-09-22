@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState, useRef } from 'react'
-import '../../Pages/Chat/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SendIcon from '@mui/icons-material/SendRounded'
 import AuthContext from '../../services/contexts/auth'

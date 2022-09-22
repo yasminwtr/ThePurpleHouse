@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import Grid from '@mui/material/Unstable_Grid2';
-import api from '../../api'
+import api from 'api'
 import 'animate.css'
 import FilterWorkers from 'components/Categories/filterWorkers';
 

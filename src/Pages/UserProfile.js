@@ -2,17 +2,17 @@ import React, { useContext, useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import EditAccount from '../../components/ModalProfile/EditAccount'
-import DeleteAccount from '../../components/ModalProfile/DeleteAccount'
-import ServicesReviewed from '../../components/ModalProfile/ServicesReviewed'
-import AnnounceService from '../../components/ModalProfile/AnnounceService'
-import CancelService from '../../components/ModalProfile/CancelService'
-import Logout from '../../components/ModalProfile/Logout'
+import EditAccount from '../components/ModalProfile/EditAccount'
+import DeleteAccount from '../components/ModalProfile/DeleteAccount'
+import ServicesReviewed from '../components/ModalProfile/ServicesReviewed'
+import AnnounceService from '../components/ModalProfile/AnnounceService'
+import CancelService from '../components/ModalProfile/CancelService'
+import Logout from '../components/ModalProfile/Logout'
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
-import AuthContext from '../../services/contexts/auth'
-import api from '../../api'
+import AuthContext from '../services/contexts/auth'
+import api from 'api'
 import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {

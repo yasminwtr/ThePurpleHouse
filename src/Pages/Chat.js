@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchIcon from '@mui/icons-material/Search';
-import IndividualChat from '../../components/Chat/IndividualChat'
-import NullChat from '../../components/Chat/NullChat'
-import AuthContext from '../../services/contexts/auth'
-import api from '../../api'
+import IndividualChat from '../components/Chat/IndividualChat'
+import NullChat from '../components/Chat/NullChat'
+import AuthContext from '../services/contexts/auth'
+import api from '../api'
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
@@ -32,15 +31,15 @@ const Chat = () => {
   const searchChats = (searchValue) => {
     setSearchInputChat(searchValue)
     if (searchInputChat !== '') {
-        const results = chats.filter((chat) => {
-            return Object.values(chat).join('').toLowerCase().includes(searchInputChat.toLowerCase())
-        })
-        setFilteredChats(results)
+      const results = chats.filter((chat) => {
+        return Object.values(chat).join('').toLowerCase().includes(searchInputChat.toLowerCase())
+      })
+      setFilteredChats(results)
     }
-    else{
-        setFilteredChats(chats)
+    else {
+      setFilteredChats(chats)
     }
-}
+  }
 
   useEffect(() => {
     getChats()

@@ -1,17 +1,16 @@
 
 import React, { useState, useContext } from 'react'
-import logo from '../../assets/img/logo2.png'
+import logo from '../assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import IconButton from '@mui/material/IconButton';
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import { Link } from 'react-router-dom'
-import AuthContext from '../../services/contexts/auth'
+import AuthContext from '../services/contexts/auth'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
-
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -70,7 +69,7 @@ function Login() {
       navigate("/Login", { replace: true });
     }
   }
-  
+
   return (
     <div className='bodylogin'>
       <div className='header-login'>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 // import './styles.css'
-import logo from '../../assets/img/logo2.png'
+import logo from '../assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
@@ -10,10 +10,10 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded';
 import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
-import api from '../../api'
+import api from '../api'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import AuthContext from '../../services/contexts/auth'
+import AuthContext from '../services/contexts/auth'
 import { useNavigate } from "react-router-dom";
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { HiOutlineEye } from 'react-icons/hi';
@@ -139,7 +139,7 @@ const Cadastro = () => {
                           <FaUser id='iconRegister' />
                           <input
                             name="firstName"
-                            onChange={(e) => {setFirstName(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}}
+                            onChange={(e) => { setFirstName(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)) }}
                             id='firstName'
                             placeholder='Nome'
                             type={'text'}
@@ -151,7 +151,7 @@ const Cadastro = () => {
                         <div className='containerInputRegister input-lastname'>
                           <input
                             name="lastName"
-                            onChange={(e) => {setLastName(e.target.value.replace(/(^\w|\s\w)/g, m => m.toUpperCase()))}}
+                            onChange={(e) => { setLastName(e.target.value.replace(/(^\w|\s\w)/g, m => m.toUpperCase())) }}
                             id='lastName'
                             placeholder='Sobrenome'
                             type={'text'}

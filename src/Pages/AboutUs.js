@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Team from '../../assets/img/Collab.png'
+import Team from '../assets/img/Collab.png'
 import { Link } from 'react-router-dom'
-import AuthContext from '../../services/contexts/auth'
+import AuthContext from '../services/contexts/auth'
 
 const About = () => {
   const { signed } = useContext(AuthContext);

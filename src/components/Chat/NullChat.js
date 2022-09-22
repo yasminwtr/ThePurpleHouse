@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../Pages/Chat/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ChatNull from '../../assets/img/nullchat.png'
 

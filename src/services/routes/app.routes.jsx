@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Footer from "../../components/Footer";
-import About from "Pages/About";
-import Profile from "Pages/Profile";
+import About from "Pages/AboutUs";
+import Profile from "Pages/UserProfile";
 import WorkerProfile from "Pages/WorkerProfile";
 import Chat from 'Pages/Chat'
 import Categories from "Pages/Categories";

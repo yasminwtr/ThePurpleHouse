@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
 import Footer from "components/Footer";
 import Navbar from "components/Navbar/Navbar";
-import Home from "Pages/Home/Home";
-import About from "Pages/About";
+import Home from "Pages/Home";
+import About from "Pages/AboutUs";
 import Registration from "Pages/Registration"
 import Login from "Pages/Login"
 import AuthContext from "services/contexts/auth";
