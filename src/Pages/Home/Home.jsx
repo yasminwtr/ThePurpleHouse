@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { BsChevronUp } from "react-icons/bs";
-import home from "./assets/landing.png";
-import super1 from "./assets/super1.png";
-import super2 from "./assets/super2.png";
-import super3 from "./assets/super3.png";
 
-import encontre from "./assets/busca.png";
-import escolha from "./assets/selecao.png";
-import negocie from "./assets/chat.png";
-import avaliacao from "./assets/avaliacao.png";
+import home from "../../assets/img/landing.png";
+import super1 from "../../assets/img/super1.png";
+import super2 from "../../assets/img/super2.png";
+import super3 from "../../assets/img/super3.png";
+import encontre from "../../assets/img/busca.png";
+import escolha from "../../assets/img/selecao.png";
+import negocie from "../../assets/img/chat.png";
+import avaliacao from "../../assets/img/avaliacao.png";
 
 import { Link } from "react-router-dom";
 import scrollreveal from "scrollreveal";
-import './sass/index.scss'
+import '../../sass/main.scss'
 
 
 export default function Home() {

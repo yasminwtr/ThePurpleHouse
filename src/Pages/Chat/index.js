@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchIcon from '@mui/icons-material/Search';
 import IndividualChat from '../../components/Chat/IndividualChat'
 import NullChat from '../../components/Chat/NullChat'
-import AuthContext from '../../components/contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import api from '../../api'
 
 const Chat = () => {

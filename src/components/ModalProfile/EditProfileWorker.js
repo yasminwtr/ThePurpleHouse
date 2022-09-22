@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import AuthContext from '../contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import api from '../../api';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Snackbar from '@mui/material/Snackbar';

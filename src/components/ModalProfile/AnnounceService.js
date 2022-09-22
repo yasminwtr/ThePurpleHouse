@@ -9,7 +9,7 @@ import AnnounceIcon from '@mui/icons-material/CampaignRounded'
 import api from '../../api';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import AuthContext from '../contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import axios from 'axios';
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { Button } from 'antd';

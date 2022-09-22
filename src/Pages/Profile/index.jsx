@@ -11,7 +11,7 @@ import Logout from '../../components/ModalProfile/Logout'
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
-import AuthContext from '../../components/contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import api from '../../api'
 import { useNavigate } from 'react-router-dom';
 

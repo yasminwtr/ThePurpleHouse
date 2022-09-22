@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import AuthContext from '../contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';

@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AuthContext from '../contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import { FaStar } from 'react-icons/fa'
 import Button from 'react-bootstrap/Button';
 import Snackbar from '@mui/material/Snackbar';

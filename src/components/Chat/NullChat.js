@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../Pages/Chat/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ChatNull from '../../components/assets/img/nullchat.png'
+import ChatNull from '../../assets/img/nullchat.png'
 
 const NullChat = () => {
     return (
