@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../contexts/auth'
@@ -11,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
+import { Button } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -119,7 +119,7 @@ const DeleteAccount = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="danger"
+          <Button id='delete-button-modals-profile'
             //onClick={() => {deleteUser(user.idperson)}}
             onClick={() => { validationPass() }}
           >

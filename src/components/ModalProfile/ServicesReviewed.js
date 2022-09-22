@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import AuthContext from '../contexts/auth'
 import AvaliationIcon from '@mui/icons-material/StarRounded'
@@ -74,7 +74,7 @@ const Avaliations = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button id='close-button-modals-profile' onClick={handleClose}>
             Fechar
           </Button>
         </Modal.Footer>

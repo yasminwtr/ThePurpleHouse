@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
@@ -8,6 +7,7 @@ import api from '../../api';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../contexts/auth'
+import { Button } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -91,7 +91,7 @@ const CancelService = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="danger" onClick={() => deleteService()}>
+          <Button id='delete-button-modals-profile' onClick={() => deleteService()}>
             Cancelar serviço
           </Button>
         </Modal.Footer>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -13,6 +12,7 @@ import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../contexts/auth'
 import axios from 'axios';
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
+import { Button } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -143,6 +143,7 @@ const AnnounceService = (props) => {
                 maxLength={300}
                 onChange={(event) => setDescription(event.target.value)}
                 id='description'
+                autoFocus
               />
             </Form.Group>
 
@@ -154,7 +155,6 @@ const AnnounceService = (props) => {
                   className='containerInputEdit-tel'
                   type={"tel"}
                   placeholder='Telefone com DDD'
-                  autoFocus
                   maxLength={45}
                   id='phoneNumber'
                   onChange={(event) => setPhoneNumber(event.target.value)}
@@ -214,17 +214,12 @@ const AnnounceService = (props) => {
                 id='whatsapp'
               />
             </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Por fim, adicione até 10 fotos de serviços já realizados!</Form.Label>
-              <Form.Control type="file" multiple accept='.png, .jpeg, .jpg' />
-            </Form.Group>
           </Form>
 
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="success" onClick={() => registerWorker()}>
+          <Button id='save-button-modals-profile' onClick={() => registerWorker()}>
             Anunciar serviço
           </Button>
         </Modal.Footer>

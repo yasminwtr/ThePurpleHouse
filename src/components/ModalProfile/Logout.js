@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import AuthContext from '../contexts/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import LogoutIcon from '@mui/icons-material/ExitToAppRounded'
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const Logout = (props) => {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="danger" onClick={() => signOutRedirect()}>
+              <Button id='delete-button-modals-profile' onClick={() => signOutRedirect()}>
                 Sair
               </Button>
             </Modal.Footer>

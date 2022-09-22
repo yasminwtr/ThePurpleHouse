@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -199,7 +199,7 @@ const EditProfileWorker = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="success" onClick={() => updateProfileWorker()}>
+          <Button id='save-button-modals-profile' onClick={() => updateProfileWorker()}>
             Salvar
           </Button>
         </Modal.Footer>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../contexts/auth'
@@ -190,7 +190,7 @@ const EditAccount = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="success" onClick={() => updateUser()}>
+          <Button id='save-button-modals-profile' onClick={() => updateUser()}>
             Salvar
           </Button>
         </Modal.Footer>

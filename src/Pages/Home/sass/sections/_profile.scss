@@ -229,6 +229,29 @@ select:focus {
   border-color: #6c757d !important;
 }
 
+#save-button-modals-profile, #delete-button-modals-profile{
+  height: 40px;
+  border-radius: 14px;
+}
+
+#save-button-modals-profile:hover{
+  color: #71b36b;
+  border-color: #71b36b;
+  background-color: #fff;
+}
+
+#delete-button-modals-profile:hover{
+  color: #b36b6b;
+  border-color: #b36b6b;
+  background-color: #fff;
+}
+
+#close-button-modals-profile:hover{
+  color: #4a5258;
+  border-color: #6c757d;
+  background-color: #fff;
+}
+
 /* my avaliations */
 .feed-avaliations-modal {
   min-height: 300px;
