@@ -7,7 +7,7 @@
 .all-worker-profile {
   display: flex;
   flex-wrap: wrap;
-  letter-spacing: -0.5px;
+  // letter-spacing: -0.5px;
   line-height: -2px;
 }
 
@@ -153,7 +153,7 @@ body::-webkit-scrollbar-thumb {
   border-color: #fff;
   border-width: 2px;
   border-style: solid;
-  border-radius: 0 0 14px 14px;
+  border-radius: 0 0 32px 32px;
   padding: 40px;
   padding-bottom: 15px;
   background-color: rgba(255, 255, 255, 0.795);
@@ -238,7 +238,7 @@ body::-webkit-scrollbar-thumb {
   margin-block-start: 0em;
   margin-block-end: 2em;
   font-size: 16px;
-  font-family: Inter-Regular;
+  font-family: Inter-Regular !important;
 }
 
 .contact-worker-profile {
@@ -279,12 +279,11 @@ body::-webkit-scrollbar-thumb {
 
 .feed-avaliations {
   border-color: #a68ad207;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 10px;
-  padding: 10px 20px 10px 20px;
+  border: 2px solid #d7cfe6;
+  border-radius: 20px;
+  padding: 15px 20px 10px 20px;
   background-color: #fff;
-  box-shadow: 0px 1px 6px 1px rgb(0 0 0 / 25%);
+  box-shadow: 0px 1px 6px 1px rgba(131, 131, 131, 0.25);
   min-height: 320px;
   max-height: 320px;
   overflow-y: scroll;
@@ -332,16 +331,16 @@ body::-webkit-scrollbar-thumb {
 #number-avaliations {
   text-align: end;
   font-size: 14px;
-  font-family: Inter-Regular;
-  font-weight: 300;
-  width: 51%;
+  padding: 5px 0 5px 0;
+  font-family: Inter-Medium;
+  width: 56%;
 }
 
 #number-avaliations-else {
   text-align: end;
+  padding: 5px 0 5px 0;
   font-size: 14px;
-  font-family: Inter-Regular;
-  font-weight: 300;
+  font-family: Inter-Medium;
   width: 100%;
 }
 

@@ -49,8 +49,8 @@ body::-webkit-scrollbar-thumb {
 .all-profile {
   display: flex;
   width: 100%;
-  letter-spacing: -0.5px;
-
+  // letter-spacing: -0.5px; eu tirei pq achei as letras praticamente grudadas, me deu agonia de ler kk
+  // mas se vc gostou mt pode botar dnv
 }
 
 .container-profile {
@@ -98,7 +98,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 24px;
   font-family: Inter-Regular;
   color: #fff;
-  letter-spacing: -1px;
+  // letter-spacing: -1px;
 }
 
 .info1-profile {
@@ -162,7 +162,7 @@ body::-webkit-scrollbar-thumb {
   width: 17.5%;
   border-radius: 14px;
   padding: 30px;
-  margin: 4% auto auto -1%;
+  margin: 4.5% auto auto -1%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   min-height: 490px;
   max-height: 490px;
