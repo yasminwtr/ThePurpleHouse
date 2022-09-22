@@ -22,9 +22,10 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const EditAccount = (props) => {
   const { user } = useContext(AuthContext)
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(`${user.email}`)
+  const [atualPassword, setAtualPassword] = useState('')
   const [password, setPassword] = useState('')
-  const [birthDate, setBirthDate] = useState('')
+  const [birthDate, setBirthDate] = useState(`${user.birthdate}`)
 
   const [show, setShow] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -52,33 +53,33 @@ const EditAccount = (props) => {
     event.preventDefault();
   };
 
-    const updateUser = async () => {
-      const idPerson = user.idperson;
-      try {
-          if ((email && password) !== '') {
-            const response = await api.put(`/users/${idPerson}`, { email, password })
-            const data = response;
-            console.log('updateUserData', data);
-      
-            user.email = data.email;
-            user.password = data.password;
+  const updateUser = async () => {
+    const idPerson = user.idperson;
+    try {
+      if ((email && password) !== '') {
+        const response = await api.put(`/users/${idPerson}`, { email, password })
+        const data = response;
+        console.log('updateUserData', data);
 
-            setEmail(email)
-            setPassword(password)
+        user.email = data.email;
+        user.password = data.password;
 
-            setShowSuccess(true)
-            setShow(false)
-            console.log('valores update:', 'email: ',email,';','senha: ',password, ';');
-            
-          }
-          else {
-              setShowError(true)
-          }
-      } catch (error) {
-        console.log(error)
-        console.log('nao funfou');
+        setEmail(email)
+        setPassword(password)
+
+        setShowSuccess(true)
+        setShow(false)
+        console.log('valores update:', 'email: ', email, ';', 'senha: ', password, ';');
+
       }
-    } 
+      else {
+        setShowError(true)
+      }
+    } catch (error) {
+      console.log(error)
+      console.log('nao funfou');
+    }
+  }
 
   return (
     <div>
@@ -100,20 +101,21 @@ const EditAccount = (props) => {
 
         <Modal.Body>
           <Form>
-            <Button variant="btn btn-light" className="mb-3" onClick={() => setModalInformations(!modalInformations)}>
-              Informações Pessoais
-            </Button>
-            <Button variant="btn btn-light" className="mb-3" onClick={() => setModalPassword(!modalPassword)}>
-              <KeyIcon />
-              Senha
-            </Button>
+            <div className='div-buttons-modal'>
+              <Button className='edit-profile-buttons-modal mb-3' onClick={() => setModalInformations(!modalInformations)}>
+                Informações pessoais
+              </Button>
+              <Button className='edit-profile-buttons-modal right-button-modal mb-3' onClick={() => setModalPassword(!modalPassword)}>
+                Senha
+              </Button>
+            </div>
             {modalInformations ?
               <div>
                 <Form.Group className="mb-3">
                   <Form.Label>E-mail</Form.Label>
                   <Form.Control
                     type={"email"}
-                    placeholder={user.email}
+                    value={email}
                     autoFocus
                     maxLength={45}
                     id='emailEdit'
@@ -123,10 +125,11 @@ const EditAccount = (props) => {
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label>Data de Nascimento</Form.Label>
+                  <Form.Label>Data de nascimento</Form.Label>
                   <Form.Control
                     onChange={(event) => setBirthDate(event.target.value)}
                     type={'date'}
+                    value={birthDate}
                   />
                 </Form.Group>
               </div>
@@ -135,16 +138,16 @@ const EditAccount = (props) => {
             }
             {modalPassword ?
               <div>
-                <Form.Group >
-                  <Form.Label>Senha Atual</Form.Label>
+                <Form.Group className="mb-3">
+                  <Form.Label>Senha atual</Form.Label>
                   <div className='containerInputEdit'>
                     <Form.Control
                       type={values.showPassword ? 'text' : 'password'}
-                      value={values.password}
+                      value={atualPassword}
                       placeholder="Digite a sua senha atual"
                       maxLength={25}
                       id='password-edit'
-                      onChange={(event) => setPassword(event.target.value)}
+                      onChange={(event) => setAtualPassword(event.target.value)}
                     />
 
                     <div>
@@ -164,7 +167,7 @@ const EditAccount = (props) => {
                   <div className='containerInputEdit'>
                     <Form.Control
                       type={values.showPassword ? 'text' : 'password'}
-                      value={values.password}
+                      value={password}
                       placeholder="Nova senha"
                       maxLength={25}
                       id='password-edit'

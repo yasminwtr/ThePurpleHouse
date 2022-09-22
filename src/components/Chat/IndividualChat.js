@@ -55,6 +55,15 @@ const IndividualChat = (props) => {
         getMessages()
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            sendMessage()
+
+            setMessageText('');
+            getMessages()
+        }
+      }
+
     // useEffect(() => {
     //     getMessages()
     // }, [messages])
@@ -72,7 +81,7 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                <DeleteChat chat={chat} getChats={getChats}/>
+                <DeleteChat chat={chat} getChats={getChats} />
             </div>
 
             <div className='messages-chat'>
@@ -89,6 +98,7 @@ const IndividualChat = (props) => {
                     placeholder='Digite sua mensagem aqui'
                     onChange={(event) => setMessageText(event.target.value)}
                     value={messageText}
+                    onKeyPress={handleKeyPress}
                 />
 
                 <SendIcon id='send-icon-chat' onClick={handleSendMessage} />

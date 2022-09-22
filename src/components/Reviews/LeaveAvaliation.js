@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../contexts/auth'
@@ -108,7 +108,7 @@ const LeaveAvaliation = (props) => {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="success" onClick={() => registerReview()}>
+              <Button id='save-button-modals-profile' onClick={() => registerReview()}>
                 Enviar avaliação
               </Button>
             </Modal.Footer>
