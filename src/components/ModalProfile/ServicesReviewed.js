@@ -3,7 +3,7 @@ import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
-import AuthContext from '../contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import AvaliationIcon from '@mui/icons-material/StarRounded'
 import MyReviews from './MyReviews'
 

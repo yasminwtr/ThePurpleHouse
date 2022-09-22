@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeaveAvaliation from '../../components/Reviews/LeaveAvaliation'
 import EditProfileWorker from '../../components/ModalProfile/EditProfileWorker'
-import whatsapp from '../../components/assets/img/whatsapp.png'
+import whatsapp from '../../assets/img/whatsapp.png'
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import PhoneIcon from '@mui/icons-material/LocalPhoneRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
@@ -12,7 +12,7 @@ import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../../api'
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import WorkerReviews from '../../components/Reviews/WorkerReviews';
-import AuthContext from '../../components/contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import AverageRating from '../../components/Reviews/AverageRating'
 import { Carousel } from '../../components/Carousel';
 

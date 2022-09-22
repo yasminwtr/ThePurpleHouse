@@ -1,15 +1,14 @@
 
 import React, { useState, useContext } from 'react'
-import logo from '../../components/assets/img/logo2.png'
+import logo from '../../assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
 import IconButton from '@mui/material/IconButton';
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
 import { Link } from 'react-router-dom'
-import AuthContext from '../../components/contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
-// import './styles.css'
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 

@@ -6,7 +6,7 @@ import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
 import api from '../../api';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import AuthContext from '../contexts/auth'
+import AuthContext from 'services/contexts/auth';
 import { Button } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {

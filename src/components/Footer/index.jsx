@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo1 from '../assets/img/logo1.png'
-import AuthContext from '../contexts/auth'
+import logo1 from '../../assets/img/logo1.png'
+import AuthContext from '../../services/contexts/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import InstagramIcon from '@mui/icons-material/Instagram';

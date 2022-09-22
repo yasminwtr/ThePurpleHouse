@@ -1,31 +1,37 @@
 .like {
   margin: 5rem 0;
-  .release{
+
+  .release {
     padding: 50px;
     border-radius: 0.5rem;
   }
+
   // .green {
   //    background-color: var(--green);
   // }
-  .texts-ComoF{
+  .texts-ComoF {
     width: 100%;
-  
+
   }
-  .title-1{
+
+  .title-1 {
     text-align: center;
     color: var(--accent-color1);
   }
-  .description-1{
+
+  .description-1 {
     margin-top: 50px;
     margin-bottom: 100px;
     text-align: center;
     font-size: 25px;
     color: var(--accent-color1);
   }
+
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+
     .content {
       background-color: var(--accent-color2);
       display: flex;
@@ -34,12 +40,12 @@
       padding: 20px;
       border-radius: 2rem;
       align-items: center;
-      
+
       .title {
         color: var(--accent-color1);
         font-size: 1.5rem;
       }
-      
+
       .description {
         color: var(--accent-color1);
         letter-spacing: 0.1rem;
@@ -47,7 +53,7 @@
         font-size: 15px;
         text-align: center;
       }
-      
+
     }
   }
 }
@@ -55,18 +61,23 @@
 @media screen and (min-width: 280px) and (max-width: 1080px) {
   .like {
     margin: 0;
-    .release{
-      padding:50px 0;
+
+    .release {
+      padding: 50px 0;
     }
+
     .container {
       grid-template-columns: 1fr;
       gap: 0;
+
       .content {
         padding: 1rem 2rem;
         border-radius: 0;
+
         &:nth-of-type(2) {
           background-color: var(--background);
         }
+
         &:nth-of-type(4) {
           background-color: var(--background);
           border-bottom: 0.1rem solid white;
@@ -75,9 +86,10 @@
     }
   }
 }
+
 @media (max-width: 375px) {
   .like {
-    .container{
+    .container {
       .content {
         background-color: var(--accent-color2);
         display: flex;
@@ -85,28 +97,29 @@
         gap: 1rem;
         padding: 20px;
         align-items: revert;
-       
+
         .description {
           color: var(--accent-color1);
           letter-spacing: 0.1rem;
           line-height: 1.5rem;
           font-size: 15px;
           text-align: left;
+        }
       }
     }
-    } 
+
     .description-1 {
       margin-bottom: 100px;
       text-align: center;
       font-size: 1.2rem;
       padding: 0 30px;
       color: var(--accent-color1);
-  }
+    }
+
     .title-1 {
       text-align: center;
       color: var(--accent-color1);
       font-size: 1.5rem;
-  }
+    }
   }
 }
-

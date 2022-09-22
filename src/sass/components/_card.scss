@@ -18,43 +18,50 @@
       border-top-right-radius: 1rem;
     }
   }
+
   &-content {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
+
     .card-heading {
       display: flex;
       justify-content: space-between;
+
       .card-series {
         color: var(--accent-color1);
         text-transform: uppercase;
         font-size: 0.7rem;
         text-align: center;
       }
+
       .card-top {
         color: var(--accent-color3);
         text-transform: uppercase;
         font-size: 0.7rem;
       }
     }
+
     .card-details {
       display: flex;
       justify-content: center;
       color: var(--accent-color1);
-      
+
       .card-price {
         display: flex;
         gap: 1rem;
-        img {
-        }
-        h4 {
-        }
+
+        img {}
+
+        h4 {}
       }
     }
+
     .card-sub-details {
       display: flex;
       justify-content: space-between;
+
       span {
         color: var(--accent-color3);
         font-size: 0.9rem;

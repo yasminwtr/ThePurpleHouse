@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import AuthContext from '../contexts/auth'
+import AuthContext from '../../services/contexts/auth'
 import ReviewIcon from '@mui/icons-material/RateReviewRounded'
 import { FaStar } from 'react-icons/fa'
 import Snackbar from '@mui/material/Snackbar';

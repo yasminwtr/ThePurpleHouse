@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Footer from "../../Footer";
-import About from "../../../Pages/About";
-import Profile from "../../../Pages/Profile";
-import WorkerProfile from "../../../Pages/WorkerProfile";
-import Chat from '../../../Pages/Chat'
-import Categories from "../../../Pages/Categories";
+import Footer from "../../components/Footer";
+import About from "Pages/About";
+import Profile from "Pages/Profile";
+import WorkerProfile from "Pages/WorkerProfile";
+import Chat from 'Pages/Chat'
+import Categories from "Pages/Categories";
 import Navbar from "components/Navbar/Navbar";
 
 const AppRoutes = () => {
