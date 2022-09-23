@@ -53,12 +53,12 @@ export default function Home() {
   //   nav[0].style.transform = "none";
   // }, 1500);
 
-
+// ------------------------------- Scoll Top ------------------------------------
   const [visible, setVisible] = useState(false);
   window.addEventListener("scroll", () => {
     window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
   });
-
+// ------------------------------- Section 3 ------------------------------------
   const data = [
     {
       image: super1,
@@ -82,14 +82,18 @@ export default function Home() {
     },
 
   ];
+  // ------------------------------------------------------------------------------
   return (
     <>
+    {/* ___________________________ Scroll Top______________________________ */}
+
       <div className={`scrollToTop ${visible ? "visible" : ""}`}>
         <a href="#">
           <BsChevronUp />
         </a>
       </div>
-
+     
+    {/* ______________________________ Home ________________________________ */}
 
       <div className="home">
         <div className="container">
@@ -105,7 +109,6 @@ export default function Home() {
           </div>
 
           <div className="content">
-            {/* <p className="sub-title">Contrate prestadores para sua casa!</p> */}
             <h1 className="title">Contrate prestadores para sua casa!</h1>
             <p className="description">
               Você pode solicitar serviços e efetuar agendamentos diretamente com os profissionais.
@@ -116,16 +119,15 @@ export default function Home() {
 
         </div>
       </div>
-
-
-
+    {/* _____________________________ Section 2 _____________________________ */}
+    
       <div className="title-container">
         <h2 className="title">SERVIÇOS MAIS PEDIDOS</h2>
       </div>
 
       <div className="super-rare">
         <div className="cards">
-          {data.map(({ image, series, title, price, tag, time }, index) => (
+          {data.map(({ image, series, title }) => (
 
             <div className="card">
               <div className="card-image">
@@ -147,7 +149,7 @@ export default function Home() {
         </div>
       </div>
 
-
+    {/* _____________________________ Section 3 _____________________________ */}
       <div className="like">
         <div className="release green">
           <div className="texts-ComoF">
@@ -202,6 +204,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* _____________________________________________________________________ */}
     </>
   );
 }

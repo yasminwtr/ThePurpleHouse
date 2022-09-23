@@ -16,14 +16,23 @@ const About = () => {
           <p>The Purple House foi criado para facilitar o dia a dia de profissionais que tem dificuldade em mostrar seus serviços e também para clientes que precisam de facilidade para pedir determinado serviço residencial. Assim mostrando que a tecnologia muda vidas.
           </p>
         </div>
-        <div className="about-img">
-          <img src={Team} alt='about' className="img-about" />
+
+        <div className="image-container">
+          <div className="about-img">
+            <img src={Team} alt='about' className="img-about" />
+          </div>
+          
+          <div className="ellipse-container">
+            <div className="ellipse pink"></div>
+            <div className="ellipse orange"></div>
+          </div>
         </div>
+          
       </section>
       <section className="container-about-text">
         <div className="texts-about">
           <h1 className="text-h1-about">O que queremos?</h1>
-          <p>Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
+          <p className="pQuemS">Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
           {signed ?
             <>
               <div className="div-btn-about"> <a href="/Categories" className="button-about"><Link to='/Categories' >OBRIGADA POR FAZER PARTE! :)</Link></a></div>
