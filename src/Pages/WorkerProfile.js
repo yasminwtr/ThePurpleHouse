@@ -21,6 +21,7 @@ const WorkerProfile = () => {
   const location = useLocation();
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
   const [workerReviews, setWorkerReviews] = useState([]);
+  const [chat, setChat] = useState([])
   const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
   const workerReviewsLength = workerReviews.length
   const dateAtual = new Date()
@@ -63,6 +64,25 @@ const WorkerProfile = () => {
     }
   }
 
+  async function getChat() {
+    const idPerson1 = user.idperson
+    const idPerson2 = location.state.personWorkerId
+    try {
+      const response = await api.get(`/chats/${idPerson1}&${idPerson2}`);
+      setChat(response.data)
+
+      if (chat.lenght === 0) {
+        createChat()
+
+      } else {
+        chat.map((item) => { navigate("/Chat", { replace: true, state: { selectedChat: item.idchat } }); });
+      }
+
+    } catch (error) {
+      setChat([])
+    }
+  }
+
   async function createChat() {
     try {
       const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName });
@@ -101,7 +121,7 @@ const WorkerProfile = () => {
             </>
             :
             <>
-              <button className='message-button' onClick={() => createChat()}>Enviar mensagem</button>
+              <button className='message-button' onClick={() => getChat()}>Enviar mensagem</button>
             </>
           }
         </div>
@@ -156,7 +176,7 @@ const WorkerProfile = () => {
                 </>
                 :
                 <>
-                  <LeaveAvaliation getReviewsByWorker={getReviewsByWorker}/>
+                  <LeaveAvaliation getReviewsByWorker={getReviewsByWorker} />
                   <p id='number-avaliations'>{numberWorkerReviews}</p>
                 </>
               }
