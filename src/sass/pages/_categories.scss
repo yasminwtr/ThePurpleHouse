@@ -12,6 +12,10 @@
   }
 }
 
+.css-1tc5vhq-MuiGrid2-root {
+  width: 1200px !important;
+}
+
 @font-face {
   font-family: 'Inter-Regular';
   src: url(../../assets/fonts/Inter-Regular.woff) format('woff');
@@ -60,16 +64,15 @@
 }
 
 .container-categories {
-  font-family: Inter-Bold;
+  margin-bottom: 10px;
 }
 
 .title-container-categories {
+  font-size: 34px;
   font-family: Inter-Regular !important;
-  font-size: 30px;
-  font-family: Inter-Bold;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
-  color: var(--accent-color6);
+  color: #A58AD2;
   line-height: 30px;
   letter-spacing: -1px;
 }
@@ -82,10 +85,17 @@
 
 .boxCategories {
   background-color: var(--accent-color7);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 20%);
   border-radius: 8px;
   text-align: center;
-  color: var(--accent-color1)
+  color: var(--accent-color1);
+  width: 180px;
+  margin: 10px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .p-boxCategories {
@@ -96,8 +106,14 @@
   letter-spacing: 1px;
 }
 
+.category-titleservice {
+  color: #655A78;
+  font-size: 20px;
+}
+
 .imgBoxCategories {
   margin-top: 15px;
+  width: 75px;
 }
 
 .boxSelected {
@@ -118,15 +134,16 @@
   align-content: flex-start;
   justify-content: center;
   flex-direction: column;
-  height: 500px;
+  height: 450px;
   justify-content: flex-start;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 22px;
-  max-width: 400px !important;
+  max-width: 310px !important;
   min-width: 330px;
   overflow-y: scroll !important;
   background-color: var(--accent-color7);
-  margin-right: 100px;
+  margin-right: 40px;
+  margin-left: 90px;
 }
 
 .btn-search-categories {
@@ -200,7 +217,7 @@
 
 .title-service-category {
   color: #655A78;
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   justify-content: center;
   font-family: Inter-Regular;
@@ -266,6 +283,14 @@
   cursor: wait;
 }
 
+.container, .container-lg, .container-md, .container-sm {
+  max-width: 999px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+
 @media screen and (max-width: 899px) {
   .page {
     flex-direction: row;
@@ -290,7 +315,6 @@
 
   .MuiGrid2-root.MuiGrid2-container.MuiGrid2-spacing-xs-2.css-1tc5vhq-MuiGrid2-root {
     flex-direction: row !important;
-    width: 900px;
     justify-content: center;
     align-self: center;
     --Grid-columns: 4;

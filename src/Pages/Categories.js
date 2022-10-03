@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
-import Grid from '@mui/material/Unstable_Grid2';
+import Row from 'react-bootstrap/Row';
+// import Grid from '@mui/material/Unstable_Grid2';
+import Container from 'react-bootstrap/Container';
 import api from 'api'
 import 'animate.css'
 import FilterWorkers from 'components/Categories/filterWorkers';
@@ -42,17 +44,17 @@ function Categories() {
           <h1 className="title-container-categories">
             Selecione a categoria do serviço que está procurando
           </h1>
-          <Grid container spacing={2} columns={{ xs: 2, sm: 1, md: 8 }}>
+          <Container>
             {services.map((category, index) => (
-              <Grid className="grid-categories" xs={2} key={index}>
-                <Col xs={8} onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
+              <Row className="grid-categories" key={index}>
+                <Col  onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
                   <img className='imgBoxCategories' src={category.icon} width={64} />
-                  <p>{category.titleservice}</p>
+                  <p className='category-titleservice'>{category.titleservice}</p>
                   <p className='p-boxCategories'>Ver mais</p>
                 </Col>
-              </Grid>
+              </Row>
             ))}
-          </Grid>
+          </Container>
         </div>
       </div>
     </div>
