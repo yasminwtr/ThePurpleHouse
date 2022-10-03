@@ -143,20 +143,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-worker-profile {
-  background-color: #a58ad2db;
+  background-color: var(--profile);
   text-align: center;
   border-radius: 14px 14px 0 0;
   padding: 10px;
 }
 
 .part2-worker-profile {
-  border-color: #fff;
+  border-color: var(--profile2);
   border-width: 2px;
   border-style: solid;
   border-radius: 0 0 32px 32px;
   padding: 40px;
   padding-bottom: 15px;
-  background-color: rgba(255, 255, 255, 0.795);
+  background-color: var(--profile2);
 }
 
 #icon-worker-profile {
@@ -217,6 +217,7 @@ body::-webkit-scrollbar-thumb {
   font-family: Inter-SemiBold;
   display: flex;
   align-items: center;
+  color: var(--accent-color1);
 }
 
 #text-worker-profile {
@@ -225,6 +226,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
   font-family: Inter-Regular;
   text-align: justify;
+  color: var(--titleprofile1);
 }
 
 #service-title-worker-profile {
@@ -279,10 +281,10 @@ body::-webkit-scrollbar-thumb {
 
 .feed-avaliations {
   border-color: #a68ad207;
-  border: 2px solid #d7cfe6;
+  border: 2px solid var(--profile2);
   border-radius: 20px;
   padding: 15px 20px 10px 20px;
-  background-color: #fff;
+  background-color: var(--profile2);
   box-shadow: 0px 1px 6px 1px rgba(131, 131, 131, 0.25);
   min-height: 320px;
   max-height: 320px;
@@ -300,7 +302,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .feed-avaliations::-webkit-scrollbar-track {
-  background-color: #F5F0FE;
+  background-color: var(--profile2);
 }
 
 .feed-avaliations::-webkit-scrollbar-thumb {

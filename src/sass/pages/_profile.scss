@@ -63,7 +63,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-profile {
-  background-color: #a58ad2db;
+  background-color: var(--profile);
   text-align: center;
   border-radius: 14px 14px 0 0;
   padding: 10px;
