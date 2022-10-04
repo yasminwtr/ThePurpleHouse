@@ -73,13 +73,13 @@ const AnnounceService = (props) => {
   }
 
   async function registerWorker() {
-
     try {
-      if ((selectValue, description, phoneNumber, price, selectedCity, selectedUf) !== '' && selectValue !== 'Serviços') {
+      if ((selectValue, description, phoneNumber, price) !== '' && selectValue !== 'Serviços' && (selectedCity, selectedUf) !== '0') {
         const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
         setShowSuccess(true)
         setShow(false)
         props.getServices()
+
       }
       else {
         setShowError(true)
