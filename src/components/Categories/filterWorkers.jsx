@@ -10,6 +10,7 @@ import axios from 'axios';
 import api from 'api';
 import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const FilterWorkers = (props) => {
   const { category } = props;
@@ -72,7 +73,13 @@ const FilterWorkers = (props) => {
   useEffect(() => {
     filterWorkers()
     getWorkers()
-  }, [workers, category]);
+  }, [category]);
+
+  const refreshFilter = () => {
+    setFilteredWorkers([])
+    console.log('aaaaaaaa');
+    
+  }
 
   return (
     <div>
@@ -120,6 +127,9 @@ const FilterWorkers = (props) => {
               <TuneIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
               Filtrar
             </p>
+            <button onClick={() => refreshFilter()} className="button-refresh">
+              <RefreshIcon />
+            </button>
           </div>
           <div className='list-users-category'>
             {
