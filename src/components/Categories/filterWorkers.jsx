@@ -94,7 +94,7 @@ const FilterWorkers = (props) => {
           <Form>
             <Row className="g-2 mb-3 row-localization">
               <Col md={3}>
-                <Form.Select name="uf" id="uf" onChange={handleSelectUf}>
+                <Form.Select className="form-select-filter" name="uf" id="uf" onChange={handleSelectUf}>
                   <option value="0">Estado</option>
                   {ufs.map((uf) => (
                     <option key={uf.id} value={uf.sigla}>
@@ -104,7 +104,7 @@ const FilterWorkers = (props) => {
                 </Form.Select>
               </Col>
               <Col md>
-                <Form.Select name="City" id="City" value={selectedCity} onChange={handleSelectCity}>
+                <Form.Select className="form-select-filter" name="City" id="City" value={selectedCity} onChange={handleSelectCity}>
                   <option value="0">Cidade</option>
                   {cities.map((city) => (
                     <option key={city.id} value={city.nome}>{city.nome}</option>

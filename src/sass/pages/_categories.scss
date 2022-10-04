@@ -10,10 +10,19 @@
   .boxCategories {
     background-color: #fff;
   }
+  .title-container-categories {
+    color: #A58AD2;
+  }
 }
 
 [data-theme="dark"] {
   .category-titleservice {
+    color: #fff;
+  }
+  .css-i4bv87-MuiSvgIcon-root {
+    color: #fff;
+  }
+  .title-container-categories {
     color: #fff;
   }
 }
@@ -40,6 +49,16 @@
 @font-face {
   font-family: 'Inter-Bold';
   src: url(../../assets/fonts/Inter-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter-Thin';
+  src: url(../../assets/fonts/Inter-Thin.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter-Light';
+  src: url(../../assets/fonts/Inter-Light.ttf) format('woff');
 }
 
 .body-categories {
@@ -75,10 +94,9 @@
 
 .title-container-categories {
   font-size: 35px;
-  font-family: Inter-Regular !important;
+  font-family: Inter-Light !important;
   margin-bottom: 20px;
   text-align: center;
-  color: #A58AD2;
   line-height: 30px;
   letter-spacing: -2px;
 }
@@ -106,13 +124,14 @@
 
 .p-boxCategories {
   font-size: 12px !important;
-  font-family: Inter-Regular;
+  font-family: Inter-Light;
 }
 
 .category-titleservice {
   color: #655A78;
   font-size: 22px;
   margin: 0;
+  font-family: Inter-Light;
 }
 
 .imgBoxCategories {
@@ -147,7 +166,6 @@
   min-width: 330px;
   overflow-y: scroll !important;
   background-color: var(--accent-color7);
-  margin-right: 40px;
   margin-left: 90px;
 }
 
@@ -206,13 +224,13 @@
 }
 
 .photo-user-profile {
-  width: 12%;
+  width: 13%;
   height: 12%;
   margin-right: 3%;
 }
 
 .name-user-category {
-  font-family: Inter-Regular;
+  font-family: Inter-Light;
   font-size: 20px;
   margin: auto 0 auto;
   margin-right: 10px;
@@ -225,7 +243,7 @@
   font-size: 25px;
   display: flex;
   justify-content: center;
-  font-family: Inter-Regular;
+  font-family: Inter-Light;
   color: var(--accent-color6);
   letter-spacing: -1px;
 }
@@ -258,7 +276,7 @@
   color: #000;
   font-size: 18px;
   border: none;
-  font-family: Inter-Regular;
+  font-family: Inter-Light;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,15 +335,16 @@
 
   .title-container-categories {
     font-size: 20px;
+    margin: 2px;
   }
-
-  .MuiGrid2-root.MuiGrid2-container.MuiGrid2-spacing-xs-2.css-1tc5vhq-MuiGrid2-root {
-    flex-direction: row !important;
-    justify-content: center;
-    align-self: center;
-    --Grid-columns: 4;
-    font-size: 16px;
-  }
+  
+  // .MuiGrid2-root.MuiGrid2-container.MuiGrid2-spacing-xs-2.css-1tc5vhq-MuiGrid2-root {
+  //   flex-direction: row !important;
+  //   justify-content: center;
+  //   align-self: center;
+  //   --Grid-columns: 4;
+  //   font-size: 16px;
+  // }
 
   .imgBoxCategories {
     width: 60px;
@@ -343,83 +362,99 @@
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 890px) {
-  .page {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
 
-  .container-categories {
-    width: 100% !important;
-    margin-left: 20px !important;
-  }
 
-  .css-1tc5vhq-MuiGrid2-root {
-    --Grid-columns: 8;
-  }
 
-  .container-categories-search {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    overflow-y: scroll !important;
-  }
 
-  .container-categories-side {
-    width: 80% !important;
-    flex-direction: row !important;
-    align-self: center;
-  }
 
-  .title-container-categories {
-    margin-bottom: -8px !important;
-  }
-}
 
-@media screen and (min-width: 600px) and (max-width: 900px) {
-  .container-categories-side {
-    width: 80% !important;
-    flex-direction: row !important;
-    align-self: center;
-  }
 
-  .container-categories-search {
-    margin-left: 20px !important;
-    height: 300px !important;
-    overflow-y: scroll;
-  }
+// @media screen and (min-width: 600px) and (max-width: 890px) {
+//   .page {
+//     flex-direction: column;
+//     justify-content: flex-start;
+//   }
 
-  .container-categories-search::-webkit-scrollbar {
-    width: 0.7vw;
-  }
+//   .container-categories {
+//     width: 100% !important;
+//     margin-left: 20px !important;
+//   }
 
-  .container-categories-search::-webkit-scrollbar-button {
-    height: 5px;
-  }
+//   .css-1tc5vhq-MuiGrid2-root {
+//     --Grid-columns: 8;
+//   }
 
-  .container-categories-search::-webkit-scrollbar-track {
-    background-color: transparent;
-    margin: 40px !important;
-  }
+//   .container-categories-search {
+//     margin-top: 30px;
+//     margin-bottom: 30px;
+//     overflow-y: scroll !important;
+//   }
 
-  .container-categories-search::-webkit-scrollbar-thumb {
-    background-color: #aeb0b1;
-    border: 0.3vw solid #fff;
-  }
+//   .container-categories-side {
+//     width: 80% !important;
+//     flex-direction: row !important;
+//     align-self: center;
+//   }
 
-  .css-1tc5vhq-MuiGrid2-root {
-    --Grid-columns: 4;
-  }
+//   .title-container-categories {
+//     margin-bottom: -8px !important;
+//   }
+// }
 
-  .title-container-categories {
-    margin-bottom: 20px !important;
-  }
-}
+// @media screen and (min-width: 600px) and (max-width: 900px) {
+//   .container-categories-side {
+//     width: 80% !important;
+//     flex-direction: row !important;
+//     align-self: center;
+//   }
+
+//   .container-categories-search {
+//     margin-left: 20px !important;
+//     height: 300px !important;
+//     overflow-y: scroll;
+//   }
+
+//   .container-categories-search::-webkit-scrollbar {
+//     width: 0.7vw;
+//   }
+
+//   .container-categories-search::-webkit-scrollbar-button {
+//     height: 5px;
+//   }
+
+//   .container-categories-search::-webkit-scrollbar-track {
+//     background-color: transparent;
+//     margin: 40px !important;
+//   }
+
+//   .container-categories-search::-webkit-scrollbar-thumb {
+//     background-color: #aeb0b1;
+//     border: 0.3vw solid #fff;
+//   }
+
+//   .css-1tc5vhq-MuiGrid2-root {
+//     --Grid-columns: 4;
+//   }
+
+//   .title-container-categories {
+//     margin-bottom: 20px !important;
+//   }
+// }
 
 .button-refresh {
   background-color: transparent;
   border: none;
 }
 
+.button-refresh:active {
+  cursor: wait;
+}
+
 .average-rating {
   margin-left: 25px;
+}
+
+.form-select-filter {
+  border-radius: 20px;
+  cursor: pointer;
 }
