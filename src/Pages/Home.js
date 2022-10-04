@@ -24,7 +24,7 @@ export default function Home() {
       const sr = scrollreveal({
         origin: "bottom",
         distance: "80px",
-        duration: 2000,
+        duration: 1000,
         reset: false,
       });
       sr.reveal(
@@ -36,8 +36,7 @@ export default function Home() {
         .super-rare,
         .releases,
         .like,
-        .signup,
-        footer
+        .signup
     `,
         {
           interval: 500,
@@ -96,7 +95,7 @@ export default function Home() {
     {/* ______________________________ Home ________________________________ */}
 
       <div className="home">
-        <div className="container">
+        <div className="container-home">
 
           <div className="image-container">
             <div className="image">
@@ -158,7 +157,7 @@ export default function Home() {
               e trabalhadores independentes, de diversas atividades.</p>
           </div>
 
-          <div className="container">
+          <div className="container-Comof">
             <div className="content">
               <div className="image">
                 <img src={encontre} alt="encontre" width={'80px'} />

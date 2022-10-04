@@ -27,7 +27,7 @@
     color: var(--accent-color1);
   }
 
-  .container {
+  .container-Comof {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -66,7 +66,7 @@
       padding: 50px 0;
     }
 
-    .container {
+    .container-Comof {
       grid-template-columns: 1fr;
       gap: 0;
 
@@ -89,7 +89,7 @@
 
 @media (max-width: 375px) {
   .like {
-    .container {
+    .container-Comof {
       .content {
         background-color: var(--accent-color2);
         display: flex;

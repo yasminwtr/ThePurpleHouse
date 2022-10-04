@@ -22,7 +22,7 @@
 .home {
   padding: 5rem 0 0.5rem 0;
 
-  .container {
+  .container-home {
     // display: grid;
     // grid-template-columns: 1fr 1fr;
     // font-size: 25px;
@@ -31,7 +31,7 @@
     height: 70vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .content {
       // margin-top: 3rem;
@@ -135,7 +135,7 @@
     // position: relative;
     // overflow-x: hidden;
     // margin-top: 1rem;
-    .container {
+    .container-home {
       // font-size: 16px;
       // grid-template-columns: 0.7fr;
       height: 70%;
@@ -178,7 +178,7 @@
 @media (max-width: 375px) {
   .home {
 
-    .container {
+    .container-home {
 
       .content {
         .title {
