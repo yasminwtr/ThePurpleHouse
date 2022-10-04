@@ -35,7 +35,7 @@ const About = () => {
           <p className="pQuemS">Queremos que todos os profissionais independentes, possam ter acesso às ferramentas mais modernas para conquistar cada vez mais renda, independência e autonomia naquilo que fazem.</p>
           {signed ?
             <>
-              <div className="div-btn-about"> <a href="/Categories" className="button-about"><Link to='/Categories' >OBRIGADA POR FAZER PARTE! :)</Link></a></div>
+              {/* <div className="div-btn-about"> <a href="/Categories" className="button-about"><Link to='/Categories' >OBRIGADA POR FAZER PARTE! :)</Link></a></div> */}
             </> :
             <>
               <div className="div-btn-about"> <a href="/Registration" className="button-about"><Link to='/Registration' >FAÇA PARTE</Link></a></div>

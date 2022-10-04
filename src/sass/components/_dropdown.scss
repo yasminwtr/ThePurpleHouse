@@ -1,9 +1,11 @@
 [data-theme="dark"] {
   #show-dropdown.active {
     background-color: #655a78d3 !important;
+    z-index: 22;
   }
   #show-dropdown {
     background-color: #655a78d3 !important;
+    z-index: 1;
   }
 }
 
@@ -88,6 +90,7 @@
   height: 280px;
   padding: 20px;
   width: 270px !important;
+  z-index: 11;
 }
 
 .li-item {
