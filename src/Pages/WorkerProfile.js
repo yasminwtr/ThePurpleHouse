@@ -71,7 +71,7 @@ const WorkerProfile = () => {
       const response = await api.get(`/chats/${idPerson1}&${idPerson2}`);
       setChat(response.data)
 
-      if (chat.lenght === 0) {
+      if (chat.length == 0) {
         createChat()
 
       } else {

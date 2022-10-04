@@ -27,7 +27,6 @@ const DeleteChat = (props) => {
     try {
       await api.delete(`/messages/${idChat}`);
     } catch (error) {
-      console.log('erroooooooooooooo');
     }
   }
 
@@ -40,7 +39,6 @@ const DeleteChat = (props) => {
       props.getChats()
 
     } catch (error) {
-      console.log('erroooooooooooooo');
       setShowError(true)
     }
   }
