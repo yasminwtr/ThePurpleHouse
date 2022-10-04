@@ -12,6 +12,12 @@
   }
 }
 
+[data-theme="dark"] {
+  .category-titleservice {
+    color: #fff;
+  }
+}
+
 .css-1tc5vhq-MuiGrid2-root {
   width: 1200px !important;
 }
@@ -68,13 +74,13 @@
 }
 
 .title-container-categories {
-  font-size: 34px;
+  font-size: 35px;
   font-family: Inter-Regular !important;
   margin-bottom: 20px;
   text-align: center;
   color: #A58AD2;
   line-height: 30px;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .grid-categories {
@@ -85,13 +91,13 @@
 
 .boxCategories {
   background-color: var(--accent-color7);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 20%);
-  border-radius: 8px;
+  box-shadow: 0px 1px 14px rgb(33 37 41 / 18%);
+  border-radius: 17px;
   text-align: center;
   color: var(--accent-color1);
-  width: 180px;
-  margin: 10px;
-  height: 150px;
+  width: 187px;
+  margin: 5px;
+  height: 189px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,19 +107,18 @@
 .p-boxCategories {
   font-size: 12px !important;
   font-family: Inter-Regular;
-  margin-top: -18px;
-  line-height: 2vh;
-  letter-spacing: 1px;
 }
 
 .category-titleservice {
   color: #655A78;
-  font-size: 20px;
+  font-size: 22px;
+  margin: 0;
 }
 
 .imgBoxCategories {
   margin-top: 15px;
-  width: 75px;
+  margin-bottom: 10px;
+  width: 80px;
 }
 
 .boxSelected {
@@ -123,7 +128,7 @@
 .boxCategories:hover {
   cursor: pointer;
   transition: 400ms;
-  background-color: #d1baf950;
+  background-color: #c8bae5;
 }
 
 .container-categories-search {
@@ -287,8 +292,9 @@
   max-width: 999px !important;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px;
 }
 
 @media screen and (max-width: 899px) {
@@ -412,4 +418,8 @@
 .button-refresh {
   background-color: transparent;
   border: none;
+}
+
+.average-rating {
+  margin-left: 25px;
 }

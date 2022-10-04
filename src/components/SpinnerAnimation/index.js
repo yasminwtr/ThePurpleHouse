@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
+
 import './styles.css'
 
 export const SpinnerAnimation = (props) => {
@@ -13,7 +14,7 @@ export const SpinnerAnimation = (props) => {
 
   return (
     <div>
-      <Button variant="success" onClick={() => showSpinner()}>
+      <Button id='save-button-modals-profile' onClick={() => showSpinner()}>
         Filtrar Localização
         {openSpinner == true ?
           <Spinner className='spinner' animation="border" size="sm" value={openSpinner} />
