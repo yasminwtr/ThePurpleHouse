@@ -31,6 +31,13 @@
 
   --about:#341b55;
   --btnaAbout:#6753ae;
+
+  --background-chat: #655a784b;
+  --box-chats: #11041a;
+  --scrollbar-chat: #11041a;
+  --lines-chat: #655a784b;
+  --left-message: #2f143f;
+  --box-shadow-left-message: #2f143fe5;
 }
 
 [data-theme="light"] {
@@ -57,6 +64,13 @@
 
   --about:#dddddd;
   --btnaAbout:#A16FF7;
+
+  --background-chat: #FBFBFC;
+  --box-chats: #f8f8f8;
+  --scrollbar-chat: #FBFBFC;
+  --lines-chat: rgb(230, 230, 230);
+  --left-message: #F8F8F8;
+  --box-shadow-left-message: #dadada;
 }
 
 [data-theme="dark"] {

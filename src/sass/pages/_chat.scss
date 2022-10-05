@@ -18,10 +18,16 @@
   src: url(../../assets/fonts/Inter-Bold.woff) format('woff');
 }
 
+[data-theme="light"] {
+  .body-chat {
+    margin: auto;
+    background-image: url(../../assets/img/imgFundo3.png) !important;
+    background-size: 100%;
+  }
+}
+
 .body-chat {
   margin: auto;
-  background-image: url(../../assets/img/imgFundo3.png) !important;
-  background-size: 100%;
 }
 
 .all-chat {
@@ -29,9 +35,9 @@
   width: 100%;
   background-size: cover;
   margin: auto;
-  background-color: #FBFBFC;
+  background-color: var(--box-chats);
   padding: 20px;
-  margin: auto auto 3% auto;
+  margin: auto auto 2% auto;
 }
 
 /* chat */
@@ -63,10 +69,10 @@
   font-family: Inter-Medium;
   margin: auto 10px auto;
   font-size: 22px;
-  color: rgb(31, 31, 31);
+  color: var(--accent-color1);
 }
 
-#delete-chat-button {
+.delete-chat-container {
   margin-left: auto !important;
 }
 
@@ -88,23 +94,24 @@
 }
 
 .messages-chat::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: var(--scrollbar-chat);
 }
 
 .messages-chat::-webkit-scrollbar-thumb {
   background-color: #aeb0b1;
-  border: 0.3vw solid #fff;
+  border: 0.3vw solid var(--scrollbar-chat);
   border-radius: 5vw;
 }
 
 #left-message {
-  background-color: #F8F8F8;
+  background-color: var(--left-message);
   max-width: 50%;
   border-radius: 15px 15px 15px 0px;
   padding: 10px 20px 10px 20px;
   width: fit-content;
-  box-shadow: 0px 1px 3px #dadada;
+  box-shadow: 0px 1px 3px var(--box-shadow-left-message);
   word-wrap: break-word;
+  color: var(--accent-color1);
 }
 
 #right-message {
@@ -127,7 +134,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-end;
-  border-top: 1px solid rgb(230, 230, 230);
+  border-top: 1px solid var(--lines-chat);
   display: flex;
   min-height: 93px;
   max-height: 93px;
@@ -135,10 +142,11 @@
 
 .input-message-chat {
   border: 0;
-  background-color: #F8F8F8;
+  background-color: var(--background-chat);
   padding: 15px;
   border-radius: 10px;
   width: 91%;
+  color: var(--accent-color1);
 }
 
 #send-icon-chat {
@@ -165,7 +173,7 @@
   min-height: 500px;
   max-height: 500px;
   padding: 20px;
-  border-right: 1px solid rgb(230, 230, 230);
+  border-right: 1px solid var(--lines-chat);
 }
 
 .container-box-search {
@@ -175,12 +183,11 @@
 
 #search-icon-chat {
   color: #655A78 !important;
-  cursor: pointer;
 }
 
 .container-input {
   display: flex;
-  background-color: #f8f8f8;
+  background-color: var(--background-chat);
   height: 50px;
   border-radius: 15px;
   align-items: center;
@@ -189,35 +196,14 @@
 }
 
 .input-search-chat {
-  background-color: #f8f8f8;
+  background-color: transparent;
   border: none;
   outline: none;
   font-family: Inter-Regular;
-  width: 85%;
+  width: 89%;
   margin-left: 3%;
+  color: var(--accent-color1);
 }
-
-/* .button-search-chat {
-  align-self: center;
-  color: #655A78 !important;
-  border: 2px solid transparent;
-  height: 40px;
-  width: 25%;
-  font-size: 15px;
-  font-weight: bold;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  background-color: #D1BAF9;
-  color: #fff;
-  font-family: Inter-Bold;
-  border-radius: 15px;
-  transition: 0.5s;
-  margin-left: 2%;
-}
-
-.button-search-chat:hover {
-  color: #fff !important;
-  border: 2px solid #A58AD2 !important;
-} */
 
 .list-chat-profiles {
   margin-top: 10%;
@@ -233,8 +219,9 @@
   margin-bottom: 6%;
   padding: 8px 8px 8px 12px;
   border-radius: 10px;
-  background-color: #f8f8f8;
+  background-color: var(--background-chat);
   border-left: 4px solid transparent;
+  color: var(--accent-color1);
 }
 
 #icon-individual-chat-profile {
@@ -251,13 +238,13 @@
 
 .individual-chat-profile:hover {
   border-left: 4px solid #A58AD2;
-  color: rgb(31, 31, 31);
+  color: var(--accent-color1);
   transition: 0.5s;
 }
 
 .chatSelected {
-  background-color: #f8f8f8;
-  color: rgb(31, 31, 31);
+  background-color: var(--background-chat);
+  color: var(--accent-color1);
   transition: 0.5s;
   border-left: 4px solid #A58AD2;
 }
@@ -271,12 +258,12 @@
 }
 
 .list-chat-profiles::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: var(--scrollbar-chat);
 }
 
 .list-chat-profiles::-webkit-scrollbar-thumb {
   background-color: #aeb0b1;
-  border: 0.3vw solid #fff;
+  border: 0.3vw solid var(--scrollbar-chat);
   border-radius: 5vw;
 }
 
