@@ -44,7 +44,7 @@ const DeleteChat = (props) => {
   }
 
   return (
-    <div>
+    <div className='delete-chat-container'>
       <Button variant="danger" id='delete-chat-button' onClick={handleShow}>Excluir conversa</Button>
 
       <Modal
