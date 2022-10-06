@@ -77,8 +77,6 @@ const FilterWorkers = (props) => {
 
   const refreshFilter = () => {
     setFilteredWorkers([])
-    console.log('aaaaaaaa');
-    
   }
 
   return (
@@ -139,7 +137,7 @@ const FilterWorkers = (props) => {
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
                     <p className='name-user-category' >{worker.firstname}</p>
                     <div className='average-rating'>
-                    <AverageRating rating={worker.avg} />
+                      <AverageRating rating={worker.avg} />
                     </div>
                   </div>
                 )

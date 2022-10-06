@@ -7,8 +7,10 @@ import Container from 'react-bootstrap/Container';
 import api from 'api'
 import 'animate.css'
 import FilterWorkers from 'components/Categories/filterWorkers';
+import ClearIcon from '@mui/icons-material/Clear';
 
-function Categories() {
+
+function Categories(props) {
   const [showElement, setShowElement] = useState(false)
   const showOrHide = () => setShowElement(true)
   const [selectedCategory, setSelectedCategory] = useState(null)
@@ -37,17 +39,18 @@ function Categories() {
       <div className="page">
         <div onClick={() => showOrHide} >
           {showElement ? <p className="animate__animated animate__fadeInLeft">
-            <FilterWorkers category={selectedCategory} />
+            <ClearIcon className="button-refresh" onClick={() => setShowElement(false)} />
+            <FilterWorkers showElement category={selectedCategory} />
           </p> : null}
         </div>
         <div className={showElement ? "container-categories-side" : "container-categories"}>
-          <h1 className="title-container-categories">
+          <h1 className="title-container-categories animate__animated animate__fadeIn">
             Selecione a categoria do serviço que está procurando
           </h1>
-          <Container>
+          <Container className='animate__animated animate__fadeIn' >
             {services.map((category, index) => (
               <Row className="grid-categories" key={index}>
-                <Col  onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
+                <Col onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
                   <img className='imgBoxCategories' src={category.icon} width={64} />
                   <p className='category-titleservice'>{category.titleservice}</p>
                   <p className='p-boxCategories'>Ver mais</p>
