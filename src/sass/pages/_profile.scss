@@ -69,7 +69,7 @@ body::-webkit-scrollbar-thumb {
   padding: 10px;
   min-height: 170px;
   max-height: 170px;
-  box-shadow: 0px 1px 14px rgb(33 37 41 / 18%);
+  box-shadow: 3px -8px 14px rgb(33 37 41 / 18%);
 }
 
 .part2-profile {
@@ -80,7 +80,6 @@ body::-webkit-scrollbar-thumb {
   max-height: 320px;
   min-height: 320px;
   border-radius: 0px 0px 28px 28px;
-  box-shadow: 0px 1px 14px rgb(33 37 41 / 18%);
 }
 
 .row {
@@ -433,7 +432,9 @@ input::-ms-clear {
   .all-profile {
     display: flex !important;
     flex-direction: column;
-  }
+    flex-wrap: wrap;
+    align-content: center;
+}
 
   .container-config {
     display: flex;
@@ -454,7 +455,8 @@ input::-ms-clear {
   .part2-profile {
     padding: 0px;
     padding: 14px;
-    overflow-x: scroll
+    overflow-x: scroll;
+    padding: 24px !important;
   }
 
   .part2-profile::-webkit-scrollbar {
@@ -489,4 +491,10 @@ input::-ms-clear {
   #options-text {
     margin: -1px
   }
+
+  #icon-profile {
+    width: 25%;
+    margin-bottom: 10px;
+  }
+
 }

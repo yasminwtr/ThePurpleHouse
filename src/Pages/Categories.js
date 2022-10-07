@@ -7,7 +7,6 @@ import Container from 'react-bootstrap/Container';
 import api from 'api'
 import 'animate.css'
 import FilterWorkers from 'components/Categories/filterWorkers';
-import ClearIcon from '@mui/icons-material/Clear';
 
 
 function Categories(props) {
@@ -39,8 +38,7 @@ function Categories(props) {
       <div className="page">
         <div onClick={() => showOrHide} >
           {showElement ? <p className="animate__animated animate__fadeInLeft">
-            <ClearIcon className="button-refresh" onClick={() => setShowElement(false)} />
-            <FilterWorkers showElement category={selectedCategory} />
+            <FilterWorkers close={() => setShowElement(false)} showElement category={selectedCategory} />
           </p> : null}
         </div>
         <div className={showElement ? "container-categories-side" : "container-categories"}>

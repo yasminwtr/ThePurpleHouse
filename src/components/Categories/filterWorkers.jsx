@@ -11,9 +11,10 @@ import api from 'api';
 import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const FilterWorkers = (props) => {
-  const { category } = props;
+  const { category, close } = props;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -118,7 +119,9 @@ const FilterWorkers = (props) => {
       </Modal>
 
       <div className='page-categories-search'>
+
         <div className='container-categories-search'>
+          <ClearIcon className="button-refresh" onClick={() => close()} />
           <h1 className='title-service-category'>{category.titleservice}</h1>
           <div className='btns-categories-search'>
             <p className='btn-filter-workers' onClick={handleShow}>
@@ -128,6 +131,7 @@ const FilterWorkers = (props) => {
             <button onClick={() => refreshFilter()} className="button-refresh">
               <RefreshIcon />
             </button>
+
           </div>
           <div className='list-users-category'>
             {
