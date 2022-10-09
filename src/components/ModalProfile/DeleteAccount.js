@@ -130,7 +130,7 @@ const DeleteAccount = (props) => {
 
       <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
         <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Erro ao excluir a conta, certifique-se de que você não esta cadastrado em nenhum serviço.
+          Erro ao excluir a conta, certifique-se de que você não esta cadastrado em nenhum serviço ou se sua senha está correta.
         </Alert>
       </Snackbar>
 

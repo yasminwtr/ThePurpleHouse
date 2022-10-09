@@ -20,9 +20,9 @@ const MyReviews = (props) => {
     const handleCloseError = () => setShowError(false);
     const handleCloseSuccess = () => setShowSuccess(false);
 
-    async function getServicesReviewed(idperson) {
+    async function getServicesReviewed() {
         try {
-            const response = await api.get(`/servicesReviewed/${idperson}`);
+            const response = await api.get(`/servicesReviewed/${user.idperson}`);
             return setServicesReviewed(response.data)
 
         } catch (error) {

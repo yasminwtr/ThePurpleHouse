@@ -122,7 +122,7 @@ const LeaveAvaliation = (props) => {
 
           <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
             <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-              Avaliação feita com sucesso! Agradecemos a sua colaboração :)
+              Avaliação feita com sucesso e logo será publicada! Agradecemos a sua colaboração :)
             </Alert>
           </Snackbar> 
         </div>

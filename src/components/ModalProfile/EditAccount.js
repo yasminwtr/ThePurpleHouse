@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
@@ -62,6 +62,7 @@ const EditAccount = (props) => {
 
       user.email = data.email;
       setEmail(email)
+      setShow(false)
 
     } catch (error) {
     }
@@ -75,6 +76,7 @@ const EditAccount = (props) => {
       
       user.pass = data.pass;
       setPass(pass)
+      setShow(false)
 
     } catch (error) {
     }
@@ -88,6 +90,7 @@ const EditAccount = (props) => {
       
       user.birthdate = data.birthdate;
       setBirthDate(birthDate)
+      setShow(false)
 
     } catch (error) {
     }

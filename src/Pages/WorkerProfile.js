@@ -136,11 +136,7 @@ const WorkerProfile = () => {
               <p id='text-worker-profile'>{location.state.phone}</p>
             </div>
 
-            {location.state.whatsapp == null || location.state.whatsapp == '' ?
-              <>
-
-              </>
-              :
+            {location.state.whatsapp == null || location.state.whatsapp == '' ? <></> :
               <>
                 <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
               </>
@@ -176,7 +172,7 @@ const WorkerProfile = () => {
                 </>
                 :
                 <>
-                  <LeaveAvaliation getReviewsByWorker={getReviewsByWorker} />
+                  <LeaveAvaliation getReviewsByWorker={getReviewsByWorker} workerReviews={workerReviews}/>
                   <p id='number-avaliations'>{numberWorkerReviews}</p>
                 </>
               }
