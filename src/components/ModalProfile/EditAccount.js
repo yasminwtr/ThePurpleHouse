@@ -22,10 +22,11 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const EditAccount = (props) => {
   const { user } = useContext(AuthContext)
-  const [email, setEmail] = useState(`${user.email}`)
-  const [atualPassword, setAtualPassword] = useState('')
-  const [password, setPassword] = useState('')
-  const [birthDate, setBirthDate] = useState(`${user.birthdate}`)
+  const [email, setEmail] = useState('')
+  const [atualPass, setAtualPass] = useState('')
+  const [pass, setPass] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+  const [validEmail, setValidEmail] = useState(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/)
 
   const [show, setShow] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -53,31 +54,84 @@ const EditAccount = (props) => {
     event.preventDefault();
   };
 
-  const updateUser = async () => {
+  const updateEmail = async () => {
     const idPerson = user.idperson;
     try {
-      if ((email && password) !== '') {
-        const response = await api.put(`/users/${idPerson}`, { email, password })
-        const data = response;
-        console.log('updateUserData', data);
+      const response = await api.put(`/users/email/${idPerson}`, { email })
+      const data = response;
 
-        user.email = data.email;
-        user.password = data.password;
+      user.email = data.email;
+      setEmail(email)
 
-        setEmail(email)
-        setPassword(password)
-
-        setShowSuccess(true)
-        setShow(false)
-        console.log('valores update:', 'email: ', email, ';', 'senha: ', password, ';');
-
-      }
-      else {
-        setShowError(true)
-      }
     } catch (error) {
-      console.log(error)
-      console.log('nao funfou');
+    }
+  }
+
+  const updatePassword = async () => {
+    const idPerson = user.idperson;
+    try {
+      const response = await api.put(`/users/pass/${idPerson}`, { pass })
+      const data = response;
+      
+      user.pass = data.pass;
+      setPass(pass)
+
+    } catch (error) {
+    }
+  }
+
+  const updateBirthDate = async () => {
+    const idPerson = user.idperson;
+    try {
+      const response = await api.put(`/users/birthdate/${idPerson}`, { birthDate })
+      const data = response;
+      
+      user.birthdate = data.birthdate;
+      setBirthDate(birthDate)
+
+    } catch (error) {
+    }
+  }
+
+  function updateUser(){
+    if (email !== '' && email.match(validEmail) && (pass, atualPass, birthDate) == ''){
+      updateEmail()
+      setShowSuccess(true)
+
+    } else if ((pass, atualPass) !== '' && atualPass.length >= 8 && (email, birthDate) == ''){
+      updatePassword()
+      setShowSuccess(true)
+
+    } else if (birthDate !== '' && (email, pass, atualPass) == ''){
+      updateBirthDate()
+      setShowSuccess(true)
+
+    } else if ((birthDate, email) !== '' && email.match(validEmail) && (pass, atualPass) == ''){
+      updateEmail()
+      updateBirthDate()
+      setShowSuccess(true)
+
+    } else if ((birthDate, pass, atualPass) !== '' && atualPass.length >= 8 && email == ''){
+      updatePassword()
+      updateBirthDate()
+      setShowSuccess(true)
+
+    } else if ((email, pass, atualPass) !== '' && email.match(validEmail) && atualPass.length >= 8 && birthDate == ''){
+      updatePassword()
+      updateEmail()
+      setShowSuccess(true)
+
+    } else if ((email, pass, atualPass, birthDate) !== ''){
+      updateEmail()
+      updatePassword()
+      updateBirthDate()
+      setShowSuccess(true)
+
+    } else if ((email, pass, atualPass, birthDate) == '' && email.match(validEmail) && atualPass.length >= 8){
+      setShowError(true)
+
+    } else {
+      setShowError(true)
     }
   }
 
@@ -116,6 +170,7 @@ const EditAccount = (props) => {
                   <Form.Control
                     type={"email"}
                     value={email}
+                    placeholder={user.email}
                     autoFocus
                     maxLength={45}
                     id='emailEdit'
@@ -129,7 +184,6 @@ const EditAccount = (props) => {
                   <Form.Control
                     onChange={(event) => setBirthDate(event.target.value)}
                     type={'date'}
-                    value={birthDate}
                   />
                 </Form.Group>
               </div>
@@ -143,11 +197,10 @@ const EditAccount = (props) => {
                   <div className='containerInputEdit'>
                     <Form.Control
                       type={values.showPassword ? 'text' : 'password'}
-                      value={atualPassword}
                       placeholder="Digite a sua senha atual"
                       maxLength={25}
                       id='password-edit'
-                      onChange={(event) => setAtualPassword(event.target.value)}
+                      onChange={(event) => setAtualPass(event.target.value)}
                     />
 
                     <div>
@@ -167,11 +220,10 @@ const EditAccount = (props) => {
                   <div className='containerInputEdit'>
                     <Form.Control
                       type={values.showPassword ? 'text' : 'password'}
-                      value={password}
                       placeholder="Nova senha"
                       maxLength={25}
                       id='password-edit'
-                      onChange={(event) => setPassword(event.target.value)}
+                      onChange={(event) => setPass(event.target.value)}
                     />
 
                     <div>
@@ -201,7 +253,7 @@ const EditAccount = (props) => {
 
       <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
         <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Preencha o formulário para editar sua conta
+          Certifique-se de que as informações estão preenchidas corretamente
         </Alert>
       </Snackbar>
 
