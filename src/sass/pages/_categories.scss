@@ -521,3 +521,26 @@
   border-radius: 20px;
   cursor: pointer;
 }
+
+.btn-denounce-cancel {
+  border: 1px solid #c8ccd0 !important;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #7f7b81;
+  &:hover {
+    color: #b36b6b !important;
+    border-color: #b36b6b !important;
+    background-color: transparent;
+  }
+}
+
+.btn-denounce {
+  border: 1px solid #96c692 !important;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #96c692;
+  &:hover {
+    background-color: #96c692 !important;
+  }
+}
+

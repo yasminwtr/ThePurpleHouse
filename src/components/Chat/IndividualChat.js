@@ -7,6 +7,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Button from 'react-bootstrap/Button';
 import DeleteChat from './DeleteChat';
+import DenounceWorker from './DenounceWorker'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -81,6 +82,7 @@ const IndividualChat = (props) => {
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
                 <DeleteChat chat={chat} getChats={getChats} />
+                <DenounceWorker/>
             </div>
 
             <div className='messages-chat'>
