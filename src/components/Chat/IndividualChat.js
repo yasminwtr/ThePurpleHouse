@@ -6,8 +6,9 @@ import api from '../../api'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Button from 'react-bootstrap/Button';
-import DeleteChat from './DeleteChat';
 import DenounceWorker from './DenounceWorker'
+import CancelWork from './CancelWork'
+import LeaveAvaliation from '../Reviews/LeaveAvaliation'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -81,7 +82,8 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                <DeleteChat chat={chat} getChats={getChats} />
+                <LeaveAvaliation/>
+                <CancelWork chat={chat}/>
                 <DenounceWorker/>
             </div>
 

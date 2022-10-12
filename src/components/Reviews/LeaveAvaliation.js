@@ -62,11 +62,11 @@ const LeaveAvaliation = (props) => {
           >
 
             <Modal.Header closeButton>
-              <Modal.Title>Escrever avaliação</Modal.Title>
+              <Modal.Title>Finalizar serviço</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-              Sua avaliação é muito importante para nós. Não deixe de falar o que achou sobre os serviços contratados! :)
+              Para finalizar esse serviço é necessário deixar a sua avaliação. Ela é muito importante para nós. Não deixe de falar o que achou sobre os serviços contratados! :)
               <Form>
                   <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Quantas estrelas você daria?</Form.Label><br></br>

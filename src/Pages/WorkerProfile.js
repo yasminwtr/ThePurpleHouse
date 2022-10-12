@@ -64,28 +64,28 @@ const WorkerProfile = () => {
     }
   }
 
-  async function getChat() {
-    const idPerson1 = user.idperson
-    const idPerson2 = location.state.personWorkerId
-    try {
-      const response = await api.get(`/chats/${idPerson1}&${idPerson2}`);
-      setChat(response.data)
+  // async function getChat() {
+  //   const idPerson1 = user.idperson
+  //   const idPerson2 = location.state.personWorkerId
+  //   try {
+  //     const response = await api.get(`/chats/${idPerson1}&${idPerson2}`);
+  //     setChat(response.data)
 
-      if (chat.length == 0) {
-        createChat()
+  //     if (chat.length == 0) {
+  //       createChat()
 
-      } else {
-        chat.map((item) => { navigate("/Chat", { replace: true, state: { selectedChat: item.idchat } }); });
-      }
+  //     } else {
+  //       chat.map((item) => { navigate("/Chat", { replace: true, state: { selectedChat: item.idchat } }); });
+  //     }
 
-    } catch (error) {
-      setChat([])
-    }
-  }
+  //   } catch (error) {
+  //     setChat([])
+  //   }
+  // }
 
   async function createChat() {
     try {
-      const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName });
+      const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName, serviceCategory: location.state.service, status: 'Aberto' });
       console.log('response', response);
       navigate("/Chat", { replace: true });
 
@@ -121,7 +121,7 @@ const WorkerProfile = () => {
             </>
             :
             <>
-              <button className='message-button' onClick={() => getChat()}>Enviar mensagem</button>
+              <button className='message-button' onClick={() => createChat()}>Solicitar serviço</button>
             </>
           }
         </div>
