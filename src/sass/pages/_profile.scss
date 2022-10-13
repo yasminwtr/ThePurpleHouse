@@ -1,8 +1,8 @@
-[data-theme="light"] {
-  .all-profile{
-    background-image: url(../../assets/img/imgFundo3.png) !important;
-  }
-}
+// [data-theme="light"] {
+//   .all-profile{
+//     background-image: url(../../assets/img/imgFundo3.png) !important;
+//   }
+// }
 
 @font-face {
   font-family: 'Inter-Regular';
@@ -54,26 +54,36 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-profile {
-  margin: 4.5% auto 4.5% auto !important;
-  width: 50%;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 32px;
-  min-height: 490px;
-  max-height: 490px;
+  margin: 1% auto 0% auto !important;
+    width: 70%;
+  // box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  // border-radius: 32px;
+  // min-height: 490px;
+  // max-height: 490px;
+}
+.options-config{
+  background-color: var( --profile4);
+  padding: 30px;
+  height: 40%;
+  margin-bottom: 20px;
+  border-radius: 30px;
+
 }
 
 .part1-profile {
-  background-color: var(--profile);
+  // background-color: var(--profile);
+  background-image: url(../../assets/img/fundoProfile.png);
+  background-size: cover;
   text-align: center;
-  border-radius: 14px 14px 0 0;
+  border-radius: 30px;
   padding: 10px;
   min-height: 170px;
   max-height: 170px;
-  box-shadow: 3px -8px 14px rgb(33 37 41 / 18%);
+  // box-shadow: 3px -8px 14px rgb(33 37 41 / 18%);
 }
 
 .part2-profile {
-  background-color: var(--profile2);
+  // background-color: var(--profile2);
   padding: 40px;
   padding-bottom: 15px;
   display: flex;
@@ -153,18 +163,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-config {
-  border-color: var(--profile);
+  border-color: var(--profile); 
   background-color: var(--profile2);
   border-width: 2px;
   border-style: solid;
-  width: 17.5%;
-  border-radius: 14px;
+  width: 20%;
   padding: 30px;
-  margin: 4.5% auto auto -1%;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
-  min-height: 490px;
-  max-height: 490px;
+  border: none;
+  min-height: 390px;
 }
+
 
 #options-title {
   margin-block-start: 2em;

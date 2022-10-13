@@ -41,6 +41,23 @@ const Profile = () => {
 
   return (
     <div className='all-profile'>
+      
+       <div className='container-config'>
+        <div className='options-config'>
+          <p id='options-title'>Configurações</p>
+          <EditAccount />
+          <DeleteAccount />
+        </div>
+
+        <div className='options-config'>
+          <p id='options-title'>Serviços</p>
+          <ServicesReviewed />
+          <AnnounceService getServices={getServices} />
+          <CancelService getServices={getServices} />
+        </div>
+
+        <Logout />
+      </div>
       <div className='container-profile'>
         <div className='part1-profile'>
           <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile" />
@@ -71,22 +88,7 @@ const Profile = () => {
         </Row>
 
       </div>
-      <div className='container-config'>
-        <div className='options-config'>
-          <p id='options-title'>Configurações</p>
-          <EditAccount />
-          <DeleteAccount />
-        </div>
-
-        <div className='options-config'>
-          <p id='options-title'>Serviços</p>
-          <ServicesReviewed />
-          <AnnounceService getServices={getServices} />
-          <CancelService getServices={getServices} />
-        </div>
-
-        <Logout />
-      </div>
+     
     </div >
   )
 }

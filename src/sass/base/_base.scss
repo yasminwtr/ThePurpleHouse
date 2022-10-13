@@ -12,8 +12,9 @@
   --accent-color4: #000;
 
   --profile: #3d2158;
-  --profile2: #655a784b;
+  --profile2: rgba(31, 6, 49, 0.6352941176);
   --profile3: #99aef9;
+  --profile4: #391751;
   --titleprofile1: rgb(161, 161, 161);
 
   --boxLogin: #7f66a94b;
@@ -49,8 +50,9 @@
   --accent-color5: #655A78;
   
   --profile: #A58AD2;
-  --profile2: #fff;
+  --profile2: #F5F0FE;
   --profile3: rgb(0, 0, 0);
+  --profile4: #EFE7FF;
   --titleprofile1: #000000;
 
   --boxLogin: #F5F0FE;
@@ -71,6 +73,7 @@
   --lines-chat: rgb(230, 230, 230);
   --left-message: #F8F8F8;
   --box-shadow-left-message: #dadada;
+
 }
 
 [data-theme="dark"] {

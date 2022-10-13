@@ -24,17 +24,15 @@ export default function Home() {
       const sr = scrollreveal({
         origin: "bottom",
         distance: "80px",
-        duration: 1000,
+        duration: 2000,
         reset: false,
       });
       sr.reveal(
         `
         nav,
         .home,
-        .free,
-        .clients,
+        .title-container,
         .super-rare,
-        .releases,
         .like,
         .signup
     `,
