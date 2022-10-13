@@ -54,7 +54,7 @@ const CancelWork = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Esse serviço vai ser bloqueado assim que cancelado. Será necessário iniciar outro caso pretenda ter esse serviço novamente, e não será possível realizar uma avaliação para o trabalhador.</p>
+          <p>Esse serviço vai ser bloqueado assim que cancelado, não permitindo mais o envio de mensagens e avaliação ao trabalhador. Caso necessário, terá que ser iniciado outro serviço.</p>
         </Modal.Body>
 
         <Modal.Footer>

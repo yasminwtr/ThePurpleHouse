@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -7,9 +7,10 @@ import { Button, Upload } from 'antd';
 import axios from 'axios';
 import api from 'api'
 import { useLocation } from 'react-router-dom';
+import AuthContext from '../services/contexts/auth'
 
 export const UploadImage = (props) => {
-
+  const { user } = useContext(AuthContext);
   const location = useLocation();
   const idWorker = location.state.workerId
   const handleClose = () => setShow(false);
@@ -51,7 +52,13 @@ export const UploadImage = (props) => {
 
   return (
     <div>
-      <Button onClick={handleShow} icon={<UploadOutlined />}>Adicionar Imagens</Button>
+      {user.idperson == location.state.personWorkerId ?
+        <>
+          <Button onClick={handleShow} icon={<UploadOutlined />}>Adicionar Imagens</Button>
+        </>
+        :
+        <></>
+      }
 
       <Modal
         show={show}
