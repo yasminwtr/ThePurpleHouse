@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
+import { Button, notification } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded'
 
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 const DenounceWorker = (props) => {
   const [show, setShow] = useState(false);
@@ -21,6 +16,18 @@ const DenounceWorker = (props) => {
   const handleShow = () => setShow(true);
   const handleCloseSecondModal = () => setShowSecondModal(false);
   const handleShowSecondModal = () => setShowSecondModal(true);
+  
+  const openNotification = () => {
+    notification["success"]({
+      message: 'Usuário denunciado',
+      duration: 2,
+      placement: 'top',
+      description:
+        'A conversa foi finalizada.',
+    });
+    setShowSecondModal(false)
+    setShow(false)
+  };
 
   return (
     <div>
@@ -85,20 +92,14 @@ const DenounceWorker = (props) => {
         </Form>
 
         <Modal.Footer>
-          <Button onClick={() => handleCloseSecondModal()} className='btn-denounce-cancel'>
+          <Button id='close-button-modals-profile' onClick={() => handleCloseSecondModal()}>
             Cancelar
           </Button>
-          <Button className='btn-denounce' onClick={() => setShowSuccess(true)}>
+          <Button id='delete-button-modals-profile' onClick={openNotification}>
             Denunciar
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Denúncia realizada
-        </Alert>
-      </Snackbar>
 
     </div>
   )
