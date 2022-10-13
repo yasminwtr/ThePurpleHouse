@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-// import Grid from '@mui/material/Unstable_Grid2';
 import Container from 'react-bootstrap/Container';
 import api from 'api'
 import 'animate.css'

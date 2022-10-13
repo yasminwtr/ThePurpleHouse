@@ -211,7 +211,16 @@
   border-radius: 10px;
   width: 91%;
   color: var(--accent-color1);
-  // pointer-events: none;
+}
+
+.input-message-chat-disabled{
+  border: 0;
+  background-color: var(--background-chat);
+  padding: 15px;
+  border-radius: 10px;
+  width: 91%;
+  color: var(--accent-color1);
+  pointer-events: none;
 }
 
 #send-icon-chat {
@@ -228,6 +237,17 @@
 #send-icon-chat:hover {
   transition: 0.5s;
   background-color: #655A78;
+}
+
+#send-icon-chat-disabled{
+  color: #F8F8F8;
+  background-color: #A58AD2;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 50px;
+  transform: rotate(-20deg);
+  margin-left: 1%;
+  cursor: not-allowed;
 }
 
 /* search users */

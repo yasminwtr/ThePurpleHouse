@@ -23,6 +23,8 @@ const IndividualChat = (props) => {
     const handleCloseError = () => setShowError(false);
     const refBody = useRef('');
 
+    console.log(chat.status);
+
     const getMessages = async () => {
         const idChat = chat.idchat
         try {
@@ -82,30 +84,43 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                {/* pra kailany q ta trabalhando junto nisso: o idperson1 do chat sempre vai ser o id da pessoa que solicitou o serviço. essa validação aqui está mostrando essas opções
-                somente pra essa pessoa que solicitou o serviço, pq como o id2 é do trabalhador, não faz sentido ele poder se avaliar e nem cancelar as coisas. a parte da denúncia até faria,
-                mas pra onde iriam essas denuncias? então preferi deixar assim (acho que um sistema de denuncia pro usuario normal nn seria mt legal, ia ficar mt confuso) */}
-
-                {chat.idperson1 == user.idperson ?
+                {chat.idperson1 == user.idperson && chat.status == 'Aberto' ?
                     <>
                         <MoreOptions>
                             <div>
                                 <ul className='ul-more-options'>
                                     <li id='close-service-li'>
-                                        <LeaveAvaliation />
+                                        <LeaveAvaliation chat={chat} />
                                     </li>
                                     <li id='cancel-service-li'>
-                                        <CancelWork />
+                                        <CancelWork chat={chat} />
                                     </li>
                                     <li id='denounce-service-li'>
-                                        <DenounceWorker />
+                                        <DenounceWorker chat={chat} />
                                     </li>
                                 </ul>
                             </div>
                         </MoreOptions>
                     </>
                     :
-                    <></>}
+                    <></>
+                }
+
+                {chat.idperson2 == user.idperson && chat.status == 'Aberto' ?
+                    <>
+                        <MoreOptions>
+                            <div>
+                                <ul className='ul-more-options'>
+                                    <li id='cancel-service-li'>
+                                        <CancelWork chat={chat} />
+                                    </li>
+                                </ul>
+                            </div>
+                        </MoreOptions>
+                    </>
+                    :
+                    <></>
+                }
             </div>
 
             <div className='messages-chat'>
@@ -117,15 +132,32 @@ const IndividualChat = (props) => {
             </div>
 
             <div className='type-message-chat'>
-                <input
-                    className='input-message-chat'
-                    placeholder='Digite sua mensagem aqui'
-                    onChange={(event) => setMessageText(event.target.value)}
-                    value={messageText}
-                    onKeyPress={handleKeyPress}
-                />
+                {chat.status == 'Aberto' ?
+                    <>
+                        <input
+                            className='input-message-chat'
+                            placeholder='Digite sua mensagem aqui'
+                            onChange={(event) => setMessageText(event.target.value)}
+                            value={messageText}
+                            onKeyPress={handleKeyPress}
+                        />
 
-                <SendIcon id='send-icon-chat' onClick={handleSendMessage} />
+                        <SendIcon id='send-icon-chat' onClick={handleSendMessage} />
+
+                    </>
+                    :
+                    <>
+                        <input
+                            className='input-message-chat-disabled'
+                            placeholder={`Você não pode mais enviar mensagens, esse serviço foi ${chat.status.toLowerCase()}.`}
+                            onChange={(event) => setMessageText(event.target.value)}
+                            value={messageText}
+                            onKeyPress={handleKeyPress}
+                        />
+
+                        <SendIcon id='send-icon-chat-disabled' />
+                    </>
+                }
             </div>
 
             <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>

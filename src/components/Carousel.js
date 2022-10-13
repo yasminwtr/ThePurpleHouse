@@ -6,7 +6,6 @@ import ImageGallery from 'react-image-gallery';
 import api from 'api';
 
 export const Carousel = () => {
-
   const location = useLocation();
   const idWorker = location.state.workerId
 
