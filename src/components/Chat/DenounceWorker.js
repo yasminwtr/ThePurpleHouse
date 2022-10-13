@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Snackbar from '@mui/material/Snackbar';
@@ -28,8 +28,8 @@ const DenounceWorker = (props) => {
   const handleShowSecondModal = () => setShowSecondModal(true);
 
   return (
-    <div className='delete-chat-container'>
-      <Button variant="danger" id='delete-chat-button' onClick={handleShow}>Denunciar</Button>
+    <div>
+      <Button id='denounce-work-chat-button' onClick={handleShow}>Denunciar</Button>
 
       <Modal
         show={show}
@@ -48,11 +48,8 @@ const DenounceWorker = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={() => handleClose()} className='btn-denounce-cancel'>
-            Cancelar
-          </Button>
-          <Button className='btn-denounce' onClick={handleShowSecondModal}>
-            Continuar
+          <Button id='delete-button-modals-profile' onClick={handleShowSecondModal}>
+            Denunciar
           </Button>
         </Modal.Footer>
       </Modal>

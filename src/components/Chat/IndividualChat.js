@@ -5,7 +5,6 @@ import AuthContext from '../../services/contexts/auth'
 import api from '../../api'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import Button from 'react-bootstrap/Button';
 import DenounceWorker from './DenounceWorker'
 import CancelWork from './CancelWork'
 import LeaveAvaliation from '../Reviews/LeaveAvaliation'
@@ -82,9 +81,11 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                <LeaveAvaliation/>
-                <CancelWork chat={chat}/>
-                <DenounceWorker/>
+                <div className='container-buttons-chat'>
+                    <DenounceWorker chat={chat}/>
+                    <CancelWork chat={chat}/>
+                    <LeaveAvaliation chat={chat}/>
+                </div>
             </div>
 
             <div className='messages-chat'>

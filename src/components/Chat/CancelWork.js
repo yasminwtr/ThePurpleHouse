@@ -7,7 +7,7 @@ import api from '../../api';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from 'services/contexts/auth';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -40,7 +40,7 @@ const CancelWork = (props) => {
 
   return (
     <div>
-      <Button variant="secondary" onClick={handleShow}>Cancelar serviço</Button>
+      <Button id='cancel-work-chat-button' onClick={handleShow}>Cancelar</Button>
 
       <Modal
         show={show}

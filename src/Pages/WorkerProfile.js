@@ -85,7 +85,7 @@ const WorkerProfile = () => {
 
   async function createChat() {
     try {
-      const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName, serviceCategory: location.state.service, status: 'Aberto' });
+      const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName, idWorker: location.state.workerId, serviceCategory: location.state.service, status: 'Aberto' });
       console.log('response', response);
       navigate("/Chat", { replace: true });
 
@@ -166,16 +166,8 @@ const WorkerProfile = () => {
 
           <div className='feed-avaliations'>
             <div className='inicial-avaliations'>
-              {user.idperson == location.state.personWorkerId ?
-                <>
-                  <p id='number-avaliations-else'>{numberWorkerReviews}</p>
-                </>
-                :
-                <>
-                  <LeaveAvaliation getReviewsByWorker={getReviewsByWorker} workerReviews={workerReviews}/>
                   <p id='number-avaliations'>{numberWorkerReviews}</p>
-                </>
-              }
+                  <p id='number-complaints'>Nenhuma denúncia</p>
             </div>
 
             <WorkerReviews />

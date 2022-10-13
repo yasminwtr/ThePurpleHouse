@@ -3,7 +3,7 @@ import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthContext from '../../services/contexts/auth'
 import { FaStar } from 'react-icons/fa'
-import Button from 'react-bootstrap/Button';
+import { Button } from 'antd';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
@@ -67,7 +67,7 @@ const MyReviews = (props) => {
                                         <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
                                     </div>
 
-                                    <Button variant="danger" id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
                                 </div>
 
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
@@ -86,7 +86,7 @@ const MyReviews = (props) => {
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
-                                    <Button variant="danger" id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
                                 </div>
 
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
@@ -105,7 +105,7 @@ const MyReviews = (props) => {
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
-                                    <Button variant="danger" id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
                                 </div>
 
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
@@ -124,7 +124,7 @@ const MyReviews = (props) => {
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
-                                    <Button variant="danger" id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
                                 </div>
 
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
@@ -143,7 +143,7 @@ const MyReviews = (props) => {
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
-                                    <Button variant="danger" id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
                                 </div>
 
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>

@@ -72,9 +72,60 @@
   color: var(--accent-color1);
 }
 
-.delete-chat-container {
+.container-buttons-chat{
   margin-left: auto !important;
+  display: flex;
 }
+
+#cancel-work-chat-button{
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #596066;
+  background-color: #596066;
+  margin-bottom: 0;
+}
+
+#cancel-work-chat-button:hover{
+  border-color: #4a5258;
+  background-color: #4a5258;
+  transition: 0.5s;
+}
+
+#close-work-chat-button {
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #56a54f;
+  background-color: #56a54f;
+  margin-bottom: 0;
+}
+
+#close-work-chat-button:hover{
+  border-color: #479b3f;
+  background-color: #479b3f;
+  transition: 0.5s;
+}
+
+#denounce-work-chat-button{
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #bb3f3f;
+  background-color: #bb3f3f;
+  transition: 0.5s;
+  margin-bottom: 0;
+}
+
+#denounce-work-chat-button:hover{
+  border-color: #a82d2d;
+  background-color: #a82d2d;
+}
+
+// #leave-avaliation:hover {
+//   background-color: #ffd864;
+//   transition: 0.5s;
+// }
 
 .messages-chat {
   padding: 30px 40px 20px 40px;

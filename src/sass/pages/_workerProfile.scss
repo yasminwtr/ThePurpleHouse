@@ -315,36 +315,22 @@ body::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-#leave-avaliation {
-  font-size: 14px;
-  font-family: Inter-SemiBold;
-  width: 100%;
-  background-color: #fccc3e;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#leave-avaliation:hover {
-  background-color: #ffd864;
-  transition: 0.5s;
-}
-
 #number-avaliations {
   color: var(--accent-color1);
-  text-align: end;
+  text-align: start;
   font-size: 14px;
   padding: 5px 0 5px 0;
   font-family: Inter-Medium;
   width: 55%;
 }
 
-#number-avaliations-else {
+#number-complaints {
+  color: var(--accent-color1);
   text-align: end;
-  padding: 5px 0 5px 0;
   font-size: 14px;
+  padding: 5px 0 5px 0;
   font-family: Inter-Medium;
-  width: 100%;
+  width: 55%;
 }
 
 .block-avaliation {
