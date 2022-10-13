@@ -5,31 +5,26 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded'
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const DenounceWorker = (props) => {
-
-  const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
-
-
   const [show, setShow] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
-
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleCloseSuccess = () => setShowSuccess(false);
-
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const handleCloseSecondModal = () => setShowSecondModal(false);
   const handleShowSecondModal = () => setShowSecondModal(true);
 
   return (
     <div>
-      <Button id='denounce-work-chat-button' onClick={handleShow}>Denunciar</Button>
+      <label id='label-more-options' onClick={handleShow}><ReportIcon sx={{ fontSize: 22, marginRight: 0.5 }}/> Denunciar</label>
 
       <Modal
         show={show}

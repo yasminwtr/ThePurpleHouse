@@ -72,60 +72,73 @@
   color: var(--accent-color1);
 }
 
-.container-buttons-chat{
+.more-options-chat-wrapper{
+  position: relative;
   margin-left: auto !important;
+}
+
+.more-options-chat-wrapper a{
+  cursor: pointer;
+}
+
+.ul-more-options{
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#close-service-li{
+  padding: 12px 14px;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+}
+
+#cancel-service-li{
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+#denounce-service-li{
+  padding: 12px 14px;
+  cursor: pointer;
+  border-radius: 0 0 8px 8px;
+}
+
+#close-service-li:hover, #cancel-service-li:hover, #denounce-service-li:hover{
+  background-color: #f0efef;
+  transition: 0.5s;
+}
+
+#label-more-options{
   display: flex;
+  align-items: center;
 }
 
-#cancel-work-chat-button{
-  height: 40px;
-  border-radius: 14px;
-  color: #fff;
-  border-color: #596066;
-  background-color: #596066;
-  margin-bottom: 0;
+#label-more-options:hover{
+  cursor: pointer;
 }
 
-#cancel-work-chat-button:hover{
-  border-color: #4a5258;
-  background-color: #4a5258;
-  transition: 0.5s;
+.more-options-chat{
+  position: absolute;
+  right: 0;
+  width: max-content;
+  background-color: #FBFBFC;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(.35,0,.25,1);
+  transform-origin: top right;
+  border-radius: 8px;
 }
 
-#close-work-chat-button {
-  height: 40px;
-  border-radius: 14px;
-  color: #fff;
-  border-color: #56a54f;
-  background-color: #56a54f;
-  margin-bottom: 0;
+.more-options-chat-open{
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
 }
 
-#close-work-chat-button:hover{
-  border-color: #479b3f;
-  background-color: #479b3f;
-  transition: 0.5s;
+.more-options-chat-close{
+  visibility: hidden;
+  transform: scale(0);
+  opacity: 0;
 }
-
-#denounce-work-chat-button{
-  height: 40px;
-  border-radius: 14px;
-  color: #fff;
-  border-color: #bb3f3f;
-  background-color: #bb3f3f;
-  transition: 0.5s;
-  margin-bottom: 0;
-}
-
-#denounce-work-chat-button:hover{
-  border-color: #a82d2d;
-  background-color: #a82d2d;
-}
-
-// #leave-avaliation:hover {
-//   background-color: #ffd864;
-//   transition: 0.5s;
-// }
 
 .messages-chat {
   padding: 30px 40px 20px 40px;

@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import CancelServiceIcon from '@mui/icons-material/HighlightOffRounded'
 import api from '../../api';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from 'services/contexts/auth';
 import { Button } from 'antd';
+import CancelIcon from '@mui/icons-material/DoDisturbRounded'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -40,7 +39,7 @@ const CancelWork = (props) => {
 
   return (
     <div>
-      <Button id='cancel-work-chat-button' onClick={handleShow}>Cancelar</Button>
+      <label id='label-more-options' onClick={handleShow}><CancelIcon sx={{ fontSize: 22, marginRight: 0.5 }}/> Cancelar serviço</label>
 
       <Modal
         show={show}
@@ -55,26 +54,11 @@ const CancelWork = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Esse serviço vai ser bloqueado assim que cancelado. Será necessário iniciar outro caso pretenda ter esse serviço novamente.</p>
-
-          {/* <Form.Select
-            autoFocus
-            value={selectValue}
-            onChange={e => setSelectValue(e.target.value)}
-          >
-            <option>Serviços</option>
-            {
-              services.map((item) => {
-                return (
-                  <option key={item.idservice} value={item.idservice}>{item.titleservice}</option>
-                )
-              })
-            }
-          </Form.Select> */}
+          <p>Esse serviço vai ser bloqueado assim que cancelado. Será necessário iniciar outro caso pretenda ter esse serviço novamente, e não será possível realizar uma avaliação para o trabalhador.</p>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button id='delete-button-modals-profile' onClick={() => cancelStatus()}>
+          <Button id='close-button-modals-profile' onClick={() => cancelStatus()}>
             Cancelar serviço
           </Button>
         </Modal.Footer>

@@ -8,6 +8,7 @@ import MuiAlert from '@mui/material/Alert';
 import DenounceWorker from './DenounceWorker'
 import CancelWork from './CancelWork'
 import LeaveAvaliation from '../Reviews/LeaveAvaliation'
+import MoreOptions from "./MoreOptions";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -62,7 +63,7 @@ const IndividualChat = (props) => {
             setMessageText('');
             getMessages()
         }
-      }
+    }
 
     // useEffect(() => {
     //     getMessages()
@@ -81,11 +82,30 @@ const IndividualChat = (props) => {
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
                 <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
 
-                <div className='container-buttons-chat'>
-                    <DenounceWorker chat={chat}/>
-                    <CancelWork chat={chat}/>
-                    <LeaveAvaliation chat={chat}/>
-                </div>
+                {/* pra kailany q ta trabalhando junto nisso: o idperson1 do chat sempre vai ser o id da pessoa que solicitou o serviço. essa validação aqui está mostrando essas opções
+                somente pra essa pessoa que solicitou o serviço, pq como o id2 é do trabalhador, não faz sentido ele poder se avaliar e nem cancelar as coisas. a parte da denúncia até faria,
+                mas pra onde iriam essas denuncias? então preferi deixar assim (acho que um sistema de denuncia pro usuario normal nn seria mt legal, ia ficar mt confuso) */}
+
+                {chat.idperson1 == user.idperson ?
+                    <>
+                        <MoreOptions>
+                            <div>
+                                <ul className='ul-more-options'>
+                                    <li id='close-service-li'>
+                                        <LeaveAvaliation />
+                                    </li>
+                                    <li id='cancel-service-li'>
+                                        <CancelWork />
+                                    </li>
+                                    <li id='denounce-service-li'>
+                                        <DenounceWorker />
+                                    </li>
+                                </ul>
+                            </div>
+                        </MoreOptions>
+                    </>
+                    :
+                    <></>}
             </div>
 
             <div className='messages-chat'>

@@ -8,6 +8,7 @@ import AuthContext from '../../services/contexts/auth'
 import { FaStar } from 'react-icons/fa'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -73,7 +74,7 @@ const LeaveAvaliation = (props) => {
 
   return (
     <div>
-      <Button id='close-work-chat-button' onClick={handleShow}>Finalizar</Button>
+      <label id='label-more-options' onClick={handleShow}><CloseIcon sx={{ fontSize: 22, marginRight: 0.5 }}/> Finalizar serviço</label>
 
       <Modal
         show={show}
