@@ -7,7 +7,6 @@ import api from 'api'
 import 'animate.css'
 import FilterWorkers from 'components/Categories/filterWorkers';
 
-
 function Categories(props) {
   const [showElement, setShowElement] = useState(false)
   const showOrHide = () => setShowElement(true)

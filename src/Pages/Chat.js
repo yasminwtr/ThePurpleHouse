@@ -47,46 +47,43 @@ const Chat = () => {
 
   return (
     <div className='body-chat'>
-      <div className='background-chat'>
-        <div className='all-chat'>
-          <div className='box-search-chat'>
-            <div className='container-box-search'>
-              <div className='container-input'>
-                <input
-                  className='input-search-chat'
-                  placeholder='Pesquisar usuário'
-                  onChange={(e) => searchChats(e.target.value)}
-                />
-
-                <SearchIcon id='search-icon-chat' />
-              </div>
-            </div>
-
-            <div className='list-chat-profiles'>
-              {searchInputChat.length > 1 ? (
-                filteredChats.map((chat) => {
-                  return (
-                    <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-                      <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
-                    </div>
-                  )
-                })
-              ) : (
-                chats.map((chat) => {
-                  return (
-                    <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-                      <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
-                    </div>
-                  )
-                })
-              )}
+      <div className='all-chat'>
+        <div className='box-search-chat'>
+          <div className='container-box-search'>
+            <div className='container-input'>
+              <SearchIcon id='search-icon-chat' />
+              <input
+                className='input-search-chat'
+                placeholder='Pesquisar usuário'
+                onChange={(e) => searchChats(e.target.value)}
+              />
             </div>
           </div>
 
-          {showChat ? <IndividualChat chat={selectedChat} getChats={getChats} /> : <NullChat />}
+          <div className='list-chat-profiles'>
+            {searchInputChat.length > 1 ? (
+              filteredChats.map((chat) => {
+                return (
+                  <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+                    <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+                  </div>
+                )
+              })
+            ) : (
+              chats.map((chat) => {
+                return (
+                  <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
+                    <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+                  </div>
+                )
+              })
+            )}
+          </div>
         </div>
+
+        {showChat ? <IndividualChat chat={selectedChat} getChats={getChats} /> : <NullChat />}
       </div>
     </div>
   )
