@@ -1,4 +1,4 @@
-[data-theme="light"] {  
+[data-theme="light"] {
   .all-worker-profile {
     background-image: url(../../assets/img/fundoo.png) !important;
   }
@@ -7,7 +7,6 @@
 .all-worker-profile {
   display: flex;
   flex-wrap: wrap;
-  // letter-spacing: -0.5px;
   line-height: -2px;
 }
 
@@ -136,14 +135,15 @@ body::-webkit-scrollbar-thumb {
 
 .container-worker-profile {
   margin: 4.5% auto 4.5% auto !important;
-  width: 50%;
+  width: 80%;
   margin: auto;
   border-radius: 32px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .part1-worker-profile {
-  background-color: var(--profile);
+  background-image: url(../../assets/img/fundoProfile.png);
+  background-repeat: round;
   text-align: center;
   border-radius: 14px 14px 0 0;
 }
@@ -159,17 +159,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 #icon-worker-profile {
-  width: 14%;
-  height: 14%;
+  width: 44%;
   margin-top: 2%;
 }
 
 #name-worker-profile {
-  font-size: 24px;
+  font-size: 30px;
   margin-block-start: 0.2em;
   margin-block-end: 0em;
   font-family: Inter-Medium;
-  color: #fff;
+  color: #8058C4;
 }
 
 #categorie-worker-profile {
@@ -177,7 +176,7 @@ body::-webkit-scrollbar-thumb {
   margin-block-start: -0.2em;
   margin-block-end: 0em;
   font-family: Inter-Regular;
-  color: #F5F0FE;
+  color: #9b8ead;
 }
 
 #stars-worker-profile {
@@ -195,7 +194,7 @@ body::-webkit-scrollbar-thumb {
   border-style: none;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   font-family: Inter-Medium;
-  margin-bottom: -10px;
+  margin-bottom: -80px;
   margin-top: 10px;
 }
 
@@ -338,7 +337,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-avaliation {
-  width: 15%;
   margin: 0 2% 2% 0;
 }
 
@@ -464,11 +462,25 @@ li {
   padding: 0;
 }
 
-.modal-open{
+.modal-open {
   font-size: 16px !important;
 
-} 
+}
 
-html, body, head {
+html,
+body,
+head {
   font-size: 16px !important;
+}
+
+.css-a5rdam-MuiGrid-root {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.css-a5rdam-MuiGrid-root>.MuiGrid-item {
+  margin-left: -100px;
 }

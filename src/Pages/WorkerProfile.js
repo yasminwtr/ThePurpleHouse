@@ -15,6 +15,8 @@ import WorkerReviews from '../components/Reviews/WorkerReviews';
 import AuthContext from '../services/contexts/auth'
 import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
@@ -111,19 +113,23 @@ const WorkerProfile = () => {
     <div className='all-worker-profile'>
       <div className='container-worker-profile'>
         <div className='part1-worker-profile'>
-          <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
-          <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
-          <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
-          <AverageRating />
-          {user.idperson == location.state.personWorkerId ?
-            <>
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={1} columns={16}>
+              <Grid item xs={4}>
+                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
+              </Grid>
+              <Grid item xs={4}>
+                <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
+                <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
+                <AverageRating />
+              </Grid>
+            </Grid>
+            {user.idperson == location.state.personWorkerId ?
               <EditProfileWorker />
-            </>
-            :
-            <>
+              :
               <button className='message-button' onClick={() => createChat()}>Solicitar serviço</button>
-            </>
-          }
+            }
+          </Box>
         </div>
 
         <div className='part2-worker-profile'>
@@ -154,28 +160,26 @@ const WorkerProfile = () => {
 
           <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Descrição</p>
           <p id='text-worker-profile'>{location.state.description}</p>
-        </div>
-      </div>
+          <div className='container-blocks'>
+            <Carousel />
 
-      <div className='container-blocks'>
+            <div className='avaliations'>
+              <p id='title-blocks'>Avaliações</p>
 
-        <Carousel />
-
-        <div className='avaliations'>
-          <p id='title-blocks'>Avaliações</p>
-
-          <div className='feed-avaliations'>
-            <div className='inicial-avaliations'>
+              <div className='feed-avaliations'>
+                <div className='inicial-avaliations'>
                   <p id='number-avaliations'>{numberWorkerReviews}</p>
                   <p id='number-complaints'>Nenhuma denúncia</p>
+                </div>
+
+                <WorkerReviews />
+
+              </div>
             </div>
-
-            <WorkerReviews />
-
           </div>
         </div>
-
       </div>
+
     </div>
   )
 }
