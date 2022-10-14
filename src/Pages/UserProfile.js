@@ -41,8 +41,7 @@ const Profile = () => {
 
   return (
     <div className='all-profile'>
-      
-       <div className='container-config'>
+        <div className='container-config'>
         <div className='options-config'>
           <p id='options-title'>Configurações</p>
           <EditAccount />
@@ -60,7 +59,9 @@ const Profile = () => {
       </div>
       <div className='container-profile'>
         <div className='part1-profile'>
+          <div className='div-image-profile'>
           <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile" />
+          </div>
           <p id='name-profile'>{user.firstname} {user.lastname}</p>
         </div>
 
@@ -68,7 +69,9 @@ const Profile = () => {
           <Col md>
             <p id='title-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
             <p id='text-profile'>{user.email}</p>
-
+          </Col>
+          
+          <Col md>
             <p id='title-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
             <p id='text-profile'>{formattedBirthDate}</p>
           </Col>
@@ -88,7 +91,7 @@ const Profile = () => {
         </Row>
 
       </div>
-     
+    
     </div >
   )
 }

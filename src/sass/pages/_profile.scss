@@ -1,8 +1,29 @@
-// [data-theme="light"] {
-//   .all-profile{
-//     background-image: url(../../assets/img/imgFundo3.png) !important;
-//   }
-// }
+[data-theme="light"] {
+  .part1-profile {
+    background-image: url(../../assets/img/imagemProfile2.jpeg) !important;
+    background-size: cover;
+    padding: 20px 0 5px 0;
+    height: 35%;
+   // min-height: 170px;
+    // max-height: 170px;
+    // text-align: center;
+    border-radius: 30px;
+  
+  }
+}
+[data-theme="dark"] {
+  .part1-profile {
+    background-image: url(../../assets/img/imagemProfile.jpeg) !important;
+    background-size: cover;
+    padding: 20px 0 5px 0;
+    height: 35%;
+   // min-height: 170px;
+    // max-height: 170px;
+    // text-align: center;
+    border-radius: 30px;
+  
+  }
+}
 
 @font-face {
   font-family: 'Inter-Regular';
@@ -54,58 +75,44 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-profile {
-  margin: 1% auto 0% auto !important;
-    width: 70%;
-  // box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
-  // border-radius: 32px;
-  // min-height: 490px;
-  // max-height: 490px;
-}
-.options-config{
-  background-color: var( --profile4);
-  padding: 30px;
-  height: 40%;
-  margin-bottom: 20px;
-  border-radius: 30px;
+  margin: 1% auto 1% auto !important;
+  width: 70%;
+  min-height: 490px;
+  max-height: 490px;
+  }
 
-}
 
-.part1-profile {
-  // background-color: var(--profile);
-  background-image: url(../../assets/img/fundoProfile.png);
-  background-size: cover;
-  text-align: center;
-  border-radius: 30px;
-  padding: 10px;
-  min-height: 170px;
-  max-height: 170px;
-  // box-shadow: 3px -8px 14px rgb(33 37 41 / 18%);
-}
 
 .part2-profile {
-  // background-color: var(--profile2);
-  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 15% 0;
+  height: 50%;
   padding-bottom: 15px;
   display: flex;
-  max-height: 320px;
-  min-height: 320px;
-  border-radius: 0px 0px 28px 28px;
 }
 
 .row {
   --bs-gutter-x: 0 !important;
 }
+.div-image-profile{
+  margin: 20px;
+  background-color: #E9DEFE;
+  width: 15%;
+  border-radius: 100px;
+}
 
 #icon-profile {
-  width: 12%;
-  height: 12%;
-  margin-top: 3%;
+  width: 100%;
+    padding: 10px;
 }
 
 #name-profile {
   font-size: 24px;
+  margin-top: 10px;
   font-family: Inter-Regular;
-  color: #fff;
+  color: var(--accent-color1);
 }
 
 .info1-profile {
@@ -164,15 +171,12 @@ body::-webkit-scrollbar-thumb {
 
 .container-config {
   border-color: var(--profile); 
-  background-color: var(--profile2);
-  border-width: 2px;
-  border-style: solid;
-  width: 20%;
-  padding: 30px;
   border: none;
-  min-height: 390px;
+  background-color: var(--profile2);
+  width: 17.5%;
+  padding: 30px;
+   
 }
-
 
 #options-title {
   margin-block-start: 2em;
