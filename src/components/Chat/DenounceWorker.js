@@ -5,7 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded'
 
-
 const DenounceWorker = (props) => {
   const [show, setShow] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);

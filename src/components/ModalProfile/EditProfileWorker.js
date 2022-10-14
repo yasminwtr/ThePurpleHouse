@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
+import { Button, notification } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -8,18 +8,11 @@ import Col from 'react-bootstrap/Col';
 import AuthContext from '../../services/contexts/auth'
 import api from '../../api';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import { useLocation, Link } from 'react-router-dom';
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import axios from 'axios';
 
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-
 const EditProfileWorker = (props) => {
-  const { user } = useContext(AuthContext)
   const location = useLocation();
   const [description, setDescription] = useState(`${location.state.description}`);
   const [phoneNumber, setPhoneNumber] = useState(`${location.state.phone}`);
@@ -27,13 +20,9 @@ const EditProfileWorker = (props) => {
   const [whatsapp, setWhatsapp] = useState(`${location.state.whatsapp}`);
 
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const [ufs, setUfs] = useState([]);
   const [cities, setCities] = useState([]);
@@ -73,32 +62,58 @@ const EditProfileWorker = (props) => {
 
   const updateProfileWorker = async () => {
     const idWorker = location.state.workerId
-    try {
-      // if ((description) !== '') {
-      const response = await api.put(`/updateworker/${idWorker}`, { descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp })
-      const data = response;
-      location.state.description = data.description
-      location.state.phone = data.phoneNumber
-      location.state.price = data.priceService
-      location.state.city = data.city
-      location.state.cityState = data.localization
-      location.state.whatsapp = data.whatsapp
+    if ((description, phoneNumber, price, cities, whatsapp) === '' || 0) {
+      openNotificationError()
+    } else {
+      try {
+        const response = await api.put(`/updateworker/${idWorker}`, { descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp })
+        const data = response;
+        location.state.description = data.description
+        location.state.phone = data.phoneNumber
+        location.state.price = data.priceService
+        location.state.city = data.city
+        location.state.cityState = data.localization
+        location.state.whatsapp = data.whatsapp
 
-      setDescription(description)
-      setPhoneNumber(phoneNumber)
-      setPrice(price)
-      setSelectedCity(selectedCity)
-      setSelectedUf(selectedUf)
-      setWhatsapp(whatsapp)
+        setDescription(description)
+        setPhoneNumber(phoneNumber)
+        setPrice(price)
+        setSelectedCity(selectedCity)
+        setSelectedUf(selectedUf)
+        setWhatsapp(whatsapp)
 
-      setShowSuccess(true)
-      setShow(false)
+        openNotificationSuccess(true)
+        setShow(false)
 
-    } catch (error) {
-      console.log(error)
-      console.log('nao funfou');
+      } catch (error) {
+        console.log(error)
+        console.log('nao funfou');
+      }
     }
   }
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Erro',
+      description: 'Preencha o formulário para editar sua conta',
+      duration: 2,
+      placement: 'top',
+      style: {
+        width: 400,
+      },
+    });
+  };
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Informações alteradas com sucesso',
+      duration: 2,
+      placement: 'top',
+      style: {
+        width: 400,
+      },
+    });
+  };
 
   return (
     <div>
@@ -204,18 +219,6 @@ const EditProfileWorker = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Preencha o formulário para editar sua conta
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Conta editada com sucesso!
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

@@ -39,7 +39,7 @@ const CancelWork = (props) => {
 
   return (
     <div>
-      <label id='label-more-options' onClick={handleShow}><CancelIcon sx={{ fontSize: 22, marginRight: 0.5 }}/> Cancelar serviço</label>
+      <label id='label-more-options' onClick={handleShow}><CancelIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Cancelar serviço</label>
 
       <Modal
         show={show}

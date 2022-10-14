@@ -7,22 +7,14 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import AnnounceIcon from '@mui/icons-material/CampaignRounded'
 import api from '../../api';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../../services/contexts/auth'
 import axios from 'axios';
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
-import { Button } from 'antd';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { Button, notification } from 'antd';
 
 const AnnounceService = (props) => {
   const { user } = useContext(AuthContext);
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const [selectValue, setSelectValue] = useState('');
   const [services, setServices] = useState([]);
@@ -33,8 +25,6 @@ const AnnounceService = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const [ufs, setUfs] = useState([]);
   const [cities, setCities] = useState([]);
@@ -76,13 +66,12 @@ const AnnounceService = (props) => {
     try {
       if ((selectValue, description, phoneNumber, price) !== '' && selectValue !== 'Serviços' && (selectedCity, selectedUf) !== '0') {
         const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
-        setShowSuccess(true)
+        openNotificationSuccess()
         setShow(false)
         props.getServices()
-
       }
       else {
-        setShowError(true)
+        openNotificationError()
       }
     } catch (error) {
 
@@ -97,6 +86,22 @@ const AnnounceService = (props) => {
     fetchData()
       .catch(console.error);
   }, [])
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Serviço anunciado',
+      duration: 2,
+      placement: 'top',
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Preencha o formulário para anunciar um serviço',
+      duration: 2,
+      placement: 'topRight',
+    });
+  };
 
   return (
     <div>
@@ -224,18 +229,6 @@ const AnnounceService = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Preencha o formulário para anunciar um serviço
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Serviço anunciado com sucesso
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

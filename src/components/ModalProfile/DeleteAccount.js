@@ -3,29 +3,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../../services/contexts/auth'
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import DeleteAccountIcon from '@mui/icons-material/DeleteForeverRounded'
 import { useNavigate } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
-import { Button } from 'antd';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { Button, notification } from 'antd';
 
 const DeleteAccount = (props) => {
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
   const navigate = useNavigate()
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const { user, signOut } = useContext(AuthContext);
   const [person, setPerson] = useState([]);
@@ -68,9 +58,21 @@ const DeleteAccount = (props) => {
       signOut()
       navigate("/", { replace: true })
     } else {
-      setShowError(true)
+      openNotificationError()
     }
   }
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Erro ao excluir a conta!',
+      description: 'Certifique-se de que você não esta cadastrado em nenhum serviço ou se sua senha está correta.',
+      duration: 2,
+      placement: 'top',
+      style: {
+        width: 600,
+      },
+    });
+  };
 
   return (
     <div>
@@ -127,19 +129,6 @@ const DeleteAccount = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Erro ao excluir a conta, certifique-se de que você não esta cadastrado em nenhum serviço ou se sua senha está correta.
-        </Alert>
-      </Snackbar>
-
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Conta excluída com sucesso! É uma pena ver você ir :( Agradecemos pela colaboração.
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

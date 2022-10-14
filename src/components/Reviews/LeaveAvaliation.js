@@ -1,18 +1,12 @@
 import React, { useState, useContext } from 'react';
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
+import { Button, notification } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../../services/contexts/auth'
 import { FaStar } from 'react-icons/fa'
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 const LeaveAvaliation = (props) => {
   const { user } = useContext(AuthContext);
@@ -21,13 +15,9 @@ const LeaveAvaliation = (props) => {
   const [hoverRating, setHoverRating] = useState(null)
   const [messageReview, setMessageReview] = useState('');
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   async function registerReview() {
     const idWorker = chat.idworker
@@ -35,12 +25,11 @@ const LeaveAvaliation = (props) => {
       if ((messageReview) !== '' && rating !== null) {
         const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: idWorker, firstNamePerson: user.firstname, lastNamePerson: user.lastname, messageReview: messageReview, stars: rating });
         console.log('response', response);
-        setShowSuccess(true)
+        openNotificationSuccess()
         setShow(false)
-
       }
       else {
-        setShowError(true)
+        openNotificationError()
       }
     } catch (error) {
 
@@ -60,21 +49,41 @@ const LeaveAvaliation = (props) => {
     }
   }
 
-  function closeService(){
+  function closeService() {
     if ((messageReview) !== '' && rating !== null) {
       registerReview()
       closeStatus()
-      setShowSuccess(true)
+      openNotificationSuccess()
       setShow(false)
 
     } else {
-      setShowError(true)
+      openNotificationError()
     }
   }
 
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Avaliação feita!',
+      description: 'Agradecemos a sua colaboração :)',
+      duration: 2,
+      placement: 'top',
+      style: {
+        width: 800,
+      },
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Preencha o formulário para avaliar o trabalhador',
+      duration: 2,
+      placement: 'top',
+    });
+  };
+
   return (
     <div>
-      <label id='label-more-options' onClick={handleShow}><CloseIcon sx={{ fontSize: 22, marginRight: 0.5 }}/> Finalizar serviço</label>
+      <label id='label-more-options' onClick={handleShow}><CloseIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Finalizar serviço</label>
 
       <Modal
         show={show}
@@ -136,18 +145,6 @@ const LeaveAvaliation = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Preencha o formulário para avaliar o trabalhador
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Avaliação feita com sucesso e logo será publicada! Agradecemos a sua colaboração :)
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

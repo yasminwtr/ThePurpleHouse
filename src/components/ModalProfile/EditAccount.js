@@ -1,24 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
+import { Button, notification } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import AuthContext from '../../services/contexts/auth'
 import api from '../../api';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
-// import Visibility from '@mui/icons-material/Visibility';
-// import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EditIcon from '@mui/icons-material/EditRounded'
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
-import KeyIcon from '@mui/icons-material/Key';
-import CalendarIcon from '@mui/icons-material/CalendarMonthRounded';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 const EditAccount = (props) => {
   const { user } = useContext(AuthContext)
@@ -29,15 +19,11 @@ const EditAccount = (props) => {
   const [validEmail, setValidEmail] = useState(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/)
 
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   const [modalInformations, setModalInformations] = useState(false);
   const [modalPassword, setModalPassword] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const [values, setValues] = React.useState({
     showPassword: false,
@@ -73,7 +59,7 @@ const EditAccount = (props) => {
     try {
       const response = await api.put(`/users/pass/${idPerson}`, { pass })
       const data = response;
-      
+
       user.pass = data.pass;
       setPass(pass)
       setShow(false)
@@ -87,7 +73,7 @@ const EditAccount = (props) => {
     try {
       const response = await api.put(`/users/birthdate/${idPerson}`, { birthDate })
       const data = response;
-      
+
       user.birthdate = data.birthdate;
       setBirthDate(birthDate)
       setShow(false)
@@ -96,47 +82,64 @@ const EditAccount = (props) => {
     }
   }
 
-  function updateUser(){
-    if (email !== '' && email.match(validEmail) && (pass, atualPass, birthDate) == ''){
+  function updateUser() {
+    if (email !== '' && email.match(validEmail) && (pass, atualPass, birthDate) == '') {
       updateEmail()
-      setShowSuccess(true)
+      openNotificationSuccess()
 
-    } else if ((pass, atualPass) !== '' && atualPass.length >= 8 && (email, birthDate) == ''){
+    } else if ((pass, atualPass) !== '' && atualPass.length >= 8 && (email, birthDate) == '') {
       updatePassword()
-      setShowSuccess(true)
+      openNotificationSuccess()
 
-    } else if (birthDate !== '' && (email, pass, atualPass) == ''){
+    } else if (birthDate !== '' && (email, pass, atualPass) == '') {
       updateBirthDate()
-      setShowSuccess(true)
+      openNotificationSuccess()
 
-    } else if ((birthDate, email) !== '' && email.match(validEmail) && (pass, atualPass) == ''){
+    } else if ((birthDate, email) !== '' && email.match(validEmail) && (pass, atualPass) == '') {
       updateEmail()
       updateBirthDate()
-      setShowSuccess(true)
+      openNotificationSuccess()
 
-    } else if ((birthDate, pass, atualPass) !== '' && atualPass.length >= 8 && email == ''){
-      updatePassword()
-      updateBirthDate()
-      setShowSuccess(true)
-
-    } else if ((email, pass, atualPass) !== '' && email.match(validEmail) && atualPass.length >= 8 && birthDate == ''){
-      updatePassword()
-      updateEmail()
-      setShowSuccess(true)
-
-    } else if ((email, pass, atualPass, birthDate) !== ''){
-      updateEmail()
+    } else if ((birthDate, pass, atualPass) !== '' && atualPass.length >= 8 && email == '') {
       updatePassword()
       updateBirthDate()
-      setShowSuccess(true)
+      openNotificationSuccess()
 
-    } else if ((email, pass, atualPass, birthDate) == '' && email.match(validEmail) && atualPass.length >= 8){
-      setShowError(true)
+    } else if ((email, pass, atualPass) !== '' && email.match(validEmail) && atualPass.length >= 8 && birthDate == '') {
+      updatePassword()
+      updateEmail()
+      openNotificationSuccess()
+
+    } else if ((email, pass, atualPass, birthDate) !== '') {
+      updateEmail()
+      updatePassword()
+      updateBirthDate()
+      openNotificationSuccess()
+
+    } else if ((email, pass, atualPass, birthDate) == '' && email.match(validEmail) && atualPass.length >= 8) {
+      openNotificationError()
 
     } else {
-      setShowError(true)
+      openNotificationError()
     }
   }
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Erro',
+      description: 'Certifique-se de que as informações estão preenchidas corretamente',
+      duration: 2,
+      placement: 'top',
+    });
+  };
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Conta editada com sucesso',
+      duration: 2,
+      placement: 'top',
+    });
+  };
 
   return (
     <div>
@@ -253,18 +256,6 @@ const EditAccount = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Certifique-se de que as informações estão preenchidas corretamente
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Conta editada com sucesso!
-        </Alert>
-      </Snackbar>
     </div>
   )
 }
