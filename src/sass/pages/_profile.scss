@@ -1,29 +1,22 @@
 [data-theme="light"] {
-  .part1-profile {
-    background-image: url(../../assets/img/imagemProfile2.jpeg) !important;
+  .part1-profile .div-profile {
+    width: 100%;
+    background-image: url(../../assets/img/imagemProfile.jpeg) !important;
     background-size: cover;
-    padding: 20px 0 5px 0;
-    height: 35%;
-   // min-height: 170px;
-    // max-height: 170px;
-    // text-align: center;
     border-radius: 30px;
-  
+    min-height: calc(100px + 5vw);
   }
 }
 [data-theme="dark"] {
-  .part1-profile {
-    background-image: url(../../assets/img/imagemProfile.jpeg) !important;
+  .part1-profile .div-profile {
+    width: 100%;
+    background-image: url(../../assets/img/imagemProfile2.jpeg) !important;
     background-size: cover;
-    padding: 20px 0 5px 0;
-    height: 35%;
-   // min-height: 170px;
-    // max-height: 170px;
-    // text-align: center;
     border-radius: 30px;
-  
+    min-height: calc(100px + 5vw);
   }
 }
+
 
 @font-face {
   font-family: 'Inter-Regular';
@@ -84,36 +77,78 @@ body::-webkit-scrollbar-thumb {
 
 
 .part2-profile {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 15% 0;
-  height: 50%;
+  padding: 40px;
   padding-bottom: 15px;
-  display: flex;
+  max-height: 320px;
+  min-height: 320px;
+  border-radius: 0px 0px 28px 28px;
+  height: 50%;
+  margin-left: 30px;
+  
 }
 
 .row {
   --bs-gutter-x: 0 !important;
 }
-.div-image-profile{
-  margin: 20px;
-  background-color: #E9DEFE;
-  width: 15%;
-  border-radius: 100px;
-}
 
-#icon-profile {
+.part1-profile .div-profile {
   width: 100%;
-    padding: 10px;
+  background-image: url(../../assets/img/imagemProfile2.jpeg) !important;
+  background-size: cover;
+  border-radius: 30px;
+  min-height: calc(100px + 5vw);
 }
 
-#name-profile {
-  font-size: 24px;
-  margin-top: 10px;
+.part1-profile .profile-container .part1-profile1 {
+  padding: 25px 20px;
+  text-align: center;
+  max-width: 350px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.part1-profile .profile-container .part1-profile1 .div-image-profile {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.part1-profile .profile-container .part1-profile1 .div-image-profile #icon-profile {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 10px 5px 10px rgb(0 0 0 / 38%);
+}
+
+
+.part1-profile .profile-container .part1-profile1 #name-profile {
+  margin-top: 40px;
+  font-weight: 500;
   font-family: Inter-Regular;
+  font-size: 22px;
+  margin-bottom: 5px;
   color: var(--accent-color1);
 }
+// .div-image-profile{
+//   margin: 20px;
+//   background-color: #E9DEFE;
+//   width: 15%;
+//   border-radius: 100px;
+// }
+
+// #icon-profile {
+//   width: 100%;
+//     padding: 10px;
+// }
+
+// #name-profile {
+//   font-size: 24px;
+//   margin-top: 10px;
+//   font-family: Inter-Regular;
+//   color: var(--accent-color1);
+// }
 
 .info1-profile {
   width: 70%;
