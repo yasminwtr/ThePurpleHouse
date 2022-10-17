@@ -237,7 +237,7 @@
 
 #send-icon-chat-disabled {
   color: #F8F8F8;
-  background-color: #A58AD2;
+  background-color: #aeb0b1;
   border-radius: 30px;
   padding: 10px;
   font-size: 50px;
@@ -352,10 +352,12 @@
 
 .all-chat-null {
   margin: 0 auto 0 0 !important;
-  width: 70%;
+  width: 100%;
   border-radius: 32px;
   min-height: 500px;
   max-height: 500px;
+  background-color: #fff;
+  box-shadow: -1px 2px 7px 0px rgb(0 0 0 / 14%);
 }
 
 .container-chat-null {
@@ -363,56 +365,56 @@
   margin-top: 7%;
 }
 
-.h3-chat-null {
+.h4-chat-null {
   color: #A58AD2;
 }
 
 .chat-null-image {
-  width: 30%;
-  height: 60%;
+  width: 25%;
+  height: 55%;
 }
 
 /* responsividade */
 
-@media screen and (max-width: 600px) {
-  .all-chat {
-    flex-direction: column;
-  }
+// @media screen and (max-width: 600px) {
+//   .all-chat {
+//     flex-direction: column;
+//   }
 
-  .box-search-chat {
-    width: 50%;
-    height: 400px;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-}
+//   .box-search-chat {
+//     width: 50%;
+//     height: 400px;
+//     margin-bottom: 20px;
+//     padding: 10px;
+//   }
+// }
 
-@media screen and (min-width: 600px) and (max-width: 960px) {
-  .all-chat {
-    flex-direction: column;
-  }
+// @media screen and (min-width: 600px) and (max-width: 960px) {
+//   .all-chat {
+//     flex-direction: column;
+//   }
 
-  .box-search-chat {
-    width: 50%;
-    height: 400px;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-}
+//   .box-search-chat {
+//     width: 50%;
+//     height: 400px;
+//     margin-bottom: 20px;
+//     padding: 10px;
+//   }
+// }
 
-@media screen and (min-width: 960px) and (max-width: 1264px) {
-  .all-chat {
-    margin: 10px;
-  }
+// @media screen and (min-width: 960px) and (max-width: 1264px) {
+//   .all-chat {
+//     margin: 10px;
+//   }
 
-  .box-search-chat {
-    width: 50%;
-    height: 400px;
-    margin-bottom: 20px;
-    padding: 10px;
-    margin-right: 30px;
-  }
-}
+//   .box-search-chat {
+//     width: 50%;
+//     height: 400px;
+//     margin-bottom: 20px;
+//     padding: 10px;
+//     margin-right: 30px;
+//   }
+// }
 
 aside.EmojiPickerReact.epr-main {
   margin-top: -521px !important;

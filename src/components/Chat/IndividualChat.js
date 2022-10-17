@@ -11,6 +11,7 @@ import LeaveAvaliation from '../Reviews/LeaveAvaliation'
 import MoreOptions from "./MoreOptions";
 import Emoji from './Emoji';
 import EmojiPicker from 'emoji-picker-react';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -84,7 +85,7 @@ const IndividualChat = (props) => {
 
   const onEmojiClick = (event, emojiObject) => {
     setMessageText(messageText + emojiObject.emoji);
-    console.log('emojiObject.target',emojiObject);
+    console.log('emojiObject.target', emojiObject);
     setShowPicker(false);
   };
 
@@ -152,7 +153,7 @@ const IndividualChat = (props) => {
               onKeyPress={handleKeyPress}
             />
             <Emoji>
-              <EmojiPicker value={showPicker} onEmojiClick={onEmojiClick} onClick={() => setShowPicker(val => !val)}/>
+              <EmojiPicker value={showPicker} onEmojiClick={onEmojiClick} onClick={() => setShowPicker(val => !val)} />
             </Emoji>
             <SendIcon id='send-icon-chat' onClick={handleSendMessage} />
           </>
@@ -166,6 +167,7 @@ const IndividualChat = (props) => {
               onKeyPress={handleKeyPress}
             />
 
+            <SentimentSatisfiedAltIcon id='send-icon-chat-disabled' />
             <SendIcon id='send-icon-chat-disabled' />
           </>
         }
