@@ -76,19 +76,16 @@ body::-webkit-scrollbar-thumb {
 
 
 
-.part2-profile {
-  padding: 40px;
-  padding-bottom: 15px;
-  max-height: 320px;
-  min-height: 320px;
-  border-radius: 0px 0px 28px 28px;
-  height: 50%;
-  margin-left: 30px;
-  
-}
+
 
 .row {
   --bs-gutter-x: 0 !important;
+}
+.options-config{
+  background-color: var(--profile4);
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
 .part1-profile .div-profile {
@@ -131,24 +128,20 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 5px;
   color: var(--accent-color1);
 }
-// .div-image-profile{
-//   margin: 20px;
-//   background-color: #E9DEFE;
-//   width: 15%;
-//   border-radius: 100px;
-// }
 
-// #icon-profile {
-//   width: 100%;
-//     padding: 10px;
-// }
+.container-pt2-profile{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
-// #name-profile {
-//   font-size: 24px;
-//   margin-top: 10px;
-//   font-family: Inter-Regular;
-//   color: var(--accent-color1);
-// }
+.elements {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 20px;
+      border-radius: 2rem;
+      align-items: center;
+}
 
 .info1-profile {
   width: 70%;
@@ -214,8 +207,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #options-title {
-  margin-block-start: 2em;
-  margin-block-end: 0.8em;
+  // margin-block-start: 2em;
+  // margin-block-end: 0.8em;
   font-size: 16.5px;
   font-family: Inter-SemiBold;
   color: var(--accent-color1);
