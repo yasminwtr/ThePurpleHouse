@@ -58,12 +58,6 @@ const Profile = () => {
         <Logout />
       </div>
       <div className='container-profile'>
-        {/* <div className='part1-profile'>
-          <div className='div-image-profile'>
-          <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile" />
-          </div>
-          <p id='name-profile'>{user.firstname} {user.lastname}</p>
-        </div> */}
 
 <div class="part1-profile">
       <div class="div-profile"></div>
@@ -77,34 +71,41 @@ const Profile = () => {
         
       </div>
     </div>
+    <div className="part2__profile">
 
-        <Row className="part2-profile">
-          <Col md>
-            <p id='title-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
-            <p id='text-profile'>{user.email}</p>
-          </Col>
-          
-          <Col md>
-            <p id='title-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
-            <p id='text-profile'>{formattedBirthDate}</p>
-          </Col>
+          <Row className="container-pt2-profile">
+            <div className="elements">
+            <Col md>
+              <p id='title-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
+              <p id='text-profile'>{user.email}</p>
+            </Col>
+            </div>
 
-          <Col className='col-services' md={4}>
-            <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Serviços anunciados</p>
-            {
-              userServices.map((item) => {
-                return (
-                  <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, personWorkerId: item.idperson, firstName: item.firstname, lastName: item.lastname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice, whatsapp: item.whatsapp } })}>
-                    {item.titleservice}
-                  </p>
-                )
-              })
-            }
-          </Col>
-        </Row>
+            <div className="elements">
+            <Col md>
+              <p id='title-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
+              <p id='text-profile'>{formattedBirthDate}</p>
+            </Col>
+            </div>
 
+            <div className="elements">
+             <Col className='col-services'>
+              <p id='service-title-profile'><ServiceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Serviços anunciados</p>
+              {
+                userServices.map((item) => {
+                  return (
+                    <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, personWorkerId: item.idperson, firstName: item.firstname, lastName: item.lastname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice, whatsapp: item.whatsapp } })}>
+                      {item.titleservice}
+                    </p>
+                  )
+                })
+              }
+             </Col>
+            </div>
+            
+          </Row>
+        </div>
       </div>
-    
     </div >
   )
 }
