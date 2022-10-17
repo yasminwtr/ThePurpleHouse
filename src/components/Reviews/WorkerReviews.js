@@ -35,10 +35,16 @@ const WorkerReviews = (props) => {
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation' alt="Profile" />
                   </div>
 
-                  <div>
-                    <p id='name-avaliation'>{review.firstnameperson} {review.lastnameperson}</p>
+                  <div className='all-info-avaliation'>
+                    <div className='info-avaliation'>
+                      <p id='name-avaliation'>{review.firstnameperson} {review.lastnameperson}</p>
+                      <p id='date-avaliation'>18/02/2004</p>
+                    </div>
+
                     <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /></div>
                   </div>
+
+
                 </div>
 
                 <p id='text-avaliation'>{review.messagereview}</p>

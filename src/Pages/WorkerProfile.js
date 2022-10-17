@@ -113,56 +113,57 @@ const WorkerProfile = () => {
     <div className='all-worker-profile'>
       <div className='container-worker-profile'>
         <div className='part1-worker-profile'>
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={1} columns={16}>
-              <Grid item xs={4}>
-                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
-              </Grid>
-              <Grid item xs={4}>
-                <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
-                <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
-                <AverageRating />
-              </Grid>
-            </Grid>
-            {user.idperson == location.state.personWorkerId ?
-              <EditProfileWorker />
-              :
-              <button className='message-button' onClick={() => createChat()}>Solicitar serviço</button>
-            }
-          </Box>
+          <div className='background-infos'></div>
+          <div className='box-worker-profile'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
+
+            <div>
+              <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
+              <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
+              <AverageRating />
+
+              {user.idperson == location.state.personWorkerId ?
+                <EditProfileWorker />
+                :
+                <button className='message-button' onClick={() => createChat()}>Solicitar serviço</button>
+              }
+
+            </div>
+          </div>
         </div>
 
         <div className='part2-worker-profile'>
-          <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
-          <p id='text-worker-profile'>{location.state.email}</p>
+          <div className='container-info-worker'>
+            <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
+            <p id='text-worker-profile'>{location.state.email}</p>
 
-          <div className='contact-worker-profile'>
-            <div>
-              <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} /> Telefone</p>
-              <p id='text-worker-profile'>{location.state.phone}</p>
+            <div className='contact-worker-profile'>
+              <div>
+                <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} /> Telefone</p>
+                <p id='text-worker-profile'>{location.state.phone}</p>
+              </div>
+
+              {location.state.whatsapp == null || location.state.whatsapp == '' ? <></> :
+                <>
+                  <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
+                </>
+              }
             </div>
 
-            {location.state.whatsapp == null || location.state.whatsapp == '' ? <></> :
-              <>
-                <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
-              </>
-            }
+            <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
+            <p id='text-worker-profile'>{formattedBirthDate}</p>
+
+            <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Localização</p>
+            <p id='text-worker-profile'>{location.state.city}, {location.state.cityState}</p>
+
+            <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Preço médio dos serviços</p>
+            <p id='text-worker-profile'>R$ {location.state.price}</p>
+
+            <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Descrição</p>
+            <p id='text-worker-profile'>{location.state.description}</p>
           </div>
 
-          <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
-          <p id='text-worker-profile'>{formattedBirthDate}</p>
-
-          <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Localização</p>
-          <p id='text-worker-profile'>{location.state.city}, {location.state.cityState}</p>
-
-          <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Preço médio dos serviços</p>
-          <p id='text-worker-profile'>R$ {location.state.price}</p>
-
-          <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Descrição</p>
-          <p id='text-worker-profile'>{location.state.description}</p>
           <div className='container-blocks'>
-            <Carousel />
-
             <div className='avaliations'>
               <p id='title-blocks'>Avaliações</p>
 
@@ -173,14 +174,17 @@ const WorkerProfile = () => {
                 </div>
 
                 <WorkerReviews />
-
               </div>
             </div>
+
+            <Carousel />
           </div>
+
+
         </div>
       </div>
 
-    </div>
+    </div >
   )
 }
 

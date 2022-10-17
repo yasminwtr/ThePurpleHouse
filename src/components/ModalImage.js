@@ -59,7 +59,6 @@ export const UploadImage = (props) => {
         :
         <></>
       }
-
       <Modal
         show={show}
         onHide={handleClose}

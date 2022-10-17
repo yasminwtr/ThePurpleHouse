@@ -135,17 +135,43 @@ body::-webkit-scrollbar-thumb {
 
 .container-worker-profile {
   margin: 4.5% auto 4.5% auto !important;
-  width: 80%;
+  width: 70%;
   margin: auto;
   border-radius: 32px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .part1-worker-profile {
-  background-image: url(../../assets/img/fundoProfile.png);
+  // background-image: url(../../assets/img/fundoProfile.png);
   background-repeat: round;
+  background-color: #A58AD2;
   text-align: center;
   border-radius: 14px 14px 0 0;
+  height: 220px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.background-infos{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 270px;
+  background-color: #8364b198;
+  width: 25%;
+  border-radius: 130px;
+  height: 135px;
+  right: 565px;
+}
+
+.box-worker-profile{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 270px;
 }
 
 .part2-worker-profile {
@@ -155,12 +181,15 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0 0 32px 32px;
   padding: 40px;
   padding-bottom: 15px;
-  background-color: var(--profile2);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 90px;
 }
 
 #icon-worker-profile {
-  width: 44%;
-  margin-top: 2%;
+  width: 22%;
+  margin-right: 1%;
 }
 
 #name-worker-profile {
@@ -168,7 +197,7 @@ body::-webkit-scrollbar-thumb {
   margin-block-start: 0.2em;
   margin-block-end: 0em;
   font-family: Inter-Medium;
-  color: #8058C4;
+  color: #ffffff;
 }
 
 #categorie-worker-profile {
@@ -176,7 +205,7 @@ body::-webkit-scrollbar-thumb {
   margin-block-start: -0.2em;
   margin-block-end: 0em;
   font-family: Inter-Regular;
-  color: #9b8ead;
+  color: #f8f8f8;
 }
 
 #stars-worker-profile {
@@ -223,7 +252,7 @@ body::-webkit-scrollbar-thumb {
   margin-block-start: 0em;
   margin-block-end: 1.4em;
   font-size: 16px;
-  font-family: Inter-Light;
+  font-family: Inter-Regular;
   text-align: justify;
   color: var(--titleprofile1);
 }
@@ -254,28 +283,30 @@ body::-webkit-scrollbar-thumb {
   margin-left: 20px;
 }
 
+.container-info-worker{
+  width: 62%;
+}
+
 /* geral de galeria e avaliações */
 
 .container-blocks {
-  margin: 4% 0 4% 0;
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  display: block;
+  width: 38%;
 }
 
 #title-blocks {
   color: #6B4D9E;
-  margin-block-end: 0.5em;
-  text-align: center;
+  margin-block-end: 1em;
   font-family: Inter-Regular;
   font-size: 1.4rem;
   line-height: 1rem;
+  text-align: center;
 }
 
 /* container de avaliações */
 
 .avaliations {
-  width: 30%;
+  margin-bottom: 10%;
 }
 
 .feed-avaliations {
@@ -288,8 +319,8 @@ body::-webkit-scrollbar-thumb {
   min-height: 320px;
   max-height: 320px;
   overflow-y: scroll;
-  margin-top: 7vh;
-  width: 420px;
+  width: 380px;
+  background-color: #fff;
 }
 
 .feed-avaliations::-webkit-scrollbar {
@@ -338,18 +369,30 @@ body::-webkit-scrollbar-thumb {
 
 .part1-avaliation {
   margin: 0 2% 2% 0;
+  width: 15%;
 }
 
 #icon-avaliation {
-  width: 90%;
+  width: 110%;
   height: fit-content;
-  margin: 0;
+  margin-right: 2%;
 }
 
 #name-avaliation {
   margin-block-start: 0em;
   margin-block-end: 0em;
   font-size: 16px;
+  font-family: Inter-Medium;
+  margin-top: 2%;
+  margin-bottom: -5px;
+  color: var(--accent-color1);
+  width: 63%;
+}
+
+#date-avaliation{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-size: 15px;
   font-family: Inter-Medium;
   margin-top: 2%;
   margin-bottom: -5px;
@@ -362,6 +405,14 @@ body::-webkit-scrollbar-thumb {
   font-family: Inter-Regular;
   margin-block-end: 1.4em;
   color: var(--accent-color1);
+}
+
+.info-avaliation{
+  display: inline-flex;width: 100%;
+}
+
+.all-info-avaliation{
+  width: 85%;
 }
 
 input[type='radio'] {
