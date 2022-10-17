@@ -8,6 +8,7 @@ import ServicesReviewed from '../components/ModalProfile/ServicesReviewed'
 import AnnounceService from '../components/ModalProfile/AnnounceService'
 import CancelService from '../components/ModalProfile/CancelService'
 import Logout from '../components/ModalProfile/Logout'
+import RequestedServices from 'components/ModalProfile/RequestedServices';
 import EmailIcon from '@mui/icons-material/EmailRounded'
 import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
@@ -50,6 +51,7 @@ const Profile = () => {
 
         <div className='options-config'>
           <p id='options-title'>Serviços</p>
+          <RequestedServices/>
           <ServicesReviewed />
           <AnnounceService getServices={getServices} />
           <CancelService getServices={getServices} />
@@ -58,6 +60,7 @@ const Profile = () => {
         <Logout />
       </div>
       <div className='container-profile'>
+
 
 <div class="part1-profile">
       <div class="div-profile"></div>

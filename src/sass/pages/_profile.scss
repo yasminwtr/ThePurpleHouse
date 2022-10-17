@@ -567,3 +567,13 @@ input::-ms-clear {
   }
 
 }
+
+.label-requested-info {
+  cursor: pointer;
+  color: #000;
+}
+
+.block-requested-services {
+  display: flex;
+  align-items: center;
+}
