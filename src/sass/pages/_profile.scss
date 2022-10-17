@@ -129,6 +129,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--accent-color1);
 }
 
+
 .container-pt2-profile{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -492,27 +493,33 @@ input::-ms-clear {
 
 @media screen and (min-width: 300px) and (max-width: 490px) {
   .all-profile {
+    height: 170vh;
     display: flex !important;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
 }
 
+.container-pt2-profile {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
   .container-config {
-    display: flex;
     align-self: center;
-    margin-left: 36px;
-    width: 300px;
-    flex-direction: column;
+    width: 90%;
     margin-bottom: 20px;
     min-height: 200px !important;
-    height: 400px;
+    height: 480px;
     justify-content: center;
   }
 
   .container-profile {
     width: 350px;
   }
+  .part2__profile {
+    height: 230px;
+}
 
   .part2-profile {
     padding: 0px;
