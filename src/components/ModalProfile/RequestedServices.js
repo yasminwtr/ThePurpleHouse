@@ -13,15 +13,16 @@ const RequestedServices = (props) => {
   const [requestedServicesCount, setRequestedServicesCount] = useState('')
   const requestedServicesLength = requestedServices.length
   const [show, setShow] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [changeTitle, setChangeTitle] = useState(false);
+
   async function getRequestedServices(idChat) {
     try {
       const response = await api.get(`/getRequestedServices/${idChat}`);
-      console.log('response.data', response.data);
       return setRequestedServices(response.data)
     } catch (error) {
       console.log('error', error);
@@ -30,17 +31,23 @@ const RequestedServices = (props) => {
   }
 
   function validationRequestedServices() {
+    if (requestedServicesLength == 0) {
+      setRequestedServicesCount(`Você ainda não solicitou um serviço.`)
+    }
+
     requestedServices.map((worker) => {
       if (requestedServicesLength > 1 && worker.idperson2 == user.idperson) {
         setRequestedServicesCount(`Você teve ${requestedServicesLength} serviços solicitados.`)
+        setChangeTitle(true)
       } else if (requestedServicesLength == 1 && worker.idperson2 == user.idperson) {
         setRequestedServicesCount(`Você teve ${requestedServicesLength} serviço solicitado.`)
+        setChangeTitle(true)
       } else if (requestedServicesLength == 1 && worker.idperson1 == user.idperson) {
         setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviço.`)
+        setChangeTitle(false)
       } else if (requestedServicesLength > 1 && worker.idperson1 == user.idperson) {
         setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviços.`)
-      } else {
-        setRequestedServicesCount(`Você ainda não solicitou um serviço.`)
+        setChangeTitle(false)
       }
     })
   }
@@ -55,7 +62,10 @@ const RequestedServices = (props) => {
 
   return (
     <div>
-      <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 22, marginRight: 0.4 }} />Serviços solicitados</p>
+      <p id='options-text' onClick={handleShow}>
+        <AvaliationIcon sx={{ fontSize: 22, marginRight: 0.4 }} />
+        Serviços solicitados
+      </p>
 
       <Modal
         show={show}
@@ -65,24 +75,20 @@ const RequestedServices = (props) => {
         centered
       >
 
-        {requestedServices.map((worker) => {
-          if (worker.idperson1 == user.idperson) {
-            return <>
-              <Modal.Header closeButton>
-                <Modal.Title>Serviços solicitados</Modal.Title>
-              </Modal.Header>
-            </>
-          } else {
-            return <>
-              <Modal.Header closeButton>
-                <Modal.Title>Usuários que solicitaram seu serviço</Modal.Title>
-              </Modal.Header>
-            </>
-          }
-        })
+        {changeTitle === true ?
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>Usuários que solicitaram seu serviço</Modal.Title>
+            </Modal.Header>
+          </>
+          : <>
+            <Modal.Header closeButton>
+              <Modal.Title>Serviços solicitados</Modal.Title>
+            </Modal.Header>
+          </>
         }
 
-        < Modal.Body >
+        <Modal.Body >
           <p>{requestedServicesCount}</p>
           {
             requestedServices.map((worker) => {
