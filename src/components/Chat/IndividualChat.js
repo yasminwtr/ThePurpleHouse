@@ -12,6 +12,7 @@ import MoreOptions from "./MoreOptions";
 import Emoji from './Emoji';
 import EmojiPicker from 'emoji-picker-react';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import { useNavigate } from 'react-router-dom';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -25,8 +26,9 @@ const IndividualChat = (props) => {
   const [showError, setShowError] = useState(false);
   const handleCloseError = () => setShowError(false);
   const refBody = useRef('');
+  const navigate = useNavigate()
 
-  console.log(chat.status);
+  console.log(chat);
 
   const getMessages = async () => {
     const idChat = chat.idchat
@@ -92,8 +94,19 @@ const IndividualChat = (props) => {
   return (
     <div className='container-chat'>
       <div className='header-chat'>
-        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
-        <p id='name-account'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+        {chat.idperson1 == user.idperson ?
+          <>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
+            <p id='name-account-worker' onClick={() => navigate('/WorkerProfile', { state: { workerId: chat.idworker, personWorkerId: chat.idperson2, firstName: chat.firstname, lastName: chat.lastname, service: chat.servicecategory, email: chat.email, phone: chat.phonenumber, birthdate: chat.birthdate, city: chat.city, cityState: chat.localization, price: chat.priceservice, description: chat.descriptionservice, whatsapp: chat.whatsapp } })}>
+              {chat.firstnameperson2} {chat.lastnameperson2}
+            </p>
+          </>
+          :
+          <>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
+            <p id='name-account'>{chat.firstnameperson1} {chat.lastnameperson1}</p>
+          </>
+        }
 
         {chat.idperson1 == user.idperson && chat.status == 'Aberto' ?
           <>

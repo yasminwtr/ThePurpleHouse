@@ -66,6 +66,14 @@
   color: var(--accent-color1);
 }
 
+#name-account-worker{
+  font-family: Inter-Medium;
+  margin: auto 10px auto;
+  font-size: 22px;
+  color: var(--accent-color1);
+  cursor: pointer;
+}
+
 .more-options-chat-wrapper {
   position: relative;
   margin-left: auto !important;
