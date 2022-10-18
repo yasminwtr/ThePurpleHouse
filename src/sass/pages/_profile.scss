@@ -575,5 +575,10 @@ input::-ms-clear {
 
 .block-requested-services {
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.label-status {
+  margin-left: auto;
 }

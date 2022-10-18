@@ -30,15 +30,19 @@ const RequestedServices = (props) => {
   }
 
   function validationRequestedServices() {
-    if (requestedServicesLength > 1) {
-      setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviços.`)
-
-    } else if (requestedServicesLength == 1) {
-      setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviço.`)
-
-    } else {
-      setRequestedServicesCount(`Você ainda não solicitou um serviço.`)
-    }
+    requestedServices.map((worker) => {
+      if (requestedServicesLength > 1 && worker.idperson2 == user.idperson) {
+        setRequestedServicesCount(`Você teve ${requestedServicesLength} serviços solicitados.`)
+      } else if (requestedServicesLength == 1 && worker.idperson2 == user.idperson) {
+        setRequestedServicesCount(`Você teve ${requestedServicesLength} serviço solicitado.`)
+      } else if (requestedServicesLength == 1 && worker.idperson1 == user.idperson) {
+        setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviço.`)
+      } else if (requestedServicesLength > 1 && worker.idperson1 == user.idperson) {
+        setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviços.`)
+      } else {
+        setRequestedServicesCount(`Você ainda não solicitou um serviço.`)
+      }
+    })
   }
 
   useEffect(() => {
@@ -61,41 +65,59 @@ const RequestedServices = (props) => {
         centered
       >
 
-        <Modal.Header closeButton>
-          <Modal.Title>Serviços solicitados</Modal.Title>
-        </Modal.Header>
+        {requestedServices.map((worker) => {
+          if (worker.idperson1 == user.idperson) {
+            return <>
+              <Modal.Header closeButton>
+                <Modal.Title>Serviços solicitados</Modal.Title>
+              </Modal.Header>
+            </>
+          } else {
+            return <>
+              <Modal.Header closeButton>
+                <Modal.Title>Usuários que solicitaram seu serviço</Modal.Title>
+              </Modal.Header>
+            </>
+          }
+        })
+        }
 
-        <Modal.Body>
+        < Modal.Body >
           <p>{requestedServicesCount}</p>
-          {requestedServices.map((worker) => {
-            if (worker.idperson1 == user.idperson) {
-              return <>
-                <div key={worker.idChat}>
-                  <div className='block-requested-services'>
-                    <div className='part1-avaliation-modal'>
-                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+          {
+            requestedServices.map((worker) => {
+              if (worker.idperson1 == user.idperson) {
+                return <>
+                  <div key={worker.idChat}>
+                    <div className='block-requested-services'>
+                      <div className='part1-avaliation-modal'>
+                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+                      </div>
+                      <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameperson2, lastName: worker.lastnameperson2, service: worker.servicecategory, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
+                        className='label-requested-info' >
+                        {worker.firstnameperson2} {worker.lastnameperson2}, {worker.servicecategory}
+                      </label>
+                      <label className='label-status'> {worker.status} </label>
                     </div>
-                    <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameperson1, lastName: worker.firstnameperson1, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
-                      className='label-requested-info' > {worker.firstnameperson2} {worker.lastnameperson2}, {worker.titleservice} </label>
-                    <label> {worker.status} </label>
                   </div>
-                </div>
-              </>
-            } else {
-              return <>
-                <div key={worker.idworker}>
-                  <div className='block-requested-services'>
-                    <div className='part1-avaliation-modal'>
-                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+                </>
+              } else {
+                return <>
+                  <div key={worker.idChat}>
+                    <div className='block-requested-services'>
+                      <div className='part1-avaliation-modal'>
+                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+                      </div>
+                      <label className='label-requested-info' >
+                        {worker.firstnameperson1} {worker.lastnameperson1}, {worker.servicecategory}
+                      </label>
+                      <label className='label-status' > {worker.status} </label>
                     </div>
-                    <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameworker, lastName: worker.lastnameworker, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
-                      className='label-requested-info' > {worker.firstnameperson1} {worker.lastnameperson1}, {worker.titleservice} </label>
-                    <label> {worker.status} </label>
                   </div>
-                </div>
-              </>
-            }
-          })}
+                </>
+              }
+            })
+          }
         </Modal.Body>
 
         <Modal.Footer>
@@ -104,7 +126,7 @@ const RequestedServices = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </div >
   )
 }
 
