@@ -144,7 +144,7 @@ body::-webkit-scrollbar-thumb {
 .part1-worker-profile {
   // background-image: url(../../assets/img/fundoProfile.png);
   background-repeat: round;
-  background-color: #A58AD2;
+  background-color: var(--part1-profile);
   text-align: center;
   border-radius: 14px 14px 0 0;
   height: 220px;
@@ -181,7 +181,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0 0 32px 32px;
   padding: 40px;
   padding-bottom: 15px;
-  background-color: #fff;
+  background-color: var(--background-chat);
   display: flex;
   justify-content: space-around;
   padding-top: 90px;
@@ -295,7 +295,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #title-blocks {
-  color: #6B4D9E;
+  color: var(--title-blocks);
   margin-block-end: 1em;
   font-family: Inter-Regular;
   font-size: 1.4rem;
@@ -320,7 +320,7 @@ body::-webkit-scrollbar-thumb {
   max-height: 320px;
   overflow-y: scroll;
   width: 380px;
-  background-color: #fff;
+  background-color: var(--background-chat);
 }
 
 .feed-avaliations::-webkit-scrollbar {

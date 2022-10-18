@@ -39,7 +39,7 @@
   border-radius: 32px;
   min-height: 500px;
   max-height: 500px;
-  background-color: #fff;
+  background-color: var(--background-chat);
   box-shadow: -1px 2px 7px 0px rgb(0 0 0 / 14%);
 }
 
@@ -50,7 +50,7 @@
   min-height: 78px;
   max-height: 78px;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: var(--header-chat);
 }
 
 #icon-individual-chat {
@@ -154,19 +154,22 @@
 }
 
 .messages-chat::-webkit-scrollbar {
-  width: 0.9vw;
+  width: 0.6vw;
+  border-radius: 5vw;
 }
 
 .messages-chat::-webkit-scrollbar-button {
   height: 5px;
+  border-radius: 5vw;
 }
 
 .messages-chat::-webkit-scrollbar-track {
   background-color: var(--scrollbar-chat);
+  border-radius: 5vw;
 }
 
 .messages-chat::-webkit-scrollbar-thumb {
-  background-color: #aeb0b1;
+  background-color: var(--scrollbar-chat);
   border: 0.3vw solid var(--scrollbar-chat);
   border-radius: 5vw;
 }
@@ -205,7 +208,8 @@
   display: flex;
   min-height: 93px;
   max-height: 93px;
-  background-color: #fff;
+  background-color: var(--background-chat);
+  color: var(--color-inputs-chat);
 }
 
 .input-message-chat {
@@ -213,8 +217,8 @@
   background-color: var(--background-chat);
   padding: 15px;
   border-radius: 10px;
-  width: 91%;
-  color: var(--accent-color1);
+  width: 89%;
+  color: var(--color-inputs-chat) !important;
 }
 
 .input-message-chat-disabled {
@@ -223,7 +227,7 @@
   padding: 15px;
   border-radius: 10px;
   width: 91%;
-  color: var(--accent-color1);
+  color: var(--color-inputs-chat) !important;
   pointer-events: none;
 }
 
@@ -261,7 +265,7 @@
   min-height: 500px;
   max-height: 500px;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--background-chat);
   border-radius: 25px;
   margin-right: 40px;
   box-shadow: -1px 2px 7px 0px rgb(0 0 0 / 14%);
@@ -344,16 +348,19 @@
 }
 
 .list-chat-profiles::-webkit-scrollbar {
-  width: 1vw;
+  width: 0.5vw;
+  border-radius: 5vw;
 }
 
 .list-chat-profiles::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-chat);
+  background-color: var(--scrollbar-border-chat);
+  border-radius: 5vw;
 }
 
 .list-chat-profiles::-webkit-scrollbar-thumb {
-  background-color: #aeb0b12c;
-  border: 0.4vw solid var(--scrollbar-chat);
+  background-color: var(--scrollbar-chat);
+  border: 0.4vw solid var(--scrollbar-border-chat);
+  border-radius: 5vw;
 }
 
 /* chat null */
@@ -364,7 +371,7 @@
   border-radius: 32px;
   min-height: 500px;
   max-height: 500px;
-  background-color: #fff;
+  background-color: var(--background-chat);
   box-shadow: -1px 2px 7px 0px rgb(0 0 0 / 14%);
 }
 
