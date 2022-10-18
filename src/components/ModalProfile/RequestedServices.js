@@ -18,13 +18,13 @@ const RequestedServices = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  async function getRequestedServices(idperson) {
+  async function getRequestedServices(idChat) {
     try {
-      const response = await api.get(`/getRequestedServices/${idperson}`);
-      console.log(response.data);
+      const response = await api.get(`/getRequestedServices/${idChat}`);
+      console.log('response.data', response.data);
       return setRequestedServices(response.data)
-
     } catch (error) {
+      console.log('error', error);
       setRequestedServices([])
     }
   }
@@ -37,7 +37,7 @@ const RequestedServices = (props) => {
       setRequestedServicesCount(`Você solicitou ${requestedServicesLength} serviço.`)
 
     } else {
-      setRequestedServicesCount(`Você ainda não finalizou um serviço.`)
+      setRequestedServicesCount(`Você ainda não solicitou um serviço.`)
     }
   }
 
@@ -67,23 +67,35 @@ const RequestedServices = (props) => {
 
         <Modal.Body>
           <p>{requestedServicesCount}</p>
-          {
-            requestedServices.map((worker) => {
-              return (
-                <>
-                  <div key={worker.idworker}>
-                    <div className='block-requested-services'>
-                      <div className='part1-avaliation-modal'>
-                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                      </div>
-                      <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameworker, lastName: worker.lastnameworker, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
-                        className='label-requested-info' > {worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice} </label>
+          {requestedServices.map((worker) => {
+            if (worker.idperson1 == user.idperson) {
+              return <>
+                <div key={worker.idChat}>
+                  <div className='block-requested-services'>
+                    <div className='part1-avaliation-modal'>
+                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
                     </div>
+                    <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameperson1, lastName: worker.firstnameperson1, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
+                      className='label-requested-info' > {worker.firstnameperson2} {worker.lastnameperson2}, {worker.titleservice} </label>
+                    <label> {worker.status} </label>
                   </div>
-                </>
-              )
+                </div>
+              </>
+            } else {
+              return <>
+                <div key={worker.idworker}>
+                  <div className='block-requested-services'>
+                    <div className='part1-avaliation-modal'>
+                      <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+                    </div>
+                    <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameworker, lastName: worker.lastnameworker, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
+                      className='label-requested-info' > {worker.firstnameperson1} {worker.lastnameperson1}, {worker.titleservice} </label>
+                    <label> {worker.status} </label>
+                  </div>
+                </div>
+              </>
             }
-            )}
+          })}
         </Modal.Body>
 
         <Modal.Footer>
