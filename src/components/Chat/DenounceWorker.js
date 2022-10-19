@@ -14,8 +14,9 @@ const DenounceWorker = (props) => {
   const [show, setShow] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [selectedOption, setOptionSelected] = useState('')
-  const [description, setDescription] = useState('')
+  const [selectedOption, setOptionSelected] = useState(false)
+  const [description, setDescription] = useState(false)
+  const [messageError, setMessageError] = useState(false)
 
   const handleCloseSuccess = () => setShowSuccess(false);
   const handleClose = () => setShow(false);
@@ -37,12 +38,16 @@ const DenounceWorker = (props) => {
 
   async function createDenounce() {
     const idWorker = chat.idworker
-    try {
-      const response = await api.post('/denounce', { idWorker: idWorker, idPerson: user.idperson, selectedOption, description });
-      console.log('response', response)
-      openNotification()
-    } catch (error) {
-      console.log('error @ createDenounce @ denounceWorker', error);
+    if ((selectedOption) != '' && (description) != '') {
+      try {
+        const response = await api.post('/denounce', { idWorker: idWorker, idPerson: user.idperson, selectedOption, description });
+        console.log('response', response)
+        openNotification()
+      } catch (error) {
+        console.log('error @ createDenounce @ denounceWorker', error);
+      }
+    } else {
+      setMessageError('Preencha todos os campos para realizar a denúncia!')
     }
   }
 
@@ -109,6 +114,9 @@ const DenounceWorker = (props) => {
 
             />
           </Form.Group>
+
+          <label className='message-error-denounce' >{messageError}</label>
+          
         </Form>
 
         <Modal.Footer>
