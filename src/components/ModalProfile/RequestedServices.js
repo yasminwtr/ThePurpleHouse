@@ -88,7 +88,8 @@ const RequestedServices = (props) => {
           </>
         }
 
-        <Modal.Body >
+        <Modal.Body className='modal-requested-services'
+        >
           <p>{requestedServicesCount}</p>
           {
             requestedServices.map((worker) => {

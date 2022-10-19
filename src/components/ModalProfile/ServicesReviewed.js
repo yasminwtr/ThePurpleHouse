@@ -64,7 +64,7 @@ const Avaliations = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div className='feed-avaliations-modal'>
+          <div className='modal-services-reviewed'>
             <p>{numberReviews}</p>
 
             <MyReviews/>
