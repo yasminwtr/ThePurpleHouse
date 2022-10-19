@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from "react-router-dom";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
@@ -7,24 +7,46 @@ import person from '../../assets/img/person.png'
 import CloseIcon from '@mui/icons-material/Close';
 import AuthContext from '../../services/contexts/auth';
 import { useNavigate } from "react-router-dom";
+import 'animate.css'
 
-const DropdownProfile = () => {
+const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
   const { user } = useContext(AuthContext);
   const { signOut } = useContext(AuthContext);
   const navigate = useNavigate()
-  const [showDropdown, setShowDropdown] = useState(false);
+  const btnRef = useRef()
 
   function signOutRedirect() {
     signOut()
     navigate("/", { replace: true })
   }
 
+  useEffect(() => {
+    const closeDropdown = e => {
+      if (e.path[1] !== btnRef.current) {
+        setShowDropdown(false)
+      }
+    }
+
+    document.body.addEventListener('click', closeDropdown)
+
+    return () => document.body.removeEventListener('click', closeDropdown);
+  }, []);
+
   return (
     <div className="dropdown-wrapper" >
-      <button className="trigger-button" onClick={() => setShowDropdown(!showDropdown)}>
-        {showDropdown ? <CloseIcon /> : <label id='my-profile-label'>Meu Perfil</label>}
+      <button ref={btnRef} className="trigger-button"
+        onClick={() => setShowDropdown(!showDropdown)}>
+        {showDropdown ?
+          <label id='my-profile-label-close'>
+            <CloseIcon />
+            Fechar
+          </label>
+          :
+          <label id='my-profile-label'>
+            Meu Perfil
+          </label>}
       </button>
-      <ul id='show-dropdown' className={showDropdown ? "active" : ""}>
+      <ul id='show-dropdown' className={showDropdown ? "active animate__animated animate__fadeIn  " : ""}>
         <Dropdown.ItemText className='img-dropdown' eventkey="1">
           <img width={100} src={person} />
         </Dropdown.ItemText>

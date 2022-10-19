@@ -3,6 +3,7 @@
     background-color: #655a78d3 !important;
     z-index: 22;
   }
+
   #show-dropdown {
     background-color: #655a78d3 !important;
     z-index: 1;
@@ -45,7 +46,8 @@
   background-color: transparent;
 }
 
-#my-profile-label {
+#my-profile-label,
+#my-profile-label-close {
   cursor: pointer;
   width: 130px;
   height: 40px;
@@ -56,8 +58,14 @@
   border: none;
   font-family: Inter-Regular;
   display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
   justify-content: center;
-  flex-direction: column-reverse;
+}
+
+#my-profile-label-close {
+  background-color: #8c6fb9 !important;
 }
 
 #my-profile-label:hover {
@@ -79,19 +87,18 @@
   font-size: 18px;
   overflow: hidden;
   height: 0px;
-  transition: height 0.4s ease;
   z-index: 1;
   position: absolute;
   top: 8%;
-  right: 8%;
+  right: 4%;
   margin-top: 20px;
 }
 
 #show-dropdown.active {
-  height: 280px;
   padding: 20px;
   width: 270px !important;
   z-index: 11;
+  height: 300px;
 }
 
 .li-item {
@@ -121,4 +128,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 0.4s;
 }

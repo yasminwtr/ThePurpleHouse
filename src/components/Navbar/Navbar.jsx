@@ -15,6 +15,8 @@ export default function Navbar({ changeTheme, currentTheme }) {
   const [navState, setNavState] = useState(false);
   const { signed } = useContext(AuthContext);
   const [sidebar, setSidebar] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false);
+  
 
   // window.addEventListener("scroll", function () {
   //   const header = this.document.querySelector(".header")
@@ -56,7 +58,12 @@ export default function Navbar({ changeTheme, currentTheme }) {
                   <>
                     <li className='link-sidebar' ><Link to='/Categories'>Categorias</Link> </li>
                     <li className='link-sidebar' ><Link to='/Chat'>Mensagens</Link> </li>
-                    <li><DropdownProfile /></li>
+                    <li>
+                      <DropdownProfile 
+                        showDropdown={showDropdown}
+                        setShowDropdown={setShowDropdown}
+                      />
+                    </li>
                   </>
                   :
                   <>
