@@ -5,6 +5,9 @@ import IndividualChat from '../components/Chat/IndividualChat'
 import NullChat from '../components/Chat/NullChat'
 import AuthContext from '../services/contexts/auth'
 import api from '../api'
+import CancelIcon from '@mui/icons-material/DoDisturbRounded'
+import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
+import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded';
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
@@ -76,6 +79,10 @@ const Chat = () => {
                   <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
                     <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
                     <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
+                    {chat.status == 'Finalizado' ? <><CloseIcon id='icon-individual-close'/></> : <></>}
+                    {chat.status == 'Aberto' ? <></> : <></>}
+                    {chat.status == 'Denunciado' ? <><ReportIcon id='icon-individual-report'/></> : <></>}
+                    {chat.status == 'Cancelado' ? <><CancelIcon id='icon-individual-cancel'/></> : <></>}
                   </div>
                 )
               })

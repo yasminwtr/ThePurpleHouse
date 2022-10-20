@@ -53,7 +53,7 @@ const DenounceWorker = (props) => {
 
   return (
     <div>
-      <label id='label-more-options' onClick={handleShow}><ReportIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Denunciar</label>
+      <label id='label-more-options' onClick={handleShow}><ReportIcon sx={{ fontSize: 23, marginRight: 0.5 }} /> Denunciar</label>
 
       <Modal
         show={show}
