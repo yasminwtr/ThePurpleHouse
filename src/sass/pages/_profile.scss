@@ -476,8 +476,102 @@ input::-ms-reveal,
 input::-ms-clear {
   display: none;
 }
+// ----------responsivo------------ 
+@media screen and (min-width: 285px) and (max-width: 349px) {
+  .all-profile {
+    height: 160vh;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .elements {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0 20px 20px;
+    border-radius: 2rem;
+    align-items: flex-start; 
+}
 
-@media screen and (min-width: 300px) and (max-width: 375px) {
+  .container-pt2-profile {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .container-config {
+    align-self: center;
+    width: 90%;
+    margin-bottom: 30px;
+    min-height: 200px !important;
+    height: 500px;
+    justify-content: center;
+}
+
+  .container-profile {
+    width: 300px;
+  }
+
+  .part2__profile {
+    height: 230px;
+  }
+
+  .part2-profile {
+    padding: 0px;
+    padding: 14px;
+    overflow-x: scroll;
+    padding: 24px !important;
+  }
+
+  .part2-profile::-webkit-scrollbar {
+    width: 0.7vw !important;
+  }
+
+  .part2-profile::-webkit-scrollbar-button {
+    height: 10px !important;
+  }
+
+  .part2-profile::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .part2-profile::-webkit-scrollbar-thumb {
+    background-color: #aeb0b1;
+    border: 0.3vw solid #A58AD2;
+  }
+
+  #text-profile {
+    font-size: 15px;
+  }
+
+  #title-profile {
+    font-size: 16px;
+  }
+
+  #service-text-profile {
+    font-size: 14px !important;
+  }
+
+  #options-text {
+    margin: -1px
+  }
+
+  #icon-profile {
+    width: 25%;
+    margin-bottom: 10px;
+  }
+
+  #options-logout {
+    margin-block-start: 2em;
+    margin-block-end: 0em;
+    font-size: 17px;
+    font-family: Inter-Regular;
+    cursor: pointer;
+    color: var(--profile3);
+}
+
+}
+@media screen and (min-width: 350px) and (max-width: 375px) {
   .all-profile {
     height: 170vh;
     display: flex !important;
@@ -603,89 +697,115 @@ input::-ms-clear {
 }
 
 @media screen and (min-width: 376px) and (max-width: 414px) {
+
   .all-profile {
-    height: 130vh;
+    display: flex;
+    width: 100%;
+    height: auto;
     display: flex !important;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
 }
-  .elements {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 0 20px 20px;
-    border-radius: 2rem;
-    align-items: flex-start; 
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0 20px 20px;
+  border-radius: 2rem;
+  align-items: flex-start; 
 }
 
-  .container-pt2-profile {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(1, 1fr);
+.container-pt2-profile {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+}
+.container-config {
+  border-color: var(--profile);
+  border: none;
+  width: auto;
+  margin-bottom: 50px;
+  padding: 30px 100px;
+}
+.container-profile {
+  margin: 1% auto 1% auto !important;
+  width: 90%;
+  min-height: 590px;
+  max-height: 590px;
+}
+.options-config {
+  background-color: var(--profile4);
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  align-items: flex-start;
+}
+#options-logout {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-size: 17px;
+  font-family: Inter-Regular;
+  cursor: pointer;
+  color: var(--profile3);
 }
 
-  .container-config {
-    align-self: center;
-    width: 90%;
-    margin-bottom: 30px;
-    min-height: 200px !important;
-    height: 500px;
-    justify-content: center;
+.container-profile {
+  width: 350px;
 }
 
-  .container-profile {
-    width: 350px;
-  }
+.part2__profile {
+  height: 230px;
+}
 
-  .part2__profile {
-    height: 230px;
-  }
+.part2-profile {
+  padding: 0px;
+  padding: 14px;
+  overflow-x: scroll;
+  padding: 24px !important;
+}
 
-  .part2-profile {
-    padding: 0px;
-    padding: 14px;
-    overflow-x: scroll;
-    padding: 24px !important;
-  }
+.part2-profile::-webkit-scrollbar {
+  width: 0.7vw !important;
+}
 
-  .part2-profile::-webkit-scrollbar {
-    width: 0.7vw !important;
-  }
+.part2-profile::-webkit-scrollbar-button {
+  height: 10px !important;
+}
 
-  .part2-profile::-webkit-scrollbar-button {
-    height: 10px !important;
-  }
+.part2-profile::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-  .part2-profile::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+.part2-profile::-webkit-scrollbar-thumb {
+  background-color: #aeb0b1;
+  border: 0.3vw solid #A58AD2;
+}
 
-  .part2-profile::-webkit-scrollbar-thumb {
-    background-color: #aeb0b1;
-    border: 0.3vw solid #A58AD2;
-  }
+#text-profile {
+  font-size: 15px;
+}
 
-  #text-profile {
-    font-size: 15px;
-  }
+#title-profile {
+  font-size: 16px;
+}
 
-  #title-profile {
-    font-size: 16px;
-  }
+#service-text-profile {
+  font-size: 14px !important;
+}
 
-  #service-text-profile {
-    font-size: 14px !important;
-  }
+#options-text {
+  margin: -1px
+}
 
-  #options-text {
-    margin: -1px
-  }
-
-  #icon-profile {
-    width: 25%;
-    margin-bottom: 10px;
-  }
+#icon-profile {
+  width: 25%;
+  margin-bottom: 10px;
+}
 }
 
 @media screen and (min-width: 415px) and (max-width: 820px) {
@@ -732,20 +852,145 @@ input::-ms-clear {
 
 }
 
+@media screen and (min-width: 821px) and (max-width: 912px) {
 
+  .options-config {
+    background-color: var(--profile4);
+    border-radius: 25px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
 
+.container-config {
+    border-color: var(--profile);
+    border: none;
+    background-color: var(--profile2);
+    width: 27.5%;
+    padding: 30px;
+}
 
+#options-text {
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+    font-size: 14px;
+    font-family: Inter-Regular;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--titleprofile1);
+}
 
-// .container-config {
-//   border-color: var(--profile);
-//   border: none;
-//   background-color: var(--profile2);
-//   width: 80%;
-//   padding: 30px;
-//   border-color: var(--profile);
-//   border: none;
-//   background-color: var(--profile2);
-  
-//   padding: 30px 150px 30px;
-//   border-radius: 2rem;
-// }
+#title-profile {
+    margin-block-start: 0em;
+    margin-block-end: 0.2em;
+    font-size: 14px;
+    color: var(--accent-color1);
+    font-family: Inter-SemiBold;
+    display: flex;
+    align-items: center;
+}
+
+#service-title-profile {
+    margin-block-start: 0em;
+    margin-block-end: 0.2em;
+    font-size: 14px;
+    font-family: Inter-SemiBold;
+    display: flex;
+    align-items: center;
+    color: var(--accent-color1);
+}
+
+#text-profile {
+    margin-block-start: 0em;
+    margin-block-end: 2em;
+    font-size: 14px;
+    font-family: Inter-Light;
+    color: var(--titleprofile1);
+}
+
+#service-text-profile {
+    margin-block-end: -3px;
+    font-size: 14px;
+    font-family: Inter-Light;
+    color: var(--titleprofile1);
+}
+}
+
+@media screen and (min-width: 913px) and (max-width: 1024px) {
+  .container-config {
+    border-color: var(--profile);
+    border: none;
+    background-color: var(--profile2);
+    width: 26%;
+    padding: 20px;
+}
+
+#options-text {
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+    font-size: 15px;
+    font-family: Inter-Regular;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--titleprofile1);
+}
+
+#service-text-profile {
+    margin-block-end: -3px;
+    font-size: 16px;
+    font-family: Inter-Light;
+    color: var(--titleprofile1);
+}
+
+#options-logout {
+    margin-block-start: 2em;
+    margin-block-end: 0em;
+    font-size: 17px;
+    font-family: Inter-Regular;
+    cursor: pointer;
+    color: var(--profile3);
+}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .container-config {
+    border-color: var(--profile);
+    border: none;
+    background-color: var(--profile2);
+    width: 17.5%;
+    padding: 20px;
+}
+
+.container-profile {
+    margin: 1% auto 1% auto !important;
+    width: 76%;
+    min-height: 490px;
+    max-height: 490px;
+}
+
+.options-config {
+    background-color: var(--profile4);
+    border-radius: 25px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+#options-title {
+    font-size: 15px;
+    font-family: Inter-SemiBold;
+    color: var(--accent-color1);
+}
+
+#options-text {
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+    font-size: 12px;
+    font-family: Inter-Regular;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--titleprofile1);
+}
+}
+
