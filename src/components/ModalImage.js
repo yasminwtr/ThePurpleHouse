@@ -44,7 +44,6 @@ export const UploadImage = (props) => {
   const saveImage = async () => {
     try {
       const response = await api.post(`/postImage`, { img: file, idWorker: idWorker });
-      console.log('file @ saveImage', file);
     } catch (error) {
       console.log('error', error);
     }
@@ -72,7 +71,7 @@ export const UploadImage = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <Form encType="multipart/form-data" onChange={(e) => setImage(e.target.files[0])} type="file" multiple accept='.png, .jpeg, .jpg'>
+          <Form encType="multipart/form-data" onChange={(e) => setImage([e.target.files[0], ...image])} type="file" multiple accept='.png, .jpeg, .jpg'>
             <Form.Group className="mb-3">
               <Form.Label>Adicione até 5 imagens de serviços já realizados</Form.Label>
               <Upload
@@ -80,7 +79,7 @@ export const UploadImage = (props) => {
                 listType="picture"
                 className="upload-list-inline"
               >
-                <Button type='submit' icon={<UploadOutlined />}>Escolher Arquivos</Button>
+                <Button type='submit' disabled={image.length === 5} icon={<UploadOutlined />}>Escolher Arquivos</Button>
               </Upload>
             </Form.Group>
           </Form>
