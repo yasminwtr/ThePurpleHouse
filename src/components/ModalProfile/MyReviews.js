@@ -12,23 +12,12 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const MyReviews = (props) => {
-    const { user } = useContext(AuthContext);
-    const [servicesReviewed, setServicesReviewed] = useState([]);
+    const { servicesReviewed, setServicesReviewed, getServicesReviewed } = props
     const [showError, setShowError] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
 
     const handleCloseError = () => setShowError(false);
     const handleCloseSuccess = () => setShowSuccess(false);
-
-    async function getServicesReviewed() {
-        try {
-            const response = await api.get(`/servicesReviewed/${user.idperson}`);
-            return setServicesReviewed(response.data)
-
-        } catch (error) {
-            setServicesReviewed([])
-        }
-    }
 
     const deleteReview = async (deleteId) => {
         const requestOptions = {
@@ -46,15 +35,14 @@ const MyReviews = (props) => {
         }
     }
 
-    useEffect(() => {
-        getServicesReviewed(user.idperson)
-    }, [])
-
     return (
         <div>
             {
                 servicesReviewed.map((worker) => {
                     if (worker.stars == 5) {
+                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+                        const formattedDateReview = `${day}/${month}/${year}`
+
                         return <>
                             <div className='individual-avaliation-modal' key={worker.idreview}>
                                 <div className='block-avaliation-modal'>
@@ -63,7 +51,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                                         <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
                                     </div>
 
@@ -74,6 +62,9 @@ const MyReviews = (props) => {
                             </div></>
 
                     } else if (worker.stars == 4) {
+                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+                        const formattedDateReview = `${day}/${month}/${year}`
+
                         return <>
                             <div className='individual-avaliation-modal' key={worker.idreview}>
                                 <div className='block-avaliation-modal'>
@@ -82,7 +73,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
@@ -93,6 +84,9 @@ const MyReviews = (props) => {
                             </div></>
 
                     } else if (worker.stars == 3) {
+                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+                        const formattedDateReview = `${day}/${month}/${year}`
+
                         return <>
                             <div className='individual-avaliation-modal' key={worker.idreview}>
                                 <div className='block-avaliation-modal'>
@@ -101,7 +95,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
@@ -112,6 +106,9 @@ const MyReviews = (props) => {
                             </div></>
 
                     } else if (worker.stars == 2) {
+                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+                        const formattedDateReview = `${day}/${month}/${year}`
+
                         return <>
                             <div className='individual-avaliation-modal' key={worker.idreview}>
                                 <div className='block-avaliation-modal'>
@@ -120,7 +117,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 
@@ -131,6 +128,9 @@ const MyReviews = (props) => {
                             </div></>
 
                     } else if (worker.stars == 1) {
+                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+                        const formattedDateReview = `${day}/${month}/${year}`
+
                         return <>
                             <div className='individual-avaliation-modal' key={worker.idreview}>
                                 <div className='block-avaliation-modal'>
@@ -139,7 +139,7 @@ const MyReviews = (props) => {
                                     </div>
 
                                     <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}</p>
+                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                                         <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                                     </div>
 

@@ -6,20 +6,27 @@ import Modal from 'react-bootstrap/Modal';
 import AuthContext from '../../services/contexts/auth'
 import AvaliationIcon from '@mui/icons-material/StarRounded'
 import MyReviews from './MyReviews'
+import MyComplaints from './MyComplaints'
 
 const Avaliations = (props) => {
   const { user } = useContext(AuthContext);
   const [servicesReviewed, setServicesReviewed] = useState([]);
+  const [servicesDenounced, setServicesDenounced] = useState([]);
   const [numberReviews, setNumberReviews] = useState('')
+  const [numberDenounce, setNumberDenounce] = useState('')
   const reviewsLength = servicesReviewed.length
+  const denounceLength = servicesDenounced.length
   const [show, setShow] = useState(false);
+  const [modalAvaliations, setModalAvaliations] = useState(false);
+  const [modalDenounces, setModalDenounces] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  async function getServicesReviewed(idperson) {
+  async function getServicesReviewed() {
+    const idPerson = user.idperson
     try {
-      const response = await api.get(`/servicesReviewed/${idperson}`);
+      const response = await api.get(`/servicesReviewed/${idPerson}`);
       return setServicesReviewed(response.data)
 
     } catch (error) {
@@ -27,11 +34,22 @@ const Avaliations = (props) => {
     }
   }
 
+  async function getServicesDenounced() {
+    const idPerson = user.idperson
+    try {
+      const response = await api.get(`/denounce/${idPerson}`);
+      return setServicesDenounced(response.data)
+
+    } catch (error) {
+      setServicesDenounced([])
+    }
+  }
+
   function validationNumberReviews() {
-    if(reviewsLength > 1) {
+    if (reviewsLength > 1) {
       setNumberReviews(`Você já avaliou ${reviewsLength} serviços.`)
 
-    } else if(reviewsLength == 1) {
+    } else if (reviewsLength == 1) {
       setNumberReviews(`Você já avaliou ${reviewsLength} serviço.`)
 
     } else {
@@ -39,12 +57,26 @@ const Avaliations = (props) => {
     }
   }
 
+  function validationNumberDenounce() {
+    if (denounceLength > 1) {
+      setNumberDenounce(`Você já denunciou ${denounceLength} serviços.`)
+
+    } else if (denounceLength == 1) {
+      setNumberDenounce(`Você já denunciou ${denounceLength} serviço.`)
+
+    } else {
+      setNumberDenounce(`Você ainda não denunciou um serviço.`)
+    }
+  }
+
   useEffect(() => {
-    getServicesReviewed(user.idperson)
+    getServicesReviewed()
+    getServicesDenounced()
   }, [])
 
   useEffect(() => {
     validationNumberReviews()
+    validationNumberDenounce()
   })
 
   return (
@@ -65,9 +97,32 @@ const Avaliations = (props) => {
 
         <Modal.Body>
           <div className='modal-services-reviewed'>
-            <p>{numberReviews}</p>
+            <div className='div-buttons-modal'>
+              <Button id='services-reviewed-button-modal' onClick={() => setModalAvaliations(!modalAvaliations)}>
+                Avaliados
+              </Button>
+              <Button id='services-denounced-button-modal' onClick={() => setModalDenounces(!modalDenounces)}>
+                Denunciados
+              </Button>
+            </div>
 
-            <MyReviews/>
+            {modalAvaliations ?
+              <>
+                <p>{numberReviews}</p>
+                <MyReviews servicesReviewed={servicesReviewed} setServicesReviewed={setServicesReviewed} getServicesReviewed={getServicesReviewed}/>
+              </>
+              :
+              <></>
+            }
+
+            {modalDenounces ?
+              <>
+                <p>{numberDenounce}</p>
+                <MyComplaints servicesDenounced={servicesDenounced} setServicesDenounced={setServicesDenounced} getServicesDenounced={getServicesDenounced}/>
+              </>
+              :
+              <></>
+            }
           </div>
 
 
