@@ -5,23 +5,7 @@ import { FaStar } from 'react-icons/fa'
 import { useLocation } from 'react-router-dom';
 
 const WorkerReviews = (props) => {
-  const location = useLocation();
-  const [workerReviews, setWorkerReviews] = useState([]);
-
-  async function getReviewsByWorker() {
-    const idWorker = location.state.workerId
-    try {
-      const response = await api.get(`/reviewsByWorker/${idWorker}`);
-      return setWorkerReviews(response.data)
-
-    } catch (error) {
-      setWorkerReviews([])
-    }
-  }
-
-  useEffect(() => {
-    getReviewsByWorker()
-  }, [])
+  const { workerReviews } = props
 
   return (
     <div>

@@ -352,6 +352,7 @@ body::-webkit-scrollbar-thumb {
   padding: 5px 0 5px 0;
   font-family: Inter-Medium;
   width: 55%;
+  cursor: pointer;
 }
 
 #number-complaints {
@@ -361,6 +362,15 @@ body::-webkit-scrollbar-thumb {
   padding: 5px 0 5px 0;
   font-family: Inter-Medium;
   width: 55%;
+  cursor: pointer;
+}
+
+#selected33{
+  background-color: #6B4D9E;
+}
+
+#number-avaliations:hover, #number-complaints:hover{
+  color: #A58AD2;
 }
 
 .block-avaliation {

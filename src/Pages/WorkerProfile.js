@@ -12,6 +12,7 @@ import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../api'
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import WorkerReviews from '../components/Reviews/WorkerReviews';
+import WorkerComplaints from '../components/Reviews/WorkerComplaints';
 import AuthContext from '../services/contexts/auth'
 import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
@@ -23,23 +24,40 @@ const WorkerProfile = () => {
   const location = useLocation();
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
   const [workerReviews, setWorkerReviews] = useState([]);
+  const [workerComplaints, setWorkerComplaints] = useState([]);
   const [chat, setChat] = useState([])
   const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
   const workerReviewsLength = workerReviews.length
+  const [numberWorkerComplaints, setNumberWorkerComplaints] = useState('')
+  const workerComplaintsLength = workerComplaints.length
   const dateAtual = new Date()
   const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
   const [idade, setIdade] = useState(dateAtual.getFullYear() - year);
   const navigate = useNavigate();
+  const [showAvaliations, setShowAvaliations] = useState(false);
+  const [showDenounces, setShowDenounces] = useState(false);
 
   async function getReviewsByWorker() {
     const idWorker = location.state.workerId
-    
+
     try {
       const response = await api.get(`/reviewsByWorker/${idWorker}`);
       return setWorkerReviews(response.data)
 
     } catch (error) {
       setWorkerReviews([])
+    }
+  }
+
+  async function getComplaintsByWorker() {
+    const idWorker = location.state.workerId
+
+    try {
+      const response = await api.get(`/complaintsByWorker/${idWorker}`);
+      return setWorkerComplaints(response.data)
+
+    } catch (error) {
+      setWorkerComplaints([])
     }
   }
 
@@ -67,24 +85,17 @@ const WorkerProfile = () => {
     }
   }
 
-  // async function getChat() {
-  //   const idPerson1 = user.idperson
-  //   const idPerson2 = location.state.personWorkerId
-  //   try {
-  //     const response = await api.get(`/chats/${idPerson1}&${idPerson2}`);
-  //     setChat(response.data)
+  function validationWorkerNumberComplaints() {
+    if (workerComplaintsLength > 1) {
+      setNumberWorkerComplaints(`${workerComplaintsLength} denúncias`)
 
-  //     if (chat.length == 0) {
-  //       createChat()
+    } else if (workerComplaintsLength == 1) {
+      setNumberWorkerComplaints(`${workerComplaintsLength} denúncia`)
 
-  //     } else {
-  //       chat.map((item) => { navigate("/Chat", { replace: true, state: { selectedChat: item.idchat } }); });
-  //     }
-
-  //   } catch (error) {
-  //     setChat([])
-  //   }
-  // }
+    } else {
+      setNumberWorkerComplaints(`Nenhuma denúncia`)
+    }
+  }
 
   async function createChat() {
     try {
@@ -99,10 +110,12 @@ const WorkerProfile = () => {
 
   useEffect(() => {
     getReviewsByWorker()
+    getComplaintsByWorker()
   }, [])
 
   useEffect(() => {
     validationWorkerNumberReviews()
+    validationWorkerNumberComplaints()
   })
 
   useEffect(() => {
@@ -170,11 +183,13 @@ const WorkerProfile = () => {
 
               <div className='feed-avaliations'>
                 <div className='inicial-avaliations'>
-                  <p id='number-avaliations'>{numberWorkerReviews}</p>
-                  <p id='number-complaints'>Nenhuma denúncia</p>
+                  <p id='number-avaliations' onClick={() => setShowAvaliations(!showAvaliations)}>{numberWorkerReviews}</p>
+                  <p id='number-complaints' onClick={() => setShowDenounces(!showDenounces)}>{numberWorkerComplaints}</p>
                 </div>
 
-                <WorkerReviews />
+                {showAvaliations ? <WorkerReviews workerReviews={workerReviews} /> : <></>}
+
+                {showDenounces ? <WorkerComplaints workerComplaints={workerComplaints} /> : <></>}
               </div>
             </div>
 
