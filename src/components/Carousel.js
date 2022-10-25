@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import { UploadImage } from './ModalImage'
 import { useLocation } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
-
+import defaultimage from '../assets/img/defaultimage.PNG'
 import api from 'api';
 
 export const Carousel = () => {
@@ -11,7 +10,14 @@ export const Carousel = () => {
 
   const [image, setImage] = useState([])
 
+  const defaultImage = [
+    {
+      original: defaultimage,
+    },
+  ];
+
   const showImage = async () => {
+
     try {
       const response = await api.get(`/getImageWorker/${idWorker}`, { idWorker: idWorker });
 
@@ -26,17 +32,15 @@ export const Carousel = () => {
 
   useEffect(() => {
     showImage()
-  }, [image])
+  }, [])
 
   return (
     <div className='gallery'>
-
-      <p id='title-blocks'>Galeria de serviços</p>
-
-      <UploadImage />
-
-      <ImageGallery items={image} className='carousel' sizes={10} />
-
+      {image != '' ?
+        <ImageGallery items={image} className='carousel' sizes={10} />
+        :
+        <ImageGallery items={defaultImage} className='carousel' sizes={10} />
+      }
     </div>
   )
 }
