@@ -406,48 +406,50 @@
   height: 55%;
 }
 
-/* responsividade */
-
-// @media screen and (max-width: 600px) {
-//   .all-chat {
-//     flex-direction: column;
-//   }
-
-//   .box-search-chat {
-//     width: 50%;
-//     height: 400px;
-//     margin-bottom: 20px;
-//     padding: 10px;
-//   }
-// }
-
-// @media screen and (min-width: 600px) and (max-width: 960px) {
-//   .all-chat {
-//     flex-direction: column;
-//   }
-
-//   .box-search-chat {
-//     width: 50%;
-//     height: 400px;
-//     margin-bottom: 20px;
-//     padding: 10px;
-//   }
-// }
-
-// @media screen and (min-width: 960px) and (max-width: 1264px) {
-//   .all-chat {
-//     margin: 10px;
-//   }
-
-//   .box-search-chat {
-//     width: 50%;
-//     height: 400px;
-//     margin-bottom: 20px;
-//     padding: 10px;
-//     margin-right: 30px;
-//   }
-// }
-
 aside.EmojiPickerReact.epr-main {
   margin-top: -521px !important;
+}
+
+/* responsividade */
+
+@media screen and (min-width: 280px) and (max-width: 540px) {
+  .all-chat {
+    flex-direction: column;
+  }
+
+  .box-search-chat {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+  }
+
+  .chat-null-image {
+    width: 80%;
+  }
+
+  .h4-chat-null {
+    margin: 5px
+  }
+}
+
+@media screen and (min-width: 541px) and (max-width: 1280px) {
+  .all-chat {
+    flex-direction: row;
+  }
+
+  .box-search-chat {
+    width: 6  0%;
+    height: 400px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .chat-null-image {
+    width: 50%;
+    margin-top: 70px;
+  }
+
+  .h4-chat-null {
+    margin: 5px
+  }
 }
