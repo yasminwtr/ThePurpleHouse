@@ -18,7 +18,6 @@ import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { UploadImage } from '../components/UploadImages'
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
@@ -194,7 +193,6 @@ const WorkerProfile = () => {
               </div>
             </div>
             <p id='title-blocks'>Galeria de serviços</p>
-            <UploadImage />
             <Carousel />
           </div>
         </div>
