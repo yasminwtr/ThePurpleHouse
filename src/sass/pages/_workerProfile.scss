@@ -345,7 +345,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-#number-avaliations {
+#number-avaliations, #number-avaliations-selected {
   color: var(--accent-color1);
   text-align: start;
   font-size: 14px;
@@ -355,7 +355,7 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-#number-complaints {
+#number-complaints, #number-complaints-selected {
   color: var(--accent-color1);
   text-align: end;
   font-size: 14px;
@@ -369,7 +369,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #6B4D9E;
 }
 
-#number-avaliations:hover, #number-complaints:hover{
+#number-avaliations:hover, #number-complaints:hover, #number-avaliations-selected, #number-complaints-selected{
   color: #A58AD2;
 }
 
@@ -394,9 +394,17 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
   font-family: Inter-Medium;
   margin-top: 2%;
-  margin-bottom: -5px;
   color: var(--accent-color1);
   width: 63%;
+}
+
+#inicial-text-worker-profile-review{
+  font-family: Inter-Medium;
+}
+
+.inicial-worker-profile-review{
+  text-align: center;
+  margin-top: 2%;
 }
 
 #date-avaliation{
@@ -407,6 +415,10 @@ body::-webkit-scrollbar-thumb {
   margin-top: 2%;
   margin-bottom: -5px;
   color: var(--accent-color1);
+}
+
+.stars-worker-profile-review, .motive-worker-profile-denounce{
+  margin-top: -5px;
 }
 
 #text-avaliation {
@@ -422,7 +434,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .all-info-avaliation{
-  width: 85%;
+  width: 84%;
+  margin-left: 2%;
 }
 
 input[type='radio'] {

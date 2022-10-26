@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LeaveAvaliation from '../components/Reviews/LeaveAvaliation'
 import EditProfileWorker from '../components/ModalProfile/EditProfileWorker'
 import whatsapp from '../assets/img/whatsapp.png'
 import EmailIcon from '@mui/icons-material/EmailRounded'
@@ -18,6 +17,8 @@ import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import ReviewsImage from "../assets/img/review.png";
+import { UploadImage } from '../components/UploadImages'
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
@@ -183,9 +184,20 @@ const WorkerProfile = () => {
 
               <div className='feed-avaliations'>
                 <div className='inicial-avaliations'>
-                  <p id='number-avaliations' onClick={() => setShowAvaliations(!showAvaliations)}>{numberWorkerReviews}</p>
-                  <p id='number-complaints' onClick={() => setShowDenounces(!showDenounces)}>{numberWorkerComplaints}</p>
+                  <p id={showAvaliations ? 'number-avaliations-selected' : 'number-avaliations'} onClick={() => setShowAvaliations(!showAvaliations)}>{numberWorkerReviews}</p>
+                  <p id={showDenounces ? 'number-complaints-selected' : 'number-complaints'} onClick={() => setShowDenounces(!showDenounces)}>{numberWorkerComplaints}</p>
                 </div>
+
+                {showAvaliations || showDenounces ?
+                  <></>
+                  :
+                  <>
+                    <div className='inicial-worker-profile-review'>
+                      <p id='inicial-text-worker-profile-review'>Selecione "avaliações" e/ou "denúncias" acima para consultar os registros.</p>
+                      <img src={ReviewsImage} alt="ReviewsImage" width={'100px'} />
+                    </div>
+                  </>
+                }
 
                 {showAvaliations ? <WorkerReviews workerReviews={workerReviews} /> : <></>}
 

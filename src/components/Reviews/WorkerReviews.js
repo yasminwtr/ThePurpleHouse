@@ -28,7 +28,7 @@ const WorkerReviews = (props) => {
                       <p id='date-avaliation'>{formattedDateReview}</p>
                     </div>
 
-                    <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /></div>
+                    <div className='stars-worker-profile-review'><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /></div>
                   </div>
                 </div>
 
@@ -52,7 +52,7 @@ const WorkerReviews = (props) => {
                       <p id='date-avaliation'>{formattedDateReview}</p>
                     </div>
 
-                    <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
+                    <div className='stars-worker-profile-review'><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                   </div>
                 </div>
 
@@ -76,7 +76,7 @@ const WorkerReviews = (props) => {
                       <p id='date-avaliation'>{formattedDateReview}</p>
                     </div>
 
-                    <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
+                    <div className='stars-worker-profile-review'><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                   </div>
                 </div>
 
@@ -100,7 +100,7 @@ const WorkerReviews = (props) => {
                       <p id='date-avaliation'>{formattedDateReview}</p>
                     </div>
 
-                    <div><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
+                    <div className='stars-worker-profile-review'><FaStar color='#fccc3e' size={18} /><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                   </div>
                 </div>
 
@@ -124,7 +124,7 @@ const WorkerReviews = (props) => {
                       <p id='date-avaliation'>{formattedDateReview}</p>
                     </div>
 
-                    <div><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
+                    <div className='stars-worker-profile-review'><FaStar color='#fccc3e' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /><FaStar color='#d9d9d9' size={18} /></div>
                   </div>
                 </div>
 

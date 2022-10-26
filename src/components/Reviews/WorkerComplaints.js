@@ -27,7 +27,7 @@ const WorkerComplaints = (props) => {
                       <p id='date-avaliation'>{formattedDateDenounce}</p>
                     </div>
 
-                    <div>{denounce.selectedoption}</div>
+                    <div className='motive-worker-profile-denounce'>{denounce.selectedoption}</div>
                   </div>
                 </div>
 
