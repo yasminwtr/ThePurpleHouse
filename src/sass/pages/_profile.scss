@@ -279,8 +279,7 @@ select:focus {
   background-color: #56a54f;
 }
 
-#save-button-modals-profile:hover,
-#services-reviewed-button-modal:hover {
+#save-button-modals-profile:hover{
   border-color: #479b3f;
   background-color: #479b3f;
   transition: 0.5s;
@@ -295,8 +294,7 @@ select:focus {
 }
 
 #delete-button-modals-profile:hover,
-#delete-review-button:hover,
-#services-denounced-button-modal:hover {
+#delete-review-button:hover{
   border-color: #a82d2d;
   background-color: #a82d2d;
   transition: 0.5s;
@@ -320,9 +318,17 @@ select:focus {
   text-align: center;
 }
 
-.edit-profile-buttons-modal {
+.edit-profile-buttons-modal, .edit-profile-buttons-modal:focus, .edit-profile-buttons-modal-selected {
   height: 40px !important;
   border-radius: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  border-color: #d9d9d9;
+  width: 48%;
+}
+
+.edit-profile-buttons-modal-selected{
+  color: #6B4D9E !important;
+  border-color: #6B4D9E !important;
 }
 
 .right-button-modal {
@@ -430,24 +436,28 @@ select:focus {
   border-radius: 5vw;
 }
 
-// modal services reviewed
+// modal services reviewed jesus kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 
-#services-reviewed-button-modal {
+#services-reviewed-button-modal,
+#services-reviewed-button-modal-selected,
+#services-reviewed-button-modal:focus,
+#services-denounced-button-modal,
+#services-denounced-button-modal-selected,
+#services-denounced-button-modal:focus{
   height: 40px;
   border-radius: 14px;
-  color: #fff;
-  border-color: #599653;
-  background-color: #599653;
   margin-right: 1%;
+  width: 49%;
+  color: rgba(0, 0, 0, 0.85);
+  border-color: #d9d9d9;
 }
 
-#services-denounced-button-modal {
-  height: 40px;
-  border-radius: 14px;
-  color: #fff;
-  border-color: #bb3f3f;
-  background-color: #bb3f3f;
-  margin-bottom: 4%;
+#services-reviewed-button-modal:hover,
+#services-reviewed-button-modal-selected,
+#services-denounced-button-modal:hover,
+#services-denounced-button-modal-selected{
+  color: #6B4D9E;
+  border-color: #6B4D9E;
 }
 
 /* ------------ edit account ----------- */

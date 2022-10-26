@@ -162,10 +162,10 @@ const EditAccount = (props) => {
         <Modal.Body>
           <Form>
             <div className='div-buttons-modal'>
-              <Button className='edit-profile-buttons-modal mb-3' onClick={() => setModalInformations(!modalInformations)}>
+              <Button className={modalInformations ? 'edit-profile-buttons-modal-selected mb-3' : 'edit-profile-buttons-modal mb-3'} onClick={() => setModalInformations(!modalInformations)}>
                 Informações pessoais
               </Button>
-              <Button className='edit-profile-buttons-modal right-button-modal mb-3' onClick={() => setModalPassword(!modalPassword)}>
+              <Button className={modalPassword ? 'edit-profile-buttons-modal-selected right-button-modal mb-3' : 'edit-profile-buttons-modal right-button-modal mb-3'} onClick={() => setModalPassword(!modalPassword)}>
                 Senha
               </Button>
             </div>

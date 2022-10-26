@@ -98,13 +98,15 @@ const Avaliations = (props) => {
         <Modal.Body>
           <div className='modal-services-reviewed'>
             <div className='div-buttons-modal'>
-              <Button id='services-reviewed-button-modal' onClick={() => setModalAvaliations(!modalAvaliations)}>
+              <Button id={modalAvaliations ? 'services-reviewed-button-modal-selected' : 'services-reviewed-button-modal'} onClick={() => setModalAvaliations(!modalAvaliations)}>
                 Avaliados
               </Button>
-              <Button id='services-denounced-button-modal' onClick={() => setModalDenounces(!modalDenounces)}>
+              <Button id={modalDenounces ? 'services-denounced-button-modal-selected' : 'services-denounced-button-modal'} onClick={() => setModalDenounces(!modalDenounces)}>
                 Denunciados
               </Button>
             </div>
+
+            {modalAvaliations || modalDenounces ? <></> : <>Selecione uma das opções acima para consultar suas avaliações.</>}
 
             {modalAvaliations ?
               <>
