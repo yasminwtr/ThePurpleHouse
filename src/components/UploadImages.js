@@ -11,6 +11,8 @@ import api from 'api'
 
 export const UploadImage = (props) => {
 
+  const { image } = props
+
   const location = useLocation();
   const idWorker = location.state.workerId
 
@@ -21,40 +23,44 @@ export const UploadImage = (props) => {
   const [file, setFile] = useState([]);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true)
 
   const attemptSave = async () => {
 
-    listImages.forEach((image) => {
+    if (image < 4) {
 
-      const data = new FormData();
-      data.append("image", image);
+      listImages.forEach(image => {
+        const data = new FormData();
+        data.append("image", image);
 
-      axios({
-        method: "post",
-        url: "https://api.imgbb.com/1/upload?key=7313c33c5080a1cfde51ee1a33889274",
-        data: data,
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-        .then((response) => {
-          response = response.data.data.url
-
-          setFile(response)
-
-          saveImage()
+        axios({
+          method: "post",
+          url: "https://api.imgbb.com/1/upload?key=260510af5b0c0bace7d588642e391256",
+          data: data,
+          headers: { "Content-Type": "multipart/form-data" },
         })
-        .catch((response) => {
-          console.log('response @ modalImage', response);
-        });
+          .then((response) => {
+            response = response.data.data.url
+
+            setFile(response)
+
+            saveImage()
+          })
+          .catch((response) => {
+            console.log('response @ modalImage', response);
+          });
+      });
     }
-    )
+    props.getWorkerImages();
   };
 
   const saveImage = async () => {
-    try {
-      await api.post(`/postImage`, { img: file, idWorker: idWorker });
-    } catch (error) {
-      console.log('error', error);
+    if ((file.length) > 0) {
+      try {
+        await api.post(`/postImage`, { img: file, idWorker: idWorker });
+      } catch (error) {
+        console.log('error', error);
+      }
     }
   }
 

@@ -15,6 +15,8 @@ import WorkerComplaints from '../components/Reviews/WorkerComplaints';
 import AuthContext from '../services/contexts/auth'
 import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import ReviewsImage from "../assets/img/review.png";
 import { UploadImage } from '../components/UploadImages'
 
@@ -203,7 +205,6 @@ const WorkerProfile = () => {
               </div>
             </div>
             <p id='title-blocks'>Galeria de serviços</p>
-            <UploadImage />
             <Carousel />
           </div>
         </div>
