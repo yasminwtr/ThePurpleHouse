@@ -16,75 +16,79 @@ export default function Navbar({ changeTheme, currentTheme }) {
   const { signed } = useContext(AuthContext);
   const [sidebar, setSidebar] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false);
-  
-
-  // window.addEventListener("scroll", function () {
-  //   const header = this.document.querySelector(".header")
-  //   header.classList.toggle("active", this.window.screenY > 200)
-  // })
 
   const location = useLocation()
   return (
     <>
-     {location.pathname !== "/Login" && location.pathname !== "/Registration"
+      {location.pathname !== "/Login" && location.pathname !== "/Registration"
         ?
-  <nav>
-    
-      <div className="brand-container">
-        <div className="logo">
-          <Link to='/'><img src={logo} width={55} alt="logo1" /></Link>
-          <span className="title-header">The Purple House</span>
-        </div>
-        <div className="toggle-container">
-          <div className="toggle">
-            {navState ? (
-              <MdClose onClick={() => setNavState(false)} />
-            ) : (
-              <GiHamburgerMenu onClick={() => setNavState(true)} />
-            )}
+        <nav>
+
+          <div className="brand-container">
+            <div className="logo">
+              <Link to='/'><img src={logo} width={55} alt="logo1" /></Link>
+              <span className="title-header">The Purple House</span>
+            </div>
+            <div className="toggle-container">
+              <div className="toggle">
+                {navState ? (
+                  <MdClose onClick={() => setNavState(false)} />
+                ) : (
+                  <GiHamburgerMenu onClick={() => setNavState(true)} />
+                )}
+              </div>
+              <div className="mode" onClick={changeTheme}>
+                {currentTheme === "dark" ? (
+                  <ImSun className="light" />
+                ) : (
+                  <BsFillMoonFill className="dark" />
+                )}
+              </div>
+            </div>
           </div>
-          <div className="mode" onClick={changeTheme}>
-            {currentTheme === "dark" ? (
-              <ImSun className="light" />
-            ) : (
-              <BsFillMoonFill className="dark" />
-            )}
-          </div>
-        </div>
-      </div>
-      <div className={`links-container ${navState ? "nav-visible" : ""}`}>
-        <ul className="links">
-        {signed ?
-                  <>
-                    <li className='link-sidebar' ><Link to='/Categories'>Categorias</Link> </li>
-                    <li className='link-sidebar' ><Link to='/Chat'>Mensagens</Link> </li>
+          <div className={`links-container ${navState ? "nav-visible" : ""}`}>
+            <ul className="links">
+              {signed ?
+                <>
+                  <li className='link-sidebar' ><Link to='/Categories'>Categorias</Link> </li>
+                  <li className='link-sidebar' ><Link to='/Chat'>Mensagens</Link> </li>
+                  {navState ?
+                    <>
+                      <li>
+                        <Link to='/Profile'>
+                          Meu perfil
+                        </Link>
+                      </li>
+                    </>
+                    :
                     <li>
-                      <DropdownProfile 
+                      <DropdownProfile
                         showDropdown={showDropdown}
                         setShowDropdown={setShowDropdown}
                       />
                     </li>
-                  </>
-                  :
-                  <>
-                    <li><Link to='/'>Inicial</Link> </li>
-                    <li><Link to='/About'>Quem somos</Link> </li>
-                    <li className="icon">
-                      <Link to='/Login' ><button className="buttonNav">Entrar</button></Link>
-                    </li>
-                  </>
-                }
-          <li onClick={changeTheme}>
-            {currentTheme === "dark" ? (
-              <ImSun className="light" />
-            ) : (
-              <BsFillMoonFill className="dark" />
-            )}
-          </li>
-        </ul>
-      </div>
-    </nav>
-    : null
+                  }
+                </>
+                :
+                <>
+                  <li><Link to='/'>Inicial</Link> </li>
+                  <li><Link to='/About'>Quem somos</Link> </li>
+                  <li className="icon">
+                    <Link to='/Login' ><button className="buttonNav">Entrar</button></Link>
+                  </li>
+                </>
+              }
+              <li onClick={changeTheme}>
+                {currentTheme === "dark" ? (
+                  <ImSun className="light" />
+                ) : (
+                  <BsFillMoonFill className="dark" />
+                )}
+              </li>
+            </ul>
+          </div>
+        </nav>
+        : null
       }
     </>
   );
