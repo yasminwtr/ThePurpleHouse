@@ -27,8 +27,7 @@ const IndividualChat = (props) => {
   const handleCloseError = () => setShowError(false);
   const refBody = useRef('');
   const navigate = useNavigate()
-
-  console.log(chat);
+  const [showPicker, setShowPicker] = useState(false);
 
   const getMessages = async () => {
     const idChat = chat.idchat
@@ -82,8 +81,6 @@ const IndividualChat = (props) => {
         refBody.current.scrollHeight - refBody.current.offsetHeight;
     }
   }, [messages]);
-
-  const [showPicker, setShowPicker] = useState(false);
 
   const onEmojiClick = (event, emojiObject) => {
     setMessageText(messageText + emojiObject.emoji);
@@ -149,9 +146,15 @@ const IndividualChat = (props) => {
 
       <div className='messages-chat'>
         {messages.map((message) => (
-          <p key={message.idmessage}
-            id={message.idperson == user.idperson ? 'right-message' : 'left-message'}>{message.messagetext}
-          </p>
+          <>
+            <div>
+              <p key={message.idmessage} id={message.idperson == user.idperson ? 'right-message' : 'left-message'}>
+                {message.messagetext}
+              </p>
+
+              <p id={message.idperson == user.idperson ? 'right-message-hour' : 'left-message-hour'}>{message.hour}</p>
+            </div>
+          </>
         ))}
       </div>
 
