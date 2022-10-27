@@ -51,6 +51,25 @@ const DenounceWorker = (props) => {
     }
   }
 
+  const denounceStatus = async () => {
+    const idChat = chat.idchat
+    try {
+      const response = await api.put(`/chats/denounce/${idChat}`, { status: 'Denunciado' })
+      const data = response;
+
+      chat.status = data.status;
+      setShow(false)
+
+    } catch (error) {
+    }
+  }
+
+  function denounceWorker(){
+    createDenounce()
+    denounceStatus()
+
+  }
+
   return (
     <div>
       <label id='label-more-options' onClick={handleShow}><ReportIcon sx={{ fontSize: 23, marginRight: 0.5 }} /> Denunciar</label>
@@ -123,7 +142,7 @@ const DenounceWorker = (props) => {
           <Button id='close-button-modals-profile' onClick={() => handleCloseSecondModal()}>
             Cancelar
           </Button>
-          <Button id='delete-button-modals-profile' onClick={() => createDenounce()}>
+          <Button id='delete-button-modals-profile' onClick={() => denounceWorker()}>
             Denunciar
           </Button>
         </Modal.Footer>

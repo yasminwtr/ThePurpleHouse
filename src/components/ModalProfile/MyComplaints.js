@@ -70,7 +70,7 @@ const MyComplaints = (props) => {
 
             <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
                 <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-                    Avaliação excluída com sucesso!
+                    Denúncia excluída com sucesso!
                 </Alert>
             </Snackbar>
         </div>
