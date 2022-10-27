@@ -142,11 +142,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-worker-profile {
-  // background-image: url(../../assets/img/fundoProfile.png);
   background-repeat: round;
   background-color: var(--part1-profile);
   text-align: center;
-  border-radius: 14px 14px 0 0;
+  border-radius: 30px 30px 0 0;
   height: 220px;
   align-items: center;
   justify-content: center;
@@ -162,7 +161,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #8364b198;
   width: 25%;
   border-radius: 130px;
-  height: 135px;
+  height: 137px;
   right: 565px;
 }
 
@@ -188,7 +187,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #icon-worker-profile {
-  width: 22%;
+  width: 20%;
   margin-right: 1%;
 }
 
@@ -250,7 +249,7 @@ body::-webkit-scrollbar-thumb {
 
 #text-worker-profile {
   margin-block-start: 0em;
-  margin-block-end: 1.4em;
+  margin-block-end: 2.4000000000000004em;
   font-size: 16px;
   font-family: Inter-Regular;
   text-align: justify;
@@ -284,7 +283,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-info-worker{
-  width: 62%;
+  width: 50%;
 }
 
 /* geral de galeria e avaliações */
@@ -319,7 +318,7 @@ body::-webkit-scrollbar-thumb {
   min-height: 320px;
   max-height: 320px;
   overflow-y: scroll;
-  width: 380px;
+  width: 420px;
   background-color: var(--background-chat);
 }
 
