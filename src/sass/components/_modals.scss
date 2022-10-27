@@ -1,0 +1,216 @@
+input[type=number]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
+textarea {
+  resize: none !important;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0 !important;
+  border-color: #6c757d !important;
+}
+
+#delete-review-button {
+  height: 35px;
+  font-family: Inter-Regular !important;
+  font-size: 14px;
+  align-self: center;
+  margin-left: auto;
+  color: #fff;
+  border-color: #bb3f3f;
+  background-color: #bb3f3f;
+  padding: 4px 13px;
+}
+
+.modal-dialog {
+  font-family: Inter-Regular !important;
+}
+
+#save-button-modals-profile {
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #56a54f;
+  background-color: #56a54f;
+}
+
+#save-button-modals-profile:hover {
+  border-color: #479b3f;
+  background-color: #479b3f;
+  transition: 0.5s;
+}
+
+#delete-button-modals-profile {
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #bb3f3f;
+  background-color: #bb3f3f;
+}
+
+#delete-button-modals-profile:hover,
+#delete-review-button:hover {
+  border-color: #a82d2d;
+  background-color: #a82d2d;
+  transition: 0.5s;
+}
+
+#close-button-modals-profile {
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #596066;
+  background-color: #596066;
+}
+
+#close-button-modals-profile:hover {
+  border-color: #4a5258;
+  background-color: #4a5258;
+  transition: 0.5s;
+}
+
+.div-buttons-modal {
+  text-align: center;
+}
+
+.edit-profile-buttons-modal,
+.edit-profile-buttons-modal:focus,
+.edit-profile-buttons-modal-selected {
+  height: 40px !important;
+  border-radius: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  border-color: #d9d9d9;
+  width: 48%;
+}
+
+.edit-profile-buttons-modal-selected {
+  color: #6B4D9E !important;
+  border-color: #6B4D9E !important;
+}
+
+.right-button-modal {
+  margin-left: 3%;
+}
+
+.individual-avaliation-modal {
+  width: 98%;
+}
+
+.block-avaliation-modal {
+  display: flex;
+}
+
+.part1-avaliation-modal {
+  width: 11%;
+  margin: 0 2% 2% 0;
+}
+
+#icon-avaliation-modal {
+  width: 100%;
+  height: fit-content;
+  margin: 0;
+}
+
+#name-avaliation-modal {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-size: 16px;
+  font-family: Inter-Medium;
+  margin-bottom: -3px;
+}
+
+#text-avaliation-modal {
+  text-align: justify;
+  font-size: 16px;
+  font-family: Inter-Regular;
+  margin-block-end: 1.8em;
+}
+
+.modal::-webkit-scrollbar,
+.modal-body-requested-services::-webkit-scrollbar {
+  width: 1vw;
+}
+
+.modal::-webkit-scrollbar-track,
+.modal-body-requested-services::-webkit-scrollbar-track {
+  background-color: #F5F0FE;
+}
+
+.modal::-webkit-scrollbar-thumb,
+.modal-body-requested-services::-webkit-scrollbar-thumb {
+  background-color: #A58AD2;
+  border: 0.3vw solid #F5F0FE;
+  border-radius: 5vw;
+}
+
+#services-reviewed-button-modal,
+#services-reviewed-button-modal-selected,
+#services-reviewed-button-modal:focus,
+#services-denounced-button-modal,
+#services-denounced-button-modal-selected,
+#services-denounced-button-modal:focus {
+  height: 40px;
+  border-radius: 14px;
+  margin-right: 1%;
+  width: 49%;
+  color: rgba(0, 0, 0, 0.85);
+  border-color: #d9d9d9;
+}
+
+#services-reviewed-button-modal:hover,
+#services-reviewed-button-modal-selected,
+#services-denounced-button-modal:hover,
+#services-denounced-button-modal-selected {
+  color: #6B4D9E;
+  border-color: #6B4D9E;
+}
+
+.modal-requested-services,
+.modal-services-reviewed {
+  max-height: 500px !important;
+  overflow-y: scroll !important;
+}
+
+.modal-requested-services::-webkit-scrollbar,
+.modal-services-reviewed::-webkit-scrollbar {
+  width: 1vw;
+}
+
+.modal-requested-services::-webkit-scrollbar-track,
+.modal-services-reviewed::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+.modal-requested-services::-webkit-scrollbar-thumb,
+.modal-services-reviewed::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+  border: 0.39vw solid #ffffff;
+  border-radius: 5vw;
+}
+
+.modal-open {
+  font-size: 16px !important;
+}
+
+.requested-service-buttons-modal,
+.requested-service-buttons-modal:focus,
+.requested-service-buttons-modal-selected {
+  height: 40px !important;
+  border-radius: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  border-color: #d9d9d9;
+}
+
+.requested-service-buttons-modal-selected {
+  color: #6B4D9E !important;
+  border-color: #6B4D9E !important;
+}
