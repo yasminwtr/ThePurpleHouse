@@ -6,11 +6,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import AnnounceIcon from '@mui/icons-material/CampaignRounded'
-import api from '../../api';
 import AuthContext from '../../services/contexts/auth'
-import axios from 'axios';
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { Button, notification } from 'antd';
+import api from '../../api';
+import axios from 'axios';
 
 const AnnounceService = (props) => {
   const { user } = useContext(AuthContext);
@@ -22,6 +22,7 @@ const AnnounceService = (props) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [price, setPrice] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
+  const [workerServices, setWorkerServices] = useState('')
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -62,30 +63,56 @@ const AnnounceService = (props) => {
     setSelectedCity(city)
   }
 
-  async function registerWorker() {
+  async function getWorkerServices() {
+    const idPerson = user.idperson;
     try {
-      if ((selectValue, description, phoneNumber, price) !== '' && selectValue !== 'Serviços' && (selectedCity, selectedUf) !== '0') {
-        const response = await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
-        openNotificationSuccess()
-        setShow(false)
-        props.getServices()
-      }
-      else {
-        openNotificationError()
-      }
+      const response = await api.get(`/workers/${idPerson}`);
+      setWorkerServices(response.data)
     } catch (error) {
-
+      console.log(error);
     }
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await api.get('/services');
-      setServices(response.data)
-    }
-    fetchData()
-      .catch(console.error);
+    getWorkerServices()
   }, [])
+
+  const registerWorker = async () => {
+    const selectedRepeatedService = workerServices
+      .findIndex((worker) => {
+        return worker.idservice == selectValue
+      }) !== -1;
+
+    if (selectedRepeatedService) {
+      return notification["error"]({
+        message: 'Você já tem esse serviço cadastrado!',
+        duration: 2,
+        placement: 'topRight',
+      })
+    }
+
+    const allFieldsFilled = (selectValue, description, phoneNumber, price) !== ''
+      && selectValue !== 'Serviços'
+      && (selectedCity, selectedUf) !== '0'
+
+    if (!allFieldsFilled) {
+      return notification["error"]({
+        message: 'Preencha todos os campos',
+        duration: 2,
+        placement: 'topRight',
+      })
+    }
+
+    try {
+      await api.post('/registerWorker', { idPerson: user.idperson, idService: selectValue, firstNameWorker: user.firstname, lastNameWorker: user.lastname, descriptionService: description, phoneNumber: phoneNumber, priceService: price, city: selectedCity, localization: selectedUf, whatsapp: whatsapp });
+      openNotificationSuccess()
+      setShow(false)
+      props.getServices()
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
 
   const openNotificationSuccess = () => {
     notification["success"]({
@@ -95,13 +122,14 @@ const AnnounceService = (props) => {
     });
   };
 
-  const openNotificationError = () => {
-    notification["error"]({
-      message: 'Preencha o formulário para anunciar um serviço',
-      duration: 2,
-      placement: 'topRight',
-    });
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await api.get('/services');
+      setServices(response.data)
+    }
+    fetchData()
+      .catch(console.error);
+  }, [])
 
   return (
     <div>
