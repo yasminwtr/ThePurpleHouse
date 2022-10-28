@@ -16,3 +16,45 @@
   width: 420px;
   margin-bottom: 10px;
 }
+
+.uploaded-images-list {
+  border: 1px solid;
+  position: relative;
+  height: 66px;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  width: 20%;
+  margin: 1mm;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-uploaded-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-icon {
+  border: 10px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  height: 23px !important;
+  border-radius: 2px;
+  color: #8c8c8c;
+  border-color: #d9d9d9;
+
+  &:hover {
+    border-color: #A58AD2;
+    color: #A58AD2;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}

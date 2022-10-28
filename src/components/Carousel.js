@@ -41,7 +41,7 @@ export const Carousel = (props) => {
 
   return (
     <div className='gallery'>
-      <UploadImage image={image.length} getWorkerImages={() => getWorkerImages()} />
+      <UploadImage image={image} getWorkerImages={() => getWorkerImages()} />
 
       {image != '' ?
         <ImageGallery items={image} className='carousel' sizes={10} />
