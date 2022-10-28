@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import AuthContext from '../services/contexts/auth'
 import axios from 'axios';
 import api from 'api'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export const UploadImage = (props) => {
 
@@ -27,7 +28,7 @@ export const UploadImage = (props) => {
 
   const attemptSave = async () => {
 
-    if (image < 4) {
+    if (image.length < 4) {
 
       listImages.forEach(image => {
         const data = new FormData();
@@ -103,6 +104,22 @@ export const UploadImage = (props) => {
                   Escolher Arquivos
                 </Button>
               </Upload>
+
+              <div className='container-uploaded-images'>
+                {image.map((img) => {
+                  return <>
+                    <div className='uploaded-images-list'>
+                      <img
+                        width={40}
+                        src={img.original} />
+                      <DeleteOutlineIcon
+                        className='delete-icon ant-btn-icon-only'
+                      />
+                    </div>
+                  </>
+                })}
+              </div>
+
             </Form.Group>
           </Form>
         </Modal.Body>
