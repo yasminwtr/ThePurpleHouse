@@ -6,13 +6,10 @@ const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
-  console.log("user @ contexts/auth.js, ", user);
 
   async function signIn(loginData) {
     try {
       const loggedUser = await auth.signIn(loginData);
-      console.log('loginData', loginData);
-
       setUser(loggedUser);
       localStorage.setItem('storagedUser', JSON.stringify(loggedUser));
     } catch (error) {
@@ -27,6 +24,7 @@ export const AuthProvider = ({ children }) => {
       if (storagedUser) {
         setUser(JSON.parse(storagedUser));
       }
+      
     }
 
     loadStorageData();

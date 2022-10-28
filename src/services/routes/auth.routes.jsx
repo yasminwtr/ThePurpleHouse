@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Footer from "components/Footer";
 import Navbar from "components/Navbar/Navbar";
 import Home from "Pages/Home";
@@ -17,7 +17,7 @@ const AuthRoutes = () => {
   const { signed } = useContext(AuthContext);
 
   function PrivateRoute({ children }) {
-    return signed ? children : <Navigate to='/' />
+    return signed ? children : children
   }
 
   return (
