@@ -35,9 +35,15 @@ nav {
         .dark {
           color: black;
         }
+        .dark:hover {
+          cursor: pointer;
+        }
 
         .light {
           color: yellow;
+        }
+        .light:hover {
+          cursor: pointer;
         }
 
         a {

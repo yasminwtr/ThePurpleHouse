@@ -2,6 +2,31 @@
   .all-worker-profile {
     background-image: url(../../assets/img/fundoo.png) !important;
   }
+  .part1-worker-profile {
+    background-repeat: round;
+    background-image: url(../../assets/img/imagemProfile.jpeg) !important;
+    background-size: cover;
+    text-align: center;
+    border-radius: 30px 30px 0 0;
+    height: 230px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}
+
+[data-theme="dark"] {
+  .part1-worker-profile {
+  background-repeat: round;
+  background-image: url(../../assets/img/imagemProfile2.jpeg) !important;
+  background-size: cover;
+  text-align: center;
+  border-radius: 30px 30px 0 0;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 }
 
 .all-worker-profile {
@@ -141,16 +166,16 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.part1-worker-profile {
-  background-repeat: round;
-  background-color: var(--part1-profile);
-  text-align: center;
-  border-radius: 30px 30px 0 0;
-  height: 220px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
+// .part1-worker-profile {
+//   background-repeat: round;
+//   background-color: var(--part1-profile);
+//   text-align: center;
+//   border-radius: 30px 30px 0 0;
+//   height: 220px;
+//   align-items: center;
+//   justify-content: center;
+//   display: flex;
+// }
 
 .background-infos{
   justify-content: center;
@@ -161,7 +186,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #8364b198;
   width: 25%;
   border-radius: 130px;
-  height: 137px;
+  height: 150px;
   right: 565px;
 }
 
