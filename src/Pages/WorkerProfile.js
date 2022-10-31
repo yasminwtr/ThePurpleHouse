@@ -36,6 +36,7 @@ const WorkerProfile = () => {
   const navigate = useNavigate();
   const [showAvaliations, setShowAvaliations] = useState(false);
   const [showDenounces, setShowDenounces] = useState(false);
+  const [modalChat, setModalChat] = useState(false);
 
   async function getReviewsByWorker() {
     const idWorker = location.state.workerId
@@ -48,6 +49,10 @@ const WorkerProfile = () => {
       setWorkerReviews([])
     }
   }
+
+  // const reload = () => {
+  //   history.push(location.pathname);
+  // };
 
   async function getComplaintsByWorker() {
     const idWorker = location.state.workerId
@@ -125,8 +130,7 @@ const WorkerProfile = () => {
       createChat()
 
     } else {
-      return <ModalExistingChat createChat={createChat}/>
-      // chat.map((item) => { navigate("/Chat", { replace: true, state: { selectedChat: item.idchat } }); });
+      setModalChat(!modalChat)
     }
   }
 
@@ -168,6 +172,8 @@ const WorkerProfile = () => {
             </div>
           </div>
         </div>
+
+        {modalChat ? <ModalExistingChat createChat={createChat} /> : <></>}
 
         <div className='part2-worker-profile'>
           <div className='container-info-worker'>
