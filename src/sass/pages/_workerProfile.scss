@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    min-height: calc(100px + 5vw);
   }
 }
 
@@ -182,12 +183,13 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 270px;
+  top: 260px;
   background-color: #8364b198;
   width: 25%;
   border-radius: 130px;
-  height: 150px;
-  right: 565px;
+  // height: 150px;
+  // right: 565px;
+  min-height: calc(100px + 4vw);
 }
 
 .box-worker-profile{
@@ -195,7 +197,9 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   position: absolute;
+   width: 30%;
   top: 270px;
+  min-height: calc(100px + 3vw);
 }
 
 .part2-worker-profile {
@@ -212,8 +216,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #icon-worker-profile {
-  width: 20%;
-  margin-right: 1%;
+  width: 140px;
+  margin-right: 5%;
 }
 
 #name-worker-profile {
@@ -581,4 +585,100 @@ head {
 
 .ant-notification {
   z-index: 2000;
+}
+
+// -------------------- responsivo -------------------------
+
+@media screen and (min-width: 1300px) and (max-width: 1500px) {
+  #icon-worker-profile {
+    width: 120px;
+    margin-right: 5%;
+}
+
+.background-infos {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 265px;
+  background-color: rgba(131, 100, 177, 0.5960784314);
+  width: 25%;
+  border-radius: 130px;
+  min-height: calc(90px + 4vw);
+}
+#name-worker-profile {
+  font-size: 25px;
+  margin-block-start: 0.2em;
+  margin-block-end: 0em;
+  font-family: Inter-Medium;
+  color: #ffffff;
+}
+#categorie-worker-profile {
+  font-size: 16px;
+  margin-block-start: -0.3em;
+  margin-block-end: 0em;
+  font-family: Inter-Regular;
+  color: #f8f8f8;
+}
+
+.message-button {
+  border-radius: 40px;
+  color: #6B4D9E;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border-style: none;
+  box-shadow: 0px 2px 5px rgb(0 0 0 / 25%);
+  font-family: Inter-Medium;
+  margin-bottom: -80px;
+  margin-top: 10px;
+}
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
+  #icon-worker-profile {
+    width: 110px;
+    margin-right: 8%;
+}
+
+.background-infos {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 270px;
+  background-color: rgba(131, 100, 177, 0.5960784314);
+  width: 25%;
+  border-radius: 130px;
+  min-height: calc(85px + 4vw);
+}
+#name-worker-profile {
+  font-size: 20px;
+  margin-block-start: 0.2em;
+  margin-block-end: 0em;
+  font-family: Inter-Medium;
+  color: #ffffff;
+}
+#categorie-worker-profile {
+  font-size: 14px;
+  margin-block-start: -0.3em;
+  margin-block-end: 0em;
+  font-family: Inter-Regular;
+  color: #f8f8f8;
+}
+
+.message-button {
+  border-radius: 40px;
+  color: #6B4D9E;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  margin-right: 10px;
+  padding: 10px 20px 10px 20px;
+  border-style: none;
+  box-shadow: 0px 2px 5px rgb(0 0 0 / 25%);
+  font-family: Inter-Medium;
+  margin-bottom: -80px;
+  margin-top: 10px;
+}
+
 }
