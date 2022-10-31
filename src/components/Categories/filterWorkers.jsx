@@ -15,16 +15,18 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 const FilterWorkers = (props) => {
   const { category, close } = props;
+  const navigate = useNavigate()
+
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   const [ufs, setUfs] = useState([]);
   const [cities, setCities] = useState([]);
   const [selectedUf, setSelectedUf] = useState("0");
   const [selectedCity, setSelectedCity] = useState("0");
   const [filteredWorkers, setFilteredWorkers] = useState([])
   const [workers, setWorkers] = useState([])
-  const navigate = useNavigate()
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     if (selectedUf === "0") {
@@ -37,7 +39,7 @@ const FilterWorkers = (props) => {
       .then((response) => {
         setCities(response.data);
       });
-  });
+  }, [selectedUf]);
 
   useEffect(() => {
     axios

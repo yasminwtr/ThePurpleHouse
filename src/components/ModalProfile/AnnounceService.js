@@ -43,7 +43,7 @@ const AnnounceService = (props) => {
       .then((response) => {
         setCities(response.data);
       });
-  });
+  }, [selectedUf]);
 
   useEffect(() => {
     axios
