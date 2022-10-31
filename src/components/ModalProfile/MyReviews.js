@@ -1,7 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import api from '../../api';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AuthContext from '../../services/contexts/auth'
 import { FaStar } from 'react-icons/fa'
 import { Button } from 'antd';
 import Snackbar from '@mui/material/Snackbar';
@@ -39,7 +37,7 @@ const MyReviews = (props) => {
         <div>
             {
                 servicesReviewed.map((worker) => {
-                    if (worker.stars == 5) {
+                    if (worker.stars === 5) {
                         const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
                         const formattedDateReview = `${day}/${month}/${year}`
 
@@ -61,7 +59,7 @@ const MyReviews = (props) => {
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
                             </div></>
 
-                    } else if (worker.stars == 4) {
+                    } else if (worker.stars === 4) {
                         const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
                         const formattedDateReview = `${day}/${month}/${year}`
 
@@ -83,7 +81,7 @@ const MyReviews = (props) => {
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
                             </div></>
 
-                    } else if (worker.stars == 3) {
+                    } else if (worker.stars === 3) {
                         const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
                         const formattedDateReview = `${day}/${month}/${year}`
 
@@ -105,7 +103,7 @@ const MyReviews = (props) => {
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
                             </div></>
 
-                    } else if (worker.stars == 2) {
+                    } else if (worker.stars === 2) {
                         const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
                         const formattedDateReview = `${day}/${month}/${year}`
 
@@ -127,7 +125,7 @@ const MyReviews = (props) => {
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
                             </div></>
 
-                    } else if (worker.stars == 1) {
+                    } else if (worker.stars === 1) {
                         const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
                         const formattedDateReview = `${day}/${month}/${year}`
 
@@ -148,7 +146,8 @@ const MyReviews = (props) => {
 
                                 <p id='text-avaliation-modal'>{worker.messagereview}</p>
                             </div></>
-                    }
+
+                    } else return null
                 })
             }
 

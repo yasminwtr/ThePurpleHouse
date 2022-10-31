@@ -9,16 +9,14 @@ import AuthContext from '../../services/contexts/auth'
 
 const DenounceWorker = (props) => {
   const { user } = useContext(AuthContext);
-  const { chat } = props
+  const { chat, getChats } = props
 
   const [show, setShow] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   const [selectedOption, setOptionSelected] = useState(false)
   const [description, setDescription] = useState(false)
   const [messageError, setMessageError] = useState(false)
 
-  const handleCloseSuccess = () => setShowSuccess(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleCloseSecondModal = () => setShowSecondModal(false);
@@ -38,7 +36,7 @@ const DenounceWorker = (props) => {
 
   async function createDenounce() {
     const idWorker = chat.idworker
-    if ((selectedOption) != '' && (description) != '') {
+    if ((selectedOption) !== '' && (description) !== '') {
       try {
         const response = await api.post('/denounce', { idWorker: idWorker, idPerson: user.idperson, selectedOption, description });
         console.log('response', response)
@@ -67,7 +65,7 @@ const DenounceWorker = (props) => {
   function denounceWorker(){
     createDenounce()
     denounceStatus()
-
+    getChats()
   }
 
   return (

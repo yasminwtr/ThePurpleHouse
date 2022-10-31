@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react'
-// import './styles.css'
 import logo from '../assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
-import { BsFillTelephoneFill } from 'react-icons/bs'
 import IconButton from '@mui/material/IconButton';
 import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/HttpsRounded';
@@ -15,7 +13,6 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../services/contexts/auth'
 import { useNavigate } from "react-router-dom";
-import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 import Row from 'react-bootstrap/Row';

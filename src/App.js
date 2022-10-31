@@ -1,4 +1,3 @@
-
 import Routes from 'services/routes';
 import { AuthProvider } from './services/contexts/auth';
 

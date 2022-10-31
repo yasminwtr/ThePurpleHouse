@@ -1,8 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import api from '../../api';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AuthContext from '../../services/contexts/auth'
-import { FaStar } from 'react-icons/fa'
 import { Button } from 'antd';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';

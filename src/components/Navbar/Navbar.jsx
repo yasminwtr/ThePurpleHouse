@@ -4,17 +4,13 @@ import { MdClose } from "react-icons/md";
 import { ImSun } from "react-icons/im";
 import { BsFillMoonFill } from "react-icons/bs";
 import logo from "../../assets/img/logo1.png";
-
 import DropdownProfile from "../Dropdown/index"
 import AuthContext from '../../services/contexts/auth'
 import { Link, useLocation } from "react-router-dom";
-import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Navbar({ changeTheme, currentTheme }) {
   const [navState, setNavState] = useState(false);
   const { signed } = useContext(AuthContext);
-  const [sidebar, setSidebar] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false);
 
   const location = useLocation()

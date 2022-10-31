@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import MoreOptionsIcon from '@mui/icons-material/MoreVertRounded'
-
 class MoreOptions extends Component {
     constructor() {
         super()
@@ -12,7 +11,6 @@ class MoreOptions extends Component {
 
     handleToggle = () => {
         this.setState({ open: !this.state.open })
-        // window.document.addEventListener('click', this.close, false)
     }
 
     close = () => {

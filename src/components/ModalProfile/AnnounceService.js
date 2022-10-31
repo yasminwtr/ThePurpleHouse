@@ -75,12 +75,12 @@ const AnnounceService = (props) => {
 
   useEffect(() => {
     getWorkerServices()
-  }, [])
+  })
 
   const registerWorker = async () => {
     const selectedRepeatedService = workerServices
       .findIndex((worker) => {
-        return worker.idservice == selectValue
+        return worker.idservice === selectValue
       }) !== -1;
 
     if (selectedRepeatedService) {

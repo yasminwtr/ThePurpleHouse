@@ -1,9 +1,7 @@
-import React, { useState, useContext } from 'react';
-import AuthContext from '../../services/contexts/auth'
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
-import LogoutIcon from '@mui/icons-material/ExitToAppRounded'
 import { useNavigate } from "react-router-dom";
 
 const ModalExistingChat = (props) => {
@@ -11,7 +9,6 @@ const ModalExistingChat = (props) => {
   const navigate = useNavigate()
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   function redirectToExistingChat() {
     navigate("/Chat", { replace: true })
@@ -19,8 +16,6 @@ const ModalExistingChat = (props) => {
 
   return (
     <div>
-      {/* <p id='options-logout' onClick={handleShow}><LogoutIcon sx={{ fontSize: 22 }} /> Sair</p> */}
-
       <Modal
         show={show}
         onHide={handleClose}

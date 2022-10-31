@@ -91,7 +91,7 @@ const IndividualChat = (props) => {
   return (
     <div className='container-chat'>
       <div className='header-chat'>
-        {chat.idperson1 == user.idperson ?
+        {chat.idperson1 === user.idperson ?
           <>
             <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
             <p id='name-account-worker' onClick={() => navigate('/WorkerProfile', { state: { workerId: chat.idworker, personWorkerId: chat.idperson2, firstName: chat.firstname, lastName: chat.lastname, service: chat.servicecategory, email: chat.email, phone: chat.phonenumber, birthdate: chat.birthdate, city: chat.city, cityState: chat.localization, price: chat.priceservice, description: chat.descriptionservice, whatsapp: chat.whatsapp } })}>
@@ -105,7 +105,7 @@ const IndividualChat = (props) => {
           </>
         }
 
-        {chat.idperson1 == user.idperson && chat.status == 'Aberto' ?
+        {chat.idperson1 === user.idperson && chat.status === 'Aberto' ?
           <>
             <MoreOptions>
               <div>
@@ -117,7 +117,7 @@ const IndividualChat = (props) => {
                     <CancelWork chat={chat} />
                   </li>
                   <li id='denounce-service-li'>
-                    <DenounceWorker chat={chat} />
+                    <DenounceWorker chat={chat} getChats={getChats}/>
                   </li>
                 </ul>
               </div>
@@ -127,7 +127,7 @@ const IndividualChat = (props) => {
           <></>
         }
 
-        {chat.idperson2 == user.idperson && chat.status == 'Aberto' ?
+        {chat.idperson2 === user.idperson && chat.status === 'Aberto' ?
           <>
             <MoreOptions>
               <div>
@@ -148,18 +148,18 @@ const IndividualChat = (props) => {
         {messages.map((message) => (
           <>
             <div>
-              <p key={message.idmessage} id={message.idperson == user.idperson ? 'right-message' : 'left-message'}>
+              <p key={message.idmessage} id={message.idperson === user.idperson ? 'right-message' : 'left-message'}>
                 {message.messagetext}
               </p>
 
-              <p id={message.idperson == user.idperson ? 'right-message-hour' : 'left-message-hour'}>{message.hour}</p>
+              <p id={message.idperson === user.idperson ? 'right-message-hour' : 'left-message-hour'}>{message.hour}</p>
             </div>
           </>
         ))}
       </div>
 
       <div className='type-message-chat'>
-        {chat.status == 'Aberto' ?
+        {chat.status === 'Aberto' ?
           <>
             <input
               className='input-message-chat'

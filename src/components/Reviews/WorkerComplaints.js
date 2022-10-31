@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import api from '../../api';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaStar } from 'react-icons/fa'
-import { useLocation } from 'react-router-dom';
 
 const WorkerComplaints = (props) => {
   const { workerComplaints } = props

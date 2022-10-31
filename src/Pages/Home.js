@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BsChevronUp } from "react-icons/bs";
-
 import home from "../assets/img/landing.png";
 import super1 from "../assets/img/super1.png";
 import super2 from "../assets/img/super2.png";
@@ -9,7 +8,6 @@ import encontre from "../assets/img/busca.png";
 import escolha from "../assets/img/selecao.png";
 import negocie from "../assets/img/chat.png";
 import avaliacao from "../assets/img/avaliacao.png";
-
 import { Link } from "react-router-dom";
 import scrollreveal from "scrollreveal";
 import '../sass/main.scss'

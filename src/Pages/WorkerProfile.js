@@ -9,14 +9,13 @@ import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
 import api from '../api'
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import WorkerReviews from '../components/Reviews/WorkerReviews';
 import WorkerComplaints from '../components/Reviews/WorkerComplaints';
 import AuthContext from '../services/contexts/auth'
 import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
 import ReviewsImage from "../assets/img/review.png";
-import { UploadImage } from '../components/UploadImages'
 import ModalExistingChat from '../components/Chat/ModalExistingChat'
 
 const WorkerProfile = () => {
@@ -68,7 +67,7 @@ const WorkerProfile = () => {
 
   function cacularIdade(idade) {
     if (month > dateAtual.getMonth() + 1
-      || (month == dateAtual.getMonth() + 1 && day > dateAtual.getDate() + 1)) {
+      || (month === dateAtual.getMonth() + 1 && day > dateAtual.getDate() + 1)) {
       idade--
     }
     return idade
@@ -82,7 +81,7 @@ const WorkerProfile = () => {
     if (workerReviewsLength > 1) {
       setNumberWorkerReviews(`${workerReviewsLength} avaliações`)
 
-    } else if (workerReviewsLength == 1) {
+    } else if (workerReviewsLength === 1) {
       setNumberWorkerReviews(`${workerReviewsLength} avaliação`)
 
     } else {
@@ -94,7 +93,7 @@ const WorkerProfile = () => {
     if (workerComplaintsLength > 1) {
       setNumberWorkerComplaints(`${workerComplaintsLength} denúncias`)
 
-    } else if (workerComplaintsLength == 1) {
+    } else if (workerComplaintsLength === 1) {
       setNumberWorkerComplaints(`${workerComplaintsLength} denúncia`)
 
     } else {
@@ -138,7 +137,7 @@ const WorkerProfile = () => {
     getReviewsByWorker()
     getComplaintsByWorker()
     getIfChatExists()
-  }, [])
+  })
 
   useEffect(() => {
     validationWorkerNumberReviews()
@@ -163,7 +162,7 @@ const WorkerProfile = () => {
               <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
               <AverageRating />
 
-              {user.idperson == location.state.personWorkerId ?
+              {user.idperson === location.state.personWorkerId ?
                 <EditProfileWorker />
                 :
                 <button className='message-button' onClick={() => requestService()}>Solicitar serviço</button>
@@ -186,7 +185,7 @@ const WorkerProfile = () => {
                 <p id='text-worker-profile'>{location.state.phone}</p>
               </div>
 
-              {location.state.whatsapp == null || location.state.whatsapp == '' ? <></> :
+              {location.state.whatsapp === null || location.state.whatsapp === '' ? <></> :
                 <>
                   <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
                 </>

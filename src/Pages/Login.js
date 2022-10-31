@@ -1,4 +1,3 @@
-
 import React, { useState, useContext } from 'react'
 import logo from '../assets/img/logo2.png'
 import { FaUser } from 'react-icons/fa'
