@@ -58,3 +58,16 @@
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
+@media screen and (min-width: 1110px) and (max-width: 1500px) {
+  .gallery {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1109px) {
+  .gallery {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

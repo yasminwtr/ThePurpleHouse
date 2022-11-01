@@ -157,7 +157,7 @@ const WorkerProfile = () => {
           <div className='box-worker-profile'>
             <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
 
-            <div>
+            <div className='section1-worker'>
               <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
               <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
               <AverageRating />
@@ -176,6 +176,8 @@ const WorkerProfile = () => {
 
         <div className='part2-worker-profile'>
           <div className='container-info-worker'>
+
+          <div className='section2-worker'>
             <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
             <p id='text-worker-profile'>{location.state.email}</p>
 
@@ -194,7 +196,9 @@ const WorkerProfile = () => {
 
             <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
             <p id='text-worker-profile'>{formattedBirthDate}</p>
+          </div>
 
+          <div className="section3-worker">
             <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Localização</p>
             <p id='text-worker-profile'>{location.state.city}, {location.state.cityState}</p>
 
@@ -203,6 +207,7 @@ const WorkerProfile = () => {
 
             <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Descrição</p>
             <p id='text-worker-profile'>{location.state.description}</p>
+          </div>
           </div>
 
           <div className='container-blocks'>
