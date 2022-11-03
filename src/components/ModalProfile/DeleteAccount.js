@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 import { Button, notification } from 'antd';
+import api from 'api';
 
 const DeleteAccount = (props) => {
   const [show, setShow] = useState(false);
@@ -18,8 +19,8 @@ const DeleteAccount = (props) => {
   const handleShow = () => setShow(true);
 
   const { user, signOut } = useContext(AuthContext);
-  const [person, setPerson] = useState([]);
   const [password, setPassword] = useState('')
+  const idPerson = user.idperson
 
   const [values, setValues] = React.useState({
     showPassword: false,
@@ -36,17 +37,9 @@ const DeleteAccount = (props) => {
     event.preventDefault();
   };
 
-  const deleteUser = async (deleteId) => {
-    const requestOptions = {
-      method: 'delete',
-      headers: { 'Content-type': 'aplication/json' }
-    }
+  const deleteUser = async () => {
     try {
-      console.log(deleteId)
-      await fetch('http://localhost:3001/users/' + deleteId, requestOptions)
-      setPerson(person.filter(person => person.idPerson !== deleteId))
-      console.log('funfou');
-
+      const response = await api.delete(`/users/${idPerson}`)
     } catch (error) {
       console.log(error)
     }
@@ -54,7 +47,7 @@ const DeleteAccount = (props) => {
 
   function validationPass() {
     if (password === user.pass) {
-      deleteUser(user.idperson)
+      deleteUser()
       signOut()
       navigate("/", { replace: true })
     } else {
