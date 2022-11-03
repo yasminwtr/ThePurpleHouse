@@ -34,8 +34,8 @@ const AverageRating = (props) => {
           const ratingValue = index + 1 ;
 
           return (
-            <label key={index}>
-              <FaStar color={ratingValue <= Math.floor(parseInt(averageRating.avg)) ? '#fccc3e' : '#d9d9d9'} size={25} />
+            <label key={index} id="stars-workerProfile">
+              <FaStar color={ratingValue <= Math.floor(parseInt(averageRating.avg)) ? '#fccc3e' : '#d9d9d9'} />
             </label>
           )
         })
