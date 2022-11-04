@@ -10,7 +10,9 @@ import FilterWorkers from 'components/Categories/filterWorkers';
 function Categories() {
   const [showElement, setShowElement] = useState(false)
   const showOrHide = () => setShowElement(true)
+
   const [selectedCategory, setSelectedCategory] = useState(null)
+  
   const [services, setServices] = useState([])
 
   useEffect(() => {
@@ -39,7 +41,8 @@ function Categories() {
             <FilterWorkers
               close={() => setShowElement(false)}
               showElement category={selectedCategory} />
-          </p> :
+          </p>
+          :
           null}
       </div>
       <div className={showElement ? "container-categories-side" : "container-categories"}>
@@ -49,7 +52,12 @@ function Categories() {
         <Container className='animate__animated animate__fadeIn' >
           {services.map((category, index) => (
             <Row key={index}>
-              <Col onClick={() => setSelectedCategory(category)} className={`boxCategories ${selectedCategory?.idservice === category.idservice ? 'boxSelected' : null}`}>
+              <Col onClick={() => setSelectedCategory(category)}
+                className={`boxCategories 
+              ${selectedCategory?.idservice === category.idservice ?
+                    'boxSelected'
+                    :
+                    null}`}>
                 <img src={category.icon} width={64} />
                 <p className='title-category'>{category.titleservice}</p>
                 <p>Ver mais</p>

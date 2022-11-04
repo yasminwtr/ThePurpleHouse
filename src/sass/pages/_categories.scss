@@ -64,7 +64,7 @@
 }
 
 .categories {
-  font-family: Inter-SemiBold;
+  font-family: Inter-SemiBold !important;
   margin: 0;
   height: 88vh;
   display: flex;
@@ -390,7 +390,6 @@
     min-width: 330px;
     background-color: var(--accent-color7);
     margin-left: 90px;
-    overflow: scroll;
 
     h1 {
       color: #655A78;
@@ -403,10 +402,35 @@
     }
   }
 
-  .list-users-category span {
-    font-family: Inter-Light;
-    margin-bottom: 0 !important;
-    font-size: 20px;
+  .list-users-category {
+    overflow-y: scroll;
+    height: 260px;
+
+    span {
+      font-family: Inter-Light;
+      margin-bottom: 0 !important;
+      font-size: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.3vw;
+      border-radius: 5vw;
+    }
+
+    &::-webkit-scrollbar-button {
+      height: 5px;
+      border-radius: 5vw;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-chat);
+      border-radius: 5vw;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 0.3vw solid var(--part1-profile);
+      border-radius: 5vw;
+    }
   }
 
   .info-user {
