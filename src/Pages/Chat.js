@@ -49,49 +49,53 @@ const Chat = () => {
   }, []);
 
   return (
-    <div className='body-chat'>
-      <div className='all-chat'>
-        <div className='box-search-chat'>
-          <div className='container-box-search'>
-            <div className='container-input'>
-              <SearchIcon id='search-icon-chat' />
-              <input
-                className='input-search-chat'
-                placeholder='Pesquisar usuário'
-                onChange={(e) => searchChats(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className='list-chat-profiles'>
-            {searchInputChat.length > 1 ? (
-              filteredChats.map((chat) => {
-                return (
-                  <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-                    <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
-                  </div>
-                )
-              })
-            ) : (
-              chats.map((chat) => {
-                return (
-                  <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat-profile' alt="Profile" />
-                    <p id='name-chat-profile'>{chat.idperson1 == user.idperson ? <>{chat.firstnameperson2} {chat.lastnameperson2}</> : <>{chat.firstnameperson1} {chat.lastnameperson1}</>}</p>
-                    {chat.status == 'Finalizado' ? <><CloseIcon id='icon-individual-close'/></> : <></>}
-                    {chat.status == 'Aberto' ? <></> : <></>}
-                    {chat.status == 'Denunciado' ? <><ReportIcon id='icon-individual-report'/></> : <></>}
-                    {chat.status == 'Cancelado' ? <><CancelIcon id='icon-individual-cancel'/></> : <></>}
-                  </div>
-                )
-              })
-            )}
-          </div>
+    <div className='list-chats'>
+      <div className='box-search'>
+        <div className='container-input'>
+          <SearchIcon id='icon' />
+          <input
+            placeholder='Pesquisar usuário'
+            onChange={(e) => searchChats(e.target.value)}
+          />
         </div>
 
-        {showChat ? <IndividualChat chat={selectedChat} getChats={getChats} /> : <NullChat />}
+        <div className='list-chat-profiles'>
+          {searchInputChat.length > 1 ? (
+            filteredChats.map((chat) => {
+              return (
+                <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+                  <p>
+                    {chat.idperson1 == user.idperson ?
+                      <>{chat.firstnameperson2} {chat.lastnameperson2}</>
+                      :
+                      <>{chat.firstnameperson1} {chat.lastnameperson1}</>}
+                  </p>
+                </div>
+              )
+            })
+          ) : (
+            chats.map((chat) => {
+              return (
+                <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+                  <p>
+                    {chat.idperson1 == user.idperson ?
+                      <>{chat.firstnameperson2} {chat.lastnameperson2}</>
+                      :
+                      <>{chat.firstnameperson1} {chat.lastnameperson1}</>}
+                  </p>
+                  {chat.status == 'Finalizado' ? <><CloseIcon id='icon-close' /></> : <></>}
+                  {chat.status == 'Aberto' ? <></> : <></>}
+                  {chat.status == 'Denunciado' ? <><ReportIcon id='icon-report' /></> : <></>}
+                  {chat.status == 'Cancelado' ? <><CancelIcon id='icon-cancel' /></> : <></>}
+                </div>
+              )
+            })
+          )}
+        </div>
       </div>
+      {showChat ? <IndividualChat chat={selectedChat} getChats={getChats} /> : <NullChat />}
     </div>
   )
 }

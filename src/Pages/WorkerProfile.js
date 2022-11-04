@@ -8,7 +8,6 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import LocationIcon from '@mui/icons-material/LocationOnRounded'
 import PriceIcon from '@mui/icons-material/SellRounded'
 import DescriptionIcon from '@mui/icons-material/InfoRounded'
-import api from '../api'
 import { useLocation, useNavigate } from 'react-router-dom';
 import WorkerReviews from '../components/Reviews/WorkerReviews';
 import WorkerComplaints from '../components/Reviews/WorkerComplaints';
@@ -17,24 +16,39 @@ import AverageRating from '../components/Reviews/AverageRating'
 import { Carousel } from '../components/Carousel';
 import ReviewsImage from "../assets/img/review.png";
 import ModalExistingChat from '../components/Chat/ModalExistingChat'
+import api from '../api'
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
+
   const location = useLocation();
+
+  const navigate = useNavigate();
+
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
+
   const [workerReviews, setWorkerReviews] = useState([]);
+
   const [workerComplaints, setWorkerComplaints] = useState([]);
+
   const [chat, setChat] = useState([])
+
   const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
   const workerReviewsLength = workerReviews.length
+
   const [numberWorkerComplaints, setNumberWorkerComplaints] = useState('')
   const workerComplaintsLength = workerComplaints.length
+
   const dateAtual = new Date()
+
   const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
+
   const [idade, setIdade] = useState(dateAtual.getFullYear() - year);
-  const navigate = useNavigate();
+
   const [showAvaliations, setShowAvaliations] = useState(false);
+
   const [showDenounces, setShowDenounces] = useState(false);
+
   const [modalChat, setModalChat] = useState(false);
 
   async function getReviewsByWorker() {
@@ -115,12 +129,21 @@ const WorkerProfile = () => {
 
   async function createChat() {
     try {
-      const response = await api.post('/chats', { idPerson1: user.idperson, firstNamePerson1: user.firstname, lastNamePerson1: user.lastname, idPerson2: location.state.personWorkerId, firstNamePerson2: location.state.firstName, lastNamePerson2: location.state.lastName, idWorker: location.state.workerId, serviceCategory: location.state.service, status: 'Aberto' });
-      console.log('response', response);
+      await api.post('/chats',
+        {
+          idPerson1: user.idperson,
+          firstNamePerson1: user.firstname,
+          lastNamePerson1: user.lastname,
+          idPerson2: location.state.personWorkerId,
+          firstNamePerson2: location.state.firstName,
+          lastNamePerson2: location.state.lastName,
+          idWorker: location.state.workerId,
+          serviceCategory: location.state.service,
+          status: 'Aberto'
+        });
       navigate("/Chat", { replace: true });
-
     } catch (error) {
-
+      console.log(error);
     }
   }
 
@@ -137,7 +160,7 @@ const WorkerProfile = () => {
     getReviewsByWorker()
     getComplaintsByWorker()
     getIfChatExists()
-  })
+  }, [])
 
   useEffect(() => {
     validationWorkerNumberReviews()
@@ -150,74 +173,112 @@ const WorkerProfile = () => {
   }, [location])
 
   return (
-    <div className='all-worker-profile'>
-      <div className='container-worker-profile'>
-        <div className='part1-worker-profile'>
+    <div className='worker-profile'>
+      <div className='container'>
+        <div className='section-1'>
           <div className='background-infos'></div>
           <div className='box-worker-profile'>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-worker-profile' alt="Profile" />
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
 
-            <div className='section1-worker'>
-              <p id='name-worker-profile'>{location.state.firstName} {location.state.lastName}</p>
-              <p id='categorie-worker-profile'>{location.state.service}, {`${idade} anos`}</p>
+            <div>
+              <p id='name-worker'>
+                {location.state.firstName} {location.state.lastName}
+              </p>
+              <p id='categorie-worker'>
+                {location.state.service}, {`${idade} anos`}
+              </p>
+
               <AverageRating />
 
-              {user.idperson === location.state.personWorkerId ?
+              {user.idperson === location.state.personWorkerId
+                ?
                 <EditProfileWorker />
                 :
-                <button className='message-button' onClick={() => requestService()}>Solicitar serviço</button>
+                <button onClick={() => requestService()}>
+                  Solicitar serviço
+                </button>
               }
-
             </div>
           </div>
         </div>
 
         {modalChat ? <ModalExistingChat createChat={createChat} /> : <></>}
 
-        <div className='part2-worker-profile'>
-          <div className='container-info-worker'>
+        <div className='section2'>
+          <div className='container'>
+            <p id='title-worker-profile'>
+              <EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+              E-mail
+            </p>
+            <p id='text-worker-profile'>
+              {location.state.email}
+            </p>
 
-          <div className='section2-worker'>
-            <p id='title-worker-profile'><EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> E-mail</p>
-            <p id='text-worker-profile'>{location.state.email}</p>
-
-            <div className='contact-worker-profile'>
-              <div>
-                <p id='title-worker-profile'><PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} /> Telefone</p>
-                <p id='text-worker-profile'>{location.state.phone}</p>
-              </div>
+            <div>
+              <p id='title-worker-profile'>
+                <PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} />
+                Telefone
+              </p>
+              <p id='text-worker-profile'>
+                {location.state.phone}
+              </p>
 
               {location.state.whatsapp === null || location.state.whatsapp === '' ? <></> :
                 <>
-                  <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer"><img src={whatsapp} alt='whatsapp' className='whatsapp' /></a>
+                  <a href={location.state.whatsapp} target="_blank" rel="noopener noreferrer">
+                    <img src={whatsapp} alt='whatsapp' />
+                  </a>
                 </>
               }
+
+              <p id='title-worker-profile'>
+                <CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                Data de nascimento
+              </p>
+              <p id='text-worker-profile'>
+                {formattedBirthDate}
+              </p>
             </div>
 
-            <p id='title-worker-profile'><CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Data de nascimento</p>
-            <p id='text-worker-profile'>{formattedBirthDate}</p>
+            <p id='title-worker-profile'>
+              <LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+              Localização
+            </p>
+            <p id='text-worker-profile'>
+              {location.state.city}, {location.state.cityState}
+            </p>
+
+            <p id='title-worker-profile'>
+              <PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+              Preço médio dos serviços
+            </p>
+            <p id='text-worker-profile'>
+              R$ {location.state.price}
+            </p>
+
+            <p id='title-worker-profile'>
+              <DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+              Descrição
+            </p>
+            <p id='text-worker-profile'>
+              {location.state.description}
+            </p>
           </div>
 
-          <div className="section3-worker">
-            <p id='title-worker-profile'><LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Localização</p>
-            <p id='text-worker-profile'>{location.state.city}, {location.state.cityState}</p>
-
-            <p id='title-worker-profile'><PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Preço médio dos serviços</p>
-            <p id='text-worker-profile'>R$ {location.state.price}</p>
-
-            <p id='title-worker-profile'><DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} /> Descrição</p>
-            <p id='text-worker-profile'>{location.state.description}</p>
-          </div>
-          </div>
-
-          <div className='container-blocks'>
+          <div className='container-avaliations'>
             <div className='avaliations'>
               <p id='title-blocks'>Avaliações</p>
 
               <div className='feed-avaliations'>
                 <div className='inicial-avaliations'>
-                  <p id={showAvaliations ? 'number-avaliations-selected' : 'number-avaliations'} onClick={() => setShowAvaliations(!showAvaliations)}>{numberWorkerReviews}</p>
-                  <p id={showDenounces ? 'number-complaints-selected' : 'number-complaints'} onClick={() => setShowDenounces(!showDenounces)}>{numberWorkerComplaints}</p>
+                  <p id={showAvaliations ? 'number-avaliations-selected' : 'number-avaliations'}
+                    onClick={() => setShowAvaliations(!showAvaliations)}>
+                    {numberWorkerReviews}
+                  </p>
+                  <p id={showDenounces ? 'number-complaints-selected' : 'number-complaints'}
+                    onClick={() => setShowDenounces(!showDenounces)}>
+                    {numberWorkerComplaints}
+                  </p>
                 </div>
 
                 {showAvaliations || showDenounces ?
@@ -225,7 +286,9 @@ const WorkerProfile = () => {
                   :
                   <>
                     <div className='inicial-worker-profile-review'>
-                      <p id='inicial-text-worker-profile-review'>Selecione "avaliações" e/ou "denúncias" acima para consultar os registros.</p>
+                      <p>
+                        Selecione "avaliações" e/ou "denúncias" acima para consultar os registros.
+                      </p>
                       <img src={ReviewsImage} alt="ReviewsImage" width={'100px'} />
                     </div>
                   </>
@@ -236,12 +299,13 @@ const WorkerProfile = () => {
                 {showDenounces ? <WorkerComplaints workerComplaints={workerComplaints} /> : <></>}
               </div>
             </div>
-            <p id='title-blocks'>Galeria de serviços</p>
+            <p id='title-blocks'>
+              Galeria de serviços
+            </p>
             <Carousel />
           </div>
         </div>
       </div>
-
     </div >
   )
 }

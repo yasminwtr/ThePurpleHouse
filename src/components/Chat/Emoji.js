@@ -33,7 +33,7 @@ class Emoji extends Component {
     return (
       <span className='more-options-chat-wrapper'>
         <a onClick={this.handleToggle}>
-          <SentimentSatisfiedAltIcon id='send-icon-chat' />
+          <SentimentSatisfiedAltIcon id='send-icon' />
         </a>
         <div className={`more-options-chat more-options-chat-${status}`}>
           {this.props.children}

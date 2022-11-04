@@ -69,7 +69,9 @@ export const UploadImage = (props) => {
     <div>
       {user.idperson == location.state.personWorkerId ?
         <>
-          <Button onClick={handleShow} icon={<UploadOutlined />}>Adicionar Imagens</Button>
+          <Button onClick={handleShow} icon={<UploadOutlined />}>
+            Adicionar Imagens
+          </Button>
         </>
         :
         <></>

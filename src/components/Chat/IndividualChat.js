@@ -89,38 +89,36 @@ const IndividualChat = (props) => {
   };
 
   return (
-    <div className='container-chat'>
-      <div className='header-chat'>
+    <div className='chat'>
+      <div className='header'>
         {chat.idperson1 === user.idperson ?
           <>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
-            <p id='name-account-worker' onClick={() => navigate('/WorkerProfile', { state: { workerId: chat.idworker, personWorkerId: chat.idperson2, firstName: chat.firstname, lastName: chat.lastname, service: chat.servicecategory, email: chat.email, phone: chat.phonenumber, birthdate: chat.birthdate, city: chat.city, cityState: chat.localization, price: chat.priceservice, description: chat.descriptionservice, whatsapp: chat.whatsapp } })}>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+            <p id='name-worker' onClick={() => navigate('/WorkerProfile', { state: { workerId: chat.idworker, personWorkerId: chat.idperson2, firstName: chat.firstname, lastName: chat.lastname, service: chat.servicecategory, email: chat.email, phone: chat.phonenumber, birthdate: chat.birthdate, city: chat.city, cityState: chat.localization, price: chat.priceservice, description: chat.descriptionservice, whatsapp: chat.whatsapp } })}>
               {chat.firstnameperson2} {chat.lastnameperson2}
             </p>
           </>
           :
           <>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-individual-chat' alt="Profile" />
-            <p id='name-account'>{chat.firstnameperson1} {chat.lastnameperson1}</p>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+            <p id='name-user'>{chat.firstnameperson1} {chat.lastnameperson1}</p>
           </>
         }
 
         {chat.idperson1 === user.idperson && chat.status === 'Aberto' ?
           <>
             <MoreOptions>
-              <div>
-                <ul className='ul-more-options'>
-                  <li id='close-service-li'>
-                    <LeaveAvaliation chat={chat} />
-                  </li>
-                  <li id='cancel-service-li'>
-                    <CancelWork chat={chat} />
-                  </li>
-                  <li id='denounce-service-li'>
-                    <DenounceWorker chat={chat} getChats={getChats}/>
-                  </li>
-                </ul>
-              </div>
+              <ul className='ul-more-options'>
+                <li id='close-service-li'>
+                  <LeaveAvaliation chat={chat} />
+                </li>
+                <li id='cancel-service-li'>
+                  <CancelWork chat={chat} />
+                </li>
+                <li id='denounce-service-li'>
+                  <DenounceWorker chat={chat} getChats={getChats} />
+                </li>
+              </ul>
             </MoreOptions>
           </>
           :
@@ -130,13 +128,11 @@ const IndividualChat = (props) => {
         {chat.idperson2 === user.idperson && chat.status === 'Aberto' ?
           <>
             <MoreOptions>
-              <div>
-                <ul className='ul-more-options'>
-                  <li id='cancel-service-li'>
-                    <CancelWork chat={chat} />
-                  </li>
-                </ul>
-              </div>
+              <ul className='ul-more-options'>
+                <li id='cancel-service-li'>
+                  <CancelWork chat={chat} />
+                </li>
+              </ul>
             </MoreOptions>
           </>
           :
@@ -144,25 +140,25 @@ const IndividualChat = (props) => {
         }
       </div>
 
-      <div className='messages-chat'>
+      <div className='messages'>
         {messages.map((message) => (
           <>
-            <div>
-              <p key={message.idmessage} id={message.idperson === user.idperson ? 'right-message' : 'left-message'}>
-                {message.messagetext}
-              </p>
+            <p key={message.idmessage} id={message.idperson === user.idperson ? 'right-message' : 'left-message'}>
+              {message.messagetext}
+            </p>
 
-              <p id={message.idperson === user.idperson ? 'right-message-hour' : 'left-message-hour'}>{message.hour}</p>
-            </div>
+            <p id={message.idperson === user.idperson ? 'right-message-hour' : 'left-message-hour'}>
+              {message.hour}
+            </p>
           </>
         ))}
       </div>
 
-      <div className='type-message-chat'>
+      <div className='type-message'>
         {chat.status === 'Aberto' ?
           <>
             <input
-              className='input-message-chat'
+              className='input-message'
               placeholder='Digite sua mensagem aqui'
               onChange={(event) => setMessageText(event.target.value)}
               value={messageText}
@@ -171,7 +167,7 @@ const IndividualChat = (props) => {
             <Emoji>
               <EmojiPicker value={showPicker} onEmojiClick={onEmojiClick} onClick={() => setShowPicker(val => !val)} />
             </Emoji>
-            <SendIcon id='send-icon-chat' onClick={handleSendMessage} />
+            <SendIcon id='send-icon' onClick={handleSendMessage} />
           </>
           :
           <>
@@ -183,14 +179,21 @@ const IndividualChat = (props) => {
               onKeyPress={handleKeyPress}
             />
 
-            <SentimentSatisfiedAltIcon id='send-icon-chat-disabled' />
-            <SendIcon id='send-icon-chat-disabled' />
+            <SentimentSatisfiedAltIcon id='send-icon-disabled' />
+            <SendIcon id='send-icon-disabled' />
           </>
         }
       </div>
 
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+      <Snackbar
+        open={showError}
+        autoHideDuration={6000}
+        onClose={handleCloseError}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+        <Alert
+          onClose={handleCloseError}
+          severity="error"
+          sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
           Digite algo para enviar uma mensagem
         </Alert>
       </Snackbar>

@@ -5,7 +5,7 @@ import defaultimage from '../assets/img/defaultimage.PNG'
 import api from 'api';
 import { UploadImage } from './UploadImages';
 
-export const Carousel = (props) => {
+export const Carousel = () => {
   const location = useLocation();
   const idWorker = location.state.workerId
 
@@ -23,7 +23,10 @@ export const Carousel = (props) => {
         const response = await api.get(`/getImageWorker/${idWorker}`, { idWorker: idWorker });
 
         setImage(response.data.map((image) => {
-          return { original: image.img, thumbnail: image.img }
+          return {
+            original: image.img,
+            thumbnail: image.img
+          }
         }))
 
       } catch (error) {
@@ -34,19 +37,18 @@ export const Carousel = (props) => {
     }
   }
 
-
   useEffect(() => {
     getWorkerImages()
   }, [])
 
   return (
-    <div className='gallery'>
+    <div className='carousel'>
       <UploadImage image={image} getWorkerImages={() => getWorkerImages()} />
 
       {image != '' ?
-        <ImageGallery items={image} className='carousel' sizes={10} />
+        <ImageGallery items={image} sizes={10} />
         :
-        <ImageGallery items={defaultImage} className='carousel' sizes={10} />
+        <ImageGallery items={defaultImage} sizes={10} />
       }
     </div>
   )
