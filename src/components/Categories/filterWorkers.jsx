@@ -83,7 +83,7 @@ const FilterWorkers = (props) => {
   }
 
   return (
-    <div>
+    <div className='filterWorkers'>
       <Modal
         show={show}
         onHide={handleClose}
@@ -120,36 +120,32 @@ const FilterWorkers = (props) => {
         </Modal.Body>
       </Modal>
 
-      <div className='page-categories-search'>
-
-        <div className='container-categories-search'>
-          <ClearIcon className="button-refresh" onClick={() => close()} />
-          <h1 className='title-service-category'>{category.titleservice}</h1>
-          <div className='btns-categories-search'>
-            <p className='btn-filter-workers' onClick={handleShow}>
-              <TuneIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
-              Filtrar
-            </p>
-            <button onClick={() => refreshFilter()} className="button-refresh">
-              <RefreshIcon />
-            </button>
-
-          </div>
-          <div className='list-users-category'>
-            {
-              (filteredWorkers.length ? filteredWorkers : workers).map((worker) => {
-                return (
-                  <div className='info-user-category' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstname, lastName: worker.lastname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className='photo-user-profile' alt="Profile" />
-                    <p className='name-user-category' >{worker.firstname}</p>
-                    <div className='average-rating'>
-                      <AverageRating rating={worker.avg} />
-                    </div>
+      <div className='container-categories-search'>
+        <ClearIcon className="button-refresh" onClick={() => close()} />
+        <h1>{category.titleservice}</h1>
+        <div className='btns-categories-search'>
+          <button className='btn-filter-workers' onClick={handleShow}>
+            <TuneIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
+            Filtrar
+          </button>
+          <button onClick={() => refreshFilter()} className="button-refresh">
+            <RefreshIcon />
+          </button>
+        </div>
+        <div className='list-users-category'>
+          {
+            (filteredWorkers.length ? filteredWorkers : workers).map((worker) => {
+              return (
+                <div className='info-user-category' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstname, lastName: worker.lastname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}>
+                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+                  <span>{worker.firstname}</span>
+                  <div className='average-rating'>
+                    <AverageRating rating={worker.avg} />
                   </div>
-                )
-              })
-            }
-          </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </div>

@@ -66,7 +66,7 @@
   color: var(--accent-color1);
 }
 
-#name-account-worker{
+#name-account-worker {
   font-family: Inter-Medium;
   margin: auto 10px auto;
   font-size: 22px;
@@ -199,13 +199,13 @@
   margin-bottom: 0.1em;
 }
 
-#right-message-hour{
+#right-message-hour {
   text-align: end;
   font-size: 13px;
   color: rgb(83, 83, 83);
 }
 
-#left-message-hour{
+#left-message-hour {
   font-size: 13px;
   color: rgb(83, 83, 83);
 }
@@ -348,18 +348,18 @@
   width: 70%;
 }
 
-#icon-individual-cancel{
+#icon-individual-cancel {
   color: #596066;
   font-size: 22px;
 
 }
 
-#icon-individual-close{
+#icon-individual-close {
   color: #56a54f;
   font-size: 23px;
 }
 
-#icon-individual-report{
+#icon-individual-report {
   color: #bb3f3f;
   font-size: 24px;
 }
@@ -443,6 +443,11 @@ aside.EmojiPickerReact.epr-main {
   .h4-chat-null {
     margin: 5px
   }
+
+  .more-options-chat-open {
+    margin: -70px;
+    top: -270px;
+  }
 }
 
 @media screen and (min-width: 541px) and (max-width: 1280px) {
@@ -451,7 +456,7 @@ aside.EmojiPickerReact.epr-main {
   }
 
   .box-search-chat {
-    width: 6  0%;
+    width: 6 0%;
     height: 400px;
     margin-bottom: 20px;
     padding: 10px;
