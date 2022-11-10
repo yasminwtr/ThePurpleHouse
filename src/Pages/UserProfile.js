@@ -7,6 +7,7 @@ import DeleteAccount from '../components/ModalProfile/DeleteAccount'
 import ServicesReviewed from '../components/ModalProfile/ServicesReviewed'
 import AnnounceService from '../components/ModalProfile/AnnounceService'
 import CancelService from '../components/ModalProfile/CancelService'
+import ProfilePicture from '../components/ModalProfile/profilePicture'
 import Logout from '../components/ModalProfile/Logout'
 import RequestedServices from 'components/ModalProfile/RequestedServices';
 import EmailIcon from '@mui/icons-material/EmailRounded'
@@ -14,6 +15,7 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 import AuthContext from '../services/contexts/auth'
 import api from 'api'
+import { BsCamera } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
 import ProfileIcon from "../assets/img/user2.png";
 
@@ -69,6 +71,10 @@ const Profile = () => {
         <div class="part1-profile1">
           <div class="div-image-profile">
             <img src={ProfileIcon} id='icon-profile' alt="Profile" />
+            <div className='iconFoto'>
+              <BsCamera className='IconPicture'/>
+              <ProfilePicture/>
+            </div>
           </div>
           <p id='name-profile'>{user.firstname} {user.lastname}</p>
         </div>

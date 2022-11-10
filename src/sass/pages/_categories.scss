@@ -210,7 +210,7 @@
     flex-wrap: wrap;
   }
 
-  @media screen and (min-width: 290px) and (max-width: 414px) {
+  @media screen and (min-width: 290px) and (max-width: 593px) {
 
     flex-direction: row;
     overflow-y: scroll;
@@ -252,7 +252,7 @@
 
     .container-categories-search {
       height: auto;
-      margin-left: auto;
+      margin-left: 0 !important;
       margin-top: 10px;
     }
 
