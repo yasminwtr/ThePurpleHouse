@@ -7,6 +7,7 @@ import About from "Pages/AboutUs";
 import Registration from "Pages/Registration"
 import Login from "Pages/Login"
 import AuthContext from "services/contexts/auth";
+import { ScrollToTop } from "components/ScrollToTop";
 
 const AuthRoutes = () => {
   const [theme, setTheme] = useState("light");
@@ -36,6 +37,7 @@ const AuthRoutes = () => {
           <Route path="*" element={<PrivateRoute />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
       </div>
     </BrowserRouter >
   )

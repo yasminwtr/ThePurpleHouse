@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BsChevronUp } from "react-icons/bs";
 import home from "../assets/img/landing.png";
 import super1 from "../assets/img/super1.png";
 import super2 from "../assets/img/super2.png";
@@ -41,19 +40,8 @@ export default function Home() {
     };
     registerAnimations();
   }, []);
-  // window.setTimeout(() => {
-  //   const home = document.getElementsByClassName("home");
-  //   home[0].style.transform = "none";
-  //   const nav = document.getElementsByTagName("nav");
-  //   nav[0].style.transform = "none";
-  // }, 1500);
 
-// ------------------------------- Scoll Top ------------------------------------
-  const [visible, setVisible] = useState(false);
-  window.addEventListener("scroll", () => {
-    window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
-  });
-// ------------------------------- Section 3 ------------------------------------
+  // ------------------------------- Section 3 ------------------------------------
   const data = [
     {
       image: super1,
@@ -80,15 +68,7 @@ export default function Home() {
   // ------------------------------------------------------------------------------
   return (
     <>
-    {/* ___________________________ Scroll Top______________________________ */}
-
-      <div className={`scrollToTop ${visible ? "visible" : ""}`}>
-        <a href="#">
-          <BsChevronUp />
-        </a>
-      </div>
-     
-    {/* ______________________________ Home ________________________________ */}
+      {/* ______________________________ Home ________________________________ */}
 
       <div className="home">
         <div className="container-home">
@@ -114,8 +94,8 @@ export default function Home() {
 
         </div>
       </div>
-    {/* _____________________________ Section 2 _____________________________ */}
-    
+      {/* _____________________________ Section 2 _____________________________ */}
+
       <div className="title-container">
         <h2 className="title">SERVIÇOS MAIS PEDIDOS</h2>
       </div>
@@ -144,7 +124,7 @@ export default function Home() {
         </div>
       </div>
 
-    {/* _____________________________ Section 3 _____________________________ */}
+      {/* _____________________________ Section 3 _____________________________ */}
       <div className="like">
         <div className="release green">
           <div className="texts-ComoF">

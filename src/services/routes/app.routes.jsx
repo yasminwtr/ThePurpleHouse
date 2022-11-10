@@ -7,6 +7,7 @@ import WorkerProfile from "Pages/WorkerProfile";
 import Chat from 'Pages/Chat'
 import Categories from "Pages/Categories";
 import Navbar from "components/Navbar/Navbar";
+import { ScrollToTop } from "components/ScrollToTop";
 
 const AppRoutes = () => {
   const [theme, setTheme] = useState("light");
@@ -26,6 +27,7 @@ const AppRoutes = () => {
           <Route path="/Chat" element={<Chat />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
       </div>
     </BrowserRouter>
   )

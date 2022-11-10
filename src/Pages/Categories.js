@@ -12,7 +12,7 @@ function Categories() {
   const showOrHide = () => setShowElement(true)
 
   const [selectedCategory, setSelectedCategory] = useState(null)
-  
+
   const [services, setServices] = useState([])
 
   useEffect(() => {
