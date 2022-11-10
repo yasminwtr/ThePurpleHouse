@@ -61,6 +61,22 @@
   .boxCategories:hover {
     background-color: #d1baf9bb !important;
   }
+
+  .filterWorkers {
+    .container-categories-search {
+      background-color: #1c0929 !important;
+    }
+  }
+
+  .categories {
+    p.title-category {
+      color: #655a78;;
+    }
+
+    p {
+      color: #898989;
+    }
+  }
 }
 
 .categories {
@@ -188,6 +204,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   .refresh-icon {
@@ -442,9 +459,11 @@
     max-width: 550px;
     align-items: center;
     cursor: pointer;
-    padding: 8px 8px 8px 12px;
+    padding: 0px 0px 0px 12px;
     border-radius: 10px;
     background-color: var(--accent-color8);
+    margin: 5px;
+
 
     &:hover {
       background-color: #dbc9fa79;
