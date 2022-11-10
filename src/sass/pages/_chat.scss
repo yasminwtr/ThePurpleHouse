@@ -361,6 +361,7 @@
       padding: 12px 14px;
       cursor: pointer;
       border-radius: 8px 8px 0 0;
+      list-style: none;
 
       &:hover {
         background-color: #f0efef;
@@ -371,6 +372,7 @@
     #cancel-service-li {
       padding: 12px 14px;
       cursor: pointer;
+      list-style: none;
 
       &:hover {
         background-color: #f0efef;
@@ -382,6 +384,7 @@
       padding: 12px 14px;
       cursor: pointer;
       border-radius: 0 0 8px 8px;
+      list-style: none;
 
       &:hover {
         background-color: #f0efef;

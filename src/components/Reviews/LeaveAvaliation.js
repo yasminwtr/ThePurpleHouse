@@ -83,7 +83,9 @@ const LeaveAvaliation = (props) => {
 
   return (
     <div>
-      <label id='label-more-options' onClick={handleShow}><CloseIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Finalizar serviço</label>
+      <label id='label-more-options' onClick={handleShow}><CloseIcon sx={{ fontSize: 22, marginRight: 0.5 }} />
+        Finalizar serviço
+      </label>
 
       <Modal
         show={show}
@@ -98,7 +100,8 @@ const LeaveAvaliation = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          Para finalizar esse serviço é necessário deixar a sua avaliação. Ela é muito importante para nós, não deixe de falar o que achou sobre os serviços contratados! :)
+          Para finalizar esse serviço é necessário deixar a sua avaliação.
+          Ela é muito importante para nós, não deixe de falar o que achou sobre os serviços contratados! :)
           <Form>
             <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Quantas estrelas você daria?</Form.Label><br></br>
@@ -115,7 +118,7 @@ const LeaveAvaliation = (props) => {
                       onClick={() => setRating(ratingValue)}
                     />
                     <FaStar
-                      className='star'
+                      className='star-avaliation'
                       color={ratingValue <= (hoverRating || rating) ? '#fccc3e' : '#d9d9d9'}
                       onMouseEnter={() => setHoverRating(ratingValue)}
                       onMouseLeave={() => setHoverRating(null)}
