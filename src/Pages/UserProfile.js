@@ -15,6 +15,7 @@ import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 import AuthContext from '../services/contexts/auth'
 import api from 'api'
 import { useNavigate } from 'react-router-dom';
+import ProfileIcon from "../assets/img/user2.png";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -67,7 +68,7 @@ const Profile = () => {
       <div class="profile-container">
         <div class="part1-profile1">
           <div class="div-image-profile">
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-profile' alt="Profile" />
+            <img src={ProfileIcon} id='icon-profile' alt="Profile" />
           </div>
           <p id='name-profile'>{user.firstname} {user.lastname}</p>
         </div>
