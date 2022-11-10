@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import AuthContext from '../../services/contexts/auth';
 import { useNavigate } from "react-router-dom";
 import 'animate.css'
+import ProfileIcon from "../../assets/img/user2.png";
 
 const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
   const { user } = useContext(AuthContext);
@@ -48,7 +49,7 @@ const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
       </button>
       <ul id='show-dropdown' className={showDropdown ? "active animate__animated animate__fadeIn  " : ""}>
         <Dropdown.ItemText className='img-dropdown' eventkey="1">
-          <img width={100} src={person} />
+          <img width={100} src={ProfileIcon} />
         </Dropdown.ItemText>
         <Dropdown.ItemText className='dropdown-fullname'>
           {user.firstname}

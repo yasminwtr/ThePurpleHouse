@@ -135,7 +135,6 @@ body::-webkit-scrollbar-thumb {
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  box-shadow: 10px 5px 10px rgb(0 0 0 / 38%);
 }
 
 
@@ -190,7 +189,7 @@ body::-webkit-scrollbar-thumb {
   margin-block-start: 0em;
   margin-block-end: 2em;
   font-size: 16px;
-  font-family: Inter-Light;
+  font-family: Inter-Regular;
   color: var(--titleprofile1);
 }
 
@@ -207,14 +206,13 @@ body::-webkit-scrollbar-thumb {
 #service-text-profile {
   margin-block-end: -3px;
   font-size: 17px;
-  font-family: Inter-Light;
+  font-family: Inter-Regular;
   color: var(--titleprofile1);
 }
 
 #service-text-profile:hover {
   color: #675880;
   cursor: pointer;
-  font-weight: 600;
 }
 
 .container-config {
@@ -767,14 +765,14 @@ input::-ms-clear {
     margin-block-start: 0em;
     margin-block-end: 2em;
     font-size: 14px;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
     color: var(--titleprofile1);
   }
 
   #service-text-profile {
     margin-block-end: -3px;
     font-size: 14px;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
     color: var(--titleprofile1);
   }
 }
@@ -802,7 +800,7 @@ input::-ms-clear {
   #service-text-profile {
     margin-block-end: -3px;
     font-size: 16px;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
     color: var(--titleprofile1);
   }
 

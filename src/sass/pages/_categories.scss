@@ -93,6 +93,7 @@
 
   .average-rating {
     font-size: 22px;
+    text-align: end !important;
   }
 
   .css-1tc5vhq-MuiGrid2-root {
@@ -148,14 +149,14 @@
 
   p {
     font-size: 14px;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
   }
 
   p.title-category {
     color: #655A78;
     font-size: 20px;
     margin: 0;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
   }
 
   img {
@@ -177,8 +178,6 @@
   }
 
   .btn-filter-workers {
-    margin-left: 10px;
-    margin-top: 20px;
     cursor: pointer;
     width: 90px;
     height: 35px;
@@ -186,7 +185,7 @@
     color: #000;
     font-size: 18px;
     border: none;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,7 +203,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     margin-bottom: 10px;
+=======
+    margin-bottom: 5%;
+>>>>>>> 07fe4922c4363e7118525517e721539e72b44c6f
   }
 
   .refresh-icon {
@@ -374,7 +377,8 @@
   }
 
   .average-rating {
-    margin-left: 25px;
+    justify-content: end;
+    min-width: fit-content;
   }
 
   .form-select-filter {
@@ -387,7 +391,7 @@
 
   p.title-category,
   p.info-user {
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
     font-size: 23px;
     margin: auto 0 auto;
     margin-right: 10px;
@@ -413,11 +417,11 @@
     margin-left: 90px;
 
     h1 {
-      color: #655A78;
+      color: #655A78 !important;
       font-size: 25px;
       display: flex;
       justify-content: center;
-      font-family: Inter-Light;
+      font-family: Inter-Regular;
       color: var(--accent-color6);
       letter-spacing: -1px;
     }
@@ -428,9 +432,9 @@
     height: 260px;
 
     span {
-      font-family: Inter-Light;
+      font-family: Inter-Regular;
       margin-bottom: 0 !important;
-      font-size: 20px;
+      font-size: 19px;
     }
 
     &::-webkit-scrollbar {
@@ -456,14 +460,23 @@
 
   .info-user {
     display: flex;
-    max-width: 550px;
+    // max-width: 280px;
+    // min-width: 280px;
+    min-width: fit-content;
     align-items: center;
     cursor: pointer;
+<<<<<<< HEAD
     padding: 0px 0px 0px 12px;
     border-radius: 10px;
     background-color: var(--accent-color8);
     margin: 5px;
 
+=======
+    padding: 0 10px;
+    border-radius: 10px;
+    background-color: var(--accent-color8);
+    justify-content: space-between;
+>>>>>>> 07fe4922c4363e7118525517e721539e72b44c6f
 
     &:hover {
       background-color: #dbc9fa79;
@@ -472,9 +485,14 @@
     }
   }
 
+.info-user-nameimg{
+  align-items: center;
+  display: flex;
+}
+
   img {
-    width: 13%;
-    height: 12%;
-    margin-right: 3%;
+    width: 28%;
+    height: auto;
+    margin: 8% 4% 8% 0 !important;
   }
 }
