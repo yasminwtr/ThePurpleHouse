@@ -66,6 +66,28 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
+.IconPicture{
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 88px;
+  bottom: -2px;
+  background-color: #c3aee6;
+  padding: 6px;
+  border-radius: 16px;
+}
+
+.IconPicture :hover{
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.iconFoto :hover{
+  cursor: pointer;
+  background-color: #A58AD2;
+}
+
 .container-profile {
   margin: 1% auto 1% auto !important;
   width: 70%;
