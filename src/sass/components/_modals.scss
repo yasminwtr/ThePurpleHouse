@@ -1,3 +1,14 @@
+.modal-open {
+  font-size: 16px !important;
+
+}
+
+html,
+body,
+head {
+  font-size: 16px !important;
+}
+
 input[type=number]::-webkit-inner-spin-button {
   appearance: none;
 }
@@ -7,6 +18,14 @@ input[type=number] {
   appearance: textfield;
 }
 
+input[type='radio'] {
+  display: none;
+}
+
+.star-avaliation {
+  font-size: 25px !important;
+  cursor: pointer;
+}
 
 textarea {
   resize: none !important;
@@ -220,6 +239,7 @@ select:focus {
   border-radius: 20px;
   background-color: transparent;
   color: #7f7b81;
+
   &:hover {
     color: #b36b6b !important;
     border-color: #b36b6b !important;
@@ -232,8 +252,8 @@ select:focus {
   border-radius: 20px;
   background-color: transparent;
   color: #96c692;
+
   &:hover {
     background-color: #96c692 !important;
   }
 }
-
