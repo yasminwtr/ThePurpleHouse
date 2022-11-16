@@ -12,7 +12,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export const UploadImage = (props) => {
 
-  const { image } = props
+  const { image, idimage } = props
 
   const location = useLocation();
   const idWorker = location.state.workerId
@@ -22,6 +22,8 @@ export const UploadImage = (props) => {
   const [show, setShow] = useState(false);
   const [listImages, setListImages] = useState([])
   const [file, setFile] = useState([]);
+
+  const [idImage, setIdImage] = useState([])
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true)
@@ -58,10 +60,35 @@ export const UploadImage = (props) => {
   const saveImage = async () => {
     if ((file.length) > 0) {
       try {
-        await api.post(`/postImage`, { img: file, idWorker: idWorker });
+        const response = await api.post(`/postImage`, { img: file, idWorker: idWorker });
+        console.log('response', response);
+        console.log('idimage', idimage);
+
+
       } catch (error) {
         console.log('error', error);
       }
+    }
+  }
+
+  const deleteCarouselImage = async () => {
+    try {
+
+      setIdImage(image.map((data) => {
+        return {
+          id: data.idimage
+        }
+      }))
+
+      const response = await api.delete(`/deleteCarouselImage`, { idWorker: idWorker, idImage: idImage });
+      console.log('idImage', idImage);
+      console.log('response.data', response.data);
+      console.log('idImage', idImage)
+
+    } catch (error) {
+      console.log('error', error);
+
+      console.log('idImage !!!!!!!', idImage);
     }
   }
 
@@ -107,7 +134,8 @@ export const UploadImage = (props) => {
                 </Button>
               </Upload>
 
-              <div className='container-uploaded-images'>
+              <div className='container-uploaded-images'
+                onClick={() => deleteCarouselImage()}>
                 {image.map((img) => {
                   return <>
                     <div className='uploaded-images-list'>

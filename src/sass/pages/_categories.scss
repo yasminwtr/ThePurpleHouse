@@ -203,11 +203,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
-    margin-bottom: 10px;
-=======
     margin-bottom: 5%;
->>>>>>> 07fe4922c4363e7118525517e721539e72b44c6f
   }
 
   .refresh-icon {
@@ -465,18 +461,11 @@
     min-width: fit-content;
     align-items: center;
     cursor: pointer;
-<<<<<<< HEAD
     padding: 0px 0px 0px 12px;
     border-radius: 10px;
     background-color: var(--accent-color8);
     margin: 5px;
 
-=======
-    padding: 0 10px;
-    border-radius: 10px;
-    background-color: var(--accent-color8);
-    justify-content: space-between;
->>>>>>> 07fe4922c4363e7118525517e721539e72b44c6f
 
     &:hover {
       background-color: #dbc9fa79;

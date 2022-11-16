@@ -21,13 +21,23 @@ export const Carousel = () => {
     if (image.length <= 5) {
       try {
         const response = await api.get(`/getImageWorker/${idWorker}`, { idWorker: idWorker });
+        // console.log('response @ getWorkerImages', response);
+        // console.log('response @ getWorkerImagessssssss teste', response.data.idimage);
+        // console.log('response @ getWorkerImagessssssss teste2', response.img);
+        
+
 
         setImage(response.data.map((image) => {
           return {
             original: image.img,
-            thumbnail: image.img
+            thumbnail: image.img,
+            idimage: image.idimage
           }
         }))
+
+        console.log('image @get Worker Images ',[image]);
+
+        
 
       } catch (error) {
         console.log('error', error);
