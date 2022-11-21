@@ -106,7 +106,7 @@ const Avaliations = (props) => {
               </Button>
             </div>
 
-            {modalAvaliations || modalDenounces ? <></> : <>Selecione uma das opções acima para consultar suas avaliações.</>}
+            {modalAvaliations || modalDenounces ? <></> : <></>}
 
             {modalAvaliations ?
               <>
