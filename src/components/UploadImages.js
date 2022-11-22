@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, Upload } from 'antd';
+import { Button, Upload, notification } from 'antd';
 import { useLocation } from 'react-router-dom';
 import AuthContext from '../services/contexts/auth'
 import axios from 'axios';
@@ -47,6 +47,13 @@ export const UploadImage = (props) => {
 
         await saveImage(imageUrl)
           .then(() => props.getWorkerImages());
+        if (imageUrl) {
+          return notification["success"]({
+            message: 'Imagens adicionadas',
+            duration: 2,
+            placement: 'topRight',
+          })
+        }
       });
     }
   };
@@ -114,6 +121,12 @@ export const UploadImage = (props) => {
                   Escolher Arquivos
                 </Button>
               </Upload>
+
+              {listImages.length != 0 ?
+                <Form.Label className='mt-3'>Imagens Adicionadas</Form.Label>
+                :
+                <Form.Label className='mt-3'>Não h adicionou imagens</Form.Label>
+              }
 
               <div className='container-uploaded-images'>
                 {image.map((img) => {
