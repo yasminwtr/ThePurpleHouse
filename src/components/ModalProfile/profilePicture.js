@@ -31,11 +31,11 @@ const ProfilePicture = (props) => {
 
   let imageUrl = "";
   const attemptSave = async () => {
-    
+
     image.forEach(async image => {
       const data = new FormData();
       data.append("image", image);
-      
+
 
       await axios({
         method: "post",
