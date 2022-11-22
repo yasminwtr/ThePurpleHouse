@@ -224,16 +224,16 @@ const WorkerProfile = () => {
         {modalChat ? <ModalExistingChat createChat={createChat} /> : <></>}
 
         <div className='section2'>
-          <div className='container'>
-            <p id='title-worker-profile'>
-              <EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-              E-mail
-            </p>
-            <p id='text-worker-profile'>
-              {location.state.email}
-            </p>
+        <div className='container-infos'>
 
-            <div>
+           <div className="container-pt1">
+              <p id='title-worker-profile'>
+                <EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                E-mail
+              </p>
+              <p id='text-worker-profile'>
+                {location.state.email}
+              </p>
               <p id='title-worker-profile'>
                 <PhoneIcon sx={{ fontSize: 22, marginRight: 0.4 }} />
                 Telefone
@@ -249,7 +249,7 @@ const WorkerProfile = () => {
                   </a>
                 </>
               }
-
+              
               <p id='title-worker-profile'>
                 <CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
                 Data de nascimento
@@ -257,32 +257,35 @@ const WorkerProfile = () => {
               <p id='text-worker-profile'>
                 {formattedBirthDate}
               </p>
-            </div>
+          
 
-            <p id='title-worker-profile'>
-              <LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-              Localização
-            </p>
-            <p id='text-worker-profile'>
-              {location.state.city}, {location.state.cityState}
-            </p>
+           
+                <p id='title-worker-profile'>
+                  <LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                  Localização
+                </p>
+                <p id='text-worker-profile'>
+                  {location.state.city}, {location.state.cityState}
+                </p>
+                </div>
+                <div className="container-pt2">
+                <p id='title-worker-profile'>
+                  <PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                  Preço médio dos serviços
+                </p>
+                <p id='text-worker-profile'>
+                  R$ {location.state.price}
+                </p>
 
-            <p id='title-worker-profile'>
-              <PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-              Preço médio dos serviços
-            </p>
-            <p id='text-worker-profile'>
-              R$ {location.state.price}
-            </p>
-
-            <p id='title-worker-profile'>
-              <DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-              Descrição
-            </p>
-            <p id='text-worker-profile'>
-              {location.state.description}
-            </p>
+                <p id='title-worker-profile'>
+                  <DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                  Descrição
+                </p>
+                <p id='text-worker-profile'>
+                  {location.state.description}
+                </p>
           </div>
+        </div>
 
           <div className='container-avaliations'>
             <div className='avaliations'>
