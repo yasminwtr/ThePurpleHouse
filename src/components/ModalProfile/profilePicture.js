@@ -1,56 +1,125 @@
 import React, { useState, useContext } from 'react';
-import AuthContext from '../../services/contexts/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
+import { Button, Upload } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import Modal from 'react-bootstrap/Modal';
-import LogoutIcon from '@mui/icons-material/ExitToAppRounded'
-import { useNavigate } from "react-router-dom";
 import { BsCamera } from 'react-icons/bs'
+import axios from 'axios'
+import Form from 'react-bootstrap/Form';
 
 const ProfilePicture = (props) => {
-    const { signOut } = useContext(AuthContext);
-    const [show, setShow] = useState(false);
-    const navigate = useNavigate()
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
 
-    function signOutRedirect(){
-      signOut()
-      navigate("/", { replace: true })
-    }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    return(
-        <div>
-          {/* <p id='options-logout' onClick={handleShow}><LogoutIcon sx={{ fontSize: 22 }}/> Sair</p> */}
-          <div className='iconFoto'>
-              <BsCamera onClick={handleShow} className='IconPicture'/>
-          </div>
+  const [image, setImage] = useState([])
 
-          <Modal
-          show={show}
-          onHide={handleClose}
-          {...props}
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
+  const uploadButton = (
+    <div>
+      <PlusOutlined />
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Upload
+      </div>
+    </div>
+  );
+
+  let imageUrl = "";
+  const attemptSave = async () => {
+    
+    image.forEach(async image => {
+      const data = new FormData();
+      data.append("image", image);
+      
+
+      await axios({
+        method: "post",
+        url: "https://api.imgbb.com/1/upload?key=260510af5b0c0bace7d588642e391256",
+        data: data,
+        headers: { "Content-Type": "multipart/form-data" },
+      }).then((response) => {
+        imageUrl = response.data.data.url
+        console.log('imageUrl', imageUrl)
+      }).catch((response) => {
+        console.log('imageUrl:', imageUrl)
+        console.log('response.data.data.url', response.data.data.url)
+      });
+    })
+  }
+
+  // const saveImage = async (imageUrl) => {
+  //   if (imageUrl) {
+  //     try {
+  //       return await api.post(`/postImage`, { img: imageUrl });
+  //     } catch (error) {
+  //     }
+  //   }
+  // }
+
+  return (
+    <div>
+      <div className='iconFoto'>
+        <BsCamera onClick={handleShow} className='IconPicture' />
+      </div>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        {...props}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+
+        <Modal.Header closeButton>
+          <Modal.Title>Adicione sua foto de perfil</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <Form encType="multipart/form-data"
+            type="file" multiple accept='.png, .jpeg, .jpg'
+            onChange={(e) => setImage([e.target.files[0], ...image])}
           >
+            <p>Adicione uma foto aqui!</p>
+            <Upload
+              listType="picture-card"
+              className="avatar-uploader"
+              showUploadList={false}
+              maxCount={1}
+              beforeUpload={
+                () => {
+                  return false;
+                }
+              }
+            >
+              {!image ? (
+                <img
+                  src={imageUrl}
+                  alt="avatar"
+                  style={{
+                    width: '100%',
+                  }}
+                />
+              ) : (
+                  uploadButton
+                )}
+            </Upload>
+          </Form>
+        </Modal.Body>
 
-            <Modal.Header closeButton>
-              <Modal.Title>Adicione sua foto de perfil</Modal.Title>
-            </Modal.Header>
-
-            <Modal.Body>
-                <p>Adicione uma foto aqui!</p>      
-            </Modal.Body>
-
-            <Modal.Footer>
-            <Button className='save-button-modals-profile' >
-              Salvar
+        <Modal.Footer>
+          <Button onClick={() => attemptSave()}
+            className='save-button-modals-profile' >
+            Salvar
             </Button>
-            </Modal.Footer>
-          </Modal> 
-        </div>
-    )
+        </Modal.Footer>
+      </Modal>
+    </div>
+  )
 }
 
 export default ProfilePicture; 
