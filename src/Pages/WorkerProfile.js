@@ -176,8 +176,27 @@ const WorkerProfile = () => {
     <div className='worker-profile'>
       <div className='container'>
         <div className='section-1'>
-          <div className='background-infos'></div>
-          <div className='box-worker-profile'>
+          <div className='box-worker'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" id='icon-worker-profile' />
+
+            <div className='name-box-worker'>
+              <p id='name-worker'>{location.state.firstName} {location.state.lastName} </p>
+              <p id='categorie-worker'>{location.state.service}, {`${idade} anos`}</p>
+
+              <AverageRating />
+            </div>
+
+              {user.idperson === location.state.personWorkerId
+                ?
+                <EditProfileWorker />
+                :
+                <button onClick={() => requestService()}>
+                  Solicitar serviço
+              </button>
+              }
+          </div>
+          {/* <div className='background-infos'></div> */}
+          {/* <div className='box-worker-profile'>
             <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
 
             <div>
@@ -199,7 +218,7 @@ const WorkerProfile = () => {
                 </button>
               }
             </div>
-          </div>
+          </div> */}
         </div>
 
         {modalChat ? <ModalExistingChat createChat={createChat} /> : <></>}

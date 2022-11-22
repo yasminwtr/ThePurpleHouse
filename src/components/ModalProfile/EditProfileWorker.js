@@ -116,8 +116,8 @@ const EditProfileWorker = (props) => {
   };
 
   return (
-    <div>
-      <button className='message-button' onClick={handleShow}>Editar perfil</button>
+    <div className='message-button'>
+      <button onClick={handleShow}>Editar perfil</button>
 
       <Modal
         show={show}
@@ -206,7 +206,7 @@ const EditProfileWorker = (props) => {
                 maxLength={100}
                 onChange={(event) => setWhatsapp(event.target.value)}
                 id='whatsapp'
-                value={whatsapp}
+                value={whatsapp === 'null' ? '' : whatsapp}
               />
             </Form.Group>
 
