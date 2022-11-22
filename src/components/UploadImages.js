@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -12,7 +12,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export const UploadImage = (props) => {
 
-  const { image, idimage } = props
+  const { image } = props
 
   const location = useLocation();
   const idWorker = location.state.workerId
@@ -21,9 +21,6 @@ export const UploadImage = (props) => {
 
   const [show, setShow] = useState(false);
   const [listImages, setListImages] = useState([])
-  const [file, setFile] = useState([]);
-
-  const [idImage, setIdImage] = useState([])
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true)
@@ -32,63 +29,42 @@ export const UploadImage = (props) => {
 
     if (image.length < 4) {
 
-      listImages.forEach(image => {
+      listImages.forEach(async image => {
         const data = new FormData();
         data.append("image", image);
 
-        axios({
+        let imageUrl = "";
+
+        await axios({
           method: "post",
           url: "https://api.imgbb.com/1/upload?key=260510af5b0c0bace7d588642e391256",
           data: data,
           headers: { "Content-Type": "multipart/form-data" },
-        })
-          .then((response) => {
-            response = response.data.data.url
+        }).then((response) => {
+          imageUrl = response.data.data.url
+        }).catch((response) => {
+        });
 
-            setFile(response)
-
-            saveImage()
-          })
-          .catch((response) => {
-            console.log('response @ modalImage', response);
-          });
+        await saveImage(imageUrl)
+          .then(() => props.getWorkerImages());
       });
     }
-    props.getWorkerImages();
   };
 
-  const saveImage = async () => {
-    if ((file.length) > 0) {
+  const saveImage = async (imageUrl) => {
+    if (imageUrl) {
       try {
-        const response = await api.post(`/postImage`, { img: file, idWorker: idWorker });
-        console.log('response', response);
-        console.log('idimage', idimage);
-
-
+        return await api.post(`/postImage`, { img: imageUrl, idWorker: idWorker });
       } catch (error) {
-        console.log('error', error);
       }
     }
   }
 
-  const deleteCarouselImage = async () => {
+  const deleteCarouselImage = async (id) => {
     try {
-
-      setIdImage(image.map((data) => {
-        return {
-          id: data.idimage
-        }
-      }))
-
-      const response = await api.delete(`/deleteCarouselImage`, { idWorker: idWorker, idImage: idImage });
-      console.log('idImage', idImage);
-      console.log('response.data', response.data);
-      console.log('idImage', idImage)
-
+      await api.delete(`/deleteCarouselImage/${id}`);
+      props.getWorkerImages();
     } catch (error) {
-      console.log('error', error);
-
-      console.log('idImage !!!!!!!', idImage);
     }
   }
 
@@ -124,18 +100,22 @@ export const UploadImage = (props) => {
             <Form.Group className="mb-3">
               <Form.Label>Adicione até 5 imagens de serviços já realizados</Form.Label>
               <Upload
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                beforeUpload={
+                  () => {
+                    return false;
+                  }
+                }
+
                 listType="picture"
                 className="upload-list-inline"
                 maxCount={5}
               >
-                <Button type='submit' disabled={listImages.length === 5} icon={<UploadOutlined />}>
+                <Button disabled={listImages.length === 5} icon={<UploadOutlined />}>
                   Escolher Arquivos
                 </Button>
               </Upload>
 
-              <div className='container-uploaded-images'
-                onClick={() => deleteCarouselImage()}>
+              <div className='container-uploaded-images'>
                 {image.map((img) => {
                   return <>
                     <div className='uploaded-images-list'>
@@ -143,6 +123,7 @@ export const UploadImage = (props) => {
                         width={40}
                         src={img.original} />
                       <DeleteOutlineIcon
+                        onClick={() => deleteCarouselImage(img.idimage)}
                         className='delete-icon ant-btn-icon-only'
                       />
                     </div>
