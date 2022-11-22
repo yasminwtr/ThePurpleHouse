@@ -13,7 +13,7 @@
 }
 
 .carousel {
-  width: 420px;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -59,16 +59,3 @@
   }
 }
 
-@media screen and (min-width: 1110px) and (max-width: 1500px) {
-  .carousel {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-@media screen and (min-width: 200px) and (max-width: 1109px) {
-  .carousel {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
