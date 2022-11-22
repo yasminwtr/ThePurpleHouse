@@ -44,9 +44,9 @@ const ProfilePicture = (props) => {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button id='delete-button-modals-profile' onClick={handleClose}>
-                Fechar
-              </Button>
+            <Button className='save-button-modals-profile' >
+              Salvar
+            </Button>
             </Modal.Footer>
           </Modal> 
         </div>
