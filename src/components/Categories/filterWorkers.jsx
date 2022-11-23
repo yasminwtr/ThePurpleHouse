@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ClearIcon from '@mui/icons-material/Clear';
+import { notification } from 'antd';
 
 const FilterWorkers = (props) => {
   const { category, close } = props;
@@ -71,10 +72,17 @@ const FilterWorkers = (props) => {
   const filterWorkers = () => {
     const filterResult = workers.filter(worker => { return worker.city === selectedCity && worker.localization === selectedUf })
     setFilteredWorkers(filterResult)
+
+    if (filterResult.length === 0) {
+      return notification["error"]({
+        message: 'Infelizmente não há trabalhadores nessa localidade',
+        duration: 2,
+        placement: 'top',
+      })
+    }
   }
 
   useEffect(() => {
-    filterWorkers()
     getWorkers()
   }, [category]);
 
