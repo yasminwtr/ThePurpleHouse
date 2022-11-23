@@ -9,18 +9,13 @@ import { Link } from 'react-router-dom'
 import { Formik } from "formik";
 import * as Yup from "yup";
 import api from '../api'
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import AuthContext from '../services/contexts/auth'
 import { useNavigate } from "react-router-dom";
 import { HiOutlineEye } from 'react-icons/hi';
 import { HiOutlineEyeOff } from 'react-icons/hi'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { notification } from 'antd';
 
 const Cadastro = () => {
   const [firstName, setFirstName] = useState('')
@@ -73,8 +68,11 @@ const Cadastro = () => {
       registerNewUser()
       navigate("/Categories", { replace: true });
     } else {
-      setOpen(true)
-      return;
+      return notification["error"]({
+        message: 'Preencha o formulário',
+        duration: 2,
+        placement: 'bottom',
+      })
     }
   }
 
@@ -213,11 +211,6 @@ const Cadastro = () => {
                 </div>
               </div>
             </div>
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-              <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-                Preencha o formulário para realizar o cadastro
-              </Alert>
-            </Snackbar>
           </form>
         )
       }
