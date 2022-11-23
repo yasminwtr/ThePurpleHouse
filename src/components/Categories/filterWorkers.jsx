@@ -75,7 +75,7 @@ const FilterWorkers = (props) => {
 
     if (filterResult.length === 0) {
       return notification["error"]({
-        message: 'Infelizmente não há trabalhadores nessa localidade',
+        message: 'Não há trabalhadores nessa localidade',
         duration: 2,
         placement: 'top',
       })

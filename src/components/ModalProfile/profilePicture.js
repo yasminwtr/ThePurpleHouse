@@ -11,7 +11,7 @@ import AuthContext from '../../services/contexts/auth';
 
 const ProfilePicture = (props) => {
 
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const [show, setShow] = useState(false);
 
@@ -21,6 +21,8 @@ const ProfilePicture = (props) => {
   const [image, setImage] = useState([])
 
   const [imageUrl, setImageUrl] = useState([]);
+
+  console.log(imageUrl);
 
   const uploadButton = (
     <div>
@@ -40,29 +42,31 @@ const ProfilePicture = (props) => {
     image.forEach(async image => {
       const data = new FormData();
       data.append("image", image);
-
+      let imgbbUrl = '';
       await axios({
         method: "post",
         url: "https://api.imgbb.com/1/upload?key=260510af5b0c0bace7d588642e391256",
         data: data,
         headers: { "Content-Type": "multipart/form-data" },
       }).then((response) => {
+        imgbbUrl = response.data.data.url
         setImageUrl([response.data.data.url])
         console.log('imageUrl', imageUrl)
       }).catch((response) => {
       });
-      // await saveImage(imageUrl)
+      await saveImage(imgbbUrl)
     })
   }
 
-  // const saveImage = async (imageUrl) => {
-  //   if (imageUrl) {
-  //     try {
-  //       return await api.post(`/postImage`, { img: imageUrl, idPerson: user.idperson });
-  //     } catch (error) {
-  //     }
-  //   }
-  // }
+  const saveImage = async (imageUrl) => {
+    if (imageUrl) {
+      try {
+        const response = await api.post(`/profileImage`, { img: imageUrl, idPerson: user.idperson });
+        console.log(response);
+      } catch (error) {
+      }
+    }
+  }
 
   return (
     <div>
@@ -79,7 +83,7 @@ const ProfilePicture = (props) => {
       >
 
         <Modal.Header closeButton>
-          <Modal.Title>Adicione sua foto de perfil</Modal.Title>
+          <Modal.Title>Adicione uma foto de perfil</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -87,7 +91,6 @@ const ProfilePicture = (props) => {
             type="file" multiple accept='.png, .jpeg, .jpg'
             onChange={(e) => setImage([e.target.files[0], ...image])}
           >
-            <p>Adicione uma foto aqui!</p>
             <Upload
               listType="picture-card"
               className="avatar-uploader"
@@ -102,16 +105,14 @@ const ProfilePicture = (props) => {
               {imageUrl ? (
                 uploadButton
               ) : (
-                  imageUrl.map((img) => {
-                    return <>
-                      <div>
-                        <img
-                          width={100}
-                          src={img} />
-                      </div>
-                    </>
-                  })
-                )}
+                <>
+                  <div>
+                    <img
+                      width={100}
+                      src={imageUrl} />
+                  </div>
+                </>
+              )}
             </Upload>
           </Form>
         </Modal.Body>
@@ -120,7 +121,7 @@ const ProfilePicture = (props) => {
           <Button onClick={() => attemptSave()}
             className='save-button-modals-profile' >
             Salvar
-            </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>
