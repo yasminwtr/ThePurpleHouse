@@ -6,8 +6,12 @@ import Modal from 'react-bootstrap/Modal';
 import { BsCamera } from 'react-icons/bs'
 import axios from 'axios'
 import Form from 'react-bootstrap/Form';
+import api from 'api';
+import AuthContext from '../../services/contexts/auth';
 
 const ProfilePicture = (props) => {
+
+  // const { user } = useContext(AuthContext);
 
   const [show, setShow] = useState(false);
 
@@ -15,6 +19,8 @@ const ProfilePicture = (props) => {
   const handleShow = () => setShow(true);
 
   const [image, setImage] = useState([])
+
+  const [imageUrl, setImageUrl] = useState([]);
 
   const uploadButton = (
     <div>
@@ -29,13 +35,11 @@ const ProfilePicture = (props) => {
     </div>
   );
 
-  let imageUrl = "";
   const attemptSave = async () => {
 
     image.forEach(async image => {
       const data = new FormData();
       data.append("image", image);
-
 
       await axios({
         method: "post",
@@ -43,19 +47,18 @@ const ProfilePicture = (props) => {
         data: data,
         headers: { "Content-Type": "multipart/form-data" },
       }).then((response) => {
-        imageUrl = response.data.data.url
+        setImageUrl([response.data.data.url])
         console.log('imageUrl', imageUrl)
       }).catch((response) => {
-        console.log('imageUrl:', imageUrl)
-        console.log('response.data.data.url', response.data.data.url)
       });
+      // await saveImage(imageUrl)
     })
   }
 
   // const saveImage = async (imageUrl) => {
   //   if (imageUrl) {
   //     try {
-  //       return await api.post(`/postImage`, { img: imageUrl });
+  //       return await api.post(`/postImage`, { img: imageUrl, idPerson: user.idperson });
   //     } catch (error) {
   //     }
   //   }
@@ -88,7 +91,7 @@ const ProfilePicture = (props) => {
             <Upload
               listType="picture-card"
               className="avatar-uploader"
-              showUploadList={false}
+              showUploadList={true}
               maxCount={1}
               beforeUpload={
                 () => {
@@ -96,16 +99,18 @@ const ProfilePicture = (props) => {
                 }
               }
             >
-              {!image ? (
-                <img
-                  src={imageUrl}
-                  alt="avatar"
-                  style={{
-                    width: '100%',
-                  }}
-                />
+              {imageUrl ? (
+                uploadButton
               ) : (
-                  uploadButton
+                  imageUrl.map((img) => {
+                    return <>
+                      <div>
+                        <img
+                          width={100}
+                          src={img} />
+                      </div>
+                    </>
+                  })
                 )}
             </Upload>
           </Form>
