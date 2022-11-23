@@ -174,7 +174,7 @@ const WorkerProfile = () => {
 
   return (
     <div className='worker-profile'>
-      <div className='container'>
+      <div className='container-worker-profile'>
         <div className='section-1'>
           <div className='box-worker'>
             <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" id='icon-worker-profile' />
@@ -311,7 +311,7 @@ const WorkerProfile = () => {
                       <p>
                         Selecione "avaliações" e/ou "denúncias" acima para consultar os registros.
                       </p>
-                      <img src={ReviewsImage} alt="ReviewsImage" width={'100px'} />
+                      <img src={ReviewsImage} alt="ReviewsImage" width={'100px'} id='reviews-image'/>
                     </div>
                   </>
                 }

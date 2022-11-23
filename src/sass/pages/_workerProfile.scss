@@ -57,6 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   line-height: -2px;
+}
 
   .section-1 {
     button {
@@ -179,7 +180,7 @@
     }
   }
 
-  .container {
+  .container-worker-profile {
     margin: 4.5% auto 4.5% auto !important;
     width: 70%;
     margin: auto;
@@ -302,14 +303,7 @@
     font-family: Inter-Regular !important;
   }
 
-
-  /* geral de galeria e avaliações */
-
-
-
   /* container de avaliações */
-
-
 
   .feed-avaliations {
     border-color: rgba(166, 138, 210, 0.0274509804);
@@ -322,6 +316,7 @@
     width: 100%;
     overflow-y: scroll;
     background-color: var(--background-chat);
+    margin-bottom: 5%;
 }
 .container-avaliations {
   // background-color: #FFC107;
@@ -348,6 +343,17 @@
 
   .inicial-avaliations {
     display: flex;
+  }
+
+  #title-blocks{
+    font-size: 22px;
+    text-align: center;
+    color: #A58AD2;
+  }
+
+  #reviews-image{
+    display: flex;
+    margin: auto;
   }
 
   #number-avaliations,
@@ -572,7 +578,7 @@
   }
   }
   @media screen and (min-width: 400px) and (max-width: 614px) {
-    .container {
+    .container-worker-profile {
       width: 100%;
     }
     .section2 {
@@ -593,7 +599,7 @@
   }
   }
   @media screen and (min-width: 100px) and (max-width: 399px) {
-    .container {
+    .container-worker-profile {
       width: 100%;
     }
     .section2 {
@@ -613,4 +619,4 @@
     width: 80%;
   }
   }
-}
+ 
