@@ -186,14 +186,14 @@ const WorkerProfile = () => {
               <AverageRating />
             </div>
 
-              {user.idperson === location.state.personWorkerId
-                ?
-                <EditProfileWorker />
-                :
-                <button onClick={() => requestService()}>
-                  Solicitar serviço
+            {user.idperson === location.state.personWorkerId
+              ?
+              <EditProfileWorker />
+              :
+              <button onClick={() => requestService()}>
+                Solicitar serviço
               </button>
-              }
+            }
           </div>
           {/* <div className='background-infos'></div> */}
           {/* <div className='box-worker-profile'>
@@ -224,9 +224,9 @@ const WorkerProfile = () => {
         {modalChat ? <ModalExistingChat createChat={createChat} /> : <></>}
 
         <div className='section2'>
-        <div className='container-infos'>
+          <div className='container-infos'>
 
-           <div className="container-pt1">
+            <div className="container-pt1">
               <p id='title-worker-profile'>
                 <EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
                 E-mail
@@ -249,7 +249,7 @@ const WorkerProfile = () => {
                   </a>
                 </>
               }
-              
+
               <p id='title-worker-profile'>
                 <CalendarIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
                 Data de nascimento
@@ -257,35 +257,33 @@ const WorkerProfile = () => {
               <p id='text-worker-profile'>
                 {formattedBirthDate}
               </p>
-          
 
-           
-                <p id='title-worker-profile'>
-                  <LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-                  Localização
-                </p>
-                <p id='text-worker-profile'>
-                  {location.state.city}, {location.state.cityState}
-                </p>
-                </div>
-                <div className="container-pt2">
-                <p id='title-worker-profile'>
-                  <PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-                  Preço médio dos serviços
-                </p>
-                <p id='text-worker-profile'>
-                  R$ {location.state.price}
-                </p>
+              <p id='title-worker-profile'>
+                <LocationIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                Localização
+              </p>
+              <p id='text-worker-profile'>
+                {location.state.city}, {location.state.cityState}
+              </p>
+            </div>
+            <div className="container-pt2">
+              <p id='title-worker-profile'>
+                <PriceIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                Preço médio dos serviços
+              </p>
+              <p id='text-worker-profile'>
+                R$ {location.state.price}
+              </p>
 
-                <p id='title-worker-profile'>
-                  <DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
-                  Descrição
-                </p>
-                <p id='text-worker-profile'>
-                  {location.state.description}
-                </p>
+              <p id='title-worker-profile'>
+                <DescriptionIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
+                Descrição
+              </p>
+              <p id='text-worker-profile'>
+                {location.state.description}
+              </p>
+            </div>
           </div>
-        </div>
 
           <div className='container-avaliations'>
             <div className='avaliations'>
@@ -311,7 +309,7 @@ const WorkerProfile = () => {
                       <p>
                         Selecione "avaliações" e/ou "denúncias" acima para consultar os registros.
                       </p>
-                      <img src={ReviewsImage} alt="ReviewsImage" width={'100px'} id='reviews-image'/>
+                      <img src={ReviewsImage} alt="ReviewsImage" width={'100px'} id='reviews-image' />
                     </div>
                   </>
                 }
