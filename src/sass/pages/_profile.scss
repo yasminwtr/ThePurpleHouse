@@ -18,7 +18,6 @@
   }
 }
 
-
 @font-face {
   font-family: 'Inter-Regular';
   src: url(../../assets/fonts/Inter-Regular.woff) format('woff');
@@ -66,7 +65,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
-.IconPicture{
+.IconPicture {
   color: #fff;
   height: 40px;
   width: 40px;
@@ -76,16 +75,16 @@ body::-webkit-scrollbar-thumb {
   background-color: #c3aee6;
   padding: 6px;
   border-radius: 16px;
+
+  &:hover {
+    background-color: #000000;
+    cursor: pointer;
+  }
 }
 
-.IconPicture :hover{
-  background-color: #000000;
+.iconFoto :hover {
   cursor: pointer;
-}
-
-.iconFoto :hover{
-  cursor: pointer;
-  background-color: #A58AD2;
+  background-color: #A58AD2 !important;
 }
 
 .container-profile {
@@ -136,7 +135,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 50%;
   display: block;
 }
-
 
 .part1-profile .profile-container .part1-profile1 #name-profile {
   margin-top: 40px;

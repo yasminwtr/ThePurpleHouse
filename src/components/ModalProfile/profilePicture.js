@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
@@ -8,6 +8,7 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form';
 import api from 'api';
 import AuthContext from '../../services/contexts/auth';
+import { Avatar, Image } from 'antd';
 
 const ProfilePicture = (props) => {
 
@@ -21,8 +22,6 @@ const ProfilePicture = (props) => {
   const [image, setImage] = useState([])
 
   const [imageUrl, setImageUrl] = useState([]);
-
-  console.log(imageUrl);
 
   const uploadButton = (
     <div>
@@ -70,6 +69,18 @@ const ProfilePicture = (props) => {
 
   return (
     <div>
+      <Avatar
+        size={100}
+        src={
+          <Image
+            src={imageUrl}
+            style={{
+              width: 110,
+            }}
+          />
+        }
+      />
+
       <div className='iconFoto'>
         <BsCamera onClick={handleShow} className='IconPicture' />
       </div>
