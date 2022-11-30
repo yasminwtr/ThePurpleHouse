@@ -3,12 +3,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from "react-router-dom";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import person from '../../assets/img/person.png'
 import CloseIcon from '@mui/icons-material/Close';
 import AuthContext from '../../services/contexts/auth';
 import { useNavigate } from "react-router-dom";
 import 'animate.css'
-import ProfileIcon from "../../assets/img/user2.png";
+import { Avatar, Image } from 'antd';
+
 
 const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
   const { user } = useContext(AuthContext);
@@ -49,7 +49,17 @@ const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
       </button>
       <ul id='show-dropdown' className={showDropdown ? "active animate__animated animate__fadeIn  " : ""}>
         <Dropdown.ItemText className='img-dropdown' eventkey="1">
-          <img width={100} src={ProfileIcon} />
+          <Avatar
+            size={100}
+            src={
+              <Image
+                src={user.profilepicture}
+                style={{
+                  width: 110,
+                }}
+              />
+            }
+          />
         </Dropdown.ItemText>
         <Dropdown.ItemText className='dropdown-fullname'>
           {user.firstname}

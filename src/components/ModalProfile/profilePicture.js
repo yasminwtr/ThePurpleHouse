@@ -12,7 +12,9 @@ import { Avatar, Image } from 'antd';
 
 const ProfilePicture = (props) => {
 
-  const { user } = useContext(AuthContext);
+  const { user, updateUser } = useContext(AuthContext);
+
+  console.log('user',user);
 
   const [show, setShow] = useState(false);
 
@@ -61,7 +63,8 @@ const ProfilePicture = (props) => {
     if (imageUrl) {
       try {
         const response = await api.post(`/profileImage`, { img: imageUrl, idPerson: user.idperson });
-        console.log(response);
+        console.log('response @ saveImage',response.data);
+        updateUser()
       } catch (error) {
       }
     }
@@ -73,7 +76,7 @@ const ProfilePicture = (props) => {
         size={100}
         src={
           <Image
-            src={imageUrl}
+            src={user.profilepicture}
             style={{
               width: 110,
             }}

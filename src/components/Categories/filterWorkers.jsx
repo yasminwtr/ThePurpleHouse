@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -12,11 +12,14 @@ import { useNavigate } from 'react-router-dom';
 import AverageRating from 'components/Reviews/AverageRating';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ClearIcon from '@mui/icons-material/Clear';
-import { notification } from 'antd';
+import { notification, Image, Avatar } from 'antd';
+import AuthContext from 'services/contexts/auth';
 
 const FilterWorkers = (props) => {
   const { category, close } = props;
   const navigate = useNavigate()
+
+  const { user } = useContext(AuthContext);
 
   const [show, setShow] = useState(false);
   const [ufs, setUfs] = useState([]);
@@ -143,10 +146,21 @@ const FilterWorkers = (props) => {
         <div className='list-users-category'>
           {
             (filteredWorkers.length ? filteredWorkers : workers).map((worker) => {
+              console.log(worker);
               return (
                 <div className='info-user' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstname, lastName: worker.lastname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}>
                   <div className='info-user-nameimg'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+                    <Avatar
+                      size={45}
+                      src={
+                        <Image
+                          src={worker.profilepicture}
+                          style={{
+                            width: 45,
+                          }}
+                        />
+                      }
+                    />
                     <span>{worker.firstname}</span>
                   </div>
                   <div className='average-rating'>

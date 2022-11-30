@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import * as auth from "../auth";
+import api from 'api'
 
 const AuthContext = createContext()
 
@@ -18,13 +19,12 @@ export const AuthProvider = ({ children }) => {
   }
 
   useEffect(() => {
-     function loadStorageData() {
+    function loadStorageData() {
       const storagedUser = localStorage.getItem('storagedUser');
 
       if (storagedUser) {
         setUser(JSON.parse(storagedUser));
       }
-      
     }
 
     loadStorageData();
@@ -35,9 +35,14 @@ export const AuthProvider = ({ children }) => {
     localStorage.clear()
   }
 
+  const updateUser = async () => {
+    const response = await api.get(`/updateUser/${user.idperson}`);
+    setUser(response.data[0])
+  }
+
   return (
     <AuthContext.Provider
-      value={{ signed: !!user, user, signIn, signOut }}>
+      value={{ signed: !!user, user, signIn, signOut, updateUser }}>
       {children}
     </AuthContext.Provider>
   );
