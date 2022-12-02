@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import AuthContext from '../../services/contexts/auth'
 import AvaliationIcon from '@mui/icons-material/CasesRounded'
 import { useNavigate } from "react-router-dom";
+import { Image, Avatar, Button } from 'antd';
 
 const RequestedServices = (props) => {
   const { user } = useContext(AuthContext);
@@ -81,7 +81,9 @@ const RequestedServices = (props) => {
 
   return (
     <div>
-      <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 19, marginRight: 0.8 }} />Serviços solicitados</p>
+      <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 19, marginRight: 0.8 }} />
+        Serviços solicitados
+      </p>
 
       <Modal
         show={show}
@@ -119,7 +121,23 @@ const RequestedServices = (props) => {
                           <div className='part1-avaliation-modal'>
                             <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
                           </div>
-                          <label onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstnameperson2, lastName: worker.lastnameperson2, service: worker.servicecategory, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}
+                          <label onClick={() => navigate('/WorkerProfile', {
+                            state: {
+                              workerId: worker.idworker,
+                              personWorkerId: worker.idperson,
+                              firstName: worker.firstnameperson2, lastName: worker.lastnameperson2,
+                              service: worker.servicecategory,
+                              email: worker.email,
+                              phone: worker.phonenumber,
+                              birthdate: worker.birthdate,
+                              city: worker.city,
+                              cityState: worker.localization,
+                              price: worker.priceservice,
+                              description: worker.descriptionservice,
+                              whatsapp: worker.whatsapp,
+                              workerImg: worker.profilepicture
+                            }
+                          })}
                             className='label-requested-info' >
                             {worker.firstnameperson2} {worker.lastnameperson2}, {worker.servicecategory}
                           </label>
@@ -143,7 +161,15 @@ const RequestedServices = (props) => {
                       <div key={worker.idChat}>
                         <div className='block-requested-services'>
                           <div className='part1-avaliation-modal'>
-                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+                            <Avatar
+                              id='icon-avaliation'
+                              size={50}
+                              src={
+                                <Image
+                                  src={worker.profilepicture}
+                                />
+                              }
+                            />
                           </div>
                           <label className='label-requested-info'>
                             {worker.firstnameperson2} {worker.lastnameperson2}, {worker.servicecategory}
@@ -159,7 +185,6 @@ const RequestedServices = (props) => {
               <></>
             }
           </div>
-
 
         </Modal.Body>
 

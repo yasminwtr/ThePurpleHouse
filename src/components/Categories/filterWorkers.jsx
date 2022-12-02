@@ -148,7 +148,24 @@ const FilterWorkers = (props) => {
             (filteredWorkers.length ? filteredWorkers : workers).map((worker) => {
               console.log(worker);
               return (
-                <div className='info-user' key={worker.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: worker.idworker, personWorkerId: worker.idperson, firstName: worker.firstname, lastName: worker.lastname, service: worker.titleservice, email: worker.email, phone: worker.phonenumber, birthdate: worker.birthdate, city: worker.city, cityState: worker.localization, price: worker.priceservice, description: worker.descriptionservice, whatsapp: worker.whatsapp } })}>
+                <div className='info-user' key={worker.idworker} onClick={() => navigate('/WorkerProfile', {
+                  state: {
+                    workerId: worker.idworker,
+                    personWorkerId: worker.idperson,
+                    firstName: worker.firstname,
+                    lastName: worker.lastname,
+                    service: worker.titleservice,
+                    email: worker.email,
+                    phone: worker.phonenumber,
+                    birthdate: worker.birthdate,
+                    city: worker.city,
+                    cityState: worker.localization,
+                    price: worker.priceservice,
+                    description: worker.descriptionservice,
+                    whatsapp: worker.whatsapp,
+                    workerImg: worker.profilepicture
+                  }
+                })}>
                   <div className='info-user-nameimg'>
                     <Avatar
                       size={45}

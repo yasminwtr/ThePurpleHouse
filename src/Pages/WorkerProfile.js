@@ -177,7 +177,7 @@ const WorkerProfile = () => {
       <div className='container-worker-profile'>
         <div className='section-1'>
           <div className='box-worker'>
-            <img id='icon-worker-profile' width={100} src={user.profilepicture} />
+            <img id='icon-worker-profile' width={100} src={location.state.workerImg} />
             <div className='name-box-worker'>
               <p id='name-worker'>{location.state.firstName} {location.state.lastName} </p>
               <p id='categorie-worker'>{location.state.service}, {`${idade} anos`}</p>

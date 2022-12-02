@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AverageRating from './AverageRating';
+import { Image, Avatar } from 'antd';
 
 const WorkerReviews = (props) => {
   const { workerReviews } = props
@@ -15,8 +16,15 @@ const WorkerReviews = (props) => {
           <div key={review.idreview}>
             <div className='block-avaliation'>
               <div className='part1-avaliation'>
-                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
-                  id='icon-avaliation' alt="Profile" />
+                <Avatar
+                  id='icon-avaliation'
+                  size={50}
+                  src={
+                    <Image
+                      src={review.profilepicture}
+                    />
+                  }
+                />
               </div>
               <div className='all-info-avaliation'>
                 <div className='info-avaliation'>

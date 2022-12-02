@@ -25,6 +25,8 @@ const Profile = () => {
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
   const navigate = useNavigate()
 
+  console.log(userServices);
+
   async function getServices() {
     try {
       const response = await api.get(`/getServicesFromUser/${user.idperson}`);
@@ -99,7 +101,24 @@ const Profile = () => {
                 {
                   userServices.map((item) => {
                     return (
-                      <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', { state: { workerId: item.idworker, personWorkerId: item.idperson, firstName: item.firstname, lastName: item.lastname, service: item.titleservice, email: item.email, phone: item.phonenumber, birthdate: item.birthdate, city: item.city, cityState: item.localization, price: item.priceservice, description: item.descriptionservice, whatsapp: item.whatsapp } })}>
+                      <p id='service-text-profile' key={item.idworker} onClick={() => navigate('/WorkerProfile', {
+                        state: {
+                          workerId: item.idworker,
+                          personWorkerId: item.idperson,
+                          firstName: item.firstname,
+                          lastName: item.lastname,
+                          service: item.titleservice,
+                          email: item.email,
+                          phone: item.phonenumber,
+                          birthdate: item.birthdate,
+                          city: item.city,
+                          cityState: item.localization,
+                          price: item.priceservice,
+                          description: item.descriptionservice,
+                          whatsapp: item.whatsapp,
+                          workerImg: item.profilepicture
+                        }
+                      })}>
                         {item.titleservice}
                       </p>
                     )
