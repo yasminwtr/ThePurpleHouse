@@ -9,12 +9,13 @@ import Form from 'react-bootstrap/Form';
 import api from 'api';
 import AuthContext from '../../services/contexts/auth';
 import { Avatar, Image } from 'antd';
+import ProfileIcon from "../../assets/img/user2.png";
 
 const ProfilePicture = (props) => {
 
   const { user, updateUser } = useContext(AuthContext);
 
-  console.log('user',user);
+  console.log('user', user);
 
   const [show, setShow] = useState(false);
 
@@ -63,7 +64,7 @@ const ProfilePicture = (props) => {
     if (imageUrl) {
       try {
         const response = await api.post(`/profileImage`, { img: imageUrl, idPerson: user.idperson });
-        console.log('response @ saveImage',response.data);
+        console.log('response @ saveImage', response.data);
         updateUser()
       } catch (error) {
       }
@@ -72,17 +73,29 @@ const ProfilePicture = (props) => {
 
   return (
     <div>
-      <Avatar
-        size={100}
-        src={
-          <Image
-            src={user.profilepicture}
-            style={{
-              width: 110,
-            }}
+      {
+        user.profilepicture ?
+          <Avatar
+            size={100}
+            src={
+              <Image
+                src={user.profilepicture}
+                style={{
+                  width: 110,
+                }}
+              />
+            }
           />
-        }
-      />
+          :
+          <Avatar
+            size={100}
+            src={
+              <Image
+                src={ProfileIcon}
+              />
+            }
+          />
+      }
 
       <div className='iconFoto'>
         <BsCamera onClick={handleShow} className='IconPicture' />

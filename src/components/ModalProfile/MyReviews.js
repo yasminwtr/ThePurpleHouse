@@ -1,169 +1,252 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaStar } from 'react-icons/fa'
-import { Button } from 'antd';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import ProfileIcon from "../../assets/img/user2.png";
+import { Image, Avatar, Button } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 const MyReviews = (props) => {
-    const { servicesReviewed, setServicesReviewed, getServicesReviewed } = props
-    const [showError, setShowError] = useState(false);
-    const [showSuccess, setShowSuccess] = useState(false);
+  const { servicesReviewed, setServicesReviewed, getServicesReviewed } = props
+  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-    const handleCloseError = () => setShowError(false);
-    const handleCloseSuccess = () => setShowSuccess(false);
+  const handleCloseError = () => setShowError(false);
+  const handleCloseSuccess = () => setShowSuccess(false);
 
-    const deleteReview = async (deleteId) => {
-        const requestOptions = {
-            method: 'delete',
-            headers: { 'Content-type': 'aplication/json' }
-        }
-        try {
-            await fetch(`http://localhost:3001/reviews/` + deleteId, requestOptions)
-            setServicesReviewed(servicesReviewed.filter(worker => worker.idreview !== deleteId))
-            setShowSuccess(true)
-            getServicesReviewed()
-
-        } catch (error) {
-            setShowError(true)
-        }
+  const deleteReview = async (deleteId) => {
+    const requestOptions = {
+      method: 'delete',
+      headers: { 'Content-type': 'aplication/json' }
     }
+    try {
+      await fetch(`http://localhost:3001/reviews/` + deleteId, requestOptions)
+      setServicesReviewed(servicesReviewed.filter(worker => worker.idreview !== deleteId))
+      setShowSuccess(true)
+      getServicesReviewed()
 
-    return (
-        <div>
-            {
-                servicesReviewed.map((worker) => {
-                    if (worker.stars === 5) {
-                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
-                        const formattedDateReview = `${day}/${month}/${year}`
+    } catch (error) {
+      setShowError(true)
+    }
+  }
 
-                        return <>
-                            <div className='individual-avaliation-modal' key={worker.idreview}>
-                                <div className='block-avaliation-modal'>
-                                    <div className='part1-avaliation-modal'>
-                                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                                    </div>
+  console.log(servicesReviewed);
 
-                                    <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
-                                        <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
-                                    </div>
+  return (
+    <div>
+      {
+        servicesReviewed.map((worker) => {
+          if (worker.stars === 5) {
+            const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+            const formattedDateReview = `${day}/${month}/${year}`
 
-                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
-                                </div>
+            return <>
+              <div className='individual-avaliation-modal' key={worker.idreview}>
+                <div className='block-avaliation-modal'>
+                  <div className='part1-avaliation-modal'>
+                    {
+                      worker.profilepicture ?
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={worker.profilepicture}
+                            />
+                          }
+                        />
+                        :
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={ProfileIcon}
+                            />
+                          }
+                        />
+                    }
+                  </div>
 
-                                <p id='text-avaliation-modal'>{worker.messagereview}</p>
-                            </div></>
+                  <div>
+                    <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
+                    <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
+                  </div>
 
-                    } else if (worker.stars === 4) {
-                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
-                        const formattedDateReview = `${day}/${month}/${year}`
+                  <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                </div>
 
-                        return <>
-                            <div className='individual-avaliation-modal' key={worker.idreview}>
-                                <div className='block-avaliation-modal'>
-                                    <div className='part1-avaliation-modal'>
-                                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                                    </div>
+                <p id='text-avaliation-modal'>{worker.messagereview}</p>
+              </div></>
 
-                                    <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
-                                        <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
-                                    </div>
+          } else if (worker.stars === 4) {
+            const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+            const formattedDateReview = `${day}/${month}/${year}`
 
-                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
-                                </div>
+            return <>
+              <div className='individual-avaliation-modal' key={worker.idreview}>
+                <div className='block-avaliation-modal'>
+                  <div className='part1-avaliation-modal'>
+                    {
+                      worker.profilepicture ?
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={worker.profilepicture}
+                            />
+                          }
+                        />
+                        :
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={ProfileIcon}
+                            />
+                          }
+                        />
+                    }
+                  </div>
 
-                                <p id='text-avaliation-modal'>{worker.messagereview}</p>
-                            </div></>
+                  <div>
+                    <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
+                    <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
+                  </div>
 
-                    } else if (worker.stars === 3) {
-                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
-                        const formattedDateReview = `${day}/${month}/${year}`
+                  <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                </div>
 
-                        return <>
-                            <div className='individual-avaliation-modal' key={worker.idreview}>
-                                <div className='block-avaliation-modal'>
-                                    <div className='part1-avaliation-modal'>
-                                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                                    </div>
+                <p id='text-avaliation-modal'>{worker.messagereview}</p>
+              </div></>
 
-                                    <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
-                                        <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
-                                    </div>
+          } else if (worker.stars === 3) {
+            const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+            const formattedDateReview = `${day}/${month}/${year}`
 
-                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
-                                </div>
+            return <>
+              <div className='individual-avaliation-modal' key={worker.idreview}>
+                <div className='block-avaliation-modal'>
+                  <div className='part1-avaliation-modal'>
+                    {
+                      worker.profilepicture ?
+                        <img id='icon-worker-profile' width={45}
+                          src={worker.profilepicture}
+                        />
+                        :
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={ProfileIcon}
+                            />
+                          }
+                        />
+                    }
+                  </div>
 
-                                <p id='text-avaliation-modal'>{worker.messagereview}</p>
-                            </div></>
+                  <div>
+                    <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
+                    <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
+                  </div>
 
-                    } else if (worker.stars === 2) {
-                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
-                        const formattedDateReview = `${day}/${month}/${year}`
+                  <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                </div>
 
-                        return <>
-                            <div className='individual-avaliation-modal' key={worker.idreview}>
-                                <div className='block-avaliation-modal'>
-                                    <div className='part1-avaliation-modal'>
-                                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                                    </div>
+                <p id='text-avaliation-modal'>{worker.messagereview}</p>
+              </div></>
 
-                                    <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
-                                        <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
-                                    </div>
+          } else if (worker.stars === 2) {
+            const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+            const formattedDateReview = `${day}/${month}/${year}`
 
-                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
-                                </div>
+            return <>
+              <div className='individual-avaliation-modal' key={worker.idreview}>
+                <div className='block-avaliation-modal'>
+                  <div className='part1-avaliation-modal'>
+                    {
+                      worker.profilepicture ?
+                        <img id='icon-worker-profile' width={45}
+                          src={worker.profilepicture}
+                        />
+                        :
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={ProfileIcon}
+                            />
+                          }
+                        />
+                    }
+                  </div>
 
-                                <p id='text-avaliation-modal'>{worker.messagereview}</p>
-                            </div></>
+                  <div>
+                    <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
+                    <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
+                  </div>
 
-                    } else if (worker.stars === 1) {
-                        const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
-                        const formattedDateReview = `${day}/${month}/${year}`
+                  <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                </div>
 
-                        return <>
-                            <div className='individual-avaliation-modal' key={worker.idreview}>
-                                <div className='block-avaliation-modal'>
-                                    <div className='part1-avaliation-modal'>
-                                        <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
-                                    </div>
+                <p id='text-avaliation-modal'>{worker.messagereview}</p>
+              </div></>
 
-                                    <div>
-                                        <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
-                                        <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
-                                    </div>
+          } else if (worker.stars === 1) {
+            const [year, month, day] = worker.datereview.split("T", 10)[0]?.split("-")
+            const formattedDateReview = `${day}/${month}/${year}`
 
-                                    <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
-                                </div>
+            return <>
+              <div className='individual-avaliation-modal' key={worker.idreview}>
+                <div className='block-avaliation-modal'>
+                  <div className='part1-avaliation-modal'>
+                    {
+                      worker.profilepicture ?
+                        <img id='icon-worker-profile' width={45}
+                          src={worker.profilepicture}
+                        />
+                        :
+                        <Avatar
+                          size={45}
+                          src={
+                            <Image
+                              src={ProfileIcon}
+                            />
+                          }
+                        />
+                    }
+                  </div>
 
-                                <p id='text-avaliation-modal'>{worker.messagereview}</p>
-                            </div></>
+                  <div>
+                    <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
+                    <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
+                  </div>
 
-                    } else return null
-                })
-            }
+                  <Button id='delete-review-button' onClick={() => deleteReview(worker.idreview)}>Excluir</Button>
+                </div>
 
-            <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-                <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-                    Não foi possível completar a exclusão. Por favor, tente novamente mais tarde.
-                </Alert>
-            </Snackbar>
+                <p id='text-avaliation-modal'>{worker.messagereview}</p>
+              </div></>
 
-            <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-                <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-                    Avaliação excluída com sucesso!
-                </Alert>
-            </Snackbar>
-        </div>
-    )
+          } else return null
+        })
+      }
+
+      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+          Não foi possível completar a exclusão. Por favor, tente novamente mais tarde.
+        </Alert>
+      </Snackbar>
+
+      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
+        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
+          Avaliação excluída com sucesso!
+        </Alert>
+      </Snackbar>
+    </div>
+  )
 }
 
 export default MyReviews; 

@@ -8,7 +8,7 @@ import AuthContext from '../../services/contexts/auth';
 import { useNavigate } from "react-router-dom";
 import 'animate.css'
 import { Avatar, Image } from 'antd';
-
+import ProfileIcon from "../../assets/img/user2.png";
 
 const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
   const { user } = useContext(AuthContext);
@@ -49,17 +49,29 @@ const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
       </button>
       <ul id='show-dropdown' className={showDropdown ? "active animate__animated animate__fadeIn  " : ""}>
         <Dropdown.ItemText className='img-dropdown' eventkey="1">
-          <Avatar
-            size={100}
-            src={
-              <Image
-                src={user.profilepicture}
-                style={{
-                  width: 110,
-                }}
+          {
+            user.profilepicture ?
+              <Avatar
+                size={100}
+                src={
+                  <Image
+                    src={user.profilepicture}
+                    style={{
+                      width: 110,
+                    }}
+                  />
+                }
               />
-            }
-          />
+              :
+              <Avatar
+                size={100}
+                src={
+                  <Image
+                    src={ProfileIcon}
+                  />
+                }
+              />
+          }
         </Dropdown.ItemText>
         <Dropdown.ItemText className='dropdown-fullname'>
           {user.firstname}

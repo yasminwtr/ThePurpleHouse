@@ -14,6 +14,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import ClearIcon from '@mui/icons-material/Clear';
 import { notification, Image, Avatar } from 'antd';
 import AuthContext from 'services/contexts/auth';
+import ProfileIcon from "../../assets/img/user2.png";
 
 const FilterWorkers = (props) => {
   const { category, close } = props;
@@ -167,17 +168,24 @@ const FilterWorkers = (props) => {
                   }
                 })}>
                   <div className='info-user-nameimg'>
-                    <Avatar
-                      size={45}
-                      src={
-                        <Image
-                          src={worker.profilepicture}
-                          style={{
-                            width: 45,
-                          }}
+                    {
+                      worker.profilepicture ?
+                        <Avatar
+                          src={
+                            <Image
+                              src={worker.profilepicture}
+                            />
+                          }
                         />
-                      }
-                    />
+                        :
+                        <Avatar
+                          src={
+                            <Image
+                              src={ProfileIcon}
+                            />
+                          }
+                        />
+                    }
                     <span>{worker.firstname}</span>
                   </div>
                   <div className='average-rating'>

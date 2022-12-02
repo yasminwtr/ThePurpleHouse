@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import api from '../../api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'antd';
+import { Button, Image, Avatar } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import AuthContext from '../../services/contexts/auth'
 import AvaliationIcon from '@mui/icons-material/StarRounded'
@@ -111,7 +111,7 @@ const Avaliations = (props) => {
             {modalAvaliations ?
               <>
                 <p>{numberReviews}</p>
-                <MyReviews servicesReviewed={servicesReviewed} setServicesReviewed={setServicesReviewed} getServicesReviewed={getServicesReviewed}/>
+                <MyReviews servicesReviewed={servicesReviewed} setServicesReviewed={setServicesReviewed} getServicesReviewed={getServicesReviewed} />
               </>
               :
               <></>
@@ -120,7 +120,7 @@ const Avaliations = (props) => {
             {modalDenounces ?
               <>
                 <p>{numberDenounce}</p>
-                <MyComplaints servicesDenounced={servicesDenounced} setServicesDenounced={setServicesDenounced} getServicesDenounced={getServicesDenounced}/>
+                <MyComplaints servicesDenounced={servicesDenounced} setServicesDenounced={setServicesDenounced} getServicesDenounced={getServicesDenounced} />
               </>
               :
               <></>

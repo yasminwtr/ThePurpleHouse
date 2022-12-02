@@ -6,6 +6,7 @@ import AuthContext from '../../services/contexts/auth'
 import AvaliationIcon from '@mui/icons-material/CasesRounded'
 import { useNavigate } from "react-router-dom";
 import { Image, Avatar, Button } from 'antd';
+import ProfileIcon from "../../assets/img/user2.png";
 
 const RequestedServices = (props) => {
   const { user } = useContext(AuthContext);
@@ -119,13 +120,33 @@ const RequestedServices = (props) => {
                       <div key={worker.idChat}>
                         <div className='block-requested-services'>
                           <div className='part1-avaliation-modal'>
-                            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' id='icon-avaliation-modal' alt="Profile" />
+                            {
+                              worker.profilepicture ?
+                                <Avatar
+                                  size={45}
+                                  src={
+                                    <Image
+                                      src={worker.profilepicture}
+                                    />
+                                  }
+                                />
+                                :
+                                <Avatar
+                                  size={45}
+                                  src={
+                                    <Image
+                                      src={ProfileIcon}
+                                    />
+                                  }
+                                />
+                            }
                           </div>
                           <label onClick={() => navigate('/WorkerProfile', {
                             state: {
                               workerId: worker.idworker,
                               personWorkerId: worker.idperson,
-                              firstName: worker.firstnameperson2, lastName: worker.lastnameperson2,
+                              firstName: worker.firstnameperson2,
+                              lastName: worker.lastnameperson2,
                               service: worker.servicecategory,
                               email: worker.email,
                               phone: worker.phonenumber,
@@ -161,15 +182,26 @@ const RequestedServices = (props) => {
                       <div key={worker.idChat}>
                         <div className='block-requested-services'>
                           <div className='part1-avaliation-modal'>
-                            <Avatar
-                              id='icon-avaliation'
-                              size={50}
-                              src={
-                                <Image
-                                  src={worker.profilepicture}
+                            {
+                              worker.profilepicture ?
+                                <Avatar
+                                  size={45}
+                                  src={
+                                    <Image
+                                      src={worker.profilepicture}
+                                    />
+                                  }
                                 />
-                              }
-                            />
+                                :
+                                <Avatar
+                                  size={45}
+                                  src={
+                                    <Image
+                                      src={ProfileIcon}
+                                    />
+                                  }
+                                />
+                            }
                           </div>
                           <label className='label-requested-info'>
                             {worker.firstnameperson2} {worker.lastnameperson2}, {worker.servicecategory}

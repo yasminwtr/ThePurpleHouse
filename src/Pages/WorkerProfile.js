@@ -17,6 +17,8 @@ import { Carousel } from '../components/Carousel';
 import ReviewsImage from "../assets/img/review.png";
 import ModalExistingChat from '../components/Chat/ModalExistingChat'
 import api from '../api'
+import ProfileIcon from "../assets/img/user2.png";
+import { Image, Avatar } from 'antd';
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
@@ -62,10 +64,6 @@ const WorkerProfile = () => {
       setWorkerReviews([])
     }
   }
-
-  // const reload = () => {
-  //   history.push(location.pathname);
-  // };
 
   async function getComplaintsByWorker() {
     const idWorker = location.state.workerId
@@ -177,11 +175,28 @@ const WorkerProfile = () => {
       <div className='container-worker-profile'>
         <div className='section-1'>
           <div className='box-worker'>
-            <img id='icon-worker-profile' width={100} src={location.state.workerImg} />
+            {
+              location.state.workerImg ?
+                <img id='icon-worker-profile' width={100}
+                  src={location.state.workerImg}
+                />
+                :
+                <Avatar
+                  size={100}
+                  src={
+                    <Image
+                      src={ProfileIcon}
+                    />
+                  }
+                />
+            }
             <div className='name-box-worker'>
-              <p id='name-worker'>{location.state.firstName} {location.state.lastName} </p>
-              <p id='categorie-worker'>{location.state.service}, {`${idade} anos`}</p>
-
+              <p id='name-worker'>
+                {location.state.firstName} {location.state.lastName}
+              </p>
+              <p id='categorie-worker'>
+                {location.state.service}, {`${idade} anos`}
+              </p>
               <AverageRating />
             </div>
 
@@ -194,37 +209,12 @@ const WorkerProfile = () => {
               </button>
             }
           </div>
-          {/* <div className='background-infos'></div> */}
-          {/* <div className='box-worker-profile'>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
-
-            <div>
-              <p id='name-worker'>
-                {location.state.firstName} {location.state.lastName}
-              </p>
-              <p id='categorie-worker'>
-                {location.state.service}, {`${idade} anos`}
-              </p>
-
-              <AverageRating />
-
-              {user.idperson === location.state.personWorkerId
-                ?
-                <EditProfileWorker />
-                :
-                <button onClick={() => requestService()}>
-                  Solicitar serviço
-                </button>
-              }
-            </div>
-          </div> */}
         </div>
 
         {modalChat ? <ModalExistingChat createChat={createChat} /> : <></>}
 
         <div className='section2'>
           <div className='container-infos'>
-
             <div className="container-pt1">
               <p id='title-worker-profile'>
                 <EmailIcon sx={{ fontSize: 20, marginRight: 0.5 }} />
