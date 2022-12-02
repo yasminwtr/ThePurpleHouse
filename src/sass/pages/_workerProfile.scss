@@ -25,8 +25,6 @@
   }
 
   .section-1 {
-    // background-repeat: round;
-    // background-image: url(../../assets/img/imagemProfile.jpeg) !important;
     background-color: rgb(125, 101, 167);
     background-size: cover;
     text-align: center;
@@ -77,12 +75,6 @@
       border-color: #f0f0f0;
       transition: 0.5s;
     }
-  }
-
-  img {
-    width: 140px;
-    box-shadow: 0px 1px 6px 1px rgba(131, 131, 131, 0.25);
-    border-radius: 100%;
   }
 }
 

@@ -53,6 +53,9 @@ const WorkerProfile = () => {
 
   const [modalChat, setModalChat] = useState(false);
 
+  console.log('location.state.firstNameWorker', location.state.firstNameWorker);
+  console.log('location.state.firstName', location.state.firstName);
+
   async function getReviewsByWorker() {
     const idWorker = location.state.workerId
 
@@ -177,8 +180,13 @@ const WorkerProfile = () => {
           <div className='box-worker'>
             {
               location.state.workerImg ?
-                <img id='icon-worker-profile' width={100}
-                  src={location.state.workerImg}
+                <Avatar
+                  size={130}
+                  src={
+                    <Image
+                      src={location.state.workerImg}
+                    />
+                  }
                 />
                 :
                 <Avatar

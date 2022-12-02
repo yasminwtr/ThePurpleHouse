@@ -8,6 +8,8 @@ import api from '../api'
 import CancelIcon from '@mui/icons-material/DoDisturbRounded'
 import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
 import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded';
+import ProfileIcon from "../assets/img/user2.png";
+import { Image, Avatar } from 'antd';
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
@@ -44,6 +46,8 @@ const Chat = () => {
     }
   }
 
+  console.log(chats);
+
   useEffect(() => {
     getChats()
   }, []);
@@ -64,7 +68,26 @@ const Chat = () => {
             filteredChats.map((chat) => {
               return (
                 <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+                  {
+                    chat.profilepicture ?
+                      <Avatar
+                        size={130}
+                        src={
+                          <Image
+                            src={chat.profilepicture}
+                          />
+                        }
+                      />
+                      :
+                      <Avatar
+                        size={100}
+                        src={
+                          <Image
+                            src={ProfileIcon}
+                          />
+                        }
+                      />
+                  }
                   <p>
                     {chat.idperson1 == user.idperson ?
                       <>{chat.firstnameperson2} {chat.lastnameperson2}</>
@@ -78,7 +101,24 @@ const Chat = () => {
             chats.map((chat) => {
               return (
                 <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
-                  <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+                  {
+                    chat.profilepicture ?
+                      <Avatar
+                        src={
+                          <Image
+                            src={chat.profilepicture}
+                          />
+                        }
+                      />
+                      :
+                      <Avatar
+                        src={
+                          <Image
+                            src={ProfileIcon}
+                          />
+                        }
+                      />
+                  }
                   <p>
                     {chat.idperson1 == user.idperson ?
                       <>{chat.firstnameperson2} {chat.lastnameperson2}</>

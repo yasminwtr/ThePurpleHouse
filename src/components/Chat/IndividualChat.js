@@ -13,6 +13,8 @@ import Emoji from './Emoji';
 import EmojiPicker from 'emoji-picker-react';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import { useNavigate } from 'react-router-dom';
+import ProfileIcon from "../../assets/img/user2.png";
+import { Image, Avatar } from 'antd';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -93,14 +95,65 @@ const IndividualChat = (props) => {
       <div className='header'>
         {chat.idperson1 === user.idperson ?
           <>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
-            <p id='name-worker' onClick={() => navigate('/WorkerProfile', { state: { workerId: chat.idworker, personWorkerId: chat.idperson2, firstName: chat.firstname, lastName: chat.lastname, service: chat.servicecategory, email: chat.email, phone: chat.phonenumber, birthdate: chat.birthdate, city: chat.city, cityState: chat.localization, price: chat.priceservice, description: chat.descriptionservice, whatsapp: chat.whatsapp } })}>
+            {
+              chat.profilepicture ?
+                <Avatar
+                  src={
+                    <Image
+                      src={chat.profilepicture}
+                    />
+                  }
+                />
+                :
+                <Avatar
+                  src={
+                    <Image
+                      src={ProfileIcon}
+                    />
+                  }
+                />
+            }
+            <p id='name-worker' onClick={() => navigate('/WorkerProfile', {
+              state: {
+                workerId: chat.idworker,
+                personWorkerId: chat.idperson2,
+                firstName: chat.firstnameperson2,
+                lastName: chat.lastnameperson2,
+                service: chat.servicecategory,
+                email: chat.email,
+                phone: chat.phonenumber,
+                birthdate: chat.birthdate,
+                city: chat.city,
+                cityState: chat.localization,
+                price: chat.priceservice,
+                description: chat.descriptionservice,
+                whatsapp: chat.whatsapp,
+                workerImg: chat.profilepicture
+              }
+            })}>
               {chat.firstnameperson2} {chat.lastnameperson2}
             </p>
           </>
           :
           <>
-            <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt="Profile" />
+            {
+              chat.profilepicture ?
+                <Avatar
+                  src={
+                    <Image
+                      src={chat.profilepicture}
+                    />
+                  }
+                />
+                :
+                <Avatar
+                  src={
+                    <Image
+                      src={ProfileIcon}
+                    />
+                  }
+                />
+            }
             <p id='name-user'>{chat.firstnameperson1} {chat.lastnameperson1}</p>
           </>
         }
