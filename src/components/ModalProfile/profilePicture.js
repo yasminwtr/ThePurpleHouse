@@ -76,7 +76,7 @@ const ProfilePicture = (props) => {
       {
         user.profilepicture ?
           <Avatar
-            size={100}
+            size={110}
             src={
               <Image
                 src={user.profilepicture}
@@ -88,7 +88,7 @@ const ProfilePicture = (props) => {
           />
           :
           <Avatar
-            size={100}
+            size={110}
             src={
               <Image
                 src={ProfileIcon}
@@ -97,8 +97,8 @@ const ProfilePicture = (props) => {
           />
       }
 
-      <div className='iconFoto'>
-        <BsCamera onClick={handleShow} className='IconPicture' />
+      <div className='IconPicture'>
+        <BsCamera onClick={handleShow} className='iconFoto' size={26}/>
       </div>
 
       <Modal

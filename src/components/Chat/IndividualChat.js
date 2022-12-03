@@ -106,6 +106,7 @@ const IndividualChat = (props) => {
                 />
                 :
                 <Avatar
+                  size={60}
                   src={
                     <Image
                       src={ProfileIcon}

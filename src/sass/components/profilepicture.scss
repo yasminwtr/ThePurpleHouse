@@ -1,7 +1,14 @@
 .save-button-modals-profile {
-    height: 40px;
-    border-radius: 14px;
-    color: #fff;
-    border-color: #56a54f;
-    background-color: #56a54f;
-  }
+  height: 40px;
+  border-radius: 14px;
+  color: #fff;
+  border-color: #56a54f;
+  background-color: #56a54f;
+}
+
+.save-button-modals-profile:hover {
+  border-color: #479b3f;
+  background-color: #479b3f;
+  transition: 0.5s;
+  color: #fff;
+}

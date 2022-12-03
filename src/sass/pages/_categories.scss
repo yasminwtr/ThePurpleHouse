@@ -135,7 +135,7 @@
     text-align: center;
     color: var(--accent-color1);
     width: 187px;
-    margin: 5px;
+    margin-bottom: 10px !important;
     height: 189px;
     display: flex;
     justify-content: center;
@@ -223,7 +223,7 @@
     max-width: 999px !important;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 

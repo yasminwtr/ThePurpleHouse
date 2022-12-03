@@ -25,7 +25,6 @@ const LeaveAvaliation = (props) => {
       if ((messageReview) !== '' && rating !== null) {
         const response = await api.post('/reviews', { idPerson: user.idperson, idWorker: idWorker, firstNamePerson: user.firstname, lastNamePerson: user.lastname, messageReview: messageReview, stars: rating });
         console.log('response', response);
-        openNotificationSuccess()
         setShow(false)
       }
       else {
@@ -54,7 +53,6 @@ const LeaveAvaliation = (props) => {
       registerReview()
       closeStatus()
       openNotificationSuccess()
-      setShow(false)
 
     } else {
       openNotificationError()

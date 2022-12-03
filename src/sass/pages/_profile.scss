@@ -67,24 +67,21 @@ body::-webkit-scrollbar-thumb {
 
 .IconPicture {
   color: #fff;
-  height: 40px;
+  height: 38px;
   width: 40px;
   position: absolute;
-  left: 88px;
-  bottom: -2px;
+  left: 86px;
+  bottom: 4px;
   background-color: #c3aee6;
   padding: 6px;
-  border-radius: 16px;
+  border-radius: 20px;
+  font-size: 12px;
 
   &:hover {
-    background-color: #000000;
     cursor: pointer;
+    background-color: #A58AD2 !important;
+    transition: 0.5s;
   }
-}
-
-.iconFoto :hover {
-  cursor: pointer;
-  background-color: #A58AD2 !important;
 }
 
 .container-profile {
@@ -137,7 +134,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .part1-profile .profile-container .part1-profile1 #name-profile {
-  margin-top: 40px;
+  margin-top: 35px;
   font-weight: 500;
   font-family: Inter-Regular;
   font-size: 22px;

@@ -62,7 +62,7 @@ const EditProfileWorker = (props) => {
 
   const updateProfileWorker = async () => {
     const idWorker = location.state.workerId
-    if ((description, phoneNumber, price, cities, whatsapp) === '' || 0) {
+    if ((description, phoneNumber, price, cities) === '' || 0) {
       openNotificationError()
     } else {
       try {

@@ -67,7 +67,8 @@
     border-style: none;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
     font-family: Inter-Medium;
-    margin-top: 145% !important;
+    max-height: 46px;
+    margin: 2.6% 3% 0 auto;
 
     &:hover {
       color: #6B4D9E;
@@ -75,6 +76,12 @@
       border-color: #f0f0f0;
       transition: 0.5s;
     }
+  }
+
+  #stars-workerProfile {
+    font-size: 30px;
+    margin-block-start: 0em;
+    margin-block-end: -0.2em;
   }
 }
 
@@ -211,7 +218,7 @@ body {
 }
 
 .name-box-worker {
-  // margin-top: 17%;
+  margin-top: 1%;
   text-align: start;
   margin-left: 10px;
 }
@@ -234,9 +241,8 @@ body {
 }
 
 .message-button {
-  margin-left: auto;
-  margin-right: 8%;
-  z-index: 10000;
+  margin: 2.6% 3% 0 auto;
+  width: 145px
 }
 
 // .box-worker-profile {
@@ -260,12 +266,10 @@ body {
   border-width: 2px;
   border-style: solid;
   border-radius: 0 0 32px 32px;
-  padding: 40px;
-  padding-bottom: 15px;
+  padding: 90px 40px 15px 8px;
   background-color: var(--background-chat);
   display: flex;
   justify-content: space-around;
-  padding-top: 90px;
 }
 
 #stars-worker-profile {
@@ -275,7 +279,7 @@ body {
 }
 
 #stars-workerProfile {
-  font-size: 30px;
+  font-size: 24px;
   margin-block-start: 0em;
   margin-block-end: -0.2em;
 }
@@ -287,6 +291,12 @@ body {
 
 #icons-worker-profile {
   width: 3%;
+}
+
+#title-worker-profile{
+  display: flex;
+  align-items: center;
+  font-family: Inter-Medium;
 }
 
 #service-title-worker-profile {
