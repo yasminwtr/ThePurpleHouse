@@ -98,6 +98,7 @@ const IndividualChat = (props) => {
             {
               chat.profilepicture ?
                 <Avatar
+                  size={60}
                   src={
                     <Image
                       src={chat.profilepicture}
@@ -170,7 +171,7 @@ const IndividualChat = (props) => {
                   <CancelWork chat={chat} />
                 </li>
                 <li id='denounce-service-li'>
-                  <DenounceWorker chat={chat} getChats={getChats} />
+                  <DenounceWorker chat={chat} />
                 </li>
               </ul>
             </MoreOptions>

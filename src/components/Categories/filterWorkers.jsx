@@ -171,19 +171,13 @@ const FilterWorkers = (props) => {
                     {
                       worker.profilepicture ?
                         <Avatar
-                          src={
-                            <Image
-                              src={worker.profilepicture}
-                            />
-                          }
+                          size={38}
+                          src={worker.profilepicture}
                         />
                         :
                         <Avatar
-                          src={
-                            <Image
-                              src={ProfileIcon}
-                            />
-                          }
+                          size={38}
+                          src={ProfileIcon}
                         />
                     }
                     <span id='worker-name-categories'>{worker.firstname}</span>

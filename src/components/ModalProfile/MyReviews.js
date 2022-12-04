@@ -51,7 +51,7 @@ const MyReviews = (props) => {
                     {
                       worker.profilepicture ?
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={worker.profilepicture}
@@ -60,7 +60,7 @@ const MyReviews = (props) => {
                         />
                         :
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={ProfileIcon}
@@ -70,7 +70,7 @@ const MyReviews = (props) => {
                     }
                   </div>
 
-                  <div>
+                  <div className='avaliation-denounce-info'>
                     <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                     <div><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /></div>
                   </div>
@@ -89,10 +89,10 @@ const MyReviews = (props) => {
               <div className='individual-avaliation-modal' key={worker.idreview}>
                 <div className='block-avaliation-modal'>
                   <div className='part1-avaliation-modal'>
-                    {
+                  {
                       worker.profilepicture ?
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={worker.profilepicture}
@@ -101,7 +101,7 @@ const MyReviews = (props) => {
                         />
                         :
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={ProfileIcon}
@@ -111,7 +111,7 @@ const MyReviews = (props) => {
                     }
                   </div>
 
-                  <div>
+                  <div className='avaliation-denounce-info'>
                     <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                     <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                   </div>
@@ -132,12 +132,17 @@ const MyReviews = (props) => {
                   <div className='part1-avaliation-modal'>
                     {
                       worker.profilepicture ?
-                        <img id='icon-worker-profile' width={45}
-                          src={worker.profilepicture}
+                        <Avatar
+                          size={50}
+                          src={
+                            <Image
+                              src={worker.profilepicture}
+                            />
+                          }
                         />
                         :
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={ProfileIcon}
@@ -147,7 +152,7 @@ const MyReviews = (props) => {
                     }
                   </div>
 
-                  <div>
+                  <div className='avaliation-denounce-info'>
                     <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                     <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                   </div>
@@ -168,12 +173,17 @@ const MyReviews = (props) => {
                   <div className='part1-avaliation-modal'>
                     {
                       worker.profilepicture ?
-                        <img id='icon-worker-profile' width={45}
-                          src={worker.profilepicture}
+                        <Avatar
+                          size={50}
+                          src={
+                            <Image
+                              src={worker.profilepicture}
+                            />
+                          }
                         />
                         :
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={ProfileIcon}
@@ -183,7 +193,7 @@ const MyReviews = (props) => {
                     }
                   </div>
 
-                  <div>
+                  <div className='avaliation-denounce-info'>
                     <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                     <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                   </div>
@@ -204,12 +214,17 @@ const MyReviews = (props) => {
                   <div className='part1-avaliation-modal'>
                     {
                       worker.profilepicture ?
-                        <img id='icon-worker-profile' width={45}
-                          src={worker.profilepicture}
+                        <Avatar
+                          size={50}
+                          src={
+                            <Image
+                              src={worker.profilepicture}
+                            />
+                          }
                         />
                         :
                         <Avatar
-                          size={45}
+                          size={50}
                           src={
                             <Image
                               src={ProfileIcon}
@@ -219,7 +234,7 @@ const MyReviews = (props) => {
                     }
                   </div>
 
-                  <div>
+                  <div className='avaliation-denounce-info'>
                     <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateReview}</p>
                     <div ><FaStar color='#fccc3e' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /><FaStar color='#d9d9d9' size={20} /></div>
                   </div>

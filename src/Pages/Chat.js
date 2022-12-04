@@ -7,9 +7,9 @@ import AuthContext from '../services/contexts/auth'
 import api from '../api'
 import CancelIcon from '@mui/icons-material/DoDisturbRounded'
 import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
-import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded';
+import ReportIcon from '@mui/icons-material/ErrorOutlineRounded';
 import ProfileIcon from "../assets/img/user2.png";
-import { Image, Avatar } from 'antd';
+import { Image, Avatar, Tooltip } from 'antd';
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
@@ -71,7 +71,6 @@ const Chat = () => {
                   {
                     chat.profilepicture ?
                       <Avatar
-                        size={130}
                         src={
                           <Image
                             src={chat.profilepicture}
@@ -80,7 +79,6 @@ const Chat = () => {
                       />
                       :
                       <Avatar
-                        size={100}
                         src={
                           <Image
                             src={ProfileIcon}
@@ -125,10 +123,10 @@ const Chat = () => {
                       :
                       <>{chat.firstnameperson1} {chat.lastnameperson1}</>}
                   </p>
-                  {chat.status == 'Finalizado' ? <><CloseIcon id='icon-close' /></> : <></>}
+                  {chat.status == 'Finalizado' ? <><Tooltip title="Finalizado" placement="bottomLeft" color='#56a54f'><CloseIcon id='icon-close' /></Tooltip></> : <></>}
                   {chat.status == 'Aberto' ? <></> : <></>}
-                  {chat.status == 'Denunciado' ? <><ReportIcon id='icon-report' /></> : <></>}
-                  {chat.status == 'Cancelado' ? <><CancelIcon id='icon-cancel' /></> : <></>}
+                  {chat.status == 'Denunciado' ? <><Tooltip title="Denunciado" placement="bottomLeft" color='#bb3f3f'><ReportIcon id='icon-report'/></Tooltip></> : <></>}
+                  {chat.status == 'Cancelado' ? <><Tooltip title="Cancelado" placement="bottomLeft" color='#596066'><CancelIcon id='icon-cancel' /></Tooltip></> : <></>}
                 </div>
               )
             })

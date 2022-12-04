@@ -21,7 +21,7 @@ const WorkerReviews = (props) => {
                   review.profilepicture ?
                     <Avatar
                       id='icon-avaliation'
-                      size={100}
+                      size={65}
                       src={
                         <Image
                           src={review.profilepicture}

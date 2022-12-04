@@ -5,8 +5,12 @@ import Modal from 'react-bootstrap/Modal';
 import AuthContext from '../../services/contexts/auth'
 import AvaliationIcon from '@mui/icons-material/CasesRounded'
 import { useNavigate } from "react-router-dom";
-import { Image, Avatar, Button } from 'antd';
+import { Image, Avatar, Button, Tooltip } from 'antd';
 import ProfileIcon from "../../assets/img/user2.png";
+import CancelIcon from '@mui/icons-material/DoDisturbRounded'
+import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
+import ReportIcon from '@mui/icons-material/ErrorOutlineRounded';
+import OpenIcon from '@mui/icons-material/SupervisedUserCircleRounded';
 
 const RequestedServices = (props) => {
   const { user } = useContext(AuthContext);
@@ -162,7 +166,11 @@ const RequestedServices = (props) => {
                             className='label-requested-info' >
                             {worker.firstnameperson2} {worker.lastnameperson2}, {worker.servicecategory}
                           </label>
-                          <label className='label-status'> {worker.status} </label>
+
+                          {worker.status == 'Finalizado' ? <><Tooltip title="Finalizado" placement="bottomLeft" color='#56a54f'><CloseIcon id='icon-close-profile' /></Tooltip></> : <></>}
+                          {worker.status == 'Aberto' ? <><Tooltip title="Aberto" placement="bottomLeft" color='#745b9c'><OpenIcon id='icon-open-profile' /></Tooltip></> : <></>}
+                          {worker.status == 'Denunciado' ? <><Tooltip title="Denunciado" placement="bottomLeft" color='#bb3f3f'><ReportIcon id='icon-report-profile' /></Tooltip></> : <></>}
+                          {worker.status == 'Cancelado' ? <><Tooltip title="Cancelado" placement="bottomLeft" color='#596066'><CancelIcon id='icon-cancel-profile' /></Tooltip></> : <></>}
                         </div>
                       </div>
                     </>
@@ -206,7 +214,11 @@ const RequestedServices = (props) => {
                           <label className='label-requested-info'>
                             {worker.firstnameperson2} {worker.lastnameperson2}, {worker.servicecategory}
                           </label>
-                          <label className='label-status'> {worker.status} </label>
+                          
+                          {worker.status == 'Finalizado' ? <><Tooltip title="Finalizado" placement="bottomLeft" color='#56a54f'><CloseIcon id='icon-close-profile' /></Tooltip></> : <></>}
+                          {worker.status == 'Aberto' ? <><Tooltip title="Aberto" placement="bottomLeft" color='#745b9c'><OpenIcon id='icon-open-profile' /></Tooltip></> : <></>}
+                          {worker.status == 'Denunciado' ? <><Tooltip title="Denunciado" placement="bottomLeft" color='#bb3f3f'><ReportIcon id='icon-report-profile' /></Tooltip></> : <></>}
+                          {worker.status == 'Cancelado' ? <><Tooltip title="Cancelado" placement="bottomLeft" color='#596066'><CancelIcon id='icon-cancel-profile' /></Tooltip></> : <></>}
                         </div>
                       </div>
                     </>

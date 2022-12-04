@@ -52,24 +52,13 @@ const DropdownProfile = ({ showDropdown, setShowDropdown }) => {
           {
             user.profilepicture ?
               <Avatar
-                size={100}
-                src={
-                  <Image
-                    src={user.profilepicture}
-                    style={{
-                      width: 110,
-                    }}
-                  />
-                }
+                size={105}
+                src={user.profilepicture}
               />
               :
               <Avatar
-                size={100}
-                src={
-                  <Image
-                    src={ProfileIcon}
-                  />
-                }
+                size={105}
+                src={ProfileIcon}
               />
           }
         </Dropdown.ItemText>

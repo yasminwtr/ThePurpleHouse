@@ -46,12 +46,17 @@ const MyComplaints = (props) => {
                 <div className='part1-avaliation-modal'>
                   {
                     worker.profilepicture ?
-                      <img id='icon-worker-profile' width={45}
-                        src={worker.profilepicture}
+                      <Avatar
+                        size={50}
+                        src={
+                          <Image
+                            src={worker.profilepicture}
+                          />
+                        }
                       />
                       :
                       <Avatar
-                        size={45}
+                        size={50}
                         src={
                           <Image
                             src={ProfileIcon}
@@ -61,7 +66,7 @@ const MyComplaints = (props) => {
                   }
                 </div>
 
-                <div>
+                <div className='avaliation-denounce-info'>
                   <p id='name-avaliation-modal'>{worker.firstnameworker} {worker.lastnameworker}, {worker.titleservice}, {formattedDateDenounce}</p>
                   <div>{worker.selectedoption}</div>
                 </div>

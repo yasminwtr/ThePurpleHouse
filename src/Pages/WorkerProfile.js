@@ -167,7 +167,7 @@ const WorkerProfile = () => {
               {
                 location.state.workerImg ?
                   <Avatar
-                    size={130}
+                    size={120}
                     src={
                       <Image
                         src={location.state.workerImg}

@@ -528,20 +528,47 @@ input::-ms-clear {
 .label-requested-info {
   cursor: pointer;
   color: #000;
+  margin-left: 5px;
+  font-size: 17px;
 }
 
 .block-requested-services {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0 1% 2.5% 0;
 }
 
-.label-status {
+#icon-open-profile {
+  color: #745b9c;
+  font-size: 24px;
+  margin-left: auto;
+}
+
+#icon-cancel-profile {
+  color: #596066;
+  font-size: 23px;
+  margin-left: auto;
+}
+
+#icon-close-profile {
+  color: #56a54f;
+  font-size: 24px;
+  margin-left: auto;
+}
+
+#icon-report-profile {
+  color: #bb3f3f;
+  font-size: 24px;
   margin-left: auto;
 }
 
 .message-error-denounce {
   color: red;
+}
+
+.avaliation-denounce-info{
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 376px) and (max-width: 414px) {
