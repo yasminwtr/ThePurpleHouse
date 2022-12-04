@@ -284,7 +284,7 @@ body {
 
 #stars-workerProfile {
   font-size: 24px;
-  margin-block-start: 0em;
+  margin-block-start: -2em;
   margin-block-end: -0.2em;
 }
 
@@ -413,12 +413,6 @@ body {
   width: 15%;
 }
 
-#icon-avaliation {
-  width: 110%;
-  height: fit-content;
-  margin-right: 2%;
-}
-
 #name-avaliation {
   margin-block-start: 0em;
   margin-block-end: 0em;
@@ -459,7 +453,7 @@ body {
 
 .all-info-avaliation {
   width: 84%;
-  margin-left: 2%;
+  margin-left: 3%;
 }
 
 input[type='radio'] {

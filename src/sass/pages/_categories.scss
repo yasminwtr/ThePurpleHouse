@@ -91,10 +91,16 @@
   -webkit-font-smoothing: antialiased;
   background-size: cover;
 
+  #worker-name-categories{
+    margin-left: 5px;
+    margin-top: 7%;
+  }
+
   .average-rating {
     font-size: 22px;
     text-align: end !important;
-    margin-bottom: 10px;
+    display: flex;
+    margin-left: auto;
   }
 
   .css-1tc5vhq-MuiGrid2-root {
@@ -411,7 +417,8 @@
     max-width: 310px !important;
     min-width: 330px;
     background-color: var(--accent-color7);
-    margin-left: 90px;
+    margin-right: 30px;
+    // margin-left: 90px;
 
     h1 {
       color: #655A78 !important;
@@ -464,6 +471,7 @@
     background-color: var(--accent-color8);
     margin: 5px;
     padding: 6px;
+    justify-content: center;
 
     &:hover {
       background-color: #dbc9fa79;

@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AverageRating from './AverageRating';
 import { Image, Avatar } from 'antd';
+import ProfileIcon from "../../assets/img/user2.png";
 
 const WorkerReviews = (props) => {
   const { workerReviews } = props
@@ -16,15 +17,28 @@ const WorkerReviews = (props) => {
           <div key={review.idreview}>
             <div className='block-avaliation'>
               <div className='part1-avaliation'>
-                <Avatar
-                  id='icon-avaliation'
-                  size={50}
-                  src={
-                    <Image
-                      src={review.profilepicture}
+                {
+                  review.profilepicture ?
+                    <Avatar
+                      id='icon-avaliation'
+                      size={100}
+                      src={
+                        <Image
+                          src={review.profilepicture}
+                        />
+                      }
                     />
-                  }
-                />
+                    :
+                    <Avatar
+                      id='icon-avaliation'
+                      size={65}
+                      src={
+                        <Image
+                          src={ProfileIcon}
+                        />
+                      }
+                    />
+                }
               </div>
               <div className='all-info-avaliation'>
                 <div className='info-avaliation'>

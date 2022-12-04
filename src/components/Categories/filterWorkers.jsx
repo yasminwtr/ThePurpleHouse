@@ -186,7 +186,7 @@ const FilterWorkers = (props) => {
                           }
                         />
                     }
-                    <span>{worker.firstname}</span>
+                    <span id='worker-name-categories'>{worker.firstname}</span>
                   </div>
                   <div className='average-rating'>
                     <AverageRating rating={worker.avg} />
