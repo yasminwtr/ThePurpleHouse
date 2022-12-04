@@ -409,7 +409,7 @@
 
   img {
     width: 25%;
-    height: 55%;
+    height: auto;
   }
 }
 
@@ -442,6 +442,11 @@
 
     .chat-null {
       margin-top: 7% !important;
+
+      img {
+        width: 40%;
+        height: auto;
+      }
     }
   }
 
