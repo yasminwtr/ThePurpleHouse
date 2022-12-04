@@ -2,27 +2,17 @@ import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import api from '../../api';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import AuthContext from 'services/contexts/auth';
-import { Button } from 'antd';
+import { Button, notification } from 'antd';
 import CancelIcon from '@mui/icons-material/DoDisturbRounded'
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 const CancelWork = (props) => {
   const { user } = useContext(AuthContext);
   const { chat, getChats } = props
   const [show, setShow] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const cancelStatus = async () => {
     const idChat = chat.idchat
@@ -32,10 +22,28 @@ const CancelWork = (props) => {
 
       chat.status = data.status;
       setShow(false)
+      openNotificationSuccess()
 
     } catch (error) {
+      openNotificationError()
     }
   }
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Serviço cancelado com sucesso.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Houve um problema ao cancelar o serviço.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
 
   return (
     <div>
@@ -63,18 +71,6 @@ const CancelWork = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Houve um problema em cancelar o serviço.
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Serviço cancelado com sucesso.
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

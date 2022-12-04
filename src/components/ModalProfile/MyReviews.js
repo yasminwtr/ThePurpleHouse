@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaStar } from 'react-icons/fa'
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import ProfileIcon from "../../assets/img/user2.png";
-import { Image, Avatar, Button } from 'antd';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { Image, Avatar, Button, notification } from 'antd';
 
 const MyReviews = (props) => {
   const { servicesReviewed, setServicesReviewed, getServicesReviewed } = props
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const deleteReview = async (deleteId) => {
     const requestOptions = {
@@ -26,15 +15,29 @@ const MyReviews = (props) => {
     try {
       await fetch(`http://localhost:3001/reviews/` + deleteId, requestOptions)
       setServicesReviewed(servicesReviewed.filter(worker => worker.idreview !== deleteId))
-      setShowSuccess(true)
+      openNotificationSuccess()
       getServicesReviewed()
 
     } catch (error) {
-      setShowError(true)
+      openNotificationError()
     }
   }
 
-  console.log(servicesReviewed);
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Avaliação excluída com sucesso.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Não foi possível completar a exclusão. Por favor, tente novamente mais tarde.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
 
   return (
     <div>
@@ -89,7 +92,7 @@ const MyReviews = (props) => {
               <div className='individual-avaliation-modal' key={worker.idreview}>
                 <div className='block-avaliation-modal'>
                   <div className='part1-avaliation-modal'>
-                  {
+                    {
                       worker.profilepicture ?
                         <Avatar
                           size={50}
@@ -248,18 +251,6 @@ const MyReviews = (props) => {
           } else return null
         })
       }
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Não foi possível completar a exclusão. Por favor, tente novamente mais tarde.
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Avaliação excluída com sucesso!
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

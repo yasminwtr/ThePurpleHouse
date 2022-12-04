@@ -13,9 +13,8 @@ const DenounceWorker = (props) => {
 
   const [show, setShow] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
-  const [selectedOption, setOptionSelected] = useState(false)
-  const [description, setDescription] = useState(false)
-  const [messageError, setMessageError] = useState(false)
+  const [selectedOption, setOptionSelected] = useState('')
+  const [description, setDescription] = useState('')
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -34,18 +33,35 @@ const DenounceWorker = (props) => {
     setShow(false)
   };
 
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Houve um problema ao denunciar o usuário.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationValidation = () => {
+    notification["error"]({
+      message: 'Preencha todos os campos para realizar a denúncia!',
+      duration: 2,
+      placement: 'bottom',
+    });
+  };
+
   async function createDenounce() {
     const idWorker = chat.idworker
-    if ((selectedOption) !== '' && (description) !== '') {
+    if (selectedOption !== '' && description !== '') {
       try {
         const response = await api.post('/denounce', { idWorker: idWorker, idPerson: user.idperson, selectedOption, description });
         console.log('response', response)
         openNotification()
+
       } catch (error) {
-        console.log('error @ createDenounce @ denounceWorker', error);
+        openNotificationError()
       }
     } else {
-      setMessageError('Preencha todos os campos para realizar a denúncia!')
+      openNotificationValidation()
     }
   }
 
@@ -62,7 +78,7 @@ const DenounceWorker = (props) => {
     }
   }
 
-  function denounceWorker(){
+  function denounceWorker() {
     createDenounce()
     denounceStatus()
     getChats()
@@ -132,8 +148,6 @@ const DenounceWorker = (props) => {
             />
           </Form.Group>
 
-          <label className='message-error-denounce' >{messageError}</label>
-          
         </Form>
 
         <Modal.Footer>

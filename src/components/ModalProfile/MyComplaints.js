@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import ProfileIcon from "../../assets/img/user2.png";
-import { Image, Avatar, Button } from 'antd';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { Image, Avatar, Button, notification } from 'antd';
 
 const MyComplaints = (props) => {
   const { servicesDenounced, setServicesDenounced, getServicesDenounced } = props
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const handleCloseError = () => setShowError(false);
-  const handleCloseSuccess = () => setShowSuccess(false);
 
   const deleteComplaint = async (deleteId) => {
     const requestOptions = {
@@ -25,13 +14,29 @@ const MyComplaints = (props) => {
     try {
       await fetch(`http://localhost:3001/denounce/` + deleteId, requestOptions)
       setServicesDenounced(servicesDenounced.filter(worker => worker.iddenounce !== deleteId))
-      setShowSuccess(true)
+      openNotificationSuccess()
       getServicesDenounced()
 
     } catch (error) {
-      setShowError(true)
+      openNotificationError()
     }
   }
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Denúncia excluída com sucesso.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Não foi possível completar a exclusão. Por favor, tente novamente mais tarde.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
 
   return (
     <div>
@@ -78,18 +83,6 @@ const MyComplaints = (props) => {
             </div></>
         })
       }
-
-      <Snackbar open={showError} autoHideDuration={6000} onClose={handleCloseError} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseError} severity="error" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Não foi possível completar a exclusão. Por favor, tente novamente mais tarde.
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={showSuccess} autoHideDuration={6000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Denúncia excluída com sucesso!
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

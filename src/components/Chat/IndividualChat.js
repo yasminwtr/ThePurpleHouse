@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SendIcon from '@mui/icons-material/SendRounded'
 import AuthContext from '../../services/contexts/auth'
 import api from '../../api'
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import DenounceWorker from './DenounceWorker'
 import CancelWork from './CancelWork'
 import LeaveAvaliation from '../Reviews/LeaveAvaliation'
@@ -14,11 +12,7 @@ import EmojiPicker from 'emoji-picker-react';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import { useNavigate } from 'react-router-dom';
 import ProfileIcon from "../../assets/img/user2.png";
-import { Image, Avatar } from 'antd';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { Image, Avatar, notification } from 'antd';
 
 const IndividualChat = (props) => {
   const { user } = useContext(AuthContext);
@@ -49,7 +43,7 @@ const IndividualChat = (props) => {
         console.log('response', response)
 
       } else {
-        setShowError(true)
+        openNotificationError()
       }
     } catch (error) {
 
@@ -88,6 +82,17 @@ const IndividualChat = (props) => {
     setMessageText(messageText + emojiObject.emoji);
     console.log('emojiObject.target', emojiObject);
     setShowPicker(false);
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Digite algo para enviar uma mensagem',
+      duration: 2,
+      placement: 'bottom',
+      style: {
+        width: 450,
+      }
+    });
   };
 
   return (
@@ -239,19 +244,6 @@ const IndividualChat = (props) => {
           </>
         }
       </div>
-
-      <Snackbar
-        open={showError}
-        autoHideDuration={6000}
-        onClose={handleCloseError}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center', }}>
-        <Alert
-          onClose={handleCloseError}
-          severity="error"
-          sx={{ width: '100%', fontFamily: 'Inter-Regular' }}>
-          Digite algo para enviar uma mensagem
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

@@ -67,7 +67,7 @@ const LeaveAvaliation = (props) => {
       placement: 'top',
       style: {
         width: 800,
-      },
+      }
     });
   };
 
@@ -75,7 +75,7 @@ const LeaveAvaliation = (props) => {
     notification["error"]({
       message: 'Preencha o formulário para avaliar o trabalhador',
       duration: 2,
-      placement: 'top',
+      placement: 'bottom'
     });
   };
 

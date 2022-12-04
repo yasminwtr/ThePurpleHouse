@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Upload } from 'antd';
+import { Button, Upload, notification } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Modal from 'react-bootstrap/Modal';
 import { BsCamera } from 'react-icons/bs'
@@ -66,10 +66,28 @@ const ProfilePicture = (props) => {
         const response = await api.post(`/profileImage`, { img: imageUrl, idPerson: user.idperson });
         console.log('response @ saveImage', response.data);
         updateUser()
+        openNotificationSuccess()
       } catch (error) {
+        openNotificationError()
       }
     }
   }
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Foto de perfil atualizada.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Não foi possível atualizar sua foto. Por favor, tente novamente mais tarde.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
 
   return (
     <div>
