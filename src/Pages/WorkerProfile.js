@@ -22,39 +22,22 @@ import { Image, Avatar } from 'antd';
 
 const WorkerProfile = () => {
   const { user } = useContext(AuthContext);
-
   const location = useLocation();
-
   const navigate = useNavigate();
-
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
-
   const [workerReviews, setWorkerReviews] = useState([]);
-
   const [workerComplaints, setWorkerComplaints] = useState([]);
-
   const [chat, setChat] = useState([])
-
   const [numberWorkerReviews, setNumberWorkerReviews] = useState('')
   const workerReviewsLength = workerReviews.length
-
   const [numberWorkerComplaints, setNumberWorkerComplaints] = useState('')
   const workerComplaintsLength = workerComplaints.length
-
   const dateAtual = new Date()
-
   const [year, month, day] = location.state.birthdate.split("T", 10)[0]?.split("-")
-
   const [idade, setIdade] = useState(dateAtual.getFullYear() - year);
-
   const [showAvaliations, setShowAvaliations] = useState(false);
-
   const [showDenounces, setShowDenounces] = useState(false);
-
   const [modalChat, setModalChat] = useState(false);
-
-  console.log('location.state.firstNameWorker', location.state.firstNameWorker);
-  console.log('location.state.firstName', location.state.firstName);
 
   async function getReviewsByWorker() {
     const idWorker = location.state.workerId
@@ -148,6 +131,8 @@ const WorkerProfile = () => {
     }
   }
 
+  console.log(chat);
+
   async function requestService() {
     if (chat.length === 0) {
       createChat()
@@ -178,34 +163,36 @@ const WorkerProfile = () => {
       <div className='container-worker-profile'>
         <div className='section-1'>
           <div className='box-worker'>
-            {
-              location.state.workerImg ?
-                <Avatar
-                  size={130}
-                  src={
-                    <Image
-                      src={location.state.workerImg}
-                    />
-                  }
-                />
-                :
-                <Avatar
-                  size={120}
-                  src={
-                    <Image
-                      src={ProfileIcon}
-                    />
-                  }
-                />
-            }
-            <div className='name-box-worker'>
-              <p id='name-worker'>
-                {location.state.firstName} {location.state.lastName}
-              </p>
-              <p id='categorie-worker'>
-                {location.state.service}, {`${idade} anos`}
-              </p>
-              <AverageRating />
+            <div className='info-worker-section1'>
+              {
+                location.state.workerImg ?
+                  <Avatar
+                    size={130}
+                    src={
+                      <Image
+                        src={location.state.workerImg}
+                      />
+                    }
+                  />
+                  :
+                  <Avatar
+                    size={120}
+                    src={
+                      <Image
+                        src={ProfileIcon}
+                      />
+                    }
+                  />
+              }
+              <div className='name-box-worker'>
+                <p id='name-worker'>
+                  {location.state.firstName} {location.state.lastName}
+                </p>
+                <p id='categorie-worker'>
+                  {location.state.service}, {`${idade} anos`}
+                </p>
+                <AverageRating />
+              </div>
             </div>
 
             {user.idperson === location.state.personWorkerId

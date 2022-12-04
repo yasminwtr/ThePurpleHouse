@@ -218,9 +218,13 @@ body {
 }
 
 .name-box-worker {
-  margin-top: 1%;
+  margin-top: 2.8%;
   text-align: start;
   margin-left: 10px;
+}
+
+.info-worker-section1 {
+  display: flex;
 }
 
 #name-worker {
@@ -293,7 +297,7 @@ body {
   width: 3%;
 }
 
-#title-worker-profile{
+#title-worker-profile {
   display: flex;
   align-items: center;
   font-family: Inter-Medium;
@@ -639,5 +643,83 @@ head {
   .container-infos {
     display: block;
     width: 80%;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1050px) {
+  .section-1 {
+    button {
+      margin: 3.4% 3% 0 auto;
+    }
+  }
+
+  .message-button {
+    margin: 1.4% auto 0 auto;
+    width: 180px
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .box-worker {
+    display: block;
+    margin: 85px 0 0 0;
+  }
+
+  .name-box-worker {
+    margin-top: 2%;
+    text-align: start;
+    margin-left: 10px;
+  }
+
+  .info-worker-section1 {
+    justify-content: center;
+  }
+
+  #categorie-worker {
+    margin-bottom: -5%;
+  }
+
+  .section-1 {
+    button {
+      margin: 3.4% auto 0 auto;
+    }
+  }
+
+  .message-button {
+    margin: 1.4% auto 0 auto;
+    width: 145px
+  }
+}
+
+@media screen and (min-width: 100px) and (max-width: 299px) {
+  .box-worker {
+    display: block;
+    margin: 25px 0 0 0;
+  }
+
+  .name-box-worker {
+    margin-top: -1%;
+    text-align: center;
+  }
+
+  #name-worker {
+    display: block;
+  }
+
+  .info-worker-section1 {
+    justify-content: center;
+    display: block;
+  }
+
+  .section2 {
+    padding: 20px;
+    display: block;
+    padding-top: 120px;
+  }
+
+  .section-1 {
+    button {
+      margin: 3.4% auto 0 auto;
+    }
   }
 }
