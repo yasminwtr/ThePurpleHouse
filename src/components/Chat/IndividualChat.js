@@ -239,7 +239,8 @@ const IndividualChat = (props) => {
               onKeyPress={handleKeyPress}
             />
 
-            <span className='more-options-chat-wrapper'>
+            <span>
+            {/* <span className='more-options-chat-wrapper'> */}
               <a onClick={emoji === 'close' ? handleOpenEmoji : handleCloseEmoji}>
                 <SentimentSatisfiedAltIcon id='send-icon' />
               </a>
