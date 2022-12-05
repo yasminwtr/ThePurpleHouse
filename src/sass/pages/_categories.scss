@@ -70,7 +70,8 @@
 
   .categories {
     p.title-category {
-      color: #655a78;;
+      color: #655a78;
+      ;
     }
 
     p {
@@ -91,7 +92,7 @@
   -webkit-font-smoothing: antialiased;
   background-size: cover;
 
-  #worker-name-categories{
+  #worker-name-categories {
     margin-left: 5px;
     margin-top: 4%;
   }
@@ -245,9 +246,8 @@
     }
 
     .boxCategories {
-      margin: 1px;
-      width: 132px;
-      height: 132px;
+      width: 158px;
+      height: 135px;
     }
 
     .row {
@@ -276,6 +276,7 @@
     .container-categories-search {
       height: auto;
       margin-left: 0 !important;
+      margin-right: 0 !important;
       margin-top: 10px;
     }
 
@@ -293,7 +294,7 @@
 
   }
 
-  @media screen and (min-width: 600px) and (max-width: 1378px) {
+  @media screen and (min-width: 600px) and (max-width: 2000px) {
 
     display: flex;
     align-content: center;
@@ -480,10 +481,10 @@
     }
   }
 
-.info-user-nameimg{
-  align-items: center;
-  display: flex;
-}
+  .info-user-nameimg {
+    align-items: center;
+    display: flex;
+  }
 
   img {
     width: fit-content;
