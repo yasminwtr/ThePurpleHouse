@@ -83,7 +83,7 @@ const FilterWorkers = (props) => {
         duration: 2,
         placement: 'top',
       })
-    }
+    } else setShow(false)
   }
 
   useEffect(() => {
