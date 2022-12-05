@@ -36,8 +36,11 @@ export const AuthProvider = ({ children }) => {
   }
 
   const updateUser = async () => {
-    const response = await api.get(`/updateUser/${user.idperson}`);
-    setUser(response.data[0])
+    const updatedUser = await api.get(`/updateUser/${user.idperson}`).then(res => res.data[0]);
+
+    localStorage.setItem('storagedUser', JSON.stringify(updatedUser));    
+
+    setUser(updatedUser)
   }
 
   return (
