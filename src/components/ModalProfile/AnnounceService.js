@@ -133,7 +133,7 @@ const AnnounceService = (props) => {
 
   return (
     <div>
-      <p id='options-text' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Anunciar serviço</p>
+      <p id='options-text' onClick={handleShow}><AnnounceIcon sx={{ fontSize: 22, marginRight: 0.5 }} /> Anunciar</p>
       <Modal
         show={show}
         onHide={handleClose}

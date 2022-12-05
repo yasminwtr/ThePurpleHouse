@@ -178,6 +178,7 @@ const FilterWorkers = (props) => {
                         <Avatar
                           size={38}
                           src={ProfileIcon}
+                          
                         />
                     }
                     <span id='worker-name-categories'>{worker.firstname}</span>

@@ -87,7 +87,7 @@ const RequestedServices = (props) => {
   return (
     <div>
       <p id='options-text' onClick={handleShow}><AvaliationIcon sx={{ fontSize: 19, marginRight: 0.8 }} />
-        Serviços solicitados
+        Solicitados
       </p>
 
       <Modal
