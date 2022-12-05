@@ -136,7 +136,7 @@
     max-height: 390px;
     min-height: 390px;
     overflow-y: scroll;
-    
+
     #icon-cancel {
       color: #596066;
       font-size: 22px;
@@ -420,6 +420,7 @@
     display: flex !important;
     flex-direction: column !important;
     margin-right: 0px !important;
+    margin-top: 20px !important;
 
     .box-search {
       width: auto !important;
@@ -462,10 +463,14 @@
     .h4-chat-null {
       margin: 5px
     }
+  }
 
-    .more-options-chat-open {
-      margin: -70px;
-      top: -270px;
+  @media screen and (min-width: 332px) and (max-width: 647px) {
+
+    .more-options-chat-open,
+    .more-options-chat-close {
+      top: 124px;
+      right: 70px !important;
     }
   }
 }
