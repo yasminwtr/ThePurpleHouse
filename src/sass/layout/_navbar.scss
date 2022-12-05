@@ -35,6 +35,7 @@ nav {
         .dark {
           color: black;
         }
+
         .dark:hover {
           cursor: pointer;
         }
@@ -42,6 +43,7 @@ nav {
         .light {
           color: yellow;
         }
+
         .light:hover {
           cursor: pointer;
         }
@@ -164,13 +166,24 @@ nav {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 399px) {
   nav {
     .title-header {
       font-family: Inter-Medium !important;
       margin-left: 10px;
-      font-size: 1rem;
+      font-size: 20px;
       color: var(--accent-color1);
     }
   }
 }
+
+// @media screen and (min-width: 377px) and (max-width: 385px) {
+//   nav {
+//     .title-header {
+//       font-family: Inter-Medium !important;
+//       margin-left: 10px;
+//       font-size: 1rem;
+//       color: var(--accent-color1);
+//     }
+//   }
+// }
