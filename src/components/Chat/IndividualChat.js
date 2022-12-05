@@ -12,12 +12,11 @@ import { useNavigate } from 'react-router-dom';
 import ProfileIcon from "../../assets/img/user2.png";
 import { Image, Avatar, notification } from 'antd';
 import MoreOptionsIcon from '@mui/icons-material/MoreVertRounded'
-// import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 const IndividualChat = (props) => {
   const { user } = useContext(AuthContext);
-  const { chat, getChats } = props
-  const [messages, setMessages] = useState([])
+  const { chat, messages, getMessages } = props
+  // const [messages, setMessages] = useState([])
   const [messageText, setMessageText] = useState('')
   const refBody = useRef('');
   const navigate = useNavigate()
@@ -29,22 +28,13 @@ const IndividualChat = (props) => {
   const handleOpenEmoji = () => setEmoji('open');
   const handleCloseEmoji = () => setEmoji('close');
 
-  const getMessages = async () => {
-    const idChat = chat.idchat
-    try {
-      const response = await api.get(`/messages/${idChat}`);
-      setMessages(response.data)
-    } catch (error) {
-      setMessages([])
-    }
-  }
-
   async function sendMessage() {
     const idChat = chat.idchat
     try {
       if ((messageText) !== '') {
         const response = await api.post('/messages', { idChat: idChat, idPerson: user.idperson, messageText: messageText });
         console.log('response', response)
+        getMessages(chat)
 
       } else {
         openNotificationError()
@@ -59,21 +49,20 @@ const IndividualChat = (props) => {
     sendMessage()
 
     setMessageText('');
-    getMessages()
+    getMessages(chat)
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       sendMessage()
-
       setMessageText('');
-      getMessages()
+      getMessages(chat)
     }
   }
 
   useEffect(() => {
-    getMessages()
-  }, [messages])
+    getMessages(chat)
+  }, [])
 
   useEffect(() => {
     if (refBody.current.scrollHeight > refBody.current.offsetHeight) {
@@ -259,9 +248,6 @@ const IndividualChat = (props) => {
               value={messageText}
               onKeyPress={handleKeyPress}
             />
-
-            <SentimentSatisfiedAltIcon id='send-icon-disabled' />
-            <SendIcon id='send-icon-disabled' />
           </>
         }
       </div>

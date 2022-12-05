@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import AuthContext from '../../services/contexts/auth'
 import { FaStar } from 'react-icons/fa'
 import CloseIcon from '@mui/icons-material/CheckCircleOutlineRounded'
+import { useNavigate } from "react-router-dom";
 
 const LeaveAvaliation = (props) => {
   const { user } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const LeaveAvaliation = (props) => {
   const [hoverRating, setHoverRating] = useState(null)
   const [messageReview, setMessageReview] = useState('');
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -53,6 +55,7 @@ const LeaveAvaliation = (props) => {
       registerReview()
       closeStatus()
       openNotificationSuccess()
+      
 
     } else {
       openNotificationError()

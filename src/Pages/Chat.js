@@ -18,6 +18,7 @@ const Chat = () => {
   const [filteredChats, setFilteredChats] = useState([]);
   const [searchInputChat, setSearchInputChat] = useState('');
   const [showChat, setShowChat] = useState(false)
+  const [messages, setMessages] = useState([])
 
   useEffect(() => {
     selectedChat != null ? setShowChat(true) : setShowChat(false)
@@ -46,7 +47,20 @@ const Chat = () => {
     }
   }
 
-  console.log(chats);
+    const getMessages = async (chat) => {
+    const idChat = chat.idchat
+    try {
+      const response = await api.get(`/messages/${idChat}`);
+      setMessages(response.data)
+    } catch (error) {
+      setMessages([])
+    }
+  }
+
+  function getSelectedChat(chat){
+    getMessages(chat)
+    setSelectedChat(chat)
+  }
 
   useEffect(() => {
     getChats()
@@ -67,7 +81,7 @@ const Chat = () => {
           {searchInputChat.length > 1 ? (
             filteredChats.map((chat) => {
               return (
-                <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                <div onClick={() => getSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
                   {
                     chat.profilepicture ?
                       <Avatar
@@ -98,7 +112,7 @@ const Chat = () => {
           ) : (
             chats.map((chat) => {
               return (
-                <div onClick={() => setSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
+                <div onClick={() => getSelectedChat(chat)} className={`individual-chat-profile ${selectedChat?.idchat == chat.idchat ? 'chatSelected' : null}`}>
                   {
                     chat.profilepicture ?
                       <Avatar
@@ -133,7 +147,7 @@ const Chat = () => {
           )}
         </div>
       </div>
-      {showChat ? <IndividualChat chat={selectedChat} getChats={getChats} /> : <NullChat />}
+      {showChat ? <IndividualChat chat={selectedChat}  messages={messages} getMessages={getMessages}/> : <NullChat />}
     </div>
   )
 }

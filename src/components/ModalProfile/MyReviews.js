@@ -13,7 +13,7 @@ const MyReviews = (props) => {
       headers: { 'Content-type': 'aplication/json' }
     }
     try {
-      await fetch(`http://localhost:3001/reviews/` + deleteId, requestOptions)
+      await fetch(`https://the-purple-house.up.railway.app/reviews/` + deleteId, requestOptions)
       setServicesReviewed(servicesReviewed.filter(worker => worker.idreview !== deleteId))
       openNotificationSuccess()
       getServicesReviewed()

@@ -203,7 +203,6 @@
   }
 
   .list-chat-profiles::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-border-chat);
     border-radius: 5vw;
   }
 
@@ -262,7 +261,6 @@
     }
 
     &::-webkit-scrollbar-track {
-      background-color: var(--scrollbar-chat);
       border-radius: 5vw;
     }
 

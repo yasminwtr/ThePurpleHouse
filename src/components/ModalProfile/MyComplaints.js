@@ -12,7 +12,7 @@ const MyComplaints = (props) => {
       headers: { 'Content-type': 'aplication/json' }
     }
     try {
-      await fetch(`http://localhost:3001/denounce/` + deleteId, requestOptions)
+      await fetch(`https://the-purple-house.up.railway.app/denounce/` + deleteId, requestOptions)
       setServicesDenounced(servicesDenounced.filter(worker => worker.iddenounce !== deleteId))
       openNotificationSuccess()
       getServicesDenounced()

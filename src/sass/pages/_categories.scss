@@ -433,7 +433,7 @@
   }
 
   .list-users-category {
-    overflow-y: scroll;
+    overflow: scroll;
     height: 260px;
 
     span {
@@ -444,6 +444,7 @@
 
     &::-webkit-scrollbar {
       width: 0.3vw;
+      height: 0.3vw;
       border-radius: 5vw;
     }
 
@@ -453,7 +454,6 @@
     }
 
     &::-webkit-scrollbar-track {
-      background-color: var(--scrollbar-chat);
       border-radius: 5vw;
     }
 
