@@ -69,7 +69,7 @@ const IndividualChat = (props) => {
 
   useEffect(() => {
     getMessages()
-  }, [])
+  }, [messages])
 
   useEffect(() => {
     if (refBody.current.scrollHeight > refBody.current.offsetHeight) {

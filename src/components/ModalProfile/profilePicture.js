@@ -67,6 +67,7 @@ const ProfilePicture = (props) => {
         console.log('response @ saveImage', response.data);
         updateUser()
         openNotificationSuccess()
+        setShow(false)
       } catch (error) {
         openNotificationError()
       }
