@@ -6,24 +6,28 @@ import api from '../../api'
 import DenounceWorker from './DenounceWorker'
 import CancelWork from './CancelWork'
 import LeaveAvaliation from '../Reviews/LeaveAvaliation'
-import MoreOptions from "./MoreOptions";
-import Emoji from './Emoji';
 import EmojiPicker from 'emoji-picker-react';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import { useNavigate } from 'react-router-dom';
 import ProfileIcon from "../../assets/img/user2.png";
 import { Image, Avatar, notification } from 'antd';
+import MoreOptionsIcon from '@mui/icons-material/MoreVertRounded'
+// import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 const IndividualChat = (props) => {
   const { user } = useContext(AuthContext);
   const { chat, getChats } = props
   const [messages, setMessages] = useState([])
   const [messageText, setMessageText] = useState('')
-  const [showError, setShowError] = useState(false);
-  const handleCloseError = () => setShowError(false);
   const refBody = useRef('');
   const navigate = useNavigate()
   const [showPicker, setShowPicker] = useState(false);
+  const [status, setStatus] = useState('close')
+  const handleOpenStatus = () => setStatus('open');
+  const handleCloseStatus = () => setStatus('close');
+  const [emoji, setEmoji] = useState('close')
+  const handleOpenEmoji = () => setEmoji('open');
+  const handleCloseEmoji = () => setEmoji('close');
 
   const getMessages = async () => {
     const idChat = chat.idchat
@@ -96,7 +100,7 @@ const IndividualChat = (props) => {
   };
 
   return (
-    <div className='chat'>
+    <div className='chat' onClick={status === 'open' ? handleCloseStatus : null}>
       <div className='header'>
         {chat.idperson1 === user.idperson ?
           <>
@@ -167,19 +171,24 @@ const IndividualChat = (props) => {
 
         {chat.idperson1 === user.idperson && chat.status === 'Aberto' ?
           <>
-            <MoreOptions>
-              <ul className='ul-more-options'>
-                <li id='close-service-li'>
-                  <LeaveAvaliation chat={chat} />
-                </li>
-                <li id='cancel-service-li'>
-                  <CancelWork chat={chat} />
-                </li>
-                <li id='denounce-service-li'>
-                  <DenounceWorker chat={chat} />
-                </li>
-              </ul>
-            </MoreOptions>
+            <span className='more-options-chat-wrapper'>
+              <a onClick={status === 'close' ? handleOpenStatus : handleCloseStatus}>
+                <MoreOptionsIcon />
+              </a>
+              <div className={`more-options-chat more-options-chat-${status}`}>
+                <ul className='ul-more-options'>
+                  <li id='close-service-li'>
+                    <LeaveAvaliation chat={chat} />
+                  </li>
+                  <li id='cancel-service-li'>
+                    <CancelWork chat={chat} />
+                  </li>
+                  <li id='denounce-service-li'>
+                    <DenounceWorker chat={chat} />
+                  </li>
+                </ul>
+              </div>
+            </span>
           </>
           :
           <></>
@@ -187,13 +196,18 @@ const IndividualChat = (props) => {
 
         {chat.idperson2 === user.idperson && chat.status === 'Aberto' ?
           <>
-            <MoreOptions>
-              <ul className='ul-more-options'>
-                <li id='cancel-service-li'>
-                  <CancelWork chat={chat} />
-                </li>
-              </ul>
-            </MoreOptions>
+            <span className='more-options-chat-wrapper'>
+              <a onClick={status === 'close' ? handleOpenStatus : handleCloseStatus}>
+                <MoreOptionsIcon />
+              </a>
+              <div className={`more-options-chat more-options-chat-${status}`}>
+                <ul className='ul-more-options'>
+                  <li id='cancel-service-li'>
+                    <CancelWork chat={chat} />
+                  </li>
+                </ul>
+              </div>
+            </span>
           </>
           :
           <></>
@@ -224,9 +238,15 @@ const IndividualChat = (props) => {
               value={messageText}
               onKeyPress={handleKeyPress}
             />
-            <Emoji>
-              <EmojiPicker value={showPicker} onEmojiClick={onEmojiClick} onClick={() => setShowPicker(val => !val)} />
-            </Emoji>
+
+            <span className='more-options-chat-wrapper'>
+              <a onClick={emoji === 'close' ? handleOpenEmoji : handleCloseEmoji}>
+                <SentimentSatisfiedAltIcon id='send-icon' />
+              </a>
+              <div className={`more-options-chat more-options-chat-${emoji}`}>
+                <EmojiPicker value={showPicker} onEmojiClick={onEmojiClick} onClick={() => setShowPicker(val => !val)} />
+              </div>
+            </span>
             <SendIcon id='send-icon' onClick={handleSendMessage} />
           </>
           :
