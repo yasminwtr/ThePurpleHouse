@@ -21,7 +21,7 @@ const WorkerComplaints = (props) => {
                     denounce.profilepicture ?
                       <Avatar
                         id='icon-avaliation'
-                        size={65}
+                        size={55}
                         src={
                           <Image
                             src={denounce.profilepicture}
@@ -31,7 +31,7 @@ const WorkerComplaints = (props) => {
                       :
                       <Avatar
                         id='icon-avaliation'
-                        size={65}
+                        size={55}
                         src={
                           <Image
                             src={ProfileIcon}

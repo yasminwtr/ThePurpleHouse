@@ -29,7 +29,7 @@ const ModalExistingChat = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Parece que você já solicitou ou possui um serviço solicitado desse perfil.
+          <p>Parece que você possui um serviço solicitado aberto desse perfil.
             Deseja ir para o serviço existente ou solicitar um novo?</p>
         </Modal.Body>
 

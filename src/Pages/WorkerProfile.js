@@ -101,15 +101,18 @@ const WorkerProfile = () => {
 
   async function getIfChatExists() {
     const idPerson1 = user.idperson
-    const idPerson2 = location.state.personWorkerId
     try {
-      const response = await api.get(`/chats/${idPerson1}/${idPerson2}`);
+      const response = await api.get(`/openchats/${idPerson1}`);
       setChat(response.data)
 
     } catch (error) {
       setChat([])
     }
   }
+
+  const filteredChat = chat.filter(chat => {
+    return chat.idworker === location.state.workerId;
+  });
 
   async function createChat() {
     try {
@@ -131,10 +134,8 @@ const WorkerProfile = () => {
     }
   }
 
-  console.log(chat);
-
   async function requestService() {
-    if (chat.length === 0) {
+    if (filteredChat.length === 0) {
       createChat()
 
     } else {

@@ -47,7 +47,7 @@ const Chat = () => {
     }
   }
 
-    const getMessages = async (chat) => {
+  const getMessages = async (chat) => {
     const idChat = chat.idchat
     try {
       const response = await api.get(`/messages/${idChat}`);
@@ -57,7 +57,7 @@ const Chat = () => {
     }
   }
 
-  function getSelectedChat(chat){
+  function getSelectedChat(chat) {
     getMessages(chat)
     setSelectedChat(chat)
   }
@@ -139,7 +139,7 @@ const Chat = () => {
                   </p>
                   {chat.status == 'Finalizado' ? <><Tooltip title="Finalizado" placement="bottomLeft" color='#56a54f'><CloseIcon id='icon-close' /></Tooltip></> : <></>}
                   {chat.status == 'Aberto' ? <></> : <></>}
-                  {chat.status == 'Denunciado' ? <><Tooltip title="Denunciado" placement="bottomLeft" color='#bb3f3f'><ReportIcon id='icon-report'/></Tooltip></> : <></>}
+                  {chat.status == 'Denunciado' ? <><Tooltip title="Denunciado" placement="bottomLeft" color='#bb3f3f'><ReportIcon id='icon-report' /></Tooltip></> : <></>}
                   {chat.status == 'Cancelado' ? <><Tooltip title="Cancelado" placement="bottomLeft" color='#596066'><CancelIcon id='icon-cancel' /></Tooltip></> : <></>}
                 </div>
               )
@@ -147,7 +147,7 @@ const Chat = () => {
           )}
         </div>
       </div>
-      {showChat ? <IndividualChat chat={selectedChat}  messages={messages} getMessages={getMessages}/> : <NullChat />}
+      {showChat ? <IndividualChat chat={selectedChat} messages={messages} getMessages={getMessages} /> : <NullChat />}
     </div>
   )
 }
