@@ -75,7 +75,7 @@ const AnnounceService = (props) => {
 
   useEffect(() => {
     getWorkerServices()
-  })
+  },[])
 
   const registerWorker = async () => {
     const selectedRepeatedService = workerServices

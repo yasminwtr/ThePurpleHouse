@@ -15,17 +15,13 @@ import CalendarIcon from '@mui/icons-material/CalendarMonthRounded'
 import ServiceIcon from '@mui/icons-material/HomeRepairServiceRounded'
 import AuthContext from '../services/contexts/auth'
 import api from 'api'
-import { BsCamera } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
-import ProfileIcon from "../assets/img/user2.png";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
   const [userServices, setUserServices] = useState([])
   const [formattedBirthDate, setFormattedBirthDate] = useState('');
   const navigate = useNavigate()
-
-  console.log(userServices);
 
   async function getServices() {
     try {

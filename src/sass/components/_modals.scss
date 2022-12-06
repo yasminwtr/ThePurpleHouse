@@ -256,6 +256,38 @@ select:focus {
     background-color: #96c692 !important;
   }
 }
+
 .ant-notification.ant-notification-top.css-dev-only-do-not-override-1l14yfp {
   z-index: 10000;
+}
+
+@media screen and (min-width: 240px) and (max-width: 447px) {
+
+  #services-reviewed-button-modal,
+  #services-reviewed-button-modal-selected,
+  #services-denounced-button-modal,
+  #services-denounced-button-modal-selected {
+    width: auto !important;
+  }
+
+  .label-requested-info,
+  #name-avaliation-modal {
+    margin-left: 17px;
+  }
+
+  .edit-profile-buttons-modal,
+  .edit-profile-buttons-modal:focus,
+  .edit-profile-buttons-modal-selected {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  .right-button-modal {
+    margin-left: 0;
+  }
 }

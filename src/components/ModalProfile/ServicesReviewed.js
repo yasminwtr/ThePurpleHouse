@@ -34,6 +34,8 @@ const Avaliations = (props) => {
     }
   }
 
+  // console.log(servicesReviewed);
+
   async function getServicesDenounced() {
     const idPerson = user.idperson
     try {
