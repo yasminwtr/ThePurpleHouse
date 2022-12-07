@@ -85,19 +85,11 @@ const Chat = () => {
                   {
                     chat.profilepicture ?
                       <Avatar
-                        src={
-                          <Image
-                            src={chat.profilepicture}
-                          />
-                        }
+                        src={chat.profilepicture}
                       />
                       :
                       <Avatar
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                   <p>
@@ -116,19 +108,11 @@ const Chat = () => {
                   {
                     chat.profilepicture ?
                       <Avatar
-                        src={
-                          <Image
-                            src={chat.profilepicture}
-                          />
-                        }
+                        src={chat.profilepicture}
                       />
                       :
                       <Avatar
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                   <p>

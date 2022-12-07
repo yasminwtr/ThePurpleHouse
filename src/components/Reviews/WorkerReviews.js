@@ -21,23 +21,13 @@ const WorkerReviews = (props) => {
                   {
                     review.profilepicture ?
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={review.profilepicture}
-                          />
-                        }
+                        src={review.profilepicture}
                       />
                       :
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>
@@ -66,23 +56,13 @@ const WorkerReviews = (props) => {
                   {
                     review.profilepicture ?
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={review.profilepicture}
-                          />
-                        }
+                        src={review.profilepicture}
                       />
                       :
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>
@@ -111,23 +91,13 @@ const WorkerReviews = (props) => {
                   {
                     review.profilepicture ?
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={review.profilepicture}
-                          />
-                        }
+                        src={review.profilepicture}
                       />
                       :
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>
@@ -156,23 +126,13 @@ const WorkerReviews = (props) => {
                   {
                     review.profilepicture ?
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={review.profilepicture}
-                          />
-                        }
+                        src={review.profilepicture}
                       />
                       :
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>
@@ -201,23 +161,13 @@ const WorkerReviews = (props) => {
                   {
                     review.profilepicture ?
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={review.profilepicture}
-                          />
-                        }
+                        src={review.profilepicture}
                       />
                       :
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, notification } from 'antd';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import ReportIcon from '@mui/icons-material/ReportGmailerrorredRounded';
+import ReportIcon from '@mui/icons-material/ErrorOutlineRounded';
 import api from 'api';
 import AuthContext from '../../services/contexts/auth'
 
@@ -106,7 +106,7 @@ const DenounceWorker = (props) => {
 
         <Modal.Footer>
           <Button id='delete-button-modals-profile' onClick={handleShowSecondModal}>
-            Denunciar
+            Continuar
           </Button>
         </Modal.Footer>
       </Modal>

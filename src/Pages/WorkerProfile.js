@@ -172,6 +172,7 @@ const WorkerProfile = () => {
                     src={
                       <Image
                         src={location.state.workerImg}
+                        id='profile-image-worker-profile'
                       />
                     }
                   />
@@ -181,6 +182,7 @@ const WorkerProfile = () => {
                     src={
                       <Image
                         src={ProfileIcon}
+                        id='null-profile-image-worker-profile'
                       />
                     }
                   />

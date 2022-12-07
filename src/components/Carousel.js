@@ -44,7 +44,7 @@ export const Carousel = () => {
 
   return (
     <div className='carousel'>
-      <UploadImage image={image} getWorkerImages={() => getWorkerImages()} />
+      <UploadImage image={image} getWorkerImages={getWorkerImages} />
 
       {image != '' ?
         <ImageGallery items={image} sizes={10} />

@@ -99,9 +99,7 @@ const ProfilePicture = (props) => {
             src={
               <Image
                 src={user.profilepicture}
-                style={{
-                  width: 110,
-                }}
+                id='profile-image-user-profile'
               />
             }
           />
@@ -111,13 +109,14 @@ const ProfilePicture = (props) => {
             src={
               <Image
                 src={ProfileIcon}
+                id='profile-image-user-profile'
               />
             }
           />
       }
 
       <div className='IconPicture'>
-        <BsCamera onClick={handleShow} className='iconFoto' size={26}/>
+        <BsCamera onClick={handleShow} className='iconFoto' size={26} />
       </div>
 
       <Modal

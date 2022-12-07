@@ -53,20 +53,12 @@ const MyComplaints = (props) => {
                     worker.profilepicture ?
                       <Avatar
                         size={50}
-                        src={
-                          <Image
-                            src={worker.profilepicture}
-                          />
-                        }
+                        src={worker.profilepicture}
                       />
                       :
                       <Avatar
                         size={50}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>

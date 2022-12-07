@@ -128,20 +128,12 @@ const RequestedServices = (props) => {
                               worker.profilepicture ?
                                 <Avatar
                                   size={45}
-                                  src={
-                                    <Image
-                                      src={worker.profilepicture}
-                                    />
-                                  }
+                                  src={worker.profilepicture}
                                 />
                                 :
                                 <Avatar
                                   size={45}
-                                  src={
-                                    <Image
-                                      src={ProfileIcon}
-                                    />
-                                  }
+                                  src={ProfileIcon}
                                 />
                             }
                           </div>
@@ -194,20 +186,12 @@ const RequestedServices = (props) => {
                               worker.profilepicture ?
                                 <Avatar
                                   size={45}
-                                  src={
-                                    <Image
-                                      src={worker.profilepicture}
-                                    />
-                                  }
+                                  src={worker.profilepicture}
                                 />
                                 :
                                 <Avatar
                                   size={45}
-                                  src={
-                                    <Image
-                                      src={ProfileIcon}
-                                    />
-                                  }
+                                  src={ProfileIcon}
                                 />
                             }
                           </div>

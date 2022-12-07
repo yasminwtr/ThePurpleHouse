@@ -20,23 +20,13 @@ const WorkerComplaints = (props) => {
                   {
                     denounce.profilepicture ?
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={denounce.profilepicture}
-                          />
-                        }
+                        src={denounce.profilepicture}
                       />
                       :
                       <Avatar
-                        id='icon-avaliation'
                         size={55}
-                        src={
-                          <Image
-                            src={ProfileIcon}
-                          />
-                        }
+                        src={ProfileIcon}
                       />
                   }
                 </div>

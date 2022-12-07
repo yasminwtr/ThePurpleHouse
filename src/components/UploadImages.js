@@ -9,10 +9,11 @@ import AuthContext from '../services/contexts/auth'
 import axios from 'axios';
 import api from 'api'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { useEffect } from 'react';
 
 export const UploadImage = (props) => {
 
-  const { image } = props
+  const { image, getWorkerImages } = props
 
   const location = useLocation();
   const idWorker = location.state.workerId
@@ -25,10 +26,10 @@ export const UploadImage = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true)
 
+  console.log(listImages);
+
   const attemptSave = async () => {
-
-    if (image.length < 4) {
-
+    if (listImages.length >= 1 && image.length + listImages.length <= 5) {
       listImages.forEach(async image => {
         const data = new FormData();
         data.append("image", image);
@@ -48,13 +49,15 @@ export const UploadImage = (props) => {
         await saveImage(imageUrl)
           .then(() => props.getWorkerImages());
         if (imageUrl) {
-          return notification["success"]({
-            message: 'Imagens adicionadas',
-            duration: 2,
-            placement: 'topRight',
-          })
+          openNotificationSuccess()
+          setShow(false)
         }
       });
+    } else if (listImages.length === 0) {
+      openNotificationValidationError()
+
+    } else if (image.length + listImages.length > 5) {
+      openNotificationLimitError()
     }
   };
 
@@ -63,6 +66,8 @@ export const UploadImage = (props) => {
       try {
         return await api.post(`/postImage`, { img: imageUrl, idWorker: idWorker });
       } catch (error) {
+        openNotificationError()
+        setShow(false)
       }
     }
   }
@@ -71,16 +76,61 @@ export const UploadImage = (props) => {
     try {
       await api.delete(`/deleteCarouselImage/${id}`);
       props.getWorkerImages();
+      openNotificationDeleteSuccess()
     } catch (error) {
     }
   }
+
+  const openNotificationSuccess = () => {
+    notification["success"]({
+      message: 'Imagem adicionada com sucesso.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationDeleteSuccess = () => {
+    notification["success"]({
+      message: 'Imagem deletada.',
+      duration: 2,
+      placement: 'bottom'
+    });
+  };
+
+  const openNotificationError = () => {
+    notification["error"]({
+      message: 'Não foi possível adicionar a imagem. Por favor, tente novamente mais tarde.',
+      duration: 2,
+      placement: 'top'
+    });
+  };
+
+  const openNotificationLimitError = () => {
+    notification["error"]({
+      message: 'Somente 5 imagens podem ser adicionadas na galeria.',
+      duration: 2,
+      placement: 'bottom'
+    });
+  };
+
+  const openNotificationValidationError = () => {
+    notification["error"]({
+      message: 'Selecione no mínimo uma imagem para salvar.',
+      duration: 2,
+      placement: 'bottom'
+    });
+  };
+
+  useEffect(() => {
+    getWorkerImages()
+  }, []);
 
   return (
     <div>
       {user.idperson == location.state.personWorkerId ?
         <>
-          <Button onClick={handleShow} icon={<UploadOutlined />}>
-            Adicionar Imagens
+          <Button onClick={handleShow} icon={<UploadOutlined />} id='upload-images-button'>
+            Adicionar imagens
           </Button>
         </>
         :
@@ -96,7 +146,7 @@ export const UploadImage = (props) => {
       >
 
         <Modal.Header closeButton>
-          <Modal.Title>Adicionar Imagens</Modal.Title>
+          <Modal.Title>Adicionar imagens</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -105,7 +155,7 @@ export const UploadImage = (props) => {
             onChange={(e) => setListImages([e.target.files[0], ...listImages])}
           >
             <Form.Group className="mb-3">
-              <Form.Label>Adicione até 5 imagens de serviços já realizados</Form.Label>
+              <Form.Label>Adicione até 5 imagens dos seus serviços:</Form.Label>
               <Upload
                 beforeUpload={
                   () => {
@@ -117,15 +167,25 @@ export const UploadImage = (props) => {
                 className="upload-list-inline"
                 maxCount={5}
               >
-                <Button disabled={listImages.length === 5} icon={<UploadOutlined />}>
-                  Escolher Arquivos
-                </Button>
+                {image.length === 5 || (image.length + listImages.length) === 5 ?
+                  <>
+                    <Button disabled icon={<UploadOutlined />}>
+                    Selecionar arquivos
+                    </Button>
+                  </>
+                  :
+                  <>
+                    <Button icon={<UploadOutlined />} id='upload-images-button'>
+                      Selecionar arquivos
+                    </Button>
+                  </>
+                }
               </Upload>
 
-              {listImages.length != 0 ?
-                <Form.Label className='mt-3'>Imagens Adicionadas</Form.Label>
+              {image.length != 0 ?
+                <Form.Label className='mt-3'>Imagens adicionadas:</Form.Label>
                 :
-                <Form.Label className='mt-3'>Não h adicionou imagens</Form.Label>
+                <Form.Label className='mt-3'>Você não possui imagens adicionadas na galeria.</Form.Label>
               }
 
               <div className='container-uploaded-images'>
@@ -149,7 +209,7 @@ export const UploadImage = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={() => attemptSave()} variant="success">
+          <Button onClick={() => attemptSave()} id='save-button-modals-profile'>
             Salvar
           </Button>
         </Modal.Footer>

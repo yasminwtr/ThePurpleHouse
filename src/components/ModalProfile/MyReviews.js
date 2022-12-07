@@ -7,6 +7,8 @@ import { Image, Avatar, Button, notification } from 'antd';
 const MyReviews = (props) => {
   const { servicesReviewed, setServicesReviewed, getServicesReviewed } = props
 
+  console.log('aa',servicesReviewed);
+
   const deleteReview = async (deleteId) => {
     const requestOptions = {
       method: 'delete',
@@ -55,20 +57,12 @@ const MyReviews = (props) => {
                       worker.profilepicture ?
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={worker.profilepicture}
-                            />
-                          }
+                          src={worker.profilepicture}
                         />
                         :
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={ProfileIcon}
-                            />
-                          }
+                          src={ProfileIcon}
                         />
                     }
                   </div>
@@ -96,20 +90,12 @@ const MyReviews = (props) => {
                       worker.profilepicture ?
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={worker.profilepicture}
-                            />
-                          }
+                          src={worker.profilepicture}
                         />
                         :
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={ProfileIcon}
-                            />
-                          }
+                          src={ProfileIcon}
                         />
                     }
                   </div>
@@ -137,20 +123,12 @@ const MyReviews = (props) => {
                       worker.profilepicture ?
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={worker.profilepicture}
-                            />
-                          }
+                          src={worker.profilepicture}
                         />
                         :
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={ProfileIcon}
-                            />
-                          }
+                          src={ProfileIcon}
                         />
                     }
                   </div>
@@ -178,20 +156,12 @@ const MyReviews = (props) => {
                       worker.profilepicture ?
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={worker.profilepicture}
-                            />
-                          }
+                          src={worker.profilepicture}
                         />
                         :
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={ProfileIcon}
-                            />
-                          }
+                          src={ProfileIcon}
                         />
                     }
                   </div>
@@ -219,20 +189,12 @@ const MyReviews = (props) => {
                       worker.profilepicture ?
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={worker.profilepicture}
-                            />
-                          }
+                          src={worker.profilepicture}
                         />
                         :
                         <Avatar
                           size={50}
-                          src={
-                            <Image
-                              src={ProfileIcon}
-                            />
-                          }
+                          src={ProfileIcon}
                         />
                     }
                   </div>

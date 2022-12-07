@@ -99,6 +99,7 @@ const IndividualChat = (props) => {
                   size={60}
                   src={
                     <Image
+                      id='profile-image-individual-chat'
                       src={chat.profilepicture}
                     />
                   }
@@ -108,6 +109,7 @@ const IndividualChat = (props) => {
                   size={60}
                   src={
                     <Image
+                      id='profile-image-individual-chat'
                       src={ProfileIcon}
                     />
                   }
@@ -210,9 +212,9 @@ const IndividualChat = (props) => {
               {message.messagetext}
             </p>
 
-            <p id={message.idperson === user.idperson ? 'right-message-hour' : 'left-message-hour'}>
+            {/* <p id={message.idperson === user.idperson ? 'right-message-hour' : 'left-message-hour'}>
               {message.hour}
-            </p>
+            </p> */}
           </>
         ))}
       </div>
@@ -229,7 +231,7 @@ const IndividualChat = (props) => {
             />
 
             <span>
-            {/* <span className='more-options-chat-wrapper'> */}
+              {/* <span className='more-options-chat-wrapper'> */}
               <a onClick={emoji === 'close' ? handleOpenEmoji : handleCloseEmoji}>
                 <SentimentSatisfiedAltIcon id='send-icon' />
               </a>

@@ -567,8 +567,25 @@ input::-ms-clear {
   color: red;
 }
 
-.avaliation-denounce-info{
+.avaliation-denounce-info {
   margin-left: 10px;
+}
+
+#profile-image-user-profile {
+  position: relative;
+  height: 110px;
+  width: 110px
+}
+
+.ant-image-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 376px) and (max-width: 414px) {
